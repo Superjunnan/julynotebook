@@ -1,0 +1,38 @@
+scheme: Pisces
+
+menu:
+  home: / || fa fa-home
+  daily_news: /categories/daily-news/ || fa fa-rss
+  july_notes: /categories/july-notes/ || fa fa-pen
+  resume: /resume/ || fa fa-id-card
+
+# 首页只显示“摘要”，并显示“阅读原文”按钮
+excerpt_description: true
+read_more_btn: true
+
+# 文章信息行（日期 / 分类 / 字数 / 阅读时长）
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at:
+    enable: false
+    another_day: false
+  categories: true
+
+symbols_count_time:
+  separated_meta: false
+  item_text_total: false
+
+# 浏览统计（Busuanzi：站点总访问 + 文章详情页访问）
+busuanzi_count:
+  enable: true
+  total_visitors: false
+  total_visitors_icon: fa fa-user
+  total_views: false
+  total_views_icon: fa fa-eye
+  post_views: true
+  post_views_icon: far fa-eye
+
+custom_file_path:
+  style: source/_data/styles.styl
+  bodyEnd: source/_data/body-end.njk

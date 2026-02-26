@@ -1,0 +1,14 @@
+{# Rendered twice:
+ - by Hexo data processor (no helpers like `url_for`)
+ - by NexT inject renderer (helpers available)
+Fallback avoids calling an undefined function during data rendering.
+#}
+{% if url_for %}
+  <script src="{{ url_for('js/cite-tooltip.js') }}" defer></script>
+  <script src="{{ url_for('js/home-tabs.js') }}" defer></script>
+  <script src="{{ url_for('js/busuanzi-format.js') }}" defer></script>
+{% else %}
+  <script src="/js/cite-tooltip.js" defer></script>
+  <script src="/js/home-tabs.js" defer></script>
+  <script src="/js/busuanzi-format.js" defer></script>
+{% endif %}

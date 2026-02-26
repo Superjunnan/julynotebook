@@ -1,0 +1,46 @@
+# sources.yml
+# --------------------------------------------
+# 可配置订阅源清单
+# 你后续只需要在这里增删 sources 就行，不用改代码
+#
+# 字段说明：
+# - name: 来源显示名称
+# - type: rss / youtube_rss / html_list
+# - url: RSS 地址（或列表页地址）
+# - weight: 权重（越大越容易进 TopN）
+# - link_selector: 仅 html_list 需要（CSS selector）
+#
+# 提示：
+# - lookback_days: 回溯几天内的内容（有日期的 RSS 才能过滤）
+# - boost_keywords: 命中关键词会加分（提高“精选命中率”）
+
+lookback_days: 2
+
+boost_keywords:
+  - "agent"
+  - "agents"
+  - "OpenAI"
+  - "Anthropic"
+  - "Gemini"
+  - "RAG"
+  - "tool"
+  - "workflow"
+  - "prompt"
+  - "tutorial"
+  - "guide"
+
+sources:
+  - name: "TechCrunch AI"
+    type: "rss"
+    url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+    weight: 8
+
+  # - name: "Import AI (Jack Clark)"
+  #   type: "rss"
+  #   url: "https://importai.substack.com/feed"
+  #   weight: 6
+
+  # - name: "Not A Bot (Substack)"
+  #   type: "rss"
+  #   url: "https://notabot.substack.com/feed"
+  #   weight: 4

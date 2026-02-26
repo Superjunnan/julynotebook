@@ -1,0 +1,71 @@
+name: Daily AI Digest
+
+on:
+  schedule:
+    # GitHub Actions cron 用 UTC；Asia/Shanghai 09:00 = UTC 01:00
+    - cron: "0 1 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
+      ZHIPU_MODEL: glm-4.7-flash
+      DIGEST_TZ: Asia/Shanghai
+      DIGEST_POST_TIME: "09:00:00"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Run digest
+        run: npm run digest
+
+      # 把生成的 digest 和抓取缓存提交回仓库（更省调用、更稳）
+      - name: Commit digest + cache
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add source/_posts data/digest-cache.json || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update daily digest"
+            git push
+          fi
+
+      - name: Build Hexo
+        run: npx hexo clean && npx hexo generate
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

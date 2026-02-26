@@ -1,0 +1,143 @@
+/* source/_data/styles.styl
+ * ------------------------------------------------------------
+ * 这里写 NexT 的自定义样式（覆盖主题默认样式）
+ * 目标：优化引用、首页与元信息展示
+ */
+
+/* 正文引用编号：圆形底色 + 与文本行居中对齐 */
+a.cite
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  width: 1.45em
+  height: 1.45em
+  margin-left: 4px
+  font-size: 0.72em
+  line-height: 1
+  border: 0
+  border-radius: 999px
+  background: rgba(255, 255, 255, .12)
+  color: rgba(255, 255, 255, .9)
+  text-decoration: none
+  opacity: .88
+  vertical-align: middle
+
+a.cite:hover
+  opacity: 1
+  background: rgba(255, 255, 255, .2)
+  text-decoration: none
+
+/* tooltip 浮层（悬浮预览） */
+.cite-tooltip
+  position: absolute
+  z-index: 9999
+  display: none
+  max-width: 460px
+  padding: 10px 12px
+  border-radius: 12px
+  background: rgba(20,20,20,.96)
+  color: rgba(255,255,255,.92)
+  border: 1px solid rgba(255,255,255,.12)
+  box-shadow: 0 10px 30px rgba(0,0,0,.35)
+  font-size: 13px
+  line-height: 1.4
+  pointer-events: none
+  word-break: break-word
+
+/* 侧边栏站点状态标题：隐藏（去掉“概览”） */
+.site-author-name
+  display: none
+
+/* 首页分类筛选 Tabs */
+.home-post-tabs
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  margin: 0 0 20px
+
+.home-tab-btn
+  border: 1px solid rgba(255, 255, 255, .2)
+  background: transparent
+  color: inherit
+  border-radius: 999px
+  padding: 4px 12px
+  cursor: pointer
+  transition: all .2s ease
+
+.home-tab-btn:hover
+  border-color: rgba(255, 255, 255, .4)
+
+.home-tab-btn.is-active
+  background: rgba(255, 255, 255, .12)
+  border-color: rgba(255, 255, 255, .5)
+
+/* 首页摘要：保留换行语义，最多展示 3 行 */
+.home .post-body > p:first-child
+  white-space: pre-line
+  display: -webkit-box
+  -webkit-line-clamp: 3
+  -webkit-box-orient: vertical
+  overflow: hidden
+  margin-bottom: 1.2em
+
+/* 文章信息行：始终一行展示，超出时横向滚动 */
+.post-meta
+  display: flex
+  align-items: center
+  flex-wrap: nowrap
+  white-space: nowrap
+  overflow-x: auto
+  overflow-y: hidden
+  gap: 0
+
+.post-meta .post-meta-item
+.post-meta .post-meta-break
+  flex: 0 0 auto
+
+/* 重点资讯里的“重要性原因”小字标签 */
+.post-body .importance-note
+  display: inline-block
+  margin: .42em 0 .2em
+  padding: 2px 8px
+  font-size: 0.78em
+  line-height: 1.5
+  color: rgba(255,255,255,.78)
+  background: rgba(255,255,255,.08)
+  border: 1px solid rgba(255,255,255,.12)
+  border-radius: 8px
+
+/* 正文主标题与正文内容缩小 */
+.posts-expand .post-title
+  font-size: 1.68em
+
+.posts-expand .post-body
+  font-size: 0.95em
+  line-height: 1.92
+
+/* 参考内容：更轻量 + 与正文拉开间距 */
+.post-body h2[id="参考内容"]
+  margin-top: 2.8em
+  margin-bottom: .75em
+  font-size: 1.05em
+  opacity: .72
+
+.post-body h2[id="参考内容"] + ul
+  margin-top: 0
+  font-size: 0.82em
+  line-height: 1.68
+  opacity: .62
+
+.post-body h2[id="参考内容"] + ul li
+  margin: .3em 0
+
+.post-body h2[id="参考内容"] + ul a
+  color: rgba(255,255,255,.62)
+  word-break: break-word
+
+/* 文章标签：弱化视觉权重 */
+.post-tags a
+  opacity: .68
+  font-size: 0.9em
+
+.post-tags a:hover
+  opacity: .92
