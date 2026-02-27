@@ -14,6 +14,23 @@ npm run admin
 http://localhost:4000/admin/
 ```
 
+说明：已使用本地覆盖配置 `_config.local.yml`，所以本地访问路径固定是 `/admin/`，不会再受线上 `root: /julynotebook/` 影响。
+
+如果提示 `Port 4000 has been used`：
+
+```bash
+# 方案 A：直接改用 4001 端口
+npm run admin:4001
+# 然后打开 http://localhost:4001/admin/
+```
+
+```bash
+# 方案 B：释放 4000 再启动
+lsof -nP -iTCP:4000 -sTCP:LISTEN
+kill <PID>
+npm run admin
+```
+
 ## 2) 常用操作
 
 - 新建文章：点击 `New Post`
