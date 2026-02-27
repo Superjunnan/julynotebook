@@ -2,8 +2,9 @@ name: Daily AI Digest
 
 on:
   schedule:
-    # GitHub Actions cron 用 UTC；Asia/Shanghai 09:00 = UTC 01:00
-    - cron: "0 1 * * *"
+    # GitHub Actions cron 用 UTC；Asia/Shanghai 04:07 = UTC 前一天 20:07
+    # 避开整点，降低调度延迟概率
+    - cron: "7 20 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -22,7 +23,7 @@ jobs:
       ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
       ZHIPU_MODEL: glm-4.7-flash
       DIGEST_TZ: Asia/Shanghai
-      DIGEST_POST_TIME: "09:00:00"
+      DIGEST_POST_TIME: "04:10:00"
 
     steps:
       - name: Checkout
