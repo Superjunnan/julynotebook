@@ -1,0 +1,30 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+
+import { sourceMatchesFilters } from "../../tools/digest.mjs";
+
+test("sourceMatchesFilters requires article-style paths when include_url_patterns are configured", () => {
+  const source = {
+    url: "https://www.theverge.com/ai-artificial-intelligence",
+    include_url_patterns: ["/20"],
+    include_keywords: ["ai", "artificial intelligence"],
+    exclude_keywords: ["podcast"],
+  };
+
+  assert.equal(
+    sourceMatchesFilters("https://www.theverge.com/ai-artificial-intelligence#content", "AI", source),
+    false
+  );
+  assert.equal(
+    sourceMatchesFilters("https://www.theverge.com/", "AI news homepage", source),
+    false
+  );
+  assert.equal(
+    sourceMatchesFilters("https://www.theverge.com/2026/03/04/example-story", "AI story", source),
+    true
+  );
+  assert.equal(
+    sourceMatchesFilters("https://x.com/sama/status/2028640354912923739?s=20", "AI", source),
+    false
+  );
+});

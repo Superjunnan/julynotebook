@@ -10,6 +10,7 @@
     "admin": "hexo server -d --config _config.yml,_config.local.yml",
     "admin:4001": "hexo server -d -p 4001 --config _config.yml,_config.local.yml",
     "digest": "node tools/digest.mjs",
+    "test:digest": "node --test tests/digest/*.test.mjs",
     "new:note": "hexo new july-note"
   },
   "hexo": {
