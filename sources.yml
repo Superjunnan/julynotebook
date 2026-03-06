@@ -1,46 +1,862 @@
-# sources.yml
-# --------------------------------------------
-# 可配置订阅源清单
-# 你后续只需要在这里增删 sources 就行，不用改代码
-#
-# 字段说明：
-# - name: 来源显示名称
-# - type: rss / youtube_rss / html_list
-# - url: RSS 地址（或列表页地址）
-# - weight: 权重（越大越容易进 TopN）
-# - link_selector: 仅 html_list 需要（CSS selector）
-#
-# 提示：
-# - lookback_days: 回溯几天内的内容（有日期的 RSS 才能过滤）
-# - boost_keywords: 命中关键词会加分（提高“精选命中率”）
-
-lookback_days: 2
-
-boost_keywords:
-  - "agent"
-  - "agents"
-  - "OpenAI"
-  - "Anthropic"
-  - "Gemini"
-  - "RAG"
-  - "tool"
-  - "workflow"
-  - "prompt"
-  - "tutorial"
-  - "guide"
+defaults:
+  lookback_days: 2
+  top_n: 18
+  timezone: Asia/Shanghai
+  stale_days: 21
+  boost_keywords:
+    - agent
+    - agents
+    - openai
+    - anthropic
+    - gemini
+    - deepseek
+    - reasoning
+    - model
+    - paper
+    - benchmark
+    - coding
+    - inference
+    - workflow
+    - release
+  promotion_keywords:
+    - webinar
+    - sponsored
+    - partner content
+    - register now
+    - save up
+    - ticket
+    - event
 
 sources:
-  - name: "TechCrunch AI"
-    type: "rss"
-    url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+  - id: techcrunch-ai
+    name: TechCrunch AI
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://techcrunch.com/category/artificial-intelligence/
+    feed_url: https://techcrunch.com/category/artificial-intelligence/feed/
+    weight: 10
+    notes: Primary foreign AI news feed.
+
+  - id: siliconvalley-ai
+    name: SiliconValley.com
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://www.siliconvalley.com/
+    include_keywords:
+      - ai
+      - artificial intelligence
+      - openai
+      - anthropic
+      - model
+    exclude_keywords:
+      - sports
+      - baseball
+      - football
+    weight: 6
+    notes: Generic page scrape with AI keyword filtering.
+
+  - id: the-verge-ai
+    name: The Verge AI
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://www.theverge.com/ai-artificial-intelligence
+    feed_url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+    weight: 9
+    notes: Topic feed with publication timestamps.
+
+  - id: aibase-news
+    name: AIBase
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: domestic_media
+    bucket_hint: hot_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://news.aibase.com/zh/news
+    include_url_patterns:
+      - /zh/news/
     weight: 8
+    notes: Chinese AI news list page.
 
-  # - name: "Import AI (Jack Clark)"
-  #   type: "rss"
-  #   url: "https://importai.substack.com/feed"
-  #   weight: 6
+  - id: 36kr-ai
+    name: 36Kr AI
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: domestic_media
+    bucket_hint: hot_news
+    trust_tier: medium
+    promotional_risk: high
+    url: https://36kr.com/information/AI/
+    include_url_patterns:
+      - /p/
+    exclude_keywords:
+      - 活动
+      - 峰会
+    weight: 7
+    notes: Needs stronger promotion filtering.
 
-  # - name: "Not A Bot (Substack)"
-  #   type: "rss"
-  #   url: "https://notabot.substack.com/feed"
-  #   weight: 4
+  - id: aitnt-news
+    name: AITNT 资讯
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: domestic_media
+    bucket_hint: hot_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://aitntnews.com/newList.html?typeId=1
+    include_keywords:
+      - ai
+      - 模型
+      - agent
+    weight: 7
+    notes: Public AI news listing.
+
+  - id: openai-news
+    name: OpenAI News
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: low
+    url: https://openai.com/news/
+    feed_url: https://openai.com/news/rss.xml
+    weight: 10
+    notes: Primary official release and policy updates.
+
+  - id: anthropic-news
+    name: Anthropic News
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: low
+    url: https://www.anthropic.com/news
+    include_url_patterns:
+      - /news/
+    include_keywords:
+      - claude
+      - anthropic
+      - model
+      - safety
+      - api
+    exclude_keywords:
+      - careers
+      - policy
+    weight: 10
+    notes: No public RSS found; scrape official news page.
+
+  - id: google-ai-blog
+    name: Google AI Blog
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: low
+    url: https://blog.google/technology/ai/
+    feed_url: https://blog.google/technology/ai/rss/
+    weight: 9
+    notes: Official Google AI section feed.
+
+  - id: deepmind-blog
+    name: Google DeepMind Blog
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: low
+    url: https://deepmind.google/discover/blog/
+    feed_url: https://deepmind.google/discover/blog/feed/
+    weight: 9
+    notes: Official DeepMind blog feed.
+
+  - id: meta-engineering-ai
+    name: Meta AI Blog
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://ai.meta.com/blog/
+    include_url_patterns:
+      - /blog/
+    include_keywords:
+      - ai
+      - llama
+      - model
+      - agent
+      - benchmark
+    exclude_keywords:
+      - careers
+      - event
+      - podcast
+    weight: 8
+    notes: Uses AI Meta blog page scrape for better regional availability.
+
+  - id: nvidia-generative-ai
+    name: NVIDIA Generative AI Blog
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://blogs.nvidia.com/blog/category/generative-ai/
+    feed_url: https://blogs.nvidia.com/blog/category/generative-ai/feed/
+    weight: 8
+    notes: NVIDIA generative AI category feed.
+
+  - id: mit-technology-review-ai
+    name: MIT Technology Review AI
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://www.technologyreview.com/topic/artificial-intelligence/
+    feed_url: https://www.technologyreview.com/topic/artificial-intelligence/feed/
+    weight: 9
+    notes: AI topic feed from MIT Technology Review.
+
+  - id: ars-technica-ai
+    name: Ars Technica AI
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://arstechnica.com/ai/
+    feed_url: https://arstechnica.com/ai/feed/
+    weight: 8
+    notes: Ars Technica AI coverage feed.
+
+  - id: wired-ai
+    name: WIRED AI
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://www.wired.com/tag/ai/
+    feed_url: https://www.wired.com/feed/tag/ai/latest/rss
+    weight: 8
+    notes: WIRED AI tag feed.
+
+  - id: media-404-ai
+    name: 404 Media AI
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: foreign_media
+    bucket_hint: hot_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://www.404media.co/tag/ai/
+    feed_url: https://www.404media.co/tag/ai/rss/
+    weight: 7
+    notes: 404 Media AI-tag feed.
+
+  - id: stratechery
+    name: Stratechery
+    enabled: true
+    mode: restricted
+    ingestion_mode: inbox_digest
+    parser: inbox_yaml
+    group: newsletter
+    bucket_hint: ai_rumor
+    trust_tier: high
+    promotional_risk: low
+    url: https://stratechery.com/membership
+    required_inputs:
+      - newsletter_forwarding
+    weight: 8
+    notes: Best connected through forwarded subscription emails or private RSS.
+
+  - id: ben-evans-newsletter
+    name: Benedict’s Newsletter
+    enabled: true
+    mode: restricted
+    ingestion_mode: inbox_digest
+    parser: inbox_yaml
+    group: newsletter
+    bucket_hint: ai_rumor
+    trust_tier: high
+    promotional_risk: low
+    url: https://www.ben-evans.com/newsletter/
+    required_inputs:
+      - newsletter_forwarding
+    weight: 8
+    notes: Restricted until inbox forwarding is configured.
+
+  - id: the-information-ai
+    name: The Information
+    enabled: true
+    mode: restricted
+    ingestion_mode: inbox_digest
+    parser: inbox_yaml
+    group: newsletter
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: low
+    url: https://www.theinformation.com/newsletters
+    required_inputs:
+      - newsletter_forwarding
+    weight: 9
+    notes: Use forwarded newsletters or exported inbox items.
+
+  - id: techcrunch-newsletter
+    name: TechCrunch Newsletter
+    enabled: true
+    mode: restricted
+    ingestion_mode: inbox_digest
+    parser: inbox_yaml
+    group: newsletter
+    bucket_hint: hot_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://techcrunch.com/newsletters/
+    required_inputs:
+      - newsletter_forwarding
+    weight: 6
+    notes: Separate from the public AI feed.
+
+  - id: import-ai
+    name: Import AI
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: newsletter
+    bucket_hint: core_tech
+    trust_tier: high
+    promotional_risk: low
+    url: https://importai.substack.com/
+    feed_url: https://importai.substack.com/feed
+    weight: 9
+    notes: Official newsletter feed.
+
+  - id: bens-bites
+    name: Ben's Bites
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: newsletter
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://www.bensbites.com/
+    feed_url: https://www.bensbites.com/feed
+    weight: 7
+    notes: Public newsletter feed.
+
+  - id: latent-space
+    name: Latent Space
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: newsletter
+    bucket_hint: core_tech
+    trust_tier: high
+    promotional_risk: low
+    url: https://www.latent.space/
+    feed_url: https://www.latent.space/feed
+    weight: 8
+    notes: Technical AI newsletter feed.
+
+  - id: interconnects
+    name: Interconnects
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: newsletter
+    bucket_hint: core_tech
+    trust_tier: high
+    promotional_risk: low
+    url: https://www.interconnects.ai/
+    feed_url: https://www.interconnects.ai/feed
+    weight: 8
+    notes: Nathan Lambert's AI systems analysis feed.
+
+  - id: ai-snake-oil
+    name: AI Snake Oil
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: newsletter
+    bucket_hint: core_tech
+    trust_tier: high
+    promotional_risk: low
+    url: https://www.aisnakeoil.com/
+    feed_url: https://www.aisnakeoil.com/feed
+    weight: 8
+    notes: Research-backed AI critique newsletter feed.
+
+  - id: one-useful-thing
+    name: One Useful Thing
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: newsletter
+    bucket_hint: core_tech
+    trust_tier: high
+    promotional_risk: low
+    url: https://www.oneusefulthing.org/
+    feed_url: https://www.oneusefulthing.org/feed
+    weight: 8
+    notes: Ethan Mollick's public newsletter feed.
+
+  - id: simon-willison-weblog
+    name: Simon Willison's Weblog
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: community
+    bucket_hint: core_tech
+    trust_tier: high
+    promotional_risk: low
+    url: https://simonwillison.net/
+    feed_url: https://simonwillison.net/atom/everything/
+    weight: 8
+    notes: Independent AI/dev blog with detailed experiments.
+
+  - id: tldr-ai
+    name: TLDR AI
+    enabled: true
+    mode: restricted
+    ingestion_mode: inbox_digest
+    parser: inbox_yaml
+    group: newsletter
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://advertise.tldr.tech/audiences/ai-professionals-and-enthusiasts/
+    required_inputs:
+      - newsletter_forwarding
+    weight: 5
+    notes: Connect via forwarded emails.
+
+  - id: ai-breakfast
+    name: AI Breakfast
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: newsletter
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: low
+    url: https://aibreakfast.beehiiv.com/archive
+    include_url_patterns:
+      - /p/
+    weight: 6
+    notes: Beehiiv archive scrape.
+
+  - id: the-neuron
+    name: The Neuron
+    enabled: true
+    mode: restricted
+    ingestion_mode: inbox_digest
+    parser: inbox_yaml
+    group: newsletter
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: low
+    url: https://www.theneurondaily.com/
+    required_inputs:
+      - newsletter_forwarding
+    weight: 6
+    notes: Public endpoints are Cloudflare-protected; enable via forwarded newsletter.
+
+  - id: not-a-bot
+    name: Not A Bot
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: newsletter
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://notabot.substack.com/
+    feed_url: https://notabot.substack.com/feed
+    weight: 5
+    notes: Substack feed is more reliable than the redirected website homepage.
+
+  - id: the-sequence
+    name: The Sequence
+    enabled: true
+    mode: restricted
+    ingestion_mode: inbox_digest
+    parser: inbox_yaml
+    group: newsletter
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: low
+    url: https://the-sequence.com/newsletter
+    required_inputs:
+      - newsletter_forwarding
+    weight: 4
+    notes: Keep in registry, but enable through forwarded emails only.
+
+  - id: elon-musk
+    name: Elon Musk
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: opinion
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: high
+    url: https://x.com/elonmusk
+    required_inputs:
+      - x_api_or_manual_capture
+    weight: 3
+    notes: X source, manual or authenticated ingestion only.
+
+  - id: andrej-karpathy
+    name: Andrej Karpathy
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: opinion
+    bucket_hint: ai_rumor
+    trust_tier: high
+    promotional_risk: low
+    url: https://x.com/karpathy
+    required_inputs:
+      - x_api_or_manual_capture
+    weight: 9
+    notes: High-trust personal signal source.
+
+  - id: ethan-mollick
+    name: Ethan Mollick
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: opinion
+    bucket_hint: ai_rumor
+    trust_tier: high
+    promotional_risk: low
+    url: https://x.com/emollick
+    required_inputs:
+      - x_api_or_manual_capture
+    weight: 8
+    notes: High-trust opinion source.
+
+  - id: dan-shipper
+    name: Dan Shipper
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: opinion
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://x.com/danshipper
+    required_inputs:
+      - x_api_or_manual_capture
+    weight: 5
+    notes: X source, often product/operator oriented.
+
+  - id: gabrie
+    name: Gabrie
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: opinion
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: medium
+    url: ""
+    required_inputs:
+      - exact_profile_url
+      - manual_capture
+    weight: 4
+    notes: Exact profile URL needed for automated ingestion.
+
+  - id: justine-moore
+    name: Justine Moore
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: opinion
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: low
+    url: https://x.com/venturetwins
+    required_inputs:
+      - x_api_or_manual_capture
+    weight: 5
+    notes: X source for startup and tooling signals.
+
+  - id: greg-isenberg
+    name: Greg Isenberg
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: opinion
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://x.com/gregisenberg
+    required_inputs:
+      - x_api_or_manual_capture
+    weight: 4
+    notes: X source, mostly ecosystem trend signals.
+
+  - id: lenny-podcast
+    name: Lenny's Podcast
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: opinion
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://www.lennysnewsletter.com/podcast
+    required_inputs:
+      - manual_capture
+    weight: 4
+    notes: Capture relevant podcast episodes manually.
+
+  - id: minimax
+    name: MiniMax
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: company_view
+    bucket_hint: ai_rumor
+    trust_tier: high
+    promotional_risk: high
+    url: ""
+    required_inputs:
+      - official_article_url
+    weight: 5
+    notes: WeChat or official posts; needs manual or crawler intake.
+
+  - id: kimi
+    name: Kimi
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: company_view
+    bucket_hint: ai_rumor
+    trust_tier: high
+    promotional_risk: high
+    url: ""
+    required_inputs:
+      - official_article_url
+    weight: 5
+    notes: WeChat or official posts; needs manual or crawler intake.
+
+  - id: zhipu
+    name: 智谱
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: company_view
+    bucket_hint: ai_rumor
+    trust_tier: high
+    promotional_risk: high
+    url: ""
+    required_inputs:
+      - official_article_url
+    weight: 5
+    notes: WeChat or official posts; needs manual or crawler intake.
+
+  - id: deepseek
+    name: DeepSeek
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: company_view
+    bucket_hint: ai_rumor
+    trust_tier: high
+    promotional_risk: medium
+    url: ""
+    required_inputs:
+      - official_article_url
+    weight: 7
+    notes: WeChat or official posts; needs manual or crawler intake.
+
+  - id: seed
+    name: Seed
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: company_view
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: medium
+    url: ""
+    required_inputs:
+      - official_article_url
+    weight: 4
+    notes: WeChat or official posts; exact official source URL still needed.
+
+  - id: ali-tech
+    name: 阿里技术
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: company_view
+    bucket_hint: core_tech
+    trust_tier: high
+    promotional_risk: medium
+    url: ""
+    required_inputs:
+      - official_article_url
+    weight: 6
+    notes: WeChat or official posts; often useful for technical writeups.
+
+  - id: hacker-news-ai
+    name: Hacker News AI
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: community
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://hnrss.org/newest?q=AI
+    feed_url: https://hnrss.org/newest?q=AI
+    weight: 7
+    notes: AI query feed from Hacker News.
+
+  - id: huggingface-posts
+    name: Hugging Face Posts
+    display_name_zh: Hugging Face 社区
+    enabled: true
+    mode: auto
+    ingestion_mode: api_json
+    parser: huggingface_posts_api
+    group: community
+    bucket_hint: ai_rumor
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://huggingface.co/posts
+    api_url: https://huggingface.co/api/posts?limit=80
+    include_url_patterns:
+      - huggingface.co/posts/
+    weight: 6
+    notes: API first; fallback to page scrape when API fails.
+
+  - id: huggingface-papers
+    name: Hugging Face Papers
+    display_name_zh: Hugging Face 论文
+    enabled: true
+    mode: auto
+    ingestion_mode: api_json
+    parser: huggingface_papers_api
+    group: paper
+    bucket_hint: core_tech
+    trust_tier: high
+    promotional_risk: low
+    url: https://huggingface.co/papers
+    api_url: https://huggingface.co/api/daily_papers?limit=80
+    include_url_patterns:
+      - huggingface.co/papers/
+    weight: 9
+    notes: API first; fallback to page scrape when API fails.
+
+  - id: arxiv-cs-ai
+    name: arXiv cs.AI
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: paper
+    bucket_hint: core_tech
+    trust_tier: high
+    promotional_risk: low
+    url: https://rss.arxiv.org/rss/cs.AI
+    feed_url: https://rss.arxiv.org/rss/cs.AI
+    weight: 9
+    notes: Primary paper feed.
+
+  - id: aitnt-papers
+    name: AITNT 论文
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: paper
+    bucket_hint: core_tech
+    trust_tier: medium
+    promotional_risk: low
+    url: https://aitntnews.com/newList.html?typeId=2
+    include_url_patterns:
+      - /newDetail.html?newId=
+    weight: 7
+    notes: Secondary Chinese paper discovery source with article URL pattern filtering.
