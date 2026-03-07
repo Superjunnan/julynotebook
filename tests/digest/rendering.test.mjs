@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 
 import { buildDigestMarkdown, buildFallbackDailySummary } from "../../tools/digest.mjs";
 
-test("buildDigestMarkdown renders hot news, core tech, and ai rumor sections", () => {
+test("buildDigestMarkdown renders key news, quick news, core papers, and rumors", () => {
   const markdown = buildDigestMarkdown(
     "2026-03-03",
     {
@@ -18,6 +18,13 @@ test("buildDigestMarkdown renders hot news, core tech, and ai rumor sections", (
           crossVerifyScore: 81,
         },
       ],
+      otherNews: [
+        {
+          insight: "Cursor发布新代理编程机制",
+          narrative: "编程代理流程更稳定，企业侧试点提速。",
+          refs: [2],
+        },
+      ],
       coreTech: [{ title: "New paper", summary: "Technique summary.", refs: [2] }],
       aiRumor: [{ title: "Possible launch signal", summary: "Credible but early.", refs: [3] }],
       refTranslations: {},
@@ -29,9 +36,10 @@ test("buildDigestMarkdown renders hot news, core tech, and ai rumor sections", (
     ]
   );
 
-  assert.match(markdown, /## 热门资讯/);
-  assert.match(markdown, /## 核心论文 \/ 技术变革/);
-  assert.match(markdown, /## 人工智能小道消息/);
+  assert.match(markdown, /## 重点资讯/);
+  assert.match(markdown, /## 其他快讯/);
+  assert.match(markdown, /## 核心论文/);
+  assert.match(markdown, /## 小道消息/);
   assert.match(markdown, /## 参考来源/);
   assert.match(markdown, /今日候选总数：123 条/);
   assert.match(markdown, /模型能力提速和商业化渗透同步发生/);
@@ -42,6 +50,7 @@ test("buildDigestMarkdown renders hot news, core tech, and ai rumor sections", (
   assert.doesNotMatch(markdown, /5W1H：|Who\/What：|When\/Where：|Why\/How：/);
   assert.doesNotMatch(markdown, /简报：|研判：|综合来源：/);
   assert.doesNotMatch(markdown, /importance-note|重要性：/);
+  assert.doesNotMatch(markdown, /…|\.{3,}/);
 });
 
 test("fallback markdown avoids untranslated placeholders and raw English titles", () => {
@@ -79,6 +88,7 @@ test("fallback markdown avoids untranslated placeholders and raw English titles"
   assert.doesNotMatch(markdown, /5W1H：|Who\/What：|When\/Where：|Why\/How：/);
   assert.match(markdown, />1<\/a>/);
   assert.match(markdown, />2<\/a>/);
-  assert.match(markdown, /海外科技媒体原文/);
-  assert.match(markdown, /论文平台原文/);
+  assert.match(markdown, /Why AI startups are selling the same equity at two different prices/);
+  assert.match(markdown, /Reasoning as Gradient: Scaling MLE Agents Beyond Tree Search/);
+  assert.doesNotMatch(markdown, /海外科技媒体原文|论文平台原文/);
 });

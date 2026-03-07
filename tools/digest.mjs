@@ -620,7 +620,9 @@ const rssParser = new Parser({
 });
 
 // 抓 RSS 条目（失败时重试 2 次）
-async function fetchRssItems(feedUrl, sourceName) {
+async function fetchRssItems(source) {
+  const feedUrl = source?.feed_url || source?.url;
+  const sourceName = source?.name || "RSS Source";
   const maxTry = 2;
   let lastErr = null;
 
@@ -634,7 +636,7 @@ async function fetchRssItems(feedUrl, sourceName) {
         pubDate: it.pubDate || it.isoDate || null,
         contentSnippet: it.contentSnippet || it.summary || "",
       }));
-      return items.filter((x) => x.title && x.link);
+      return items.filter((x) => x.title && x.link && sourceMatchesFilters(x.link, `${x.title} ${x.contentSnippet}`, source));
     } catch (e) {
       lastErr = e;
       console.warn(`[warn] RSS 抓取失败（第${i}次）：${sourceName} -> ${formatNetError(e)}`);
@@ -1441,16 +1443,60 @@ function redactUrlLike(s) {
   return String(s || "").replace(/https?:\/\/\S+/gi, "").replace(/\s+/g, " ").trim();
 }
 
+function normalizeTextSpacing(text) {
+  return String(text || "")
+    .replace(/[\u00a0\u1680\u2000-\u200b\u202f\u205f\u3000]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function stripEllipsisMarks(text) {
+  return String(text || "")
+    .replace(/…+/g, " ")
+    .replace(/\.{3,}/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function finalizeReadableText(text, fallback = "") {
+  const normalized = stripEllipsisMarks(normalizeTextSpacing(text));
+  if (normalized) {
+    return normalized
+      .replace(/[。！？]\s*[，,]/g, "，")
+      .replace(/[，,]{2,}/g, "，")
+      .replace(/[。]{2,}/g, "。")
+      .replace(/[，、；：:,\-]\s*$/g, "")
+      .trim();
+  }
+  return stripEllipsisMarks(normalizeTextSpacing(fallback));
+}
+
 function clipToChars(s, maxChars = 60) {
-  const text = String(s || "").replace(/\s+/g, " ").trim();
+  const text = finalizeReadableText(s);
   if (!text) return "";
   const limit = Number.isFinite(maxChars) ? Math.max(8, Math.floor(maxChars)) : 60;
   if (text.length <= limit) return text;
-  return `${text.slice(0, limit - 1).trim()}…`;
+
+  const sliced = text.slice(0, limit);
+  const punct = Math.max(
+    sliced.lastIndexOf("。"),
+    sliced.lastIndexOf("！"),
+    sliced.lastIndexOf("？"),
+    sliced.lastIndexOf("；"),
+    sliced.lastIndexOf("，"),
+    sliced.lastIndexOf(","),
+    sliced.lastIndexOf(" ")
+  );
+
+  if (punct >= Math.floor(limit * 0.6)) {
+    return finalizeReadableText(sliced.slice(0, punct + 1));
+  }
+
+  return finalizeReadableText(sliced);
 }
 
 function clipToSentence(text, maxChars = 260) {
-  const plain = String(text || "").replace(/\s+/g, " ").trim();
+  const plain = finalizeReadableText(text);
   if (!plain) return "";
   const limit = Number.isFinite(maxChars) ? Math.max(40, Math.floor(maxChars)) : 260;
   if (plain.length <= limit) return plain;
@@ -1467,10 +1513,12 @@ function clipToSentence(text, maxChars = 260) {
 
   if (punct >= Math.floor(limit * 0.55)) {
     const end = sliced[punct] === "." || sliced[punct] === "!" || sliced[punct] === "?" ? punct + 1 : punct + 2;
-    return sliced.slice(0, end).trim();
+    return finalizeReadableText(sliced.slice(0, end));
   }
 
-  return `${sliced.slice(0, limit - 1).trim()}…`;
+  const fallback = finalizeReadableText(sliced);
+  if (!fallback) return "";
+  return /[。！？.!?]$/.test(fallback) ? fallback : `${fallback}。`;
 }
 
 function normalizeRefs(refs, allowedRefIds) {
@@ -1529,6 +1577,36 @@ function getChineseSourceLabel(item) {
   return "资讯来源";
 }
 
+function isPaperLikeMaterial(item) {
+  if (!item) return false;
+  const group = String(item?.sourceGroup || "").trim();
+  if (group === "paper") return true;
+
+  const source = String(item?.source || "").toLowerCase();
+  const link = String(item?.link || "").toLowerCase();
+  return (
+    source.includes("arxiv") ||
+    source.includes("paper") ||
+    link.includes("arxiv.org/abs/") ||
+    link.includes("huggingface.co/papers/")
+  );
+}
+
+function isRumorEligibleMaterial(item) {
+  if (!item) return false;
+  const group = String(item?.sourceGroup || "").trim();
+  const source = String(item?.source || "").toLowerCase();
+  const link = String(item?.link || "").toLowerCase();
+
+  if (group === "opinion") return true;
+  if (source.includes("hugging face posts") || link.includes("huggingface.co/posts/")) return true;
+  if (source.includes("x.com") || source.includes("twitter") || link.includes("x.com/") || link.includes("twitter.com/")) {
+    return true;
+  }
+
+  return false;
+}
+
 function buildFallbackEntryTitle(material, indexByBucket) {
   const bucket = material?.bucketHint || "hot_news";
   const index = (indexByBucket[bucket] || 0) + 1;
@@ -1536,7 +1614,7 @@ function buildFallbackEntryTitle(material, indexByBucket) {
   const sourceLabel = getChineseSourceLabel(material);
 
   if (bucket === "core_tech") {
-    return `${sourceLabel}技术进展 ${index}`;
+    return `${sourceLabel}论文进展 ${index}`;
   }
   if (bucket === "ai_rumor") {
     return `${sourceLabel}观察线索 ${index}`;
@@ -1546,7 +1624,7 @@ function buildFallbackEntryTitle(material, indexByBucket) {
 
 function buildFallbackEntrySummary(material) {
   if (material?.bucketHint === "core_tech") {
-    return "该技术条目已纳入跟踪，建议通过引用原文核对方法与结论。";
+    return "该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。";
   }
   if (material?.bucketHint === "ai_rumor") {
     return "该线索已纳入观察，建议结合更多来源交叉验证。";
@@ -1581,12 +1659,16 @@ function normalizeNarrativeBody(text) {
     .replace(/客观评估[:：]\s*/gi, "")
     .replace(/谁[:：]\s*|何时[:：]\s*|为什么[:：]\s*|如何[:：]\s*/g, "")
     .replace(/[；;]{2,}/g, "；")
+    .replace(/[。！？]\s*[，,]/g, "，")
+    .replace(/[，,]{2,}/g, "，")
+    .replace(/[。]{2,}/g, "。")
     .replace(/\s+/g, " ")
     .trim();
 
   const normalized = deLabeled || plain;
+  const normalizedNoTailPunct = normalized.replace(/[。！？!?]+$/g, "");
   const briefing = normalized.length < 40
-    ? `${normalized}，后续需关注落地节奏、资源投入与行业外溢影响。`
+    ? `${normalizedNoTailPunct}，后续需关注落地节奏、资源投入与行业外溢影响。`
     : normalized;
 
   return clipToChars(briefing, 220);
@@ -1980,6 +2062,43 @@ function buildChineseHotNarrativeFallback(entry, idToItem) {
   return `${base}${evidence}`;
 }
 
+function buildQuickNewsEntryFromLLM(item, allowedRefIds) {
+  const base = buildHotNewsEntryFromLLM(item, allowedRefIds);
+  let narrative = clipToSentence(finalizeReadableText(base.narrative || base.briefing || base.summary || ""), 160);
+  if (!hasCjk(narrative)) {
+    const insightSeed = finalizeReadableText(base.insight || base.title || "当日快讯");
+    narrative = `该快讯围绕“${clipToChars(insightSeed, 32)}”展开，建议结合参考来源持续跟进业务与产品层面的实际影响。`;
+  }
+  return {
+    ...base,
+    insight: clipToChars(finalizeReadableText(base.insight || base.title || "当日快讯"), 56),
+    narrative,
+    summary: clipToChars(finalizeReadableText(base.summary || base.narrative || base.insight || ""), 120),
+  };
+}
+
+function buildFallbackQuickNewsEntry(material) {
+  const title = finalizeReadableText(material?.title || material?.contentSnippet || "");
+  const sourceLabel = getChineseSourceLabel(material);
+  const insight = clipToChars(title || `${sourceLabel}快讯`, 56);
+  let narrative = clipToSentence(
+    normalizeNarrativeBody(String(material?.text || "").slice(0, 220) || title || `来自${sourceLabel}的行业快讯。`),
+    160
+  );
+  if (!hasCjk(narrative)) {
+    narrative = `${sourceLabel}发布了“${clipToChars(title || "当日更新", 36)}”相关动态，已纳入当日快讯，建议结合原文核对关键细节。`;
+  }
+  return {
+    title: insight,
+    insight,
+    narrative,
+    summary: clipToChars(narrative, 120),
+    refs: [material.refId],
+    mentionCount: 1,
+    crossVerifyScore: Math.max(35, Math.min(95, Math.round(Number(material?.score || 0) * 3.2))),
+  };
+}
+
 export function normalizeDailySummary(rawDaily, materials) {
   const allowed = new Set(materials.map((m) => m.refId));
   const x = rawDaily && typeof rawDaily === "object" ? rawDaily : {};
@@ -2138,6 +2257,65 @@ export function normalizeDailySummary(rawDaily, materials) {
     };
   });
 
+  const totalNewsTarget = 10;
+  const hotNewsRefSet = new Set(hotNews.flatMap((entry) => entry?.refs || []));
+  const hotNewsKeySet = new Set(hotNews.map((entry) => normalizeHotNewsKey(entry)));
+  const quickTarget = Math.max(0, totalNewsTarget - hotNews.length);
+
+  const otherNewsIn = Array.isArray(x.other_news)
+    ? x.other_news
+    : Array.isArray(x.quick_news)
+      ? x.quick_news
+      : Array.isArray(x.briefs)
+        ? x.briefs
+        : [];
+
+  const otherNewsFromLLM = otherNewsIn
+    .map((item) => {
+      const entry = buildQuickNewsEntryFromLLM(item, allowed);
+      const refs = (entry?.refs || []).filter((id) => {
+        const material = idToItem[id];
+        return material && !isPaperLikeMaterial(material) && !isRumorEligibleMaterial(material);
+      });
+      return { ...entry, refs };
+    })
+    .filter((entry) => Array.isArray(entry?.refs) && entry.refs.length > 0)
+    .filter((entry) => {
+      const key = normalizeHotNewsKey(entry);
+      if (hotNewsKeySet.has(key)) return false;
+      return !entry.refs.some((refId) => hotNewsRefSet.has(refId));
+    });
+
+  const pickedOtherNews = [];
+  const usedOtherRef = new Set(hotNewsRefSet);
+  const usedOtherKey = new Set(hotNewsKeySet);
+  for (const entry of otherNewsFromLLM) {
+    if (pickedOtherNews.length >= quickTarget) break;
+    const key = normalizeHotNewsKey(entry);
+    if (usedOtherKey.has(key)) continue;
+    usedOtherKey.add(key);
+    pickedOtherNews.push(entry);
+    for (const refId of entry.refs || []) usedOtherRef.add(refId);
+  }
+
+  if (pickedOtherNews.length < quickTarget) {
+    const supplements = (materials || [])
+      .filter((item) => item && !usedOtherRef.has(item.refId))
+      .filter((item) => !isPaperLikeMaterial(item))
+      .filter((item) => !isRumorEligibleMaterial(item))
+      .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
+
+    for (const item of supplements) {
+      if (pickedOtherNews.length >= quickTarget) break;
+      const entry = buildFallbackQuickNewsEntry(item);
+      const key = normalizeHotNewsKey(entry);
+      if (usedOtherKey.has(key)) continue;
+      usedOtherKey.add(key);
+      pickedOtherNews.push(entry);
+      usedOtherRef.add(item.refId);
+    }
+  }
+
   const coreTechIn = Array.isArray(x.core_tech)
     ? x.core_tech
     : Array.isArray(x.overview)
@@ -2148,19 +2326,19 @@ export function normalizeDailySummary(rawDaily, materials) {
 
   const coreTech = coreTechIn
     .map((t) => ({
-      title: redactUrlLike(t?.title || ""),
-      summary: redactUrlLike(t?.summary || t?.what_you_get || ""),
-      refs: normalizeRefs(t?.refs, allowed),
+      title: finalizeReadableText(redactUrlLike(t?.title || "")),
+      summary: finalizeReadableText(redactUrlLike(t?.summary || t?.what_you_get || "")),
+      refs: normalizeRefs(t?.refs, allowed).filter((id) => isPaperLikeMaterial(idToItem[id])),
     }))
     .filter((t) => t.title && t.summary && t.refs.length > 0);
 
   const aiRumorIn = Array.isArray(x.ai_rumor) ? x.ai_rumor : [];
   const aiRumor = aiRumorIn
     .map((t) => ({
-      title: redactUrlLike(t?.title || ""),
-      summary: redactUrlLike(t?.summary || ""),
-      credibility: redactUrlLike(t?.credibility || ""),
-      refs: normalizeRefs(t?.refs, allowed),
+      title: finalizeReadableText(redactUrlLike(t?.title || "")),
+      summary: finalizeReadableText(redactUrlLike(t?.summary || "")),
+      credibility: finalizeReadableText(redactUrlLike(t?.credibility || "")),
+      refs: normalizeRefs(t?.refs, allowed).filter((id) => isRumorEligibleMaterial(idToItem[id])),
     }))
     .filter((t) => t.title && t.summary && t.refs.length > 0);
 
@@ -2187,6 +2365,7 @@ export function normalizeDailySummary(rawDaily, materials) {
   const daily = {
     overview,
     hotNews,
+    otherNews: pickedOtherNews.slice(0, quickTarget),
     coreTech,
     aiRumor,
     refTranslations,
@@ -2236,9 +2415,12 @@ function buildMaterialsFingerprint(materials) {
 
 export function buildFallbackDailySummary(materials) {
   const hotNews = [];
+  const otherNews = [];
   const coreTech = [];
   const aiRumor = [];
   const indexByBucket = {};
+  const totalNewsTarget = 10;
+  const hotNewsTarget = 5;
 
   for (const material of materials || []) {
     const entry = {
@@ -2248,12 +2430,17 @@ export function buildFallbackDailySummary(materials) {
       credibility: material.trustTier === "high" ? "高" : "中",
     };
 
-    if (material.bucketHint === "core_tech") {
+    if (isPaperLikeMaterial(material) && material.bucketHint === "core_tech") {
       coreTech.push(entry);
-    } else if (material.bucketHint === "ai_rumor") {
+    } else if (material.bucketHint === "ai_rumor" && isRumorEligibleMaterial(material)) {
       aiRumor.push(entry);
     } else {
-      hotNews.push(buildFallbackHotNewsEntry(material, entry.title));
+      const fallback = buildFallbackHotNewsEntry(material, entry.title);
+      if (hotNews.length < hotNewsTarget) {
+        hotNews.push(fallback);
+      } else if (hotNews.length + otherNews.length < totalNewsTarget) {
+        otherNews.push(buildFallbackQuickNewsEntry(material));
+      }
     }
   }
 
@@ -2262,10 +2449,25 @@ export function buildFallbackDailySummary(materials) {
     hotNews.push(...buildHotNewsSupplements(materials || [], usedRefs, 2 - hotNews.length, indexByBucket));
   }
 
+  if (hotNews.length + otherNews.length < totalNewsTarget) {
+    const usedRefs = new Set([...hotNews.flatMap((entry) => entry.refs), ...otherNews.flatMap((entry) => entry.refs)]);
+    const supplements = (materials || [])
+      .filter((item) => item && !usedRefs.has(item.refId))
+      .filter((item) => !isPaperLikeMaterial(item))
+      .filter((item) => !isRumorEligibleMaterial(item))
+      .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
+    for (const item of supplements) {
+      if (hotNews.length + otherNews.length >= totalNewsTarget) break;
+      otherNews.push(buildFallbackQuickNewsEntry(item));
+      usedRefs.add(item.refId);
+    }
+  }
+
   return {
     notice: "（当前使用规则化回退结果，总结建议后续由模型或人工精炼）",
     overview: "当日资讯以模型发布与产业落地并行为主线，建议优先关注多源反复提及且影响面更广的事件。",
     hotNews: hotNews.slice(0, 5),
+    otherNews: otherNews.slice(0, Math.max(0, totalNewsTarget - Math.min(hotNews.length, 5))),
     coreTech: coreTech.slice(0, 6),
     aiRumor: aiRumor.slice(0, 4),
     refTranslations: {},
@@ -2392,11 +2594,12 @@ async function summarizeDailyWithLLM(materials) {
 你是“精选型 AI 资讯主编”。下面是一份【文献综述素材包】（多条来源）。
 请输出一份“当日 AI 资讯总结”，结构包括：
 1) 当日主线（2-3句，给出趋势判断）
-2) 热门资讯（按事件重组与去噪，可合并同一事件的多篇文章）
-3) 核心论文 / 技术变革（分点）
-4) AI 小道消息（分点，可为空）
-5) 引用编号 refs（来自素材包 id）
-6) 参考事件簇提示 event_hints / event_briefs（仅作为辅助，不可生搬硬套）
+2) 重点资讯（按事件重组与去噪，可合并同一事件的多篇文章）
+3) 其他快讯（补充高质量单条信息，和重点资讯总计 10 条）
+4) 核心论文（仅保留纯论文来源）
+5) 小道消息（仅个人社交媒体 / HuggingFace 帖子，可为空）
+6) 引用编号 refs（来自素材包 id）
+7) 参考事件簇提示 event_hints / event_briefs（仅作为辅助，不可生搬硬套）
 
 严格要求：
 1) 只输出【合法 JSON】（不要 Markdown，不要代码块，不要解释）
@@ -2406,8 +2609,9 @@ async function summarizeDailyWithLLM(materials) {
 5) 热门资讯要综合“行业影响×新闻时效×来源权威”排序，最重要的放前面
 6) 对热门资讯做交叉验证：提及次数越多、来源越权威、时效越新，cross_verify_score 越高
 7) 同一事件可合并为一条，refs 里列出多个来源编号，mention_count 写该事件涉及来源数量
-8) 热门资讯不要“标题+描述”平铺，必须给出“洞察+叙事+评估”；叙事里要体现背景、进展和影响，允许对比相关事件
+8) 重点资讯不要“标题+描述”平铺，必须给出“洞察+叙事+评估”；叙事里要体现背景、进展和影响，允许对比相关事件
 9) 若同一主题存在多来源共识与分歧，请在 narrative 中直接指出“共识点/分歧点”
+10) 不要输出“...”或“…”省略表达，必须完整写完句子
 10) 输出字段固定为：
 
 {
@@ -2422,17 +2626,26 @@ async function summarizeDailyWithLLM(materials) {
       "cross_verify_score": 82
     }
   ],
+  "other_news": [
+    {
+      "insight": "快讯洞察（<=56字）",
+      "narrative": "快讯叙事（60-160字）",
+      "refs": [4],
+      "mention_count": 1,
+      "cross_verify_score": 66
+    }
+  ],
   "core_tech": [
     {
-      "title": "论文/技术标题（<=18字）",
-      "summary": "技术变化点（1-2句）",
+      "title": "论文标题（<=18字）",
+      "summary": "论文贡献与边界（1-2句）",
       "refs": [5]
     }
   ],
   "ai_rumor": [
     {
       "title": "小道消息标题（<=18字）",
-      "summary": "保守描述（1-2句）",
+      "summary": "保守描述（1-2句，仅限个人社交媒体/HF帖子）",
       "credibility": "高/中",
       "refs": [8]
     }
@@ -2447,7 +2660,8 @@ async function summarizeDailyWithLLM(materials) {
 
 约束：
 - hot_news 输出 2-5 条
-- core_tech 输出 2-6 条
+- other_news 输出 3-8 条（与 hot_news 合计 10 条）
+- core_tech 输出 2-6 条，且 refs 对应来源必须是论文源
 - ai_rumor 输出 0-4 条
 - refs 只允许来自素材包里的 id
 - ref_translations 里请覆盖所有英文标题；中文标题不要输出
@@ -2524,34 +2738,28 @@ function buildDigestDescription(daily) {
     return `热门资讯：${hotNewsHighlights.join("、")}。`;
   }
 
-  const coreTechTitles = Array.isArray(daily?.coreTech)
+  const corePaperTitles = Array.isArray(daily?.coreTech)
     ? daily.coreTech
       .slice(0, 2)
       .map((x) => String(x?.title || "").trim())
       .filter(Boolean)
     : [];
 
-  if (coreTechTitles.length) {
-    return `技术焦点：${coreTechTitles.join("、")}。`;
+  if (corePaperTitles.length) {
+    return `核心论文：${corePaperTitles.join("、")}。`;
   }
 
-  return "人工智能日报：热门资讯、技术变革与高价值早期线索。";
+  return "人工智能日报：重点资讯、其他快讯、核心论文与小道消息。";
 }
 
 function buildReferenceLabel(item, translatedTitle) {
-  const title = escapeMd(item?.title || "");
-  const source = escapeMd(getChineseSourceLabel(item));
-  const translated = escapeMd(translatedTitle || item?.titleZh || "");
+  const originalTitle = finalizeReadableText(item?.title || "");
+  if (originalTitle) return escapeMd(originalTitle);
 
-  if (translated && !hasAsciiLetters(translated)) {
-    return `${translated} · ${source}`;
-  }
+  const translated = finalizeReadableText(translatedTitle || item?.titleZh || "");
+  if (translated) return escapeMd(translated);
 
-  if (title && hasCjk(title) && !hasAsciiLetters(title)) {
-    return `${title} · ${source}`;
-  }
-
-  return `${source}原文`;
+  return `${escapeMd(getChineseSourceLabel(item))}原文`;
 }
 
 /**
@@ -2623,14 +2831,14 @@ tags: [人工智能, 每日资讯]
     md += `> 主线：${escapeMd(normalizeNarrativeBody(daily.overview))}\n\n`;
   }
 
-  // 1) 热门资讯
-  md += `## 热门资讯\n\n`;
+  // 1) 重点资讯
+  md += `## 重点资讯\n\n`;
   const hotNews = Array.isArray(daily?.hotNews) ? daily.hotNews : [];
   if (!hotNews.length) {
-    md += `（暂无符合门槛的热门资讯）\n\n`;
+    md += `（暂无符合门槛的重点资讯）\n\n`;
   } else {
     hotNews.forEach((t, idx) => {
-      const insightRaw = clipToChars(t?.insight || t?.summary || t?.title || "当日关键动态", 40);
+      const insightRaw = clipToChars(finalizeReadableText(t?.insight || t?.summary || t?.title || "当日关键动态"), 42);
       const insight = escapeMd(insightRaw);
       const narrativeRaw = normalizeNarrativeBody(
         t?.narrative ||
@@ -2647,43 +2855,82 @@ tags: [人工智能, 每日资讯]
 
       const order = String(idx + 1).padStart(2, "0");
       md += `### ${order} · ${insight}\n\n`;
-      md += `${narrative}\n\n`;
+      md += `${escapeMd(finalizeReadableText(narrative))}\n\n`;
       if (refsLine) {
         md += `参考：${refsLine}\n\n`;
       }
     });
   }
 
-  // 2) 核心论文 / 技术变革
-  md += `## 核心论文 / 技术变革\n\n`;
+  // 2) 其他快讯（与重点资讯合计最多 10 条）
+  md += `## 其他快讯\n\n`;
+  const otherNews = Array.isArray(daily?.otherNews) ? daily.otherNews : [];
+  if (!otherNews.length) {
+    md += `（暂无符合门槛的快讯）\n\n`;
+  } else {
+    otherNews.forEach((t, idx) => {
+      const refs = Array.isArray(t?.refs) ? t.refs : [];
+      const firstMaterial = refs.length ? idToItem[refs[0]] : null;
+      const sourceLabel = getChineseSourceLabel(firstMaterial);
+      const insightSeed = finalizeReadableText(t?.insight || t?.title || t?.summary || "");
+      const insight = escapeMd(
+        hasCjk(insightSeed)
+          ? clipToChars(insightSeed, 56)
+          : clipToChars(`${sourceLabel}快讯更新`, 56)
+      );
+
+      let narrativeSeed = finalizeReadableText(t?.narrative || t?.briefing || t?.summary || "");
+      if (!hasCjk(narrativeSeed)) {
+        const anchor = clipToChars(finalizeReadableText(t?.insight || t?.title || "当日更新"), 30);
+        narrativeSeed = `${sourceLabel}发布了“${anchor}”相关动态，内容已纳入当日快讯，建议结合参考来源持续跟进关键进展。`;
+      }
+      let narrativeText = clipToSentence(narrativeSeed, 160);
+      if (narrativeText && !/[。！？.!?]$/.test(narrativeText)) {
+        narrativeText = `${narrativeText}。`;
+      }
+      narrativeText = narrativeText.replace(/([。！？])[\u4e00-\u9fff]。$/g, "$1");
+      const narrative = escapeMd(narrativeText);
+      const refsLine = renderRefsList(t?.refs, idToItem, refTranslations);
+      const order = String(idx + 1).padStart(2, "0");
+      md += `- **${order} · ${insight}**：${narrative}`;
+      if (refsLine) {
+        md += `（参考：${refsLine}）`;
+      }
+      md += `\n`;
+    });
+    md += `\n`;
+  }
+
+  // 3) 核心论文
+  md += `## 核心论文\n\n`;
   const coreTech = Array.isArray(daily?.coreTech) ? daily.coreTech : [];
   if (!coreTech.length) {
-    md += `（暂无符合门槛的技术条目）\n\n`;
+    md += `（暂无符合门槛的核心论文）\n\n`;
   } else {
     for (const h of coreTech) {
-      const t = escapeMd(h.title || "要点");
-      const s = escapeMd(h.summary || "");
+      const t = escapeMd(finalizeReadableText(h.title || "论文要点"));
+      const s = escapeMd(clipToSentence(finalizeReadableText(h.summary || ""), 180));
       md += `- **${t}**：${s}${renderRefs(h.refs, idToItem, refTranslations)}\n`;
     }
     md += `\n`;
   }
 
-  // 3) 人工智能小道消息
-  md += `## 人工智能小道消息\n\n`;
+  // 4) 小道消息
+  md += `## 小道消息\n\n`;
   const aiRumor = Array.isArray(daily?.aiRumor) ? daily.aiRumor : [];
   if (!aiRumor.length) {
     md += `（暂无符合门槛的小道消息）\n\n`;
   } else {
     for (const item of aiRumor) {
-      const t = escapeMd(item.title || "线索");
-      const s = escapeMd(item.summary || "");
-      const c = escapeMd(item.credibility || "中");
+      const t = escapeMd(finalizeReadableText(item.title || "线索"));
+      const s = escapeMd(clipToSentence(finalizeReadableText(item.summary || ""), 170));
+      const c = escapeMd(finalizeReadableText(item.credibility || "中"));
       md += `- **${t}**：${s}（可信度：${c}）${renderRefs(item.refs, idToItem, refTranslations)}\n`;
     }
     md += `\n`;
   }
 
-  // 4) 参考来源（编号 + 链接）
+  // 5) 参考来源（编号 + 链接）
   md += `## 参考来源\n\n`;
   for (const m of materials) {
     const translatedTitle = refTranslations[m.refId] || "";
@@ -2762,7 +3009,7 @@ async function main() {
     try {
       console.log(`\n[fetch] ${sourceName} (${s.ingestion_mode}/${s.parser})`);
       if (s.ingestion_mode === "direct_feed" && s.parser === "rss") {
-        const items = await fetchRssItems(s.feed_url || s.url, sourceName);
+        const items = await fetchRssItems(s);
         console.log(`[ok] ${sourceName} items=${items.length}`);
         candidates.push(...items.map((it) => ({
           ...it,

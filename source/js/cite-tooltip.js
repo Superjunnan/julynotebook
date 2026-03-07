@@ -36,6 +36,20 @@
 
   // 鼠标进入引用编号时显示
   document.addEventListener("mouseover", show);
+  // 移动端点击引用编号时显示（再次点击隐藏）
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("a.cite");
+    if (!el) {
+      hide();
+      return;
+    }
+    const alreadyVisible = tooltip.style.display === "block" && tooltip.textContent === el.getAttribute("data-cite");
+    if (alreadyVisible) {
+      hide();
+      return;
+    }
+    show(e);
+  });
   // 鼠标离开引用编号时隐藏
   document.addEventListener("mouseout", (e) => {
     if (e.target.closest("a.cite")) hide();
