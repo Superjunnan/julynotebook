@@ -820,6 +820,146 @@
       "title": "30B参数超越GPT-5！REDSearcher让「深度搜索Agent」做到低成本可扩展！",
       "text": "「2018 到 2023 年间在 EMNLP 会议上发表的那篇论文中，第一作者本科就读于达特茅斯学院、第四作者本科就读于宾夕法尼亚大学的那篇科学论文，题目是什么？」 这并不是一道靠记忆就能解答的题。Agent 必须在多轮环境交互中，不断假设、验证并修正路径，始终保持推理一致性，才能将零散证据整合成自洽链条。 2025 年被视为 AI Agent 元年，但真正的自主 Agent 核心在于「深度搜索」，在长程任务中像人类专家一样维持目标、验证信息并动态调整策略。然而，训练这样的 Agent 面临三大瓶颈： 数据稀缺：高难度长程问答任务极度依赖人工标注，成本高昂。因此，我们需要一条能够自动化合成高难度问题的链路。 能力鸿沟：预训练模型虽知识储备丰富，却缺乏与真实环境进行长程交互的能力。这需要通过低成本的中训练阶段来弥补鸿沟。 环境缺失：在真实环境中训练成本高且不可控。一个功能等价的模拟环境，可以在本地复现搜索过程，从而支持算法的快速迭代。 为突破瓶颈，REDSearcher 团队设计了一套低成本、可扩展的训练框架，最终使用 30B 规格模型在深度搜索任务上取得开源模型 SoTA，并且超越了 GPT-5 等一众闭源模型。 论文标题：REDSearcher: A Scalable and Cost-Efficient Framework for Long-Horizon Search Agents项目主页：https://github.com/RedSearchAgent/REDSearcher论文链接：https://arxiv.org/abs/2602.14234Collections：https://huggingface.co/collections/Zchu/redsearcher 一、什么是「足够难」的深度搜索题目？ 什么是困难的搜索题目？推理跳数往往只是表象，应该追求的是问题的结构性困难。 1. 拓扑复杂度：用树宽衡量「结构性困难」 复杂任务中，信息分叉交织形成回环。Agent 需同时记忆多路推论，时刻验证一致性，并随时准备整体回溯，这便是深度搜索的核心挑战。为此，团队引入图论中的 TreeWidth（树宽）概念来刻画这种「结构性困难」。以下通过三种结构问题进行对比： 线性/树状（树宽=1）：典型链式推理，只需按部就班检索便可解答。 菱形/回环（树宽=2）：出现分叉与重汇合，要求 Agent 维持多路假设的一致性，并在矛盾时进行回溯。 强耦合子图（树宽≥3）：形成网状约束，需要将零散证据拼合成一致的整体，迫使模型进行全局验证和回溯。 2. 信息分散度：杜绝搜索「捷径」 即使问题的拓扑结构很复杂，如果存在一个网页恰好包含所有关键事实，模型一次检索就能抄走答案。为此，团队引入「信息分散度」，即覆盖全部关键证据所需的最小来源数。信息分散度越大，表明问题相关的证据片段（注：原文为“争取片段”，疑为笔误，此处已作修正）在互联网上的分布就更加零散，这迫使 Agent 与外部环境进行更多轮次的交互从而获取更加充分的信息。 二、大规模「自动化」合成「高难度」的深度搜索问题 基于双约束复杂度标准，我们采用 graph-to-text 流程合成数据：先生成符合树宽与分散度的推理图，再将其翻译为自然语言问题，并经过多层校验确保「高难度、可解且答案唯一」。同时，我们设计了基于「结构化信息」与「网络浏览」两套图构造流程，以覆盖不同搜索环境。在合成问题中，我们采取： 拓扑结构增强：直接生成高树宽图的成功率较低。为此，我们引入大模型智能体对初始依赖图进行「拓扑加密」，通过添加环状与交错约束，显著提升结构复杂度，迭代地提高问题难度。 工具增强的问题合成：在问题构造阶段，我们主动植入工具调用需求。通过将关键实体替换为隐含工具依赖的表达（如地名→地图服务、文章→谷歌学术），使工具调用成为解题前置条件。 三、多模态扩展：从「文本图」到「多模态图」 在文本合成基础上，REDSearcher 通过模态注入将纯文本推理图转化为跨模态推理，使部分约束锚定在图像中。 视觉属性锚定：用图像描述替换节点的文本属性，迫使模型先识别图像再关联知识。跨模态依赖：设置视觉不可替代约束，使图像搜索成为推理必经之路，而非冗余信息。视觉语义抽象：使用抽象指代替代直接命名，迫使模型识别图像内容后再",
       "at": "2026-03-09"
+    },
+    "https://techcrunch.com/2026/03/09/openai-acquires-promptfoo-to-secure-its-ai-agents/": {
+      "title": "OpenAI acquires Promptfoo to secure its AI agents",
+      "text": "In Brief Posted: 10:49 AM PDT · March 9, 2026 Image Credits:Alex Wong / Getty Images OpenAI announced Monday it has acquired Promptfoo, an AI security startup founded in 2024 to protect LLMs from online adversaries. The frontier lab said in a blog post that once the deal closes, Promptfoo’s technology will be integrated into OpenAI Frontier, its enterprise platform for AI agents. The development of independent AI agents that perform digital tasks has generated excitement about productivity gains. But it’s also given bad actors fresh opportunities to access sensitive data or manipulate automated systems. This deal underscores how frontier labs are scrambling to prove their technology can be used safely in critical business operations. Promptfoo was founded by Ian Webster and Michael D’Angelo to develop tools that companies can use to test security vulnerabilities in LLMs, including an open-source interface and library. The company reports that its products are used by more than 25% of Fortune 500 companies. Promptfoo has raised just $23 million since its founding, and was valued at $86 million after its most recent round in July 2025, according to Pitchbook. OpenAI did not disclose the value of the transaction. OpenAI’s post said Promptfoo’s technology will allow its agent platform to perform automated red-teaming, evaluate agentic workflows for security concerns, and monitor activities for risks and compliance needs. The company also said it expects to continue building out Promptfoo’s open-source offering. Techcrunch event San Francisco, CA | October 13-15, 2026 Topics Subscribe for the industry’s biggest tech news Latest in AI",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/09/anthropic-launches-code-review-tool-to-check-flood-of-ai-generated-code/": {
+      "title": "Anthropic launches code review tool to check flood of AI-generated code",
+      "text": "When it comes to coding, peer feedback is crucial for catching bugs early, maintaining consistency across a codebase, and improving overall software quality. The rise of “vibe coding” — using AI tools that take instructions given in plain language and quickly generate large amounts of code — has changed how developers work. While these tools have sped up development, they have also introduced new bugs, security risks, and poorly understood code. Anthropic’s solution is an AI reviewer designed to catch bugs before they make it into the software’s codebase. The new product, called Code Review, launched Monday in Claude Code. “We’ve seen a lot of growth in Claude Code, especially within the enterprise, and one of the questions that we keep getting from enterprise leaders is: Now that Claude Code is putting up a bunch of pull requests, how do I make sure that those get reviewed in an efficient manner?” Cat Wu, Anthropic’s head of product, told TechCrunch. Pull requests are a mechanism that developers use to submit code changes for review before those changes make it into the software. Wu said Claude Code has dramatically increased code output, which has increased pull request reviews that have caused a bottleneck to shipping code. “Code Review is our answer to that,” Wu said. Anthropic’s launch of Code Review — arriving first to Claude for Teams and Claude for Enterprise customers in research preview — comes at a pivotal moment for the company. Techcrunch event San Francisco, CA | October 13-15, 2026 On Monday, Anthropic filed two lawsuits against the Department of Defense in response to the agency’s designation of Anthropic as a supply chain risk. The dispute will likely see Anthropic leaning more heavily on its booming enterprise business, which has seen subscriptions qua",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/09/anthropic-sues-defense-department-over-supply-chain-risk-designation/": {
+      "title": "Anthropic sues Defense Department over supply-chain risk designation",
+      "text": "Anthropic has made good on its promise to challenge the Department of Defense (DOD) in court after the agency labeled it a supply-chain risk late last week. The Claude maker filed two complaints against the DOD on Monday in California and Washington, D.C., after a weeks-long conflict between Anthropic and the DOD over whether the military should have unrestricted access to Anthropic’s AI systems. Anthropic had two firm red lines: it didn’t want its technology to be used for mass surveillance of Americans and didn’t believe it was ready to power fully autonomous weapons with no humans making targeting and firing decisions. Defense Secretary Pete Hegseth argued that the Pentagon should have access to AI systems for “any lawful purpose” and that it shouldn’t be limited by a private contractor. A supply chain risk label is usually reserved for foreign adversaries, and requires any company or agency that does work with the Pentagon to certify that it doesn’t use Anthropic’s models. While several private companies are still working with Anthropic, the firm is poised to lose much of its business within the government. Anthropic called the DOD’s actions “unprecedented and unlawful” and accuses the administration of retaliation in a complaint filed in San Francisco federal court. “The Constitution does not allow the government to wield its enormous power to punish a company for its protected speech,” the lawsuit reads. The protected speech Anthropic refers to is its belief about the “limitations of its own AI services and important issues of AI safety,” per the lawsuit. The administration, including Defense Secretary Hegseth and President Trump, have criticized Anthropic and its CEO Dario Amodei as “woke” and “radical” over the company’s calls for stronger AI safety and transpar",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/891377/anthropic-dod-lawsuit": {
+      "title": "Anthropic is suing the Department of Defense",
+      "text": "Hayden Field is The Verge’s senior AI reporter. An AI beat reporter for more than five years, her work has also appeared in CNBC, MIT Technology Review, Wired UK, and other outlets.Anthropic has sued the US government over its designation as a supply-chain risk, the latest move in a weekslong battle between it and the Pentagon over the acceptable use cases for its military AI tech. The suit, filed in a California district court, accuses the Trump administration of illegally punishing the company for setting “red lines” on mass domestic surveillance and fully autonomous weapons.“The federal government retaliated against a leading frontier AI developer for adhering to its protected viewpoint on a subject of great public significance — AI safety and the limitations of its own AI models — in violation of the Constitution and laws of the United States,” the suit reads. “Defendants are seeking to destroy the economic value created by one of the world’s fastest-growing private companies, which is a leader in responsibly developing an emergent technology of vital significance to our Nation.”The lawsuit follows a rollercoaster couple of weeks for Anthropic, in which the company was faced with the threat of — and then the official designation of — being made a supply chain risk. The designation is typically not made public and often applies to foreign companies that could be a cybersecurity threat or other material risk to national security, rather than companies headquartered in the US. Additionally, President Donald Trump ordered all government agencies to cease using Anthropic’s tech within six months. Anthropic’s blacklisting raised eyebrows and caused significant bipartisan controversy due to fears that disagreeing with a current presidential administration could significant",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/891514/anthropic-pentagon-lawsuit-amicus-brief-openai-google": {
+      "title": "Employees across OpenAI and Google support Anthropic’s lawsuit against the Pentagon",
+      "text": "On Monday, Anthropic filed its lawsuit against the Department of Defense over being designated as a supply chain risk. Hours later, nearly 40 employees from OpenAI and Google — including Jeff Dean, Google’s chief scientist and Gemini lead — filed an amicus brief in support of Anthropic’s lawsuit, detailing their concerns over the Trump administration’s decision and the technology’s risks and implications.The news follows a dramatic few weeks for Anthropic, in which the Trump administration labeled the company a supply chain risk — a designation typically reserved for foreign companies that the government deems a potential risk to national security in some way — after Anthropic stood firm on two red lines regarding acceptable use cases for military use of its technology: domestic mass surveillance and fully autonomous weapons (or AI systems with the power to kill with no human involvement). Negotiations broke down, followed by public insults and other AI companies stepping in to sign contracts allowing “any lawful use” of their technology.The supply chain risk designation not only prevents Anthropic from working on military contracts, it also blacklists other companies if they used Anthropic products in their line of work for the Pentagon, forcing them to uproot Claude if they wished to maintain their lucrative contracts. As the first model cleared for classified intelligence, however, Anthropic’s tools are already deeply integrated into the Pentagon’s work — so much so that just hours after Defense Secretary Pete Hegseth announced the designation, the U.S. military reportedly used Claude in the campaign that killed the leader of Iran, Ayatollah Ali Khamenei.The amicus brief seeks to make the points that Anthropic’s supply chain risk designation “is improper retaliation ",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/09/qualcomms-partnership-with-neura-robotics-is-just-the-beginning/": {
+      "title": "Qualcomm’s partnership with Neura Robotics is just the beginning",
+      "text": "German robotics startup Neura Robotics has inked a partnership with semiconductor giant Qualcomm to build the next generation of robots and physical AI. The deal is the latest coupling in the emerging physical AI industry between robotics startups and larger tech hardware and software companies. While no specific products were mentioned in the Monday announcements, the companies will work together to build the “brain and nervous system” of robots in a quest to advance the deployment of humanoid and general-purpose robots in the real world in both domestic and industrial settings. More specifically, Neura will use Qualcomm’s Dragonwing Robotics IQ10 processors as reference designs in its robots. This IQ10 series was announced at CES earlier this year, and these chips are designed to work with autonomous mobile robots (AMRs) and humanoids. Neura also plans to use its Neuraverse robotic simulation and training platform, which was released in June 2025, to test and fine-tune the robots running on Qualcomm’s IQ10 processors. “This collaboration marks a major step toward making physical AI real: open, scalable, and trusted,” David Reger, CEO and founder of Neura Robotics, said in a press release. “By bringing together our cognitive robotics platforms and the Neuraverse ecosystem with Qualcomm Technologies’ leadership in edge AI and connectivity, we’re aiming to accelerate a future where cognitive robots operate safely alongside humans across industries and throughout everyday life.” This deal makes a lot of sense for both sides. And it’s a formula that will likely become a popular strategy for robotics companies trying to bring their products into the real world. For instance, Boston Dynamics announced a strategic partnership with Google DeepMind in January to speed up the de",
+      "at": "2026-03-10"
+    },
+    "https://openai.com/index/openai-to-acquire-promptfoo": {
+      "title": "OpenAI to acquire Promptfoo",
+      "text": "OpenAI is acquiring Promptfoo, an AI security platform that helps enterprises identify and remediate vulnerabilities in AI systems during development.",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/09/sandberg-clegg-join-nscale-board-as-this-stargate-norway-startup-hits-14-6b-valuation/": {
+      "title": "Sandberg, Clegg join Nscale board as this ‘Stargate Norway’ startup hits $14.6B  valuation",
+      "text": "Amid growing demand for data centers that can deliver AI compute at scale, Nvidia-backed British AI infrastructure company Nscale is now valued at $14.6 billion. This makes it one of Europe’s latest decacorns alongside Helsing and Mistral AI. Nscale has bet on vertical integration, from energy and data centers to compute and orchestration software. Its new valuation stems from a $2 billion Series C, which it calls “the largest in European history,” though the figure includes a $433 million pre-Series C SAFE backed by Blue Owl, Dell, Nvidia and Nokia in October. The raise was supported by Goldman Sachs and JPMorgan, whose involvement has been interpreted as IPO preparation — and not without reason: Nscale CEO Josh Payne told The New York Times his company might seek to go public “as early as this year” to generate more capital. Alongside its funding and plans, the company also announced that former Meta COO Sheryl Sandberg, former Yahoo president Susan Decker, and former U.K. deputy prime minister Nick Clegg are joining its board. Nscale is no newcomer to big rounds and announcements. In September, it announced a $1.1 billion Series B led by Aker. Aker is a public Norwegian company with interests in energy and is also co-leading the Series C alongside New York-based investment firm 8090 Industries. The companies also agreed that Aker’s joint venture with Nscale will now be fully managed by the startup. Dubbed “Stargate Norway,” this Norway-based AI infrastructure project has the ambition to run on 100,000 Nvidia GPUs by the end of 2026, with OpenAI as an initial customer. According to Aker president and CEO, Øyvind Eriksen, who sits on Nscale’s board, “this step strengthens execution by putting delivery and governance under one roof, while keeping continuity for the peop",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/tech/891352/x-grok-xai-edit-blocker-photo-toggle": {
+      "title": "X says you can block Grok from editing your photos",
+      "text": "Jess Weatherbed is a news writer focused on creative industries, computing, and internet culture. Jess started her career at TechRadar, covering news and hardware reviews.X has introduced a new feature that makes it slightly harder for other users to manipulate your uploaded images with the Grok chatbot. As reported by Social Media Today and verified by The Verge, a new toggle within the image upload settings on the X iOS app says it can “block modifications by Grok” when enabled. But it doesn’t actually prevent Grok from editing your photos.The small print underneath the feature’s name reveals a significant limitation: users can only “prevent @Grok from modifying this content.” In our testing, the toggle only blocks the mechanism of tagging the xAI chatbot in replies to an image on X, alongside editing instructions — a capability that was notably abused to undress photographs of real men, women, and children in early January. This feature was blocked for free X accounts in response to global backlash from lawmakers and regulators, but paying subscribers can still edit images by tagging the bot.This new option isn’t easy to find. When you upload an image into the X post builder, you can locate it by tapping on the paintbrush symbol that appears on the bottom right of the thumbnail, and then selecting the flag icon at the bottom right of the editing taskbar. The Grok blocker didn’t appear at any point during the X image upload process on the web in our testing. The toggle also doesn’t appear on older content that’s already been uploaded to X.The Verge published an image on X with the Grock block toggle enabled and tried to edit it with separate accounts. While free users are already blocked from editing images via @Grok responses, the new toggle also prevents paying Prem",
+      "at": "2026-03-10"
+    },
+    "https://www.wired.com/story/openai-deepmind-employees-file-amicus-brief-anthropic-dod-lawsuit/": {
+      "title": "OpenAI and Google Workers File Amicus Brief in Support of Anthropic Against the US Government",
+      "text": "More than 30 employees from OpenAI and Google, including Google DeepMind chief scientist Jeff Dean, filed an amicus brief on Monday in support of Anthropic in its legal fight against the US government.“If allowed to proceed, this effort to punish one of the leading US AI companies will undoubtedly have consequences for the United States’ industrial and scientific competitiveness in the field of artificial intelligence and beyond,” the employees wrote.The brief was filed just hours after Anthropic sued the Department of Defense and other federal agencies over the Pentagon’s decision to designate the company a “supply-chain risk.” The sanction, which severely limits Anthropic’s ability to work with military contractors, went into effect after Anthropic’s negotiations with the Pentagon fell apart. The AI startup is seeking a temporary restraining order to continue its work with military partners as the lawsuit progresses. This brief specifically supports this motion.Signatories of the brief include Google DeepMind researchers Zhengdong Wang, Alexander Matt Turner, and Noah Siegel, as well as OpenAI researchers Gabriel Wu, Pamela Mishkin, and Roman Novak, among others. Amicus briefs are legal filings submitted by parties that are not directly involved in a court case but that have expertise relevant to it. The employees signed in a personal capacity and don’t represent the views of their companies, according to the brief.OpenAI and Google did not immediately respond to WIRED’s request for comment.The amicus brief says that the Pentagon’s decision to blacklist Anthropic “introduces an unpredictability in [their] industry that undermines American innovation and competitiveness” and “chills professional debate on the benefits and risks of frontier AI systems.” It notes that th",
+      "at": "2026-03-10"
+    },
+    "https://www.wired.com/story/anthropic-sues-department-of-defense-over-supply-chain-risk-designation/": {
+      "title": "Anthropic Sues Department of Defense Over Supply-Chain-Risk Designation",
+      "text": "Anthropic filed a federal lawsuit against the US Department of Defense and other federal agencies on Monday, challenging its designation of the AI company as a “supply-chain risk.”The Pentagon formally sanctioned Anthropic last week, capping a weeks-long, publicly aired disagreement over limits on use of its generative AI technology for military applications such as autonomous weapons.“We do not believe this action is legally sound, and we see no choice but to challenge it in court,” Anthropic CEO Dario Amodei wrote in a blog post on Thursday.The lawsuit, which was filed in a federal court in California, requested that a judge reverse the designation and stop federal agencies from enforcing it. “The Constitution does not allow ​the government to wield its enormous power to punish a company for its protected speech,” Anthropic said in the filing. “Anthropic turns to the judiciary as a last resort to vindicate its rights and halt the Executive’s unlawful campaign of retaliation.”Anthropic is also seeking a temporary restraining order to continue its government sales. The company proposed that the government respond to that request by 9 pm Pacific on Wednesday and that a judge hold a hearing on the issue on Friday.The AI startup, which develops a suite of AI models called Claude, is facing the possibility of losing hundreds of millions of dollars in annual revenue from the Pentagon and the rest of the US government. It also may lose the business of software companies that incorporate Claude into services they sell to federal agencies. Several Anthropic customers have reportedly said they are pursuing alternatives due to the Defense Department’s risk designation.Amodei wrote that the “vast majority” of Anthropic’s customers will not have to make changes. The US government’s",
+      "at": "2026-03-10"
+    },
+    "https://www.technologyreview.com/2026/03/09/1134063/how-ai-is-turning-the-iran-conflict-into-theater/": {
+      "title": "How AI is turning the Iran conflict into theater",
+      "text": "The author of that post on X was referring to an online intelligence dashboard following the US-Israel strikes against Iran in real time. Built by two people from the venture capital firm Andreessen Horowitz, it combines open-source data like satellite imagery and ship tracking with a chat function, news feeds, and links to prediction markets, where people can bet on things like who Iran’s next “supreme leader” will be (the recent selection of Mojtaba Khamenei left some bettors with a payout). I’ve reviewed over a dozen other dashboards like this in the last week. Many were apparently “vibe-coded” in a couple of days with the help of AI tools, including one that got the attention of a founder of the intelligence giant Palantir, the platform through which the US military is accessing AI models like Claude during the war. Some were built before the conflict in Iran, but nearly all of them are being advertised by their creators as a way to beat the slow and ineffective media by getting straight to the truth of what’s happening on the ground. “Just learned more in 30 seconds watching this map than reading or watching any major news network,” one commenter wrote on LinkedIn, responding to a visualization of Iran’s airspace being shut down before the strikes. Much of the spotlight on AI and the Iran conflict has rightfully been on the role that models like Claude might be playing in helping the US military make decisions about where to strike. But these intelligence dashboards and the ecosystem surrounding them reflect a new role that AI is playing in wartime: mediating information, often for the worse. There’s a confluence of factors at play. AI coding tools mean people don’t need much technical skill to assemble open-source intelligence anymore, and chatbots can offer fast,",
+      "at": "2026-03-10"
+    },
+    "https://arxiv.org/abs/2603.05764": {
+      "title": "TML-Bench: Benchmark for Data Science Agents on Tabular ML Tasks",
+      "text": "View PDF HTML (experimental) Abstract:Autonomous coding agents can produce strong tabular baselines quickly on Kaggle-style tasks. Practical value depends on end-to-end correctness and reliability under time limits. This paper introduces TML-Bench, a tabular benchmark for data science agents on Kaggle-style tasks. This paper evaluates 10 OSS LLMs on four Kaggle competitions and three time budgets (240s, 600s, and 1200s). Each model is run five times per task and budget. A run is successful if it produces a valid submission and a private-holdout score on hidden labels that are not accessible to the agent. This paper reports median performance, success rates, and run-to-run variability. MiniMax-M2.1 model achieves the best aggregate performance score on all four competitions under the paper's primary aggregation. Average performance improves with larger time budgets. Scaling is noisy for some individual models at the current run count. Code and materials are available at this https URL. Comments: 19 pages, 16 tables and figures Subjects: Machine Learning (cs.LG); Artificial Intelligence (cs.AI) ACM classes: I.2.6; I.2.11; I.2.1; D.2.8 Cite as: arXiv:2603.05764 [cs.LG] (or arXiv:2603.05764v1 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2603.05764 arXiv-issued DOI via DataCite (pending registration) Submission history From: Mykola Pinchuk [view email] [v1] Thu, 5 Mar 2026 23:48:41 UTC (1,402 KB)",
+      "at": "2026-03-10"
+    },
+    "https://arxiv.org/abs/2603.05689": {
+      "title": "SecureRAG-RTL: A Retrieval-Augmented, Multi-Agent, Zero-Shot LLM-Driven Framework for Hardware Vulnerability Detection",
+      "text": "View PDF HTML (experimental) Abstract:Large language models (LLMs) have shown remarkable capabilities in natural language processing tasks, yet their application in hardware security verification remains limited due to scarcity of publicly available hardware description language (HDL) datasets. This knowledge gap constrains LLM performance in detecting vulnerabilities within HDL designs. To address this challenge, we propose SecureRAG-RTL, a novel Retrieval-Augmented Generation (RAG)-based approach that significantly enhances LLM-based security verification of hardware designs. Our approach integrates domain-specific retrieval with generative reasoning, enabling models to overcome inherent limitations in hardware security expertise. We establish baseline vulnerability detection rates using prompt-only methods and then demonstrate that SecureRAG-RTL achieves substantial improvements across diverse LLM architectures, regardless of size. On average, our method increases detection accuracy by about 30%, highlighting its effectiveness in bridging domain knowledge gaps. For evaluation, we curated and annotated a benchmark dataset of 14 HDL designs containing real-world security vulnerabilities, which we will release publicly to support future research. These findings underscore the potential of RAG-driven augmentation to enable scalable, efficient, and accurate hardware security verification workflows. Subjects: Cryptography and Security (cs.CR); Artificial Intelligence (cs.AI) Cite as: arXiv:2603.05689 [cs.CR] (or arXiv:2603.05689v1 [cs.CR] for this version) https://doi.org/10.48550/arXiv.2603.05689 arXiv-issued DOI via DataCite Submission history From: Touseef Hasan [view email] [v1] Thu, 5 Mar 2026 21:25:49 UTC (372 KB)",
+      "at": "2026-03-10"
+    },
+    "https://arxiv.org/abs/2602.10177": {
+      "title": "Towards Autonomous Mathematics Research",
+      "text": "Authors:Tony Feng, Trieu H. Trinh, Garrett Bingham, Dawsen Hwang, Yuri Chervonyi, Junehyuk Jung, Joonkyung Lee, Carlo Pagano, Sang-hyun Kim, Federico Pasqualotto, Sergei Gukov, Jonathan N. Lee, Junsu Kim, Kaiying Hou, Golnaz Ghiasi, Yi Tay, YaGuang Li, Chenkai Kuang, Yuan Liu, Hanzhao Lin, Evan Zheran Liu, Nigamaa Nayakanti, Xiaomeng Yang, Heng-Tze Cheng, Demis Hassabis, Koray Kavukcuoglu, Quoc V. Le, Thang Luong View PDF HTML (experimental) Abstract:Recent advances in foundational models have yielded reasoning systems capable of achieving a gold-medal standard at the International Mathematical Olympiad. The transition from competition-level problem-solving to professional research, however, requires navigating vast literature and constructing long-horizon proofs. In this work, we introduce Aletheia, a math research agent that iteratively generates, verifies, and revises solutions end-to-end in natural language. Specifically, Aletheia is powered by an advanced version of Gemini Deep Think for challenging reasoning problems, a novel inference-time scaling law that extends beyond Olympiad-level problems, and intensive tool use to navigate the complexities of mathematical research. We demonstrate the capability of Aletheia from Olympiad problems to PhD-level exercises and most notably, through several distinct milestones in AI-assisted mathematics research: (a) a research paper (Feng26) generated by AI without any human intervention in calculating certain structure constants in arithmetic geometry called eigenweights; (b) a research paper (LeeSeo26) demonstrating human-AI collaboration in proving bounds on systems of interacting particles called independent sets; and (c) an extensive semi-autonomous evaluation (Feng et al., 2026a) of 700 open problems on Bloom's Erdos Conj",
+      "at": "2026-03-10"
+    },
+    "https://arxiv.org/abs/2512.16310": {
+      "title": "Agent Tools Orchestration Leaks More: Dataset, Benchmark, and Mitigation",
+      "text": "View PDF HTML (experimental) Abstract:Driven by Large Language Models, the single-agent, multi-tool architecture has become a popular paradigm for autonomous agents. However, this architecture introduces a severe privacy risk, which we term Tools Orchestration Privacy Risk (TOP-R): an agent, to achieve a benign user goal, autonomously aggregates non-sensitive fragments from multiple tools and synthesizes unexpected sensitive information. We provide the first systematic study of this risk. We establish a formal framework characterizing TOP-R through three necessary conditions -- conclusion sensitivity, single-source non-inferability, and compositional inferability. We construct TOP-Bench via a Reverse Inference Seed Expansion (RISE) pipeline, incorporating paired social-context scenarios for diagnostic analysis. We further introduce the H-Score, a harmonic mean of task completion and safety, to quantify the utility-safety trade-off. Evaluation of six state-of-the-art LLMs reveals pervasive risk: the average Overall Leakage Rate reaches 62.11% with an H-Score of only 52.90%. Our experiments identify three root causes: deficient spontaneous privacy awareness, reasoning overshoot, and inference inertia. Guided by these findings, we propose three complementary mitigation strategies targeting the output, reasoning, and review stages of the agent pipeline; the strongest configuration, Dual-Constraint Privacy Enhancement, achieves an H-Score of 79.20%. Our work reveals a new risk class in tool-using agents, analyzes leakage causes, and provides practical mitigation strategies. Comments: 15 pages, 4 figures. Dataset and code are available at this https URL Subjects: Cryptography and Security (cs.CR); Artificial Intelligence (cs.AI); Computation and Language (cs.CL) Cite as: arXi",
+      "at": "2026-03-10"
+    },
+    "https://arxiv.org/abs/2603.05522": {
+      "title": "RoboLayout: Differentiable 3D Scene Generation for Embodied Agents",
+      "text": "View PDF HTML (experimental) Abstract:Recent advances in vision language models (VLMs) have shown strong potential for spatial reasoning and 3D scene layout generation from open-ended language instructions. However, generating layouts that are not only semantically coherent but also feasible for interaction by embodied agents remains challenging, particularly in physically constrained indoor environments. In this paper, RoboLayout is introduced as an extension of LayoutVLM that augments the original framework with agent-aware reasoning and improved optimization stability. RoboLayout integrates explicit reachability constraints into a differentiable layout optimization process, enabling the generation of layouts that are navigable and actionable by embodied agents. Importantly, the agent abstraction is not limited to a specific robot platform and can represent diverse entities with distinct physical capabilities, such as service robots, warehouse robots, humans of different age groups, or animals, allowing environment design to be tailored to the intended agent. In addition, a local refinement stage is proposed that selectively reoptimizes problematic object placements while keeping the remainder of the scene fixed, improving convergence efficiency without increasing global optimization iterations. Overall, RoboLayout preserves the strong semantic alignment and physical plausibility of LayoutVLM while enhancing applicability to agent-centric indoor scene generation, as demonstrated by experimental results across diverse scene configurations. Subjects: Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV); Machine Learning (cs.LG); Robotics (cs.RO) Cite as: arXiv:2603.05522 [cs.AI] (or arXiv:2603.05522v1 [cs.AI] for this version) https://doi.org",
+      "at": "2026-03-10"
+    },
+    "https://simonwillison.net/2026/Mar/9/not-so-boring/": {
+      "title": "Perhaps not Boring Technology after all",
+      "text": "This is Perhaps not Boring Technology after all by Simon Willison, posted on 9th March 2026. ai 1897 generative-ai 1681 llms 1647 ai-assisted-programming 358 boring-technology 9 coding-agents 171 agentic-engineering 23 november-2025-inflection 12 Previous: Can coding agents relicense open source through a “clean room” implementation of code? Monthly briefing Sponsor me for $10/month and get a curated email digest of the month's most important LLM developments. Pay me to send you less! Sponsor & subscribe",
+      "at": "2026-03-10"
+    },
+    "https://simonwillison.net/2026/Mar/9/production-query-plans-without-production-data/": {
+      "title": "Production query plans without production data",
+      "text": "Statistics dumps are tiny. A database with hundreds of tables and thousands of columns produces a statistics dump under 1MB. The production data might be hundreds of GB. The statistics that describe it fit in a text file. This is a link post by Simon Willison, posted on 9th March 2026. databases 111 postgresql 158 sql 110 sqlite 446 d-richard-hipp 18 Monthly briefing Sponsor me for $10/month and get a curated email digest of the month's most important LLM developments. Pay me to send you less! Sponsor & subscribe",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/SeaWolf-AI/687506436891961": {
+      "title": "🚀 Introducing MARL — Runtime Middleware That Reduces LLM Hallucination Without Fine-Tuning Now available on PyPI · GitHub · ClawHub · HuggingFace AI models sense they could be wrong, but they can't actually fix what's broken. We evaluated 9 SOTA models (GPT-5.2, Claude Opus 4.6, Gemini 3 Pro, etc.) across 1,800 assessments in FINAL Bench and found a 39.2%p gap between \"recognizing potential errors (MA=0.694)\" and \"actually finding and fixing them (ER=0.302).\" MARL (Model-Agnostic Runtime Middleware for LLMs) was built to close this metacognitive gap. It decomposes a single LLM call into a 5-stage expert pipeline (Hypothesis → Solver → Auditor → Adversarial Verifier → Synthesizer), transforming \"answer in one shot\" into \"think, doubt, correct, and rewrite.\" No weight modification — works instantly with GPT-5.4, Claude, Gemini, Llama, or any OpenAI API-compatible LLM by changing one line: base_url. Ships with 9 domain-specific emergence engines (invention, pharma, genomics, chemistry, ecology, law, and more — 5,538 expert data items) activated by a simple tag like model=\"gpt-5.4::pharma\". pip install marl-middleware MARL is also officially registered on ClawHub, the skill marketplace of OpenClaw — an AI agent platform with 260K+ developers and 3,200+ skills. It's the first middleware in the Reasoning Enhancement category. One command — clawhub install marl-middleware — gives your AI agent a metacognition upgrade. 📝 Technical deep dive: 🤗 Live A/B test: 📦 PyPI: 🐙 GitHub: 🦀 ClawHub: #MARL #LLM #Hallucination #Metacognition #MultiAgent #AIMiddleware #FINALBench #OpenClaw #ClawHub #PyPI #AGI #HuggingFace #ReasoningAI #SelfCorrection #GlassBoxAI",
+      "text": "🚀 Introducing MARL — Runtime Middleware That Reduces LLM Hallucination Without Fine-TuningNow available on PyPI · GitHub · ClawHub · HuggingFaceAI models sense they could be wrong, but they can't actually fix what's broken.We evaluated 9 SOTA models (GPT-5.2, Claude Opus 4.6, Gemini 3 Pro, etc.) across 1,800 assessments in FINAL Bench and found a 39.2%p gap between \"recognizing potential errors (MA=0.694)\" and \"actually finding and fixing them (ER=0.302).\"MARL (Model-Agnostic Runtime Middleware for LLMs) was built to close this metacognitive gap. It decomposes a single LLM call into a 5-stage expert pipeline (Hypothesis → Solver → Auditor → Adversarial Verifier → Synthesizer), transforming \"answer in one shot\" into \"think, doubt, correct, and rewrite.\"No weight modification — works instantly with GPT-5.4, Claude, Gemini, Llama, or any OpenAI API-compatible LLM by changing one line: base_url. Ships with 9 domain-specific emergence engines (invention, pharma, genomics, chemistry, ecology, law, and more — 5,538 expert data items) activated by a simple tag like model=\"gpt-5.4::pharma\".pip install marl-middlewareMARL is also officially registered on ClawHub, the skill marketplace of OpenClaw — an AI agent platform with 260K+ developers and 3,200+ skills. It's the first middleware in the Reasoning Enhancement category. One command — clawhub install marl-middleware — gives your AI agent a metacognition upgrade.📝 Technical deep dive: https://huggingface.co/blog/FINAL-Bench/marl-middleware🤗 Live A/B test: VIDraft/MARL📦 PyPI: https://pypi.org/project/marl-middleware/🐙 GitHub: https://github.com/Vidraft/MARL🦀 ClawHub: https://clawhub.ai/Cutechicken99/marl-middleware#MARL #LLM #Hallucination #Metacognition #MultiAgent #AIMiddleware #FINALBench #OpenClaw #ClawHub #PyPI #AGI #H",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/AINovice2005/333451320002796": {
+      "title": "Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload them to HF Hub as event artifacts, they can be viewed instantly. 🚀 I previously remembered this done in the notus model release: Examples: cc:",
+      "text": "Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload them to HF Hub as event artifacts, they can be viewed instantly. 🚀 I previously remembered this done in the notus model release: argilla/notus-7b-v1Examples: AINovice2005/ModernBERT-base-lora-cicflow-1m-r8 AINovice2005/ModernBERT-base-lora-cicflow-1m-r4 AINovice2005/ModernBERT-base-lora-cicflow-1m-r16cc: @davidberenstein1957",
+      "at": "2026-03-10"
+    },
+    "https://aitntnews.com/newDetail.html?newId=22937": {
+      "title": "卡帕西开源Agent自进化训练框架，5分钟一轮实验，48h内揽星9.5k",
+      "text": "大神Karpathy又开源了新项目——一个能够自主进化的AI科研循环系统。 这个项目名叫autoresearch，主打让智能体完全自主地搞科研，只要在Markdown文档里写好指令，剩下的流程全都由AI自动完成。 而且整个框架十分精简，一共只有630行代码，单个GPU就能跑得动。 它每5分钟就会跑一轮测试，并根据验证结果决定是保留还是丢弃改动，就像一个24小时从不休息且能自我进化的虚拟研究员。 Karpathy还希望，未来能让成千上万个智能体在海量分支里异步协作，不再受限于单一的master分支，从而通过群体智慧实现科研效率的爆发。 发布才不到两天，autoresearch斩获的星标数就已经超过了9.5k。 在X上，Karpathy的帖子也有580多万次围观。 Shopify CEO看了Karpathy的项目之后表示膜拜，直言这个项目实在是太疯狂了。 5分钟自动化实验 autoresearch这个项目的思路非常简单，就是把AI训练的循环试错自动化。 AI自己修改代码、跑5分钟的短实验、看效果好不好再决定下一步怎么走。 基于nanochat模型训练核心，定了两条铁律： 一是每次实验的纯训练时间固定为5分钟，避免因为不同改动下的训练时长不同而影响结果； 二是只看val_bpb，这个指标的数值越低，就代表模型效果越好，而且它和模型的大小无关。 这样就把训练逻辑浓缩成了单GPU就能跑的版本，代码也就630行。 一眼看过去，整个代码库就靠三个核心文件—— 设置好后全程不用动的prepare.py；需要AI自己改的train.py；只有人类能改的program.md。 prepare.py用于定义训练的固定常量，比如模型基础维度、下载模型训练需要的原始数据、训练适配的分词器等，同时还提供实验过程中需要的工具。 train.py是AI唯一可以编辑、修改的文件，相当于AI的实验笔记本。 这里面装着模型训练的所有核心内容，有完整的GPT架构、训练用的优化器以及整个训练循环逻辑。 AI能在这个文件里改的内容包括模型的层数、训练的批次大小、学习率、权重衰减等等。 所有和训练相关的调整，都集中在这个文件里，既然AI的修改范围可控，也方便人类后续回看到底改了哪里。 program.md是一个纯文本文件，由人类编写修改，里面是给AI的基线指令，比如研究方向、实验规则、参考依据等。 AI启动实验之前，会先读取这个文件的指令，再开始修改train.py跑实验。 如果想换研究方向，也不用去碰复杂的训练代码，只需要更新这个文件里的指令就行。 搞懂了核心原理和3个文件，就很容易理解autoresearch的工作流程了。 整个过程就是AI按照人类的指令，在5分钟实验规则下，反复完成修改、训练、评估、决策。 人类在program.md里写好实验指令，然后启动框架，AI会首先读取这些指令，在train.py里做针对性的修改，通常每次只改1到2个地方。 修改完成后，AI会自动启动训练程序，严格遵守框架设定的规则，纯训练时间固定为5分钟，时间一到，训练结束，框架会自动用val_bpb指标给这次的模型打分。 根据打分结果作出决策，如果这次的val_bpb分数更低，说明模型进步了，AI就会保留这次对train.py的修改，把这个版本作为下一次实验的基础； 如果数值变高了，说明这次的修改是无效的，甚至起了反作用，AI就会果断放弃这次的改动，回到上一个表现最好的版本，重新思考改动方向。 完成这一轮判断后，它会立刻开始下一次实验。 按照5分钟一次计算，AI一小时能完成10来组实验，这个效率是人类手搓达不到的。 上图展示了一次近250轮的自主探索，AI最终筛选并保留了29次有效的优化改进。 图中灰色点代表被AI判定为无效而舍弃的实验结果，虽然没有带来提升，但也提供了避坑经验。 下一步：模拟整个博士社群 把autoresearch公开出来之后，卡帕西还在X上畅享了下一步的发展方向。 他借用UC伯克利在1999年发起的SETI@home项目表示，autoresearch未来的目标不仅是模拟一个博士生的科研过程，还要模拟整个博士生研究社群。 SETI@home全称为“Search for Extraterrestrial Intelligence at Home”，核心目标是通过分析射电望远镜收集到",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/codelion/864873082855349": {
+      "title": "Scaling Pedagogical Pre-training to 10 Billion Tokens New blog post exploring what happens when you take optimal data mixing insights and scale up the data generation itself. We built Sutra, a multi-stage framework for generating pedagogical pre-training data guided by a knowledge graph of ~2,000 concepts across 9 domains. The pipeline includes structured content generation, six-dimension quality evaluation, diversity management across 20 content styles, and a cleaning stage to prevent collapse. The result is , a 10.2 billion token pedagogical dataset with rich metadata (domain, complexity, prerequisites, quality scores) on every entry. We trained on it for 3 full epochs (30.6B tokens) on a single A10 GPU in ~78 hours. Key finding: perplexity kept improving across epochs, but benchmark gains plateaued fast. At 70M parameters, the model hits a representational ceiling that more data alone can't break through. Full writeup with comparisons against 7 other datasets, detailed benchmark breakdowns, and connections to recent work on synthetic data scaling, curriculum learning, and data mixing laws: All datasets at multiple scales (10M, 100M, 1B, 10B) plus seed concepts and an SFT variant are in the Sutra Pedagogical Datasets collection.",
+      "text": "Scaling Pedagogical Pre-training to 10 Billion TokensNew blog post exploring what happens when you take optimal data mixing insights and scale up the data generation itself.We built Sutra, a multi-stage framework for generating pedagogical pre-training data guided by a knowledge graph of ~2,000 concepts across 9 domains. The pipeline includes structured content generation, six-dimension quality evaluation, diversity management across 20 content styles, and a cleaning stage to prevent collapse.The result is codelion/sutra-10B, a 10.2 billion token pedagogical dataset with rich metadata (domain, complexity, prerequisites, quality scores) on every entry.We trained codelion/SmolLM2-70M on it for 3 full epochs (30.6B tokens) on a single A10 GPU in ~78 hours. Key finding: perplexity kept improving across epochs, but benchmark gains plateaued fast. At 70M parameters, the model hits a representational ceiling that more data alone can't break through.Full writeup with comparisons against 7 other datasets, detailed benchmark breakdowns, and connections to recent work on synthetic data scaling, curriculum learning, and data mixing laws: https://huggingface.co/blog/codelion/scaling-pedagogical-pretraining-10-billion-tokensAll datasets at multiple scales (10M, 100M, 1B, 10B) plus seed concepts and an SFT variant are in the Sutra Pedagogical Datasets collection.",
+      "at": "2026-03-10"
+    },
+    "https://blogs.nvidia.com/blog/state-of-ai-report-2026/": {
+      "title": "How AI Is Driving Revenue, Cutting Costs and Boosting Productivity for Every Industry in 2026",
+      "text": "AI is everywhere and accelerating everything — becoming essential infrastructure to create the intelligence that will advance every industry. That’s why companies are increasingly focusing on the technology’s return on investment (ROI), as well as how to best apply AI to their own use cases. NVIDIA’s annual “State of AI” reports show how AI is being adopted across industries, what it’s being used for and how companies are achieving ROI, as well as their challenges and goals with the technology. This year’s reports garnered over 3,200 responses from around the world, providing a pulse check on the state of AI in financial services, retail and consumer packaged goods (CPG), healthcare and life sciences, telecommunications and manufacturing. One takeaway is clear: The state of AI is strong. AI adoption is continuing to rise. Companies are building and deploying specialized AI programs with open source tools to tackle their specific challenges. Across every industry, AI is helping increase annual revenue and drive down annual costs while boosting productivity. Read about the broad themes from this year’s reports: Growing enterprise AI adoption AI drives productivity gains across every industry AI increases annual revenue and drives down costs The rise of agentic AI Open source drives AI strategy AI success leads to growing investment The biggest challenges to AI adoption: lack of AI experts Enterprise AI Adoption Matures Enterprise AI is continuing to scale. Companies are moving from AI pilots and assessment to scaled deployment. In nearly every industry survey, the percentage of respondents who said their organizations are actively using AI increased, while the percentage of respondents who said they’re in the assessment phase declined. Overall, 64% of respondents to the s",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/DavidAU/733148472626410": {
+      "title": "21 Qwen 3.5 Fine Tunes (thinking and instruct) ; reg and uncensored (2B to 27B) exceed benchmarks, and work better than org models. All are bench marked against org model. Many exceed all benchmarks of org model. Claude, GLM, Gemini and other distills. Thinking AND dedicated Instruct versions. Core goal: Increase benchmarks, and address long thinking blocks. Highlights: 9B and 27B instruct \"Claude\" versions hit 624 and 675 on the \"ARC-C\" (hard challenge). Thinking fine tunes exceed org model performance (in thinking mode). In many cases there is a drastic reduction in thinking block size. 9B Claude Heretic Uncensored, GGUF : -Neo, Code Imatrix (duel imatrix) - Updated Jinja template - Custom tensor enhancements. COLLECTION [21 models]:",
+      "text": "21 Qwen 3.5 Fine Tunes (thinking and instruct) ; reg and uncensored (2B to 27B) exceed benchmarks, and work better than org models.All are bench marked against org model.Many exceed all benchmarks of org model.Claude, GLM, Gemini and other distills.Thinking AND dedicated Instruct versions.Core goal: Increase benchmarks, and address long thinking blocks.Highlights:9B and 27B instruct \"Claude\" versions hit 624 and 675 on the \"ARC-C\" (hard challenge).Thinking fine tunes exceed org model performance (in thinking mode).In many cases there is a drastic reduction in thinking block size.9B Claude Heretic Uncensored, GGUF :-Neo, Code Imatrix (duel imatrix)- Updated Jinja template- Custom tensor enhancements. DavidAU/Qwen3.5-9B-Claude-4.6-OS-Auto-Variable-HERETIC-UNCENSORED-THINKING-MAX-NEOCODE-Imatrix-GGUFCOLLECTION [21 models]:https://huggingface.co/collections/DavidAU/qwen-35-08-2-4-9-27-35b-regular-uncensored",
+      "at": "2026-03-10"
+    },
+    "https://www.wired.com/story/feeld-was-a-dating-app-for-the-freaks-now-some-people-call-it-normie-hell/": {
+      "title": "Feeld Was a Dating App for the Freaks. Now Some People Call It ‘Normie Hell’",
+      "text": "Alise Morales just happened to be on the dating app Feeld the night a man was detained by ICE agents a mile from her Brooklyn, New York, apartment.Fresh off of a divorce, Morales, a 35-year-old comedian, was in the market for something strictly casual. That’s when she came across Paul’s profile. “I was a couple swipes in, and it took me a second to even get what I was seeing,” she says. He was 32, straight, and, like Morales, looking for “casual fun.” He was also one mile away. Then she noticed his bio: “Hey I’m Paul! ICE agent in from out of town looking for fun :)”Initially, Morales thought it was a bad joke, “but there was nothing else on the profile to indicate that it was, or what the joke would even be,” she says. News alerts across her socials had mentioned an active ICE operation in the area. “I’m like, is this guy actively kidnapping one of my neighbors right now?”Of all the dating and hookup apps, Morales felt the least overwhelmed by Feeld when she joined in the summer of 2025. She “liked the radical honesty” of the people on the platform. But this was a first. “Obviously, I don't expect everyone on there to have the same, like, progressive political beliefs as me, but Feeld does feel like the type of place—because of the sex-positive nature of it, and what it embraces—where it is shocking to see someone like that on there.”Though her experience is unique, it represents a larger shift being felt by some Feeld power users that the app, once primarily a space for nontraditional and kink-friendly daters, now caters to everyone.Launched in 2014 as 3nder, Feeld made a name for itself by embracing people who didn’t fit into the boxes of every other dating app. (Its original pitch: Tinder but for people into threesomes.) Looking for a play partner who is two-spirit ",
+      "at": "2026-03-10"
+    },
+    "https://aibreakfast.beehiiv.com/p/openai-upgrades-chatgpt-to-gpt-5-3-instant-with-massive-hallucination-cuts": {
+      "title": "Mar 4, 2026•13 min readOpenAI upgrades ChatGPT to GPT-5.3 Instant with massive hallucination cutsAI Breakfast",
+      "text": "In partnership withGood morning. It’s Wednesday, March 4th.On this day in tech history: In 1956, An Wang sold his magnetic core memory patent to IBM for $500,000. Ferrite “donut” cores wired into 3D arrays delivered the first reliable random-access storage, replacing finicky vacuum tubes. This tech powered Whirlwind and enabled Samuel’s checkers learner plus Rosenblatt’s Perceptron hardware, the literal memory substrate for early symbolic AI and neural nets. Without stable, fast RAM, the entire AI stack collapses.In today’s email:OpenAI upgrades ChatGPT to GPT-5.3 Instant with massive hallucination cutsGoogle launches Gemini 3.1 Flash-Lite at 1/8th the cost of Pro5 New AI ToolsLatest AI Research PapersYou read. We listen. Let us know what you think by replying to this email.Free, private email that puts your privacy firstA private inbox doesn’t have to come with a price tag—or a catch. Proton Mail’s free plan gives you the privacy and security you expect, without selling your data or showing you ads.Built by scientists and privacy advocates, Proton Mail uses end-to-end encryption to keep your conversations secure. No scanning. No targeting. No creepy promotions.With Proton, you’re not the product — you’re in control.Start for free. Upgrade anytime. Stay private always.Today’s trending AI news stories OpenAI has deployed GPT-5.3 Instant, replacing the 5.2 model as the default ChatGPT experience. The primary goal is \"de-cringification,\" removing the stiff, moralizing, and overly cautious tone that has frustrated power users.Hallucination Reduction: 26.8% drop in web-based errors; 19.7% drop in internal knowledge errors.Prose Refinement: Direct answers that bypass \"preachy\" preambles and excessive safety caveating.Inference Speed: 25% faster than previous Instant iteration",
+      "at": "2026-03-10"
+    },
+    "https://aibreakfast.beehiiv.com/p/anthropic-launches-claude-marketplace": {
+      "title": "Mar 9, 2026•14 min readAnthropic launches Claude MarketplaceAI Breakfast",
+      "text": "Good morning. It’s Monday, March 9th.On this day in tech history: In 1993, Apple, IBM, Motorola, and partners formed the PowerOpen Association to standardize the PowerPC architecture, blending RISC design with Unix compatibility. This collaboration birthed chips like the 601, powering Macs and embedded systems, boosting performance for computational tasks. It enabled efficient floating-point operations crucial for early machine learning prototypes, a subtle but key step in AI hardware history. In today’s email:OpenAI expands GPT-5.4 ecosystem with Codex Security and Excel integrationAnthropic launches Claude Marketplace to consolidate enterprise AI spend5 New AI ToolsLatest AI Research PapersYou read. We listen. Let us know what you think by replying to this email.In Partnership with WozWoz is the AI mobile app builder for serious founders 🚀Woz is built for founders who want to ship real products, not just demos.Other tools are great for demos and prototypes. They start fast, then crumble as the codebase and complexity grow.Founders who hit walls with tools like Lovable, Bolt, and Replit switch to Woz to actually ship.With Woz, founders are launching:Two-sided marketplacesSocial networksAI-powered learning platformsVertical SaaS toolsReal subscription businessesHow? Because Woz is different.It’s engineered for complexity from day one. Clean architecture. Structured backends. Scalable foundations. No duct tape. No rebuilds.Payments. Ads. Database. Auth. AI integrations. Real backend logic. Built in from the start.And it connects to the tools you already use: Claude Code, Cursor, and VS Code.If you’re building a real business, not just a prototype, Woz was built for you.Today’s trending AI news stories OpenAI expands GPT-5.4 ecosystem with Codex Security and Excel integr",
+      "at": "2026-03-10"
     }
   },
   "daily": {
@@ -2252,6 +2392,210 @@
         "candidateTotal": 155
       },
       "at": "2026-03-09"
+    },
+    "2026-03-10": {
+      "fingerprint": "c9ace189915482b18b1d82bba4dd7fd5e5bfab5e1ba63f75d9a7279d236aed46",
+      "daily": {
+        "overview": "今日产业主线聚焦于AI安全与合规的博弈，Anthropic起诉国防部引发行业震荡，同时OpenAI收购Promptfoo强化安全能力，显示头部企业正从技术竞争转向安全与合规的深度布局。",
+        "hotNews": [
+          {
+            "title": "Anthropic起诉国防部，OpenAI与Google员工联名支持",
+            "insight": "Anthropic起诉国防部，OpenAI与Google员工联名支持",
+            "briefing": "Anthropic因被国防部标记为供应链风险而提起诉讼，指控政府报复其坚持的AI安全红线。OpenAI与Google的员工（包括Jeff Dean）联名提交法庭之友意见书，强调此举将损害美国AI产业竞争力。这一事件标志着AI安全与政府监管之间的矛盾升级，可能影响未来AI在国防领域的应用。",
+            "evaluation": "事件涉及多方权威机构，影响深远，但需关注后续法律进展。",
+            "narrative": "Anthropic因被国防部标记为供应链风险而提起诉讼，指控政府报复其坚持的AI安全红线。OpenAI与Google的员工（包括Jeff Dean）联名提交法庭之友意见书，强调此举将损害美国AI产业竞争力。这一事件标志着AI安全与政府监管之间的矛盾升级，可能影响未来AI在国防领域的应用。事件涉及多方权威机构，影响深远，但需关注后续法律进展。",
+            "summary": "Anthropic因被国防部标记为供应链风险而提起诉讼，指控政府报复其坚持的AI安全红线。OpenAI与Google的员工（包括Jeff Dean）联名提交法庭之友意见书，强调此举将损害美国AI产业竞争力。这一事件标志着AI安全与政府监管之间的矛盾升级，可能影响未来AI在国防领域的应用。事件涉及多方权威机构，影响深远，但需关注后续法律进展。",
+            "refs": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "mentionCount": 5,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "OpenAI收购Promptfoo，强化AI代理安全能力",
+            "insight": "OpenAI收购Promptfoo，强化AI代理安全能力",
+            "briefing": "OpenAI宣布收购Promptfoo，旨在将其技术整合到企业AI代理平台中，提升自动化红队测试和合规监控能力。Promptfoo由Ian Webster和Michael D'Angelo创立，已服务超过25%的财富500强企业。此次收购显示OpenAI在安全领域的战略布局，可能推动行业安全标准的提升。",
+            "evaluation": "收购事件对行业安全实践具有示范意义，但具体整合效果待观察。",
+            "narrative": "OpenAI宣布收购Promptfoo，旨在将其技术整合到企业AI代理平台中，提升自动化红队测试和合规监控能力。Promptfoo由Ian Webster和Michael D'Angelo创立，已服务超过25%的财富500强企业。此次收购显示OpenAI在安全领域的战略布局，可能推动行业安全标准的提升。收购事件对行业安全实践具有示范意义，但具体整合效果待观察。",
+            "summary": "OpenAI宣布收购Promptfoo，旨在将其技术整合到企业AI代理平台中，提升自动化红队测试和合规监控能力。Promptfoo由Ian Webster和Michael D'Angelo创立，已服务超过25%的财富500强企业。此次收购显示OpenAI在安全领域的战略布局，可能推动行业安全标准的提升。收购事件对行业安全实践具有示范意义",
+            "refs": [
+              6,
+              1
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 75
+          }
+        ],
+        "otherNews": [
+          {
+            "title": "Perhaps not Boring Technology after all",
+            "insight": "社区观察：Perhaps not Boring Technology after all",
+            "narrative": "该条社区讨论提到“This is Perhaps not Boring Technology after all by Simon Willison, posted on 9th March”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“This is Perhaps not Boring Technology after all by Simon Willison, posted on 9th March”，核心信号更偏观点与风险提示",
+            "refs": [
+              11
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "Employees across OpenAI and Google support",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“On Monday, Anthropic filed its lawsuit against the Department of Defense over being”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“On Monday, Anthropic filed its lawsuit against the Department of Defense over being”，核心信号更偏观点与风险提示",
+            "refs": [
+              1
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "Anthropic sues Defense Department over supply-chain",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“Anthropic has made good on its promise to challenge the Department of Defense (DOD) in”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“Anthropic has made good on its promise to challenge the Department of Defense (DOD) in”，核心信号更偏观点与风险提示",
+            "refs": [
+              2
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "Anthropic Sues Department of Defense Over Supply",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“Anthropic filed a federal lawsuit against the US Department of Defense and other”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“Anthropic filed a federal lawsuit against the US Department of Defense and other”，核心信号更偏观点与风险提示",
+            "refs": [
+              3
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "Anthropic is suing the Department of Defense",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“Hayden Field is The Verge’s senior AI reporter. An AI beat reporter for more than five”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“Hayden Field is The Verge’s senior AI reporter. An AI beat reporter for more than five”，核心信号更偏观点与风险提示",
+            "refs": [
+              4
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "OpenAI and Google Workers File Amicus Brief in",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“More than 30 employees from OpenAI and Google, including Google DeepMind chief”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“More than 30 employees from OpenAI and Google, including Google DeepMind chief”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "refs": [
+              5
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "SecureRAG-RTL: A Retrieval-Augmented, Multi-Agent",
+            "insight": "SecureRAG-RTL：一种用于硬件漏洞检测的检索增强",
+            "narrative": "该条社区讨论提到“View PDF HTML (experimental) Abstract:Large language models (LLMs) have shown”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“View PDF HTML (experimental) Abstract:Large language models (LLMs) have shown”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "refs": [
+              7
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "OpenAI acquires Promptfoo to secure its AI agents",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“In Brief Posted: 10:49 AM PDT · March 9, 2026 Image Credits:Alex Wong / Getty Images”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“In Brief Posted: 10:49 AM PDT · March 9, 2026 Image Credits:Alex Wong / Getty Images”，核心信号更偏观点与风险提示",
+            "refs": [
+              6
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          }
+        ],
+        "coreTech": [
+          {
+            "title": "：一种用于硬件漏洞检测等进展",
+            "summary": "SecureRAG-RTL通过检索增强生成技术提升LLM在硬件安全验证中的表现，平均检测准确率提升30%。",
+            "refs": [
+              7
+            ]
+          },
+          {
+            "title": "代理工具编排泄露更多",
+            "summary": "研究揭示了多工具代理的隐私风险，提出双约束隐私增强策略，将安全评分提升至79.20%。",
+            "refs": [
+              8
+            ]
+          },
+          {
+            "title": "迈向自主数学研究",
+            "summary": "Aletheia数学研究代理展示了从奥赛到博士级问题的推理能力，推动AI科研自动化。",
+            "refs": [
+              9
+            ]
+          },
+          {
+            "title": "：表格机器学习任务的数据科学代理基准",
+            "summary": "TML-Bench评估了LLM在表格机器学习任务中的表现，为数据科学代理开发提供基准。",
+            "refs": [
+              10
+            ]
+          }
+        ],
+        "aiRumor": [
+          {
+            "title": "MARL中间件减少幻觉，无需微调提升纠错能力",
+            "summary": "MARL通过五阶段专家管道减少幻觉，已在9个SOTA模型上验证有效性。",
+            "credibility": "中",
+            "refs": [
+              12
+            ]
+          },
+          {
+            "title": "Qwen 3.5微调模型超越官方版本",
+            "summary": "21个Qwen 3.5微调模型在多个基准上表现优异，优化思考能力。",
+            "credibility": "中",
+            "refs": [
+              14
+            ]
+          },
+          {
+            "title": "Sutra数据集探索教学预训练扩展性",
+            "summary": "Sutra数据集发现数据扩展可能触及表征天花板，基准增益趋于停滞。",
+            "credibility": "中",
+            "refs": [
+              15
+            ]
+          }
+        ],
+        "refTranslations": {
+          "1": "Open AI 和 Google 员工支持 Anthropic 起诉五角大楼",
+          "2": "Anthropic 因供应链风险认定起诉国防部",
+          "3": "Anthropic 因供应链风险认定起诉国防部",
+          "4": "Anthropic 起诉国防部",
+          "5": "Open AI 和 Google 员工就 Anthropic 诉美国政府案提交法庭之友意见书",
+          "6": "Open AI 收购 Promptfoo 以保障其 AI 代理",
+          "7": "SecureRAG-RTL：一种用于硬件漏洞检测的检索增强、多代理、零样本LLM驱动框架",
+          "8": "代理工具编排泄露更多：数据集、基准与缓解策略",
+          "9": "迈向自主数学研究",
+          "10": "TML-Bench：表格机器学习任务的数据科学代理基准",
+          "11": "也许并非无趣的技术",
+          "12": "🚀 介绍MARL——无需微调减少LLM幻觉的运行时中间件",
+          "13": "提示：使用 Tensor Board 日志微调模型时，请务必将其上传至 Hugging Face Hub",
+          "14": "21个Qwen 3.5微调模型（思考与指令版本）",
+          "15": "扩展教学预训练至100亿Token"
+        },
+        "candidateTotal": 414
+      },
+      "at": "2026-03-10"
     }
   },
   "published": {
@@ -2502,6 +2846,70 @@
     "https://huggingface.co/posts/AINovice2005/189186110939177": {
       "title": "Just published my first cuda kernel, inspired by Sage Attention. Feel free to try it out ☺️",
       "at": "2026-03-09"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/891514/anthropic-pentagon-lawsuit-amicus-brief-openai-google": {
+      "title": "Employees across OpenAI and Google support Anthropic’s lawsuit against the Pentagon",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/09/anthropic-sues-defense-department-over-supply-chain-risk-designation/": {
+      "title": "Anthropic sues Defense Department over supply-chain risk designation",
+      "at": "2026-03-10"
+    },
+    "https://www.wired.com/story/anthropic-sues-department-of-defense-over-supply-chain-risk-designation/": {
+      "title": "Anthropic Sues Department of Defense Over Supply-Chain-Risk Designation",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/891377/anthropic-dod-lawsuit": {
+      "title": "Anthropic is suing the Department of Defense",
+      "at": "2026-03-10"
+    },
+    "https://www.wired.com/story/openai-deepmind-employees-file-amicus-brief-anthropic-dod-lawsuit/": {
+      "title": "OpenAI and Google Workers File Amicus Brief in Support of Anthropic Against the US Government",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/09/openai-acquires-promptfoo-to-secure-its-ai-agents/": {
+      "title": "OpenAI acquires Promptfoo to secure its AI agents",
+      "at": "2026-03-10"
+    },
+    "https://arxiv.org/abs/2603.05689": {
+      "title": "SecureRAG-RTL: A Retrieval-Augmented, Multi-Agent, Zero-Shot LLM-Driven Framework for Hardware Vulnerability Detection",
+      "at": "2026-03-10"
+    },
+    "https://arxiv.org/abs/2512.16310": {
+      "title": "Agent Tools Orchestration Leaks More: Dataset, Benchmark, and Mitigation",
+      "at": "2026-03-10"
+    },
+    "https://arxiv.org/abs/2602.10177": {
+      "title": "Towards Autonomous Mathematics Research",
+      "at": "2026-03-10"
+    },
+    "https://arxiv.org/abs/2603.05764": {
+      "title": "TML-Bench: Benchmark for Data Science Agents on Tabular ML Tasks",
+      "at": "2026-03-10"
+    },
+    "https://simonwillison.net/2026/Mar/9/not-so-boring/#atom-everything": {
+      "title": "Perhaps not Boring Technology after all",
+      "at": "2026-03-10"
+    },
+    "https://simonwillison.net/2026/Mar/9/not-so-boring/": {
+      "title": "Perhaps not Boring Technology after all",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/SeaWolf-AI/687506436891961": {
+      "title": "🚀 Introducing MARL — Runtime Middleware That Reduces LLM Hallucination Without Fine-Tuning Now available on PyPI · GitHub · ClawHub · HuggingFace AI models sense they could be wrong, but they can't actually fix what's broken. We evaluated 9 SOTA models (GPT-5.2, Claude Opus 4.6, Gemini 3 Pro, etc.) across 1,800 assessments in FINAL Bench and found a 39.2%p gap between \"recognizing potential errors (MA=0.694)\" and \"actually finding and fixing them (ER=0.302).\" MARL (Model-Agnostic Runtime Middleware for LLMs) was built to close this metacognitive gap. It decomposes a single LLM call into a 5-stage expert pipeline (Hypothesis → Solver → Auditor → Adversarial Verifier → Synthesizer), transforming \"answer in one shot\" into \"think, doubt, correct, and rewrite.\" No weight modification — works instantly with GPT-5.4, Claude, Gemini, Llama, or any OpenAI API-compatible LLM by changing one line: base_url. Ships with 9 domain-specific emergence engines (invention, pharma, genomics, chemistry, ecology, law, and more — 5,538 expert data items) activated by a simple tag like model=\"gpt-5.4::pharma\". pip install marl-middleware MARL is also officially registered on ClawHub, the skill marketplace of OpenClaw — an AI agent platform with 260K+ developers and 3,200+ skills. It's the first middleware in the Reasoning Enhancement category. One command — clawhub install marl-middleware — gives your AI agent a metacognition upgrade. 📝 Technical deep dive: 🤗 Live A/B test: 📦 PyPI: 🐙 GitHub: 🦀 ClawHub: #MARL #LLM #Hallucination #Metacognition #MultiAgent #AIMiddleware #FINALBench #OpenClaw #ClawHub #PyPI #AGI #HuggingFace #ReasoningAI #SelfCorrection #GlassBoxAI",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/AINovice2005/333451320002796": {
+      "title": "Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload them to HF Hub as event artifacts, they can be viewed instantly. 🚀 I previously remembered this done in the notus model release: Examples: cc:",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/DavidAU/733148472626410": {
+      "title": "21 Qwen 3.5 Fine Tunes (thinking and instruct) ; reg and uncensored (2B to 27B) exceed benchmarks, and work better than org models. All are bench marked against org model. Many exceed all benchmarks of org model. Claude, GLM, Gemini and other distills. Thinking AND dedicated Instruct versions. Core goal: Increase benchmarks, and address long thinking blocks. Highlights: 9B and 27B instruct \"Claude\" versions hit 624 and 675 on the \"ARC-C\" (hard challenge). Thinking fine tunes exceed org model performance (in thinking mode). In many cases there is a drastic reduction in thinking block size. 9B Claude Heretic Uncensored, GGUF : -Neo, Code Imatrix (duel imatrix) - Updated Jinja template - Custom tensor enhancements. COLLECTION [21 models]:",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/codelion/864873082855349": {
+      "title": "Scaling Pedagogical Pre-training to 10 Billion Tokens New blog post exploring what happens when you take optimal data mixing insights and scale up the data generation itself. We built Sutra, a multi-stage framework for generating pedagogical pre-training data guided by a knowledge graph of ~2,000 concepts across 9 domains. The pipeline includes structured content generation, six-dimension quality evaluation, diversity management across 20 content styles, and a cleaning stage to prevent collapse. The result is , a 10.2 billion token pedagogical dataset with rich metadata (domain, complexity, prerequisites, quality scores) on every entry. We trained on it for 3 full epochs (30.6B tokens) on a single A10 GPU in ~78 hours. Key finding: perplexity kept improving across epochs, but benchmark gains plateaued fast. At 70M parameters, the model hits a representational ceiling that more data alone can't break through. Full writeup with comparisons against 7 other datasets, detailed benchmark breakdowns, and connections to recent work on synthetic data scaling, curriculum learning, and data mixing laws: All datasets at multiple scales (10M, 100M, 1B, 10B) plus seed concepts and an SFT variant are in the Sutra Pedagogical Datasets collection.",
+      "at": "2026-03-10"
     }
   },
   "publishedSignatures": {
@@ -2720,6 +3128,66 @@
     "1f3d7445dadcb47f": {
       "title": "Just published my first cuda kernel, inspired by Sage Attention. Feel free to try it out ☺️",
       "at": "2026-03-09"
+    },
+    "6900ee5e9786f2e5": {
+      "title": "Employees across OpenAI and Google support Anthropic’s lawsuit against the Pentagon",
+      "at": "2026-03-10"
+    },
+    "a8d0328ccf5fac46": {
+      "title": "Anthropic sues Defense Department over supply-chain risk designation",
+      "at": "2026-03-10"
+    },
+    "db3b8ff3ca1395f9": {
+      "title": "Anthropic Sues Department of Defense Over Supply-Chain-Risk Designation",
+      "at": "2026-03-10"
+    },
+    "6b598384123f9517": {
+      "title": "Anthropic is suing the Department of Defense",
+      "at": "2026-03-10"
+    },
+    "4b7be181258d209c": {
+      "title": "OpenAI and Google Workers File Amicus Brief in Support of Anthropic Against the US Government",
+      "at": "2026-03-10"
+    },
+    "705b37b9196a9735": {
+      "title": "OpenAI acquires Promptfoo to secure its AI agents",
+      "at": "2026-03-10"
+    },
+    "34b68ec53384ea03": {
+      "title": "SecureRAG-RTL: A Retrieval-Augmented, Multi-Agent, Zero-Shot LLM-Driven Framework for Hardware Vulnerability Detection",
+      "at": "2026-03-10"
+    },
+    "bde8b2a4fa085076": {
+      "title": "Agent Tools Orchestration Leaks More: Dataset, Benchmark, and Mitigation",
+      "at": "2026-03-10"
+    },
+    "d50272424a9ec5f2": {
+      "title": "Towards Autonomous Mathematics Research",
+      "at": "2026-03-10"
+    },
+    "86fcdcf632f894b8": {
+      "title": "TML-Bench: Benchmark for Data Science Agents on Tabular ML Tasks",
+      "at": "2026-03-10"
+    },
+    "daa9ba2f826816df": {
+      "title": "Perhaps not Boring Technology after all",
+      "at": "2026-03-10"
+    },
+    "49d8503d2d0dacc8": {
+      "title": "🚀 Introducing MARL — Runtime Middleware That Reduces LLM Hallucination Without Fine-Tuning Now available on PyPI · GitHub · ClawHub · HuggingFace AI models sense they could be wrong, but they can't actually fix what's broken. We evaluated 9 SOTA models (GPT-5.2, Claude Opus 4.6, Gemini 3 Pro, etc.) across 1,800 assessments in FINAL Bench and found a 39.2%p gap between \"recognizing potential errors (MA=0.694)\" and \"actually finding and fixing them (ER=0.302).\" MARL (Model-Agnostic Runtime Middleware for LLMs) was built to close this metacognitive gap. It decomposes a single LLM call into a 5-stage expert pipeline (Hypothesis → Solver → Auditor → Adversarial Verifier → Synthesizer), transforming \"answer in one shot\" into \"think, doubt, correct, and rewrite.\" No weight modification — works instantly with GPT-5.4, Claude, Gemini, Llama, or any OpenAI API-compatible LLM by changing one line: base_url. Ships with 9 domain-specific emergence engines (invention, pharma, genomics, chemistry, ecology, law, and more — 5,538 expert data items) activated by a simple tag like model=\"gpt-5.4::pharma\". pip install marl-middleware MARL is also officially registered on ClawHub, the skill marketplace of OpenClaw — an AI agent platform with 260K+ developers and 3,200+ skills. It's the first middleware in the Reasoning Enhancement category. One command — clawhub install marl-middleware — gives your AI agent a metacognition upgrade. 📝 Technical deep dive: 🤗 Live A/B test: 📦 PyPI: 🐙 GitHub: 🦀 ClawHub: #MARL #LLM #Hallucination #Metacognition #MultiAgent #AIMiddleware #FINALBench #OpenClaw #ClawHub #PyPI #AGI #HuggingFace #ReasoningAI #SelfCorrection #GlassBoxAI",
+      "at": "2026-03-10"
+    },
+    "3203554c140d6e93": {
+      "title": "Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload them to HF Hub as event artifacts, they can be viewed instantly. 🚀 I previously remembered this done in the notus model release: Examples: cc:",
+      "at": "2026-03-10"
+    },
+    "c7313e94f428e9d5": {
+      "title": "21 Qwen 3.5 Fine Tunes (thinking and instruct) ; reg and uncensored (2B to 27B) exceed benchmarks, and work better than org models. All are bench marked against org model. Many exceed all benchmarks of org model. Claude, GLM, Gemini and other distills. Thinking AND dedicated Instruct versions. Core goal: Increase benchmarks, and address long thinking blocks. Highlights: 9B and 27B instruct \"Claude\" versions hit 624 and 675 on the \"ARC-C\" (hard challenge). Thinking fine tunes exceed org model performance (in thinking mode). In many cases there is a drastic reduction in thinking block size. 9B Claude Heretic Uncensored, GGUF : -Neo, Code Imatrix (duel imatrix) - Updated Jinja template - Custom tensor enhancements. COLLECTION [21 models]:",
+      "at": "2026-03-10"
+    },
+    "d8fe030aad3cbceb": {
+      "title": "Scaling Pedagogical Pre-training to 10 Billion Tokens New blog post exploring what happens when you take optimal data mixing insights and scale up the data generation itself. We built Sutra, a multi-stage framework for generating pedagogical pre-training data guided by a knowledge graph of ~2,000 concepts across 9 domains. The pipeline includes structured content generation, six-dimension quality evaluation, diversity management across 20 content styles, and a cleaning stage to prevent collapse. The result is , a 10.2 billion token pedagogical dataset with rich metadata (domain, complexity, prerequisites, quality scores) on every entry. We trained on it for 3 full epochs (30.6B tokens) on a single A10 GPU in ~78 hours. Key finding: perplexity kept improving across epochs, but benchmark gains plateaued fast. At 70M parameters, the model hits a representational ceiling that more data alone can't break through. Full writeup with comparisons against 7 other datasets, detailed benchmark breakdowns, and connections to recent work on synthetic data scaling, curriculum learning, and data mixing laws: All datasets at multiple scales (10M, 100M, 1B, 10B) plus seed concepts and an SFT variant are in the Sutra Pedagogical Datasets collection.",
+      "at": "2026-03-10"
     }
   }
 }
