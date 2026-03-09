@@ -41,6 +41,8 @@ test("buildDigestMarkdown renders key news, quick news, core papers, and rumors"
   assert.match(markdown, /## 核心论文/);
   assert.match(markdown, /## 小道消息/);
   assert.match(markdown, /## 参考来源/);
+  assert.equal(markdown.indexOf("## 小道消息") < markdown.indexOf("## 核心论文"), true);
+  assert.equal(markdown.indexOf("## 核心论文") < markdown.indexOf("## 参考来源"), true);
   assert.match(markdown, /今日候选总数：123 条/);
   assert.match(markdown, /模型能力提速和商业化渗透同步发生/);
   assert.match(markdown, /### 01 · OpenAI发布新模型/);
@@ -88,7 +90,71 @@ test("fallback markdown avoids untranslated placeholders and raw English titles"
   assert.doesNotMatch(markdown, /5W1H：|Who\/What：|When\/Where：|Why\/How：/);
   assert.match(markdown, />1<\/a>/);
   assert.match(markdown, />2<\/a>/);
-  assert.match(markdown, /Why AI startups are selling the same equity at two different prices/);
-  assert.match(markdown, /Reasoning as Gradient: Scaling MLE Agents Beyond Tree Search/);
+  assert.match(markdown, /重点更新｜TechCrunch AI/);
+  assert.match(markdown, /论文平台重点更新｜arXiv cs\.AI/);
   assert.doesNotMatch(markdown, /海外科技媒体原文|论文平台原文/);
+});
+
+test("references render as Chinese title plus source and truncate long titles", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-03-03",
+    {
+      hotNews: [
+        {
+          insight: "模型治理新进展",
+          narrative: "多源信息显示治理框架正在快速收敛。",
+          refs: [1],
+        },
+      ],
+      otherNews: [],
+      coreTech: [],
+      aiRumor: [],
+      refTranslations: {
+        1: "这是一个非常非常长的中文标题用于验证截断逻辑是否生效",
+      },
+    },
+    [
+      {
+        refId: 1,
+        title: "Long English headline for verification",
+        source: "TechCrunch",
+        link: "https://example.com/long",
+      },
+    ]
+  );
+
+  assert.match(markdown, /这是一个非常非常长的中文标题用于验证截断…｜TechCrunch/);
+  assert.doesNotMatch(markdown, /Long English headline for verification<\/a>/);
+});
+
+test("core paper block prefers translated Chinese title over original English title", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-03-03",
+    {
+      hotNews: [],
+      otherNews: [],
+      coreTech: [
+        {
+          title: "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
+          summary: "该论文提出了复杂功能交付评测框架。",
+          refs: [2],
+        },
+      ],
+      aiRumor: [],
+      refTranslations: {
+        2: "FeatureBench复杂功能交付评测框架",
+      },
+    },
+    [
+      {
+        refId: 2,
+        title: "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
+        source: "arXiv cs.SE",
+        link: "https://example.com/paper",
+      },
+    ]
+  );
+
+  assert.match(markdown, /复杂功能交付评测框架/);
+  assert.doesNotMatch(markdown, /\*\*FeatureBench: Benchmarking Agentic Coding/);
 });

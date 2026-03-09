@@ -916,6 +916,67 @@ function extractTitleFromHtml(html) {
   );
 }
 
+function clipNoiseSuffix(text) {
+  const plain = normalizeExtractedText(text);
+  if (!plain) return "";
+  const stopMarks = [
+    "AITNT资源拓展",
+    "更多推荐",
+    "相关阅读",
+    "Recent articles",
+    "Disclosures Colophon",
+  ];
+  let out = plain;
+  for (const mark of stopMarks) {
+    const idx = out.indexOf(mark);
+    if (idx >= 40) {
+      out = out.slice(0, idx).trim();
+    }
+  }
+  return out;
+}
+
+function extractAitntContent(html) {
+  const root = parse(String(html || ""));
+  const title = normalizeExtractedText(
+    root.querySelector("h1")?.text ||
+    root.querySelector("title")?.text ||
+    ""
+  );
+  const body = root.querySelector(".new-content") || root.querySelector(".newContent");
+  const text = clipNoiseSuffix(body?.text || "");
+  if (!text) return { title: "", text: "" };
+  return { title, text: text.slice(0, PER_ARTICLE_MAX_CHARS * 4) };
+}
+
+function extractSimonQuoteContent(html) {
+  const root = parse(String(html || ""));
+  const title = normalizeExtractedText(
+    root.querySelector("h1")?.text ||
+    root.querySelector("title")?.text ||
+    ""
+  );
+  const quote = root.querySelector(".quote") || root.querySelector("blockquote");
+  const meta = root.querySelector(".metabox");
+  const merged = normalizeExtractedText(`${quote?.text || ""} ${meta?.text || ""}`);
+  if (!merged) return { title: "", text: "" };
+  return { title, text: merged.slice(0, PER_ARTICLE_MAX_CHARS * 2) };
+}
+
+function extractSiteSpecificContent(url, html) {
+  const domain = getDomainFromUrl(url);
+  if (!domain) return { title: "", text: "" };
+
+  if (domain.endsWith("aitntnews.com")) {
+    return extractAitntContent(html);
+  }
+  if (domain.endsWith("simonwillison.net")) {
+    return extractSimonQuoteContent(html);
+  }
+
+  return { title: "", text: "" };
+}
+
 function fallbackExtractFromHtml(html) {
   const root = parse(String(html || ""));
   for (const selector of ["script", "style", "noscript", "svg"]) {
@@ -937,6 +998,10 @@ function fallbackExtractFromHtml(html) {
 
 export function extractReadableFromHtml(html, url) {
   const rawHtml = String(html || "");
+  const siteSpecific = extractSiteSpecificContent(url, rawHtml);
+  if (siteSpecific.text) {
+    return siteSpecific;
+  }
   const attempts = [
     rawHtml,
     stripStylesForReadability(rawHtml),
@@ -1521,6 +1586,124 @@ function clipToSentence(text, maxChars = 260) {
   return /[。！？.!?]$/.test(fallback) ? fallback : `${fallback}。`;
 }
 
+function clipHeadline(text, maxChars = 56) {
+  const plain = finalizeReadableText(text);
+  if (!plain) return "";
+  const limit = Number.isFinite(maxChars) ? Math.max(16, Math.floor(maxChars)) : 56;
+  if (plain.length <= limit) {
+    if (!/[。！？.!?]$/.test(plain)) {
+      const inlineBreak = Math.max(
+        plain.lastIndexOf("，"),
+        plain.lastIndexOf("："),
+        plain.lastIndexOf("；"),
+        plain.lastIndexOf("、"),
+        plain.lastIndexOf(", "),
+        plain.lastIndexOf(": "),
+        plain.lastIndexOf("; ")
+      );
+      if (inlineBreak >= Math.floor(plain.length * 0.45) && inlineBreak < plain.length - 1) {
+        return finalizeReadableText(plain.slice(0, inlineBreak));
+      }
+    }
+    return plain;
+  }
+
+  const punct = Math.max(
+    plain.lastIndexOf("，", limit),
+    plain.lastIndexOf("。", limit),
+    plain.lastIndexOf("：", limit),
+    plain.lastIndexOf("；", limit),
+    plain.lastIndexOf("、", limit)
+  );
+  if (punct >= Math.floor(limit * 0.5)) {
+    return finalizeReadableText(plain.slice(0, punct));
+  }
+
+  const slicedRaw = plain.slice(0, Math.max(12, limit - 4));
+  const wordBreak = Math.max(
+    slicedRaw.lastIndexOf(" "),
+    slicedRaw.lastIndexOf("·"),
+    slicedRaw.lastIndexOf("-")
+  );
+  if (wordBreak >= Math.floor((limit - 4) * 0.55)) {
+    return finalizeReadableText(slicedRaw.slice(0, wordBreak));
+  }
+
+  const sliced = finalizeReadableText(slicedRaw);
+  if (!sliced) return "";
+  return `${sliced}等进展`;
+}
+
+function cleanTemplateNarrative(text) {
+  return finalizeReadableText(text)
+    .replace(/当前信号具备参考价值，但仍需更多来源持续验证。?/g, "")
+    .replace(/信息已纳入当日快讯，建议持续跟踪后续数据与落地反馈。?/g, "")
+    .replace(/内容已纳入当日快讯，建议结合参考来源持续跟进关键进展。?/g, "")
+    .replace(/已纳入当日快讯，建议结合原文核对关键细节。?/g, "")
+    .replace(/社区来源发布了“[^”]+”相关动态，已纳入当日快讯，建议结合原文核对关键细节。?/g, "")
+    .replace(/社区来源快讯更新/g, "")
+    .replace(/[。！？]\s*[A-Za-z][A-Za-z0-9\s-]{1,18}$/g, "。")
+    .trim();
+}
+
+function cleanReferenceTitle(text, maxChars = 120) {
+  let title = finalizeReadableText(text);
+  if (!title) return "";
+
+  title = title
+    .replace(/^(Product|News)\s*[A-Za-z]{3}\s+\d{1,2},\s+\d{4}\s*/i, "")
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  title = title.replace(/\b([A-Za-z]+\s+\d+(?:\.\d+)?)\s+\1\b/gi, "$1");
+  const clauseBreak = title.search(/\b(delivers|provides|announces|launches|unveils)\b/i);
+  if (clauseBreak >= 24) {
+    title = title.slice(0, clauseBreak).trim();
+  }
+
+  title = title
+    .replace(/\s*#\w[\w-]*/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const limit = Number.isFinite(maxChars) ? Math.max(36, Math.floor(maxChars)) : 120;
+  if (title.length <= limit) return title;
+
+  const sliced = title.slice(0, limit);
+  const punct = Math.max(
+    sliced.lastIndexOf("。"),
+    sliced.lastIndexOf("，"),
+    sliced.lastIndexOf("；"),
+    sliced.lastIndexOf("："),
+    sliced.lastIndexOf(". "),
+    sliced.lastIndexOf(", "),
+    sliced.lastIndexOf(" ")
+  );
+  if (punct >= Math.floor(limit * 0.6)) {
+    return finalizeReadableText(sliced.slice(0, punct + 1));
+  }
+  return finalizeReadableText(sliced);
+}
+
+function truncateWithEllipsis(text, maxChars = 20) {
+  const plain = finalizeReadableText(text);
+  if (!plain) return "";
+  const limit = Number.isFinite(maxChars) ? Math.max(8, Math.floor(maxChars)) : 20;
+  if (plain.length <= limit) return plain;
+  return `${plain.slice(0, limit)}…`;
+}
+
+function getReferenceSourceName(item, maxChars = 18) {
+  const zh = finalizeReadableText(item?.sourceDisplayZh || "");
+  if (zh && hasCjk(zh)) return truncateWithEllipsis(zh, maxChars);
+  const source = finalizeReadableText(item?.source || "");
+  if (source) return truncateWithEllipsis(source, maxChars);
+  const domain = getDomainFromUrl(item?.link || "");
+  if (domain) return truncateWithEllipsis(domain, maxChars);
+  return "来源";
+}
+
 function normalizeRefs(refs, allowedRefIds) {
   if (!Array.isArray(refs)) return [];
   const out = [];
@@ -1542,6 +1725,42 @@ function hasCjk(s) {
 
 function hasAsciiLetters(s) {
   return /[A-Za-z]/.test(String(s || ""));
+}
+
+function toChineseLikeTitle(text, fallback = "论文研究进展") {
+  const plain = finalizeReadableText(text || "");
+  if (!plain) return fallback;
+  if (!hasCjk(plain)) return fallback;
+
+  const cleaned = finalizeReadableText(
+    plain
+      .replace(/[A-Za-z0-9][A-Za-z0-9\s\-:()]{8,}$/g, "")
+      .replace(/[A-Za-z0-9][A-Za-z0-9\s\-:()]{8,}(?=[，。；：]|$)/g, "")
+  );
+  if (!cleaned || !hasCjk(cleaned)) return fallback;
+  return cleaned;
+}
+
+function sanitizePaperTitle(text, fallback = "论文研究进展") {
+  let title = toChineseLikeTitle(text, fallback);
+  if (!title || !hasCjk(title)) return fallback;
+
+  if (hasAsciiLetters(title)) {
+    const stripped = finalizeReadableText(
+      title
+        .replace(/[A-Za-z0-9]+/g, "")
+        .replace(/\(\s*\)/g, "")
+        .replace(/[：:\-—]{2,}/g, "：")
+        .replace(/[：:\-—]\s*$/g, "")
+    );
+    if (stripped && hasCjk(stripped) && stripped.length >= 6) {
+      title = stripped;
+    }
+  }
+
+  const clipped = clipHeadline(title, 18);
+  if (!clipped || !hasCjk(clipped) || clipped.length < 4) return fallback;
+  return clipped;
 }
 
 function getChineseSourceLabel(item) {
@@ -1878,6 +2097,56 @@ function lexicalSimilarity(aText, bText) {
   return denom > 0 ? inter / denom : 0;
 }
 
+function splitIntoSentences(text) {
+  const plain = normalizeTextSpacing(redactUrlLike(text || ""));
+  if (!plain) return [];
+  return plain
+    .split(/(?<=[。！？.!?])\s+/)
+    .map((x) => finalizeReadableText(x))
+    .filter(Boolean);
+}
+
+function pickMaterialEvidenceSnippet(material) {
+  if (!material) return "";
+
+  const fromText = splitIntoSentences(String(material?.text || ""));
+  for (const sentence of fromText) {
+    if (sentence.length < 18) continue;
+    if (/\d+(?:\.\d+)?\s*(?:%|％|亿美元|万人|万|亿|million|billion|x)/i.test(sentence)) {
+      return clipToSentence(sentence, 88);
+    }
+  }
+
+  const title = finalizeReadableText(material?.title || "");
+  if (title && hasCjk(title)) return clipToSentence(title, 84);
+  if (fromText.length > 0) return clipToSentence(fromText[0], 84);
+
+  const sourceLabel = getChineseSourceLabel(material);
+  return `${sourceLabel}披露了可跟踪的新进展。`;
+}
+
+function injectRefEvidenceIntoNarrative(narrative, refs, idToItem) {
+  const refsList = Array.isArray(refs) ? refs : [];
+  let out = finalizeReadableText(narrative || "");
+  if (!out || refsList.length === 0) return out;
+
+  for (const refId of refsList.slice(0, 3)) {
+    if (out.length >= 250) break;
+    const material = idToItem[refId];
+    if (!material) continue;
+    const snippet = pickMaterialEvidenceSnippet(material);
+    if (!snippet) continue;
+
+    const sim = lexicalSimilarity(out, snippet);
+    if (sim >= 0.1) continue;
+    const sourceLabel = getChineseSourceLabel(material);
+    const suffix = `另据${sourceLabel}披露，${snippet}`;
+    out = `${out.replace(/[。！？!?]+$/g, "")}。${suffix}`;
+  }
+
+  return clipToSentence(out, 260);
+}
+
 const ENTITY_KEYWORDS = [
   "openai", "anthropic", "google", "deepmind", "nvidia", "meta", "microsoft",
   "amazon", "aws", "xai", "gemini", "gpt", "claude", "llama", "qwen", "kimi",
@@ -2062,6 +2331,23 @@ function buildChineseHotNarrativeFallback(entry, idToItem) {
   return `${base}${evidence}`;
 }
 
+function buildQuickNarrativeFromMaterial(material, anchorText, sourceLabel) {
+  const bodyRaw = normalizeNarrativeBody(String(material?.text || "").slice(0, 320));
+  const body = clipToSentence(
+    bodyRaw,
+    165
+  );
+  if (hasCjk(body) && body.length >= 26) return body;
+
+  if (bodyRaw && bodyRaw.length >= 40) {
+    const quote = clipToChars(bodyRaw, 88);
+    return `该条社区讨论提到“${quote}”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。`;
+  }
+
+  const anchor = clipToChars(finalizeReadableText(anchorText || material?.title || "当日动态"), 30);
+  return `${sourceLabel}围绕“${anchor}”给出新线索，短期可作为趋势观察输入，建议持续补充多源证据。`;
+}
+
 function buildQuickNewsEntryFromLLM(item, allowedRefIds) {
   const base = buildHotNewsEntryFromLLM(item, allowedRefIds);
   let narrative = clipToSentence(finalizeReadableText(base.narrative || base.briefing || base.summary || ""), 160);
@@ -2071,7 +2357,7 @@ function buildQuickNewsEntryFromLLM(item, allowedRefIds) {
   }
   return {
     ...base,
-    insight: clipToChars(finalizeReadableText(base.insight || base.title || "当日快讯"), 56),
+    insight: clipHeadline(finalizeReadableText(base.insight || base.title || "当日快讯"), 56),
     narrative,
     summary: clipToChars(finalizeReadableText(base.summary || base.narrative || base.insight || ""), 120),
   };
@@ -2080,13 +2366,13 @@ function buildQuickNewsEntryFromLLM(item, allowedRefIds) {
 function buildFallbackQuickNewsEntry(material) {
   const title = finalizeReadableText(material?.title || material?.contentSnippet || "");
   const sourceLabel = getChineseSourceLabel(material);
-  const insight = clipToChars(title || `${sourceLabel}快讯`, 56);
+  const insight = clipHeadline(title || `${sourceLabel}新动向`, 56);
   let narrative = clipToSentence(
     normalizeNarrativeBody(String(material?.text || "").slice(0, 220) || title || `来自${sourceLabel}的行业快讯。`),
     160
   );
   if (!hasCjk(narrative)) {
-    narrative = `${sourceLabel}发布了“${clipToChars(title || "当日更新", 36)}”相关动态，已纳入当日快讯，建议结合原文核对关键细节。`;
+    narrative = buildQuickNarrativeFromMaterial(material, title || "当日更新", sourceLabel);
   }
   return {
     title: insight,
@@ -2102,6 +2388,16 @@ function buildFallbackQuickNewsEntry(material) {
 export function normalizeDailySummary(rawDaily, materials) {
   const allowed = new Set(materials.map((m) => m.refId));
   const x = rawDaily && typeof rawDaily === "object" ? rawDaily : {};
+  const refTranslationsIn = Array.isArray(x.ref_translations) ? x.ref_translations : [];
+  const refTranslations = {};
+  for (const item of refTranslationsIn) {
+    const id = Number(item?.id ?? item?.ref ?? item?.refId);
+    if (!Number.isInteger(id) || !allowed.has(id)) continue;
+    const zhTitle = finalizeReadableText(redactUrlLike(item?.zh_title || item?.translation || ""));
+    if (!zhTitle) continue;
+    refTranslations[id] = zhTitle;
+  }
+
   const eventHints = buildEventHints(materials);
   const eventSignalIndex = buildEventSignalIndex(eventHints);
   const eventRefsIndex = buildEventRefsIndex(eventHints);
@@ -2245,8 +2541,15 @@ export function normalizeDailySummary(rawDaily, materials) {
     let narrative = normalizeNarrativeBody(
       entry?.narrative || mergeNarrativeAndEvaluation(entry?.briefing || entry?.summary || "", entry?.evaluation || "")
     );
+    narrative = cleanTemplateNarrative(narrative);
     if (!hasCjk(narrative) || (hasAsciiLetters(narrative) && narrative.length < 90)) {
       narrative = buildChineseHotNarrativeFallback(entry, idToItem);
+    }
+    narrative = injectRefEvidenceIntoNarrative(narrative, refs, idToItem);
+    narrative = cleanTemplateNarrative(narrative);
+    narrative = narrative.replace(/[另并且但而及]\s*$/g, "").trim();
+    if (narrative && !/[。！？.!?]$/.test(narrative)) {
+      narrative = `${narrative}。`;
     }
 
     return {
@@ -2316,6 +2619,63 @@ export function normalizeDailySummary(rawDaily, materials) {
     }
   }
 
+  if (pickedOtherNews.length < quickTarget) {
+    const reuseCandidates = (materials || [])
+      .filter((item) => item && !isRumorEligibleMaterial(item))
+      .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
+
+    for (const item of reuseCandidates) {
+      if (pickedOtherNews.length >= quickTarget) break;
+      const entry = buildFallbackQuickNewsEntry(item);
+      const key = normalizeHotNewsKey(entry);
+      if (usedOtherKey.has(key)) continue;
+      usedOtherKey.add(key);
+      pickedOtherNews.push(entry);
+    }
+  }
+
+  const polishedOtherNews = pickedOtherNews.map((entry) => {
+    const refs = Array.isArray(entry?.refs) ? entry.refs : [];
+    const firstRef = refs[0];
+    const firstMaterial = firstRef ? idToItem[firstRef] : null;
+    const sourceLabel = getChineseSourceLabel(firstMaterial);
+    const refZhTitle = firstRef ? finalizeReadableText(refTranslations[firstRef] || "") : "";
+    const refTitleRaw = firstRef ? finalizeReadableText(idToItem[firstRef]?.title || "") : "";
+
+    let insight = finalizeReadableText(entry?.insight || entry?.title || "");
+    const isCommunity = String(firstMaterial?.sourceGroup || "").trim() === "community";
+    if (!hasCjk(insight) || /快讯更新|来源快讯/.test(insight)) {
+      if (refZhTitle && hasCjk(refZhTitle)) {
+        insight = clipHeadline(refZhTitle, 56);
+      } else if (isCommunity && refTitleRaw) {
+        insight = clipHeadline(`社区观察：${refTitleRaw}`, 56);
+      } else if (hasCjk(refTitleRaw)) {
+        insight = clipHeadline(refTitleRaw, 56);
+      } else {
+        insight = clipHeadline(`${sourceLabel}新动向`, 56);
+      }
+    }
+
+    let narrative = cleanTemplateNarrative(entry?.narrative || entry?.summary || "");
+    if (
+      !hasCjk(narrative) ||
+      /已纳入当日快讯|建议结合原文核对关键细节|建议结合参考来源持续跟进|快讯更新/.test(narrative)
+    ) {
+      narrative = buildQuickNarrativeFromMaterial(
+        firstMaterial,
+        refZhTitle || refTitleRaw || insight,
+        sourceLabel
+      );
+    }
+    narrative = cleanTemplateNarrative(narrative);
+
+    return {
+      ...entry,
+      insight: clipHeadline(insight, 56),
+      narrative: clipToSentence(narrative, 170),
+    };
+  });
+
   const coreTechIn = Array.isArray(x.core_tech)
     ? x.core_tech
     : Array.isArray(x.overview)
@@ -2325,12 +2685,40 @@ export function normalizeDailySummary(rawDaily, materials) {
         : [];
 
   const coreTech = coreTechIn
-    .map((t) => ({
-      title: finalizeReadableText(redactUrlLike(t?.title || "")),
-      summary: finalizeReadableText(redactUrlLike(t?.summary || t?.what_you_get || "")),
-      refs: normalizeRefs(t?.refs, allowed).filter((id) => isPaperLikeMaterial(idToItem[id])),
-    }))
-    .filter((t) => t.title && t.summary && t.refs.length > 0);
+    .map((t, idx) => {
+      const refs = normalizeRefs(t?.refs, allowed).filter((id) => isPaperLikeMaterial(idToItem[id]));
+      if (!refs.length) return null;
+
+      const firstRef = refs[0];
+      const firstMaterial = idToItem[firstRef];
+      const translatedRefTitle = finalizeReadableText(refTranslations[firstRef] || "");
+      const rawTitle = finalizeReadableText(redactUrlLike(t?.title || ""));
+      const rawSummary = finalizeReadableText(redactUrlLike(t?.summary || t?.what_you_get || ""));
+
+      const title =
+        (translatedRefTitle && hasCjk(translatedRefTitle) && clipHeadline(translatedRefTitle, 28)) ||
+        (hasCjk(rawTitle) && clipHeadline(rawTitle, 28)) ||
+        (hasCjk(firstMaterial?.title || "") && clipHeadline(firstMaterial.title, 28)) ||
+        `论文研究进展 ${idx + 1}`;
+
+      let summary = rawSummary;
+      if (!hasCjk(summary)) {
+        const snippet = pickMaterialEvidenceSnippet(firstMaterial);
+        summary = hasCjk(snippet)
+          ? snippet
+          : "该论文提出了可复用的新方法与评测思路，建议结合原文核对实验设置与适用边界。";
+      }
+
+      return {
+        title: sanitizePaperTitle(
+          toChineseLikeTitle(finalizeReadableText(title), `论文研究进展 ${idx + 1}`),
+          `论文研究进展 ${idx + 1}`
+        ),
+        summary: clipToSentence(finalizeReadableText(summary), 180),
+        refs,
+      };
+    })
+    .filter((t) => t && t.title && t.summary && t.refs.length > 0);
 
   const aiRumorIn = Array.isArray(x.ai_rumor) ? x.ai_rumor : [];
   const aiRumor = aiRumorIn
@@ -2341,17 +2729,6 @@ export function normalizeDailySummary(rawDaily, materials) {
       refs: normalizeRefs(t?.refs, allowed).filter((id) => isRumorEligibleMaterial(idToItem[id])),
     }))
     .filter((t) => t.title && t.summary && t.refs.length > 0);
-
-  const refTranslationsIn = Array.isArray(x.ref_translations) ? x.ref_translations : [];
-  const refTranslations = {};
-  for (const item of refTranslationsIn) {
-    const id = Number(item?.id ?? item?.ref ?? item?.refId);
-    if (!Number.isInteger(id) || !allowed.has(id)) continue;
-
-    const zhTitle = redactUrlLike(item?.zh_title || item?.translation || "");
-    if (!zhTitle) continue;
-    refTranslations[id] = zhTitle;
-  }
 
   const overviewSeed = redactUrlLike(
     x?.day_overview ||
@@ -2365,7 +2742,7 @@ export function normalizeDailySummary(rawDaily, materials) {
   const daily = {
     overview,
     hotNews,
-    otherNews: pickedOtherNews.slice(0, quickTarget),
+    otherNews: polishedOtherNews.slice(0, quickTarget),
     coreTech,
     aiRumor,
     refTranslations,
@@ -2698,6 +3075,91 @@ ${JSON.stringify(packed)}
   return normalizeDailySummary(parsed, materials);
 }
 
+function buildReferenceTranslationSeed(materials, existing) {
+  const map = existing && typeof existing === "object" ? { ...existing } : {};
+
+  for (const material of materials || []) {
+    const id = Number(material?.refId);
+    if (!Number.isInteger(id)) continue;
+    if (map[id] && hasCjk(map[id])) continue;
+
+    const title = cleanReferenceTitle(material?.title || "", 120);
+    if (title && hasCjk(title)) {
+      map[id] = title;
+    }
+  }
+
+  return map;
+}
+
+function buildMissingReferenceTranslations(materials, refTranslations) {
+  const out = [];
+  for (const material of materials || []) {
+    const id = Number(material?.refId);
+    if (!Number.isInteger(id)) continue;
+    const translated = finalizeReadableText(refTranslations?.[id] || "");
+    if (translated && hasCjk(translated)) continue;
+
+    const title = cleanReferenceTitle(material?.title || "", 120);
+    if (!title) continue;
+    if (!hasAsciiLetters(title) || hasCjk(title)) continue;
+    out.push({
+      id,
+      title,
+      source: material?.source || "",
+    });
+  }
+  return out;
+}
+
+async function translateMissingReferenceTitlesWithLLM(materials, existing) {
+  const refTranslations = buildReferenceTranslationSeed(materials, existing);
+  const missing = buildMissingReferenceTranslations(materials, refTranslations);
+  if (!missing.length) return refTranslations;
+  if (!process.env.ZHIPU_API_KEY) return refTranslations;
+
+  const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
+  const system = `
+你是科技编辑。任务是把英文资讯标题翻译成简洁、自然的中文标题。
+规则：
+- 不增加原文没有的事实
+- 不输出 URL
+- 只输出合法 JSON
+`.trim();
+
+  const prompt = `
+请把下面条目的英文标题翻译成中文标题。
+返回 JSON：
+{
+  "items": [
+    { "id": 1, "zh_title": "中文标题" }
+  ]
+}
+
+待翻译条目：
+${JSON.stringify(missing)}
+`.trim();
+
+  await sleep(LLM_MIN_INTERVAL_MS);
+  const content = await zhipuChatCompletion({
+    model,
+    messages: [
+      { role: "system", content: system },
+      { role: "user", content: prompt },
+    ],
+  });
+  const parsed = safeParseJsonObject(content);
+  const items = Array.isArray(parsed?.items) ? parsed.items : [];
+  for (const row of items) {
+    const id = Number(row?.id);
+    if (!Number.isInteger(id)) continue;
+    const zhTitle = cleanReferenceTitle(row?.zh_title || row?.translation || "", 120);
+    if (!zhTitle || !hasCjk(zhTitle)) continue;
+    refTranslations[id] = zhTitle;
+  }
+  return refTranslations;
+}
+
 /* ==============================
  *  9) 引用编号（悬浮+跳转）
  * ============================== */
@@ -2730,7 +3192,7 @@ function buildDigestDescription(daily) {
   const hotNewsHighlights = Array.isArray(daily?.hotNews)
     ? daily.hotNews
       .slice(0, 2)
-      .map((x) => clipToChars(x?.insight || x?.summary || x?.title || "", 26))
+      .map((x) => clipHeadline(x?.insight || x?.summary || x?.title || "", 30))
       .filter(Boolean)
     : [];
 
@@ -2753,13 +3215,18 @@ function buildDigestDescription(daily) {
 }
 
 function buildReferenceLabel(item, translatedTitle) {
-  const originalTitle = finalizeReadableText(item?.title || "");
-  if (originalTitle) return escapeMd(originalTitle);
-
-  const translated = finalizeReadableText(translatedTitle || item?.titleZh || "");
-  if (translated) return escapeMd(translated);
-
-  return `${escapeMd(getChineseSourceLabel(item))}原文`;
+  const translated = cleanReferenceTitle(translatedTitle || item?.titleZh || "", 120);
+  const fallbackTitle = cleanReferenceTitle(item?.title || "", 120);
+  let titlePart = translated && hasCjk(translated) ? translated : "";
+  if (!titlePart && fallbackTitle && hasCjk(fallbackTitle)) {
+    titlePart = fallbackTitle;
+  }
+  if (!titlePart) {
+    titlePart = `${getChineseSourceLabel(item)}重点更新`;
+  }
+  const shortTitle = truncateWithEllipsis(titlePart, 20);
+  const sourceName = getReferenceSourceName(item, 18);
+  return `${escapeMd(shortTitle)}｜${escapeMd(sourceName)}`;
 }
 
 /**
@@ -2838,15 +3305,15 @@ tags: [人工智能, 每日资讯]
     md += `（暂无符合门槛的重点资讯）\n\n`;
   } else {
     hotNews.forEach((t, idx) => {
-      const insightRaw = clipToChars(finalizeReadableText(t?.insight || t?.summary || t?.title || "当日关键动态"), 42);
+      const insightRaw = clipHeadline(finalizeReadableText(t?.insight || t?.summary || t?.title || "当日关键动态"), 42);
       const insight = escapeMd(insightRaw);
-      const narrativeRaw = normalizeNarrativeBody(
+      const narrativeRaw = cleanTemplateNarrative(normalizeNarrativeBody(
         t?.narrative ||
         mergeNarrativeAndEvaluation(
           t?.briefing || t?.summary || t?.what_you_get || t?.insight || "",
           formatHotNewsEvaluation(t?.evaluation, Array.isArray(t?.refs) ? t.refs.length : 0)
         )
-      );
+      ));
       const narrativePlain = narrativeRaw
         .replace(new RegExp(`^${escapeRegExp(insightRaw)}[：:，,\\s]*`), "")
         .trim();
@@ -2873,18 +3340,26 @@ tags: [人工智能, 每日资讯]
       const firstMaterial = refs.length ? idToItem[refs[0]] : null;
       const sourceLabel = getChineseSourceLabel(firstMaterial);
       const insightSeed = finalizeReadableText(t?.insight || t?.title || t?.summary || "");
+      const translatedRefTitle = refs.length ? finalizeReadableText(refTranslations?.[refs[0]] || "") : "";
+      const shouldFallbackInsight =
+        !hasCjk(insightSeed) ||
+        (hasAsciiLetters(insightSeed) && /等进展$/.test(insightSeed)) ||
+        (hasAsciiLetters(insightSeed) && !/[，。！？、]/.test(insightSeed) && insightSeed.length >= 36);
+      const insightText = shouldFallbackInsight
+        ? (translatedRefTitle && hasCjk(translatedRefTitle)
+            ? translatedRefTitle
+            : `${sourceLabel}新动向`)
+        : insightSeed;
       const insight = escapeMd(
-        hasCjk(insightSeed)
-          ? clipToChars(insightSeed, 56)
-          : clipToChars(`${sourceLabel}快讯更新`, 56)
+        clipHeadline(insightText, 56)
       );
 
-      let narrativeSeed = finalizeReadableText(t?.narrative || t?.briefing || t?.summary || "");
+      let narrativeSeed = cleanTemplateNarrative(t?.narrative || t?.briefing || t?.summary || "");
       if (!hasCjk(narrativeSeed)) {
-        const anchor = clipToChars(finalizeReadableText(t?.insight || t?.title || "当日更新"), 30);
-        narrativeSeed = `${sourceLabel}发布了“${anchor}”相关动态，内容已纳入当日快讯，建议结合参考来源持续跟进关键进展。`;
+        const anchor = finalizeReadableText(t?.insight || t?.title || "当日更新");
+        narrativeSeed = buildQuickNarrativeFromMaterial(firstMaterial, anchor, sourceLabel);
       }
-      let narrativeText = clipToSentence(narrativeSeed, 160);
+      let narrativeText = clipToSentence(cleanTemplateNarrative(narrativeSeed), 160);
       if (narrativeText && !/[。！？.!?]$/.test(narrativeText)) {
         narrativeText = `${narrativeText}。`;
       }
@@ -2901,21 +3376,7 @@ tags: [人工智能, 每日资讯]
     md += `\n`;
   }
 
-  // 3) 核心论文
-  md += `## 核心论文\n\n`;
-  const coreTech = Array.isArray(daily?.coreTech) ? daily.coreTech : [];
-  if (!coreTech.length) {
-    md += `（暂无符合门槛的核心论文）\n\n`;
-  } else {
-    for (const h of coreTech) {
-      const t = escapeMd(finalizeReadableText(h.title || "论文要点"));
-      const s = escapeMd(clipToSentence(finalizeReadableText(h.summary || ""), 180));
-      md += `- **${t}**：${s}${renderRefs(h.refs, idToItem, refTranslations)}\n`;
-    }
-    md += `\n`;
-  }
-
-  // 4) 小道消息
+  // 3) 小道消息
   md += `## 小道消息\n\n`;
   const aiRumor = Array.isArray(daily?.aiRumor) ? daily.aiRumor : [];
   if (!aiRumor.length) {
@@ -2926,6 +3387,36 @@ tags: [人工智能, 每日资讯]
       const s = escapeMd(clipToSentence(finalizeReadableText(item.summary || ""), 170));
       const c = escapeMd(finalizeReadableText(item.credibility || "中"));
       md += `- **${t}**：${s}（可信度：${c}）${renderRefs(item.refs, idToItem, refTranslations)}\n`;
+    }
+    md += `\n`;
+  }
+
+  // 4) 核心论文（置于所有正文模块之后、参考来源之前）
+  md += `## 核心论文\n\n`;
+  const coreTech = Array.isArray(daily?.coreTech) ? daily.coreTech : [];
+  if (!coreTech.length) {
+    md += `（暂无符合门槛的核心论文）\n\n`;
+  } else {
+    for (const h of coreTech) {
+      const refs = Array.isArray(h?.refs) ? h.refs : [];
+      const translatedRefTitle = refs.length
+        ? finalizeReadableText(refTranslations[refs[0]] || "")
+        : "";
+      const titleSeed = finalizeReadableText(h?.title || "");
+      const localizedTitle = toChineseLikeTitle(
+        (titleSeed && hasCjk(titleSeed) && titleSeed) ||
+        (translatedRefTitle && hasCjk(translatedRefTitle) && clipHeadline(translatedRefTitle, 28)) ||
+        "论文研究进展",
+        "论文研究进展"
+      );
+      const t = escapeMd(sanitizePaperTitle(localizedTitle, "论文研究进展"));
+
+      const summarySeed = finalizeReadableText(h?.summary || "");
+      const localizedSummary = hasCjk(summarySeed)
+        ? summarySeed
+        : "该论文提出了新的方法或评测路径，建议结合原文核对实验设置、数据范围与适用边界。";
+      const s = escapeMd(clipToSentence(localizedSummary, 180));
+      md += `- **${t}**：${s}${renderRefs(h.refs, idToItem, refTranslations)}\n`;
     }
     md += `\n`;
   }
@@ -3149,6 +3640,17 @@ async function main() {
         console.warn(`[warn] daily summary failed: ${e?.message || e}`);
         daily = buildFallbackDailySummary(materials);
       }
+    }
+  }
+
+  if (daily && materials.length > 0) {
+    try {
+      daily.refTranslations = await withRateLimitRetry(() =>
+        translateMissingReferenceTitlesWithLLM(materials, daily?.refTranslations || {})
+      );
+    } catch (error) {
+      console.warn(`[warn] ref title translation failed: ${error?.message || error}`);
+      daily.refTranslations = buildReferenceTranslationSeed(materials, daily?.refTranslations || {});
     }
   }
 

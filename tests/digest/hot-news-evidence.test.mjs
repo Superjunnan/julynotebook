@@ -70,3 +70,74 @@ test("normalizeDailySummary backfills hot news refs to multi-source evidence whe
   });
   assert.equal(hasMultiSource, true);
 });
+
+test("normalizeDailySummary rewrites community quick-news template to content narrative", () => {
+  const materials = [
+    {
+      refId: 1,
+      source: "Simon Willison",
+      sourceGroup: "community",
+      title: "Quoting Joseph Weizenbaum",
+      text: "What I had not realized is that extremely short exposures to a relatively simple computer program could induce powerful delusional thinking.",
+      link: "https://simonwillison.net/2026/Mar/8/joseph-weizenbaum/",
+      trustTier: "medium",
+      score: 7,
+      pubDate: "2026-03-08T06:00:00.000Z",
+      bucketHint: "other_news",
+    },
+    {
+      refId: 2,
+      source: "TechCrunch AI",
+      sourceGroup: "foreign_media",
+      title: "OpenAI expands enterprise controls",
+      text: "OpenAI introduced more enterprise control layers and auditing tools.",
+      link: "https://techcrunch.com/2026/03/08/openai-enterprise-controls/",
+      trustTier: "high",
+      score: 11,
+      pubDate: "2026-03-08T07:00:00.000Z",
+      bucketHint: "hot_news",
+    },
+    {
+      refId: 3,
+      source: "The Verge AI",
+      sourceGroup: "foreign_media",
+      title: "Anthropic releases updated Claude safety policy",
+      text: "Anthropic updated policy controls and deployment guidance for Claude.",
+      link: "https://www.theverge.com/2026/03/08/anthropic-claude-policy",
+      trustTier: "high",
+      score: 10,
+      pubDate: "2026-03-08T07:30:00.000Z",
+      bucketHint: "hot_news",
+    },
+  ];
+
+  const daily = normalizeDailySummary(
+    {
+      hot_news: [
+        {
+          insight: "企业级模型治理升级",
+          narrative: "企业侧开始把模型审计和可控性治理纳入默认流程。",
+          refs: [2, 3],
+        },
+      ],
+      other_news: [
+        {
+          insight: "社区来源快讯更新",
+          narrative: "社区来源发布了“Quoting Joseph Weizenbaum”相关动态，已纳入当日快讯，建议结合原文核对关键细节。",
+          refs: [1],
+        },
+      ],
+      core_tech: [],
+      ai_rumor: [],
+      ref_translations: [
+        { id: 1, zh_title: "约瑟夫·魏岑鲍姆关于AI拟人误判的警示摘录" },
+      ],
+    },
+    materials
+  );
+
+  const target = (daily.otherNews || []).find((item) => (item.refs || []).includes(1));
+  assert.ok(target);
+  assert.doesNotMatch(target.insight || "", /社区来源快讯更新/);
+  assert.doesNotMatch(target.narrative || "", /已纳入当日快讯|建议结合原文核对关键细节/);
+});
