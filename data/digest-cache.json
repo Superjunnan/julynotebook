@@ -795,6 +795,31 @@
       "title": "#2GPT-5.4 意外“炸场”！GitHub 源码泄露 OpenAI 王牌：200 万超长上下文+状态化 AI，彻底终结“金鱼记忆”时代？",
       "text": "大模型领域的“核弹级”更新似乎正呼之欲出。2026年3月2日，全球开发者社区因一次意外的代码提交而陷入疯狂。OpenAI 的一名工程师在公开的 Codex 代码仓库中，不慎将尚未发布的 “gpt-5.4” 型号写进了版本逻辑，随即引发了一场技术圈的“赛博考古”。虽然 OpenAI 迅速通过强制推送（Force Push）覆盖了相关代码并改称“gpt-5.3-codex”，但多方情报显示，这并非简单的手误，而是一场旨在重置行业格局的“代际越级”。核心杀手锏:200万上下文与“状态化 AI”据社交平台 X 上流传的 alpha 模型端点截图及代码分析，GPT-5.4的野心远超以往任何小版本更新:摆脱“金鱼记忆”:新版本将提供高达 200万 Tokens 的上下文窗口。更重要的是，它引入了真正的 状态化 AI（Stateful AI）。认知连续性:不同于现在的对话每次都要“重头再来”，状态化 AI 能够跨会话保留工作流、开发环境及工具调用状态。这意味着它能像真正的同事一样，始终记得你的项目背景和编码习惯。视觉进化:全分辨率原始字节读取泄露的 PR（拉取请求）中明确提到了针对“gpt-5.4或更高版本”的 view_image 优化功能:像素级分析:新功能允许模型绕过传统的图像压缩逻辑，直接读取图片的 原始字节（Original Bytes）。设计师福音:前端工程师可以直接投喂精细的 UI 设计图或复杂的工程原理图，模型将实现真正的像素级识别，彻底告别以往由于压缩导致的“一本正经胡说八道”。行业观察:从“聊天助手”到“数字员工”业内人士分析，OpenAI 之所以选择跳过（或淡化）5.3直接酝酿5.4，是为了在 Claude4.6 和 Gemini3.1Pro 的包围下完成身份反杀:Agent 优先:GPT-5.4的核心逻辑不再是刷榜跑分，而是**全自动代理（Autonomous Agent）**的可靠执行。硬件挑战:海量 KV 缓存的保持对 HBM（高带宽内存）和算力互连提出了极限挑战。近期 NVIDIA 股价的异动也被视为市场对这一硬件需求爆发的提前预警。",
       "at": "2026-03-09"
+    },
+    "https://aitntnews.com/newDetail.html?newId=22911": {
+      "title": "一键接入OpenClaw，谷歌开源CLI狂揽15k Stars，Agent开始接管Workspace",
+      "text": "OpenClaw 火爆的盛况至今仍在持续，在国内甚至出现了排队在腾讯总部楼下等待安装 OpenClaw 的场景，让人感叹「一代人有一代人的领鸡蛋」。 而就在几天前，谷歌发布了一个 CLI（命令行界面）神器，并上传到了 GitHub 上，挂在了 Google Workspace 的官方组织名下。 全新的 Google Workspace CLI 将 Drive、Gmail、Calendar 等 Google Workspace 云 API 统一封装为一个命令行工具，为 AI 智能体自动化工作流提供了标准化接口，并通过结构化 JSON 输出，能够方便地接入包括 OpenClaw 在内的各类 AI Agent 系统。 短短几天，该项目已经收获了 15k 的 Stars。 项目地址：https://github.com/googleworkspace/cli Google Cloud AI 总监 Addy Osmani 发推宣传，贴子浏览量突破了 500 万： 可一键接入 OpenClaw，让智能体接管 Google Workspace 为什么选择「gws」项目？ 对于人类开发者，不再需要根据 REST 文档手写 curl 请求。 gws 为每个资源都提供 --help 帮助信息，支持使用 --dry-run 预览请求，并自动处理分页。 对于 AI 智能体，所有返回结果都是结构化的 JSON。 结合内置的 Agent 技能，你的 LLM 就可以在无需编写额外工具的情况下直接管理 Google Workspace。 这意味着，该 CLI 将 Google Workspace API 变成了一个既适合人类，也适合 AI Agent 调用的统一接口。人类不用写 API 请求，AI 不需要写额外工具。 在架构层面，「gws」采用一种两阶段解析（two-phase parsing）策略： 读取 argv [1]，以识别要调用的服务（例如 drive）。获取该服务的 Discovery Document（API 发现文档），并进行缓存（缓存时间为 24 小时）。根据文档中定义的资源（resources）和方法（methods），动态构建一个 clap::Command 命令树。再次解析剩余的命令行参数。完成身份认证，构建 HTTP 请求并执行。 所有输出，包括成功结果、错误信息以及下载相关的元数据，都会以结构化 JSON 的形式返回。 至于开发者关注的 AI Agent Skills 能力，「gws」内置了 100 多个 Agent Skills（以 SKILL.md 文件形式提供），每个支持的 API 都对应一个技能，同时还包含一些用于常见工作流程的高层辅助技能，以及 50 个精选使用示例，覆盖 Gmail、Drive、Docs、Calendar 和 Sheets 等应用。 其中 OpenClaw 的配置步骤如下，两种方式可选： 另外，gws-shared 这个技能文件里包含了一段安装配置，如果系统环境变量 PATH 中没有检测到 gws CLI，OpenClaw 就会自动通过 npm 安装它。 完整 Agent Skills 列表如下： 地址：https://github.com/googleworkspace/cli/blob/main/docs/skills.md 项目安装 项目安装准确事项包括如下： Node.js 18 或更高版本：用于通过 npm 安装（也可以从 GitHub Releases 下载已编译好的二进制文件）。一个 Google Cloud 项目：用于获取 OAuth 凭证。你可以通过 Google Cloud Console、gcloud CLI，或者使用 gws auth setup 命令创建。以及一个拥有 Google Workspace 访问权限的 Google 账号。 安装步骤如下： npm 包中已经打包了针对你操作系统和架构的 预编译原生二进制文件，因此无需安装 Rust 工具链。 或者从源码构建： 此外还提供了一个 Nix flake，地址为：github:googleworkspace/cli。 快速开始： 最后提下醒，虽然这个新的 GitHub 项目出自谷歌，主要开发者也来自谷歌，但它并不是谷歌正式的产品，因而",
+      "at": "2026-03-09"
+    },
+    "https://news.aibase.com/zh/news/26018": {
+      "title": "Anthropic 被列为风险实体，OpenAI 迅速“接盘”引发争议硅谷AI公司与美国防部关系紧张，Anthropic因谈判破裂被列入风险名单并计划上诉，而OpenAI则迅速与国防部达成合作，引发用户争议。 刚刚 8.5K",
+      "text": "随着美国国防部（DOD）与 AI 初创公司之间的关系骤然紧张，硅谷正面临一场关于“防御性业务”的认知冲击。在过去的一周内，Anthropic 与五角大楼关于 Claude 技术的谈判宣告破裂，随后该公司被正式列入“供应链风险名单”。面对这一变局，Anthropic 明确表示将在法庭上挑战这一认定。与此同时，竞争对手 OpenAI 迅速填补了真空，宣布与国防部达成合作协议。这一举动在用户群中引发了剧烈反弹，数据显示，在协议官宣后，ChatGPT 的卸载量激增了 295%，而大量流失的用户转头将 Anthropic 的 Claude 推向了应用商店排行榜首位。本次风波的核心焦点包括：合同条款之争：争议的根源在于五角大楼试图修改现有合同条款，以获得对 AI 技术更广泛的控制权，这触碰了 Anthropic 关于“非致命性用途”的底线。高管离职潮：OpenAI 内部也并非风平浪静，至少有一名高管因担心公司在缺乏足够安全护栏的情况下匆忙推进军事交易而愤然辞职。初创企业的寒蝉效应：业内专家担心，政府单方面修改已签署合同的行为将让更多科技初创公司对国防订单望而却步。个人恩怨色彩：有报道指出，Anthropic 首席执行官与国防部现任首席技术官（前 Uber 高管）之间的个人矛盾，也为这场公事公办的谈判增添了复杂的人际色彩。虽然 OpenAI 和 Anthropic 均公开表示会对 AI 的军事用途设置限制，但 Anthropic 在条款细节上的“寸步不让”与 OpenAI 的“高效对接”形成了鲜明对比，这正重新定义着 AI 巨头与国家安全机构之间的博弈规则",
+      "at": "2026-03-09"
+    },
+    "https://news.aibase.com/zh/news/26022": {
+      "title": "两周揪出 100 个漏洞！Claude AI 成了 Firefox 的“最强外挂”Mozilla与Anthropic合作，在14天内利用Claude AI挖掘出Firefox浏览器超100个安全漏洞，包括14个高危漏洞并已修复。Anthropic的Frontier Red Team采用全新AI辅助方法，展现了AI在网络安全领域的强大潜力。 刚刚 5.3K",
+      "text": "近日，浏览器界发生了一场足以载入网络安全史册的“闪电战”。Mozilla 基金会对外宣布，通过与 AI 巨头 Anthropic 深度合作，在短短 14 天内，利用Claude AI辅助挖掘出 Firefox 浏览器中超过 100 个安全与稳定性漏洞。其中，包含 14 个足以威胁用户安全的高危漏洞，目前已全数修复。在这场技术秀中，Anthropic 的 Frontier Red Team 扮演了关键角色。他们带着一套全新的 AI 辅助“挖洞”方法找到Mozilla，并将目标锁定在浏览器最核心、也最易受攻击的组件——JavaScript 引擎。AI 表现出的“专业度”令传统安全界侧目：效率惊人： 14 个高危漏洞最终演变为 22 个独立的 CVE 编号，同时还扫清了 90 个中低优先级缺陷。逻辑缜密： 不同于传统“模糊测试（fuzzing）”靠随机乱试来碰运气，Claude能够理解程序背后的复杂逻辑。它甚至找出了若干传统自动化手段根本无法触及的“逻辑漏洞”，并自动生成了最小化测试用例，手把手教开发人员如何复现并修复。质量极高： Mozilla强调，这次 AI 提交的是实打实的深度报告，完全不同于目前开源社区饱受诟病的“AI 垃圾报告”——那些只是为了骗取漏洞奖金的噪音。目前，这些安全成果已全部整合进最新的Firefox 148.0版本中。用户只需动动手指完成更新，就能享受到由顶级 AI 亲自“扫过地”的防护层。Mozilla表示，这次成功的尝试仅仅是个开始。未来，他们计划将 AI 辅助方法常态化，甚至有望将其推广到整个开源生态系统。当传统的安全防护撞上天花板，AI 或许将成为人类守护网络边界的最后一块拼图。",
+      "at": "2026-03-09"
+    },
+    "https://news.aibase.com/zh/news/26021": {
+      "title": "ChatGPT“成人模式”又跳票！奥特曼：先把智商搞上去，搞颜色再等等OpenAI再次推迟ChatGPT“成人模式”上线，原定2026年第一季度推出，现已延期。公司表示将优先投入资源开发个性化与主动交互功能。此前CEO奥尔特曼已多次推迟该争议功能，引发用户不满。 刚刚 8.6K",
+      "text": "OpenAI再度推迟争议功能：资源优先流向个性化与主动交互在AI圈，“搞颜色”是否应该成为生产力的一部分，一直是备受争议的话题。曾许诺要让ChatGPT更懂成年人的OpenAI，最近又给满心期待的用户泼了一盆冷水。据IT之家报道，OpenAI官方近日确认，原定于 2026 年第一季度上线的“成人模式”将再次推迟。这已经不是萨姆·奥尔特曼第一次“食言”了。早在 2025 年底，奥尔特曼就曾提出“把成年人当成年人看待”的原则，打算放宽对情色内容的限制，并计划在 12 月上线。然而，这一计划在内部遭遇了紧急刹车，资源被迅速调配到了更核心的体验升级上。如今，2026 年第一季度已步入尾声，官方依然没有给出一个明确的时间表。OpenAI发言人在回应中显得十分“官方”且理性。他表示，公司目前的头等大事是提升 AI 的智能水平、改善对话个性，并让交互变得更加主动和个性化。翻译一下就是：想看“辛辣”内容？先等 AI 把脑子练好，把整体体验打磨到位再说。不过，大家也别以为OpenAI彻底放弃了这个香饽饽。代码考古学家们在ChatGPT的新版本中发现了一串名为“Naughty Chats（调皮对话）”的字符。描述显示，该设置允许 AI 在用户请求时使用更具成人主题的语言，且仅限 18 岁以上用户开启。为了确保不给未成年人“带坏节奏”，OpenAI在今年 1 月还上线了一套年龄预测工具。这套系统能通过分析你的聊天频率、使用时段来侧绘你的年龄。如果你被判定为“小屁孩”，对不起，即便未来的成人模式上线，你也得通过自拍照完成 Persona 的身份核验才能访问。从“千呼万唤”到“一再推迟”，OpenAI的犹豫折射出顶级 AI 企业在商业利益与伦理底线之间的艰难拉扯。虽然“更懂人心”的ChatGPT迟到了，但一个更聪明、更主动的 AI 伙伴，或许比单纯的感官刺激更值得等待。",
+      "at": "2026-03-09"
+    },
+    "https://aitntnews.com/newDetail.html?newId=22900": {
+      "title": "30B参数超越GPT-5！REDSearcher让「深度搜索Agent」做到低成本可扩展！",
+      "text": "「2018 到 2023 年间在 EMNLP 会议上发表的那篇论文中，第一作者本科就读于达特茅斯学院、第四作者本科就读于宾夕法尼亚大学的那篇科学论文，题目是什么？」 这并不是一道靠记忆就能解答的题。Agent 必须在多轮环境交互中，不断假设、验证并修正路径，始终保持推理一致性，才能将零散证据整合成自洽链条。 2025 年被视为 AI Agent 元年，但真正的自主 Agent 核心在于「深度搜索」，在长程任务中像人类专家一样维持目标、验证信息并动态调整策略。然而，训练这样的 Agent 面临三大瓶颈： 数据稀缺：高难度长程问答任务极度依赖人工标注，成本高昂。因此，我们需要一条能够自动化合成高难度问题的链路。 能力鸿沟：预训练模型虽知识储备丰富，却缺乏与真实环境进行长程交互的能力。这需要通过低成本的中训练阶段来弥补鸿沟。 环境缺失：在真实环境中训练成本高且不可控。一个功能等价的模拟环境，可以在本地复现搜索过程，从而支持算法的快速迭代。 为突破瓶颈，REDSearcher 团队设计了一套低成本、可扩展的训练框架，最终使用 30B 规格模型在深度搜索任务上取得开源模型 SoTA，并且超越了 GPT-5 等一众闭源模型。 论文标题：REDSearcher: A Scalable and Cost-Efficient Framework for Long-Horizon Search Agents项目主页：https://github.com/RedSearchAgent/REDSearcher论文链接：https://arxiv.org/abs/2602.14234Collections：https://huggingface.co/collections/Zchu/redsearcher 一、什么是「足够难」的深度搜索题目？ 什么是困难的搜索题目？推理跳数往往只是表象，应该追求的是问题的结构性困难。 1. 拓扑复杂度：用树宽衡量「结构性困难」 复杂任务中，信息分叉交织形成回环。Agent 需同时记忆多路推论，时刻验证一致性，并随时准备整体回溯，这便是深度搜索的核心挑战。为此，团队引入图论中的 TreeWidth（树宽）概念来刻画这种「结构性困难」。以下通过三种结构问题进行对比： 线性/树状（树宽=1）：典型链式推理，只需按部就班检索便可解答。 菱形/回环（树宽=2）：出现分叉与重汇合，要求 Agent 维持多路假设的一致性，并在矛盾时进行回溯。 强耦合子图（树宽≥3）：形成网状约束，需要将零散证据拼合成一致的整体，迫使模型进行全局验证和回溯。 2. 信息分散度：杜绝搜索「捷径」 即使问题的拓扑结构很复杂，如果存在一个网页恰好包含所有关键事实，模型一次检索就能抄走答案。为此，团队引入「信息分散度」，即覆盖全部关键证据所需的最小来源数。信息分散度越大，表明问题相关的证据片段（注：原文为“争取片段”，疑为笔误，此处已作修正）在互联网上的分布就更加零散，这迫使 Agent 与外部环境进行更多轮次的交互从而获取更加充分的信息。 二、大规模「自动化」合成「高难度」的深度搜索问题 基于双约束复杂度标准，我们采用 graph-to-text 流程合成数据：先生成符合树宽与分散度的推理图，再将其翻译为自然语言问题，并经过多层校验确保「高难度、可解且答案唯一」。同时，我们设计了基于「结构化信息」与「网络浏览」两套图构造流程，以覆盖不同搜索环境。在合成问题中，我们采取： 拓扑结构增强：直接生成高树宽图的成功率较低。为此，我们引入大模型智能体对初始依赖图进行「拓扑加密」，通过添加环状与交错约束，显著提升结构复杂度，迭代地提高问题难度。 工具增强的问题合成：在问题构造阶段，我们主动植入工具调用需求。通过将关键实体替换为隐含工具依赖的表达（如地名→地图服务、文章→谷歌学术），使工具调用成为解题前置条件。 三、多模态扩展：从「文本图」到「多模态图」 在文本合成基础上，REDSearcher 通过模态注入将纯文本推理图转化为跨模态推理，使部分约束锚定在图像中。 视觉属性锚定：用图像描述替换节点的文本属性，迫使模型先识别图像再关联知识。跨模态依赖：设置视觉不可替代约束，使图像搜索成为推理必经之路，而非冗余信息。视觉语义抽象：使用抽象指代替代直接命名，迫使模型识别图像内容后再",
+      "at": "2026-03-09"
     }
   },
   "daily": {
@@ -2048,51 +2073,36 @@
       "at": "2026-03-08"
     },
     "2026-03-09": {
-      "fingerprint": "02104b99061d79556ca4ab41b9ece0e45f5848016f066463ccc908897dc5bb1b",
+      "fingerprint": "10f657841783d9ad2dfbe5614814f4f7cb343391cd07dd262ab0d74f3e9a56f2",
       "daily": {
-        "overview": "AI产业主线聚焦国防安全与伦理争议，Anthropic与OpenAI的国防部合作风波引发行业震荡，同时Claude Sonnet 4.6发布与Rwanda政府合作标志着前沿模型在生产力与全球治理领域的深化应用。",
+        "overview": "AI产业主线围绕国防合作争议与安全框架构建展开，Anthropic与OpenAI的国防部合作风波引发行业对政府监管与伦理边界的深度反思，同时开源社区在Agent工具链与多模态基准测试上持续突破。",
         "hotNews": [
           {
-            "title": "国防合作伦理争议引发高管离职与行业反思，AI安全治理面临严峻考验。",
-            "insight": "国防合作伦理争议引发高管离职与行业反思，AI安全治理面临严峻考验。",
-            "briefing": "Anthropic与OpenAI近期因国防部合作引发激烈争议，Anthropic被美方列为供应链风险并试图通过法律途径抗辩，OpenAI则迅速签署协议却招致用户反弹及高管辞职。OpenAI硬件负责人Caitlin Kalinowski因对协议缺乏充分制衡表示原则性反对而离职，强调需更审慎的治理流程。这一系列事件暴露了AI技术在国家安全应用中的伦理边界模糊，引发业界对政府合作模式的广泛讨论。",
-            "evaluation": "事件反映AI国防应用中的治理赤字，短期内可能影响企业政府合作信心，但长期需建立更透明的安全框架。",
-            "narrative": "Anthropic与OpenAI近期因国防部合作引发激烈争议，Anthropic被美方列为供应链风险并试图通过法律途径抗辩，OpenAI则迅速签署协议却招致用户反弹及高管辞职。OpenAI硬件负责人Caitlin Kalinowski因对协议缺乏充分制衡表示原则性反对而离职，强调需更审慎的治理流程。这一系列事件暴露了AI技术在国家安全应用中的伦理边界模糊，引发业界对政府合作模式的广泛讨论。事件反映AI国防应用中的治理赤字",
-            "summary": "Anthropic与OpenAI近期因国防部合作引发激烈争议，Anthropic被美方列为供应链风险并试图通过法律途径抗辩，OpenAI则迅速签署协议却招致用户反弹及高管辞职。OpenAI硬件负责人Caitlin Kalinowski因对协议缺乏充分制衡表示原则性反对而离职，强调需更审慎的治理流程。这一系列事件暴露了AI技术在国家安全应用中的伦理边界模糊",
+            "title": "国防合作争议引发高管离职与行业信任危机，安全框架缺失凸显监管紧迫性。",
+            "insight": "国防合作争议引发高管离职与行业信任危机，安全框架缺失凸显监管紧迫性。",
+            "briefing": "Anthropic与OpenAI相继与国防部达成合作，但Anthropic因被标记为供应链风险而谈判破裂，OpenAI随后宣布协议引发用户反弹，导致高管Caitlin Kalinowski辞职。与此同时，华盛顿缺乏AI监管框架，专家发布《人类宣言》呼吁禁止超级智能开发。这一系列事件暴露了AI国防应用中的伦理分歧与监管真空。",
+            "evaluation": "事件涉及多方权威媒体，反映行业对政府合作模式的深层分歧，短期内可能影响初创企业参与国防项目的意愿。",
+            "narrative": "Anthropic与OpenAI相继与国防部达成合作，但Anthropic因被标记为供应链风险而谈判破裂，OpenAI随后宣布协议引发用户反弹，导致高管Caitlin Kalinowski辞职。与此同时，华盛顿缺乏AI监管框架，专家发布《人类宣言》呼吁禁止超级智能开发。这一系列事件暴露了AI国防应用中的伦理分歧与监管真空。事件涉及多方权威媒体，反映行业对政府合作模式的深层分歧，短期内可能影响初创企业参与国防项目的意愿。",
+            "summary": "Anthropic与OpenAI相继与国防部达成合作，但Anthropic因被标记为供应链风险而谈判破裂，OpenAI随后宣布协议引发用户反弹，导致高管Caitlin Kalinowski辞职。与此同时，华盛顿缺乏AI监管框架，专家发布《人类宣言》呼吁禁止超级智能开发。这一系列事件暴露了AI国防应用中的伦理分歧与监管真空。事件涉及多方权威媒体",
             "refs": [
               1,
               2,
               3,
-              6
+              11
             ],
-            "mentionCount": 2,
-            "crossVerifyScore": 85
+            "mentionCount": 3,
+            "crossVerifyScore": 90
           },
           {
-            "title": "前沿模型性能突破与多领域落地并行，Claude Sonnet",
-            "insight": "前沿模型性能突破与多领域落地并行，Claude Sonnet",
-            "briefing": "Anthropic发布Claude Sonnet 4.6，在编码、智能体规划及专业工作领域实现前沿性能，并引入百万级上下文窗口。该模型在代码一致性、指令遵循及计算机使用能力上显著优于前代及Opus 4.5，成为免费与Pro用户默认选择。与此同时，Anthropic与卢旺达政府签署三年期谅解备忘录，将AI深度整合至医疗、教育与公共部门，标志着非洲大陆首个多领域AI合作框架的建立。",
-            "evaluation": "Sonnet 4.6的发布巩固了Anthropic在生产力工具市场的领先地位，而卢旺达合作则拓展了AI在发展中国家的应用场景。",
-            "narrative": "Anthropic发布Claude Sonnet 4.6，在编码、智能体规划及专业工作领域实现前沿性能，并引入百万级上下文窗口。该模型在代码一致性、指令遵循及计算机使用能力上显著优于前代及Opus 4.5，成为免费与Pro用户默认选择。与此同时，Anthropic与卢旺达政府签署三年期谅解备忘录，将AI深度整合至医疗、教育与公共部门，标志着非洲大陆首个多领域AI合作框架的建立。Sonnet",
-            "summary": "Anthropic发布Claude Sonnet 4.6，在编码、智能体规划及专业工作领域实现前沿性能，并引入百万级上下文窗口。该模型在代码一致性、指令遵循及计算机使用能力上显著优于前代及Opus 4.5，成为免费与Pro用户默认选择。与此同时，Anthropic与卢旺达政府签署三年期谅解备忘录，将AI深度整合至医疗、教育与公共部门",
+            "title": "Claude Sonnet 4.6以低成本实现前沿性能",
+            "insight": "Claude Sonnet 4.6以低成本实现前沿性能",
+            "briefing": "Anthropic发布Claude Sonnet 4.6，在编码、代理与专业工作领域提供接近旗舰模型的性能，同时引入百万级上下文窗口。该模型在安全评估中表现稳健，被定位为更易获取的高性能工具，旨在降低企业使用前沿AI的门槛。",
+            "evaluation": "作为Anthropic核心产品迭代，其性能提升与定价策略可能加速AI在专业工作流中的普及，但需关注长期竞争格局变化。",
+            "narrative": "Anthropic发布Claude Sonnet 4.6，在编码、代理与专业工作领域提供接近旗舰模型的性能，同时引入百万级上下文窗口。该模型在安全评估中表现稳健，被定位为更易获取的高性能工具，旨在降低企业使用前沿AI的门槛。作为Anthropic核心产品迭代，其性能提升与定价策略可能加速AI在专业工作流中的普及，但需关注长期竞争格局变化。",
+            "summary": "Anthropic发布Claude Sonnet 4.6，在编码、代理与专业工作领域提供接近旗舰模型的性能，同时引入百万级上下文窗口。该模型在安全评估中表现稳健，被定位为更易获取的高性能工具，旨在降低企业使用前沿AI的门槛。作为Anthropic核心产品迭代，其性能提升与定价策略可能加速AI在专业工作流中的普及，但需关注长期竞争格局变化。",
             "refs": [
               5,
-              6,
               1
-            ],
-            "mentionCount": 2,
-            "crossVerifyScore": 82
-          },
-          {
-            "title": "AI安全共识框架浮现，公众对无监管超级智能的反对率达95%。",
-            "insight": "AI安全共识框架浮现，公众对无监管超级智能的反对率达95%。",
-            "briefing": "在华盛顿与Anthropic争议暴露监管真空之际，数百名专家与前官员签署《人类优先宣言》，提出五项核心原则：人类主导、权力分散、保护人类体验、保障自由及法律问责。宣言明确禁止在缺乏科学共识与民主同意下开发超级智能，并要求强制断电机制及禁止自我复制架构。民调显示95%美国民众反对无监管的超级智能竞赛，凸显社会对AI安全治理的迫切需求。",
-            "evaluation": "该框架为全球AI治理提供了重要参考，但实际执行仍需政策制定者与企业的协同推进。",
-            "narrative": "在华盛顿与Anthropic争议暴露监管真空之际，数百名专家与前官员签署《人类优先宣言》，提出五项核心原则：人类主导、权力分散、保护人类体验、保障自由及法律问责。宣言明确禁止在缺乏科学共识与民主同意下开发超级智能，并要求强制断电机制及禁止自我复制架构。民调显示95%美国民众反对无监管的超级智能竞赛，凸显社会对AI安全治理的迫切需求。该框架为全球AI治理提供了重要参考，但实际执行仍需政策制定者与企业的协同推进。",
-            "summary": "在华盛顿与Anthropic争议暴露监管真空之际，数百名专家与前官员签署《人类优先宣言》，提出五项核心原则：人类主导、权力分散、保护人类体验、保障自由及法律问责。宣言明确禁止在缺乏科学共识与民主同意下开发超级智能，并要求强制断电机制及禁止自我复制架构。民调显示95%美国民众反对无监管的超级智能竞赛，凸显社会对AI安全治理的迫切需求。",
-            "refs": [
-              3,
-              11
             ],
             "mentionCount": 1,
             "crossVerifyScore": 75
@@ -2100,23 +2110,32 @@
         ],
         "otherNews": [
           {
-            "title": "AI数据中心建设催生临时居住模式，Target",
-            "insight": "AI数据中心建设催生临时居住模式，Target",
-            "briefing": "为应对AI数据中心建设激增的劳动力需求，开发商在偏远地区建立临时居住设施。Target Hospitality与德克萨斯州Dickens县签署132万美元合同，建设可容纳超千人的营地，提供生活与娱乐设施。该公司同时运营ICE拘留中心，引发对AI基建伦理的潜在关联讨论。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "为应对AI数据中心建设激增的劳动力需求，开发商在偏远地区建立临时居住设施。Target Hospitality与德克萨斯州Dickens县签署132万美元合同，建设可容纳超千人的营地，提供生活与娱乐设施。该公司同时运营ICE拘留中心，引发对AI基建伦理的潜在关联讨论。当前信号具备参考价值，但仍需更多来源持续验证。",
-            "summary": "为应对AI数据中心建设激增的劳动力需求，开发商在偏远地区建立临时居住设施。Target Hospitality与德克萨斯州Dickens县签署132万美元合同，建设可容纳超千人的营地，提供生活与娱乐设施。该公司同时运营ICE拘留中心",
+            "title": "Owner of ICE detention facility sees big",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“In Brief Posted: 9:30 AM PDT · March 8, 2026 Image Credits:UCG / Getty Images To house”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“In Brief Posted: 9:30 AM PDT · March 8, 2026 Image Credits:UCG / Getty Images To house”，核心信号更偏观点与风险提示",
             "refs": [
               4
             ],
             "mentionCount": 1,
-            "crossVerifyScore": 68
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "Where things stand with the Department of",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“A statement from Dario AmodeiYesterday (March 4) Anthropic received a letter from the”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“A statement from Dario AmodeiYesterday (March 4) Anthropic received a letter from the”，核心信号更偏观点与风险提示",
+            "refs": [
+              6
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
           },
           {
             "title": "Quoting Joseph Weizenbaum",
-            "insight": "Quoting Joseph Weizenbaum",
-            "narrative": "社区来源发布了“Quoting Joseph Weizenbaum”相关动态，已纳入当日快讯，建议结合原文核对关键细节。",
-            "summary": "社区来源发布了“Quoting Joseph Weizenbaum”相关动态，已纳入当日快讯，建议结合原文核对关键细节。",
+            "insight": "社区观察：Quoting Joseph Weizenbaum",
+            "narrative": "该条社区讨论提到“8th March 2026 What I had not realized is that extremely short exposures to a”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“8th March 2026 What I had not realized is that extremely short exposures to a”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
             "refs": [
               7
             ],
@@ -2124,37 +2143,111 @@
             "crossVerifyScore": 95
           },
           {
-            "title": "Quoting Ally Piechowski",
-            "insight": "Quoting Ally Piechowski",
-            "narrative": "社区来源发布了“Quoting Ally Piechowski”相关动态，已纳入当日快讯，建议结合原文核对关键细节。",
-            "summary": "社区来源发布了“Quoting Ally Piechowski”相关动态，已纳入当日快讯，建议结合原文核对关键细节。",
+            "title": "Will the Pentagon’s Anthropic controversy scare",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“In just over a week, negotiations over the Pentagon’s use of Anthropic’s Claude”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“In just over a week, negotiations over the Pentagon’s use of Anthropic’s Claude”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "refs": [
+              1
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "A roadmap for AI, if anyone will listen",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“While Washington’s breakup with Anthropic exposed the complete lack of any coherent”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“While Washington’s breakup with Anthropic exposed the complete lack of any coherent”，核心信号更偏观点与风险提示",
+            "refs": [
+              2
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "OpenAI hardware exec Caitlin Kalinowski quits in",
+            "insight": "海外科技媒体新动向",
+            "narrative": "该条社区讨论提到“Caitlin Kalinowski announced today that in response to OpenAI’s controversial agreement”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“Caitlin Kalinowski announced today that in response to OpenAI’s controversial agreement”，核心信号更偏观点与风险提示",
+            "refs": [
+              3
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "ProductFeb 17, 2026Introducing Claude Sonnet",
+            "insight": "产品发布：Claude Sonnet 4.6",
+            "narrative": "该条社区讨论提到“Claude Sonnet 4.6 is our most capable Sonnet model yet. It’s a full upgrade of the”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+            "summary": "该条社区讨论提到“Claude Sonnet 4.6 is our most capable Sonnet model yet. It’s a full upgrade of the”，核心信号更偏观点与风险提示",
+            "refs": [
+              5
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 95
+          },
+          {
+            "title": "一键接入OpenClaw，谷歌开源CLI狂揽15k Stars",
+            "insight": "一键接入OpenClaw，谷歌开源CLI狂揽15k Stars",
+            "narrative": "OpenClaw 火爆的盛况至今仍在持续，在国内甚至出现了排队在腾讯总部楼下等待安装 OpenClaw 的场景，让人感叹「一代人有一代人的领鸡蛋」。 而就在几天前，谷歌发布了一个 CLI（命令行界面）神器，并上传到了 GitHub 上，挂在了 Google Workspace 的官方组织名下。",
+            "summary": "OpenClaw 火爆的盛况至今仍在持续，在国内甚至出现了排队在腾讯总部楼下等待安装 OpenClaw 的场景，让人感叹「一代人有一代人的领鸡蛋」。 而就在几天前，谷歌发布了一个 CLI（命令行界面）神器，并上传到了 GitHub 上",
             "refs": [
               8
             ],
             "mentionCount": 1,
-            "crossVerifyScore": 95
+            "crossVerifyScore": 78
           }
         ],
         "coreTech": [
           {
-            "title": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
-            "summary": "FeatureBench提出基于真实代码仓库单元测试的端到端评测范式，聚焦复杂功能交付能力，填补了传统Bug修复评测的空白。",
+            "title": "：可扩展且高效的深度搜索代理框架",
+            "summary": "提出基于树宽与信息分散度的深度搜索任务合成方法，使用30B模型在开源领域取得领先表现。",
             "refs": [
               9
             ]
           },
           {
-            "title": "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks",
-            "summary": "SkillsBench评估Agent技能在跨任务中的有效性，揭示Skills生态的指数级增长与标准化趋势，为智能体能力评估提供新框架。",
+            "title": "论文研究进展 2",
+            "summary": "评估Agent Skills生态的有效性，揭示技能标准化与评估盲区，推动跨平台技能规范发展。",
             "refs": [
               10
             ]
           }
         ],
-        "aiRumor": [],
+        "aiRumor": [
+          {
+            "title": "Just published a hands-on guide on building a Kubernetes cluster from scratch on AWS EC2",
+            "summary": "发布基于kubeadm的AWS EC2集群搭建指南，强调无托管服务的底层实现细节。",
+            "credibility": "中",
+            "refs": [
+              13
+            ]
+          },
+          {
+            "title": "Just published my first cuda kernel, inspired by Sage Attention",
+            "summary": "开发者分享基于Sage Attention的CUDA内核实现，供社区测试与参考。",
+            "credibility": "中",
+            "refs": [
+              15
+            ]
+          }
+        ],
         "refTranslations": {
-          "9": "FeatureBench: 复杂功能开发中的智能体编码评测",
-          "10": "SkillsBench: 智能体技能跨任务有效性评测"
+          "1": "五角大楼Anthropic争议会吓退初创企业涉足国防领域吗？",
+          "2": "AI发展路线图，如果有人愿意听的话",
+          "3": "Open AI硬件高管Caitlin Kalinowski因五角大楼交易辞职",
+          "4": "ICE拘留设施所有者看好AI在移民拘留营中的商机",
+          "5": "产品发布：Claude Sonnet 4.6",
+          "6": "战争部公告现状（2026年3月5日）——Dario Amodei声明",
+          "7": "引用Joseph Weizenbaum的话",
+          "8": "一键接入Open Claw，谷歌开源CLI狂揽15k Stars，Agent开始接管Workspace",
+          "9": "REDSearcher：可扩展且高效的深度搜索代理框架",
+          "10": "SkillsBench：评估跨任务Agent技能表现",
+          "11": "Anthropic失业报告炸场！22-25岁年轻人被斩杀，AI淘汰75％编程",
+          "12": "ALL基准排行榜——AI基准测试的结构性问题及统一评估的必要性",
+          "13": "发布AWS EC2上使用kubeadm从零构建Kubernetes集群的实战指南",
+          "14": "介绍Nanochat Moroccan——首个专为摩洛哥语言构建的语言模型家族",
+          "15": "发布首个受Sage Attention启发的CUDA内核，欢迎试用"
         },
         "candidateTotal": 155
       },
@@ -2393,6 +2486,22 @@
     "https://huggingface.co/posts/omarkamali/120915236935381": {
       "title": "You're probably training on outdated Wikipedia data right now and don't know it. 💡 In June last year, a friend from the Moroccan Wikipedia community slid into my DMs: \"Are you using the current version? The official dataset is severely outdated. We added so many articles nowhere to be found on HuggingFace.\" He was right. I was running a 2023 snapshot. In 2025. The official Wikipedia dataset, the one hundreds of labs and researchers grab by default without a second thought, was frozen in time. • For English, that's 700,000 missing articles. • For Moroccan Arabic, 30% of the language's entire Wikipedia. • For 31 other languages, there was literally no text corpus at all until recently. I could've shrugged and moved on. Instead I spent the next months building a monthly automated pipeline for 340+ languages, on my personal laptop, nearly killing it several times in the process (100% disk, frozen screen, the works). Nous Research trained Hermes 4 on it. INRIA cited it. It's now three years ahead of what most people are training on. Here's the full story of how I built Wikipedia Monthly 👇",
       "at": "2026-03-09"
+    },
+    "https://www.anthropic.com/news/where-stand-department-war": {
+      "title": "Where things stand with the Department of WarAnnouncementsMar 5, 2026A statement from Dario Amodei.",
+      "at": "2026-03-09"
+    },
+    "https://aitntnews.com/newDetail.html?newId=22911": {
+      "title": "一键接入OpenClaw，谷歌开源CLI狂揽15k Stars，Agent开始接管Workspace",
+      "at": "2026-03-09"
+    },
+    "https://aitntnews.com/newDetail.html?newId=22900": {
+      "title": "30B参数超越GPT-5！REDSearcher让「深度搜索Agent」做到低成本可扩展！",
+      "at": "2026-03-09"
+    },
+    "https://huggingface.co/posts/AINovice2005/189186110939177": {
+      "title": "Just published my first cuda kernel, inspired by Sage Attention. Feel free to try it out ☺️",
+      "at": "2026-03-09"
     }
   },
   "publishedSignatures": {
@@ -2594,6 +2703,22 @@
     },
     "cf7421dc97649a25": {
       "title": "You're probably training on outdated Wikipedia data right now and don't know it. 💡 In June last year, a friend from the Moroccan Wikipedia community slid into my DMs: \"Are you using the current version? The official dataset is severely outdated. We added so many articles nowhere to be found on HuggingFace.\" He was right. I was running a 2023 snapshot. In 2025. The official Wikipedia dataset, the one hundreds of labs and researchers grab by default without a second thought, was frozen in time. • For English, that's 700,000 missing articles. • For Moroccan Arabic, 30% of the language's entire Wikipedia. • For 31 other languages, there was literally no text corpus at all until recently. I could've shrugged and moved on. Instead I spent the next months building a monthly automated pipeline for 340+ languages, on my personal laptop, nearly killing it several times in the process (100% disk, frozen screen, the works). Nous Research trained Hermes 4 on it. INRIA cited it. It's now three years ahead of what most people are training on. Here's the full story of how I built Wikipedia Monthly 👇",
+      "at": "2026-03-09"
+    },
+    "0652b79f5892be59": {
+      "title": "Where things stand with the Department of WarAnnouncementsMar 5, 2026A statement from Dario Amodei.",
+      "at": "2026-03-09"
+    },
+    "0c77176447116127": {
+      "title": "一键接入OpenClaw，谷歌开源CLI狂揽15k Stars，Agent开始接管Workspace",
+      "at": "2026-03-09"
+    },
+    "0a19e4390fb8ed19": {
+      "title": "30B参数超越GPT-5！REDSearcher让「深度搜索Agent」做到低成本可扩展！",
+      "at": "2026-03-09"
+    },
+    "1f3d7445dadcb47f": {
+      "title": "Just published my first cuda kernel, inspired by Sage Attention. Feel free to try it out ☺️",
       "at": "2026-03-09"
     }
   }
