@@ -194,6 +194,10 @@ const DIGEST_TZ = String(
 
 // 文章 front-matter 的发布时间（HH:mm:ss）
 const DIGEST_POST_TIME = String(process.env.DIGEST_POST_TIME || "08:00:00").trim() || "08:00:00";
+const NEWS_LOOKBACK_DAYS_DEFAULT = readPositiveIntEnv("DIGEST_NEWS_LOOKBACK_DAYS", 5);
+const PAPER_LOOKBACK_DAYS_DEFAULT = readPositiveIntEnv("DIGEST_PAPER_LOOKBACK_DAYS", 2);
+const CLUSTER_INPUT_CAP_NEWS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_NEWS", 100);
+const CLUSTER_INPUT_CAP_PAPERS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_PAPERS", 160);
 
 /* ==============================
  *  3) 工具函数（读写/时间/超时等）
@@ -346,6 +350,29 @@ function inferPubDateFromUrlAndTitle(url, title = "") {
     if (iso) return iso;
   }
 
+  const englishMonths =
+    "(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)";
+  const monthNameMatch = raw.match(new RegExp(`${englishMonths}\\s+(\\d{1,2}),\\s*(20\\d{2})`, "i"));
+  if (monthNameMatch) {
+    const monthMap = {
+      jan: 1, january: 1,
+      feb: 2, february: 2,
+      mar: 3, march: 3,
+      apr: 4, april: 4,
+      may: 5,
+      jun: 6, june: 6,
+      jul: 7, july: 7,
+      aug: 8, august: 8,
+      sep: 9, sept: 9, september: 9,
+      oct: 10, october: 10,
+      nov: 11, november: 11,
+      dec: 12, december: 12,
+    };
+    const month = monthMap[String(monthNameMatch[1] || "").toLowerCase()];
+    const iso = buildIsoDate(monthNameMatch[3], month, monthNameMatch[2]);
+    if (iso) return iso;
+  }
+
   const compactMatch = String(url || "").match(/news(\d{6})(?!\d)/i);
   if (compactMatch) {
     const token = compactMatch[1];
@@ -369,6 +396,22 @@ function inferPubDateFromUrlAndTitle(url, title = "") {
   return "";
 }
 
+export function shouldSkipScrapedLink(listUrl, candidateUrl) {
+  const listNormalized = normalizeCandidateUrl(listUrl);
+  const candidateNormalized = normalizeCandidateUrl(candidateUrl);
+  if (!candidateNormalized) return true;
+  if (candidateNormalized === listNormalized) return true;
+  try {
+    const candidate = new URL(candidateUrl);
+    if ((candidate.hash || "").trim()) {
+      return normalizeCandidateUrl(candidate.toString()) === listNormalized;
+    }
+  } catch {
+    return false;
+  }
+  return false;
+}
+
 function inferArxivMonthDate(url) {
   const iso = inferPubDateFromUrlAndTitle(String(url || ""), "");
   if (!iso) return null;
@@ -385,6 +428,19 @@ function getEffectivePubDateMs(item) {
     return directPubMs;
   }
   return directPubMs || inferredMs || null;
+}
+
+function getRunDateAnchorMs(runDate) {
+  const raw = String(runDate || "").trim();
+  if (!raw) return Date.now();
+  const parsed = Date.parse(`${raw}T23:59:59.999Z`);
+  if (!Number.isFinite(parsed)) return Date.now();
+  return parsed;
+}
+
+function cutoffMsForDays(runDate, days) {
+  const anchorMs = getRunDateAnchorMs(runDate);
+  return anchorMs - Number(days || 0) * 24 * 60 * 60 * 1000;
 }
 
 function isStaleArxivLink(url, nowMs = Date.now()) {
@@ -564,8 +620,9 @@ export function buildCandidateSignature(item) {
 
 export function dedupeCandidatesEarly(candidates) {
   const list = Array.isArray(candidates) ? candidates : [];
-  const keepByCanonical = new Map();
-  const keepBySignature = new Map();
+  const groups = new Map();
+  const groupKeyByCanonical = new Map();
+  const groupKeyBySignature = new Map();
 
   const pickBetter = (a, b) => {
     if (!a) return b;
@@ -578,30 +635,75 @@ export function dedupeCandidatesEarly(candidates) {
     return dateB > dateA ? b : a;
   };
 
+  const mergeEvidence = (representative, evidenceItems) => {
+    const evidenceLinks = [...new Set(evidenceItems
+      .map((item) => normalizeCandidateUrl(item?.link || "") || String(item?.link || "").trim())
+      .filter(Boolean))];
+    const evidenceSources = [...new Set(evidenceItems
+      .map((item) => String(item?.source || "").trim())
+      .filter(Boolean))];
+    const evidenceSourceGroups = [...new Set(evidenceItems
+      .map((item) => String(item?.sourceGroup || "").trim())
+      .filter(Boolean))];
+
+    return {
+      ...representative,
+      evidenceCount: Math.max(1, evidenceItems.length),
+      evidenceLinks,
+      evidenceSources,
+      evidenceSourceGroups,
+    };
+  };
+
   for (const item of list) {
     if (!item || !item.link) continue;
     const canonical = normalizeCandidateUrl(item.link) || String(item.link).trim();
     const signature = buildCandidateSignature(item);
+    const linkedGroupKeys = [
+      groupKeyByCanonical.get(canonical),
+      signature ? groupKeyBySignature.get(signature) : null,
+    ].filter(Boolean);
+    const primaryKey = linkedGroupKeys[0] || `${signature ? `sig:${signature}` : `url:${canonical}`}`;
 
-    const existingByUrl = keepByCanonical.get(canonical);
-    const pickedByUrl = pickBetter(existingByUrl, item);
-    keepByCanonical.set(canonical, pickedByUrl);
+    if (!groups.has(primaryKey)) {
+      groups.set(primaryKey, {
+        representative: item,
+        evidence: [item],
+        canonicals: new Set(canonical ? [canonical] : []),
+        signatures: new Set(signature ? [signature] : []),
+      });
+    } else {
+      const group = groups.get(primaryKey);
+      group.representative = pickBetter(group.representative, item);
+      group.evidence.push(item);
+      if (canonical) group.canonicals.add(canonical);
+      if (signature) group.signatures.add(signature);
+    }
 
-    if (signature) {
-      const existingBySig = keepBySignature.get(signature);
-      const pickedBySig = pickBetter(existingBySig, pickedByUrl);
-      keepBySignature.set(signature, pickedBySig);
-      keepByCanonical.set(canonical, pickedBySig);
+    for (const extraKey of linkedGroupKeys.slice(1)) {
+      if (extraKey === primaryKey || !groups.has(extraKey)) continue;
+      const primary = groups.get(primaryKey);
+      const extra = groups.get(extraKey);
+      primary.representative = pickBetter(primary.representative, extra.representative);
+      primary.evidence.push(...extra.evidence);
+      for (const value of extra.canonicals) primary.canonicals.add(value);
+      for (const value of extra.signatures) primary.signatures.add(value);
+      groups.delete(extraKey);
+    }
+
+    const finalGroup = groups.get(primaryKey);
+    for (const value of finalGroup.canonicals) {
+      groupKeyByCanonical.set(value, primaryKey);
+    }
+    for (const value of finalGroup.signatures) {
+      groupKeyBySignature.set(value, primaryKey);
     }
   }
 
   const out = [];
-  const seen = new Set();
-  for (const item of keepByCanonical.values()) {
-    const key = `${normalizeCandidateUrl(item.link)}|${buildCandidateSignature(item)}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(item);
+  for (const group of groups.values()) {
+    if (!group?.representative) continue;
+    out.push(mergeEvidence(group.representative, group.evidence));
   }
   return out;
 }
@@ -614,6 +716,23 @@ export function filterPreviouslyPublished(items, cache, options = {}) {
     ? cache.publishedSignatures
     : {};
   const runDate = String(options?.runDate || "").trim();
+  const keepFollowUpEvidence = options?.keepFollowUpEvidence === true;
+
+  const shouldKeepFollowUpEvidence = (item, publishedInfo = null) => {
+    if (!keepFollowUpEvidence || !item || isPaperLikeMaterial(item)) return false;
+    if (item?.followUpSignals?.newDevelopment || item?.followUpSignals?.newSource) return true;
+
+    const publishedAt = String(publishedInfo?.at || "").trim();
+    if (publishedAt) {
+      const publishedMs = getRunDateAnchorMs(publishedAt);
+      const effectiveMs = getEffectivePubDateMs(item);
+      if (effectiveMs && effectiveMs > publishedMs) return true;
+    }
+
+    const evidenceCount = Number(item?.evidenceCount || 1);
+    const evidenceSources = Array.isArray(item?.evidenceSources) ? item.evidenceSources.length : 0;
+    return evidenceCount > 1 || evidenceSources > 1;
+  };
 
   return (items || []).filter((item) => {
     const link = String(item?.link || "").trim();
@@ -622,7 +741,9 @@ export function filterPreviouslyPublished(items, cache, options = {}) {
     const signature = buildCandidateSignature(item);
     if (signature && publishedSignatures[signature]) {
       const sigDate = String(publishedSignatures[signature]?.at || "").trim();
-      if (!(runDate && sigDate === runDate)) return false;
+      if (!(runDate && sigDate === runDate) && !shouldKeepFollowUpEvidence(item, publishedSignatures[signature])) {
+        return false;
+      }
     }
 
     const canonical = normalizeCandidateUrl(link);
@@ -635,7 +756,7 @@ export function filterPreviouslyPublished(items, cache, options = {}) {
       return true;
     }
 
-    return false;
+    return shouldKeepFollowUpEvidence(item, publishedInfo);
   });
 }
 
@@ -1110,7 +1231,7 @@ async function fetchPageScrapeItems(source) {
     }
 
     if (!safeHttpUrl(absoluteUrl)) continue;
-    if (absoluteUrl === listUrl || seen.has(absoluteUrl)) continue;
+    if (absoluteUrl === listUrl || shouldSkipScrapedLink(listUrl, absoluteUrl) || seen.has(absoluteUrl)) continue;
 
     const title = String(anchor.text || "")
       .replace(/\s+/g, " ")
@@ -1360,6 +1481,118 @@ export function isLikelyAiCandidate(item) {
   ].join(" ");
 
   return hasAiSignalText(hay);
+}
+
+function isTrustedNewsSource(item) {
+  if (!item || isPaperLikeMaterial(item)) return false;
+  const trustTier = String(item?.trustTier || "").toLowerCase();
+  const sourceGroup = String(item?.sourceGroup || "").toLowerCase();
+  if (trustTier === "high") return true;
+  return ["company", "foreign_media", "newsletter", "domestic_media", "briefing"].includes(sourceGroup);
+}
+
+export function splitCandidatesByPool(candidates) {
+  const out = {
+    news: [],
+    papers: [],
+  };
+
+  for (const item of candidates || []) {
+    if (!item) continue;
+    if (isPaperLikeMaterial(item)) {
+      out.papers.push(item);
+    } else {
+      out.news.push(item);
+    }
+  }
+
+  return out;
+}
+
+export function preprocessCandidatePools(candidates, options = {}) {
+  const runDate = String(options?.runDate || "").trim() || todayISO();
+  const newsLookbackDays = Number(options?.newsLookbackDays || NEWS_LOOKBACK_DAYS_DEFAULT);
+  const paperLookbackDays = Number(options?.paperLookbackDays || PAPER_LOOKBACK_DAYS_DEFAULT);
+  const applyAiGate = options?.applyAiGate !== false;
+  const nowMs = getRunDateAnchorMs(runDate);
+  const newsCutoffMs = cutoffMsForDays(runDate, newsLookbackDays);
+  const paperCutoffMs = cutoffMsForDays(runDate, paperLookbackDays);
+  const pools = splitCandidatesByPool(candidates);
+  const stats = {
+    run_date: runDate,
+    news_before: pools.news.length,
+    papers_before: pools.papers.length,
+    dropped_by_ai_gate: 0,
+    news_retained_missing_date: 0,
+    news_dropped_missing_date: 0,
+    news_dropped_by_time: 0,
+    news_dropped_stale_arxiv: 0,
+    paper_dropped_missing_date: 0,
+    paper_dropped_by_time: 0,
+    paper_dropped_stale_arxiv: 0,
+  };
+
+  const aiFiltered = applyAiGate
+    ? (candidates || []).filter((item) => {
+      const keep = isLikelyAiCandidate(item);
+      if (!keep) stats.dropped_by_ai_gate += 1;
+      return keep;
+    })
+    : [...(candidates || [])];
+  const filteredPools = splitCandidatesByPool(aiFiltered);
+
+  const news = [];
+  for (const item of filteredPools.news) {
+    if (isStaleArxivLink(item?.link || "", nowMs)) {
+      stats.news_dropped_stale_arxiv += 1;
+      continue;
+    }
+
+    const effectiveMs = getEffectivePubDateMs(item);
+    if (!effectiveMs) {
+      if (isTrustedNewsSource(item)) {
+        news.push({ ...item, missingDateRetained: true });
+        stats.news_retained_missing_date += 1;
+      } else {
+        stats.news_dropped_missing_date += 1;
+      }
+      continue;
+    }
+
+    if (effectiveMs >= newsCutoffMs) {
+      news.push(item);
+      continue;
+    }
+
+    stats.news_dropped_by_time += 1;
+  }
+
+  const papers = [];
+  for (const item of filteredPools.papers) {
+    if (isStaleArxivLink(item?.link || "", nowMs)) {
+      stats.paper_dropped_stale_arxiv += 1;
+      continue;
+    }
+
+    const effectiveMs = getEffectivePubDateMs(item);
+    if (!effectiveMs) {
+      stats.paper_dropped_missing_date += 1;
+      continue;
+    }
+
+    if (effectiveMs >= paperCutoffMs) {
+      papers.push(item);
+      continue;
+    }
+
+    stats.paper_dropped_by_time += 1;
+  }
+
+  return {
+    news,
+    papers,
+    stats,
+  };
 }
 
 function buildCandidateEventKey(item) {
@@ -2872,39 +3105,32 @@ export function normalizeDailySummary(rawDaily, materials) {
     })
     .filter(Boolean);
 
-  // 公开约束：重点资讯+其他快讯按节奏输出（重点3-4，快讯5-8）；核心论文 3~6；并且互不重复。
+  // 公开约束：重点资讯是多源话题叙事；其他快讯可容纳高价值单源信息；核心论文 3~6。
   let mergedNews = [...hotNews, ...otherNews];
-  const hotMin = Math.max(1, HOT_NEWS_MIN);
-  const hotMax = Math.max(hotMin, HOT_NEWS_MAX);
-  const quickMin = Math.max(1, QUICK_NEWS_MIN);
-  const quickMax = Math.max(quickMin, QUICK_NEWS_MAX);
-  const totalMin = hotMin + quickMin;
-  const totalMax = hotMax + quickMax;
+  const hotMax = Math.max(1, HOT_NEWS_MAX);
+  const quickMax = Math.max(1, QUICK_NEWS_MAX);
 
-  if (mergedNews.length > totalMax) {
-    mergedNews = mergedNews
-      .sort((a, b) => Number(b.crossVerifyScore || 0) - Number(a.crossVerifyScore || 0))
-      .slice(0, totalMax);
+  const rankedNews = mergedNews
+    .slice()
+    .sort((a, b) =>
+      scoreDailyNewsEntry(b, idToItem) - scoreDailyNewsEntry(a, idToItem) ||
+      Number(b.crossVerifyScore || 0) - Number(a.crossVerifyScore || 0)
+    );
+  let nextHot = rankedNews
+    .filter((entry) => qualifiesForHotNewsEntry(entry, idToItem))
+    .slice(0, hotMax);
+
+  if (!nextHot.length) {
+    nextHot = rankedNews
+      .filter((entry) => qualifiesForHotNewsEntry(entry, idToItem, { allowOfficialFallback: true }))
+      .slice(0, 1);
   }
 
-  if (mergedNews.length < totalMin) {
-    const usedRefs = new Set(mergedNews.flatMap((entry) => entry.refs || []));
-    const supplements = (materials || [])
-      .filter((m) => m && !isPaperLikeMaterial(m) && !usedRefs.has(m.refId))
-      .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0))
-      .slice(0, Math.max(0, totalMin - mergedNews.length))
-      .map((m) => buildFallbackQuickNewsEntry(m));
-    mergedNews.push(...supplements);
-  }
-
-  let hotCount = hotMin;
-  if (mergedNews.length >= totalMin) {
-    hotCount = Math.max(hotMin, Math.min(hotMax, mergedNews.length - quickMin));
-  } else {
-    hotCount = Math.min(Math.max(1, Math.min(hotMin, mergedNews.length)), hotMax);
-  }
-  const nextHot = mergedNews.slice(0, hotCount);
-  const nextOther = mergedNews.slice(hotCount, hotCount + quickMax);
+  const selectedHotKeys = new Set(nextHot.map((entry) => normalizeHotNewsKey(entry)));
+  const nextOther = rankedNews
+    .filter((entry) => !selectedHotKeys.has(normalizeHotNewsKey(entry)))
+    .filter((entry) => qualifiesForQuickNewsEntry(entry, idToItem))
+    .slice(0, quickMax);
 
   if (coreTech.length < 3) {
     const usedCoreRef = new Set(coreTech.flatMap((x) => x.refs || []));
@@ -2968,29 +3194,12 @@ export function buildFallbackDailySummary(materials) {
   news.sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
   papers.sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
 
-  const hotMin = Math.max(1, HOT_NEWS_MIN);
-  const hotMax = Math.max(hotMin, HOT_NEWS_MAX);
-  const quickMin = Math.max(1, QUICK_NEWS_MIN);
-  const quickMax = Math.max(quickMin, QUICK_NEWS_MAX);
-  const totalMin = hotMin + quickMin;
-  const totalMax = hotMax + quickMax;
-
-  let pickedNews = news.slice(0, totalMax);
-  if (pickedNews.length < totalMin) pickedNews = news.slice(0, Math.min(totalMin, news.length));
-
-  let hotCount = hotMin;
-  if (pickedNews.length >= totalMin) {
-    hotCount = Math.max(hotMin, Math.min(hotMax, pickedNews.length - quickMin));
-  } else if (pickedNews.length > 0) {
-    hotCount = Math.min(hotMax, Math.max(1, Math.ceil(pickedNews.length / 2)));
-  }
-
-  const hotNews = pickedNews
-    .slice(0, hotCount)
+  const hotNews = news
+    .slice(0, Math.min(news.length, HOT_NEWS_MAX))
     .map((item) => buildFallbackHotNewsEntry(item, buildFallbackEntryTitle(item, indexByBucket)));
 
-  const otherNews = pickedNews
-    .slice(hotNews.length, hotNews.length + quickMax)
+  const otherNews = news
+    .slice(hotNews.length, hotNews.length + QUICK_NEWS_MAX)
     .map((item) => buildFallbackQuickNewsEntry(item));
 
   let coreTech = papers.slice(0, 6).map((paper, idx) => ({
@@ -3006,15 +3215,15 @@ export function buildFallbackDailySummary(materials) {
     }));
   }
 
-  return {
+  return normalizeDailySummary({
     notice: "（当前使用回退结果：LLM流程异常，建议后续由模型精炼）",
     overview: "当日资讯以模型能力演进与产业落地并行为主线，建议优先关注多源重复提及且影响范围更广的话题。",
-    hotNews,
-    otherNews,
-    coreTech,
+    hot_news: hotNews,
+    other_news: otherNews,
+    core_tech: coreTech,
     aiRumor: [],
-    refTranslations: {},
-  };
+    ref_translations: [],
+  }, materials);
 }
 
 /* ==============================
@@ -3189,8 +3398,17 @@ function buildDeterministicPaperAssignments(cards) {
   return out;
 }
 
-function buildCandidateCardsForClustering(candidates) {
-  const sorted = [...(candidates || [])]
+function buildCandidateCardsForClustering(candidates, options = {}) {
+  const pools = splitCandidatesByPool(candidates);
+  const newsCap = Math.max(0, Number(options?.newsCap || CLUSTER_INPUT_CAP_NEWS));
+  const paperCap = Math.max(0, Number(options?.paperCap || CLUSTER_INPUT_CAP_PAPERS));
+  const sortedNews = [...pools.news]
+    .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0))
+    .slice(0, newsCap);
+  const sortedPapers = [...pools.papers]
+    .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0))
+    .slice(0, paperCap);
+  const sorted = [...sortedNews, ...sortedPapers]
     .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0))
     .slice(0, CLUSTER_INPUT_CAP);
 
@@ -4101,6 +4319,8 @@ export function scoreTopicForSelection(topic) {
     sourceGroups.length === 1 &&
     sourceGroups[0] === "community";
   const communityPenalty = isSingleCommunityTopic ? 12 : 0;
+  const singletonPenalty =
+    topic?.topic_type === "news" && mention <= 1 && diversity <= 1 ? 18 : 0;
   const concentrationPenalty =
     topic?.topic_type === "news" && mention >= 3 && diversity <= 1 ? 8 : 0;
   const aiSignal = estimateAiTopicSignal(topic);
@@ -4108,6 +4328,9 @@ export function scoreTopicForSelection(topic) {
     ? (aiSignal <= 0 ? 18 : aiSignal === 1 ? 8 : 0)
     : 0;
   const aiSignalBonus = topic?.topic_type === "news" ? Math.min(6, aiSignal * 2) : 0;
+  const corroborationBonus = topic?.topic_type === "news"
+    ? Math.min(24, Math.max(0, (mention - 1) * 4 + (diversity - 1) * 6))
+    : 0;
 
   return (
     cross * 1.5 +
@@ -4119,7 +4342,129 @@ export function scoreTopicForSelection(topic) {
     aiSignalBonus -
     paperPenalty -
     communityPenalty -
-    concentrationPenalty
+    singletonPenalty -
+    concentrationPenalty +
+    corroborationBonus
+  );
+}
+
+function analyzeNewsEntryEvidence(entry, idToItem) {
+  const refs = Array.isArray(entry?.refs) ? entry.refs : [];
+  const materials = refs.map((id) => idToItem[id]).filter(Boolean);
+  const sourceGroups = new Set(
+    materials
+      .map((material) => String(material?.sourceGroup || "").trim())
+      .filter(Boolean)
+  );
+  const domains = new Set(
+    materials
+      .map((material) => String(material?.domain || getDomainFromUrl(material?.link || "") || "").trim())
+      .filter(Boolean)
+  );
+  const mentionCount = Math.max(
+    Number(entry?.mentionCount || entry?.mention_count || 0),
+    refs.length,
+    materials.length
+  );
+  const crossVerifyScore = Number(entry?.crossVerifyScore || entry?.cross_verify_score || 0);
+  const hasCompany = materials.some((material) => material?.sourceGroup === "company");
+  const hasHighTrustNonCommunity = materials.some((material) =>
+    material?.trustTier === "high" && material?.sourceGroup !== "community"
+  );
+  const highTrustCount = materials.filter((material) => getTrustWeight(material?.trustTier) >= 3).length;
+  const onlyCommunity =
+    sourceGroups.size > 0 && [...sourceGroups].every((group) => group === "community");
+  const onlyCommunityOrNewsletter =
+    sourceGroups.size > 0 && [...sourceGroups].every((group) => group === "community" || group === "newsletter");
+  const singleton = mentionCount <= 1 && domains.size <= 1 && refs.length <= 1;
+  const hasSubstantiveBody = materials.some((material) => String(material?.text || "").trim().length >= 60);
+
+  return {
+    refs,
+    materials,
+    sourceGroups,
+    mentionCount,
+    crossVerifyScore,
+    hasCompany,
+    hasHighTrustNonCommunity,
+    highTrustCount,
+    onlyCommunity,
+    onlyCommunityOrNewsletter,
+    singleton,
+    domains,
+    hasSubstantiveBody,
+  };
+}
+
+function scoreDailyNewsEntry(entry, idToItem) {
+  const evidence = analyzeNewsEntryEvidence(entry, idToItem);
+  let score = Number(entry?.crossVerifyScore || entry?.cross_verify_score || 0);
+
+  if (evidence.refs.length >= 2) score += 14;
+  if (evidence.domains.size >= 2) score += 14;
+  if (evidence.sourceGroups.size >= 2) score += 10;
+  if (evidence.mentionCount >= 2) score += 10;
+  if (evidence.hasCompany) score += 12;
+  if (evidence.hasHighTrustNonCommunity) score += 8;
+  score += evidence.highTrustCount * 5;
+  if (evidence.singleton && !evidence.hasCompany) score -= 6;
+  if (evidence.onlyCommunity) score -= 4;
+  if (isLowValueCommunityEntry(entry, idToItem)) score -= 32;
+
+  return score;
+}
+
+function qualifiesForHotNewsEntry(entry, idToItem, options = {}) {
+  const evidence = analyzeNewsEntryEvidence(entry, idToItem);
+  const allowOfficialFallback = options.allowOfficialFallback === true;
+  if (isLowValueCommunityEntry(entry, idToItem)) return false;
+
+  const multiSource = evidence.refs.length >= 2 && evidence.domains.size >= 2;
+  const diversePerspective = evidence.sourceGroups.size >= 2 || evidence.domains.size >= 2;
+  const strongCrossSignal = evidence.crossVerifyScore >= 70 || evidence.mentionCount >= 2;
+  const trusted = evidence.hasCompany || evidence.hasHighTrustNonCommunity || evidence.highTrustCount >= 2;
+
+  if (!evidence.onlyCommunity && multiSource && diversePerspective && strongCrossSignal && trusted) {
+    return true;
+  }
+
+  if (allowOfficialFallback && evidence.hasCompany && evidence.highTrustCount >= 1 && evidence.crossVerifyScore >= 72) {
+    return true;
+  }
+
+  return false;
+}
+
+function qualifiesForQuickNewsEntry(entry, idToItem) {
+  const evidence = analyzeNewsEntryEvidence(entry, idToItem);
+  if (isLowValueCommunityEntry(entry, idToItem)) return false;
+  if (qualifiesForHotNewsEntry(entry, idToItem)) return true;
+
+  if (evidence.hasCompany && (evidence.crossVerifyScore >= 58 || evidence.hasSubstantiveBody)) return true;
+  if (evidence.hasHighTrustNonCommunity && (evidence.crossVerifyScore >= 52 || evidence.hasSubstantiveBody)) return true;
+  if (evidence.onlyCommunityOrNewsletter && (evidence.crossVerifyScore >= 58 || evidence.hasSubstantiveBody)) return true;
+  if (!evidence.onlyCommunityOrNewsletter && evidence.crossVerifyScore >= 50) return true;
+  if (scoreDailyNewsEntry(entry, idToItem) >= 58) return true;
+
+  return false;
+}
+
+function isLowValueCommunityEntry(entry, idToItem) {
+  const evidence = analyzeNewsEntryEvidence(entry, idToItem);
+  if (!evidence.onlyCommunity || !evidence.singleton) return false;
+
+  const seed = [
+    String(entry?.insight || ""),
+    String(entry?.title || ""),
+    String(entry?.narrative || ""),
+    ...evidence.refs.map((refId) => String(idToItem[refId]?.title || "")),
+    ...evidence.refs.map((refId) => String(idToItem[refId]?.text || "").slice(0, 160)),
+    ...evidence.refs.map((refId) => String(idToItem[refId]?.source || "")),
+  ].join(" ");
+
+  return (
+    /\b(tip|tips|upload|tensorboard|fine-?tuning|logs?)\b/i.test(seed) ||
+    /提示|技巧|上传|日志|微调/.test(seed)
   );
 }
 
@@ -4355,7 +4700,12 @@ function buildTopicDeepReadPlan(selectedTopicIds, topicCards, candidateCards) {
   const isMaterialUsableForDeepRead = (card) => {
     const mode = String(card?._item?.ingestionMode || "").trim();
     const effectiveMs = getEffectivePubDateMs(card?._item);
-    if (!effectiveMs && (mode === "page_scrape" || mode === "api_json")) {
+    if (
+      !effectiveMs &&
+      (mode === "page_scrape" || mode === "api_json") &&
+      !card?._item?.missingDateRetained &&
+      !isTrustedNewsSource(card?._item)
+    ) {
       stats.dropped_by_missing_date += 1;
       return false;
     }
@@ -5145,7 +5495,8 @@ function remapDailyReferences(daily, materials) {
 async function main() {
   const cfg = loadConfig();
   const defaults = cfg.defaults && typeof cfg.defaults === "object" ? cfg.defaults : {};
-  const lookbackDays = Number(defaults.lookback_days || 2);
+  const newsLookbackDays = Number(defaults.news_lookback_days || NEWS_LOOKBACK_DAYS_DEFAULT);
+  const paperLookbackDays = Number(defaults.paper_lookback_days || defaults.lookback_days || PAPER_LOOKBACK_DAYS_DEFAULT);
   const boostKeywords = Array.isArray(defaults.boost_keywords) ? defaults.boost_keywords : [];
   const sources = normalizeSources(cfg.sources);
   const runnableSources = getRunnableSources(sources);
@@ -5162,11 +5513,12 @@ async function main() {
   cache.daily = pruneByAtDate(cache.daily, DAILY_RETENTION_DAYS);
   cache.published = pruneByAtDate(cache.published, DAILY_RETENTION_DAYS);
 
-  const cutoff = daysAgoCutoff(lookbackDays);
+  const newsCutoff = new Date(cutoffMsForDays(dateISO, newsLookbackDays));
+  const paperCutoff = new Date(cutoffMsForDays(dateISO, paperLookbackDays));
 
   console.log(`=== Digest 生成开始：${dateISO} ===`);
   console.log(`tz=${RUN_TZ}, post_time=${DIGEST_POST_TIME}`);
-  console.log(`lookback_days=${lookbackDays}, top_n=${TOP_N}, deep_read_n=${DEEP_READ_N}, extra_candidates=${Number.isFinite(EXTRA_CANDIDATES) ? EXTRA_CANDIDATES : 0}`);
+  console.log(`news_lookback_days=${newsLookbackDays}, paper_lookback_days=${paperLookbackDays}, top_n=${TOP_N}, deep_read_n=${DEEP_READ_N}, extra_candidates=${Number.isFinite(EXTRA_CANDIDATES) ? EXTRA_CANDIDATES : 0}`);
   console.log(`cache_retention_days=${CACHE_RETENTION_DAYS}, daily_retention_days=${DAILY_RETENTION_DAYS}`);
   console.log(`llm_pacing: max_concurrency=${LLM_MAX_CONCURRENCY}, min_interval_ms=${LLM_MIN_INTERVAL_MS}, jitter_ms=${LLM_INTERVAL_JITTER_MS}`);
   console.log(`sources=${sources.length}, runnable_sources=${runnableSources.length}${dryRun ? " (dry-run)" : ""}`);
@@ -5276,48 +5628,28 @@ async function main() {
   }
 
   const beforeTimeCount = candidates.length;
-  const cutoffMs = cutoff.getTime();
-  const nowMs = Date.now();
-  let droppedByTimeGate = 0;
-  let droppedByArxivGate = 0;
-  let droppedByMissingDateGate = 0;
-  let droppedByAiGate = 0;
-
-  /* 2) 时间过滤（优先 pubDate；缺失时使用 URL/标题推断；arXiv 增加编号时效闸门） */
-  candidates = candidates.filter((it) => {
-    if (isStaleArxivLink(it?.link || "", nowMs)) {
-      droppedByArxivGate += 1;
-      return false;
-    }
-    const effectiveMs = getEffectivePubDateMs(it);
-    const mode = String(it?.ingestionMode || "").trim();
-    if (!effectiveMs) {
-      if (mode === "page_scrape" || mode === "api_json") {
-        droppedByMissingDateGate += 1;
-        return false;
-      }
-      return true;
-    }
-    if (effectiveMs >= cutoffMs) return true;
-    droppedByTimeGate += 1;
-    return false;
+  const preprocessedPools = preprocessCandidatePools(candidates, {
+    runDate: dateISO,
+    newsLookbackDays,
+    paperLookbackDays,
   });
+  candidates = [...preprocessedPools.news, ...preprocessedPools.papers];
   const afterTimeCount = candidates.length;
-
-  /* 2.3) AI 相关性过滤（去掉明显非 AI 条目，避免弱相关话题污染后续选题） */
-  candidates = candidates.filter((it) => {
-    const keep = isLikelyAiCandidate(it);
-    if (!keep) droppedByAiGate += 1;
-    return keep;
-  });
-  const afterAiGateCount = candidates.length;
+  const droppedByTimeGate = preprocessedPools.stats.news_dropped_by_time + preprocessedPools.stats.paper_dropped_by_time;
+  const droppedByArxivGate = preprocessedPools.stats.news_dropped_stale_arxiv + preprocessedPools.stats.paper_dropped_stale_arxiv;
+  const droppedByMissingDateGate = preprocessedPools.stats.news_dropped_missing_date + preprocessedPools.stats.paper_dropped_missing_date;
+  const droppedByAiGate = preprocessedPools.stats.dropped_by_ai_gate;
+  const afterAiGateCount = Math.max(0, beforeTimeCount - droppedByAiGate);
 
   /* 2.5) 前置去重（规范化 URL + 标题签名） */
   candidates = dedupeCandidatesEarly(candidates);
   const afterDedupeCount = candidates.length;
 
   /* 2.6) 剔除近期已经发布过的内容（链接 + 标题签名） */
-  candidates = filterPreviouslyPublished(candidates, cache, { runDate: dateISO });
+  candidates = filterPreviouslyPublished(candidates, cache, {
+    runDate: dateISO,
+    keepFollowUpEvidence: true,
+  });
   const afterHistoryCount = candidates.length;
 
   console.log(`\n[candidates] after filter+dedupe = ${candidates.length}`);
@@ -5342,7 +5674,9 @@ async function main() {
     after_ai_gate: afterAiGateCount,
     after_dedupe: afterDedupeCount,
     after_history_filter: afterHistoryCount,
-    cutoff: cutoff.toISOString(),
+    news_cutoff: newsCutoff.toISOString(),
+    paper_cutoff: paperCutoff.toISOString(),
+    pool_stats: preprocessedPools.stats,
   });
 
   if (skipLLM && !dryRun) {
@@ -5352,7 +5686,10 @@ async function main() {
   const scoredCandidates = candidates
     .map((it) => ({ ...it, score: scoreItem(it, it.weight, boostKeywords) }))
     .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
-  let candidateCards = buildCandidateCardsForClustering(scoredCandidates);
+  let candidateCards = buildCandidateCardsForClustering(scoredCandidates, {
+    newsCap: CLUSTER_INPUT_CAP_NEWS,
+    paperCap: CLUSTER_INPUT_CAP_PAPERS,
+  });
   let clusterEnrichment = {
     total_cards: candidateCards.length,
     considered: 0,
@@ -5375,6 +5712,8 @@ async function main() {
   writeAuditReport(dateISO, "03-cluster-input", {
     run_date: dateISO,
     cluster_input_cap: CLUSTER_INPUT_CAP,
+    cluster_input_cap_news: CLUSTER_INPUT_CAP_NEWS,
+    cluster_input_cap_papers: CLUSTER_INPUT_CAP_PAPERS,
     cluster_batch_size: CLUSTER_BATCH_SIZE,
     cluster_text_mode: normalizeClusterTextMode(CLUSTER_TEXT_MODE),
     cluster_enrich_mode: normalizeClusterEnrichMode(CLUSTER_ENRICH_MODE),
@@ -5537,16 +5876,13 @@ async function main() {
   const materialsAll = await runWithConcurrency(tasks, FETCH_CONCURRENCY);
 
   // 深读后再次执行时效闸门
-  const materialsWindowed = (materialsAll || []).filter((item) => {
-    if (isStaleArxivLink(item?.link || "", nowMs)) return false;
-    const ms = getEffectivePubDateMs(item);
-    if (ms) return ms >= cutoffMs;
-
-    // 对 page_scrape / api_json 强制要求可识别发布时间，避免混入陈旧内容
-    const mode = String(item?.ingestionMode || "").trim();
-    if (mode === "page_scrape" || mode === "api_json") return false;
-    return true;
+  const materialPools = preprocessCandidatePools(materialsAll, {
+    runDate: dateISO,
+    newsLookbackDays,
+    paperLookbackDays,
+    applyAiGate: false,
   });
+  const materialsWindowed = [...materialPools.news, ...materialPools.papers];
   const topicById = new Map(topicCards.map((t) => [t.topic_id, t]));
   const materials = (materialsWindowed || [])
     .filter((m) => m && String(m?.text || "").length >= 40)

@@ -1,29 +1,44 @@
 {
   "run_date": "2026-03-10",
   "cluster_input_cap": 260,
+  "cluster_input_cap_news": 100,
+  "cluster_input_cap_papers": 160,
   "cluster_batch_size": 40,
   "cluster_text_mode": "title_lead",
   "cluster_enrich_mode": "hybrid",
   "cluster_text_max_chars": 380,
   "cluster_enrich_force_top_news": 20,
-  "input_count": 184,
-  "input_news_count": 4,
-  "input_paper_count": 180,
-  "dropped_by_cap": 0,
+  "input_count": 247,
+  "input_news_count": 83,
+  "input_paper_count": 164,
+  "dropped_by_cap": 17,
   "enrichment": {
     "cluster_text_mode": "title_lead",
     "enrich_mode": "hybrid",
-    "total_cards": 184,
-    "considered": 4,
-    "enriched": 4,
-    "cache_hits": 4,
-    "fetched": 0,
-    "skipped_with_long_snippet": 4,
-    "skipped_low_quality_source": 180
+    "total_cards": 247,
+    "considered": 24,
+    "enriched": 21,
+    "cache_hits": 16,
+    "fetched": 5,
+    "skipped_with_long_snippet": 24,
+    "skipped_low_quality_source": 164
   },
   "candidates": [
     {
       "candidate_id": 1,
+      "title": "You Could Be Next",
+      "snippet_len": 98,
+      "cluster_text_len": 218,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "theverge.com",
+      "score": 31,
+      "link": "https://www.theverge.com/cs/features/877388/white-collar-workers-training-ai-mercor"
+    },
+    {
+      "candidate_id": 2,
       "title": "ESAA-Security: An Event-Sourced, Verifiable Architecture for Agent-Assisted Security Audits",
       "snippet_len": 151,
       "cluster_text_len": 243,
@@ -36,7 +51,7 @@
       "link": "https://arxiv.org/abs/2603.06365"
     },
     {
-      "candidate_id": 2,
+      "candidate_id": 3,
       "title": "Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges",
       "snippet_len": 151,
       "cluster_text_len": 226,
@@ -49,7 +64,7 @@
       "link": "https://arxiv.org/abs/2602.05073"
     },
     {
-      "candidate_id": 3,
+      "candidate_id": 4,
       "title": "SEA-TS: Self-Evolving Agent for Autonomous Code Generation of Time Series Forecasting Algorithms",
       "snippet_len": 151,
       "cluster_text_len": 248,
@@ -62,7 +77,7 @@
       "link": "https://arxiv.org/abs/2603.04873"
     },
     {
-      "candidate_id": 4,
+      "candidate_id": 5,
       "title": "IntelliAsk: Learning to Ask High-Quality Research Questions via RLVR",
       "snippet_len": 151,
       "cluster_text_len": 220,
@@ -75,7 +90,7 @@
       "link": "https://arxiv.org/abs/2602.15849"
     },
     {
-      "candidate_id": 5,
+      "candidate_id": 6,
       "title": "Theory of Code Space: Do Code Agents Understand Software Architecture?",
       "snippet_len": 151,
       "cluster_text_len": 222,
@@ -88,7 +103,7 @@
       "link": "https://arxiv.org/abs/2603.00601"
     },
     {
-      "candidate_id": 6,
+      "candidate_id": 7,
       "title": "vLLM Semantic Router: Signal Driven Decision Routing for Mixture-of-Modality Models",
       "snippet_len": 151,
       "cluster_text_len": 235,
@@ -101,7 +116,7 @@
       "link": "https://arxiv.org/abs/2603.04444"
     },
     {
-      "candidate_id": 7,
+      "candidate_id": 8,
       "title": "The World Won't Stay Still: Programmable Evolution for Agent Benchmarks",
       "snippet_len": 151,
       "cluster_text_len": 223,
@@ -114,7 +129,7 @@
       "link": "https://arxiv.org/abs/2603.05910"
     },
     {
-      "candidate_id": 8,
+      "candidate_id": 9,
       "title": "Agentic LLM Planning via Step-Wise PDDL Simulation",
       "snippet_len": 151,
       "cluster_text_len": 202,
@@ -127,7 +142,7 @@
       "link": "https://arxiv.org/abs/2603.06064"
     },
     {
-      "candidate_id": 9,
+      "candidate_id": 10,
       "title": "Towards Neural Graph Data Management",
       "snippet_len": 151,
       "cluster_text_len": 188,
@@ -140,7 +155,7 @@
       "link": "https://arxiv.org/abs/2603.05529"
     },
     {
-      "candidate_id": 10,
+      "candidate_id": 11,
       "title": "Tool-Genesis: A Task-Driven Tool Creation Benchmark for Self-Evolving Language Agent",
       "snippet_len": 151,
       "cluster_text_len": 236,
@@ -153,7 +168,7 @@
       "link": "https://arxiv.org/abs/2603.05578"
     },
     {
-      "candidate_id": 11,
+      "candidate_id": 12,
       "title": "Relational Semantic Reasoning on 3D Scene Graphs for Open World Interactive Object Search",
       "snippet_len": 151,
       "cluster_text_len": 241,
@@ -166,7 +181,7 @@
       "link": "https://arxiv.org/abs/2603.05642"
     },
     {
-      "candidate_id": 12,
+      "candidate_id": 13,
       "title": "Ambiguity Collapse by LLMs",
       "snippet_len": 150,
       "cluster_text_len": 177,
@@ -179,7 +194,7 @@
       "link": "https://arxiv.org/abs/2603.05801"
     },
     {
-      "candidate_id": 13,
+      "candidate_id": 14,
       "title": "Computational Pathology in the Era of Emerging Foundation and Agentic AI -- International",
       "snippet_len": 151,
       "cluster_text_len": 241,
@@ -192,7 +207,7 @@
       "link": "https://arxiv.org/abs/2603.05884"
     },
     {
-      "candidate_id": 14,
+      "candidate_id": 15,
       "title": "LUMINA: LLM-Guided GPU Architecture Exploration via Bottleneck Analysis",
       "snippet_len": 151,
       "cluster_text_len": 223,
@@ -205,7 +220,7 @@
       "link": "https://arxiv.org/abs/2603.05904"
     },
     {
-      "candidate_id": 15,
+      "candidate_id": 16,
       "title": "CORE-Seg: Reasoning-Driven Segmentation for Complex Lesions via Reinforcement Learning",
       "snippet_len": 150,
       "cluster_text_len": 237,
@@ -218,7 +233,7 @@
       "link": "https://arxiv.org/abs/2603.05911"
     },
     {
-      "candidate_id": 16,
+      "candidate_id": 17,
       "title": "RAC: Rectified Flow Auto Coder",
       "snippet_len": 151,
       "cluster_text_len": 182,
@@ -231,7 +246,7 @@
       "link": "https://arxiv.org/abs/2603.05925"
     },
     {
-      "candidate_id": 17,
+      "candidate_id": 18,
       "title": "Restoring Linguistic Grounding in VLA Models via Train-Free Attention Recalibration",
       "snippet_len": 151,
       "cluster_text_len": 235,
@@ -244,7 +259,7 @@
       "link": "https://arxiv.org/abs/2603.06001"
     },
     {
-      "candidate_id": 18,
+      "candidate_id": 19,
       "title": "Lifelong Embodied Navigation Learning",
       "snippet_len": 151,
       "cluster_text_len": 189,
@@ -257,7 +272,7 @@
       "link": "https://arxiv.org/abs/2603.06073"
     },
     {
-      "candidate_id": 19,
+      "candidate_id": 20,
       "title": "Whisper-CD: Accurate Long-Form Speech Recognition using Multi-Negative Contrastive Decoding",
       "snippet_len": 151,
       "cluster_text_len": 243,
@@ -270,7 +285,7 @@
       "link": "https://arxiv.org/abs/2603.06193"
     },
     {
-      "candidate_id": 20,
+      "candidate_id": 21,
       "title": "GazeMoE: Perception of Gaze Target with Mixture-of-Experts",
       "snippet_len": 151,
       "cluster_text_len": 210,
@@ -283,7 +298,7 @@
       "link": "https://arxiv.org/abs/2603.06256"
     },
     {
-      "candidate_id": 21,
+      "candidate_id": 22,
       "title": "Agentic retrieval-augmented reasoning reshapes collective reliability under model",
       "snippet_len": 151,
       "cluster_text_len": 233,
@@ -296,7 +311,7 @@
       "link": "https://arxiv.org/abs/2603.06271"
     },
     {
-      "candidate_id": 22,
+      "candidate_id": 23,
       "title": "Prompt Group-Aware Training for Robust Text-Guided Nuclei Segmentation",
       "snippet_len": 150,
       "cluster_text_len": 221,
@@ -309,7 +324,7 @@
       "link": "https://arxiv.org/abs/2603.06384"
     },
     {
-      "candidate_id": 23,
+      "candidate_id": 24,
       "title": "Abductive Reasoning with Syllogistic Forms in Large Language Models",
       "snippet_len": 151,
       "cluster_text_len": 219,
@@ -322,7 +337,7 @@
       "link": "https://arxiv.org/abs/2603.06428"
     },
     {
-      "candidate_id": 24,
+      "candidate_id": 25,
       "title": "\"When to Hand Off, When to Work Together\": Expanding Human-Agent Co-Creative Collaboration",
       "snippet_len": 151,
       "cluster_text_len": 242,
@@ -335,7 +350,20 @@
       "link": "https://arxiv.org/abs/2603.02050"
     },
     {
-      "candidate_id": 25,
+      "candidate_id": 26,
+      "title": "SlowBA: An efficiency backdoor attack towards VLM-based GUI agents",
+      "snippet_len": 151,
+      "cluster_text_len": 218,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-03-09",
+      "domain": "huggingface.co",
+      "score": 25,
+      "link": "https://huggingface.co/papers/2603.08316"
+    },
+    {
+      "candidate_id": 27,
       "title": "\\$OneMillion-Bench: How Far are Language Agents from Human Experts?",
       "snippet_len": 151,
       "cluster_text_len": 219,
@@ -348,7 +376,7 @@
       "link": "https://huggingface.co/papers/2603.07980"
     },
     {
-      "candidate_id": 26,
+      "candidate_id": 28,
       "title": "An Interactive Multi-Agent System for Evaluation of New Product Concepts",
       "snippet_len": 151,
       "cluster_text_len": 224,
@@ -361,7 +389,7 @@
       "link": "https://arxiv.org/abs/2603.05980"
     },
     {
-      "candidate_id": 27,
+      "candidate_id": 29,
       "title": "Boosting deep Reinforcement Learning using pretraining with Logical Options",
       "snippet_len": 147,
       "cluster_text_len": 223,
@@ -374,7 +402,7 @@
       "link": "https://arxiv.org/abs/2603.06565"
     },
     {
-      "candidate_id": 28,
+      "candidate_id": 30,
       "title": "Can LLM Aid in Solving Constraints with Inductive Definitions?",
       "snippet_len": 133,
       "cluster_text_len": 196,
@@ -387,7 +415,7 @@
       "link": "https://arxiv.org/abs/2603.03668"
     },
     {
-      "candidate_id": 29,
+      "candidate_id": 31,
       "title": "Omni-C: Compressing Heterogeneous Modalities into a Single Dense Encoder",
       "snippet_len": 151,
       "cluster_text_len": 224,
@@ -400,7 +428,7 @@
       "link": "https://arxiv.org/abs/2603.05528"
     },
     {
-      "candidate_id": 30,
+      "candidate_id": 32,
       "title": "Human-Data Interaction, Exploration, and Visualization in the AI Era: Challenges and",
       "snippet_len": 151,
       "cluster_text_len": 236,
@@ -413,7 +441,7 @@
       "link": "https://arxiv.org/abs/2603.05542"
     },
     {
-      "candidate_id": 31,
+      "candidate_id": 33,
       "title": "PVminerLLM: Structured Extraction of Patient Voice from Patient-Generated Text using Large",
       "snippet_len": 149,
       "cluster_text_len": 240,
@@ -426,7 +454,7 @@
       "link": "https://arxiv.org/abs/2603.05776"
     },
     {
-      "candidate_id": 32,
+      "candidate_id": 34,
       "title": "Margin and Consistency Supervision for Calibrated and Robust Vision Models",
       "snippet_len": 151,
       "cluster_text_len": 226,
@@ -439,7 +467,7 @@
       "link": "https://arxiv.org/abs/2603.05812"
     },
     {
-      "candidate_id": 33,
+      "candidate_id": 35,
       "title": "Lexara: A User-Centered Toolkit for Evaluating Large Language Models for Conversational",
       "snippet_len": 151,
       "cluster_text_len": 239,
@@ -452,7 +480,7 @@
       "link": "https://arxiv.org/abs/2603.05832"
     },
     {
-      "candidate_id": 34,
+      "candidate_id": 36,
       "title": "Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning",
       "snippet_len": 151,
       "cluster_text_len": 233,
@@ -465,7 +493,7 @@
       "link": "https://arxiv.org/abs/2603.05900"
     },
     {
-      "candidate_id": 35,
+      "candidate_id": 37,
       "title": "Energy-Driven Adaptive Visual Token Pruning for Efficient Vision-Language Models",
       "snippet_len": 151,
       "cluster_text_len": 232,
@@ -478,7 +506,7 @@
       "link": "https://arxiv.org/abs/2603.05950"
     },
     {
-      "candidate_id": 36,
+      "candidate_id": 38,
       "title": "Sensitivity-Aware Retrieval-Augmented Intent Clarification",
       "snippet_len": 151,
       "cluster_text_len": 210,
@@ -491,7 +519,7 @@
       "link": "https://arxiv.org/abs/2603.06025"
     },
     {
-      "candidate_id": 37,
+      "candidate_id": 39,
       "title": "Probing Visual Concepts in Lightweight Vision-Language Models for Automated Driving",
       "snippet_len": 150,
       "cluster_text_len": 234,
@@ -504,7 +532,7 @@
       "link": "https://arxiv.org/abs/2603.06054"
     },
     {
-      "candidate_id": 38,
+      "candidate_id": 40,
       "title": "TempoSyncDiff: Distilled Temporally-Consistent Diffusion for Low-Latency Audio-Driven",
       "snippet_len": 151,
       "cluster_text_len": 237,
@@ -517,7 +545,7 @@
       "link": "https://arxiv.org/abs/2603.06057"
     },
     {
-      "candidate_id": 39,
+      "candidate_id": 41,
       "title": "Evaluating Austrian A-Level German Essays with Large Language Models for Automated Essay Scoring",
       "snippet_len": 151,
       "cluster_text_len": 248,
@@ -530,7 +558,7 @@
       "link": "https://arxiv.org/abs/2603.06066"
     },
     {
-      "candidate_id": 40,
+      "candidate_id": 42,
       "title": "Experiences Build Characters: The Linguistic Origins and Functional Impact of LLM Personality",
       "snippet_len": 151,
       "cluster_text_len": 245,
@@ -543,7 +571,7 @@
       "link": "https://arxiv.org/abs/2603.06088"
     },
     {
-      "candidate_id": 41,
+      "candidate_id": 43,
       "title": "Place-it-R1: Unlocking Environment-aware Reasoning Potential of MLLM for Video Object Insertion",
       "snippet_len": 146,
       "cluster_text_len": 242,
@@ -556,7 +584,7 @@
       "link": "https://arxiv.org/abs/2603.06140"
     },
     {
-      "candidate_id": 42,
+      "candidate_id": 44,
       "title": "VLM-RobustBench: A Comprehensive Benchmark for Robustness of Vision-Language Models",
       "snippet_len": 150,
       "cluster_text_len": 234,
@@ -569,7 +597,7 @@
       "link": "https://arxiv.org/abs/2603.06148"
     },
     {
-      "candidate_id": 43,
+      "candidate_id": 45,
       "title": "Reflective Flow Sampling Enhancement",
       "snippet_len": 147,
       "cluster_text_len": 184,
@@ -582,7 +610,7 @@
       "link": "https://arxiv.org/abs/2603.06165"
     },
     {
-      "candidate_id": 44,
+      "candidate_id": 46,
       "title": "CRIMSON: A Clinically-Grounded LLM-Based Metric for Generative Radiology Report Evaluation",
       "snippet_len": 151,
       "cluster_text_len": 242,
@@ -595,7 +623,7 @@
       "link": "https://arxiv.org/abs/2603.06183"
     },
     {
-      "candidate_id": 45,
+      "candidate_id": 47,
       "title": "Learning to Solve Orienteering Problem with Time Windows and Variable Profits",
       "snippet_len": 151,
       "cluster_text_len": 229,
@@ -608,7 +636,7 @@
       "link": "https://arxiv.org/abs/2603.06260"
     },
     {
-      "candidate_id": 46,
+      "candidate_id": 48,
       "title": "MoEless: Efficient MoE LLM Serving via Serverless Computing",
       "snippet_len": 151,
       "cluster_text_len": 211,
@@ -621,7 +649,7 @@
       "link": "https://arxiv.org/abs/2603.06350"
     },
     {
-      "candidate_id": 47,
+      "candidate_id": 49,
       "title": "CLoPA: Continual Low Parameter Adaptation of Interactive Segmentation for Medical Image",
       "snippet_len": 150,
       "cluster_text_len": 238,
@@ -634,7 +662,7 @@
       "link": "https://arxiv.org/abs/2603.06426"
     },
     {
-      "candidate_id": 48,
+      "candidate_id": 50,
       "title": "COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics",
       "snippet_len": 151,
       "cluster_text_len": 236,
@@ -647,7 +675,7 @@
       "link": "https://arxiv.org/abs/2603.06495"
     },
     {
-      "candidate_id": 49,
+      "candidate_id": 51,
       "title": "Localizing and Correcting Errors for LLM-based Planners",
       "snippet_len": 151,
       "cluster_text_len": 207,
@@ -660,7 +688,7 @@
       "link": "https://arxiv.org/abs/2602.00276"
     },
     {
-      "candidate_id": 50,
+      "candidate_id": 52,
       "title": "From Features to Actions: Explainability in Traditional and Agentic AI Systems",
       "snippet_len": 151,
       "cluster_text_len": 230,
@@ -673,7 +701,7 @@
       "link": "https://arxiv.org/abs/2602.06841"
     },
     {
-      "candidate_id": 51,
+      "candidate_id": 53,
       "title": "MERIT Feedback Elicits Better Bargaining in LLM Negotiators",
       "snippet_len": 151,
       "cluster_text_len": 211,
@@ -686,7 +714,7 @@
       "link": "https://arxiv.org/abs/2602.10467"
     },
     {
-      "candidate_id": 52,
+      "candidate_id": 54,
       "title": "The Consensus Trap: Dissecting Subjectivity and the \"Ground Truth\" Illusion in Data Annotation",
       "snippet_len": 151,
       "cluster_text_len": 246,
@@ -699,7 +727,7 @@
       "link": "https://arxiv.org/abs/2602.11318"
     },
     {
-      "candidate_id": 53,
+      "candidate_id": 55,
       "title": "How Well Does Agent Development Reflect Real-World Work?",
       "snippet_len": 151,
       "cluster_text_len": 208,
@@ -712,7 +740,7 @@
       "link": "https://arxiv.org/abs/2603.01203"
     },
     {
-      "candidate_id": 54,
+      "candidate_id": 56,
       "title": "MOOSEnger -- a Domain-Specific AI Agent for the MOOSE Ecosystem",
       "snippet_len": 151,
       "cluster_text_len": 215,
@@ -725,7 +753,7 @@
       "link": "https://arxiv.org/abs/2603.04756"
     },
     {
-      "candidate_id": 55,
+      "candidate_id": 57,
       "title": "Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization",
       "snippet_len": 151,
       "cluster_text_len": 233,
@@ -738,7 +766,7 @@
       "link": "https://arxiv.org/abs/2602.23008"
     },
     {
-      "candidate_id": 56,
+      "candidate_id": 58,
       "title": "Modality Collapse as Mismatched Decoding",
       "snippet_len": 150,
       "cluster_text_len": 191,
@@ -751,7 +779,7 @@
       "link": "https://arxiv.org/abs/2602.23136"
     },
     {
-      "candidate_id": 57,
+      "candidate_id": 59,
       "title": "CoME: Empowering Channel-of-Mobile-Experts with Informative Hybrid-Capabilities Reasoning",
       "snippet_len": 151,
       "cluster_text_len": 241,
@@ -764,7 +792,7 @@
       "link": "https://arxiv.org/abs/2602.24142"
     },
     {
-      "candidate_id": 58,
+      "candidate_id": 60,
       "title": "Whisper-RIR-Mega: A Paired Clean-Reverberant Speech Benchmark for ASR Robustness to Room",
       "snippet_len": 151,
       "cluster_text_len": 240,
@@ -777,7 +805,7 @@
       "link": "https://arxiv.org/abs/2603.02252"
     },
     {
-      "candidate_id": 59,
+      "candidate_id": 61,
       "title": "Fragile Thoughts: How Large Language Models Handle Chain-of-Thought Perturbations",
       "snippet_len": 151,
       "cluster_text_len": 233,
@@ -788,32 +816,6 @@
       "domain": "arxiv.org",
       "score": 25,
       "link": "https://arxiv.org/abs/2603.03332"
-    },
-    {
-      "candidate_id": 60,
-      "title": "Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness",
-      "snippet_len": 151,
-      "cluster_text_len": 247,
-      "source": "Hugging Face Papers",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-09",
-      "domain": "huggingface.co",
-      "score": 23,
-      "link": "https://huggingface.co/papers/2603.08309"
-    },
-    {
-      "candidate_id": 61,
-      "title": "HiAR: Efficient Autoregressive Long Video Generation via Hierarchical Denoising",
-      "snippet_len": 114,
-      "cluster_text_len": 194,
-      "source": "Hugging Face Papers",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-09",
-      "domain": "huggingface.co",
-      "score": 23,
-      "link": "https://huggingface.co/papers/2603.08703"
     },
     {
       "candidate_id": 62,
@@ -1519,6 +1521,19 @@
     },
     {
       "candidate_id": 116,
+      "title": "Google rolls out new Gemini capabilities to Docs, Sheets, Slides",
+      "snippet_len": 151,
+      "cluster_text_len": 344,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "techcrunch.com",
+      "score": 22,
+      "link": "https://techcrunch.com/2026/03/10/google-rolls-out-new-gemini-capabilities-to-docs-sheets-slides-and-drive/"
+    },
+    {
+      "candidate_id": 117,
       "title": "NVIDIA's AI Engineers: Agent Inference at Planetary Scale and \"Speed of Light\" — Nader",
       "snippet_len": 60,
       "cluster_text_len": 147,
@@ -1531,46 +1546,72 @@
       "link": "https://www.latent.space/p/nvidia-brev-dynamo"
     },
     {
-      "candidate_id": 117,
-      "title": "CoCo: Code as CoT for Text-to-Image Preview and Rare Concept Generation",
-      "snippet_len": 151,
-      "cluster_text_len": 223,
-      "source": "Hugging Face Papers",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-09",
-      "domain": "huggingface.co",
-      "score": 21,
-      "link": "https://huggingface.co/papers/2603.08652"
-    },
-    {
       "candidate_id": 118,
-      "title": "FVG-PT: Adaptive Foreground View-Guided Prompt Tuning for Vision-Language Models",
-      "snippet_len": 115,
-      "cluster_text_len": 196,
-      "source": "Hugging Face Papers",
-      "source_group": "paper",
+      "title": "Google’s Gemini AI is getting a bigger role across Docs, Sheets",
+      "snippet_len": 87,
+      "cluster_text_len": 239,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
       "trust_tier": "high",
-      "pub_date": "2026-03-09",
-      "domain": "huggingface.co",
+      "pub_date": "2026-03-10",
+      "domain": "theverge.com",
       "score": 21,
-      "link": "https://huggingface.co/papers/2603.08708"
+      "link": "https://www.theverge.com/tech/890996/google-workspace-gemini-ai-docs-sheets-drive"
     },
     {
       "candidate_id": 119,
-      "title": "Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence",
-      "snippet_len": 104,
-      "cluster_text_len": 179,
-      "source": "Hugging Face Papers",
-      "source_group": "paper",
+      "title": "You can now ask Photoshop’s AI assistant to edit images for you",
+      "snippet_len": 126,
+      "cluster_text_len": 288,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
       "trust_tier": "high",
-      "pub_date": "2026-03-08",
-      "domain": "huggingface.co",
+      "pub_date": "2026-03-10",
+      "domain": "theverge.com",
       "score": 21,
-      "link": "https://huggingface.co/papers/2603.07660"
+      "link": "https://www.theverge.com/tech/891998/adobe-photoshop-web-mobile-ai-assistant-beta-launch"
     },
     {
       "candidate_id": 120,
+      "title": "Gemini in Google Sheets just achieved state-of-the-art performance.",
+      "snippet_len": 151,
+      "cluster_text_len": 219,
+      "source": "Google AI Blog",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "blog.google",
+      "score": 21,
+      "link": "https://blog.google/products-and-platforms/products/workspace/gemini-google-sheets-state-of-the-art/"
+    },
+    {
+      "candidate_id": 121,
+      "title": "Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness",
+      "snippet_len": 151,
+      "cluster_text_len": 247,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-03-09",
+      "domain": "huggingface.co",
+      "score": 21,
+      "link": "https://huggingface.co/papers/2603.08309"
+    },
+    {
+      "candidate_id": 122,
+      "title": "HiAR: Efficient Autoregressive Long Video Generation via Hierarchical Denoising",
+      "snippet_len": 114,
+      "cluster_text_len": 194,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-03-09",
+      "domain": "huggingface.co",
+      "score": 21,
+      "link": "https://huggingface.co/papers/2603.08703"
+    },
+    {
+      "candidate_id": 123,
       "title": "Offline Materials Optimization with CliqueFlowmer",
       "snippet_len": 151,
       "cluster_text_len": 201,
@@ -1583,7 +1624,7 @@
       "link": "https://arxiv.org/abs/2603.06082"
     },
     {
-      "candidate_id": 121,
+      "candidate_id": 124,
       "title": "Artificial Intelligence for Climate Adaptation: Reinforcement Learning for Climate Change",
       "snippet_len": 151,
       "cluster_text_len": 241,
@@ -1596,7 +1637,7 @@
       "link": "https://arxiv.org/abs/2603.06278"
     },
     {
-      "candidate_id": 122,
+      "candidate_id": 125,
       "title": "SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self",
       "snippet_len": 151,
       "cluster_text_len": 237,
@@ -1609,7 +1650,7 @@
       "link": "https://arxiv.org/abs/2603.06333"
     },
     {
-      "candidate_id": 123,
+      "candidate_id": 126,
       "title": "From Toil to Thought: Designing for Strategic Exploration and Responsible AI in Systematic",
       "snippet_len": 151,
       "cluster_text_len": 242,
@@ -1622,7 +1663,7 @@
       "link": "https://arxiv.org/abs/2603.05514"
     },
     {
-      "candidate_id": 124,
+      "candidate_id": 127,
       "title": "Molecular Representations for AI in Chemistry and Materials Science",
       "snippet_len": 151,
       "cluster_text_len": 219,
@@ -1635,7 +1676,7 @@
       "link": "https://arxiv.org/abs/2603.05525"
     },
     {
-      "candidate_id": 125,
+      "candidate_id": 128,
       "title": "On the Reliability of AI Methods in Drug Discovery: Evaluation of Boltz-2 for Structure and",
       "snippet_len": 151,
       "cluster_text_len": 243,
@@ -1648,7 +1689,7 @@
       "link": "https://arxiv.org/abs/2603.05532"
     },
     {
-      "candidate_id": 126,
+      "candidate_id": 129,
       "title": "JAWS: Enhancing Long-term Rollout of Neural Operators via Spatially-Adaptive Jacobian",
       "snippet_len": 150,
       "cluster_text_len": 236,
@@ -1661,7 +1702,7 @@
       "link": "https://arxiv.org/abs/2603.05538"
     },
     {
-      "candidate_id": 127,
+      "candidate_id": 130,
       "title": "Model Change for Description Logic Concepts",
       "snippet_len": 151,
       "cluster_text_len": 195,
@@ -1674,7 +1715,7 @@
       "link": "https://arxiv.org/abs/2603.05562"
     },
     {
-      "candidate_id": 128,
+      "candidate_id": 131,
       "title": "When AI Levels the Playing Field: Skill Homogenization, Asset Concentration, and Two",
       "snippet_len": 151,
       "cluster_text_len": 236,
@@ -1687,7 +1728,7 @@
       "link": "https://arxiv.org/abs/2603.05565"
     },
     {
-      "candidate_id": 129,
+      "candidate_id": 132,
       "title": "PRISM: Personalized Refinement of Imitation Skills for Manipulation via Human Instructions",
       "snippet_len": 151,
       "cluster_text_len": 242,
@@ -1700,7 +1741,7 @@
       "link": "https://arxiv.org/abs/2603.05574"
     },
     {
-      "candidate_id": 130,
+      "candidate_id": 133,
       "title": "DreamCAD: Scaling Multi-modal CAD Generation using Differentiable Parametric Surfaces",
       "snippet_len": 151,
       "cluster_text_len": 237,
@@ -1713,7 +1754,7 @@
       "link": "https://arxiv.org/abs/2603.05607"
     },
     {
-      "candidate_id": 131,
+      "candidate_id": 134,
       "title": "When Rubrics Fail: Error Enumeration as Reward in Reference-Free RL Post-Training for",
       "snippet_len": 151,
       "cluster_text_len": 237,
@@ -1726,7 +1767,7 @@
       "link": "https://arxiv.org/abs/2603.05659"
     },
     {
-      "candidate_id": 132,
+      "candidate_id": 135,
       "title": "The Rise of AI in Weather and Climate Information and its Impact on Global Inequality",
       "snippet_len": 151,
       "cluster_text_len": 237,
@@ -1739,7 +1780,7 @@
       "link": "https://arxiv.org/abs/2603.05710"
     },
     {
-      "candidate_id": 133,
+      "candidate_id": 136,
       "title": "Cultural Perspectives and Expectations for Generative AI",
       "snippet_len": 151,
       "cluster_text_len": 208,
@@ -1752,7 +1793,7 @@
       "link": "https://arxiv.org/abs/2603.05723"
     },
     {
-      "candidate_id": 134,
+      "candidate_id": 137,
       "title": "Bridging Domains through Subspace-Aware Model Merging",
       "snippet_len": 136,
       "cluster_text_len": 190,
@@ -1765,7 +1806,7 @@
       "link": "https://arxiv.org/abs/2603.05768"
     },
     {
-      "candidate_id": 135,
+      "candidate_id": 138,
       "title": "Knowing without Acting: The Disentangled Geometry of Safety Mechanisms in Large Language Models",
       "snippet_len": 151,
       "cluster_text_len": 247,
@@ -1778,7 +1819,7 @@
       "link": "https://arxiv.org/abs/2603.05773"
     },
     {
-      "candidate_id": 136,
+      "candidate_id": 139,
       "title": "Balancing Domestic and Global Perspectives: Evaluating Dual-Calibration and LLM-Generated",
       "snippet_len": 150,
       "cluster_text_len": 240,
@@ -1791,7 +1832,7 @@
       "link": "https://arxiv.org/abs/2603.05780"
     },
     {
-      "candidate_id": 137,
+      "candidate_id": 140,
       "title": "Visual Words Meet BM25: Sparse Auto-Encoder Visual Word Scoring for Image Retrieval",
       "snippet_len": 151,
       "cluster_text_len": 235,
@@ -1804,7 +1845,7 @@
       "link": "https://arxiv.org/abs/2603.05781"
     },
     {
-      "candidate_id": 138,
+      "candidate_id": 141,
       "title": "Remote Sensing Image Classification Using Deep Ensemble Learning",
       "snippet_len": 150,
       "cluster_text_len": 215,
@@ -1817,7 +1858,7 @@
       "link": "https://arxiv.org/abs/2603.05844"
     },
     {
-      "candidate_id": 139,
+      "candidate_id": 142,
       "title": "Facial Expression Recognition Using Residual Masking Network",
       "snippet_len": 151,
       "cluster_text_len": 212,
@@ -1830,7 +1871,7 @@
       "link": "https://arxiv.org/abs/2603.05937"
     },
     {
-      "candidate_id": 140,
+      "candidate_id": 143,
       "title": "Who We Are, Where We Are: Mental Health at the Intersection of Person, Situation, and Large",
       "snippet_len": 150,
       "cluster_text_len": 242,
@@ -1843,7 +1884,7 @@
       "link": "https://arxiv.org/abs/2603.05953"
     },
     {
-      "candidate_id": 141,
+      "candidate_id": 144,
       "title": "Imagine How To Change: Explicit Procedure Modeling for Change Captioning",
       "snippet_len": 151,
       "cluster_text_len": 224,
@@ -1856,7 +1897,7 @@
       "link": "https://arxiv.org/abs/2603.05969"
     },
     {
-      "candidate_id": 142,
+      "candidate_id": 145,
       "title": "Text-Driven Emotionally Continuous Talking Face Generation",
       "snippet_len": 149,
       "cluster_text_len": 208,
@@ -1869,7 +1910,7 @@
       "link": "https://arxiv.org/abs/2603.06071"
     },
     {
-      "candidate_id": 143,
+      "candidate_id": 146,
       "title": "A Hazard-Informed Data Pipeline for Robotics Physical Safety",
       "snippet_len": 151,
       "cluster_text_len": 212,
@@ -1882,7 +1923,7 @@
       "link": "https://arxiv.org/abs/2603.06130"
     },
     {
-      "candidate_id": 144,
+      "candidate_id": 147,
       "title": "A Causal Graph Approach to Oppositional Narrative Analysis",
       "snippet_len": 151,
       "cluster_text_len": 210,
@@ -1895,7 +1936,7 @@
       "link": "https://arxiv.org/abs/2603.06135"
     },
     {
-      "candidate_id": 145,
+      "candidate_id": 148,
       "title": "Partial Policy Gradients for RL in LLMs",
       "snippet_len": 147,
       "cluster_text_len": 187,
@@ -1908,7 +1949,7 @@
       "link": "https://arxiv.org/abs/2603.06138"
     },
     {
-      "candidate_id": 146,
+      "candidate_id": 149,
       "title": "Contrastive-to-Self-Supervised: A Two-Stage Framework for Script Similarity Learning",
       "snippet_len": 151,
       "cluster_text_len": 236,
@@ -1921,7 +1962,7 @@
       "link": "https://arxiv.org/abs/2603.06180"
     },
     {
-      "candidate_id": 147,
+      "candidate_id": 150,
       "title": "HiPP-Prune: Hierarchical Preference-Conditioned Structured Pruning for Vision-Language Models",
       "snippet_len": 151,
       "cluster_text_len": 245,
@@ -1934,7 +1975,7 @@
       "link": "https://arxiv.org/abs/2603.06270"
     },
     {
-      "candidate_id": 148,
+      "candidate_id": 151,
       "title": "DEX-AR: A Dynamic Explainability Method for Autoregressive Vision-Language Models",
       "snippet_len": 150,
       "cluster_text_len": 232,
@@ -1947,7 +1988,7 @@
       "link": "https://arxiv.org/abs/2603.06302"
     },
     {
-      "candidate_id": 149,
+      "candidate_id": 152,
       "title": "Structured Exploration vs. Generative Flexibility: A Field Study Comparing Bandit and LLM",
       "snippet_len": 151,
       "cluster_text_len": 241,
@@ -1960,7 +2001,7 @@
       "link": "https://arxiv.org/abs/2603.06330"
     },
     {
-      "candidate_id": 150,
+      "candidate_id": 153,
       "title": "CLAIRE: Compressed Latent Autoencoder for Industrial Representation and Evaluation -- A",
       "snippet_len": 151,
       "cluster_text_len": 239,
@@ -1973,7 +2014,7 @@
       "link": "https://arxiv.org/abs/2603.06361"
     },
     {
-      "candidate_id": 151,
+      "candidate_id": 154,
       "title": "Physical Simulator In-the-Loop Video Generation",
       "snippet_len": 151,
       "cluster_text_len": 199,
@@ -1986,7 +2027,7 @@
       "link": "https://arxiv.org/abs/2603.06408"
     },
     {
-      "candidate_id": 152,
+      "candidate_id": 155,
       "title": "Do Foundation Models Know Geometry? Probing Frozen Features for Continuous Physical Measurement",
       "snippet_len": 150,
       "cluster_text_len": 246,
@@ -1999,7 +2040,7 @@
       "link": "https://arxiv.org/abs/2603.06459"
     },
     {
-      "candidate_id": 153,
+      "candidate_id": 156,
       "title": "PONTE: Personalized Orchestration for Natural Language Trustworthy Explanations",
       "snippet_len": 151,
       "cluster_text_len": 231,
@@ -2012,7 +2053,7 @@
       "link": "https://arxiv.org/abs/2603.06485"
     },
     {
-      "candidate_id": 154,
+      "candidate_id": 157,
       "title": "RAMoEA-QA: Hierarchical Specialization for Robust Respiratory Audio Question Answering",
       "snippet_len": 151,
       "cluster_text_len": 238,
@@ -2025,7 +2066,7 @@
       "link": "https://arxiv.org/abs/2603.06542"
     },
     {
-      "candidate_id": 155,
+      "candidate_id": 158,
       "title": "Multimodal Mixture-of-Experts with Retrieval Augmentation for Protein Active Site Identification",
       "snippet_len": 150,
       "cluster_text_len": 247,
@@ -2038,7 +2079,7 @@
       "link": "https://arxiv.org/abs/2603.01511"
     },
     {
-      "candidate_id": 156,
+      "candidate_id": 159,
       "title": "Why Human Guidance Matters in Collaborative Vibe Coding",
       "snippet_len": 151,
       "cluster_text_len": 207,
@@ -2051,7 +2092,7 @@
       "link": "https://arxiv.org/abs/2602.10473"
     },
     {
-      "candidate_id": 157,
+      "candidate_id": 160,
       "title": "Peak + Accumulation: A Proxy-Level Scoring Formula for Multi-Turn LLM Attack Detection",
       "snippet_len": 151,
       "cluster_text_len": 238,
@@ -2064,7 +2105,7 @@
       "link": "https://arxiv.org/abs/2602.11247"
     },
     {
-      "candidate_id": 158,
+      "candidate_id": 161,
       "title": "An Adaptive Model Selection Framework for Demand Forecasting under Horizon-Induced",
       "snippet_len": 151,
       "cluster_text_len": 234,
@@ -2077,7 +2118,7 @@
       "link": "https://arxiv.org/abs/2602.13939"
     },
     {
-      "candidate_id": 159,
+      "candidate_id": 162,
       "title": "Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery",
       "snippet_len": 151,
       "cluster_text_len": 240,
@@ -2090,7 +2131,7 @@
       "link": "https://arxiv.org/abs/2603.01034"
     },
     {
-      "candidate_id": 160,
+      "candidate_id": 163,
       "title": "Rigidity-Aware Geometric Pretraining for Protein Design and Conformational Ensembles",
       "snippet_len": 151,
       "cluster_text_len": 236,
@@ -2103,7 +2144,7 @@
       "link": "https://arxiv.org/abs/2603.02406"
     },
     {
-      "candidate_id": 161,
+      "candidate_id": 164,
       "title": "Phys4D: Fine-Grained Physics-Consistent 4D Modeling from Video Diffusion",
       "snippet_len": 151,
       "cluster_text_len": 224,
@@ -2116,7 +2157,7 @@
       "link": "https://arxiv.org/abs/2603.03485"
     },
     {
-      "candidate_id": 162,
+      "candidate_id": 165,
       "title": "Measuring AI R&D Automation",
       "snippet_len": 151,
       "cluster_text_len": 179,
@@ -2129,7 +2170,7 @@
       "link": "https://arxiv.org/abs/2603.03992"
     },
     {
-      "candidate_id": 163,
+      "candidate_id": 166,
       "title": "Simulating Meaning, Nevermore! Introducing ICR: A Semiotic-Hermeneutic Metric for",
       "snippet_len": 151,
       "cluster_text_len": 233,
@@ -2142,20 +2183,163 @@
       "link": "https://arxiv.org/abs/2603.04413"
     },
     {
-      "candidate_id": 164,
-      "title": "RoboPocket: Improve Robot Policies Instantly with Your Phone",
+      "candidate_id": 167,
+      "title": "YouTube expands AI deepfake detection for politicians, government officials",
       "snippet_len": 151,
-      "cluster_text_len": 212,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
+      "cluster_text_len": 227,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
       "trust_tier": "high",
       "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 21,
-      "link": "https://arxiv.org/abs/2603.05504"
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/2026/03/10/youtube-ai-deepfake-detection-politicians-government-officials-journalists/"
     },
     {
-      "candidate_id": 165,
+      "candidate_id": 168,
+      "title": "Adobe is debuting an AI assistant for Photoshop",
+      "snippet_len": 70,
+      "cluster_text_len": 379,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/2026/03/10/adobe-is-debuting-an-ai-assistant-for-photoshop/"
+    },
+    {
+      "candidate_id": 169,
+      "title": "Zoom introduces an AI-powered office suite",
+      "snippet_len": 74,
+      "cluster_text_len": 311,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/2026/03/10/zoom-launches-an-ai-powered-office-suite-says-ai-avatars-for-meetings-are-coming-soon/"
+    },
+    {
+      "candidate_id": 170,
+      "title": "Sandbar secures $23M Series A for its AI note-taking ring",
+      "snippet_len": 129,
+      "cluster_text_len": 355,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/2026/03/10/sandbar-secures-23m-series-a-for-its-ai-note-taking-ring/"
+    },
+    {
+      "candidate_id": 171,
+      "title": "How Balyasny Asset Management built an AI research engine for investing",
+      "snippet_len": 148,
+      "cluster_text_len": 369,
+      "source": "OpenAI News",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-06",
+      "domain": "openai.com",
+      "score": 20,
+      "link": "https://openai.com/index/balyasny-asset-management"
+    },
+    {
+      "candidate_id": 172,
+      "title": "AI Is a 5-Layer Cake",
+      "snippet_len": 151,
+      "cluster_text_len": 360,
+      "source": "NVIDIA Generative AI Blog",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "blogs.nvidia.com",
+      "score": 20,
+      "link": "https://blogs.nvidia.com/blog/ai-5-layer-cake/"
+    },
+    {
+      "candidate_id": 173,
+      "title": "After outages, Amazon to make senior engineers sign off on AI-assisted changes",
+      "snippet_len": 82,
+      "cluster_text_len": 161,
+      "source": "Ars Technica AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "arstechnica.com",
+      "score": 20,
+      "link": "https://arstechnica.com/ai/2026/03/after-outages-amazon-to-make-senior-engineers-sign-off-on-ai-assisted-changes/"
+    },
+    {
+      "candidate_id": 174,
+      "title": "I Used Google’s New Gemini-Powered ‘Help Me Create’ Tool in Docs. It’s Great at Corporate-Speak",
+      "snippet_len": 150,
+      "cluster_text_len": 368,
+      "source": "WIRED AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "wired.com",
+      "score": 20,
+      "link": "https://www.wired.com/story/google-gemini-workspace-ai-tools-hands-on/"
+    },
+    {
+      "candidate_id": 175,
+      "title": "The twist in the Ticketmaster antitrust fight",
+      "snippet_len": 121,
+      "cluster_text_len": 307,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "theverge.com",
+      "score": 19,
+      "link": "https://www.theverge.com/podcast/892021/ticketmaster-antitrust-anthropic-pentagon-vergecast"
+    },
+    {
+      "candidate_id": 176,
+      "title": "YouTube is expanding its AI deepfake detection tool to politicians and journalists",
+      "snippet_len": 151,
+      "cluster_text_len": 234,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "theverge.com",
+      "score": 19,
+      "link": "https://www.theverge.com/ai-artificial-intelligence/891678/youtube-is-expanding-its-ai-deepfake-detection-tool-to-politicians-and-journalists"
+    },
+    {
+      "candidate_id": 177,
+      "title": "Meta’s deepfake moderation isn’t good enough",
+      "snippet_len": 127,
+      "cluster_text_len": 270,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "theverge.com",
+      "score": 19,
+      "link": "https://www.theverge.com/tech/891933/meta-oversight-board-ai-labels-deepfake-c2pa-facebook-instagram"
+    },
+    {
+      "candidate_id": 178,
+      "title": "One of my New Year's resolutions was to journal more. I think it helps focus your mind on",
+      "snippet_len": 151,
+      "cluster_text_len": 295,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-03-10",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/posts/ZennyKenny/824824266784839"
+    },
+    {
+      "candidate_id": 179,
       "title": "Isaacus just shipped a new state-of-the-art model, this time focused on reranking for legal",
       "snippet_len": 96,
       "cluster_text_len": 381,
@@ -2168,189 +2352,33 @@
       "link": "https://huggingface.co/posts/abdurrahmanbutler/289843615429566"
     },
     {
-      "candidate_id": 166,
-      "title": "How Far Can Unsupervised RLVR Scale LLM Training?",
-      "snippet_len": 151,
-      "cluster_text_len": 201,
-      "source": "Hugging Face Papers",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-09",
-      "domain": "huggingface.co",
-      "score": 19,
-      "link": "https://huggingface.co/papers/2603.08660"
-    },
-    {
-      "candidate_id": 167,
-      "title": "CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing",
-      "snippet_len": 151,
-      "cluster_text_len": 226,
-      "source": "Hugging Face Papers",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-09",
-      "domain": "huggingface.co",
-      "score": 19,
-      "link": "https://huggingface.co/papers/2603.08589"
-    },
-    {
-      "candidate_id": 168,
-      "title": "Scale Space Diffusion",
-      "snippet_len": 124,
-      "cluster_text_len": 146,
-      "source": "Hugging Face Papers",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-09",
-      "domain": "huggingface.co",
-      "score": 19,
-      "link": "https://huggingface.co/papers/2603.08709"
-    },
-    {
-      "candidate_id": 169,
-      "title": "The DSA's Blind Spot: Algorithmic Audit of Advertising and Minor Profiling on TikTok",
-      "snippet_len": 151,
-      "cluster_text_len": 236,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 19,
-      "link": "https://arxiv.org/abs/2603.05653"
-    },
-    {
-      "candidate_id": 170,
-      "title": "Reconstruct! Don't Encode: Self-Supervised Representation Reconstruction Loss for High",
-      "snippet_len": 151,
-      "cluster_text_len": 238,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 19,
-      "link": "https://arxiv.org/abs/2603.05887"
-    },
-    {
-      "candidate_id": 171,
-      "title": "Technical Report: Automated Optical Inspection of Surgical Instruments",
-      "snippet_len": 151,
-      "cluster_text_len": 222,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 19,
-      "link": "https://arxiv.org/abs/2603.05987"
-    },
-    {
-      "candidate_id": 172,
-      "title": "TADPO: Reinforcement Learning Goes Off-road",
-      "snippet_len": 151,
-      "cluster_text_len": 195,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 19,
-      "link": "https://arxiv.org/abs/2603.05995"
-    },
-    {
-      "candidate_id": 173,
-      "title": "Looking Through Glass Box",
-      "snippet_len": 151,
-      "cluster_text_len": 177,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 19,
-      "link": "https://arxiv.org/abs/2603.06272"
-    },
-    {
-      "candidate_id": 174,
-      "title": "Dynamic Chunking Diffusion Transformer",
-      "snippet_len": 151,
-      "cluster_text_len": 190,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 19,
-      "link": "https://arxiv.org/abs/2603.06351"
-    },
-    {
-      "candidate_id": 175,
-      "title": "Kinetic-based regularization: Learning spatial derivatives and PDE applications",
-      "snippet_len": 151,
-      "cluster_text_len": 231,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 19,
-      "link": "https://arxiv.org/abs/2603.06380"
-    },
-    {
-      "candidate_id": 176,
-      "title": "A Reference Architecture of Reinforcement Learning Frameworks",
-      "snippet_len": 151,
-      "cluster_text_len": 213,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 19,
-      "link": "https://arxiv.org/abs/2603.06413"
-    },
-    {
-      "candidate_id": 177,
-      "title": "NOBLE: Accelerating Transformers with Nonlinear Low-Rank Branches",
-      "snippet_len": 151,
-      "cluster_text_len": 217,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 19,
-      "link": "https://arxiv.org/abs/2603.06492"
-    },
-    {
-      "candidate_id": 178,
-      "title": "LiveSense: A Real-Time Wi-Fi Sensing Platform for Range-Doppler on COTS Laptop",
-      "snippet_len": 151,
-      "cluster_text_len": 230,
-      "source": "arXiv cs.AI",
-      "source_group": "paper",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "arxiv.org",
-      "score": 19,
-      "link": "https://arxiv.org/abs/2603.06545"
-    },
-    {
-      "candidate_id": 179,
-      "title": "[AINews] Autoresearch: Sparks of Recursive Self Improvement",
-      "snippet_len": 37,
-      "cluster_text_len": 97,
-      "source": "Latent Space",
-      "source_group": "newsletter",
-      "trust_tier": "high",
-      "pub_date": "2026-03-10",
-      "domain": "latent.space",
-      "score": 18,
-      "link": "https://www.latent.space/p/ainews-autoresearch-sparks-of-recursive"
-    },
-    {
       "candidate_id": 180,
+      "title": "How Descript enables multilingual video dubbing at scale",
+      "snippet_len": 151,
+      "cluster_text_len": 375,
+      "source": "OpenAI News",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-06",
+      "domain": "openai.com",
+      "score": 18,
+      "link": "https://openai.com/index/descript"
+    },
+    {
+      "candidate_id": 181,
+      "title": "Yann LeCun Raises $1 Billion to Build AI That Understands the Physical World",
+      "snippet_len": 127,
+      "cluster_text_len": 381,
+      "source": "WIRED AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "wired.com",
+      "score": 18,
+      "link": "https://www.wired.com/story/yann-lecun-raises-dollar1-billion-to-build-ai-that-understands-the-physical-world/"
+    },
+    {
+      "candidate_id": 182,
       "title": "Production query plans without production data",
       "snippet_len": 151,
       "cluster_text_len": 198,
@@ -2363,10 +2391,10 @@
       "link": "https://simonwillison.net/2026/Mar/9/production-query-plans-without-production-data/#atom-everything"
     },
     {
-      "candidate_id": 181,
+      "candidate_id": 183,
       "title": "Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload",
       "snippet_len": 151,
-      "cluster_text_len": 322,
+      "cluster_text_len": 241,
       "source": "Hugging Face Posts",
       "source_group": "community",
       "trust_tier": "medium",
@@ -2376,43 +2404,836 @@
       "link": "https://huggingface.co/posts/AINovice2005/333451320002796"
     },
     {
-      "candidate_id": 182,
-      "title": "TDM-R1: Reinforcing Few-Step Diffusion Models with Non-Differentiable Reward",
-      "snippet_len": 151,
-      "cluster_text_len": 228,
-      "source": "Hugging Face Papers",
-      "source_group": "paper",
+      "candidate_id": 184,
+      "title": "[AINews] Autoresearch: Sparks of Recursive Self Improvement",
+      "snippet_len": 37,
+      "cluster_text_len": 97,
+      "source": "Latent Space",
+      "source_group": "newsletter",
       "trust_tier": "high",
+      "pub_date": "2026-03-10",
+      "domain": "latent.space",
+      "score": 16,
+      "link": "https://www.latent.space/p/ainews-autoresearch-sparks-of-recursive"
+    },
+    {
+      "candidate_id": 185,
+      "title": "Cursor's Third Era",
+      "snippet_len": 151,
+      "cluster_text_len": 170,
+      "source": "Latent Space",
+      "source_group": "newsletter",
+      "trust_tier": "high",
+      "pub_date": "2026-03-06",
+      "domain": "latent.space",
+      "score": 16,
+      "link": "https://www.latent.space/p/cursor-third-era"
+    },
+    {
+      "candidate_id": 186,
+      "title": "How our open-source AI model SpeciesNet is helping to promote wildlife conservation",
+      "snippet_len": 122,
+      "cluster_text_len": 206,
+      "source": "Google AI Blog",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-07",
+      "domain": "blog.google",
+      "score": 15,
+      "link": "https://blog.google/company-news/outreach-and-initiatives/sustainability/speciesnet-open-source-ai-wildlife/"
+    },
+    {
+      "candidate_id": 187,
+      "title": "Is the Pentagon allowed to surveil Americans with AI?",
+      "snippet_len": 151,
+      "cluster_text_len": 205,
+      "source": "MIT Technology Review AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-07",
+      "domain": "technologyreview.com",
+      "score": 15,
+      "link": "https://www.technologyreview.com/2026/03/06/1134012/is-the-pentagon-allowed-to-surveil-americans-with-ai/"
+    },
+    {
+      "candidate_id": 188,
+      "title": "The quadratic bottleneck of long-context LLMs just hit a massive speed wall. Processing",
+      "snippet_len": 151,
+      "cluster_text_len": 239,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-03-10",
+      "domain": "huggingface.co",
+      "score": 15,
+      "link": "https://huggingface.co/posts/pavankumarbalijepalli/367637145155092"
+    },
+    {
+      "candidate_id": 189,
+      "title": "Mar 9, 2026•14 min readAnthropic launches Claude MarketplaceAI Breakfast",
+      "snippet_len": 0,
+      "cluster_text_len": 302,
+      "source": "AI Breakfast",
+      "source_group": "newsletter",
+      "trust_tier": "medium",
+      "pub_date": "2026-03-09",
+      "domain": "aibreakfast.beehiiv.com",
+      "score": 13,
+      "link": "https://aibreakfast.beehiiv.com/p/anthropic-launches-claude-marketplace"
+    },
+    {
+      "candidate_id": 190,
+      "title": "美军方态度强硬：打官司无法动摇 Anthropic 的“供应链风险”认定美国国防部强硬回应AI公司Anthropic诉讼，称不会就军事用途重启谈判，诉讼不影响最终决定。官员表示起诉是意料之中",
+      "snippet_len": 0,
+      "cluster_text_len": 373,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 12,
+      "link": "https://news.aibase.com/zh/news/26091"
+    },
+    {
+      "candidate_id": 191,
+      "title": "Google's new command-line tool can plug OpenClaw into your Workspace data",
+      "snippet_len": 102,
+      "cluster_text_len": 176,
+      "source": "Ars Technica AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-07",
+      "domain": "arstechnica.com",
+      "score": 12,
+      "link": "https://arstechnica.com/ai/2026/03/googles-new-command-line-tool-can-plug-openclaw-into-your-workspace-data/"
+    },
+    {
+      "candidate_id": 192,
+      "title": "Musk fails to block California data disclosure law he fears will ruin xAI",
+      "snippet_len": 86,
+      "cluster_text_len": 160,
+      "source": "Ars Technica AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-07",
+      "domain": "arstechnica.com",
+      "score": 12,
+      "link": "https://arstechnica.com/tech-policy/2026/03/musk-fails-to-block-california-data-disclosure-law-he-fears-will-ruin-xai/"
+    },
+    {
+      "candidate_id": 193,
+      "title": "AI startup sues ex-CEO, saying he took 41GB of email and lied on résumé",
+      "snippet_len": 69,
+      "cluster_text_len": 141,
+      "source": "Ars Technica AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-06",
+      "domain": "arstechnica.com",
+      "score": 12,
+      "link": "https://arstechnica.com/tech-policy/2026/03/ai-startup-sues-ex-ceo-saying-he-took-41gb-of-email-and-lied-on-resume/"
+    },
+    {
+      "candidate_id": 194,
+      "title": "This Jammer Wants to Block Always-Listening AI Wearables. It Probably Won’t Work",
+      "snippet_len": 143,
+      "cluster_text_len": 224,
+      "source": "WIRED AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-07",
+      "domain": "wired.com",
+      "score": 12,
+      "link": "https://www.wired.com/story/deveillance-spectre-i/"
+    },
+    {
+      "candidate_id": 195,
+      "title": "Why Is Alexa+ So Bad?",
+      "snippet_len": 111,
+      "cluster_text_len": 133,
+      "source": "WIRED AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-06",
+      "domain": "wired.com",
+      "score": 12,
+      "link": "https://www.wired.com/story/why-is-amazon-alexa-plus-so-bad/"
+    },
+    {
+      "candidate_id": 196,
+      "title": "Explosive Silicon Valley dispute raises questions over AI giants’ willingness to help track",
+      "snippet_len": 0,
+      "cluster_text_len": 92,
+      "source": "SiliconValley.com",
+      "source_group": "foreign_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-03-08",
+      "domain": "siliconvalley.com",
+      "score": 11,
+      "link": "https://www.siliconvalley.com/2026/03/08/explosive-dispute-questions-silicon-valleys-track-americans-robot-warfare/"
+    },
+    {
+      "candidate_id": 197,
+      "title": "刚刚，Anthropic深夜血洗500亿美金行业",
+      "snippet_len": 0,
+      "cluster_text_len": 25,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 11,
+      "link": "https://36kr.com/p/3717053980177797"
+    },
+    {
+      "candidate_id": 198,
+      "title": "OpenAI为龙虾紧急收购了一家23人公司",
+      "snippet_len": 0,
+      "cluster_text_len": 22,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 11,
+      "link": "https://36kr.com/p/3716953029031557"
+    },
+    {
+      "candidate_id": 199,
+      "title": "星际之门扩建项目戛然而止，OpenAI与甲骨文到底发生了什么？",
+      "snippet_len": 0,
+      "cluster_text_len": 31,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 11,
+      "link": "https://36kr.com/p/3716921147602562"
+    },
+    {
+      "candidate_id": 200,
+      "title": "Dify 完成 3000 万美元融资：我们相信",
+      "snippet_len": 0,
+      "cluster_text_len": 24,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 11,
+      "link": "https://aitntnews.com/newDetail.html?newId=22975"
+    },
+    {
+      "candidate_id": 201,
+      "title": "龙虾最大痛点被官方插件升级！对话永不忘记",
+      "snippet_len": 0,
+      "cluster_text_len": 21,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 11,
+      "link": "https://aitntnews.com/newDetail.html?newId=22942"
+    },
+    {
+      "candidate_id": 202,
+      "title": "OpenAI兼容-Vision",
+      "snippet_len": 0,
+      "cluster_text_len": 16,
+      "source": "阿里技术",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "help.aliyun.com",
+      "score": 11,
+      "link": "https://help.aliyun.com/zh/model-studio/qwen-vl-compatible-with-openai"
+    },
+    {
+      "candidate_id": 203,
+      "title": "Just published my first cuda kernel, inspired by Sage Attention. Feel free to try it out ☺️",
+      "snippet_len": 143,
+      "cluster_text_len": 235,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
       "pub_date": "2026-03-08",
       "domain": "huggingface.co",
-      "score": 17,
-      "link": "https://huggingface.co/papers/2603.07700"
+      "score": 11,
+      "link": "https://huggingface.co/posts/AINovice2005/189186110939177"
     },
     {
-      "candidate_id": 183,
-      "title": "How to Talk to Someone Experiencing 'AI Psychosis'",
-      "snippet_len": 150,
-      "cluster_text_len": 381,
-      "source": "404 Media AI",
-      "source_group": "foreign_media",
+      "candidate_id": 204,
+      "title": "光纤也疯狂！G.652.D 报价暴涨 650%，长飞光纤午后直线封板3月10日，A股光通信板块午后异动，长飞光纤涨停，烽火通信等跟涨。背后原因是AI浪潮推动光纤需求激增，价格大幅上涨。数据显示",
+      "snippet_len": 0,
+      "cluster_text_len": 97,
+      "source": "AIBase",
+      "source_group": "domestic_media",
       "trust_tier": "medium",
-      "pub_date": "2026-03-09",
-      "domain": "404media.co",
-      "score": 14,
-      "link": "https://www.404media.co/ai-psychosis-help-gemini-chatgpt-claude-chatbot-delusions/"
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/26095"
     },
     {
-      "candidate_id": 184,
-      "title": "I Visited the ‘Freedom Truck’ to Meet PragerU’s AI Slop Founders",
-      "snippet_len": 93,
-      "cluster_text_len": 345,
-      "source": "404 Media AI",
+      "candidate_id": 205,
+      "title": "小红书发布社区公告:严厉打击AI托管类账号及虚假互动行为小红书将全面治理“AI托管账号”，打击利用AI技术模拟真人创作内容、进行虚假互动的行为",
+      "snippet_len": 0,
+      "cluster_text_len": 71,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/26094"
+    },
+    {
+      "candidate_id": 206,
+      "title": "蚂蚁集团开启“抢人”模式：技术岗占8. 5 成，AI 浓度直接拉满！蚂蚁集团2026年春招启动，技术岗占比85%，其中超七成聚焦人工智能领域，重点招聘大模型算法、多模态生成等方向",
+      "snippet_len": 0,
+      "cluster_text_len": 89,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/26093"
+    },
+    {
+      "candidate_id": 207,
+      "title": "杨立昆进军“世界模型”：其 AI 初创公司完成 10.3 亿美元融资杨立昆创立的AMI公司获10.3亿美元融资，投前估值达35亿美元。该公司致力于将具备推理、规划和世界建模能力的AI系统商业化",
+      "snippet_len": 0,
+      "cluster_text_len": 97,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/26092"
+    },
+    {
+      "candidate_id": 208,
+      "title": "日产万字、48 小时写完 500 万字：AI “文学平替”正重塑网文生态2026年网文界面临AI冲击，AI写作工具以千倍速度挑战人类作者。传统“爆肝”日更模式在AI“工业化生产”面前显得无力",
+      "snippet_len": 0,
+      "cluster_text_len": 96,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/26089"
+    },
+    {
+      "candidate_id": 209,
+      "title": "腾讯全系“龙虾”产品矩阵发布：WorkBuddy、QClaw等，个人与企业均可一键开启 AI 特工时代腾讯发布“龙虾特工队”AI产品矩阵，主打具备记忆与执行能力的“自动化行动特工”",
+      "snippet_len": 0,
+      "cluster_text_len": 91,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/26088"
+    },
+    {
+      "candidate_id": 210,
+      "title": "受特斯拉AI6 芯片生产计划变更波及，韩国AI黑马DX-M2 量产推迟至 2026 年三季度特斯拉生产计划变动导致三星2nm产线排期调整",
+      "snippet_len": 0,
+      "cluster_text_len": 69,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/26087"
+    },
+    {
+      "candidate_id": 211,
+      "title": "#2告别“翻译腔”！ChatGPT 史诗级更新：推出“创建模板”黑科技",
+      "snippet_len": 0,
+      "cluster_text_len": 36,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/25960"
+    },
+    {
+      "candidate_id": 212,
+      "title": "#3马云定调 AI 时代胜负手：不在“芯片”在“心跳”",
+      "snippet_len": 0,
+      "cluster_text_len": 28,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/26007"
+    },
+    {
+      "candidate_id": 213,
+      "title": "#4OpenClaw能“边用边训”了：智能体强化学习训练框架AReaL v1.0稳定版发布",
+      "snippet_len": 0,
+      "cluster_text_len": 46,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/25915"
+    },
+    {
+      "candidate_id": 214,
+      "title": "#5 亚马逊 AWS 推出医疗 AI 代理平台",
+      "snippet_len": 0,
+      "cluster_text_len": 24,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/25981"
+    },
+    {
+      "candidate_id": 215,
+      "title": "#10OpenClaw官方社交账号上线",
+      "snippet_len": 0,
+      "cluster_text_len": 20,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "news.aibase.com",
+      "score": 10,
+      "link": "https://news.aibase.com/zh/news/25923"
+    },
+    {
+      "candidate_id": 216,
+      "title": "Kimi K2 Thinking 模型发布并开源",
+      "snippet_len": 0,
+      "cluster_text_len": 25,
+      "source": "Kimi",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "platform.moonshot.cn",
+      "score": 10,
+      "link": "https://platform.moonshot.cn/blog/posts/k2-think"
+    },
+    {
+      "candidate_id": 217,
+      "title": "Kimi K2: Open Agentic Intelligence",
+      "snippet_len": 0,
+      "cluster_text_len": 35,
+      "source": "Kimi",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "platform.moonshot.cn",
+      "score": 10,
+      "link": "https://platform.moonshot.cn/blog/posts/k2-report"
+    },
+    {
+      "candidate_id": 218,
+      "title": "San Jose, SJSU collaborate on new AI Center for Civic Good",
+      "snippet_len": 0,
+      "cluster_text_len": 59,
+      "source": "SiliconValley.com",
       "source_group": "foreign_media",
       "trust_tier": "medium",
-      "pub_date": "2026-03-09",
-      "domain": "404media.co",
-      "score": 14,
-      "link": "https://www.404media.co/i-visited-the-freedom-truck-to-meet-pragerus-ai-slop-founders/"
+      "pub_date": "2026-03-07",
+      "domain": "siliconvalley.com",
+      "score": 9,
+      "link": "https://www.siliconvalley.com/2026/03/07/san-jose-sjsu-collaborate-on-new-ai-center-for-civic-good/"
+    },
+    {
+      "candidate_id": 219,
+      "title": "AI制药首次实现盈利，告诉我们什么？",
+      "snippet_len": 0,
+      "cluster_text_len": 18,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3717054673221256"
+    },
+    {
+      "candidate_id": 220,
+      "title": "估值300亿美金的Cursor，怎么就过时了？",
+      "snippet_len": 0,
+      "cluster_text_len": 23,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3717047748261250"
+    },
+    {
+      "candidate_id": 221,
+      "title": "全民“养龙虾”，一场AI焦虑催生的生意",
+      "snippet_len": 0,
+      "cluster_text_len": 20,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3717034661835523"
+    },
+    {
+      "candidate_id": 222,
+      "title": "ChatGPT商业化思路：先做生态",
+      "snippet_len": 0,
+      "cluster_text_len": 18,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3717002743640582"
+    },
+    {
+      "candidate_id": 223,
+      "title": "AI短剧《霍去病》爆火，但为何成了一场闹剧？",
+      "snippet_len": 0,
+      "cluster_text_len": 22,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3716954732311941"
+    },
+    {
+      "candidate_id": 224,
+      "title": "AI预测权威：我还是低估了AI的速度",
+      "snippet_len": 0,
+      "cluster_text_len": 19,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3716939126896009"
+    },
+    {
+      "candidate_id": 225,
+      "title": "20亿基金落子长三角，宜宾切入AI产业化新赛道｜最前线",
+      "snippet_len": 0,
+      "cluster_text_len": 28,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3717075892778368"
+    },
+    {
+      "candidate_id": 226,
+      "title": "当 AI 开始真正参与工作，那个容纳它的系统，可能比 AI 本身更重要。",
+      "snippet_len": 0,
+      "cluster_text_len": 36,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3716996152242690"
+    },
+    {
+      "candidate_id": 227,
+      "title": "AI发布首个全球科学家社区爆火，硅谷投资圈",
+      "snippet_len": 0,
+      "cluster_text_len": 22,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3716850357237121"
+    },
+    {
+      "candidate_id": 228,
+      "title": "为什么拼多多看起来没有“AI焦虑”",
+      "snippet_len": 0,
+      "cluster_text_len": 18,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3716822218421890"
+    },
+    {
+      "candidate_id": 229,
+      "title": "龙虾狂欢：一场AI造富运动的泡沫与真相",
+      "snippet_len": 0,
+      "cluster_text_len": 20,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3716819093403011"
+    },
+    {
+      "candidate_id": 230,
+      "title": "高中生进大厂实践、给字节当顾问，“不欢迎老登”的AI行业都开始抢中学生了？",
+      "snippet_len": 0,
+      "cluster_text_len": 37,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3716742932002434"
+    },
+    {
+      "candidate_id": 231,
+      "title": "傅盛把养龙虾演成励志剧",
+      "snippet_len": 0,
+      "cluster_text_len": 12,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "36kr.com",
+      "score": 9,
+      "link": "https://36kr.com/p/3716579234575746"
+    },
+    {
+      "candidate_id": 232,
+      "title": "美军杀人AI猛料曝出！Claude24小时锁定伊朗1000个目标",
+      "snippet_len": 0,
+      "cluster_text_len": 33,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 9,
+      "link": "https://aitntnews.com/newDetail.html?newId=22973"
+    },
+    {
+      "candidate_id": 233,
+      "title": "30天养虾秘籍公开！第4天差点团灭，最后跑出“AI军团”",
+      "snippet_len": 0,
+      "cluster_text_len": 29,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 9,
+      "link": "https://aitntnews.com/newDetail.html?newId=22964"
+    },
+    {
+      "candidate_id": 234,
+      "title": "笑不活了！近800只龙虾",
+      "snippet_len": 0,
+      "cluster_text_len": 13,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 9,
+      "link": "https://aitntnews.com/newDetail.html?newId=22954"
+    },
+    {
+      "candidate_id": 235,
+      "title": "屡被质疑的AI检测赛道，华人创业者把产品做到2400万美元ARR",
+      "snippet_len": 0,
+      "cluster_text_len": 33,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 9,
+      "link": "https://aitntnews.com/newDetail.html?newId=22953"
+    },
+    {
+      "candidate_id": 236,
+      "title": "打败GPT-5.2，嵌入真实工业生产，这个大模型什么来头？",
+      "snippet_len": 0,
+      "cluster_text_len": 29,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 9,
+      "link": "https://aitntnews.com/newDetail.html?newId=22952"
+    },
+    {
+      "candidate_id": 237,
+      "title": "首个物理AI数据基座平台“无垠”落户浙江，专治机器人数据荒",
+      "snippet_len": 0,
+      "cluster_text_len": 30,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 9,
+      "link": "https://aitntnews.com/newDetail.html?newId=22948"
+    },
+    {
+      "candidate_id": 238,
+      "title": "走区别于「多邻国」的实战派路线，Google测试由AI驱动的多语言小课程",
+      "snippet_len": 0,
+      "cluster_text_len": 37,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 9,
+      "link": "https://aitntnews.com/newDetail.html?newId=22947"
+    },
+    {
+      "candidate_id": 239,
+      "title": "万字追问：给AI写提示词，怎么写出了一股“中国式家长”的味儿？",
+      "snippet_len": 0,
+      "cluster_text_len": 31,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 9,
+      "link": "https://aitntnews.com/newDetail.html?newId=22945"
+    },
+    {
+      "candidate_id": 240,
+      "title": "刚刚，蚂蚁投了“最美产品经理”，造AI魔镜",
+      "snippet_len": 0,
+      "cluster_text_len": 22,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 9,
+      "link": "https://aitntnews.com/newDetail.html?newId=22939"
+    },
+    {
+      "candidate_id": 241,
+      "title": "GPT-5.4杀入Excel，Claude打崩IBM！华尔街恐慌",
+      "snippet_len": 0,
+      "cluster_text_len": 33,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "",
+      "domain": "aitntnews.com",
+      "score": 9,
+      "link": "https://aitntnews.com/newDetail.html?newId=22931"
+    },
+    {
+      "candidate_id": 242,
+      "title": "大模型服务平台百炼",
+      "snippet_len": 0,
+      "cluster_text_len": 10,
+      "source": "阿里技术",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "help.aliyun.com",
+      "score": 9,
+      "link": "https://help.aliyun.com/zh/model-studio/"
+    },
+    {
+      "candidate_id": 243,
+      "title": "2025年6月大语言模型推理资源包优惠活动",
+      "snippet_len": 0,
+      "cluster_text_len": 22,
+      "source": "阿里技术",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "help.aliyun.com",
+      "score": 9,
+      "link": "https://help.aliyun.com/zh/model-studio/june-2025-promotion-of-model-studio-inference-resource-plan"
+    },
+    {
+      "candidate_id": 244,
+      "title": "通义系列大模型计费调整通知",
+      "snippet_len": 0,
+      "cluster_text_len": 14,
+      "source": "阿里技术",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "help.aliyun.com",
+      "score": 9,
+      "link": "https://help.aliyun.com/zh/model-studio/model-billing-notice"
+    },
+    {
+      "candidate_id": 245,
+      "title": "介绍一下 MoBA：面向长文本大模型的混合块注意力机制",
+      "snippet_len": 0,
+      "cluster_text_len": 28,
+      "source": "Kimi",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "platform.moonshot.cn",
+      "score": 8,
+      "link": "https://platform.moonshot.cn/blog/posts/moba"
+    },
+    {
+      "candidate_id": 246,
+      "title": "使用 Unreal5 游戏引擎和 Kimi 大模型开发交互式游戏",
+      "snippet_len": 0,
+      "cluster_text_len": 33,
+      "source": "Kimi",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "platform.moonshot.cn",
+      "score": 8,
+      "link": "https://platform.moonshot.cn/blog/posts/enpower-your-own-ai-agent-inside-unreal5-with-kimi"
+    },
+    {
+      "candidate_id": 247,
+      "title": "Kimi 大模型 API 更新了，也期待在「亚马逊云科技中国峰会」见到大家 | 开发者速递",
+      "snippet_len": 0,
+      "cluster_text_len": 46,
+      "source": "Kimi",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "platform.moonshot.cn",
+      "score": 8,
+      "link": "https://platform.moonshot.cn/blog/posts/kimi-api-update-amazon-cloud-china-summit"
     }
   ]
 }

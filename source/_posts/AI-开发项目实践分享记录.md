@@ -2,7 +2,8 @@
 title: AI 开发项目实践分享学习
 author: 楠木
 tags: []
-categories: []
+categories:
+  - july笔记
 date: 2026-02-27 16:14:00
 ---
 

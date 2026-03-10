@@ -34,3 +34,38 @@ test("scoreTopicForSelection penalizes weak AI-related news topics", () => {
   assert.equal(aiScore > offTopicScore, true);
   assert.equal(aiScore - offTopicScore >= 8, true);
 });
+
+test("scoreTopicForSelection strongly prefers corroborated news over singleton community items", () => {
+  const corroborated = {
+    topic_type: "news",
+    topic_title: "OpenAI与Anthropic新代理协议获多源交叉报道",
+    sample_titles: [
+      "OpenAI expands agent tooling for enterprises",
+      "Anthropic responds with enterprise agent update",
+    ],
+    mention_count: 4,
+    source_diversity: 3,
+    cross_source_score: 84,
+    avg_candidate_score: 18,
+    newest_pub_date: "2026-03-10T00:00:00.000Z",
+    top_source_groups: ["foreign_media", "company"],
+  };
+
+  const singletonCommunity = {
+    topic_type: "news",
+    topic_title: "Hugging Face社区提示",
+    sample_titles: ["Upload TensorBoard logs while fine-tuning your model"],
+    mention_count: 1,
+    source_diversity: 1,
+    cross_source_score: 60,
+    avg_candidate_score: 12,
+    newest_pub_date: "2026-03-10T00:00:00.000Z",
+    top_source_groups: ["community"],
+  };
+
+  const corroboratedScore = scoreTopicForSelection(corroborated);
+  const singletonScore = scoreTopicForSelection(singletonCommunity);
+
+  assert.equal(corroboratedScore > singletonScore, true);
+  assert.equal(corroboratedScore - singletonScore >= 50, true);
+});

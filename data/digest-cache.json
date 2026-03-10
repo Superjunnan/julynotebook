@@ -2593,6 +2593,174 @@
       "text": "View PDF HTML (experimental) Abstract:Diffusion models have recently advanced photorealistic human synthesis, although practical talking-head generation (THG) remains constrained by high inference latency, temporal instability such as flicker and identity drift, and imperfect audio-visual alignment under challenging speech conditions. This paper introduces TempoSyncDiff, a reference-conditioned latent diffusion framework that explores few-step inference for efficient audio-driven talking-head generation. The approach adopts a teacher-student distillation formulation in which a diffusion teacher trained with a standard noise prediction objective guides a lightweight student denoiser capable of operating with significantly fewer inference steps to improve generation stability. The framework incorporates identity anchoring and temporal regularization designed to mitigate identity drift and frame-to-frame flicker during synthesis, while viseme-based audio conditioning provides coarse lip motion control. Experiments on the LRS3 dataset report denoising-stage component-level metrics relative to VAE reconstructions and preliminary latency characterization, including CPU-only and edge computing measurements and feasibility estimates for edge deployment. The results suggest that distilled diffusion models can retain much of the reconstruction behaviour of a stronger teacher while enabling substantially lower latency inference. The study is positioned as an initial step toward practical diffusion-based talking-head generation under constrained computational settings. GitHub: this https URL Subjects: Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI); Machine Learning (cs.LG); Sound (cs.SD) Cite as: arXiv:2603.06057 [cs.CV] (or arXiv:2603.06057v1 [cs.",
       "pubDate": "Tue, 10 Mar 2026 00:00:00 -0400",
       "at": "2026-03-10"
+    },
+    "https://www.theverge.com/cs/features/877388/white-collar-workers-training-ai-mercor": {
+      "title": "You Could Be Next",
+      "text": "TheThe LinkedIn post seemed like yet another scam job offer, but Katya was desperate enough to click. After college, she’d struggled to make a living as a freelance journalist, gone to grad school, then pivoted to what she hoped would be a more stable career in content marketing — only to find AI had automated much of the work. This company was called Crossing Hurdles, and it promised copywriting jobs starting at $45 per hour.Katya clicked and was taken to a page for another company, called Mercor, where she was instructed to interview on-camera with an AI named Melvin. “It just seemed like the sketchiest thing in the world,” Katya says. She closed the tab. But a few weeks later, still unemployed, she got a message inviting her to apply to Mercor. This time, she looked up the company. Mercor, it seemed, sold data to train AI, and she was being recruited to create that data. “My job is gone because of ChatGPT, and I was being invited to train the model to do the worst version of it imaginable,” she says. The idea depressed her. But her financial situation was increasingly dire, and she had to find a new place to live in a hurry, so she turned on her webcam and said “hello” to Melvin.It was a strange, if largely pleasant, experience. Manifesting on Katya’s laptop as a disembodied male voice, Melvin seemed to have actually read her résumé and asked specific questions about it. A few weeks later, Katya, who like most workers in this story asked to use a pseudonym out of fear of retaliation, received an email from Mercor offering her a job. If she accepted, she should sign the contract, submit to a background check, and install monitoring software onto her computer. She signed immediately.She was added to a Slack channel, where it was clear she was entering a project already",
+      "pubDate": "2026-03-10T09:00:01.000Z",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/pavankumarbalijepalli/367637145155092": {
+      "title": "The quadratic bottleneck of long-context LLMs just hit a massive speed wall. Processing long-context sequences in LLMs is computationally expensive due to the quadratic complexity of self-attention. Existing sparse attention methods often rely on sorting or cumulative summation (Top-k/Top-p), which are slow and struggle to prune the \"long-tail\" of irrelevant tokens. - FlashPrefill achieves a 27.78× speedup on 256K sequences by replacing heavy sorting with a Max-based Dynamic Thresholding mechanism. - It introduces \"Instantaneous Pattern Discovery\" using block-level approximations, bypassing the need for expensive, full-attention score calculations. - Unlike previous methods that struggle with shorter contexts, it maintains a 1.71× speedup even at 4K, proving its robustness across all scales. - The framework is fully compatible with existing LLM/VLM architectures and integrates seamlessly into vLLM for real-world deployment. This breakthrough significantly reduces Time-to-First-Token (TTFT) for long-context applications, making massive document analysis and long-video understanding practical and cost-effective. It turns a major performance bottleneck into a streamlined, hardware-efficient process. How much compute are we wasting on \"long-tail\" tokens that don't actually matter? FlashPrefill suggests the answer is: a lot. #AI #LLMs #MachineLearning #DeepLearning #TechInnovation #GPUComputing Source:",
+      "text": "The quadratic bottleneck of long-context LLMs just hit a massive speed wall. Processing long-context sequences in LLMs is computationally expensive due to the quadratic complexity of self-attention. Existing sparse attention methods often rely on sorting or cumulative summation (Top-k/Top-p), which are slow and struggle to prune the \"long-tail\" of irrelevant tokens.- FlashPrefill achieves a 27.78× speedup on 256K sequences by replacing heavy sorting with a Max-based Dynamic Thresholding mechanism.- It introduces \"Instantaneous Pattern Discovery\" using block-level approximations, bypassing the need for expensive, full-attention score calculations.- Unlike previous methods that struggle with shorter contexts, it maintains a 1.71× speedup even at 4K, proving its robustness across all scales.- The framework is fully compatible with existing LLM/VLM architectures and integrates seamlessly into vLLM for real-world deployment.This breakthrough significantly reduces Time-to-First-Token (TTFT) for long-context applications, making massive document analysis and long-video understanding practical and cost-effective. It turns a major performance bottleneck into a streamlined, hardware-efficient process.How much compute are we wasting on \"long-tail\" tokens that don't actually matter? FlashPrefill suggests the answer is: a lot.#AI #LLMs #MachineLearning #DeepLearning #TechInnovation #GPUComputingSource: https://arxiv.org/pdf/2603.06199",
+      "pubDate": "2026-03-10T09:35:10.000Z",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/tech/891933/meta-oversight-board-ai-labels-deepfake-c2pa-facebook-instagram": {
+      "title": "Meta’s deepfake moderation isn’t good enough, says Oversight Board",
+      "text": "Jess Weatherbed is a news writer focused on creative industries, computing, and internet culture. Jess started her career at TechRadar, covering news and hardware reviews.Meta’s methods for identifying deepfakes are “not robust or comprehensive enough” to handle how quickly misinformation spreads during armed conflicts like the Iran war. That’s according to the Meta Oversight Board — a semi-independent body that guides the company’s content moderation practices — which is now calling on Meta to overhaul how it surfaces and labels AI-generated content across Facebook, Instagram, and Threads.The call for action stems from an investigation into a fake AI video of alleged damage to buildings in Israel that was shared on Meta’s social platforms last year, but the Board says its recommendations are particularly relevant right now, given the “massive military escalations” throughout the Middle East this week. In its announcement, the Board says that access to accurate, reliable information is vital to people’s safety amid the heightened risk of AI tools being used to spread misinformation.“The Board’s findings highlight that Meta’s current system to properly label AI content is overly dependent on self-disclosure of AI usage and escalated review and does not meet the realities of today’s online environment,” the Meta Oversight Board said. “The case also highlights the challenges with cross-platform proliferation of such content, with the content appearing to have originated on TikTok before appearing on Facebook, Instagram, and X.”Recommended steps issued by the Board include pushing Meta to improve its existing rules on misinformation to address deceptive deepfakes, and establish a new, separate community standard for AI-generated content. Meta is also being asked to develop ",
+      "pubDate": "2026-03-10T10:01:33.000Z",
+      "at": "2026-03-10"
+    },
+    "https://blogs.nvidia.com/blog/ai-5-layer-cake/": {
+      "title": "AI Is a 5-Layer Cake",
+      "text": "Skip to content AI is one of the most powerful forces shaping the world today. It is not a clever app or a single model; it is essential infrastructure, like electricity and the internet. AI runs on real hardware, real energy, and real economics. It takes raw materials and converts them into intelligence at scale. Every company will use it. Every country will build it. To understand why AI is unfolding this way, it helps to reason from first principles and look at what has fundamentally changed in computing. From Pre‑Recorded Software to Real‑Time Intelligence For most of computing history, software was pre‑recorded. Humans described an algorithm. Computers executed it. Data had to be carefully structured, stored into tables, and retrieved through precise queries. SQL became indispensable because it made that world workable. AI breaks that model. For the first time, we have a computer that can understand unstructured information. It can see images, read text, hear sound, and understand meaning. It can reason about context and intent. Most importantly, it generates intelligence in real time. Your browser does not support the video tag. Every response is newly created. Every answer depends on the context you provide. This is not software retrieving stored instructions. This is software reasoning and generating intelligence on demand. Because intelligence is produced in real time, the entire computing stack beneath it had to be reinvented. Your browser does not support the video tag. AI as Infrastructure When you look at AI industrially, it resolves into a five-layer stack. Energy At the foundation is energy. Intelligence generated in real time requires power generated in real time. Every token produced is the result of electrons moving, heat being managed, and energy bein",
+      "pubDate": "Tue, 10 Mar 2026 10:00:03 +0000",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/10/adobe-is-debuting-an-ai-assistant-for-photoshop/": {
+      "title": "Adobe is debuting an AI assistant for Photoshop",
+      "text": "Adobe announced on Tuesday that its AI assistant for Photoshop is becoming available to users in beta on the web and in the mobile apps. The company is also adding new AI-powered image editing capabilities to Firefly, its tool for media generation and editing. The creative tooling company first announced an AI assistant for Photoshop during its MAX event in October. The feature, now rolling out to users, can help them remove objects or people from images, change colors, or adjust lighting through prompts. Users can also use natural language to instruct the AI assistant to add soft glow, crop in a specific format, enhance shadows, or transform the background to give a different look to your image. Adobe said that paid users of Photoshop will be able to create unlimited generations with the AI assistant through April 9, and free users will get 20 generations to start with. In addition, the company is adding a new feature called AI markup in public beta, which lets people draw markers on the screen and use the AI assistant to transform those objects. For instance, you can draw a flower or mark an object to remove to modify the background. Image Credit: Adobe What’s more, Adobe is adding new image editing tools to its Firefly media creation tool. Firefly is getting Generative Fill, which has been present in Photoshop for a few years now, for replacing or adding objects and modifying the background accordingly. Firefly is also gaining a generative remove feature for object removal, generative expand for increasing an image size using AI, and generative upscale features. What’s more, the company is adding a one-click tool to remove the background from images. Loading the player… The company said in February that it is allowing unlimited generations for Firefly subscribers to ",
+      "pubDate": "Tue, 10 Mar 2026 13:06:51 +0000",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/10/google-rolls-out-new-gemini-capabilities-to-docs-sheets-slides-and-drive/": {
+      "title": "Google rolls out new Gemini capabilities to Docs, Sheets, Slides, and Drive",
+      "text": "Google announced on Tuesday that it’s bringing a slew of new Gemini-powered AI capabilities to Docs, Sheets, Slides, and Drive. The new features let users do things like quickly generate fully formatted first drafts, slides, and sheets based on information from their Gmail, Chat, and Drive. The tools are designed to make the apps more personal and capable of helping users get things done faster, right within the platforms themselves, instead of needing to switch to a separate tool or chatbot. A new “Help me create” tool in Docs lets users describe what they want to create, and Gemini will follow their instructions and gather information from Drive, Gmail, and Chat to generate a first draft. For example, you can ask Gemini to “draft a newsletter for our neighborhood association using the meeting minutes from my January HOA meeting and the list of upcoming events.” Once you have a first draft, Gemini can help refine specific sections without regenerating the entire document. You can also use the “Help me write” tool to do things like improve clarity or add details where needed. Additionally, if you have multiple people working on a draft with differing voices and tones, you can now use a new “Match writing style” feature to help unify the documents. Gemini will suggest edits to make the tone and voice consistent throughout the draft. Docs is also getting a new “Match the format” tool that lets you mirror the structure and style of another document. For example, if you find a travel itinerary template you like, Gemini can fill it in with your own trip details by pulling information from your emails, such as flight confirmations, hotel bookings, and rental car reservations. Image Credits:Google As for Sheets, Gemini is evolving from a tool you work in to a collaborative par",
+      "pubDate": "Tue, 10 Mar 2026 13:00:00 +0000",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/tech/891998/adobe-photoshop-web-mobile-ai-assistant-beta-launch": {
+      "title": "You can now ask Photoshop’s AI assistant to edit images for you",
+      "text": "Jess Weatherbed is a news writer focused on creative industries, computing, and internet culture. Jess started her career at TechRadar, covering news and hardware reviews.Adobe announced more agentic AI features for its Creative Cloud apps this week, allowing users to edit images and documents by describing the changes to a chatbot. A native AI-assistant is now available in public beta for Photoshop on web and mobile, and some Adobe apps, including Acrobat and Express, will soon be available to access directly within Microsoft’s Copilot service.The AI Assistant in Photoshop for web and mobile was introduced in a private beta in October, but now more people can use it to remove distractions, change backgrounds, refine lighting, adjust color, and more. This follows Adobe launching similar AI assistants for Express and Acrobat. The chatbot-like interface isn’t available for the full Photoshop desktop app yet, but that’s likely still coming, given that Adobe teased in April last year that AI agents are being developed for Photoshop and Premiere Pro.“With AI Assistant in Photoshop you can choose to have AI Assistant apply edits automatically or guide you step by step so you can learn along the way,” Adobe said in its press release. “In the Photoshop app, you can use your voice to request edits you want to see, making editing on the go simple.”If you don’t want to edit your work with Creative Cloud apps via Adobe’s chatbots, the company is hoping you’ll access its tools through other AI assistants instead. Adobe says that Express and Acrobat will soon be available to Copilot 365 enterprise customers, allowing them to make conversational adjustments without leaving Microsoft’s AI platform. Similar support for Photoshop, Acrobat, and Express was introduced to ChatGPT in Decembe",
+      "pubDate": "2026-03-10T13:00:00.000Z",
+      "at": "2026-03-10"
+    },
+    "https://blog.google/products-and-platforms/products/workspace/gemini-google-sheets-state-of-the-art/": {
+      "title": "Gemini in Google Sheets just achieved state-of-the-art performance.",
+      "text": "Today we announced new beta features for Gemini in Sheets to help you create, organize and edit entire sheets, from basic tasks to complex data analysis — just describe what you need.Gemini in Sheets has reached state-of-the-art proficiency in autonomously manipulating complex, real-world spreadsheets on the full SpreadsheetBench dataset, a public benchmark which evaluates models on their ability to edit spreadsheets in real-world scenarios. Achieving a 70.48% success rate, Gemini in Sheets not only exceeds competitors but nears human expert ability.We look forward to seeing how you use these new capabilities. You can learn more about the full set of Gemini updates in Google Sheets, Drive, Docs and Slides in our full Keyword post and Google Workspace post.",
+      "pubDate": "Tue, 10 Mar 2026 13:00:00 +0000",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/10/sandbar-secures-23m-series-a-for-its-ai-note-taking-ring/": {
+      "title": "Sandbar secures $23M Series A for its AI note-taking ring",
+      "text": "Sandbar, a startup by former Meta employees Mina Fahmi and Kirak Hong, attracted much attention last year when it showed off its note-taking wearable, the Stream ring. The company has now raised $23 million in a Series A funding round led by Adjacent and Kindred Ventures. The company’s smart ring is focused on note-taking, similar to products by Plaud or Omi, and not health-tracking like Oura’s products. The ring has a microphone that’s off by default, but can be activated using a flat, touch-sensitive panel at the top. You can hold this touch panel to record notes, chat with an AI assistant on the accompanying phone app, and access media controls like play, pause, skip tracks, and control the volume. Notably, the mic on the ring seems to be tuned for proximity, so you have to lift your hand to your face in order to take notes. Image Credits:Sandbar / Fahmi, who previously worked at startups like CTRL-Labs and Magic Leap, said Sandbar has been working on the ring for over two years, before coming out of stealth last year following a testing phase with friends and early adopters. “The response [to the launch] was a lot warmer than we expected, which is really encouraging and meaningful,” Fahmi told TechCrunch. “A lot of people said they could see themselves wearing this.” Fahmi said the startup is seeing promising traction from its early users, with the first batch of pre-orders for the ring selling out last year, which spurred Sandbar to open up a second batch to meet demand. He said some users use the ring over 50 times a day for tasks like planning presentations, trips or meals. The startup plans to start shipping the smart ring this summer. Sandbar said it is focusing on refining its app experience and what users can do with their recorded notes. The company is worki",
+      "pubDate": "Tue, 10 Mar 2026 12:40:37 +0000",
+      "at": "2026-03-10"
+    },
+    "https://www.wired.com/story/google-gemini-workspace-ai-tools-hands-on/": {
+      "title": "I Used Google’s New Gemini-Powered ‘Help Me Create’ Tool in Docs. It’s Great at Corporate-Speak",
+      "text": "Google rolled out multiple new AI features today for its core Workspace products: Google Docs, Sheets, Slides, and Drive. These apps now include additional tools powered by Gemini, Google’s AI assistant. The features range from generating entire rough drafts in your Docs to finding information tucked away in the recesses of your Drive.This Google launch is part of a larger trend in 2026, in which major software developers are continuing to bake generative-AI-based features into core user experiences—despite the lingering distaste many in the US have for tools like these. The features are coming first to English-speaking subscribers of Google’s AI Pro and Ultra plans.For Docs, Google added “Help me create,” which attempts to generate full first drafts of your document, from a prompt, by looking at your emails and files, and searching the internet for context. This feature takes the existing “Help me write” feature in the Chrome browser even further and points to a future where humans rely on AI to craft their thoughts and share ideas with others.Sheets and Slides both can now create similar full first drafts by pulling from information on the web and your past data. Another new, notable feature in Docs enables users to mimic the structure of past files when starting a new project. Also, Drive now includes AI Overviews of your files and more natural language searching abilities.My tests primarily focused on the new tools in Google Docs, where I have the most familiarity. To start, I asked Gemini to draft an itinerary for some St. Patrick’s Day shenanigans. In just a few seconds, Gemini combed through my Gmail and the web to put together a short plan. I was a little creeped out when the bot correctly looked up my flight reservations to see what city I’d be located in on Ma",
+      "pubDate": "Tue, 10 Mar 2026 13:00:00 +0000",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/10/zoom-launches-an-ai-powered-office-suite-says-ai-avatars-for-meetings-are-coming-soon/": {
+      "title": "Zoom introduces an AI-powered office suite, says AI avatars for meetings arrive this month",
+      "text": "Zoom’s AI-powered avatars, which can represent users in online meetings, will be available to use later this month, the company announced on Tuesday, alongside news of other tools and services. Notably, the company is introducing its own AI Docs, Slides, and Sheets apps, an AI agent builder for non-technical people, and a voice translator for meetings. The company said its AI-powered productivity apps will be available as a preview in the spring. The AI avatars, announced last year, are the long-anticipated photorealistic avatars that can mimic your appearance, expressions, lip and eye movements. Designed to mine your actions when you’re not “camera-ready,” Zoom says the avatars will work in online meetings as well as in its asynchronous video messaging product. Alongside the AI avatars, the company is adding a deepfake detection technology for meetings to alert participants of possible audio or video impersonation. Other new tools include a suite of AI-powered office apps, including AI Docs, Slides, and Sheets. The company said that, based on meeting transcripts and data from other services, users can create document drafts, spreadsheets with data, or presentations. Image Credits: Zoom In addition, Zoom’s AI Companion 3.0 is now coming to its desktop app, after first arriving on the web in September. The company said that the AI Companion’s monthly active users more than tripled in Q4 FY 2026 year-over-year. Workvivo, its app for employee communication, will receive the AI assistant, as well. This assistant can connect to services such as Slack, Salesforce, ServiceNow, Gmail, Outlook, Asana, and Jira to let users ask questions across different knowledge bases. Zoom is not alone in creating AI-first office software. There are established companies like Canva and new sta",
+      "pubDate": "Tue, 10 Mar 2026 13:00:00 +0000",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/tech/890996/google-workspace-gemini-ai-docs-sheets-drive": {
+      "title": "Google’s Gemini AI is getting a bigger role across Docs, Sheets, and Slides",
+      "text": "Google is embedding its Gemini AI assistant even more deeply within its Workspace apps. The changes, which are rolling out to Google Workspace and AI plan subscribers, include a new Gemini chat window inside Google Docs, a way to generate entire spreadsheets with AI, and a new Gemini-powered search feature in Drive.While Google Docs already shows you a few AI writing options alongside your blinking cursor, now you’ll see a Gemini chat window at the bottom of your screen. There, you’ll get the option to describe to Gemini the kind of document you’d like to create, and the AI assistant will use information from the web, Drive, Gmail, and Chat to generate and fully format a draft. You can also ask Gemini to match an existing document’s format, which should save you some time editing the new doc’s style and structure.Google is making some tweaks to the Gemini-powered editing features in Docs as well. If you’re working on a document with other people, you can now highlight their text and select “Match writing style.” Gemini will then analyze the tone of your document and rewrite the text accordingly. It can also make changes throughout your document based on a prompt, while showing its suggestions in-line — similar to if someone else is editing your document. Google notes that these suggestions will be private until you approve them.With this rollout, Yulie Kwon Kim, Google’s VP of product for Workspace, says Google aims to put Gemini “in the places where people work,” so users don’t have to navigate to a separate app or website. “When you are, for example, wanting to write a report, or write a customer brief, people are turning to Docs,” Kwon Kim says. “You can get the assistance from Gemini right where you are in your familiar place, where you’re doing your everyday work.”",
+      "pubDate": "2026-03-10T13:00:00.000Z",
+      "at": "2026-03-10"
+    },
+    "https://arstechnica.com/ai/2026/03/after-outages-amazon-to-make-senior-engineers-sign-off-on-ai-assisted-changes/": {
+      "title": "After outages, Amazon to make senior engineers sign off on AI-assisted changes",
+      "text": "",
+      "pubDate": "Tue, 10 Mar 2026 13:16:45 +0000",
+      "at": "2026-03-10"
+    },
+    "https://www.anthropic.com/news/claude-is-a-space-to-think": {
+      "title": "AnnouncementsFeb 4, 2026Claude is a space to thinkWe’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.",
+      "text": "There are many good places for advertising. A conversation with Claude is not one of them.Advertising drives competition, helps people discover new products, and allows services like email and social media to be offered for free. We’ve run our own ad campaigns, and our AI models have, in turn, helped many of our customers in the advertising industry.But including ads in conversations with Claude would be incompatible with what we want Claude to be: a genuinely helpful assistant for work and for deep thinking.We want Claude to act unambiguously in our users’ interests. So we’ve made a choice: Claude will remain ad-free. Our users won’t see “sponsored” links adjacent to their conversations with Claude; nor will Claude’s responses be influenced by advertisers or include third-party product placements our users did not ask for.The nature of AI conversationsWhen people use search engines or social media, they’ve come to expect a mixture of organic and sponsored content. Filtering signal from noise is part of the interaction.Conversations with AI assistants are meaningfully different. The format is open-ended; users often share context and reveal more than they would in a search query. This openness is part of what makes conversations with AI valuable, but it’s also what makes them susceptible to influence in ways that other digital products are not.Our analysis of conversations with Claude (conducted in a way that keeps all data private and anonymous) shows that an appreciable portion involve topics that are sensitive or deeply personal—the kinds of conversations you might have with a trusted advisor. Many other uses involve complex software engineering tasks, deep work, or thinking through difficult problems. The appearance of ads in these contexts would feel incongruous—an",
+      "pubDate": null,
+      "at": "2026-03-10"
+    },
+    "https://news.aibase.com/zh/news/26091": {
+      "title": "​美军方态度强硬：打官司无法动摇 Anthropic 的“供应链风险”认定美国国防部强硬回应AI公司Anthropic诉讼，称不会就军事用途重启谈判，诉讼不影响最终决定。官员表示起诉是意料之中，但纠纷无法通过法律途径解决。 刚刚 8.0K",
+      "text": "针对人工智能初创公司 Anthropic 就“供应链风险”认定发起的诉讼，美国国防部近期给出了强硬回应。一位高级官员明确表示，双方几乎没有可能就其 AI 工具的军 事用途重新启动谈判，且法律诉讼不会改变五角大楼的最终决定。美国国防部负责研究与工程的副部长埃米尔·迈克尔（Emil Michael）在接受采访时直言，Anthropic 的起诉是“意料之中的反应”，但他认为这场纠纷无法通过法庭程序得到解决。此前，五角大楼将 Anthropic 列入“供应链风险”名单，这不仅意味着该公司在获得政府合同方面面临巨大阻碍，还被贴上了可能危害国家安全的标签。Anthropic 在起诉书中要求法院阻止这一认定，认为军方的做法侵犯了公司受宪法保护的正当程序权利和言论自由。双方的博弈点在于 AI 技术的“红线”。Anthropic 坚持限制其模型用于致命性武器或大规模监控，而军方则倾向于制定更严格且具主导权的人工智能使用指南。尽管 Anthropic 试图通过司法途径寻求“翻盘”，但军方的表态预示着科技公司在与国防安全部门的议价权争夺中，正面临前所未有的行政压力。随着美国政府制定出更严苛的新版人工智能指南，像 Anthropic 这样强调“安全与伦理”的厂商与军方需求之间的裂痕恐将进一步加深。",
+      "pubDate": "2026-03-10",
+      "at": "2026-03-10"
+    },
+    "https://www.siliconvalley.com/2026/03/07/pentagon-turns-to-ex-uber-executive-in-anthropic-feud-over-ai-3/": {
+      "title": "Pentagon turns to ex-Uber executive in Anthropic feud over AI",
+      "text": "By Rebecca Torrence | Bloomberg News Emil Michael made his name in Silicon Valley a decade ago as an aggressive dealmaker for a startup — Uber Technologies — as it wrangled with governments in pursuit of market domination. Now, Michael has switched sides in a battle involving a different startup — this time taking a leading role in the Pentagon’s dispute with artificial intelligence pioneer Anthropic. As U.S. Under Secretary of Defense for Research and Engineering, Michael has been negotiating with Anthropic and its chief executive officer, Dario Amodei, over how the defense department can use its AI models. The discussions, centered on Anthropic’s aim to keep its technology from being used for mass surveillance of Americans and to power fully autonomous weapons, are at an impasse. The Pentagon formally notified Anthropic this week that it had determined the company to be a supply chain risk — a designation typically used only for foreign adversaries. The episode has allowed Michael to reprise some of the hardball tactics that defined his four-year tenure as chief business officer at Uber. The standoff has pitted the Defense Department against Anthropic, a leading industry player, as well as a broad and vocal contingent of technologists concerned about the use of AI in weapons. Even as he spars with Anthropic, Michael is simultaneously trying to build positive relationships with tech companies, reaching out to potential partners to accelerate the military’s adoption of AI. Since he took the position in May, Michael has met with hundreds of tech companies, according to a department official. Part of the goal is to get the best AI technology into the hands of the government, work closely with a handful of leading players, and expand the universe of contractors the Defense",
+      "pubDate": "2026-03-07",
+      "at": "2026-03-10"
+    },
+    "https://aitntnews.com/newDetail.html?newId=22942": {
+      "title": "龙虾最大痛点被官方插件升级！对话永不忘记，GPT和Gemini最强模型都可接入",
+      "text": "报！龙虾更新了！ 刚刚，新的OpenClaw测试版（2026.3.7）已经推出，并光速上线OA两家最新模型GPT-5.4和Gemini Flash 3.1。 与此同时，一并更新的还有： ACP绑定在重启后依然可保留精简版Docker多阶段构建 用于网关认证的SecretRef 可插拔的上下文引擎 支持HEIF图像格式 修复Zalo渠道问题 其中，可插拔的上下文引擎（pluggable context engine）可谓是这次更新的重点，不少网友纷纷表示： 相比于跑那个模型，上下文才是关键。 细心的你甚至还发现了，在官方的changelog上直接点名了一个插件例子lossless-claw。 那么，这个上下文插件是怎么一回事？有啥用？ 上下文管理插件化 总体来看，这次OpenClaw更新可以归纳为三个方面：上下文管理插件化、Agent路由能力升级（频道、topic、独立 session）以及部署与插件工程化（Docker multi-stage、SecretRef、安全策略）。 其中，最值得关注的，就是上下文管理插件化。 根据官方的changelog，这次更新新增了ContextEngine插件插槽。 该接口提供了完整的生命周期钩子，包括：bootstrap、ingest、assemble、compact、afterTurn、prepareSubagentSpawn、onSubagentEnded。 这意味着插件可以在上下文生成、压缩、拼接以及子Agent生命周期管理的各个阶段介入，从而实现完全不同的上下文策略。 用PR作者Josh Lehman的一句话总结： 你其实不需要一个Agent记忆系统，你需要的是不会被重置的上下文。 过去在OpenClaw中，上下文管理逻辑是写死的。 例如对话过长时如何压缩历史、如何拼接上下文、何时丢弃旧信息，这些都由系统内部固定实现，插件几乎无法介入。 而这次更新之后，情况发生了改变。 简单来说，上下文插件化意味着： 不同插件可以实现不同的上下文管理策略系统核心不再写死上下文压缩逻辑插件可以控制上下文压缩、上下文组装，以及子Agent的生命周期 翻译成最直观的体验就是：当你和“龙虾”进行长时间、多轮对话时，它的“记性”会明显变好。 以往龙虾对话常见的情况是： 对话变长后，系统开始压缩上下文，比如不按要求写，只列bullet pointAgent逐渐忘记之前的计划甚至忘记自己修改过哪些文件任务运行到后期，模型突然变得“变笨” 而新的上下文插件机制，正是为了解决这些问题。 随着定制化上下文策略的开放，未来针对不同场景的记忆方案也将不断出现，让“龙虾”在执行不同任务时变得更加高效，也更加经济。 lossless-claw：一种“不会丢失上下文”的方案 举例来说，官方重点推荐的插件lossless-claw，就展示了一种新的上下文管理思路。 在传统Agent系统中，一旦对话过长，系统通常会：直接丢弃旧内容。 而在lossless-claw中，旧对话不会被删除，而是： 持久化到SQLite数据库，按对话组织对旧消息块生成摘要，使用配置的LLM将摘要压缩为更高层级节点，形成DAG（有向无环图）每轮对话时，将摘要 + 最近原始消息组合成上下文提供工具（lcm_grep、lcm_describe、lcm_expand）让Agent可搜索、回溯历史 也就是说，在多轮对话中，原始消息会被完整保留，系统根据摘要与原始消息保持关联，而Agent随时可以展开摘要查看原文。 理论上，上下文“永远不会丢失”。 （By the way，据作者透露，这一思路来自《LCM: Lossless Context Management》，感兴趣的同学可以进一步阅读。） 在OOLONG benchmark的测试中，使用同一模型时，lossless-claw得分74.8，打败Claude Code70.3。 更关键的是，上下文越长，差距越大。在测试的所有上下文长度下，lossless-claw的得分都高于Claude Code。 PR作者Josh Lehman表示，他已经在OpenClaw上实际运行了一周： 说它表现很好，都算是低估了。 其他更新 除上下文插件以外，这次龙虾的更新还有两大重点： 首先是强化了Agent的路由系统。 针对Discord、T",
+      "pubDate": "2026-03-10",
+      "at": "2026-03-10"
+    },
+    "https://ai.meta.com/blog/sam-audio/": {
+      "title": "FEATURED",
+      "text": "TakeawaysWe’re introducing SAM Audio, a state-of-the-art unified model that uses intuitive and multimodal prompts for audio separation.Building on the Perception Encoder model we shared earlier this year, we’re sharing Perception Encoder Audiovisual (PE-AV), the technical engine that helps SAM Audio achieve state-of-the-art performance across a variety of audio separation tasks.SAM Audio and PE-AV are available starting today. We’re also sharing SAM Audio-Bench, the first in-the-wild audio separation benchmark, and SAM Audio Judge, the first automatic judge model for audio separation.We invite everyone to try SAM Audio by visiting the Segment Anything Playground where they can explore the capabilities of our new model, along with our most recent releases, SAM 3 and SAM 3D.Just as Meta Segment Anything Model (SAM) revolutionized computer vision by enabling people to segment any object in images and videos, today we’re excited to share a first-of-its-kind model for segmenting sound. We’re introducing SAM Audio, a state-of-the-art unified model that transforms audio processing by making it easy to isolate any sound from complex audio mixtures using natural, multimodal prompts — whether through text, visual cues, or marking time segments. This intuitive approach mirrors how people naturally engage with sound, making audio separation more accessible and useful than ever before.At the heart of SAM Audio is Perception Encoder Audiovisual (PE-AV), a technical engine that helps drive state-of-the-art performance. Built on the open source Perception Encoder model we shared earlier this year, PE-AV enables the building of more advanced computer vision systems that can assist people in everyday tasks, including sound detection. Think of PE-AV like “the ears” that help SAM Audio fun",
+      "pubDate": null,
+      "at": "2026-03-10"
+    },
+    "https://news.aibase.com/zh/news/26088": {
+      "title": "​腾讯全系“龙虾”产品矩阵发布：WorkBuddy、QClaw等，个人与企业均可一键开启 AI 特工时代腾讯发布“龙虾特工队”AI产品矩阵，主打具备记忆与执行能力的“自动化行动特工”，实现从对话到执行的跨越。该矩阵面向普通用户、开发者和企业提供解决方案，旨在降低AI部署门槛并解决安全顾虑。 刚刚 9.9K",
+      "text": "腾讯正式公布“龙虾特工队”全系产品矩阵。不同于传统的聊天机器人，该矩阵主打具备持续记忆与实际任务执行能力的“自动化行动特工（Agent）”，并为普通用户、开发者及企业用户提供了全方位的“领养”方案。此次发布标志着腾讯在 AI 智能体应用层面实现了从“对话”到“执行”的跨越，重点解决了 AI 落地过程中的部署门槛与安全顾虑。腾讯“龙虾”阵营核心成员:个人办公:WorkBuddy针对普通用户推出的“免部署”工具，实现零配置下载即用。该工具覆盖主流办公场景，现已提供5000Credits 的无门槛体验补贴。移动操控:QClaw（内测中）基于 OpenClaw 打造的本地 AI 助手，支持 Windows/Mac 一键安装。最大亮点是可通过微信远程操控，用户发送信息给“龙虾助理”即可驱动家中的电脑处理报表、传输文件。云端稳定:腾讯云 Lighthouse支持7×24小时在线，通过 QQ 或企业微信双入口操控。单个 QQ 号最多可领养5只“小龙虾”，适配大规模协同需求。企业定制:ADP 智能体开发平台专为企业打造，支持秒级接入企业微信。该平台具备严密的权限管理机制，可实现部门级数据隔离，确保企业机密安全。安全防御:龙虾管家与安全中心针对本地使用，腾讯电脑管家（18.0版）推出了“隔离房”功能，限制 AI 仅在特定范围内工作;针对云端，腾讯云上岗了“AI Agent 安全中心”，实时拦截高风险指令和漏洞插件。此外，腾讯还上线了拥有1.3万个本土化技能的 SkillHub（技能社区），支持小红书运营、百度搜索等国内主流工作流，并实现了与腾讯乐享知识库的深度联动，让 AI 能够基于企业内部文档进行有据可依的方案产出。",
+      "pubDate": "2026-03-10",
+      "at": "2026-03-10"
+    },
+    "https://ai.meta.com/blog/": {
+      "title": "AI Research",
+      "text": "Computer VisionIntroducing SAM Audio: The First Unified Multimodal Model for Audio SeparationSAM Audio transforms audio processing by making it easy to isolate any sound from complex audio mixtures using natural, multimodal prompts — whether through text, visual cues, or marking time segments. December 16, 2025",
+      "pubDate": null,
+      "at": "2026-03-10"
+    },
+    "https://ai.meta.com/blog/forest-research-dino/": {
+      "title": "Reducing Government Costs and Increasing Access to Greenspaces in the United Kingdom with DINO",
+      "text": "Parks and greenspaces in England deliver an estimated £6.6 billion ($8.4 billion USD) in health, climate change, and environmental benefits every year. Currently, with 80% of people in England residing in towns and cities, one-third of the English population still doesn’t have access to high-quality green space. In 2023, the UK government launched a bold Environmental Improvement Plan, which states that every person in England should live no more than a 15-minute walk from a greenspace and be able to see at least three trees from their home. In addition, the government made a commitment to increase tree canopy cover in England by 2% by 2050 by planting trees and woodlands.Because the national Environmental Improvement Plan envisions an impressive future for UK residents, frequent and accurate monitoring of canopy cover — over time at the individual tree level — is crucial. In April 2025, Forest Research, the research agency of the Forestry Commission and the organization responsible for monitoring Great Britain's trees, woodlands, and forests, published a new Trees Outside Woodlands (ToW) Map. This was funded by the UK Government's Natural Capital and Ecosystem Assessment (NCEA) program, which is assessing England's land, freshwater, and coastal ecosystems to produce a baseline of the country’s natural assets by 2029. The tool mapped England’s trees outside woodlands and — for the first time — made the data freely available. Forest Research is now using DINOv2 to build a model that will enhance the accuracy of their maps. This improvement is also essential for the NCEA program, strengthening its baseline assessment and providing robust evidence to inform policy decisions by the Department for Environment, Food and Rural Affairs (Defra).Previously, Forest Research used a",
+      "pubDate": null,
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/10/youtube-ai-deepfake-detection-politicians-government-officials-journalists/": {
+      "title": "YouTube expands AI deepfake detection for politicians, government officials, and journalists",
+      "text": "YouTube is expanding its likeness detection technology, which identifies AI-generated deepfakes, to a pilot group of government officials, political candidates, and journalists, the company announced Tuesday. Members of the pilot group will gain access to a tool that detects unauthorized AI-generated content and lets them request its removal if they believe it violates YouTube policy. The technology itself launched last year to roughly 4 million YouTube creators in the YouTube Partner Program, following earlier tests. Similar to YouTube’s existing Content ID system, which detects copyright-protected material in users’ uploaded videos, the likeness detection feature looks for simulated faces made with AI tools. These tools are sometimes used to try to spread misinformation and manipulate people’s perception of reality, as they leverage the deepfaked personas of notable figures — like politicians or other government officials — to say and do things in these AI videos that they didn’t in real life. With the new pilot program, YouTube aims to balance users’ free expression with the risks associated with AI technology that can generate a convincing likeness of a public figure. “This expansion is really about the integrity of the public conversation,” said Leslie Miller, YouTube’s Vice President of Government Affairs and Public Policy, in a press briefing ahead of Tuesday’s launch. “We know that the risks of AI impersonation are particularly high for those in the civic space. But while we are providing this new shield, we’re also being careful about how we use it,” she noted. Image Credits:YouTube Miller explained that not all of the detected matches would be removed when requested. Instead, YouTube would evaluate each request under its existing privacy policy guidelines to d",
+      "pubDate": "Tue, 10 Mar 2026 14:00:00 +0000",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/ZennyKenny/824824266784839": {
+      "title": "One of my New Year's resolutions was to journal more. I think it helps focus your mind on whatever you're working on in your personal and professional life, and it's a nice way to enjoy a cup of coffee in the morning rather than doomscrolling. My main takeaway after a few weeks was that I am profoundly uncreative and I was basically just logging what I wanted to do on a particular day on paper rather than a calendar. So it was like a less-helpful, analog version of Notion. Anyway, I figured AI would be a great way to automate the part of the activity that I couldn't do myself-- coming up with what to say. I figured others might want to give it a try so I shared the whole thing on GitHub: I love studying language, so each day I get an journal prompt generated by AI (you can use whatever model you want, including those on Hugging Face) in a random language that I happen to know, and I can provide feedback that is persisted and used to shape the direction and content of future prompts. Check it out and deploy it yourself to take your personal development game to the next level.",
+      "text": "One of my New Year's resolutions was to journal more. I think it helps focus your mind on whatever you're working on in your personal and professional life, and it's a nice way to enjoy a cup of coffee in the morning rather than doomscrolling.My main takeaway after a few weeks was that I am profoundly uncreative and I was basically just logging what I wanted to do on a particular day on paper rather than a calendar. So it was like a less-helpful, analog version of Notion.Anyway, I figured AI would be a great way to automate the part of the activity that I couldn't do myself-- coming up with what to say. I figured others might want to give it a try so I shared the whole thing on GitHub: https://github.com/kghamilton89/personal-development-journalI love studying language, so each day I get an journal prompt generated by AI (you can use whatever model you want, including those on Hugging Face) in a random language that I happen to know, and I can provide feedback that is persisted and used to shape the direction and content of future prompts.Check it out and deploy it yourself to take your personal development game to the next level.",
+      "pubDate": "2026-03-10T13:51:08.000Z",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/podcast/892021/ticketmaster-antitrust-anthropic-pentagon-vergecast": {
+      "title": "The twist in the Ticketmaster antitrust fight",
+      "text": "On The Vergecast: music monopolies, Anthropic vs. the DoD, foldable phones, and much more.On The Vergecast: music monopolies, Anthropic vs. the DoD, foldable phones, and much more.by David PierceMar 10, 2026, 2:01 PM UTCDavid Pierce is editor-at-large and Vergecast co-host with over a decade of experience covering consumer tech. Previously, at Protocol, The Wall Street Journal, and Wired.A lot of people are mad at Ticketmaster, and have been for a long time. (Did Swifties directly create an antitrust trial? Discuss.) The US government’s case against Live Nation-Ticketmaster appeared poised to lay bare some of the strangeness of the music business, and maybe even change the way the company works.Verge subscribers, don’t forget you get exclusive access to ad-free Vergecast wherever you get your podcasts. Head here. Not a subscriber? You can sign up here.And then, well, the Department of Justice and Live Nation-Ticketmaster decided to settle. On this episode of The Vergecast, The Verge’s Lauren Feiner explains what happened during the first few days of the trial, the machinations that led to the settlement, and what’s likely to happen next in this fight. The trial may not be over, but it’s certainly about to change.After that, The Verge’s Hayden Field joins the show to catch up on the latest between Anthropic, OpenAI, and the US Department of Defense. She explains why OpenAI CEO Sam Altman’s deal announcement backfired so spectacularly, why this whole thing is both a big win and a huge problem for Anthropic, and whether the end result of this saga will change the way we use, and regulate, AI going forward.Finally, David answers a question from the Vergecast Hotline (call 866-VERGE11 or email vergecast@theverge.com!) about foldable and flippable phones. They’re cool, they’r",
+      "pubDate": "2026-03-10T14:01:10.000Z",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/891678/youtube-is-expanding-its-ai-deepfake-detection-tool-to-politicians-and-journalists": {
+      "title": "YouTube is expanding its AI deepfake detection tool to politicians and journalists",
+      "text": "Public officials and journalists will soon be able to keep track of AI-generated deepfakes of themselves on YouTube through the platform’s likeness detection feature.The tool is already available to millions of content creators on YouTube, but beginning Tuesday, it will expand to a pilot group of journalists, government officials, and political candidates. (At a briefing with reporters, YouTube declined to share who was in the pilot group, including whether Donald Trump is part of it.) Likeness detection is similar to Content ID, which scans YouTube for copyrighted material — except likeness detection looks for people’s faces. When there are matches, an individual in the program can request that YouTube remove the content, though the company says not every request will be approved. Removals are based on YouTube’s privacy policy, which includes carve outs for content like parody and satire.“YouTube has a long history of protecting free expression, and that includes parody, satire, and political critique. If a video of a world leader is clear parody, it’s likely to stay up,” said Leslie Miller, YouTube’s vice president of government affairs and public policy. “We evaluate every removal request under our longstanding privacy guidelines to ensure we’re not stifling the very civic discourse we’re trying to protect.”To join the program, individuals will be required to submit a video of themselves and a government ID. YouTube says this data will only be used for the likeness detection feature, and that individuals can withdraw from the program and request YouTube remove the data.Amjad Hanif, vice president of creator products, said that so far the amount of content creators request that YouTube remove under the policy is “actually very small.”“They may see lots of matches, and",
+      "pubDate": "2026-03-10T14:00:00.000Z",
+      "at": "2026-03-10"
+    },
+    "https://arstechnica.com/tech-policy/2026/03/musk-fails-to-block-california-data-disclosure-law-he-fears-will-ruin-xai/": {
+      "title": "Musk fails to block California data disclosure law he fears will ruin xAI",
+      "text": "",
+      "pubDate": "Fri, 06 Mar 2026 18:21:42 +0000",
+      "at": "2026-03-10"
+    },
+    "https://arstechnica.com/tech-policy/2026/03/ai-startup-sues-ex-ceo-saying-he-took-41gb-of-email-and-lied-on-resume/": {
+      "title": "AI startup sues ex-CEO, saying he took 41GB of email and lied on résumé",
+      "text": "",
+      "pubDate": "Fri, 06 Mar 2026 12:10:07 +0000",
+      "at": "2026-03-10"
+    },
+    "https://aibreakfast.beehiiv.com/p/anthropic-launches-claude-marketplace": {
+      "title": "Mar 9, 2026•14 min readAnthropic launches Claude MarketplaceAI Breakfast",
+      "text": "Good morning. It’s Monday, March 9th.On this day in tech history: In 1993, Apple, IBM, Motorola, and partners formed the PowerOpen Association to standardize the PowerPC architecture, blending RISC design with Unix compatibility. This collaboration birthed chips like the 601, powering Macs and embedded systems, boosting performance for computational tasks. It enabled efficient floating-point operations crucial for early machine learning prototypes, a subtle but key step in AI hardware history. In today’s email:OpenAI expands GPT-5.4 ecosystem with Codex Security and Excel integrationAnthropic launches Claude Marketplace to consolidate enterprise AI spend5 New AI ToolsLatest AI Research PapersYou read. We listen. Let us know what you think by replying to this email.In Partnership with WozWoz is the AI mobile app builder for serious founders 🚀Woz is built for founders who want to ship real products, not just demos.Other tools are great for demos and prototypes. They start fast, then crumble as the codebase and complexity grow.Founders who hit walls with tools like Lovable, Bolt, and Replit switch to Woz to actually ship.With Woz, founders are launching:Two-sided marketplacesSocial networksAI-powered learning platformsVertical SaaS toolsReal subscription businessesHow? Because Woz is different.It’s engineered for complexity from day one. Clean architecture. Structured backends. Scalable foundations. No duct tape. No rebuilds.Payments. Ads. Database. Auth. AI integrations. Real backend logic. Built in from the start.And it connects to the tools you already use: Claude Code, Cursor, and VS Code.If you’re building a real business, not just a prototype, Woz was built for you.Today’s trending AI news stories OpenAI expands GPT-5.4 ecosystem with Codex Security and Excel integr",
+      "pubDate": "2026-03-09",
+      "at": "2026-03-10"
     }
   },
   "daily": {
@@ -4031,136 +4199,152 @@
       "at": "2026-03-09"
     },
     "2026-03-10": {
-      "fingerprint": "28549240022d40b9030a8893521ca47b35257d2cbe5afe8fc213fb7bd4039ef7",
+      "fingerprint": "2203cfd84f82b6e7ddc1532ee713ed2413958aa31d1628af7b717d92efcd6ab4",
       "daily": {
-        "overview": "今日AI领域聚焦于法律检索模型、代码空间理解、多模态路由及不确定性量化等前沿技术突破。同时，关于AI幻觉引发的社交问题及PragerU的AI宣传车活动也引发了公众关注。",
+        "overview": "2026年3月10日，Google、Adobe、YouTube等科技巨头集中发布AI新功能，涵盖办公套件、图像编辑与内容安全领域。同时，学术界在代码空间理解与时间序列预测等方向取得理论突破，AI正从单一工具向基础设施与核心体验深度演进。",
         "hotNews": [
           {
-            "title": "Isaacus发布Kanon 2 Reranker",
-            "insight": "Isaacus发布Kanon 2 Reranker",
-            "briefing": "Isaacus公司推出了Kanon 2 Reranker，这是一款专注于法律领域检索增强生成（RAG）的重排序模型。尽管Kanon 2 Embedder已代表法律检索的前沿水平，但并非所有团队都准备好重新嵌入整个语料库。Kanon 2 Reranker旨在解决高度敏感法律工作中仍存在的准确率提升空间。通过在Legal RAG Bench上的对比测试，该模型在保持其他参数一致的情况下，显著优于MongoDB的Voyage 2.5",
-            "evaluation": "该模型在法律垂直领域展现了卓越的检索精度，为敏感业务提供了强有力的技术支撑。",
-            "narrative": "Isaacus公司推出了Kanon 2 Reranker，这是一款专注于法律领域检索增强生成（RAG）的重排序模型。尽管Kanon 2 Embedder已代表法律检索的前沿水平，但并非所有团队都准备好重新嵌入整个语料库。Kanon 2 Reranker旨在解决高度敏感法律工作中仍存在的准确率提升空间。通过在Legal RAG Bench上的对比测试，该模型在保持其他参数一致的情况下，显著优于MongoDB的Voyage 2.5。该模型在法律垂直领域展现了卓越的检索精度，为敏感业务提供了强有力的技术支撑。",
-            "summary": "Isaacus公司推出了Kanon 2 Reranker，这是一款专注于法律领域检索增强生成（RAG）的重排序模型。尽管Kanon 2 Embedder已代表法律检索的前沿水平，但并非所有团队都准备好重新嵌入整个语料库。Kanon 2 Reranker旨在解决高度敏感法律工作中仍存在的准确率提升空间。通过在Legal RAG Bench上的对比测试",
+            "title": "Google将Gemini深度嵌入Workspace",
+            "insight": "Google将Gemini深度嵌入Workspace",
+            "briefing": "Google宣布向Docs、Sheets、Slides和Drive推出多项Gemini新功能。用户现在可以通过“帮我创建”工具，基于Gmail、Chat和Drive的信息快速生成格式化的初稿、幻灯片和电子表格。此外，Docs底部新增Gemini聊天窗口，Drive也引入了AI搜索功能。在Sheets方面，Gemini在处理复杂真实世界数据集时达到了70.48%的成功率，接近人类专家水平。",
+            "evaluation": "此举标志着AI正从辅助工具转变为生产力平台的核心组件。",
+            "narrative": "Google宣布向Docs、Sheets、Slides和Drive推出多项Gemini新功能。用户现在可以通过“帮我创建”工具，基于Gmail、Chat和Drive的信息快速生成格式化的初稿、幻灯片和电子表格。此外，Docs底部新增Gemini聊天窗口，Drive也引入了AI搜索功能。在Sheets方面，Gemini在处理复杂真实世界数据集时达到了70.48%的成功率，接近人类专家水平。此举标志着AI正从辅助工具转变为生产力平台的核心组件。",
+            "summary": "Google宣布向Docs、Sheets、Slides和Drive推出多项Gemini新功能。用户现在可以通过“帮我创建”工具，基于Gmail、Chat和Drive的信息快速生成格式化的初稿、幻灯片和电子表格。此外，Docs底部新增Gemini聊天窗口，Drive也引入了AI搜索功能。在Sheets方面",
             "refs": [
-              17
+              2,
+              3,
+              4
             ],
-            "mentionCount": 1,
+            "mentionCount": 3,
             "crossVerifyScore": 82,
+            "topicId": 116
+          },
+          {
+            "title": "Adobe推出Photoshop AI助手",
+            "insight": "Adobe推出Photoshop AI助手",
+            "briefing": "Adobe宣布其Photoshop AI助手在网页和移动端开放公测。该助手能够通过提示词帮助用户移除图像中的物体或人物、调整颜色和光照。同时，Adobe还在Firefly工具中增加了新的AI图像编辑能力，并计划将AI助手集成到Microsoft Copilot服务中。",
+            "evaluation": "创意软件的AI化趋势进一步加速，降低了专业图像处理的门槛。",
+            "narrative": "Adobe宣布其Photoshop AI助手在网页和移动端开放公测。该助手能够通过提示词帮助用户移除图像中的物体或人物、调整颜色和光照。同时，Adobe还在Firefly工具中增加了新的AI图像编辑能力，并计划将AI助手集成到Microsoft Copilot服务中。创意软件的AI化趋势进一步加速，降低了专业图像处理的门槛。",
+            "summary": "Adobe宣布其Photoshop AI助手在网页和移动端开放公测。该助手能够通过提示词帮助用户移除图像中的物体或人物、调整颜色和光照。同时，Adobe还在Firefly工具中增加了新的AI图像编辑能力，并计划将AI助手集成到Microsoft Copilot服务中。创意软件的AI化趋势进一步加速，降低了专业图像处理的门槛。",
+            "refs": [
+              8,
+              9
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 73,
+            "topicId": 118
+          },
+          {
+            "title": "YouTube将AI深度伪造检测技术扩展至政治人物和记者群体。",
+            "insight": "YouTube将AI深度伪造检测技术扩展至政治人物和记者群体。",
+            "briefing": "YouTube宣布将其AI深度伪造检测技术扩展至政府官员、政治候选人和记者的试点群体。这些用户将获得检测未经授权AI生成内容并请求下架的工具。该技术此前已向约400万YouTube创作者开放。",
+            "evaluation": "平台方正积极应对AI生成内容带来的信任危机，强化内容安全治理。",
+            "narrative": "YouTube宣布将其AI深度伪造检测技术扩展至政府官员、政治候选人和记者的试点群体。这些用户将获得检测未经授权AI生成内容并请求下架的工具。该技术此前已向约400万YouTube创作者开放。平台方正积极应对AI生成内容带来的信任危机，强化内容安全治理。",
+            "summary": "YouTube宣布将其AI深度伪造检测技术扩展至政府官员、政治候选人和记者的试点群体。这些用户将获得检测未经授权AI生成内容并请求下架的工具。该技术此前已向约400万YouTube创作者开放。平台方正积极应对AI生成内容带来的信任危机，强化内容安全治理。",
+            "refs": [
+              10,
+              11
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 73,
             "topicId": 165
-          },
-          {
-            "title": "AI幻觉可能导致用户产生严重的认知困扰，需谨慎应对。",
-            "insight": "AI幻觉可能导致用户产生严重的认知困扰，需谨慎应对。",
-            "briefing": "David发现朋友Michael的编程项目代码完全无法运行，且逻辑混乱。经了解，Michael大量使用ChatGPT生成代码，导致其陷入严重的AI幻觉状态。David不得不阅读数千页的对话记录来帮助Michael理清思路。这一案例揭示了过度依赖AI生成内容可能带来的认知风险。",
-            "evaluation": "公众需警惕AI生成内容的潜在误导性，并建立合理的数字素养。",
-            "narrative": "David发现朋友Michael的编程项目代码完全无法运行，且逻辑混乱。经了解，Michael大量使用ChatGPT生成代码，导致其陷入严重的AI幻觉状态。David不得不阅读数千页的对话记录来帮助Michael理清思路。这一案例揭示了过度依赖AI生成内容可能带来的认知风险。公众需警惕AI生成内容的潜在误导性，并建立合理的数字素养。",
-            "summary": "David发现朋友Michael的编程项目代码完全无法运行，且逻辑混乱。经了解，Michael大量使用ChatGPT生成代码，导致其陷入严重的AI幻觉状态。David不得不阅读数千页的对话记录来帮助Michael理清思路。这一案例揭示了过度依赖AI生成内容可能带来的认知风险。公众需警惕AI生成内容的潜在误导性，并建立合理的数字素养。",
-            "refs": [
-              19
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 183
-          },
-          {
-            "title": "PragerU利用AI生成历史人物形象进行宣传，引发对内容真实性的担忧。",
-            "insight": "PragerU利用AI生成历史人物形象进行宣传，引发对内容真实性的担忧。",
-            "briefing": "在South Carolina的一所学校停车场，PragerU展示了一辆名为“自由卡车”的宣传车。车上的AI生成乔治·华盛顿形象正在讲述美国革命历史。这种技术旨在让历史人物“活”过来，但其效果却引发了争议。评论指出，这种AI生成的“垃圾内容”美学与特朗普执政时期及法西斯主义的视觉语言相呼应。",
-            "evaluation": "此类技术滥用可能加剧信息污染，侵蚀公众对历史叙事的信任。",
-            "narrative": "在South Carolina的一所学校停车场，PragerU展示了一辆名为“自由卡车”的宣传车。车上的AI生成乔治·华盛顿形象正在讲述美国革命历史。这种技术旨在让历史人物“活”过来，但其效果却引发了争议。评论指出，这种AI生成的“垃圾内容”美学与特朗普执政时期及法西斯主义的视觉语言相呼应。此类技术滥用可能加剧信息污染，侵蚀公众对历史叙事的信任。",
-            "summary": "在South Carolina的一所学校停车场，PragerU展示了一辆名为“自由卡车”的宣传车。车上的AI生成乔治·华盛顿形象正在讲述美国革命历史。这种技术旨在让历史人物“活”过来，但其效果却引发了争议。评论指出，这种AI生成的“垃圾内容”美学与特朗普执政时期及法西斯主义的视觉语言相呼应。此类技术滥用可能加剧信息污染，侵蚀公众对历史叙事的信任。",
-            "refs": [
-              20
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 184
           }
         ],
         "otherNews": [
           {
-            "title": "Hugging Face社区建议在微调模型时上传TensorBoard日",
-            "insight": "Hugging Face社区建议在微调模型时上传TensorBoard日",
-            "briefing": "社区成员AINovice2005分享了一个实用技巧：如果在微调模型时启用了TensorBoard日志，务必将其作为事件工件上传到Hugging Face Hub，以便即时查看训练过程。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "社区成员AINovice2005分享了一个实用技巧：如果在微调模型时启用了TensorBoard日志，务必将其作为事件工件上传到Hugging Face Hub，以便即时查看训练过程。",
-            "summary": "社区成员AINovice2005分享了一个实用技巧：如果在微调模型时启用了TensorBoard日志，务必将其作为事件工件上传到Hugging Face Hub，以便即时查看训练过程。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "title": "Zoom推出AI办公套件，并计划在本月上线AI虚拟形象。",
+            "insight": "Zoom推出AI办公套件，并计划在本月上线AI虚拟形象。",
+            "briefing": "Zoom宣布推出包含AI Docs、Slides、Sheets、AI代理构建器和会议语音翻译器在内的AI办公套件。此外，Zoom的AI虚拟形象功能也将于本月上线，该功能允许用户在会议中由AI替身代表发言。",
+            "evaluation": "视频会议平台正试图通过构建完整的AI生产力生态来增强用户粘性。",
+            "narrative": "Zoom宣布推出包含AI Docs、Slides、Sheets、AI代理构建器和会议语音翻译器在内的AI办公套件。此外，Zoom的AI虚拟形象功能也将于本月上线，该功能允许用户在会议中由AI替身代表发言。视频会议平台正试图通过构建完整的AI生产力生态来增强用户粘性。",
+            "summary": "Zoom宣布推出包含AI Docs、Slides、Sheets、AI代理构建器和会议语音翻译器在内的AI办公套件。此外，Zoom的AI虚拟形象功能也将于本月上线，该功能允许用户在会议中由AI替身代表发言。视频会议平台正试图通过构建完整的AI生产力生态来增强用户粘性。",
             "refs": [
               18
             ],
             "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 181
+            "crossVerifyScore": 65,
+            "topicId": 166
+          },
+          {
+            "title": "AI智能戒指初创公司Sandbar完成2300万美元A轮融资。",
+            "insight": "AI智能戒指初创公司Sandbar完成2300万美元A轮融资。",
+            "briefing": "专注于AI笔记记录的智能戒指初创公司Sandbar宣布完成2300万美元A轮融资，由Adjacent和Kindred Ventures领投。该公司产品Stream Ring专注于笔记记录，而非健康追踪。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "专注于AI笔记记录的智能戒指初创公司Sandbar宣布完成2300万美元A轮融资，由Adjacent和Kindred Ventures领投。该公司产品Stream Ring专注于笔记记录，而非健康追踪。",
+            "summary": "专注于AI笔记记录的智能戒指初创公司Sandbar宣布完成2300万美元A轮融资，由Adjacent和Kindred Ventures领投。该公司产品Stream Ring专注于笔记记录，而非健康追踪。当前信号具备参考价值",
+            "refs": [
+              19
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 65,
+            "topicId": 167
+          },
+          {
+            "title": "NVIDIA强调AI作为关键基础设施的地位",
+            "insight": "NVIDIA强调AI作为关键基础设施的地位",
+            "briefing": "NVIDIA在博客中指出，AI不仅是应用或模型，而是像电力和互联网一样的基础设施。文章从第一性原理出发，分析了AI在硬件、能源和经济学层面的运作方式，认为AI正在重塑计算的本质。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "NVIDIA在博客中指出，AI不仅是应用或模型，而是像电力和互联网一样的基础设施。文章从第一性原理出发，分析了AI在硬件、能源和经济学层面的运作方式，认为AI正在重塑计算的本质。",
+            "summary": "NVIDIA在博客中指出，AI不仅是应用或模型，而是像电力和互联网一样的基础设施。文章从第一性原理出发，分析了AI在硬件、能源和经济学层面的运作方式，认为AI正在重塑计算的本质。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              20
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 65,
+            "topicId": 169
           }
         ],
         "coreTech": [
           {
             "title": "用于生成代码代理辅助安全审计",
-            "summary": "该架构通过事件溯源和重放验证，解决了AI代码审计中缺乏不可变审计轨迹的问题，提升了安全审计的可靠性与可复现性。",
+            "summary": "该论文提出了一种基于事件溯源的架构，用于对AI生成的代码进行安全审计，旨在解决传统LLM安全审查中缺乏不可变审计记录的问题。",
             "refs": [
-              1
-            ],
-            "topicId": 1
-          },
-          {
-            "title": "智能体中的不确定性量化：基础",
-            "summary": "论文探讨了在交互式智能体场景下进行不确定性量化的基础、挑战与机遇，为构建更安全的LLM应用提供了理论框架。",
-            "refs": [
-              2
+              12
             ],
             "topicId": 2
           },
           {
-            "title": "时间序列预测算法自主代码生成",
-            "summary": "该框架通过迭代自进化循环，实现了时间序列预测算法代码的自主生成、验证与优化，解决了传统方法在数据稀缺和分布偏移下的局限。",
+            "title": "代理中的不确定性量化：基础",
+            "summary": "论文探讨了在复杂交互式任务中量化LLM不确定性的方法，指出当前研究多集中于单轮问答，呼吁建立面向代理的统一不确定性量化框架。",
             "refs": [
-              3
+              13
             ],
             "topicId": 3
           },
           {
-            "title": "代码空间理论：代码智能体能理",
-            "summary": "ToCS基准测试评估智能体在多文件工程中构建和维护架构信念的能力，揭示了当前AI代码智能体在架构理解方面的不足。",
+            "title": "代码空间理论：代码代理是否理",
+            "summary": "论文引入了代码空间理论，通过基准测试评估代码代理在多文件工程中构建和维护架构信念的能力，揭示了代理在复杂系统理解上的局限性。",
             "refs": [
-              5
-            ],
-            "topicId": 5
-          },
-          {
-            "title": "语义路由：多模态模型的信号驱",
-            "summary": "针对多模态LLM的多样化需求，该研究提出了信号驱动的决策路由方法，旨在解决推理时的智能请求分配问题。",
-            "refs": [
-              6
+              15
             ],
             "topicId": 6
           }
         ],
         "aiRumor": [],
         "refTranslations": {
-          "1": "ESAA-Security：用于AI生成代码代理辅助安全审计的事件溯源可验证架构",
-          "2": "LLM智能体中的不确定性量化：基础、新兴挑战与机遇",
-          "3": "SEA-TS：时间序列预测算法自主代码生成的自进化智能体",
-          "4": "Intelli Ask：通过 RLVR 学习提出高质量研究问题",
-          "5": "代码空间理论：代码智能体能理解软件架构吗？",
-          "6": "vLLM语义路由：多模态模型的信号驱动决策路由",
-          "7": "Tool-Genesis：面向自进化语言智能体的任务驱动工具创建基准",
-          "8": "新兴基础与智能体 AI 时代的计算病理学——国际专家观点",
-          "9": "CORE-Seg：基于强化学习的复杂病灶推理驱动分割",
-          "10": "面向高效视觉语言模型的能量驱动自适应视觉 Token 剪枝",
-          "11": "Tempo Sync Diff：用于低延迟音频驱动说话人生成的蒸馏时序一致扩散模型",
-          "12": "MM-ISTS：利用多模态视觉-文本大语言模型协同不规则采样时间序列预测",
-          "13": "Data Chef：通过强化学习为 LLM 适配打造最佳数据配方",
-          "14": "世界不会静止：面向智能体基准的可编程进化",
-          "15": "智能体检索增强推理重塑放射学问题中的模型变异性集体可靠性",
-          "16": "迈向高效且稳定的海洋状态预测：连续时间 Koopman 方法",
-          "17": "Isaacus 发布新 SOTA 模型，专注于法律 RAG 重排序",
-          "18": "提示：使用 Tensor Board 日志微调模型时，请确保将事件文件上传至 HF Hub",
-          "19": "如何与经历‘AI 幻觉’的人交谈",
-          "20": "探访‘自由卡车’：会见 Prager U 的 AI 垃圾内容创始人"
+          "1": "世界不会静止：智能体基准的编程式进化",
+          "2": "谷歌向 Docs、Sheets、Slides 和 Drive 推出新 Gemini 功能",
+          "3": "谷歌 Gemini AI 在 Docs、Sheets 和 Slides 中的应用范围扩大",
+          "4": "谷歌 Sheets 中的 Gemini 达到最先进性能",
+          "5": "我在 Docs 中使用了谷歌新 Gemini 驱动的‘帮我创建’工具，它很擅长企业行话",
+          "6": "Isaacus 发布了专注于法律 RAG 重排序的新 SOTA 模型 Kanon 2",
+          "7": "用于视觉叙事的具身伴侣",
+          "8": "现在你可以要求 Photoshop 的 AI 助手为你编辑图像",
+          "9": "Adobe 为 Photoshop 推出 AI 助手",
+          "10": "You Tube 扩展针对政客、政府官员和记者的 AI 深度伪造检测",
+          "11": "You Tube 扩展其 AI 深度伪造检测工具，覆盖政客和记者",
+          "12": "ESAA-Security：用于AI生成代码代理辅助安全审计的可验证事件溯源架构",
+          "13": "LLM代理中的不确定性量化：基础、新兴挑战与机遇",
+          "14": "SEA-TS：时间序列预测算法自主代码生成的自进化智能体",
+          "15": "代码空间理论：代码代理是否理解软件架构？",
+          "16": "Tool-Genesis：面向自进化语言智能体的任务驱动工具创建基准",
+          "17": "迈向高效稳定的海洋状态预测：连续时间 Koopman 方法",
+          "18": "Zoom 推出 AI 驱动的办公套件，称 AI 虚拟形象会议功能本月上线",
+          "19": "Sandbar 获 2300 万美元 A 轮融资，用于其 AI 笔记环",
+          "20": "AI 是一个五层蛋糕"
         },
-        "candidateTotal": 184,
-        "topicTotal": 184,
+        "candidateTotal": 264,
+        "topicTotal": 242,
         "selectedTopicTotal": 10
       },
       "at": "2026-03-10"
@@ -4726,6 +4910,98 @@
     "https://arxiv.org/abs/2603.04444": {
       "title": "vLLM Semantic Router: Signal Driven Decision Routing for Mixture-of-Modality Models",
       "at": "2026-03-10"
+    },
+    "https://www.theverge.com/cs/features/877388/white-collar-workers-training-ai-mercor": {
+      "title": "You Could Be Next",
+      "at": "2026-03-10"
+    },
+    "https://blogs.nvidia.com/blog/ai-5-layer-cake/": {
+      "title": "AI Is a 5-Layer Cake",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/tech/891933/meta-oversight-board-ai-labels-deepfake-c2pa-facebook-instagram": {
+      "title": "Meta’s deepfake moderation isn’t good enough, says Oversight Board",
+      "at": "2026-03-10"
+    },
+    "https://arxiv.org/abs/2603.06199": {
+      "title": "FlashPrefill: Instantaneous Pattern Discovery and Thresholding for Ultra-Fast Long-Context Prefilling",
+      "at": "2026-03-10"
+    },
+    "https://huggingface.co/posts/pavankumarbalijepalli/367637145155092": {
+      "title": "The quadratic bottleneck of long-context LLMs just hit a massive speed wall. Processing long-context sequences in LLMs is computationally expensive due to the quadratic complexity of self-attention. Existing sparse attention methods often rely on sorting or cumulative summation (Top-k/Top-p), which are slow and struggle to prune the \"long-tail\" of irrelevant tokens. - FlashPrefill achieves a 27.78× speedup on 256K sequences by replacing heavy sorting with a Max-based Dynamic Thresholding mechanism. - It introduces \"Instantaneous Pattern Discovery\" using block-level approximations, bypassing the need for expensive, full-attention score calculations. - Unlike previous methods that struggle with shorter contexts, it maintains a 1.71× speedup even at 4K, proving its robustness across all scales. - The framework is fully compatible with existing LLM/VLM architectures and integrates seamlessly into vLLM for real-world deployment. This breakthrough significantly reduces Time-to-First-Token (TTFT) for long-context applications, making massive document analysis and long-video understanding practical and cost-effective. It turns a major performance bottleneck into a streamlined, hardware-efficient process. How much compute are we wasting on \"long-tail\" tokens that don't actually matter? FlashPrefill suggests the answer is: a lot. #AI #LLMs #MachineLearning #DeepLearning #TechInnovation #GPUComputing Source:",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/10/google-rolls-out-new-gemini-capabilities-to-docs-sheets-slides-and-drive/": {
+      "title": "Google rolls out new Gemini capabilities to Docs, Sheets, Slides, and Drive",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/tech/890996/google-workspace-gemini-ai-docs-sheets-drive": {
+      "title": "Google’s Gemini AI is getting a bigger role across Docs, Sheets, and Slides",
+      "at": "2026-03-10"
+    },
+    "https://blog.google/products-and-platforms/products/workspace/gemini-google-sheets-state-of-the-art/": {
+      "title": "Gemini in Google Sheets just achieved state-of-the-art performance.",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/tech/891998/adobe-photoshop-web-mobile-ai-assistant-beta-launch": {
+      "title": "You can now ask Photoshop’s AI assistant to edit images for you",
+      "at": "2026-03-10"
+    },
+    "https://www.anthropic.com/news/where-stand-department-war": {
+      "title": "Where things stand with the Department of WarAnnouncementsMar 5, 2026A statement from Dario Amodei.",
+      "at": "2026-03-10"
+    },
+    "https://www.anthropic.com/news/statement-department-of-war": {
+      "title": "AnnouncementsFeb 26, 2026Statement from Dario Amodei on our discussions with the Department of War A statement from our CEO on national security uses of AI.",
+      "at": "2026-03-10"
+    },
+    "https://news.aibase.com/zh/news/26091": {
+      "title": "​美军方态度强硬：打官司无法动摇 Anthropic 的“供应链风险”认定美国国防部强硬回应AI公司Anthropic诉讼，称不会就军事用途重启谈判，诉讼不影响最终决定。官员表示起诉是意料之中，但纠纷无法通过法律途径解决。 刚刚 8.0K",
+      "at": "2026-03-10"
+    },
+    "https://www.siliconvalley.com/2026/03/07/pentagon-turns-to-ex-uber-executive-in-anthropic-feud-over-ai-3/": {
+      "title": "Pentagon turns to ex-Uber executive in Anthropic feud over AI",
+      "at": "2026-03-10"
+    },
+    "https://ai.meta.com/blog/#": {
+      "title": "AI Research",
+      "at": "2026-03-10"
+    },
+    "https://ai.meta.com/blog/": {
+      "title": "AI Research",
+      "at": "2026-03-10"
+    },
+    "https://ai.meta.com/blog/sam-audio/": {
+      "title": "FEATURED",
+      "at": "2026-03-10"
+    },
+    "https://aitntnews.com/newDetail.html?newId=22942": {
+      "title": "龙虾最大痛点被官方插件升级！对话永不忘记，GPT和Gemini最强模型都可接入",
+      "at": "2026-03-10"
+    },
+    "https://news.aibase.com/zh/news/26088": {
+      "title": "​腾讯全系“龙虾”产品矩阵发布：WorkBuddy、QClaw等，个人与企业均可一键开启 AI 特工时代腾讯发布“龙虾特工队”AI产品矩阵，主打具备记忆与执行能力的“自动化行动特工”，实现从对话到执行的跨越。该矩阵面向普通用户、开发者和企业提供解决方案，旨在降低AI部署门槛并解决安全顾虑。 刚刚 9.9K",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/10/adobe-is-debuting-an-ai-assistant-for-photoshop/": {
+      "title": "Adobe is debuting an AI assistant for Photoshop",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/10/youtube-ai-deepfake-detection-politicians-government-officials-journalists/": {
+      "title": "YouTube expands AI deepfake detection for politicians, government officials, and journalists",
+      "at": "2026-03-10"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/891678/youtube-is-expanding-its-ai-deepfake-detection-tool-to-politicians-and-journalists": {
+      "title": "YouTube is expanding its AI deepfake detection tool to politicians and journalists",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/10/zoom-launches-an-ai-powered-office-suite-says-ai-avatars-for-meetings-are-coming-soon/": {
+      "title": "Zoom introduces an AI-powered office suite, says AI avatars for meetings arrive this month",
+      "at": "2026-03-10"
+    },
+    "https://techcrunch.com/2026/03/10/sandbar-secures-23m-series-a-for-its-ai-note-taking-ring/": {
+      "title": "Sandbar secures $23M Series A for its AI note-taking ring",
+      "at": "2026-03-10"
     }
   },
   "publishedSignatures": {
@@ -5251,6 +5527,94 @@
     },
     "4618fca4f733a1e8": {
       "title": "vLLM Semantic Router: Signal Driven Decision Routing for Mixture-of-Modality Models",
+      "at": "2026-03-10"
+    },
+    "7c5f1714e5fe3212": {
+      "title": "You Could Be Next",
+      "at": "2026-03-10"
+    },
+    "bb8ace8b466cefc1": {
+      "title": "AI Is a 5-Layer Cake",
+      "at": "2026-03-10"
+    },
+    "834815e87a9cd802": {
+      "title": "Meta’s deepfake moderation isn’t good enough, says Oversight Board",
+      "at": "2026-03-10"
+    },
+    "f6ec0c25eb4b08eb": {
+      "title": "FlashPrefill: Instantaneous Pattern Discovery and Thresholding for Ultra-Fast Long-Context Prefilling",
+      "at": "2026-03-10"
+    },
+    "068556374dde9f34": {
+      "title": "The quadratic bottleneck of long-context LLMs just hit a massive speed wall. Processing long-context sequences in LLMs is computationally expensive due to the quadratic complexity of self-attention. Existing sparse attention methods often rely on sorting or cumulative summation (Top-k/Top-p), which are slow and struggle to prune the \"long-tail\" of irrelevant tokens. - FlashPrefill achieves a 27.78× speedup on 256K sequences by replacing heavy sorting with a Max-based Dynamic Thresholding mechanism. - It introduces \"Instantaneous Pattern Discovery\" using block-level approximations, bypassing the need for expensive, full-attention score calculations. - Unlike previous methods that struggle with shorter contexts, it maintains a 1.71× speedup even at 4K, proving its robustness across all scales. - The framework is fully compatible with existing LLM/VLM architectures and integrates seamlessly into vLLM for real-world deployment. This breakthrough significantly reduces Time-to-First-Token (TTFT) for long-context applications, making massive document analysis and long-video understanding practical and cost-effective. It turns a major performance bottleneck into a streamlined, hardware-efficient process. How much compute are we wasting on \"long-tail\" tokens that don't actually matter? FlashPrefill suggests the answer is: a lot. #AI #LLMs #MachineLearning #DeepLearning #TechInnovation #GPUComputing Source:",
+      "at": "2026-03-10"
+    },
+    "7668f654f604e7da": {
+      "title": "Google rolls out new Gemini capabilities to Docs, Sheets, Slides, and Drive",
+      "at": "2026-03-10"
+    },
+    "2aa097e8e4e0e019": {
+      "title": "Google’s Gemini AI is getting a bigger role across Docs, Sheets, and Slides",
+      "at": "2026-03-10"
+    },
+    "1103bde9c7a57392": {
+      "title": "Gemini in Google Sheets just achieved state-of-the-art performance.",
+      "at": "2026-03-10"
+    },
+    "1ab4f3e74b7fca2c": {
+      "title": "You can now ask Photoshop’s AI assistant to edit images for you",
+      "at": "2026-03-10"
+    },
+    "0652b79f5892be59": {
+      "title": "Where things stand with the Department of WarAnnouncementsMar 5, 2026A statement from Dario Amodei.",
+      "at": "2026-03-10"
+    },
+    "7d3624bed972c7a6": {
+      "title": "AnnouncementsFeb 26, 2026Statement from Dario Amodei on our discussions with the Department of War A statement from our CEO on national security uses of AI.",
+      "at": "2026-03-10"
+    },
+    "1db2189a9c1568de": {
+      "title": "​美军方态度强硬：打官司无法动摇 Anthropic 的“供应链风险”认定美国国防部强硬回应AI公司Anthropic诉讼，称不会就军事用途重启谈判，诉讼不影响最终决定。官员表示起诉是意料之中，但纠纷无法通过法律途径解决。 刚刚 8.0K",
+      "at": "2026-03-10"
+    },
+    "0bdaedd0c4bb6c83": {
+      "title": "Pentagon turns to ex-Uber executive in Anthropic feud over AI",
+      "at": "2026-03-10"
+    },
+    "4e30e9e1ebd6c558": {
+      "title": "AI Research",
+      "at": "2026-03-10"
+    },
+    "90c93fe756bf8d9e": {
+      "title": "FEATURED",
+      "at": "2026-03-10"
+    },
+    "78e6d4be316bd933": {
+      "title": "龙虾最大痛点被官方插件升级！对话永不忘记，GPT和Gemini最强模型都可接入",
+      "at": "2026-03-10"
+    },
+    "ff4cbca12d934696": {
+      "title": "​腾讯全系“龙虾”产品矩阵发布：WorkBuddy、QClaw等，个人与企业均可一键开启 AI 特工时代腾讯发布“龙虾特工队”AI产品矩阵，主打具备记忆与执行能力的“自动化行动特工”，实现从对话到执行的跨越。该矩阵面向普通用户、开发者和企业提供解决方案，旨在降低AI部署门槛并解决安全顾虑。 刚刚 9.9K",
+      "at": "2026-03-10"
+    },
+    "0821a8cdceb11ee8": {
+      "title": "Adobe is debuting an AI assistant for Photoshop",
+      "at": "2026-03-10"
+    },
+    "2c3fe924fcfff18a": {
+      "title": "YouTube expands AI deepfake detection for politicians, government officials, and journalists",
+      "at": "2026-03-10"
+    },
+    "820af52cd91018c9": {
+      "title": "YouTube is expanding its AI deepfake detection tool to politicians and journalists",
+      "at": "2026-03-10"
+    },
+    "ec9846239bbf9b9d": {
+      "title": "Zoom introduces an AI-powered office suite, says AI avatars for meetings arrive this month",
+      "at": "2026-03-10"
+    },
+    "4a40fbc6a8b57aa1": {
+      "title": "Sandbar secures $23M Series A for its AI note-taking ring",
       "at": "2026-03-10"
     }
   }

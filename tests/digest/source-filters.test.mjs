@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { sourceMatchesFilters } from "../../tools/digest.mjs";
+import { shouldSkipScrapedLink, sourceMatchesFilters } from "../../tools/digest.mjs";
 
 test("sourceMatchesFilters requires article-style paths when include_url_patterns are configured", () => {
   const source = {
@@ -51,5 +51,20 @@ test("sourceMatchesFilters avoids short keyword false positives like ai in faile
       source
     ),
     true
+  );
+});
+
+test("shouldSkipScrapedLink filters same-page anchors and normalized list root links", () => {
+  assert.equal(
+    shouldSkipScrapedLink("https://ai.meta.com/blog/", "https://ai.meta.com/blog/#"),
+    true
+  );
+  assert.equal(
+    shouldSkipScrapedLink("https://ai.meta.com/blog/", "https://ai.meta.com/blog/"),
+    true
+  );
+  assert.equal(
+    shouldSkipScrapedLink("https://ai.meta.com/blog/", "https://ai.meta.com/blog/sam-audio/"),
+    false
   );
 });

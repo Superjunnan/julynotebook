@@ -128,7 +128,7 @@
       "source": "SiliconValley.com",
       "mode": "page_scrape/generic_links",
       "status": "ok",
-      "count": 5,
+      "count": 3,
       "count_type": "links"
     },
     {
@@ -156,7 +156,7 @@
       "source": "AITNT 资讯",
       "mode": "page_scrape/generic_links",
       "status": "ok",
-      "count": 13,
+      "count": 14,
       "count_type": "links"
     },
     {
@@ -190,9 +190,10 @@
     {
       "source": "Meta AI Blog",
       "mode": "page_scrape/generic_links",
-      "status": "ok",
-      "count": 6,
-      "count_type": "links"
+      "status": "failed",
+      "count": 0,
+      "count_type": "none",
+      "error": "fetch failed (ECONNRESET)"
     },
     {
       "source": "NVIDIA Generative AI Blog",
@@ -225,9 +226,10 @@
     {
       "source": "404 Media AI",
       "mode": "direct_feed/rss",
-      "status": "ok",
-      "count": 15,
-      "count_type": "items"
+      "status": "failed",
+      "count": 0,
+      "count_type": "none",
+      "error": "Feed not recognized as RSS 1 or 2."
     },
     {
       "source": "Import AI",
@@ -310,7 +312,7 @@
       "source": "DeepSeek",
       "mode": "page_scrape/generic_links",
       "status": "ok",
-      "count": 14,
+      "count": 13,
       "count_type": "links"
     },
     {
@@ -363,5 +365,5 @@
       "count_type": "links"
     }
   ],
-  "fetched_total_items": 1730
+  "fetched_total_items": 1707
 }

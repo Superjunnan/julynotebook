@@ -10,8 +10,8 @@ test("buildFallbackDailySummary groups materials by bucket hint", () => {
     { refId: 3, title: "Karpathy hints at new coding loop", source: "Andrej Karpathy", sourceGroup: "opinion", bucketHint: "ai_rumor" },
   ]);
 
-  assert.equal(daily.hotNews.length, 1);
-  assert.equal(daily.otherNews.length, 1);
+  assert.equal(daily.hotNews.length, 0);
+  assert.equal(daily.otherNews.length >= 1, true);
   assert.equal(Array.isArray(daily.otherNews), true);
   assert.equal(daily.coreTech.length, 1);
   assert.equal(daily.aiRumor.length, 0);
@@ -37,13 +37,11 @@ test("buildFallbackDailySummary uses concise Chinese fallback copy", () => {
     },
   ]);
 
-  assert.equal(daily.hotNews[0].title, "海外科技媒体动态 1");
+  assert.equal(daily.hotNews.length, 0);
   assert.equal(daily.coreTech[0].title, "论文进展 1");
-  assert.match(daily.hotNews[0].insight || "", /^海外科技媒体动态 1/);
-  assert.equal((daily.hotNews[0].briefing || "").length > 20, true);
-  assert.doesNotMatch(daily.hotNews[0].briefing || "", /5W1H：|Who\/What：|When\/Where：|Why\/How：/);
-  assert.equal((daily.hotNews[0].evaluation || "").length > 8, true);
-  assert.doesNotMatch(daily.hotNews[0].evaluation || "", /客观评估：/);
+  assert.equal(daily.otherNews.length, 1);
+  assert.equal((daily.otherNews[0].narrative || "").length > 20, true);
+  assert.doesNotMatch(daily.otherNews[0].narrative || "", /5W1H：|Who\/What：|When\/Where：|Why\/How：/);
   assert.equal(daily.coreTech[0].summary, "该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。");
-  assert.doesNotMatch(daily.hotNews[0].briefing || "", /等待模型总结|人工复核/);
+  assert.doesNotMatch(daily.otherNews[0].narrative || "", /等待模型总结|人工复核/);
 });

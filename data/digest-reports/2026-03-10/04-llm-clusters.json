@@ -3,30 +3,44 @@
   "cluster_chunks": [
     {
       "chunk_index": 1,
-      "chunk_size": 4,
-      "assignments": 4,
+      "chunk_size": 40,
+      "assignments": 40,
       "fallback_assignments": 0,
       "strategy": "llm_news"
     },
     {
       "chunk_index": 2,
-      "chunk_size": 180,
-      "assignments": 180,
+      "chunk_size": 40,
+      "assignments": 40,
+      "fallback_assignments": 0,
+      "strategy": "llm_news"
+    },
+    {
+      "chunk_index": 3,
+      "chunk_size": 3,
+      "assignments": 3,
+      "fallback_assignments": 0,
+      "strategy": "llm_news"
+    },
+    {
+      "chunk_index": 4,
+      "chunk_size": 164,
+      "assignments": 164,
       "fallback_assignments": 0,
       "strategy": "deterministic_paper"
     }
   ],
   "mode_breakdown": {
-    "news_input": 4,
-    "paper_input": 180,
-    "paper_deterministic": 180,
-    "llm_chunk_count": 1
+    "news_input": 83,
+    "paper_input": 164,
+    "paper_deterministic": 164,
+    "llm_chunk_count": 3
   },
-  "assignments_count": 184,
+  "assignments_count": 247,
   "fallback_assignments": 0,
   "singleton_recluster": {
     "enabled": true,
-    "anchor_count": 0,
+    "anchor_count": 3,
     "singleton_candidates": 0,
     "merged": 0,
     "kept": 0,
@@ -35,20 +49,104 @@
     "min_topic_score": 68,
     "max_items": 24,
     "decisions": [],
-    "note": "no_anchors"
+    "note": "no_singletons"
   },
   "topic_cards": [
     {
-      "topic_id": 1,
+      "topic_id": 116,
+      "topic_key": "Google Gemini Docs Sheets",
+      "topic_title": "Google Gemini Docs Sheets",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        116,
+        118,
+        120,
+        174
+      ],
+      "mention_count": 4,
+      "source_diversity": 4,
+      "cross_source_score": 87,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "TechCrunch AI",
+        "The Verge AI",
+        "Google AI Blog",
+        "WIRED AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Google rolls out new Gemini capabilities to Docs, Sheets, Slides",
+        "Google’s Gemini AI is getting a bigger role across Docs, Sheets",
+        "Gemini in Google Sheets just achieved state-of-the-art performance.",
+        "I Used Google’s New Gemini-Powered ‘Help Me Create’ Tool in Docs. It’s Great at Corporate-Speak"
+      ]
+    },
+    {
+      "topic_id": 118,
+      "topic_key": "Photoshop AI助手",
+      "topic_title": "Photoshop AI助手",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        119,
+        168
+      ],
+      "mention_count": 2,
+      "source_diversity": 2,
+      "cross_source_score": 73,
+      "avg_candidate_score": 20.5,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "The Verge AI",
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "You can now ask Photoshop’s AI assistant to edit images for you",
+        "Adobe is debuting an AI assistant for Photoshop"
+      ]
+    },
+    {
+      "topic_id": 165,
+      "topic_key": "YouTube Deepfake检测",
+      "topic_title": "YouTube Deepfake检测",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        167,
+        176
+      ],
+      "mention_count": 2,
+      "source_diversity": 2,
+      "cross_source_score": 73,
+      "avg_candidate_score": 19.5,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "TechCrunch AI",
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "YouTube expands AI deepfake detection for politicians, government officials",
+        "YouTube is expanding its AI deepfake detection tool to politicians and journalists"
+      ]
+    },
+    {
+      "topic_id": 2,
       "topic_key": "paper:2603.06365",
       "topic_title": "ESAA-Security",
       "topic_type": "paper",
       "member_candidate_ids": [
-        1
+        2
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 70,
+      "cross_source_score": 67,
       "avg_candidate_score": 29,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -62,16 +160,16 @@
       ]
     },
     {
-      "topic_id": 2,
+      "topic_id": 3,
       "topic_key": "paper:2602.05073",
       "topic_title": "Uncertainty Quantification in LLM",
       "topic_type": "paper",
       "member_candidate_ids": [
-        2
+        3
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 70,
+      "cross_source_score": 67,
       "avg_candidate_score": 29,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -85,16 +183,16 @@
       ]
     },
     {
-      "topic_id": 3,
+      "topic_id": 4,
       "topic_key": "paper:2603.04873",
       "topic_title": "SEA-TS: Self-Evolving Agent for",
       "topic_type": "paper",
       "member_candidate_ids": [
-        3
+        4
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 70,
+      "cross_source_score": 67,
       "avg_candidate_score": 29,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -108,16 +206,16 @@
       ]
     },
     {
-      "topic_id": 4,
+      "topic_id": 5,
       "topic_key": "paper:2602.15849",
       "topic_title": "IntelliAsk: Learning to Ask High",
       "topic_type": "paper",
       "member_candidate_ids": [
-        4
+        5
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 70,
+      "cross_source_score": 67,
       "avg_candidate_score": 29,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -131,16 +229,16 @@
       ]
     },
     {
-      "topic_id": 5,
+      "topic_id": 6,
       "topic_key": "paper:2603.00601",
       "topic_title": "Theory of Code Space",
       "topic_type": "paper",
       "member_candidate_ids": [
-        5
+        6
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 70,
+      "cross_source_score": 67,
       "avg_candidate_score": 29,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -154,16 +252,16 @@
       ]
     },
     {
-      "topic_id": 6,
+      "topic_id": 7,
       "topic_key": "paper:2603.04444",
       "topic_title": "vLLM Semantic Router",
       "topic_type": "paper",
       "member_candidate_ids": [
-        6
+        7
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 70,
+      "cross_source_score": 67,
       "avg_candidate_score": 29,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -177,16 +275,16 @@
       ]
     },
     {
-      "topic_id": 7,
+      "topic_id": 8,
       "topic_key": "paper:2603.05910",
       "topic_title": "The World Won't Stay Still",
       "topic_type": "paper",
       "member_candidate_ids": [
-        7
+        8
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -200,16 +298,16 @@
       ]
     },
     {
-      "topic_id": 8,
+      "topic_id": 9,
       "topic_key": "paper:2603.06064",
       "topic_title": "Agentic LLM Planning via Step",
       "topic_type": "paper",
       "member_candidate_ids": [
-        8
+        9
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -223,16 +321,16 @@
       ]
     },
     {
-      "topic_id": 9,
+      "topic_id": 10,
       "topic_key": "paper:2603.05529",
       "topic_title": "Towards Neural Graph Data Management",
       "topic_type": "paper",
       "member_candidate_ids": [
-        9
+        10
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -246,16 +344,16 @@
       ]
     },
     {
-      "topic_id": 10,
+      "topic_id": 11,
       "topic_key": "paper:2603.05578",
       "topic_title": "Tool-Genesis: A Task-Driven Tool",
       "topic_type": "paper",
       "member_candidate_ids": [
-        10
+        11
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -269,16 +367,16 @@
       ]
     },
     {
-      "topic_id": 11,
+      "topic_id": 12,
       "topic_key": "paper:2603.05642",
       "topic_title": "Relational Semantic Reasoning on",
       "topic_type": "paper",
       "member_candidate_ids": [
-        11
+        12
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -292,16 +390,16 @@
       ]
     },
     {
-      "topic_id": 12,
+      "topic_id": 13,
       "topic_key": "paper:2603.05801",
       "topic_title": "Ambiguity Collapse by LLMs",
       "topic_type": "paper",
       "member_candidate_ids": [
-        12
+        13
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -315,16 +413,16 @@
       ]
     },
     {
-      "topic_id": 13,
+      "topic_id": 14,
       "topic_key": "paper:2603.05884",
       "topic_title": "Computational Pathology in the",
       "topic_type": "paper",
       "member_candidate_ids": [
-        13
+        14
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -338,16 +436,16 @@
       ]
     },
     {
-      "topic_id": 14,
+      "topic_id": 15,
       "topic_key": "paper:2603.05904",
       "topic_title": "LUMINA: LLM-Guided GPU",
       "topic_type": "paper",
       "member_candidate_ids": [
-        14
+        15
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -361,16 +459,16 @@
       ]
     },
     {
-      "topic_id": 15,
+      "topic_id": 16,
       "topic_key": "paper:2603.05911",
       "topic_title": "CORE-Seg: Reasoning-Driven",
       "topic_type": "paper",
       "member_candidate_ids": [
-        15
+        16
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -384,16 +482,16 @@
       ]
     },
     {
-      "topic_id": 16,
+      "topic_id": 17,
       "topic_key": "paper:2603.05925",
       "topic_title": "RAC: Rectified Flow Auto Coder",
       "topic_type": "paper",
       "member_candidate_ids": [
-        16
+        17
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -407,16 +505,16 @@
       ]
     },
     {
-      "topic_id": 17,
+      "topic_id": 18,
       "topic_key": "paper:2603.06001",
       "topic_title": "Restoring Linguistic Grounding in",
       "topic_type": "paper",
       "member_candidate_ids": [
-        17
+        18
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -430,16 +528,16 @@
       ]
     },
     {
-      "topic_id": 18,
+      "topic_id": 19,
       "topic_key": "paper:2603.06073",
       "topic_title": "Lifelong Embodied Navigation Learning",
       "topic_type": "paper",
       "member_candidate_ids": [
-        18
+        19
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -453,16 +551,16 @@
       ]
     },
     {
-      "topic_id": 19,
+      "topic_id": 20,
       "topic_key": "paper:2603.06193",
       "topic_title": "Whisper-CD: Accurate Long-Form",
       "topic_type": "paper",
       "member_candidate_ids": [
-        19
+        20
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -476,16 +574,16 @@
       ]
     },
     {
-      "topic_id": 20,
+      "topic_id": 21,
       "topic_key": "paper:2603.06256",
       "topic_title": "GazeMoE: Perception of Gaze",
       "topic_type": "paper",
       "member_candidate_ids": [
-        20
+        21
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -499,16 +597,16 @@
       ]
     },
     {
-      "topic_id": 21,
+      "topic_id": 22,
       "topic_key": "paper:2603.06271",
       "topic_title": "Agentic retrieval-augmented",
       "topic_type": "paper",
       "member_candidate_ids": [
-        21
+        22
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -522,16 +620,16 @@
       ]
     },
     {
-      "topic_id": 22,
+      "topic_id": 23,
       "topic_key": "paper:2603.06384",
       "topic_title": "Prompt Group-Aware Training for",
       "topic_type": "paper",
       "member_candidate_ids": [
-        22
+        23
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -545,16 +643,16 @@
       ]
     },
     {
-      "topic_id": 23,
+      "topic_id": 24,
       "topic_key": "paper:2603.06428",
       "topic_title": "Abductive Reasoning with",
       "topic_type": "paper",
       "member_candidate_ids": [
-        23
+        24
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -568,16 +666,16 @@
       ]
     },
     {
-      "topic_id": 24,
+      "topic_id": 25,
       "topic_key": "paper:2603.02050",
       "topic_title": "\"When to Hand Off",
       "topic_type": "paper",
       "member_candidate_ids": [
-        24
+        25
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 67,
       "avg_candidate_score": 27,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -591,16 +689,39 @@
       ]
     },
     {
-      "topic_id": 26,
+      "topic_id": 1,
+      "topic_key": "求职诈骗",
+      "topic_title": "求职诈骗",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        1
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 66,
+      "avg_candidate_score": 31,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "You Could Be Next"
+      ]
+    },
+    {
+      "topic_id": 28,
       "topic_key": "paper:2603.05980",
       "topic_title": "An Interactive Multi-Agent System",
       "topic_type": "paper",
       "member_candidate_ids": [
-        26
+        28
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -614,16 +735,16 @@
       ]
     },
     {
-      "topic_id": 27,
+      "topic_id": 29,
       "topic_key": "paper:2603.06565",
       "topic_title": "Boosting deep Reinforcement",
       "topic_type": "paper",
       "member_candidate_ids": [
-        27
+        29
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -637,16 +758,16 @@
       ]
     },
     {
-      "topic_id": 28,
+      "topic_id": 30,
       "topic_key": "paper:2603.03668",
       "topic_title": "Can LLM Aid in Solving",
       "topic_type": "paper",
       "member_candidate_ids": [
-        28
+        30
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -660,16 +781,16 @@
       ]
     },
     {
-      "topic_id": 29,
+      "topic_id": 31,
       "topic_key": "paper:2603.05528",
       "topic_title": "Omni-C: Compressing Heterogeneous",
       "topic_type": "paper",
       "member_candidate_ids": [
-        29
+        31
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -683,16 +804,16 @@
       ]
     },
     {
-      "topic_id": 30,
+      "topic_id": 32,
       "topic_key": "paper:2603.05542",
       "topic_title": "Human-Data Interaction",
       "topic_type": "paper",
       "member_candidate_ids": [
-        30
+        32
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -706,16 +827,16 @@
       ]
     },
     {
-      "topic_id": 31,
+      "topic_id": 33,
       "topic_key": "paper:2603.05776",
       "topic_title": "PVminerLLM: Structured Extraction",
       "topic_type": "paper",
       "member_candidate_ids": [
-        31
+        33
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -729,16 +850,16 @@
       ]
     },
     {
-      "topic_id": 32,
+      "topic_id": 34,
       "topic_key": "paper:2603.05812",
       "topic_title": "Margin and Consistency",
       "topic_type": "paper",
       "member_candidate_ids": [
-        32
+        34
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -752,16 +873,16 @@
       ]
     },
     {
-      "topic_id": 33,
+      "topic_id": 35,
       "topic_key": "paper:2603.05832",
       "topic_title": "Lexara: A User-Centered Toolkit",
       "topic_type": "paper",
       "member_candidate_ids": [
-        33
+        35
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -775,16 +896,16 @@
       ]
     },
     {
-      "topic_id": 34,
+      "topic_id": 36,
       "topic_key": "paper:2603.05900",
       "topic_title": "Reference-guided Policy",
       "topic_type": "paper",
       "member_candidate_ids": [
-        34
+        36
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -798,16 +919,16 @@
       ]
     },
     {
-      "topic_id": 35,
+      "topic_id": 37,
       "topic_key": "paper:2603.05950",
       "topic_title": "Energy-Driven Adaptive Visual",
       "topic_type": "paper",
       "member_candidate_ids": [
-        35
+        37
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -821,16 +942,16 @@
       ]
     },
     {
-      "topic_id": 36,
+      "topic_id": 38,
       "topic_key": "paper:2603.06025",
       "topic_title": "Sensitivity-Aware Retrieval",
       "topic_type": "paper",
       "member_candidate_ids": [
-        36
+        38
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -844,16 +965,16 @@
       ]
     },
     {
-      "topic_id": 37,
+      "topic_id": 39,
       "topic_key": "paper:2603.06054",
       "topic_title": "Probing Visual Concepts in",
       "topic_type": "paper",
       "member_candidate_ids": [
-        37
+        39
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -867,16 +988,16 @@
       ]
     },
     {
-      "topic_id": 38,
+      "topic_id": 40,
       "topic_key": "paper:2603.06057",
       "topic_title": "TempoSyncDiff",
       "topic_type": "paper",
       "member_candidate_ids": [
-        38
+        40
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -890,16 +1011,16 @@
       ]
     },
     {
-      "topic_id": 39,
+      "topic_id": 41,
       "topic_key": "paper:2603.06066",
       "topic_title": "Evaluating Austrian A-Level",
       "topic_type": "paper",
       "member_candidate_ids": [
-        39
+        41
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -913,16 +1034,16 @@
       ]
     },
     {
-      "topic_id": 40,
+      "topic_id": 42,
       "topic_key": "paper:2603.06088",
       "topic_title": "Experiences Build Characters",
       "topic_type": "paper",
       "member_candidate_ids": [
-        40
+        42
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -936,16 +1057,16 @@
       ]
     },
     {
-      "topic_id": 41,
+      "topic_id": 43,
       "topic_key": "paper:2603.06140",
       "topic_title": "Place-it-R1",
       "topic_type": "paper",
       "member_candidate_ids": [
-        41
+        43
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -959,16 +1080,16 @@
       ]
     },
     {
-      "topic_id": 42,
+      "topic_id": 44,
       "topic_key": "paper:2603.06148",
       "topic_title": "VLM-RobustBench",
       "topic_type": "paper",
       "member_candidate_ids": [
-        42
+        44
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -982,16 +1103,16 @@
       ]
     },
     {
-      "topic_id": 43,
+      "topic_id": 45,
       "topic_key": "paper:2603.06165",
       "topic_title": "Reflective Flow Sampling Enhancement",
       "topic_type": "paper",
       "member_candidate_ids": [
-        43
+        45
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1005,16 +1126,16 @@
       ]
     },
     {
-      "topic_id": 44,
+      "topic_id": 46,
       "topic_key": "paper:2603.06183",
       "topic_title": "CRIMSON: A Clinically-Grounded",
       "topic_type": "paper",
       "member_candidate_ids": [
-        44
+        46
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1028,16 +1149,16 @@
       ]
     },
     {
-      "topic_id": 45,
+      "topic_id": 47,
       "topic_key": "paper:2603.06260",
       "topic_title": "Learning to Solve Orienteering",
       "topic_type": "paper",
       "member_candidate_ids": [
-        45
+        47
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1051,16 +1172,16 @@
       ]
     },
     {
-      "topic_id": 46,
+      "topic_id": 48,
       "topic_key": "paper:2603.06350",
       "topic_title": "MoEless: Efficient MoE LLM",
       "topic_type": "paper",
       "member_candidate_ids": [
-        46
+        48
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1074,16 +1195,16 @@
       ]
     },
     {
-      "topic_id": 47,
+      "topic_id": 49,
       "topic_key": "paper:2603.06426",
       "topic_title": "CLoPA: Continual Low Parameter",
       "topic_type": "paper",
       "member_candidate_ids": [
-        47
+        49
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1097,16 +1218,16 @@
       ]
     },
     {
-      "topic_id": 48,
+      "topic_id": 50,
       "topic_key": "paper:2603.06495",
       "topic_title": "COLD-Steer: Steering Large",
       "topic_type": "paper",
       "member_candidate_ids": [
-        48
+        50
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1120,16 +1241,16 @@
       ]
     },
     {
-      "topic_id": 49,
+      "topic_id": 51,
       "topic_key": "paper:2602.00276",
       "topic_title": "Localizing and Correcting Errors",
       "topic_type": "paper",
       "member_candidate_ids": [
-        49
+        51
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1143,16 +1264,16 @@
       ]
     },
     {
-      "topic_id": 50,
+      "topic_id": 52,
       "topic_key": "paper:2602.06841",
       "topic_title": "From Features to Actions",
       "topic_type": "paper",
       "member_candidate_ids": [
-        50
+        52
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1166,16 +1287,16 @@
       ]
     },
     {
-      "topic_id": 51,
+      "topic_id": 53,
       "topic_key": "paper:2602.10467",
       "topic_title": "MERIT Feedback Elicits Better",
       "topic_type": "paper",
       "member_candidate_ids": [
-        51
+        53
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1189,16 +1310,16 @@
       ]
     },
     {
-      "topic_id": 52,
+      "topic_id": 54,
       "topic_key": "paper:2602.11318",
       "topic_title": "The Consensus Trap",
       "topic_type": "paper",
       "member_candidate_ids": [
-        52
+        54
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1212,16 +1333,16 @@
       ]
     },
     {
-      "topic_id": 53,
+      "topic_id": 55,
       "topic_key": "paper:2603.01203",
       "topic_title": "How Well Does Agent Development",
       "topic_type": "paper",
       "member_candidate_ids": [
-        53
+        55
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1235,16 +1356,16 @@
       ]
     },
     {
-      "topic_id": 54,
+      "topic_id": 56,
       "topic_key": "paper:2603.04756",
       "topic_title": "MOOSEnger -- a Domain-Specific AI",
       "topic_type": "paper",
       "member_candidate_ids": [
-        54
+        56
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1258,16 +1379,16 @@
       ]
     },
     {
-      "topic_id": 55,
+      "topic_id": 57,
       "topic_key": "paper:2602.23008",
       "topic_title": "Exploratory Memory-Augmented LLM",
       "topic_type": "paper",
       "member_candidate_ids": [
-        55
+        57
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1281,16 +1402,16 @@
       ]
     },
     {
-      "topic_id": 56,
+      "topic_id": 58,
       "topic_key": "paper:2602.23136",
       "topic_title": "Modality Collapse as Mismatched",
       "topic_type": "paper",
       "member_candidate_ids": [
-        56
+        58
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1304,16 +1425,16 @@
       ]
     },
     {
-      "topic_id": 57,
+      "topic_id": 59,
       "topic_key": "paper:2602.24142",
       "topic_title": "CoME: Empowering Channel-of",
       "topic_type": "paper",
       "member_candidate_ids": [
-        57
+        59
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1327,16 +1448,16 @@
       ]
     },
     {
-      "topic_id": 58,
+      "topic_id": 60,
       "topic_key": "paper:2603.02252",
       "topic_title": "Whisper-RIR-Mega",
       "topic_type": "paper",
       "member_candidate_ids": [
-        58
+        60
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1350,16 +1471,16 @@
       ]
     },
     {
-      "topic_id": 59,
+      "topic_id": 61,
       "topic_key": "paper:2603.03332",
       "topic_title": "Fragile Thoughts",
       "topic_type": "paper",
       "member_candidate_ids": [
-        59
+        61
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1382,7 +1503,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1405,7 +1526,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1428,7 +1549,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1451,7 +1572,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1474,7 +1595,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1497,7 +1618,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1520,7 +1641,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1543,7 +1664,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1566,7 +1687,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1589,7 +1710,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1612,7 +1733,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1635,7 +1756,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1658,7 +1779,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1681,7 +1802,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1704,7 +1825,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1727,7 +1848,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1750,7 +1871,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1773,7 +1894,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1796,7 +1917,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1819,7 +1940,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1842,7 +1963,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1865,7 +1986,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1888,7 +2009,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1911,7 +2032,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1934,7 +2055,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1957,7 +2078,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -1980,7 +2101,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2003,7 +2124,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2026,7 +2147,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2049,7 +2170,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2072,7 +2193,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2095,7 +2216,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2118,7 +2239,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2141,7 +2262,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2164,7 +2285,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2187,7 +2308,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2210,7 +2331,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2233,7 +2354,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2256,7 +2377,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2279,7 +2400,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2302,7 +2423,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2325,7 +2446,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2348,7 +2469,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2371,7 +2492,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2394,7 +2515,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2417,7 +2538,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2440,7 +2561,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2463,7 +2584,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2486,7 +2607,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2509,7 +2630,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2532,7 +2653,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2555,7 +2676,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2578,7 +2699,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 69,
+      "cross_source_score": 66,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2592,16 +2713,16 @@
       ]
     },
     {
-      "topic_id": 120,
+      "topic_id": 121,
       "topic_key": "paper:2603.06082",
       "topic_title": "Offline Materials Optimization",
       "topic_type": "paper",
       "member_candidate_ids": [
-        120
+        123
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2615,16 +2736,16 @@
       ]
     },
     {
-      "topic_id": 121,
+      "topic_id": 122,
       "topic_key": "paper:2603.06278",
       "topic_title": "Artificial Intelligence for",
       "topic_type": "paper",
       "member_candidate_ids": [
-        121
+        124
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2638,16 +2759,16 @@
       ]
     },
     {
-      "topic_id": 122,
+      "topic_id": 123,
       "topic_key": "paper:2603.06333",
       "topic_title": "SAHOO: Safeguarded Alignment for",
       "topic_type": "paper",
       "member_candidate_ids": [
-        122
+        125
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2661,16 +2782,16 @@
       ]
     },
     {
-      "topic_id": 123,
+      "topic_id": 124,
       "topic_key": "paper:2603.05514",
       "topic_title": "From Toil to Thought",
       "topic_type": "paper",
       "member_candidate_ids": [
-        123
+        126
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2684,16 +2805,16 @@
       ]
     },
     {
-      "topic_id": 124,
+      "topic_id": 125,
       "topic_key": "paper:2603.05525",
       "topic_title": "Molecular Representations for AI",
       "topic_type": "paper",
       "member_candidate_ids": [
-        124
+        127
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2707,16 +2828,16 @@
       ]
     },
     {
-      "topic_id": 125,
+      "topic_id": 126,
       "topic_key": "paper:2603.05532",
       "topic_title": "On the Reliability of AI Methods",
       "topic_type": "paper",
       "member_candidate_ids": [
-        125
+        128
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2730,16 +2851,16 @@
       ]
     },
     {
-      "topic_id": 126,
+      "topic_id": 127,
       "topic_key": "paper:2603.05538",
       "topic_title": "JAWS: Enhancing Long-term Rollout",
       "topic_type": "paper",
       "member_candidate_ids": [
-        126
+        129
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2753,16 +2874,16 @@
       ]
     },
     {
-      "topic_id": 127,
+      "topic_id": 128,
       "topic_key": "paper:2603.05562",
       "topic_title": "Model Change for Description",
       "topic_type": "paper",
       "member_candidate_ids": [
-        127
+        130
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2776,16 +2897,16 @@
       ]
     },
     {
-      "topic_id": 128,
+      "topic_id": 129,
       "topic_key": "paper:2603.05565",
       "topic_title": "When AI Levels the Playing Field",
       "topic_type": "paper",
       "member_candidate_ids": [
-        128
+        131
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2799,16 +2920,16 @@
       ]
     },
     {
-      "topic_id": 129,
+      "topic_id": 130,
       "topic_key": "paper:2603.05574",
       "topic_title": "PRISM: Personalized Refinement of",
       "topic_type": "paper",
       "member_candidate_ids": [
-        129
+        132
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2822,16 +2943,16 @@
       ]
     },
     {
-      "topic_id": 130,
+      "topic_id": 131,
       "topic_key": "paper:2603.05607",
       "topic_title": "DreamCAD: Scaling Multi-modal CAD",
       "topic_type": "paper",
       "member_candidate_ids": [
-        130
+        133
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2845,16 +2966,16 @@
       ]
     },
     {
-      "topic_id": 131,
+      "topic_id": 132,
       "topic_key": "paper:2603.05659",
       "topic_title": "When Rubrics Fail",
       "topic_type": "paper",
       "member_candidate_ids": [
-        131
+        134
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2868,16 +2989,16 @@
       ]
     },
     {
-      "topic_id": 132,
+      "topic_id": 133,
       "topic_key": "paper:2603.05710",
       "topic_title": "The Rise of AI in Weather and",
       "topic_type": "paper",
       "member_candidate_ids": [
-        132
+        135
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2891,16 +3012,16 @@
       ]
     },
     {
-      "topic_id": 133,
+      "topic_id": 134,
       "topic_key": "paper:2603.05723",
       "topic_title": "Cultural Perspectives and",
       "topic_type": "paper",
       "member_candidate_ids": [
-        133
+        136
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2914,16 +3035,16 @@
       ]
     },
     {
-      "topic_id": 134,
+      "topic_id": 135,
       "topic_key": "paper:2603.05768",
       "topic_title": "Bridging Domains through Subspace",
       "topic_type": "paper",
       "member_candidate_ids": [
-        134
+        137
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2937,16 +3058,16 @@
       ]
     },
     {
-      "topic_id": 135,
+      "topic_id": 136,
       "topic_key": "paper:2603.05773",
       "topic_title": "Knowing without Acting",
       "topic_type": "paper",
       "member_candidate_ids": [
-        135
+        138
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2960,16 +3081,16 @@
       ]
     },
     {
-      "topic_id": 136,
+      "topic_id": 137,
       "topic_key": "paper:2603.05780",
       "topic_title": "Balancing Domestic and Global",
       "topic_type": "paper",
       "member_candidate_ids": [
-        136
+        139
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -2983,16 +3104,16 @@
       ]
     },
     {
-      "topic_id": 137,
+      "topic_id": 138,
       "topic_key": "paper:2603.05781",
       "topic_title": "Visual Words Meet BM25",
       "topic_type": "paper",
       "member_candidate_ids": [
-        137
+        140
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3006,16 +3127,16 @@
       ]
     },
     {
-      "topic_id": 138,
+      "topic_id": 139,
       "topic_key": "paper:2603.05844",
       "topic_title": "Remote Sensing Image",
       "topic_type": "paper",
       "member_candidate_ids": [
-        138
+        141
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3029,16 +3150,16 @@
       ]
     },
     {
-      "topic_id": 139,
+      "topic_id": 140,
       "topic_key": "paper:2603.05937",
       "topic_title": "Facial Expression Recognition",
       "topic_type": "paper",
       "member_candidate_ids": [
-        139
+        142
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3052,16 +3173,16 @@
       ]
     },
     {
-      "topic_id": 140,
+      "topic_id": 141,
       "topic_key": "paper:2603.05953",
       "topic_title": "Who We Are, Where We Are",
       "topic_type": "paper",
       "member_candidate_ids": [
-        140
+        143
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3075,16 +3196,16 @@
       ]
     },
     {
-      "topic_id": 141,
+      "topic_id": 142,
       "topic_key": "paper:2603.05969",
       "topic_title": "Imagine How To Change",
       "topic_type": "paper",
       "member_candidate_ids": [
-        141
+        144
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3098,16 +3219,16 @@
       ]
     },
     {
-      "topic_id": 142,
+      "topic_id": 143,
       "topic_key": "paper:2603.06071",
       "topic_title": "Text-Driven Emotionally",
       "topic_type": "paper",
       "member_candidate_ids": [
-        142
+        145
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3121,16 +3242,16 @@
       ]
     },
     {
-      "topic_id": 143,
+      "topic_id": 144,
       "topic_key": "paper:2603.06130",
       "topic_title": "A Hazard-Informed Data Pipeline",
       "topic_type": "paper",
       "member_candidate_ids": [
-        143
+        146
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3144,16 +3265,16 @@
       ]
     },
     {
-      "topic_id": 144,
+      "topic_id": 145,
       "topic_key": "paper:2603.06135",
       "topic_title": "A Causal Graph Approach to",
       "topic_type": "paper",
       "member_candidate_ids": [
-        144
+        147
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3167,16 +3288,16 @@
       ]
     },
     {
-      "topic_id": 145,
+      "topic_id": 146,
       "topic_key": "paper:2603.06138",
       "topic_title": "Partial Policy Gradients for RL",
       "topic_type": "paper",
       "member_candidate_ids": [
-        145
+        148
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3190,16 +3311,16 @@
       ]
     },
     {
-      "topic_id": 146,
+      "topic_id": 147,
       "topic_key": "paper:2603.06180",
       "topic_title": "Contrastive-to-Self-Supervised",
       "topic_type": "paper",
       "member_candidate_ids": [
-        146
+        149
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3213,16 +3334,16 @@
       ]
     },
     {
-      "topic_id": 147,
+      "topic_id": 148,
       "topic_key": "paper:2603.06270",
       "topic_title": "HiPP-Prune",
       "topic_type": "paper",
       "member_candidate_ids": [
-        147
+        150
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3236,16 +3357,16 @@
       ]
     },
     {
-      "topic_id": 148,
+      "topic_id": 149,
       "topic_key": "paper:2603.06302",
       "topic_title": "DEX-AR: A Dynamic Explainability",
       "topic_type": "paper",
       "member_candidate_ids": [
-        148
+        151
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3259,16 +3380,16 @@
       ]
     },
     {
-      "topic_id": 149,
+      "topic_id": 150,
       "topic_key": "paper:2603.06330",
       "topic_title": "Structured Exploration vs.",
       "topic_type": "paper",
       "member_candidate_ids": [
-        149
+        152
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3282,16 +3403,16 @@
       ]
     },
     {
-      "topic_id": 150,
+      "topic_id": 151,
       "topic_key": "paper:2603.06361",
       "topic_title": "CLAIRE: Compressed Latent",
       "topic_type": "paper",
       "member_candidate_ids": [
-        150
+        153
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3305,16 +3426,16 @@
       ]
     },
     {
-      "topic_id": 151,
+      "topic_id": 152,
       "topic_key": "paper:2603.06408",
       "topic_title": "Physical Simulator In-the-Loop",
       "topic_type": "paper",
       "member_candidate_ids": [
-        151
+        154
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3328,16 +3449,16 @@
       ]
     },
     {
-      "topic_id": 152,
+      "topic_id": 153,
       "topic_key": "paper:2603.06459",
       "topic_title": "Do Foundation Models Know",
       "topic_type": "paper",
       "member_candidate_ids": [
-        152
+        155
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3351,16 +3472,16 @@
       ]
     },
     {
-      "topic_id": 153,
+      "topic_id": 154,
       "topic_key": "paper:2603.06485",
       "topic_title": "PONTE: Personalized Orchestration",
       "topic_type": "paper",
       "member_candidate_ids": [
-        153
+        156
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3374,16 +3495,16 @@
       ]
     },
     {
-      "topic_id": 154,
+      "topic_id": 155,
       "topic_key": "paper:2603.06542",
       "topic_title": "RAMoEA-QA: Hierarchical",
       "topic_type": "paper",
       "member_candidate_ids": [
-        154
+        157
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3397,16 +3518,16 @@
       ]
     },
     {
-      "topic_id": 155,
+      "topic_id": 156,
       "topic_key": "paper:2603.01511",
       "topic_title": "Multimodal Mixture-of-Experts",
       "topic_type": "paper",
       "member_candidate_ids": [
-        155
+        158
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3420,16 +3541,16 @@
       ]
     },
     {
-      "topic_id": 156,
+      "topic_id": 157,
       "topic_key": "paper:2602.10473",
       "topic_title": "Why Human Guidance Matters in",
       "topic_type": "paper",
       "member_candidate_ids": [
-        156
+        159
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3443,16 +3564,16 @@
       ]
     },
     {
-      "topic_id": 157,
+      "topic_id": 158,
       "topic_key": "paper:2602.11247",
       "topic_title": "Peak + Accumulation",
       "topic_type": "paper",
       "member_candidate_ids": [
-        157
+        160
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3466,16 +3587,16 @@
       ]
     },
     {
-      "topic_id": 158,
+      "topic_id": 159,
       "topic_key": "paper:2602.13939",
       "topic_title": "An Adaptive Model Selection",
       "topic_type": "paper",
       "member_candidate_ids": [
-        158
+        161
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3489,16 +3610,16 @@
       ]
     },
     {
-      "topic_id": 159,
+      "topic_id": 160,
       "topic_key": "paper:2603.01034",
       "topic_title": "Reparameterized Tensor Ring",
       "topic_type": "paper",
       "member_candidate_ids": [
-        159
+        162
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3512,16 +3633,16 @@
       ]
     },
     {
-      "topic_id": 160,
+      "topic_id": 161,
       "topic_key": "paper:2603.02406",
       "topic_title": "Rigidity-Aware Geometric",
       "topic_type": "paper",
       "member_candidate_ids": [
-        160
+        163
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3535,16 +3656,16 @@
       ]
     },
     {
-      "topic_id": 161,
+      "topic_id": 162,
       "topic_key": "paper:2603.03485",
       "topic_title": "Phys4D: Fine-Grained Physics",
       "topic_type": "paper",
       "member_candidate_ids": [
-        161
+        164
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3558,16 +3679,16 @@
       ]
     },
     {
-      "topic_id": 162,
+      "topic_id": 163,
       "topic_key": "paper:2603.03992",
       "topic_title": "Measuring AI R&D Automation",
       "topic_type": "paper",
       "member_candidate_ids": [
-        162
+        165
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3581,16 +3702,16 @@
       ]
     },
     {
-      "topic_id": 163,
+      "topic_id": 164,
       "topic_key": "paper:2603.04413",
       "topic_title": "Simulating Meaning, Nevermore!",
       "topic_type": "paper",
       "member_candidate_ids": [
-        163
+        166
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 66,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3604,269 +3725,177 @@
       ]
     },
     {
-      "topic_id": 164,
-      "topic_key": "paper:2603.05504",
-      "topic_title": "RoboPocket: Improve Robot",
-      "topic_type": "paper",
-      "member_candidate_ids": [
-        164
-      ],
-      "mention_count": 1,
-      "source_diversity": 1,
-      "cross_source_score": 68,
-      "avg_candidate_score": 21,
-      "newest_pub_date": "2026-03-10",
-      "top_sources": [
-        "arXiv cs.AI"
-      ],
-      "top_source_groups": [
-        "paper"
-      ],
-      "sample_titles": [
-        "RoboPocket: Improve Robot Policies Instantly with Your Phone"
-      ]
-    },
-    {
-      "topic_id": 169,
-      "topic_key": "paper:2603.05653",
-      "topic_title": "The DSA's Blind Spot",
-      "topic_type": "paper",
+      "topic_id": 166,
+      "topic_key": "Zoom AI办公套件",
+      "topic_title": "Zoom AI办公套件",
+      "topic_type": "news",
       "member_candidate_ids": [
         169
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
-      "avg_candidate_score": 19,
+      "cross_source_score": 65,
+      "avg_candidate_score": 20,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
-        "arXiv cs.AI"
+        "TechCrunch AI"
       ],
       "top_source_groups": [
-        "paper"
+        "foreign_media"
       ],
       "sample_titles": [
-        "The DSA's Blind Spot: Algorithmic Audit of Advertising and Minor Profiling on TikTok"
+        "Zoom introduces an AI-powered office suite"
       ]
     },
     {
-      "topic_id": 170,
-      "topic_key": "paper:2603.05887",
-      "topic_title": "Reconstruct! Don't Encode",
-      "topic_type": "paper",
+      "topic_id": 167,
+      "topic_key": "AI智能戒指融资",
+      "topic_title": "AI智能戒指融资",
+      "topic_type": "news",
       "member_candidate_ids": [
         170
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
-      "avg_candidate_score": 19,
+      "cross_source_score": 65,
+      "avg_candidate_score": 20,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
-        "arXiv cs.AI"
+        "TechCrunch AI"
       ],
       "top_source_groups": [
-        "paper"
+        "foreign_media"
       ],
       "sample_titles": [
-        "Reconstruct! Don't Encode: Self-Supervised Representation Reconstruction Loss for High"
+        "Sandbar secures $23M Series A for its AI note-taking ring"
       ]
     },
     {
-      "topic_id": 171,
-      "topic_key": "paper:2603.05987",
-      "topic_title": "Technical Report",
-      "topic_type": "paper",
-      "member_candidate_ids": [
-        171
-      ],
-      "mention_count": 1,
-      "source_diversity": 1,
-      "cross_source_score": 68,
-      "avg_candidate_score": 19,
-      "newest_pub_date": "2026-03-10",
-      "top_sources": [
-        "arXiv cs.AI"
-      ],
-      "top_source_groups": [
-        "paper"
-      ],
-      "sample_titles": [
-        "Technical Report: Automated Optical Inspection of Surgical Instruments"
-      ]
-    },
-    {
-      "topic_id": 172,
-      "topic_key": "paper:2603.05995",
-      "topic_title": "TADPO: Reinforcement Learning",
-      "topic_type": "paper",
+      "topic_id": 169,
+      "topic_key": "AI基础设施",
+      "topic_title": "AI基础设施",
+      "topic_type": "news",
       "member_candidate_ids": [
         172
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
-      "avg_candidate_score": 19,
+      "cross_source_score": 65,
+      "avg_candidate_score": 20,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
-        "arXiv cs.AI"
+        "NVIDIA Generative AI Blog"
       ],
       "top_source_groups": [
-        "paper"
+        "foreign_media"
       ],
       "sample_titles": [
-        "TADPO: Reinforcement Learning Goes Off-road"
+        "AI Is a 5-Layer Cake"
       ]
     },
     {
-      "topic_id": 173,
-      "topic_key": "paper:2603.06272",
-      "topic_title": "Looking Through Glass Box",
-      "topic_type": "paper",
+      "topic_id": 170,
+      "topic_key": "亚马逊AI代码审查",
+      "topic_title": "亚马逊AI代码审查",
+      "topic_type": "news",
       "member_candidate_ids": [
         173
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
-      "avg_candidate_score": 19,
+      "cross_source_score": 65,
+      "avg_candidate_score": 20,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
-        "arXiv cs.AI"
+        "Ars Technica AI"
       ],
       "top_source_groups": [
-        "paper"
+        "foreign_media"
       ],
       "sample_titles": [
-        "Looking Through Glass Box"
+        "After outages, Amazon to make senior engineers sign off on AI-assisted changes"
       ]
     },
     {
-      "topic_id": 174,
-      "topic_key": "paper:2603.06351",
-      "topic_title": "Dynamic Chunking Diffusion Transformer",
-      "topic_type": "paper",
-      "member_candidate_ids": [
-        174
-      ],
-      "mention_count": 1,
-      "source_diversity": 1,
-      "cross_source_score": 68,
-      "avg_candidate_score": 19,
-      "newest_pub_date": "2026-03-10",
-      "top_sources": [
-        "arXiv cs.AI"
-      ],
-      "top_source_groups": [
-        "paper"
-      ],
-      "sample_titles": [
-        "Dynamic Chunking Diffusion Transformer"
-      ]
-    },
-    {
-      "topic_id": 175,
-      "topic_key": "paper:2603.06380",
-      "topic_title": "Kinetic-based regularization",
-      "topic_type": "paper",
+      "topic_id": 171,
+      "topic_key": "Ticketmaster反垄断",
+      "topic_title": "Ticketmaster反垄断",
+      "topic_type": "news",
       "member_candidate_ids": [
         175
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 65,
       "avg_candidate_score": 19,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
-        "arXiv cs.AI"
+        "The Verge AI"
       ],
       "top_source_groups": [
-        "paper"
+        "foreign_media"
       ],
       "sample_titles": [
-        "Kinetic-based regularization: Learning spatial derivatives and PDE applications"
+        "The twist in the Ticketmaster antitrust fight"
       ]
     },
     {
-      "topic_id": 176,
-      "topic_key": "paper:2603.06413",
-      "topic_title": "A Reference Architecture of",
-      "topic_type": "paper",
-      "member_candidate_ids": [
-        176
-      ],
-      "mention_count": 1,
-      "source_diversity": 1,
-      "cross_source_score": 68,
-      "avg_candidate_score": 19,
-      "newest_pub_date": "2026-03-10",
-      "top_sources": [
-        "arXiv cs.AI"
-      ],
-      "top_source_groups": [
-        "paper"
-      ],
-      "sample_titles": [
-        "A Reference Architecture of Reinforcement Learning Frameworks"
-      ]
-    },
-    {
-      "topic_id": 177,
-      "topic_key": "paper:2603.06492",
-      "topic_title": "NOBLE: Accelerating Transformers",
-      "topic_type": "paper",
+      "topic_id": 172,
+      "topic_key": "Meta Deepfake监管",
+      "topic_title": "Meta Deepfake监管",
+      "topic_type": "news",
       "member_candidate_ids": [
         177
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
+      "cross_source_score": 65,
       "avg_candidate_score": 19,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
-        "arXiv cs.AI"
+        "The Verge AI"
       ],
       "top_source_groups": [
-        "paper"
+        "foreign_media"
       ],
       "sample_titles": [
-        "NOBLE: Accelerating Transformers with Nonlinear Low-Rank Branches"
+        "Meta’s deepfake moderation isn’t good enough"
       ]
     },
     {
-      "topic_id": 178,
-      "topic_key": "paper:2603.06545",
-      "topic_title": "LiveSense: A Real-Time Wi-Fi",
-      "topic_type": "paper",
+      "topic_id": 176,
+      "topic_key": "Yann LeCun物理世界AI",
+      "topic_title": "Yann LeCun物理世界AI",
+      "topic_type": "news",
       "member_candidate_ids": [
-        178
+        181
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 68,
-      "avg_candidate_score": 19,
+      "cross_source_score": 65,
+      "avg_candidate_score": 18,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
-        "arXiv cs.AI"
+        "WIRED AI"
       ],
       "top_source_groups": [
-        "paper"
+        "foreign_media"
       ],
       "sample_titles": [
-        "LiveSense: A Real-Time Wi-Fi Sensing Platform for Range-Doppler on COTS Laptop"
+        "Yann LeCun Raises $1 Billion to Build AI That Understands the Physical World"
       ]
     },
     {
-      "topic_id": 116,
+      "topic_id": 117,
       "topic_key": "paper-title:nvidia-engineers-agent-inference-planetary-scale-and-speed",
       "topic_title": "NVIDIA's AI Engineers",
       "topic_type": "paper",
       "member_candidate_ids": [
-        116
+        117
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 67,
+      "cross_source_score": 64,
       "avg_candidate_score": 22,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
@@ -3885,12 +3914,12 @@
       "topic_title": "[AINews] Autoresearch",
       "topic_type": "paper",
       "member_candidate_ids": [
-        179
+        184
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 67,
-      "avg_candidate_score": 18,
+      "cross_source_score": 63,
+      "avg_candidate_score": 16,
       "newest_pub_date": "2026-03-10",
       "top_sources": [
         "Latent Space"
@@ -3903,62 +3932,39 @@
       ]
     },
     {
-      "topic_id": 165,
-      "topic_key": "Isaacus法律重排序模型发布",
-      "topic_title": "Isaacus发布专注于法律领域的重排序模型",
-      "topic_type": "news",
+      "topic_id": 26,
+      "topic_key": "paper:2603.08316",
+      "topic_title": "SlowBA: An efficiency backdoor",
+      "topic_type": "paper",
       "member_candidate_ids": [
-        165
+        26
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 60,
-      "avg_candidate_score": 19,
-      "newest_pub_date": "2026-03-10",
+      "cross_source_score": 56,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-09",
       "top_sources": [
-        "Hugging Face Posts"
+        "Hugging Face Papers"
       ],
       "top_source_groups": [
-        "community"
+        "paper"
       ],
       "sample_titles": [
-        "Isaacus just shipped a new state-of-the-art model, this time focused on reranking for legal"
+        "SlowBA: An efficiency backdoor attack towards VLM-based GUI agents"
       ]
     },
     {
-      "topic_id": 181,
-      "topic_key": "Hugging Face上传TensorBoard日志",
-      "topic_title": "Hugging Face社区提示",
-      "topic_type": "news",
-      "member_candidate_ids": [
-        181
-      ],
-      "mention_count": 1,
-      "source_diversity": 1,
-      "cross_source_score": 60,
-      "avg_candidate_score": 17,
-      "newest_pub_date": "2026-03-10",
-      "top_sources": [
-        "Hugging Face Posts"
-      ],
-      "top_source_groups": [
-        "community"
-      ],
-      "sample_titles": [
-        "Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload"
-      ]
-    },
-    {
-      "topic_id": 25,
+      "topic_id": 27,
       "topic_key": "paper:2603.07980",
       "topic_title": "\\$OneMillion-Bench",
       "topic_type": "paper",
       "member_candidate_ids": [
-        25
+        27
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 59,
+      "cross_source_score": 56,
       "avg_candidate_score": 25,
       "newest_pub_date": "2026-03-09",
       "top_sources": [
@@ -3972,52 +3978,6 @@
       ]
     },
     {
-      "topic_id": 60,
-      "topic_key": "paper:2603.08309",
-      "topic_title": "Concept-Guided Fine-Tuning",
-      "topic_type": "paper",
-      "member_candidate_ids": [
-        60
-      ],
-      "mention_count": 1,
-      "source_diversity": 1,
-      "cross_source_score": 59,
-      "avg_candidate_score": 23,
-      "newest_pub_date": "2026-03-09",
-      "top_sources": [
-        "Hugging Face Papers"
-      ],
-      "top_source_groups": [
-        "paper"
-      ],
-      "sample_titles": [
-        "Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness"
-      ]
-    },
-    {
-      "topic_id": 61,
-      "topic_key": "paper:2603.08703",
-      "topic_title": "HiAR: Efficient Autoregressive",
-      "topic_type": "paper",
-      "member_candidate_ids": [
-        61
-      ],
-      "mention_count": 1,
-      "source_diversity": 1,
-      "cross_source_score": 59,
-      "avg_candidate_score": 23,
-      "newest_pub_date": "2026-03-09",
-      "top_sources": [
-        "Hugging Face Papers"
-      ],
-      "top_source_groups": [
-        "paper"
-      ],
-      "sample_titles": [
-        "HiAR: Efficient Autoregressive Long Video Generation via Hierarchical Denoising"
-      ]
-    },
-    {
       "topic_id": 62,
       "topic_key": "paper:2603.08013",
       "topic_title": "PIRA-Bench: A Transition from",
@@ -4027,7 +3987,7 @@
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 59,
+      "cross_source_score": 56,
       "avg_candidate_score": 23,
       "newest_pub_date": "2026-03-09",
       "top_sources": [
@@ -4041,16 +4001,16 @@
       ]
     },
     {
-      "topic_id": 117,
-      "topic_key": "paper:2603.08652",
-      "topic_title": "CoCo: Code as CoT for Text-to",
+      "topic_id": 119,
+      "topic_key": "paper:2603.08309",
+      "topic_title": "Concept-Guided Fine-Tuning",
       "topic_type": "paper",
       "member_candidate_ids": [
-        117
+        121
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 58,
+      "cross_source_score": 56,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-09",
       "top_sources": [
@@ -4060,20 +4020,20 @@
         "paper"
       ],
       "sample_titles": [
-        "CoCo: Code as CoT for Text-to-Image Preview and Rare Concept Generation"
+        "Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness"
       ]
     },
     {
-      "topic_id": 118,
-      "topic_key": "paper:2603.08708",
-      "topic_title": "FVG-PT: Adaptive Foreground View",
+      "topic_id": 120,
+      "topic_key": "paper:2603.08703",
+      "topic_title": "HiAR: Efficient Autoregressive",
       "topic_type": "paper",
       "member_candidate_ids": [
-        118
+        122
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 58,
+      "cross_source_score": 56,
       "avg_candidate_score": 21,
       "newest_pub_date": "2026-03-09",
       "top_sources": [
@@ -4083,89 +4043,319 @@
         "paper"
       ],
       "sample_titles": [
-        "FVG-PT: Adaptive Foreground View-Guided Prompt Tuning for Vision-Language Models"
+        "HiAR: Efficient Autoregressive Long Video Generation via Hierarchical Denoising"
       ]
     },
     {
-      "topic_id": 166,
-      "topic_key": "paper:2603.08660",
-      "topic_title": "How Far Can Unsupervised RLVR",
-      "topic_type": "paper",
+      "topic_id": 173,
+      "topic_key": "个人日记与专注",
+      "topic_title": "个人日记与专注",
+      "topic_type": "news",
       "member_candidate_ids": [
-        166
+        178
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 58,
+      "cross_source_score": 56,
       "avg_candidate_score": 19,
-      "newest_pub_date": "2026-03-09",
+      "newest_pub_date": "2026-03-10",
       "top_sources": [
-        "Hugging Face Papers"
+        "Hugging Face Posts"
       ],
       "top_source_groups": [
-        "paper"
+        "community"
       ],
       "sample_titles": [
-        "How Far Can Unsupervised RLVR Scale LLM Training?"
+        "One of my New Year's resolutions was to journal more. I think it helps focus your mind on"
       ]
     },
     {
-      "topic_id": 167,
-      "topic_key": "paper:2603.08589",
-      "topic_title": "CARE-Edit: Condition-Aware",
-      "topic_type": "paper",
+      "topic_id": 174,
+      "topic_key": "法律RAG模型",
+      "topic_title": "法律RAG模型",
+      "topic_type": "news",
       "member_candidate_ids": [
-        167
+        179
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 58,
+      "cross_source_score": 56,
       "avg_candidate_score": 19,
-      "newest_pub_date": "2026-03-09",
+      "newest_pub_date": "2026-03-10",
       "top_sources": [
-        "Hugging Face Papers"
+        "Hugging Face Posts"
       ],
       "top_source_groups": [
-        "paper"
+        "community"
       ],
       "sample_titles": [
-        "CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing"
+        "Isaacus just shipped a new state-of-the-art model, this time focused on reranking for legal"
       ]
     },
     {
-      "topic_id": 168,
-      "topic_key": "paper:2603.08709",
-      "topic_title": "Scale Space Diffusion",
-      "topic_type": "paper",
+      "topic_id": 178,
+      "topic_key": "TensorBoard日志上传",
+      "topic_title": "TensorBoard日志上传",
+      "topic_type": "news",
       "member_candidate_ids": [
-        168
+        183
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 58,
-      "avg_candidate_score": 19,
-      "newest_pub_date": "2026-03-09",
+      "cross_source_score": 56,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-03-10",
       "top_sources": [
-        "Hugging Face Papers"
+        "Hugging Face Posts"
       ],
       "top_source_groups": [
-        "paper"
+        "community"
       ],
       "sample_titles": [
-        "Scale Space Diffusion"
+        "Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload"
       ]
     },
     {
-      "topic_id": 180,
+      "topic_id": 197,
+      "topic_key": "OpenAI兼容性",
+      "topic_title": "OpenAI兼容性",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        202
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 56,
+      "avg_candidate_score": 11,
+      "newest_pub_date": "",
+      "top_sources": [
+        "阿里技术"
+      ],
+      "top_source_groups": [
+        "company_view"
+      ],
+      "sample_titles": [
+        "OpenAI兼容-Vision"
+      ]
+    },
+    {
+      "topic_id": 211,
+      "topic_key": "Kimi K2 Thinking模型发布",
+      "topic_title": "Kimi K2 Thinking模型发布",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        216
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 56,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "Kimi"
+      ],
+      "top_source_groups": [
+        "company_view"
+      ],
+      "sample_titles": [
+        "Kimi K2 Thinking 模型发布并开源"
+      ]
+    },
+    {
+      "topic_id": 212,
+      "topic_key": "Kimi K2: Open Agentic Intelligence",
+      "topic_title": "Kimi K2: Open Agentic Intelligence",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        217
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 56,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "Kimi"
+      ],
+      "top_source_groups": [
+        "company_view"
+      ],
+      "sample_titles": [
+        "Kimi K2: Open Agentic Intelligence"
+      ]
+    },
+    {
+      "topic_id": 237,
+      "topic_key": "阿里百炼大模型服务平台",
+      "topic_title": "阿里百炼大模型服务平台",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        242
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 56,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "阿里技术"
+      ],
+      "top_source_groups": [
+        "company_view"
+      ],
+      "sample_titles": [
+        "大模型服务平台百炼"
+      ]
+    },
+    {
+      "topic_id": 238,
+      "topic_key": "阿里大模型推理资源包优惠",
+      "topic_title": "阿里大模型推理资源包优惠",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        243
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 56,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "阿里技术"
+      ],
+      "top_source_groups": [
+        "company_view"
+      ],
+      "sample_titles": [
+        "2025年6月大语言模型推理资源包优惠活动"
+      ]
+    },
+    {
+      "topic_id": 239,
+      "topic_key": "阿里通义系列大模型计费调整",
+      "topic_title": "阿里通义系列大模型计费调整",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        244
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 56,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "阿里技术"
+      ],
+      "top_source_groups": [
+        "company_view"
+      ],
+      "sample_titles": [
+        "通义系列大模型计费调整通知"
+      ]
+    },
+    {
+      "topic_id": 183,
+      "topic_key": "长上下文LLM瓶颈",
+      "topic_title": "长上下文LLM瓶颈",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        188
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 15,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "The quadratic bottleneck of long-context LLMs just hit a massive speed wall. Processing"
+      ]
+    },
+    {
+      "topic_id": 240,
+      "topic_key": "Kimi大模型MoBA机制",
+      "topic_title": "Kimi大模型MoBA机制",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        245
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 8,
+      "newest_pub_date": "",
+      "top_sources": [
+        "Kimi"
+      ],
+      "top_source_groups": [
+        "company_view"
+      ],
+      "sample_titles": [
+        "介绍一下 MoBA：面向长文本大模型的混合块注意力机制"
+      ]
+    },
+    {
+      "topic_id": 241,
+      "topic_key": "Kimi大模型应用开发",
+      "topic_title": "Kimi大模型应用开发",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        246
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 8,
+      "newest_pub_date": "",
+      "top_sources": [
+        "Kimi"
+      ],
+      "top_source_groups": [
+        "company_view"
+      ],
+      "sample_titles": [
+        "使用 Unreal5 游戏引擎和 Kimi 大模型开发交互式游戏"
+      ]
+    },
+    {
+      "topic_id": 242,
+      "topic_key": "Kimi大模型API更新",
+      "topic_title": "Kimi大模型API更新",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        247
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 8,
+      "newest_pub_date": "",
+      "top_sources": [
+        "Kimi"
+      ],
+      "top_source_groups": [
+        "company_view"
+      ],
+      "sample_titles": [
+        "Kimi 大模型 API 更新了，也期待在「亚马逊云科技中国峰会」见到大家 | 开发者速递"
+      ]
+    },
+    {
+      "topic_id": 177,
       "topic_key": "paper-title:production-query-plans-without-data",
       "topic_title": "Production query plans without",
       "topic_type": "paper",
       "member_candidate_ids": [
-        180
+        182
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 57,
+      "cross_source_score": 54,
       "avg_candidate_score": 18,
       "newest_pub_date": "2026-03-09",
       "top_sources": [
@@ -4179,95 +4369,1268 @@
       ]
     },
     {
-      "topic_id": 119,
-      "topic_key": "paper:2603.07660",
-      "topic_title": "Holi-Spatial",
-      "topic_type": "paper",
+      "topic_id": 168,
+      "topic_key": "Balyasny AI投资引擎",
+      "topic_title": "Balyasny AI投资引擎",
+      "topic_type": "news",
       "member_candidate_ids": [
-        119
-      ],
-      "mention_count": 1,
-      "source_diversity": 1,
-      "cross_source_score": 52,
-      "avg_candidate_score": 21,
-      "newest_pub_date": "2026-03-08",
-      "top_sources": [
-        "Hugging Face Papers"
-      ],
-      "top_source_groups": [
-        "paper"
-      ],
-      "sample_titles": [
-        "Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence"
-      ]
-    },
-    {
-      "topic_id": 182,
-      "topic_key": "paper:2603.07700",
-      "topic_title": "TDM-R1: Reinforcing Few-Step",
-      "topic_type": "paper",
-      "member_candidate_ids": [
-        182
+        171
       ],
       "mention_count": 1,
       "source_diversity": 1,
       "cross_source_score": 51,
-      "avg_candidate_score": 17,
-      "newest_pub_date": "2026-03-08",
+      "avg_candidate_score": 20,
+      "newest_pub_date": "2026-03-06",
       "top_sources": [
-        "Hugging Face Papers"
-      ],
-      "top_source_groups": [
-        "paper"
-      ],
-      "sample_titles": [
-        "TDM-R1: Reinforcing Few-Step Diffusion Models with Non-Differentiable Reward"
-      ]
-    },
-    {
-      "topic_id": 183,
-      "topic_key": "应对AI幻觉引发的心理学问题",
-      "topic_title": "如何与经历'AI幻觉'的人交谈",
-      "topic_type": "news",
-      "member_candidate_ids": [
-        183
-      ],
-      "mention_count": 1,
-      "source_diversity": 1,
-      "cross_source_score": 49,
-      "avg_candidate_score": 14,
-      "newest_pub_date": "2026-03-09",
-      "top_sources": [
-        "404 Media AI"
+        "OpenAI News"
       ],
       "top_source_groups": [
         "foreign_media"
       ],
       "sample_titles": [
-        "How to Talk to Someone Experiencing 'AI Psychosis'"
+        "How Balyasny Asset Management built an AI research engine for investing"
+      ]
+    },
+    {
+      "topic_id": 175,
+      "topic_key": "Descript多语言配音",
+      "topic_title": "Descript多语言配音",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        180
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 18,
+      "newest_pub_date": "2026-03-06",
+      "top_sources": [
+        "OpenAI News"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "How Descript enables multilingual video dubbing at scale"
+      ]
+    },
+    {
+      "topic_id": 181,
+      "topic_key": "SpeciesNet野生动物保护",
+      "topic_title": "SpeciesNet野生动物保护",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        186
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 50,
+      "avg_candidate_score": 15,
+      "newest_pub_date": "2026-03-07",
+      "top_sources": [
+        "Google AI Blog"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "How our open-source AI model SpeciesNet is helping to promote wildlife conservation"
+      ]
+    },
+    {
+      "topic_id": 182,
+      "topic_key": "美军方AI监控争议",
+      "topic_title": "美军方AI监控争议",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        187
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 50,
+      "avg_candidate_score": 15,
+      "newest_pub_date": "2026-03-07",
+      "top_sources": [
+        "MIT Technology Review AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Is the Pentagon allowed to surveil Americans with AI?"
+      ]
+    },
+    {
+      "topic_id": 180,
+      "topic_key": "paper-title:cursor-third-era",
+      "topic_title": "Cursor's Third Era",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        185
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 16,
+      "newest_pub_date": "2026-03-06",
+      "top_sources": [
+        "Latent Space"
+      ],
+      "top_source_groups": [
+        "newsletter"
+      ],
+      "sample_titles": [
+        "Cursor's Third Era"
+      ]
+    },
+    {
+      "topic_id": 185,
+      "topic_key": "美军方AI供应链风险",
+      "topic_title": "美军方AI供应链风险",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        190
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 12,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "美军方态度强硬：打官司无法动摇 Anthropic 的“供应链风险”认定美国国防部强硬回应AI公司Anthropic诉讼，称不会就军事用途重启谈判，诉讼不影响最终决定。官员表示起诉是意料之中"
+      ]
+    },
+    {
+      "topic_id": 187,
+      "topic_key": "加州AI数据披露法",
+      "topic_title": "加州AI数据披露法",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        192
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 12,
+      "newest_pub_date": "2026-03-07",
+      "top_sources": [
+        "Ars Technica AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Musk fails to block California data disclosure law he fears will ruin xAI"
+      ]
+    },
+    {
+      "topic_id": 188,
+      "topic_key": "AI公司CEO诉讼",
+      "topic_title": "AI公司CEO诉讼",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        193
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 12,
+      "newest_pub_date": "2026-03-06",
+      "top_sources": [
+        "Ars Technica AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "AI startup sues ex-CEO, saying he took 41GB of email and lied on résumé"
+      ]
+    },
+    {
+      "topic_id": 189,
+      "topic_key": "AI可穿戴设备干扰器",
+      "topic_title": "AI可穿戴设备干扰器",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        194
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 12,
+      "newest_pub_date": "2026-03-07",
+      "top_sources": [
+        "WIRED AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "This Jammer Wants to Block Always-Listening AI Wearables. It Probably Won’t Work"
+      ]
+    },
+    {
+      "topic_id": 190,
+      "topic_key": "Alexa+体验评测",
+      "topic_title": "Alexa+体验评测",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        195
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 12,
+      "newest_pub_date": "2026-03-06",
+      "top_sources": [
+        "WIRED AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Why Is Alexa+ So Bad?"
+      ]
+    },
+    {
+      "topic_id": 200,
+      "topic_key": "小红书治理AI托管账号",
+      "topic_title": "小红书治理AI托管账号",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        205
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "小红书发布社区公告:严厉打击AI托管类账号及虚假互动行为小红书将全面治理“AI托管账号”，打击利用AI技术模拟真人创作内容、进行虚假互动的行为"
+      ]
+    },
+    {
+      "topic_id": 201,
+      "topic_key": "蚂蚁集团2026春招",
+      "topic_title": "蚂蚁集团2026春招",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        206
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "蚂蚁集团开启“抢人”模式：技术岗占8. 5 成，AI 浓度直接拉满！蚂蚁集团2026年春招启动，技术岗占比85%，其中超七成聚焦人工智能领域，重点招聘大模型算法、多模态生成等方向"
+      ]
+    },
+    {
+      "topic_id": 202,
+      "topic_key": "杨立昆AMI公司融资",
+      "topic_title": "杨立昆AMI公司融资",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        207
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "杨立昆进军“世界模型”：其 AI 初创公司完成 10.3 亿美元融资杨立昆创立的AMI公司获10.3亿美元融资，投前估值达35亿美元。该公司致力于将具备推理、规划和世界建模能力的AI系统商业化"
+      ]
+    },
+    {
+      "topic_id": 203,
+      "topic_key": "AI重塑网文生态",
+      "topic_title": "AI重塑网文生态",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        208
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "日产万字、48 小时写完 500 万字：AI “文学平替”正重塑网文生态2026年网文界面临AI冲击，AI写作工具以千倍速度挑战人类作者。传统“爆肝”日更模式在AI“工业化生产”面前显得无力"
+      ]
+    },
+    {
+      "topic_id": 204,
+      "topic_key": "腾讯“龙虾”产品矩阵",
+      "topic_title": "腾讯“龙虾”产品矩阵",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        209
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "腾讯全系“龙虾”产品矩阵发布：WorkBuddy、QClaw等，个人与企业均可一键开启 AI 特工时代腾讯发布“龙虾特工队”AI产品矩阵，主打具备记忆与执行能力的“自动化行动特工”"
+      ]
+    },
+    {
+      "topic_id": 205,
+      "topic_key": "三星2nm产线排期调整",
+      "topic_title": "三星2nm产线排期调整",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        210
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "受特斯拉AI6 芯片生产计划变更波及，韩国AI黑马DX-M2 量产推迟至 2026 年三季度特斯拉生产计划变动导致三星2nm产线排期调整"
+      ]
+    },
+    {
+      "topic_id": 206,
+      "topic_key": "ChatGPT更新创建模板",
+      "topic_title": "ChatGPT更新创建模板",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        211
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "#2告别“翻译腔”！ChatGPT 史诗级更新：推出“创建模板”黑科技"
+      ]
+    },
+    {
+      "topic_id": 207,
+      "topic_key": "马云谈AI时代胜负手",
+      "topic_title": "马云谈AI时代胜负手",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        212
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "#3马云定调 AI 时代胜负手：不在“芯片”在“心跳”"
+      ]
+    },
+    {
+      "topic_id": 208,
+      "topic_key": "OpenClaw AReaL v1.0发布",
+      "topic_title": "OpenClaw AReaL v1.0发布",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        213
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "#4OpenClaw能“边用边训”了：智能体强化学习训练框架AReaL v1.0稳定版发布"
+      ]
+    },
+    {
+      "topic_id": 209,
+      "topic_key": "AWS推出医疗AI代理平台",
+      "topic_title": "AWS推出医疗AI代理平台",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        214
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "#5 亚马逊 AWS 推出医疗 AI 代理平台"
+      ]
+    },
+    {
+      "topic_id": 210,
+      "topic_key": "OpenClaw官方社交账号上线",
+      "topic_title": "OpenClaw官方社交账号上线",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        215
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "#10OpenClaw官方社交账号上线"
+      ]
+    },
+    {
+      "topic_id": 186,
+      "topic_key": "Google OpenClaw工具",
+      "topic_title": "Google OpenClaw工具",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        191
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 12,
+      "newest_pub_date": "2026-03-07",
+      "top_sources": [
+        "Ars Technica AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Google's new command-line tool can plug OpenClaw into your Workspace data"
+      ]
+    },
+    {
+      "topic_id": 192,
+      "topic_key": "Anthropic融资争议",
+      "topic_title": "Anthropic融资争议",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        197
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 11,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "刚刚，Anthropic深夜血洗500亿美金行业"
+      ]
+    },
+    {
+      "topic_id": 193,
+      "topic_key": "OpenAI收购传闻",
+      "topic_title": "OpenAI收购传闻",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        198
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 11,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "OpenAI为龙虾紧急收购了一家23人公司"
+      ]
+    },
+    {
+      "topic_id": 194,
+      "topic_key": "星际之门项目争议",
+      "topic_title": "星际之门项目争议",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        199
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 11,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "星际之门扩建项目戛然而止，OpenAI与甲骨文到底发生了什么？"
+      ]
+    },
+    {
+      "topic_id": 195,
+      "topic_key": "Dify融资",
+      "topic_title": "Dify融资",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        200
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 11,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "Dify 完成 3000 万美元融资：我们相信"
+      ]
+    },
+    {
+      "topic_id": 196,
+      "topic_key": "OpenAI插件升级",
+      "topic_title": "OpenAI插件升级",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        201
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 11,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "龙虾最大痛点被官方插件升级！对话永不忘记"
+      ]
+    },
+    {
+      "topic_id": 199,
+      "topic_key": "AI推动光纤涨价",
+      "topic_title": "AI推动光纤涨价",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        204
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 10,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "光纤也疯狂！G.652.D 报价暴涨 650%，长飞光纤午后直线封板3月10日，A股光通信板块午后异动，长飞光纤涨停，烽火通信等跟涨。背后原因是AI浪潮推动光纤需求激增，价格大幅上涨。数据显示"
+      ]
+    },
+    {
+      "topic_id": 214,
+      "topic_key": "AI制药首次实现盈利",
+      "topic_title": "AI制药首次实现盈利",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        219
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "AI制药首次实现盈利，告诉我们什么？"
+      ]
+    },
+    {
+      "topic_id": 215,
+      "topic_key": "Cursor估值300亿美金",
+      "topic_title": "Cursor估值300亿美金",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        220
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "估值300亿美金的Cursor，怎么就过时了？"
+      ]
+    },
+    {
+      "topic_id": 216,
+      "topic_key": "全民“养龙虾”生意",
+      "topic_title": "全民“养龙虾”生意",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        221
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "全民“养龙虾”，一场AI焦虑催生的生意"
+      ]
+    },
+    {
+      "topic_id": 217,
+      "topic_key": "ChatGPT商业化思路",
+      "topic_title": "ChatGPT商业化思路",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        222
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "ChatGPT商业化思路：先做生态"
+      ]
+    },
+    {
+      "topic_id": 218,
+      "topic_key": "AI短剧《霍去病》",
+      "topic_title": "AI短剧《霍去病》",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        223
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "AI短剧《霍去病》爆火，但为何成了一场闹剧？"
+      ]
+    },
+    {
+      "topic_id": 219,
+      "topic_key": "AI预测权威谈AI速度",
+      "topic_title": "AI预测权威谈AI速度",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        224
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "AI预测权威：我还是低估了AI的速度"
+      ]
+    },
+    {
+      "topic_id": 220,
+      "topic_key": "宜宾切入AI产业化",
+      "topic_title": "宜宾切入AI产业化",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        225
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "20亿基金落子长三角，宜宾切入AI产业化新赛道｜最前线"
+      ]
+    },
+    {
+      "topic_id": 221,
+      "topic_key": "AI系统与容纳它的系统",
+      "topic_title": "AI系统与容纳它的系统",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        226
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "当 AI 开始真正参与工作，那个容纳它的系统，可能比 AI 本身更重要。"
+      ]
+    },
+    {
+      "topic_id": 222,
+      "topic_key": "全球科学家社区爆火",
+      "topic_title": "全球科学家社区爆火",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        227
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "AI发布首个全球科学家社区爆火，硅谷投资圈"
+      ]
+    },
+    {
+      "topic_id": 223,
+      "topic_key": "拼多多无AI焦虑",
+      "topic_title": "拼多多无AI焦虑",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        228
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "为什么拼多多看起来没有“AI焦虑”"
+      ]
+    },
+    {
+      "topic_id": 224,
+      "topic_key": "龙虾狂欢与AI造富",
+      "topic_title": "龙虾狂欢与AI造富",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        229
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "龙虾狂欢：一场AI造富运动的泡沫与真相"
+      ]
+    },
+    {
+      "topic_id": 225,
+      "topic_key": "AI行业抢中学生",
+      "topic_title": "AI行业抢中学生",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        230
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "高中生进大厂实践、给字节当顾问，“不欢迎老登”的AI行业都开始抢中学生了？"
+      ]
+    },
+    {
+      "topic_id": 226,
+      "topic_key": "傅盛谈养龙虾",
+      "topic_title": "傅盛谈养龙虾",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        231
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "36Kr AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "傅盛把养龙虾演成励志剧"
+      ]
+    },
+    {
+      "topic_id": 227,
+      "topic_key": "美军杀人AI猛料",
+      "topic_title": "美军杀人AI猛料",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        232
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "美军杀人AI猛料曝出！Claude24小时锁定伊朗1000个目标"
+      ]
+    },
+    {
+      "topic_id": 228,
+      "topic_key": "30天养虾秘籍",
+      "topic_title": "30天养虾秘籍",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        233
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "30天养虾秘籍公开！第4天差点团灭，最后跑出“AI军团”"
+      ]
+    },
+    {
+      "topic_id": 229,
+      "topic_key": "近800只龙虾",
+      "topic_title": "近800只龙虾",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        234
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "笑不活了！近800只龙虾"
+      ]
+    },
+    {
+      "topic_id": 230,
+      "topic_key": "AI检测赛道2400万美元ARR",
+      "topic_title": "AI检测赛道2400万美元ARR",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        235
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "屡被质疑的AI检测赛道，华人创业者把产品做到2400万美元ARR"
+      ]
+    },
+    {
+      "topic_id": 231,
+      "topic_key": "打败GPT-5.2的大模型",
+      "topic_title": "打败GPT-5.2的大模型",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        236
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "打败GPT-5.2，嵌入真实工业生产，这个大模型什么来头？"
+      ]
+    },
+    {
+      "topic_id": 232,
+      "topic_key": "物理AI数据基座平台",
+      "topic_title": "物理AI数据基座平台",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        237
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "首个物理AI数据基座平台“无垠”落户浙江，专治机器人数据荒"
+      ]
+    },
+    {
+      "topic_id": 233,
+      "topic_key": "Google测试AI多语言课程",
+      "topic_title": "Google测试AI多语言课程",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        238
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "走区别于「多邻国」的实战派路线，Google测试由AI驱动的多语言小课程"
+      ]
+    },
+    {
+      "topic_id": 234,
+      "topic_key": "AI提示词写出中国式家长",
+      "topic_title": "AI提示词写出中国式家长",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        239
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "万字追问：给AI写提示词，怎么写出了一股“中国式家长”的味儿？"
+      ]
+    },
+    {
+      "topic_id": 235,
+      "topic_key": "蚂蚁投AI魔镜",
+      "topic_title": "蚂蚁投AI魔镜",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        240
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "刚刚，蚂蚁投了“最美产品经理”，造AI魔镜"
+      ]
+    },
+    {
+      "topic_id": 236,
+      "topic_key": "GPT-5.4杀入Excel",
+      "topic_title": "GPT-5.4杀入Excel",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        241
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 48,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "GPT-5.4杀入Excel，Claude打崩IBM！华尔街恐慌"
       ]
     },
     {
       "topic_id": 184,
-      "topic_key": "PragerU AI宣传车活动",
-      "topic_title": "PragerU的AI宣传车活动",
+      "topic_key": "Anthropic Claude Marketplace",
+      "topic_title": "Anthropic Claude Marketplace",
       "topic_type": "news",
       "member_candidate_ids": [
-        184
+        189
       ],
       "mention_count": 1,
       "source_diversity": 1,
-      "cross_source_score": 49,
-      "avg_candidate_score": 14,
+      "cross_source_score": 45,
+      "avg_candidate_score": 13,
       "newest_pub_date": "2026-03-09",
       "top_sources": [
-        "404 Media AI"
+        "AI Breakfast"
+      ],
+      "top_source_groups": [
+        "newsletter"
+      ],
+      "sample_titles": [
+        "Mar 9, 2026•14 min readAnthropic launches Claude MarketplaceAI Breakfast"
+      ]
+    },
+    {
+      "topic_id": 191,
+      "topic_key": "硅谷AI追踪争议",
+      "topic_title": "硅谷AI追踪争议",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        196
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 41,
+      "avg_candidate_score": 11,
+      "newest_pub_date": "2026-03-08",
+      "top_sources": [
+        "SiliconValley.com"
       ],
       "top_source_groups": [
         "foreign_media"
       ],
       "sample_titles": [
-        "I Visited the ‘Freedom Truck’ to Meet PragerU’s AI Slop Founders"
+        "Explosive Silicon Valley dispute raises questions over AI giants’ willingness to help track"
+      ]
+    },
+    {
+      "topic_id": 213,
+      "topic_key": "SJSU合作AI中心",
+      "topic_title": "SJSU合作AI中心",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        218
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 41,
+      "avg_candidate_score": 9,
+      "newest_pub_date": "2026-03-07",
+      "top_sources": [
+        "SiliconValley.com"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "San Jose, SJSU collaborate on new AI Center for Civic Good"
+      ]
+    },
+    {
+      "topic_id": 198,
+      "topic_key": "CUDA Kernel开发",
+      "topic_title": "CUDA Kernel开发",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        203
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 40,
+      "avg_candidate_score": 11,
+      "newest_pub_date": "2026-03-08",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "Just published my first cuda kernel, inspired by Sage Attention. Feel free to try it out ☺️"
       ]
     }
   ]

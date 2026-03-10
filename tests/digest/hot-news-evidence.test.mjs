@@ -51,7 +51,9 @@ test("normalizeDailySummary keeps hot news refs in non-paper buckets", () => {
           insight: "OpenAI发布GPT-5.4",
           briefing: "模型能力继续提升，企业侧应用范围扩大。",
           evaluation: "需要持续观察实际成本与稳定性。",
-          refs: [1],
+          refs: [1, 2],
+          mention_count: 2,
+          cross_verify_score: 84,
         },
       ],
       core_tech: [],
@@ -64,6 +66,7 @@ test("normalizeDailySummary keeps hot news refs in non-paper buckets", () => {
   assert.equal(daily.hotNews.length >= 1, true);
   const refs = daily.hotNews[0]?.refs || [];
   assert.equal(refs.includes(1), true);
+  assert.equal(refs.includes(2), true);
   assert.equal(refs.includes(3), false);
 });
 

@@ -1,21 +1,21 @@
 {
   "run_date": "2026-03-10",
   "selected_topic_ids": [
+    116,
+    118,
     165,
-    181,
-    183,
-    184,
-    1,
+    166,
+    167,
+    169,
     2,
     3,
     4,
-    5,
     6
   ],
   "deep_read_plan_stats": {
     "selected_topic_count": 10,
-    "base_members_added": 10,
-    "expanded_added": 10,
+    "base_members_added": 15,
+    "expanded_added": 5,
     "dropped_by_time": 0,
     "dropped_by_domain_cap": 0,
     "dropped_by_missing_date": 0,
@@ -30,38 +30,131 @@
   "materials_windowed": 20,
   "materials_usable": 20,
   "materials_by_source": {
-    "arXiv cs.AI": 16,
-    "Hugging Face Posts": 2,
-    "404 Media AI": 2
+    "arXiv cs.AI": 8,
+    "TechCrunch AI": 5,
+    "The Verge AI": 3,
+    "Google AI Blog": 1,
+    "WIRED AI": 1,
+    "Hugging Face Posts": 1,
+    "NVIDIA Generative AI Blog": 1
   },
   "topic_dossiers": [
     {
-      "topic_id": 165,
-      "topic_title": "Isaacus发布专注于法律领域的重排序模型",
+      "topic_id": 116,
+      "topic_title": "Google Gemini Docs Sheets",
       "topic_type": "news",
-      "cross_source_score": 60,
-      "mention_count": 1,
-      "source_count": 1,
-      "member_count": 1,
+      "cross_source_score": 87,
+      "mention_count": 4,
+      "source_count": 4,
+      "member_count": 4,
       "refs": [
-        17
+        2,
+        3,
+        4,
+        5
       ],
       "members": [
         {
-          "ref_id": 17,
-          "source": "Hugging Face Posts",
-          "link": "https://huggingface.co/posts/abdurrahmanbutler/289843615429566",
-          "title": "Isaacus just shipped a new state-of-the-art model, this time focused on reranking for legal RAG. Although Kanon 2 Embedder already represents the frontier of legal-domain retrieval, we know that not everyone is ready to re-embed their entire corpus. We also knew there was still accuracy left on the table for teams handling highly sensitive legal work. Enter Kanon 2 Reranker: the world’s best legal reranking model. We tested it across both production RAG pipelines and standalone retrieval tasks, and the results were remarkable. Not only does it outperform the competition in a category where there are still very few serious alternatives, it also delivers major retrieval accuracy gains over our standalone embedder. Those improvements translated into exceptional downstream performance. In our final test, we compared Voyage AI by MongoDB 2.5 Rerank with Kanon 2 Reranker on Legal RAG Bench, using identical embedding models, generative models, and pipeline hyperparameters. The only difference was the reranker. The result: Kanon 2 Reranker decisively outperformed Voyage 2.5 Rerank. On holdout questions, the head-to-head margin was one of the most extreme we have seen: for every 1 question Voyage got right and we got wrong, there were 6 questions we got right and Voyage got wrong. We share an example in the blog post where Voyage Rerank actually underperforms Kanon 2 Embedder on its own, delivering the wrong context to the LLM. In that case, not using a reranker at all would have led to the correct answer. All in all, I’m immensely proud of the performance gains we’ve achieved. But as we always say, the best benchmark is your own data. So redeem your free credits, give Kanon 2 Reranker a try, and see firsthand the difference our models can make:",
-          "pub_date": "2026-03-10T06:43:57.000Z",
-          "content": "Isaacus just shipped a new state-of-the-art model, this time focused on reranking for legal RAG.Although Kanon 2 Embedder already represents the frontier of legal-domain retrieval, we know that not everyone is ready to re-embed their entire corpus. We also knew there was still accuracy left on the table for teams handling highly sensitive legal work.Enter Kanon 2 Reranker: the world’s best legal reranking model.We tested it across both production RAG pipelines and standalone retrieval tasks, and the results were remarkable.Not only does it outperform the competition in a category where there a。"
+          "ref_id": 2,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/03/10/google-rolls-out-new-gemini-capabilities-to-docs-sheets-slides-and-drive/",
+          "title": "Google rolls out new Gemini capabilities to Docs, Sheets, Slides, and Drive",
+          "pub_date": "Tue, 10 Mar 2026 13:00:00 +0000",
+          "content": "Google announced on Tuesday that it’s bringing a slew of new Gemini-powered AI capabilities to Docs, Sheets, Slides, and Drive. The new features let users do things like quickly generate fully formatted first drafts, slides, and sheets based on information from their Gmail, Chat, and Drive. The tools are designed to make the apps more personal and capable of helping users get things done faster, right within the platforms themselves, instead of needing to switch to a separate tool or chatbot."
+        },
+        {
+          "ref_id": 3,
+          "source": "The Verge AI",
+          "link": "https://www.theverge.com/tech/890996/google-workspace-gemini-ai-docs-sheets-drive",
+          "title": "Google’s Gemini AI is getting a bigger role across Docs, Sheets, and Slides",
+          "pub_date": "2026-03-10T13:00:00.000Z",
+          "content": "Google is embedding its Gemini AI assistant even more deeply within its Workspace apps. The changes, which are rolling out to Google Workspace and AI plan subscribers, include a new Gemini chat window inside Google Docs, a way to generate entire spreadsheets with AI, and a new Gemini-powered search feature in Drive.While Google Docs already shows you a few AI writing options alongside your blinking cursor, now you’ll see a Gemini chat window at the bottom of your screen."
+        },
+        {
+          "ref_id": 4,
+          "source": "Google AI Blog",
+          "link": "https://blog.google/products-and-platforms/products/workspace/gemini-google-sheets-state-of-the-art/",
+          "title": "Gemini in Google Sheets just achieved state-of-the-art performance.",
+          "pub_date": "Tue, 10 Mar 2026 13:00:00 +0000",
+          "content": "Today we announced new beta features for Gemini in Sheets to help you create, organize and edit entire sheets, from basic tasks to complex data analysis — just describe what you need.Gemini in Sheets has reached state-of-the-art proficiency in autonomously manipulating complex, real-world spreadsheets on the full SpreadsheetBench dataset, a public benchmark which evaluates models on their ability to edit spreadsheets in real-world scenarios."
+        },
+        {
+          "ref_id": 5,
+          "source": "WIRED AI",
+          "link": "https://www.wired.com/story/google-gemini-workspace-ai-tools-hands-on/",
+          "title": "I Used Google’s New Gemini-Powered ‘Help Me Create’ Tool in Docs. It’s Great at Corporate-Speak",
+          "pub_date": "Tue, 10 Mar 2026 13:00:00 +0000",
+          "content": "Google rolled out multiple new AI features today for its core Workspace products: Google Docs, Sheets, Slides, and Drive. These apps now include additional tools powered by Gemini, Google’s AI assistant. The features range from generating entire rough drafts in your Docs to finding information tucked away in the recesses of your Drive.This Google launch is part of a larger trend in 2026, in which major software developers are continuing to bake generative-AI-based features into core user experiences—despite the lingering distaste many in the US have for tools like these."
         }
       ]
     },
     {
-      "topic_id": 181,
-      "topic_title": "Hugging Face社区提示",
+      "topic_id": 118,
+      "topic_title": "Photoshop AI助手",
       "topic_type": "news",
-      "cross_source_score": 60,
+      "cross_source_score": 73,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        8,
+        9
+      ],
+      "members": [
+        {
+          "ref_id": 8,
+          "source": "The Verge AI",
+          "link": "https://www.theverge.com/tech/891998/adobe-photoshop-web-mobile-ai-assistant-beta-launch",
+          "title": "You can now ask Photoshop’s AI assistant to edit images for you",
+          "pub_date": "2026-03-10T13:00:00.000Z",
+          "content": "Jess Weatherbed is a news writer focused on creative industries, computing, and internet culture. Jess started her career at TechRadar, covering news and hardware reviews.Adobe announced more agentic AI features for its Creative Cloud apps this week, allowing users to edit images and documents by describing the changes to a chatbot."
+        },
+        {
+          "ref_id": 9,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/03/10/adobe-is-debuting-an-ai-assistant-for-photoshop/",
+          "title": "Adobe is debuting an AI assistant for Photoshop",
+          "pub_date": "Tue, 10 Mar 2026 13:06:51 +0000",
+          "content": "Adobe announced on Tuesday that its AI assistant for Photoshop is becoming available to users in beta on the web and in the mobile apps. The company is also adding new AI-powered image editing capabilities to Firefly, its tool for media generation and editing. The creative tooling company first announced an AI assistant for Photoshop during its MAX event in October. The feature, now rolling out to users, can help them remove objects or people from images, change colors, or adjust lighting through prompts."
+        }
+      ]
+    },
+    {
+      "topic_id": 165,
+      "topic_title": "YouTube Deepfake检测",
+      "topic_type": "news",
+      "cross_source_score": 73,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        10,
+        11
+      ],
+      "members": [
+        {
+          "ref_id": 10,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/03/10/youtube-ai-deepfake-detection-politicians-government-officials-journalists/",
+          "title": "YouTube expands AI deepfake detection for politicians, government officials, and journalists",
+          "pub_date": "Tue, 10 Mar 2026 14:00:00 +0000",
+          "content": "YouTube is expanding its likeness detection technology, which identifies AI-generated deepfakes, to a pilot group of government officials, political candidates, and journalists, the company announced Tuesday. Members of the pilot group will gain access to a tool that detects unauthorized AI-generated content and lets them request its removal if they believe it violates YouTube policy. The technology itself launched last year to roughly 4 million YouTube creators in the YouTube Partner Program, following earlier tests."
+        },
+        {
+          "ref_id": 11,
+          "source": "The Verge AI",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/891678/youtube-is-expanding-its-ai-deepfake-detection-tool-to-politicians-and-journalists",
+          "title": "YouTube is expanding its AI deepfake detection tool to politicians and journalists",
+          "pub_date": "2026-03-10T14:00:00.000Z",
+          "content": "Public officials and journalists will soon be able to keep track of AI-generated deepfakes of themselves on YouTube through the platform’s likeness detection feature.The tool is already available to millions of content creators on YouTube, but beginning Tuesday, it will expand to a pilot group of journalists, government officials, and political candidates."
+        }
+      ]
+    },
+    {
+      "topic_id": 166,
+      "topic_title": "Zoom AI办公套件",
+      "topic_type": "news",
+      "cross_source_score": 65,
       "mention_count": 1,
       "source_count": 1,
       "member_count": 1,
@@ -71,19 +164,19 @@
       "members": [
         {
           "ref_id": 18,
-          "source": "Hugging Face Posts",
-          "link": "https://huggingface.co/posts/AINovice2005/333451320002796",
-          "title": "Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload them to HF Hub as event artifacts, they can be viewed instantly. 🚀 I previously remembered this done in the notus model release: Examples: cc:",
-          "pub_date": "2026-03-09T18:17:44.000Z",
-          "content": "Join the conversation Join the community of Machine Learners and AI enthusiasts. Sign Up Back to feed AINovice2005 posted an update about 10 hours ago Post 96 Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload them to HF Hub as event artifacts, they can be viewed instantly. 🚀 I previously remembered this done in the notus model release: argilla/notus-7b-v1Examples: AINovice2005/ModernBERT-base-lora-cicflow-1m-r8 AINovice2005/ModernBERT-base-lora-cicflow-1m-r4 AINovice2005/ModernBERT-base-lora-cicflow-1m-r16cc: @davidberenstein1957 In this post AINovice20。"
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/03/10/zoom-launches-an-ai-powered-office-suite-says-ai-avatars-for-meetings-are-coming-soon/",
+          "title": "Zoom introduces an AI-powered office suite, says AI avatars for meetings arrive this month",
+          "pub_date": "Tue, 10 Mar 2026 13:00:00 +0000",
+          "content": "Zoom’s AI-powered avatars, which can represent users in online meetings, will be available to use later this month, the company announced on Tuesday, alongside news of other tools and services. Notably, the company is introducing its own AI Docs, Slides, and Sheets apps, an AI agent builder for non-technical people, and a voice translator for meetings. The company said its AI-powered productivity apps will be available as a preview in the spring."
         }
       ]
     },
     {
-      "topic_id": 183,
-      "topic_title": "如何与经历'AI幻觉'的人交谈",
+      "topic_id": 167,
+      "topic_title": "AI智能戒指融资",
       "topic_type": "news",
-      "cross_source_score": 49,
+      "cross_source_score": 65,
       "mention_count": 1,
       "source_count": 1,
       "member_count": 1,
@@ -93,19 +186,19 @@
       "members": [
         {
           "ref_id": 19,
-          "source": "404 Media AI",
-          "link": "https://www.404media.co/ai-psychosis-help-gemini-chatgpt-claude-chatbot-delusions/",
-          "title": "How to Talk to Someone Experiencing 'AI Psychosis'",
-          "pub_date": "Mon, 09 Mar 2026 14:12:22 GMT",
-          "content": "When David saw his friend Michael’s social media post asking for a second opinion on a programming project, he offered to take a look.“He sent me some of the code, and none of it made sense, none of it ran correctly. Or if it did run, it didn't do anything,” David told me. David and his friend’s names have been changed in this story to protect their privacy. “So I'm like, ‘What is this?"
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/03/10/sandbar-secures-23m-series-a-for-its-ai-note-taking-ring/",
+          "title": "Sandbar secures $23M Series A for its AI note-taking ring",
+          "pub_date": "Tue, 10 Mar 2026 12:40:37 +0000",
+          "content": "Sandbar, a startup by former Meta employees Mina Fahmi and Kirak Hong, attracted much attention last year when it showed off its note-taking wearable, the Stream ring. The company has now raised $23 million in a Series A funding round led by Adjacent and Kindred Ventures. The company’s smart ring is focused on note-taking, similar to products by Plaud or Omi, and not health-tracking like Oura’s products. The ring has a microphone that’s off by default, but can be activated using a flat, touch-sensitive panel at the top."
         }
       ]
     },
     {
-      "topic_id": 184,
-      "topic_title": "PragerU的AI宣传车活动",
+      "topic_id": 169,
+      "topic_title": "AI基础设施",
       "topic_type": "news",
-      "cross_source_score": 49,
+      "cross_source_score": 65,
       "mention_count": 1,
       "source_count": 1,
       "member_count": 1,
@@ -115,28 +208,28 @@
       "members": [
         {
           "ref_id": 20,
-          "source": "404 Media AI",
-          "link": "https://www.404media.co/i-visited-the-freedom-truck-to-meet-pragerus-ai-slop-founders/",
-          "title": "I Visited the ‘Freedom Truck’ to Meet PragerU’s AI Slop Founders",
-          "pub_date": "Mon, 09 Mar 2026 13:26:08 GMT",
-          "content": "In the parking lot of Seven Oaks Element school in South Carolina on one of the first hot days of the year I watched an AI-generated George Washington talk about the American revolution. “Our rights are a gift from God, not a favor from kings or courts,” slop Washington told me. It spoke from a screen that stretched floor to ceiling, trimmed by a fancy frame. The intended effect is to make it appear as if the founding father is a painting come to life, a piece of history talking to the viewer."
+          "source": "NVIDIA Generative AI Blog",
+          "link": "https://blogs.nvidia.com/blog/ai-5-layer-cake/",
+          "title": "AI Is a 5-Layer Cake",
+          "pub_date": "Tue, 10 Mar 2026 10:00:03 +0000",
+          "content": "Skip to content AI is one of the most powerful forces shaping the world today. It is not a clever app or a single model; it is essential infrastructure, like electricity and the internet. AI runs on real hardware, real energy, and real economics. It takes raw materials and converts them into intelligence at scale. Every company will use it. Every country will build it. To understand why AI is unfolding this way, it helps to reason from first principles and look at what has fundamentally changed in computing."
         }
       ]
     },
     {
-      "topic_id": 1,
+      "topic_id": 2,
       "topic_title": "ESAA-Security",
       "topic_type": "paper",
-      "cross_source_score": 70,
+      "cross_source_score": 67,
       "mention_count": 1,
       "source_count": 1,
       "member_count": 1,
       "refs": [
-        1
+        12
       ],
       "members": [
         {
-          "ref_id": 1,
+          "ref_id": 12,
           "source": "arXiv cs.AI",
           "link": "https://arxiv.org/abs/2603.06365",
           "title": "ESAA-Security: An Event-Sourced, Verifiable Architecture for Agent-Assisted Security Audits of AI-Generated Code",
@@ -146,19 +239,19 @@
       ]
     },
     {
-      "topic_id": 2,
+      "topic_id": 3,
       "topic_title": "Uncertainty Quantification in LLM",
       "topic_type": "paper",
-      "cross_source_score": 70,
+      "cross_source_score": 67,
       "mention_count": 1,
       "source_count": 1,
       "member_count": 1,
       "refs": [
-        2
+        13
       ],
       "members": [
         {
-          "ref_id": 2,
+          "ref_id": 13,
           "source": "arXiv cs.AI",
           "link": "https://arxiv.org/abs/2602.05073",
           "title": "Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities",
@@ -168,19 +261,19 @@
       ]
     },
     {
-      "topic_id": 3,
+      "topic_id": 4,
       "topic_title": "SEA-TS: Self-Evolving Agent for",
       "topic_type": "paper",
-      "cross_source_score": 70,
+      "cross_source_score": 67,
       "mention_count": 1,
       "source_count": 1,
       "member_count": 1,
       "refs": [
-        3
+        14
       ],
       "members": [
         {
-          "ref_id": 3,
+          "ref_id": 14,
           "source": "arXiv cs.AI",
           "link": "https://arxiv.org/abs/2603.04873",
           "title": "SEA-TS: Self-Evolving Agent for Autonomous Code Generation of Time Series Forecasting Algorithms",
@@ -190,68 +283,24 @@
       ]
     },
     {
-      "topic_id": 4,
-      "topic_title": "IntelliAsk: Learning to Ask High",
-      "topic_type": "paper",
-      "cross_source_score": 70,
-      "mention_count": 1,
-      "source_count": 1,
-      "member_count": 1,
-      "refs": [
-        4
-      ],
-      "members": [
-        {
-          "ref_id": 4,
-          "source": "arXiv cs.AI",
-          "link": "https://arxiv.org/abs/2602.15849",
-          "title": "IntelliAsk: Learning to Ask High-Quality Research Questions via RLVR",
-          "pub_date": "Mon, 09 Mar 2026 00:00:00 -0400",
-          "content": "View PDF HTML (experimental) Abstract:Peer review relies on substantive, evidence-based questions, yet current LLMs generate surface-level queries that perform worse than human reviewer questions in expert evaluation. To address this gap, we curate a high-quality dataset of reviewer questions from OpenReview and conduct a human preference study where expert annotators evaluate question-paper pairs across three dimensions: effort, evidence, and grounding."
-        }
-      ]
-    },
-    {
-      "topic_id": 5,
+      "topic_id": 6,
       "topic_title": "Theory of Code Space",
       "topic_type": "paper",
-      "cross_source_score": 70,
+      "cross_source_score": 67,
       "mention_count": 1,
       "source_count": 1,
       "member_count": 1,
       "refs": [
-        5
+        15
       ],
       "members": [
         {
-          "ref_id": 5,
+          "ref_id": 15,
           "source": "arXiv cs.AI",
           "link": "https://arxiv.org/abs/2603.00601",
           "title": "Theory of Code Space: Do Code Agents Understand Software Architecture?",
           "pub_date": "Mon, 09 Mar 2026 00:00:00 -0400",
           "content": "View PDF HTML (experimental) Abstract:AI code agents excel at isolated tasks yet struggle with multi-file software engineering requiring architectural understanding. We introduce Theory of Code Space (ToCS), a benchmark that evaluates whether agents can construct, maintain, and update coherent architectural beliefs during codebase exploration. Agents explore procedurally generated codebases under partial observability -- opening files under a budget -- and periodically externalize their belief state as structured JSON, producing a time-series of architectural understanding."
-        }
-      ]
-    },
-    {
-      "topic_id": 6,
-      "topic_title": "vLLM Semantic Router",
-      "topic_type": "paper",
-      "cross_source_score": 70,
-      "mention_count": 1,
-      "source_count": 1,
-      "member_count": 1,
-      "refs": [
-        6
-      ],
-      "members": [
-        {
-          "ref_id": 6,
-          "source": "arXiv cs.AI",
-          "link": "https://arxiv.org/abs/2603.04444",
-          "title": "vLLM Semantic Router: Signal Driven Decision Routing for Mixture-of-Modality Models",
-          "pub_date": "Mon, 09 Mar 2026 00:00:00 -0400",
-          "content": "Authors:Xunzhuo Liu, Huamin Chen, Samzong Lu, Yossi Ovadia, Guohong Wen, Hao Wu, Zhengda Tan, Jintao Zhang, Senan Zedan, Yehudit Kerido, Liav Weiss, Haichen Zhang, Bishen Yu, Asaad Balum, Noa Limoy, Abdallah Samara, Baofa Fan, Brent Salisbury, Ryan Cook, Zhijie Wang, Qiping Pan, Rehan Khan, Avishek Goswami, Houston H. Zhang, Shuyi Wang, Ziang Tang, Fang Han, Zohaib Hassan, Jianqiao Zheng, Avinash Changrani View PDF Abstract:As large language models (LLMs) diversify across modalities, capabilities, and cost profiles, the problem of intelligent request routing -- selecting the right model for ea。"
         }
       ]
     }
