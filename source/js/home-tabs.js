@@ -26,7 +26,15 @@
     btn.type = "button";
     btn.className = `home-tab-btn${active ? " is-active" : ""}`;
     btn.dataset.tab = key;
-    btn.textContent = label;
+    
+    const icons = {
+      "all": "fa-home",
+      "daily-news": "fa-rss",
+      "july-notes": "fa-pen"
+    };
+    const iconClass = icons[key] || "fa-book";
+    
+    btn.innerHTML = `<i class="fa ${iconClass}" style="font-size: 1.15em; margin-bottom: 5px;"></i><span>${label}</span>`;
     return btn;
   }
 
