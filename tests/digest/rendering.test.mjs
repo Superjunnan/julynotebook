@@ -26,7 +26,7 @@ test("buildDigestMarkdown renders key news, quick news, core papers, and rumors"
         },
       ],
       coreTech: [{ title: "New paper", summary: "Technique summary.", refs: [2] }],
-      aiRumor: [{ title: "Possible launch signal", summary: "Credible but early.", refs: [3] }],
+      aiRumor: [],
       refTranslations: {},
     },
     [
@@ -39,9 +39,7 @@ test("buildDigestMarkdown renders key news, quick news, core papers, and rumors"
   assert.match(markdown, /## 重点资讯/);
   assert.match(markdown, /## 其他快讯/);
   assert.match(markdown, /## 核心论文/);
-  assert.match(markdown, /## 小道消息/);
   assert.match(markdown, /## 参考来源/);
-  assert.equal(markdown.indexOf("## 小道消息") < markdown.indexOf("## 核心论文"), true);
   assert.equal(markdown.indexOf("## 核心论文") < markdown.indexOf("## 参考来源"), true);
   assert.match(markdown, /今日候选总数：123 条/);
   assert.match(markdown, /模型能力提速和商业化渗透同步发生/);
@@ -95,7 +93,7 @@ test("fallback markdown avoids untranslated placeholders and raw English titles"
   assert.doesNotMatch(markdown, /海外科技媒体原文|论文平台原文/);
 });
 
-test("references render as Chinese title plus source and truncate long titles", () => {
+test("references render as Chinese title plus source and allow up to 40 chars before truncation", () => {
   const markdown = buildDigestMarkdown(
     "2026-03-03",
     {
@@ -123,7 +121,7 @@ test("references render as Chinese title plus source and truncate long titles", 
     ]
   );
 
-  assert.match(markdown, /这是一个非常非常长的中文标题用于验证截断…｜TechCrunch/);
+  assert.match(markdown, /这是一个非常非常长的中文标题用于验证截断逻辑是否生效｜TechCrunch/);
   assert.doesNotMatch(markdown, /Long English headline for verification<\/a>/);
 });
 

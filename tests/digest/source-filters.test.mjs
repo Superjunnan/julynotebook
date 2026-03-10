@@ -28,3 +28,28 @@ test("sourceMatchesFilters requires article-style paths when include_url_pattern
     false
   );
 });
+
+test("sourceMatchesFilters avoids short keyword false positives like ai in failed", () => {
+  const source = {
+    url: "https://www.siliconvalley.com/",
+    include_keywords: ["ai", "artificial intelligence"],
+  };
+
+  assert.equal(
+    sourceMatchesFilters(
+      "https://www.siliconvalley.com/2026/03/09/bay-area-hotel-marin-property-travel-loan-real-estate-economy-tiburon/",
+      "Bay Area hotel is bought through foreclosure of failed property loan",
+      source
+    ),
+    false
+  );
+
+  assert.equal(
+    sourceMatchesFilters(
+      "https://www.siliconvalley.com/2026/03/10/ai-startup-rolls-out-new-model/",
+      "AI startup rolls out new model",
+      source
+    ),
+    true
+  );
+});

@@ -356,7 +356,7 @@ sources:
 
   - id: techcrunch-newsletter
     name: TechCrunch Newsletter
-    enabled: true
+    enabled: false
     mode: restricted
     ingestion_mode: inbox_digest
     parser: inbox_yaml
@@ -368,7 +368,7 @@ sources:
     required_inputs:
       - newsletter_forwarding
     weight: 6
-    notes: Separate from the public AI feed.
+    notes: Disabled by default because public TechCrunch AI feed already covers most items; keep as optional backup.
 
   - id: import-ai
     name: Import AI
@@ -628,12 +628,11 @@ sources:
     bucket_hint: ai_rumor
     trust_tier: medium
     promotional_risk: medium
-    url: ""
+    url: https://x.com/gabrie
     required_inputs:
-      - exact_profile_url
-      - manual_capture
+      - x_api_or_manual_capture
     weight: 4
-    notes: Exact profile URL needed for automated ingestion.
+    notes: Public profile URL set; keep manual/API capture.
 
   - id: justine-moore
     name: Justine Moore
@@ -686,34 +685,46 @@ sources:
   - id: minimax
     name: MiniMax
     enabled: true
-    mode: restricted
-    ingestion_mode: manual_capture
-    parser: local_yaml
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
     group: company_view
-    bucket_hint: ai_rumor
+    bucket_hint: hot_news
     trust_tier: high
-    promotional_risk: high
-    url: ""
-    required_inputs:
-      - official_article_url
+    promotional_risk: medium
+    url: https://www.minimax.io/news
+    include_url_patterns:
+      - /news/
+    include_keywords:
+      - minimax
+      - model
+      - release
+      - launch
+      - update
     weight: 5
-    notes: WeChat or official posts; needs manual or crawler intake.
+    notes: Official MiniMax release page.
 
   - id: kimi
     name: Kimi
     enabled: true
-    mode: restricted
-    ingestion_mode: manual_capture
-    parser: local_yaml
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
     group: company_view
-    bucket_hint: ai_rumor
+    bucket_hint: hot_news
     trust_tier: high
-    promotional_risk: high
-    url: ""
-    required_inputs:
-      - official_article_url
+    promotional_risk: medium
+    url: https://platform.moonshot.cn/blog
+    include_url_patterns:
+      - /blog/posts/
+    include_keywords:
+      - kimi
+      - moonshot
+      - model
+      - update
+      - 发布
     weight: 5
-    notes: WeChat or official posts; needs manual or crawler intake.
+    notes: Moonshot official platform blog (covers Kimi releases and updates).
 
   - id: zhipu
     name: 智谱
@@ -725,59 +736,93 @@ sources:
     bucket_hint: ai_rumor
     trust_tier: high
     promotional_risk: high
-    url: ""
+    url: https://www.zhipuai.cn/news
     required_inputs:
       - official_article_url
     weight: 5
-    notes: WeChat or official posts; needs manual or crawler intake.
+    notes: Official website news channel is JS-heavy; keep manual capture for stable ingestion.
 
   - id: deepseek
     name: DeepSeek
     enabled: true
-    mode: restricted
-    ingestion_mode: manual_capture
-    parser: local_yaml
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
     group: company_view
-    bucket_hint: ai_rumor
+    bucket_hint: hot_news
     trust_tier: high
     promotional_risk: medium
-    url: ""
-    required_inputs:
-      - official_article_url
+    url: https://api-docs.deepseek.com/news/news250120
+    include_url_patterns:
+      - /news/news
+      - /zh-cn/news/news
+    include_keywords:
+      - deepseek
+      - release
+      - update
+      - api
     weight: 7
-    notes: WeChat or official posts; needs manual or crawler intake.
+    notes: DeepSeek official API docs news pages.
 
   - id: seed
     name: Seed
     enabled: true
-    mode: restricted
-    ingestion_mode: manual_capture
-    parser: local_yaml
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
     group: company_view
-    bucket_hint: ai_rumor
+    bucket_hint: hot_news
     trust_tier: medium
     promotional_risk: medium
-    url: ""
-    required_inputs:
-      - official_article_url
+    url: https://seed.bytedance.com/zh/research?view_from=homepage_tab
+    include_url_patterns:
+      - /zh/blog/
+      - /zh/public_papers
+    include_keywords:
+      - seed
+      - bytedance
+      - model
+      - 发布
     weight: 4
-    notes: WeChat or official posts; exact official source URL still needed.
+    notes: ByteDance Seed official research page (links to blog and paper portal).
 
   - id: ali-tech
     name: 阿里技术
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: company_view
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://help.aliyun.com/zh/model-studio/model-release-notes
+    include_url_patterns:
+      - /zh/model-studio/
+    include_keywords:
+      - qwen
+      - 通义
+      - 模型
+      - release
+      - 更新
+    weight: 6
+    notes: Alibaba Cloud Model Studio official release notes.
+
+  - id: stepfun
+    name: 阶跃星辰
     enabled: true
     mode: restricted
     ingestion_mode: manual_capture
     parser: local_yaml
     group: company_view
-    bucket_hint: core_tech
-    trust_tier: high
+    bucket_hint: hot_news
+    trust_tier: medium
     promotional_risk: medium
-    url: ""
+    url: https://stepfun.ai/research
     required_inputs:
       - official_article_url
-    weight: 6
-    notes: WeChat or official posts; often useful for technical writeups.
+    weight: 4
+    notes: Official site is JS-heavy; keep manual capture until a stable crawlable feed is available.
 
   - id: hacker-news-ai
     name: Hacker News AI

@@ -1,0 +1,4274 @@
+{
+  "run_date": "2026-03-10",
+  "cluster_chunks": [
+    {
+      "chunk_index": 1,
+      "chunk_size": 4,
+      "assignments": 4,
+      "fallback_assignments": 0,
+      "strategy": "llm_news"
+    },
+    {
+      "chunk_index": 2,
+      "chunk_size": 180,
+      "assignments": 180,
+      "fallback_assignments": 0,
+      "strategy": "deterministic_paper"
+    }
+  ],
+  "mode_breakdown": {
+    "news_input": 4,
+    "paper_input": 180,
+    "paper_deterministic": 180,
+    "llm_chunk_count": 1
+  },
+  "assignments_count": 184,
+  "fallback_assignments": 0,
+  "singleton_recluster": {
+    "enabled": true,
+    "anchor_count": 0,
+    "singleton_candidates": 0,
+    "merged": 0,
+    "kept": 0,
+    "invalid_or_low_confidence": 0,
+    "min_confidence": 0.72,
+    "min_topic_score": 68,
+    "max_items": 24,
+    "decisions": [],
+    "note": "no_anchors"
+  },
+  "topic_cards": [
+    {
+      "topic_id": 1,
+      "topic_key": "paper:2603.06365",
+      "topic_title": "ESAA-Security",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        1
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 29,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "ESAA-Security: An Event-Sourced, Verifiable Architecture for Agent-Assisted Security Audits"
+      ]
+    },
+    {
+      "topic_id": 2,
+      "topic_key": "paper:2602.05073",
+      "topic_title": "Uncertainty Quantification in LLM",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        2
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 29,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges"
+      ]
+    },
+    {
+      "topic_id": 3,
+      "topic_key": "paper:2603.04873",
+      "topic_title": "SEA-TS: Self-Evolving Agent for",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        3
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 29,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "SEA-TS: Self-Evolving Agent for Autonomous Code Generation of Time Series Forecasting Algorithms"
+      ]
+    },
+    {
+      "topic_id": 4,
+      "topic_key": "paper:2602.15849",
+      "topic_title": "IntelliAsk: Learning to Ask High",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        4
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 29,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "IntelliAsk: Learning to Ask High-Quality Research Questions via RLVR"
+      ]
+    },
+    {
+      "topic_id": 5,
+      "topic_key": "paper:2603.00601",
+      "topic_title": "Theory of Code Space",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        5
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 29,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Theory of Code Space: Do Code Agents Understand Software Architecture?"
+      ]
+    },
+    {
+      "topic_id": 6,
+      "topic_key": "paper:2603.04444",
+      "topic_title": "vLLM Semantic Router",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        6
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 29,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "vLLM Semantic Router: Signal Driven Decision Routing for Mixture-of-Modality Models"
+      ]
+    },
+    {
+      "topic_id": 7,
+      "topic_key": "paper:2603.05910",
+      "topic_title": "The World Won't Stay Still",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        7
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The World Won't Stay Still: Programmable Evolution for Agent Benchmarks"
+      ]
+    },
+    {
+      "topic_id": 8,
+      "topic_key": "paper:2603.06064",
+      "topic_title": "Agentic LLM Planning via Step",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        8
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Agentic LLM Planning via Step-Wise PDDL Simulation"
+      ]
+    },
+    {
+      "topic_id": 9,
+      "topic_key": "paper:2603.05529",
+      "topic_title": "Towards Neural Graph Data Management",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        9
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Towards Neural Graph Data Management"
+      ]
+    },
+    {
+      "topic_id": 10,
+      "topic_key": "paper:2603.05578",
+      "topic_title": "Tool-Genesis: A Task-Driven Tool",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        10
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Tool-Genesis: A Task-Driven Tool Creation Benchmark for Self-Evolving Language Agent"
+      ]
+    },
+    {
+      "topic_id": 11,
+      "topic_key": "paper:2603.05642",
+      "topic_title": "Relational Semantic Reasoning on",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        11
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Relational Semantic Reasoning on 3D Scene Graphs for Open World Interactive Object Search"
+      ]
+    },
+    {
+      "topic_id": 12,
+      "topic_key": "paper:2603.05801",
+      "topic_title": "Ambiguity Collapse by LLMs",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        12
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Ambiguity Collapse by LLMs"
+      ]
+    },
+    {
+      "topic_id": 13,
+      "topic_key": "paper:2603.05884",
+      "topic_title": "Computational Pathology in the",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        13
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Computational Pathology in the Era of Emerging Foundation and Agentic AI -- International"
+      ]
+    },
+    {
+      "topic_id": 14,
+      "topic_key": "paper:2603.05904",
+      "topic_title": "LUMINA: LLM-Guided GPU",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        14
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "LUMINA: LLM-Guided GPU Architecture Exploration via Bottleneck Analysis"
+      ]
+    },
+    {
+      "topic_id": 15,
+      "topic_key": "paper:2603.05911",
+      "topic_title": "CORE-Seg: Reasoning-Driven",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        15
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "CORE-Seg: Reasoning-Driven Segmentation for Complex Lesions via Reinforcement Learning"
+      ]
+    },
+    {
+      "topic_id": 16,
+      "topic_key": "paper:2603.05925",
+      "topic_title": "RAC: Rectified Flow Auto Coder",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        16
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "RAC: Rectified Flow Auto Coder"
+      ]
+    },
+    {
+      "topic_id": 17,
+      "topic_key": "paper:2603.06001",
+      "topic_title": "Restoring Linguistic Grounding in",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        17
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Restoring Linguistic Grounding in VLA Models via Train-Free Attention Recalibration"
+      ]
+    },
+    {
+      "topic_id": 18,
+      "topic_key": "paper:2603.06073",
+      "topic_title": "Lifelong Embodied Navigation Learning",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        18
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Lifelong Embodied Navigation Learning"
+      ]
+    },
+    {
+      "topic_id": 19,
+      "topic_key": "paper:2603.06193",
+      "topic_title": "Whisper-CD: Accurate Long-Form",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        19
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Whisper-CD: Accurate Long-Form Speech Recognition using Multi-Negative Contrastive Decoding"
+      ]
+    },
+    {
+      "topic_id": 20,
+      "topic_key": "paper:2603.06256",
+      "topic_title": "GazeMoE: Perception of Gaze",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        20
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "GazeMoE: Perception of Gaze Target with Mixture-of-Experts"
+      ]
+    },
+    {
+      "topic_id": 21,
+      "topic_key": "paper:2603.06271",
+      "topic_title": "Agentic retrieval-augmented",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        21
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Agentic retrieval-augmented reasoning reshapes collective reliability under model"
+      ]
+    },
+    {
+      "topic_id": 22,
+      "topic_key": "paper:2603.06384",
+      "topic_title": "Prompt Group-Aware Training for",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        22
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Prompt Group-Aware Training for Robust Text-Guided Nuclei Segmentation"
+      ]
+    },
+    {
+      "topic_id": 23,
+      "topic_key": "paper:2603.06428",
+      "topic_title": "Abductive Reasoning with",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        23
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Abductive Reasoning with Syllogistic Forms in Large Language Models"
+      ]
+    },
+    {
+      "topic_id": 24,
+      "topic_key": "paper:2603.02050",
+      "topic_title": "\"When to Hand Off",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        24
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "\"When to Hand Off, When to Work Together\": Expanding Human-Agent Co-Creative Collaboration"
+      ]
+    },
+    {
+      "topic_id": 26,
+      "topic_key": "paper:2603.05980",
+      "topic_title": "An Interactive Multi-Agent System",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        26
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "An Interactive Multi-Agent System for Evaluation of New Product Concepts"
+      ]
+    },
+    {
+      "topic_id": 27,
+      "topic_key": "paper:2603.06565",
+      "topic_title": "Boosting deep Reinforcement",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        27
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Boosting deep Reinforcement Learning using pretraining with Logical Options"
+      ]
+    },
+    {
+      "topic_id": 28,
+      "topic_key": "paper:2603.03668",
+      "topic_title": "Can LLM Aid in Solving",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        28
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Can LLM Aid in Solving Constraints with Inductive Definitions?"
+      ]
+    },
+    {
+      "topic_id": 29,
+      "topic_key": "paper:2603.05528",
+      "topic_title": "Omni-C: Compressing Heterogeneous",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        29
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Omni-C: Compressing Heterogeneous Modalities into a Single Dense Encoder"
+      ]
+    },
+    {
+      "topic_id": 30,
+      "topic_key": "paper:2603.05542",
+      "topic_title": "Human-Data Interaction",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        30
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Human-Data Interaction, Exploration, and Visualization in the AI Era: Challenges and"
+      ]
+    },
+    {
+      "topic_id": 31,
+      "topic_key": "paper:2603.05776",
+      "topic_title": "PVminerLLM: Structured Extraction",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        31
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "PVminerLLM: Structured Extraction of Patient Voice from Patient-Generated Text using Large"
+      ]
+    },
+    {
+      "topic_id": 32,
+      "topic_key": "paper:2603.05812",
+      "topic_title": "Margin and Consistency",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        32
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Margin and Consistency Supervision for Calibrated and Robust Vision Models"
+      ]
+    },
+    {
+      "topic_id": 33,
+      "topic_key": "paper:2603.05832",
+      "topic_title": "Lexara: A User-Centered Toolkit",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        33
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Lexara: A User-Centered Toolkit for Evaluating Large Language Models for Conversational"
+      ]
+    },
+    {
+      "topic_id": 34,
+      "topic_key": "paper:2603.05900",
+      "topic_title": "Reference-guided Policy",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        34
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning"
+      ]
+    },
+    {
+      "topic_id": 35,
+      "topic_key": "paper:2603.05950",
+      "topic_title": "Energy-Driven Adaptive Visual",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        35
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Energy-Driven Adaptive Visual Token Pruning for Efficient Vision-Language Models"
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_key": "paper:2603.06025",
+      "topic_title": "Sensitivity-Aware Retrieval",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        36
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Sensitivity-Aware Retrieval-Augmented Intent Clarification"
+      ]
+    },
+    {
+      "topic_id": 37,
+      "topic_key": "paper:2603.06054",
+      "topic_title": "Probing Visual Concepts in",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        37
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Probing Visual Concepts in Lightweight Vision-Language Models for Automated Driving"
+      ]
+    },
+    {
+      "topic_id": 38,
+      "topic_key": "paper:2603.06057",
+      "topic_title": "TempoSyncDiff",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        38
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "TempoSyncDiff: Distilled Temporally-Consistent Diffusion for Low-Latency Audio-Driven"
+      ]
+    },
+    {
+      "topic_id": 39,
+      "topic_key": "paper:2603.06066",
+      "topic_title": "Evaluating Austrian A-Level",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        39
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Evaluating Austrian A-Level German Essays with Large Language Models for Automated Essay Scoring"
+      ]
+    },
+    {
+      "topic_id": 40,
+      "topic_key": "paper:2603.06088",
+      "topic_title": "Experiences Build Characters",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        40
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Experiences Build Characters: The Linguistic Origins and Functional Impact of LLM Personality"
+      ]
+    },
+    {
+      "topic_id": 41,
+      "topic_key": "paper:2603.06140",
+      "topic_title": "Place-it-R1",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        41
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Place-it-R1: Unlocking Environment-aware Reasoning Potential of MLLM for Video Object Insertion"
+      ]
+    },
+    {
+      "topic_id": 42,
+      "topic_key": "paper:2603.06148",
+      "topic_title": "VLM-RobustBench",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        42
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "VLM-RobustBench: A Comprehensive Benchmark for Robustness of Vision-Language Models"
+      ]
+    },
+    {
+      "topic_id": 43,
+      "topic_key": "paper:2603.06165",
+      "topic_title": "Reflective Flow Sampling Enhancement",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        43
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Reflective Flow Sampling Enhancement"
+      ]
+    },
+    {
+      "topic_id": 44,
+      "topic_key": "paper:2603.06183",
+      "topic_title": "CRIMSON: A Clinically-Grounded",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        44
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "CRIMSON: A Clinically-Grounded LLM-Based Metric for Generative Radiology Report Evaluation"
+      ]
+    },
+    {
+      "topic_id": 45,
+      "topic_key": "paper:2603.06260",
+      "topic_title": "Learning to Solve Orienteering",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        45
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Learning to Solve Orienteering Problem with Time Windows and Variable Profits"
+      ]
+    },
+    {
+      "topic_id": 46,
+      "topic_key": "paper:2603.06350",
+      "topic_title": "MoEless: Efficient MoE LLM",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        46
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "MoEless: Efficient MoE LLM Serving via Serverless Computing"
+      ]
+    },
+    {
+      "topic_id": 47,
+      "topic_key": "paper:2603.06426",
+      "topic_title": "CLoPA: Continual Low Parameter",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        47
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "CLoPA: Continual Low Parameter Adaptation of Interactive Segmentation for Medical Image"
+      ]
+    },
+    {
+      "topic_id": 48,
+      "topic_key": "paper:2603.06495",
+      "topic_title": "COLD-Steer: Steering Large",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        48
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics"
+      ]
+    },
+    {
+      "topic_id": 49,
+      "topic_key": "paper:2602.00276",
+      "topic_title": "Localizing and Correcting Errors",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        49
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Localizing and Correcting Errors for LLM-based Planners"
+      ]
+    },
+    {
+      "topic_id": 50,
+      "topic_key": "paper:2602.06841",
+      "topic_title": "From Features to Actions",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        50
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "From Features to Actions: Explainability in Traditional and Agentic AI Systems"
+      ]
+    },
+    {
+      "topic_id": 51,
+      "topic_key": "paper:2602.10467",
+      "topic_title": "MERIT Feedback Elicits Better",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        51
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "MERIT Feedback Elicits Better Bargaining in LLM Negotiators"
+      ]
+    },
+    {
+      "topic_id": 52,
+      "topic_key": "paper:2602.11318",
+      "topic_title": "The Consensus Trap",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        52
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The Consensus Trap: Dissecting Subjectivity and the \"Ground Truth\" Illusion in Data Annotation"
+      ]
+    },
+    {
+      "topic_id": 53,
+      "topic_key": "paper:2603.01203",
+      "topic_title": "How Well Does Agent Development",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        53
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "How Well Does Agent Development Reflect Real-World Work?"
+      ]
+    },
+    {
+      "topic_id": 54,
+      "topic_key": "paper:2603.04756",
+      "topic_title": "MOOSEnger -- a Domain-Specific AI",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        54
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "MOOSEnger -- a Domain-Specific AI Agent for the MOOSE Ecosystem"
+      ]
+    },
+    {
+      "topic_id": 55,
+      "topic_key": "paper:2602.23008",
+      "topic_title": "Exploratory Memory-Augmented LLM",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        55
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization"
+      ]
+    },
+    {
+      "topic_id": 56,
+      "topic_key": "paper:2602.23136",
+      "topic_title": "Modality Collapse as Mismatched",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        56
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Modality Collapse as Mismatched Decoding"
+      ]
+    },
+    {
+      "topic_id": 57,
+      "topic_key": "paper:2602.24142",
+      "topic_title": "CoME: Empowering Channel-of",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        57
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "CoME: Empowering Channel-of-Mobile-Experts with Informative Hybrid-Capabilities Reasoning"
+      ]
+    },
+    {
+      "topic_id": 58,
+      "topic_key": "paper:2603.02252",
+      "topic_title": "Whisper-RIR-Mega",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        58
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Whisper-RIR-Mega: A Paired Clean-Reverberant Speech Benchmark for ASR Robustness to Room"
+      ]
+    },
+    {
+      "topic_id": 59,
+      "topic_key": "paper:2603.03332",
+      "topic_title": "Fragile Thoughts",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        59
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Fragile Thoughts: How Large Language Models Handle Chain-of-Thought Perturbations"
+      ]
+    },
+    {
+      "topic_id": 63,
+      "topic_key": "paper:2603.05706",
+      "topic_title": "Reasoning Models Struggle to",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        63
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Reasoning Models Struggle to Control their Chains of Thought"
+      ]
+    },
+    {
+      "topic_id": 64,
+      "topic_key": "paper:2603.05860",
+      "topic_title": "Evolving Medical Imaging Agents",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        64
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Evolving Medical Imaging Agents via Experience-driven Self-skill Discovery"
+      ]
+    },
+    {
+      "topic_id": 65,
+      "topic_key": "paper:2603.06067",
+      "topic_title": "Aggregative Semantics for",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        65
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Aggregative Semantics for Quantitative Bipolar Argumentation Frameworks"
+      ]
+    },
+    {
+      "topic_id": 66,
+      "topic_key": "paper:2603.05511",
+      "topic_title": "An Embodied Companion for Visual",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        66
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "An Embodied Companion for Visual Storytelling"
+      ]
+    },
+    {
+      "topic_id": 67,
+      "topic_key": "paper:2603.05539",
+      "topic_title": "VDCook:DIY video data cook your MLLMs",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        67
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "VDCook:DIY video data cook your MLLMs"
+      ]
+    },
+    {
+      "topic_id": 68,
+      "topic_key": "paper:2603.05560",
+      "topic_title": "Towards Efficient and Stable",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        68
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Towards Efficient and Stable Ocean State Forecasting"
+      ]
+    },
+    {
+      "topic_id": 69,
+      "topic_key": "paper:2603.05581",
+      "topic_title": "Spatiotemporal Heterogeneity of",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        69
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Spatiotemporal Heterogeneity of AI-Driven Traffic Flow Patterns and Land Use Interaction: A"
+      ]
+    },
+    {
+      "topic_id": 70,
+      "topic_key": "paper:2603.05598",
+      "topic_title": "On the Value of Tokeniser",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        70
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "On the Value of Tokeniser Pretraining in Physics Foundation Models"
+      ]
+    },
+    {
+      "topic_id": 71,
+      "topic_key": "paper:2603.05621",
+      "topic_title": "RACAS: Controlling Diverse Robots",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        71
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "RACAS: Controlling Diverse Robots With a Single Agentic System"
+      ]
+    },
+    {
+      "topic_id": 72,
+      "topic_key": "paper:2603.05622",
+      "topic_title": "Adversarial Batch Representation",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        72
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Adversarial Batch Representation Augmentation for Batch Correction in High-Content Cellular"
+      ]
+    },
+    {
+      "topic_id": 73,
+      "topic_key": "paper:2603.05623",
+      "topic_title": "Post Fusion Bird's Eye View",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        73
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Post Fusion Bird's Eye View Feature Stabilization for Robust Multimodal 3D Detection"
+      ]
+    },
+    {
+      "topic_id": 74,
+      "topic_key": "paper:2603.05651",
+      "topic_title": "The Fragility Of Moral Judgment",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        74
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The Fragility Of Moral Judgment In Large Language Models"
+      ]
+    },
+    {
+      "topic_id": 75,
+      "topic_key": "paper:2603.05693",
+      "topic_title": "Longitudinal Lesion Inpainting in",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        75
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Longitudinal Lesion Inpainting in Brain MRI via 3D Region Aware Diffusion"
+      ]
+    },
+    {
+      "topic_id": 76,
+      "topic_key": "paper:2603.05696",
+      "topic_title": "Autonomous Algorithm Discovery",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        76
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Autonomous Algorithm Discovery for Ptychography via Evolutionary LLM Reasoning"
+      ]
+    },
+    {
+      "topic_id": 77,
+      "topic_key": "paper:2603.05728",
+      "topic_title": "LTLGuard: Formalizing LTL",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        77
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "LTLGuard: Formalizing LTL Specifications with Compact Language Models and Lightweight"
+      ]
+    },
+    {
+      "topic_id": 78,
+      "topic_key": "paper:2603.05739",
+      "topic_title": "Revisiting the (Sub)Optimality of",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        78
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Revisiting the (Sub)Optimality of Best-of-N for Inference-Time Alignment"
+      ]
+    },
+    {
+      "topic_id": 79,
+      "topic_key": "paper:2603.05772",
+      "topic_title": "Depth Charge: Jailbreak Large",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        79
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Depth Charge: Jailbreak Large Language Models from Deep Safety Attention Heads"
+      ]
+    },
+    {
+      "topic_id": 80,
+      "topic_key": "paper:2603.05786",
+      "topic_title": "Proof-of-Guardrail in AI Agents",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        80
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Proof-of-Guardrail in AI Agents and What (Not) to Trust from It"
+      ]
+    },
+    {
+      "topic_id": 81,
+      "topic_key": "paper:2603.05800",
+      "topic_title": "StreamWise: Serving Multi-Modal",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        81
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "StreamWise: Serving Multi-Modal Generation in Real-Time at Scale"
+      ]
+    },
+    {
+      "topic_id": 82,
+      "topic_key": "paper:2603.05839",
+      "topic_title": "Evaluating LLM Alignment With",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        82
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Evaluating LLM Alignment With Human Trust Models"
+      ]
+    },
+    {
+      "topic_id": 83,
+      "topic_key": "paper:2603.05890",
+      "topic_title": "Lost in Stories",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        83
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Lost in Stories: Consistency Bugs in Long Story Generation by LLMs"
+      ]
+    },
+    {
+      "topic_id": 84,
+      "topic_key": "paper:2603.05917",
+      "topic_title": "Stock Market Prediction Using",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        84
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Stock Market Prediction Using Node Transformer Architecture Integrated with BERT Sentiment"
+      ]
+    },
+    {
+      "topic_id": 85,
+      "topic_key": "paper:2603.05921",
+      "topic_title": "BlackMirror: Black-Box Backdoor",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        85
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response"
+      ]
+    },
+    {
+      "topic_id": 86,
+      "topic_key": "paper:2603.05928",
+      "topic_title": "Addressing the Ecological Fallacy",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        86
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Addressing the Ecological Fallacy in Larger LMs with Human Context"
+      ]
+    },
+    {
+      "topic_id": 87,
+      "topic_key": "paper:2603.05957",
+      "topic_title": "Domain-Adaptive Model Merging",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        87
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Domain-Adaptive Model Merging across Disconnected Modes"
+      ]
+    },
+    {
+      "topic_id": 88,
+      "topic_key": "paper:2603.05963",
+      "topic_title": "Skeleton-to-Image Encoding",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        88
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Skeleton-to-Image Encoding: Enabling Skeleton Representation Learning via Vision-Pretrained"
+      ]
+    },
+    {
+      "topic_id": 89,
+      "topic_key": "paper:2603.05997",
+      "topic_title": "MM-ISTS: Cooperating Irregularly",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        89
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "MM-ISTS: Cooperating Irregularly Sampled Time Series Forecasting with Multimodal Vision"
+      ]
+    },
+    {
+      "topic_id": 90,
+      "topic_key": "paper:2603.06002",
+      "topic_title": "Demystifying KAN for Vision Tasks",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        90
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Demystifying KAN for Vision Tasks"
+      ]
+    },
+    {
+      "topic_id": 91,
+      "topic_key": "paper:2603.06079",
+      "topic_title": "StreamVoiceAnon+",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        91
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "StreamVoiceAnon+: Emotion-Preserving Streaming Speaker Anonymization via Frame-Level"
+      ]
+    },
+    {
+      "topic_id": 92,
+      "topic_key": "paper:2603.06114",
+      "topic_title": "Making Implicit Premises Explicit",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        92
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Making Implicit Premises Explicit in Logical Understanding of Enthymemes"
+      ]
+    },
+    {
+      "topic_id": 93,
+      "topic_key": "paper:2603.06142",
+      "topic_title": "Predictive Coding Graphs are a",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        93
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Predictive Coding Graphs are a Superset of Feedforward Neural Networks"
+      ]
+    },
+    {
+      "topic_id": 94,
+      "topic_key": "paper:2603.06153",
+      "topic_title": "Ensemble Graph Neural Networks",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        94
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Ensemble Graph Neural Networks for Probabilistic Sea Surface Temperature Forecasting via"
+      ]
+    },
+    {
+      "topic_id": 95,
+      "topic_key": "paper:2603.06164",
+      "topic_title": "Do Compact SSL Backbones Matter",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        95
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Do Compact SSL Backbones Matter for Audio Deepfake Detection? A Controlled Study with RAPTOR"
+      ]
+    },
+    {
+      "topic_id": 96,
+      "topic_key": "paper:2603.06194",
+      "topic_title": "MAPO: Mixed Advantage Policy",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        96
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "MAPO: Mixed Advantage Policy Optimization for Long-Horizon Multi-Turn Dialogue"
+      ]
+    },
+    {
+      "topic_id": 97,
+      "topic_key": "paper:2603.06199",
+      "topic_title": "FlashPrefill",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        97
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "FlashPrefill: Instantaneous Pattern Discovery and Thresholding for Ultra-Fast Long-Context"
+      ]
+    },
+    {
+      "topic_id": 98,
+      "topic_key": "paper:2603.06213",
+      "topic_title": "Cut to the Chase",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        98
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events"
+      ]
+    },
+    {
+      "topic_id": 99,
+      "topic_key": "paper:2603.06274",
+      "topic_title": "Stem: Rethinking Causal",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        99
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Stem: Rethinking Causal Information Flow in Sparse Attention"
+      ]
+    },
+    {
+      "topic_id": 100,
+      "topic_key": "paper:2603.06317",
+      "topic_title": "From Entropy to Calibrated",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        100
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "From Entropy to Calibrated Uncertainty: Training Language Models to Reason About Uncertainty"
+      ]
+    },
+    {
+      "topic_id": 101,
+      "topic_key": "paper:2603.06338",
+      "topic_title": "AI End-to-End Radiation Treatment",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        101
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "AI End-to-End Radiation Treatment Planning Under One Second"
+      ]
+    },
+    {
+      "topic_id": 102,
+      "topic_key": "paper:2603.06340",
+      "topic_title": "K-MaT: Knowledge-Anchored",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        102
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "K-MaT: Knowledge-Anchored Manifold Transport for Cross-Modal Prompt Learning in Medical Imaging"
+      ]
+    },
+    {
+      "topic_id": 103,
+      "topic_key": "paper:2603.06444",
+      "topic_title": "Prosodic Boundary-Aware Streaming",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        103
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Prosodic Boundary-Aware Streaming Generation for LLM-Based TTS with Streaming Text Input"
+      ]
+    },
+    {
+      "topic_id": 104,
+      "topic_key": "paper:2603.06573",
+      "topic_title": "Fly360: Omnidirectional Obstacle",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        104
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Fly360: Omnidirectional Obstacle Avoidance within Drone View"
+      ]
+    },
+    {
+      "topic_id": 105,
+      "topic_key": "paper:2603.06576",
+      "topic_title": "BEVLM: Distilling Semantic",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        105
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "BEVLM: Distilling Semantic Knowledge from LLMs into Bird's-Eye View Representations"
+      ]
+    },
+    {
+      "topic_id": 106,
+      "topic_key": "paper:2602.03837",
+      "topic_title": "Accelerating Scientific Research",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        106
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Accelerating Scientific Research with Gemini"
+      ]
+    },
+    {
+      "topic_id": 107,
+      "topic_key": "paper:2602.11089",
+      "topic_title": "DataChef: Cooking Up Optimal Data",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        107
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "DataChef: Cooking Up Optimal Data Recipes for LLM Adaptation via Reinforcement Learning"
+      ]
+    },
+    {
+      "topic_id": 108,
+      "topic_key": "paper:2602.11210",
+      "topic_title": "SWE-MiniSandbox",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        108
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "SWE-MiniSandbox: Container-Free Reinforcement Learning for Building Software Engineering Agents"
+      ]
+    },
+    {
+      "topic_id": 109,
+      "topic_key": "paper:2602.16736",
+      "topic_title": "The Compute ICE-AGE",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        109
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The Compute ICE-AGE: Invariant Compute Envelope under Addressable Graph Evolution"
+      ]
+    },
+    {
+      "topic_id": 110,
+      "topic_key": "paper:2602.17095",
+      "topic_title": "FLoRG: Federated Fine-tuning with",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        110
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment"
+      ]
+    },
+    {
+      "topic_id": 111,
+      "topic_key": "paper:2602.17598",
+      "topic_title": "The Cascade Equivalence",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        111
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The Cascade Equivalence Hypothesis: When Do Speech LLMs Behave Like ASR$\\rightarrow$LLM"
+      ]
+    },
+    {
+      "topic_id": 112,
+      "topic_key": "paper:2603.02002",
+      "topic_title": "MatRIS: Toward Reliable and",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        112
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials"
+      ]
+    },
+    {
+      "topic_id": 113,
+      "topic_key": "paper:2603.02175",
+      "topic_title": "Kiwi-Edit: Versatile Video",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        113
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Kiwi-Edit: Versatile Video Editing via Instruction and Reference Guidance"
+      ]
+    },
+    {
+      "topic_id": 114,
+      "topic_key": "paper:2603.03294",
+      "topic_title": "Fine-Tuning and Evaluating",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        114
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Fine-Tuning and Evaluating Conversational AI for Agricultural Advisory"
+      ]
+    },
+    {
+      "topic_id": 115,
+      "topic_key": "paper:2603.03704",
+      "topic_title": "Large-Language-Model-Guided State",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        115
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Large-Language-Model-Guided State Estimation for Partially Observable Task and Motion Planning"
+      ]
+    },
+    {
+      "topic_id": 120,
+      "topic_key": "paper:2603.06082",
+      "topic_title": "Offline Materials Optimization",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        120
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Offline Materials Optimization with CliqueFlowmer"
+      ]
+    },
+    {
+      "topic_id": 121,
+      "topic_key": "paper:2603.06278",
+      "topic_title": "Artificial Intelligence for",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        121
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Artificial Intelligence for Climate Adaptation: Reinforcement Learning for Climate Change"
+      ]
+    },
+    {
+      "topic_id": 122,
+      "topic_key": "paper:2603.06333",
+      "topic_title": "SAHOO: Safeguarded Alignment for",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        122
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self"
+      ]
+    },
+    {
+      "topic_id": 123,
+      "topic_key": "paper:2603.05514",
+      "topic_title": "From Toil to Thought",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        123
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "From Toil to Thought: Designing for Strategic Exploration and Responsible AI in Systematic"
+      ]
+    },
+    {
+      "topic_id": 124,
+      "topic_key": "paper:2603.05525",
+      "topic_title": "Molecular Representations for AI",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        124
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Molecular Representations for AI in Chemistry and Materials Science"
+      ]
+    },
+    {
+      "topic_id": 125,
+      "topic_key": "paper:2603.05532",
+      "topic_title": "On the Reliability of AI Methods",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        125
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "On the Reliability of AI Methods in Drug Discovery: Evaluation of Boltz-2 for Structure and"
+      ]
+    },
+    {
+      "topic_id": 126,
+      "topic_key": "paper:2603.05538",
+      "topic_title": "JAWS: Enhancing Long-term Rollout",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        126
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "JAWS: Enhancing Long-term Rollout of Neural Operators via Spatially-Adaptive Jacobian"
+      ]
+    },
+    {
+      "topic_id": 127,
+      "topic_key": "paper:2603.05562",
+      "topic_title": "Model Change for Description",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        127
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Model Change for Description Logic Concepts"
+      ]
+    },
+    {
+      "topic_id": 128,
+      "topic_key": "paper:2603.05565",
+      "topic_title": "When AI Levels the Playing Field",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        128
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "When AI Levels the Playing Field: Skill Homogenization, Asset Concentration, and Two"
+      ]
+    },
+    {
+      "topic_id": 129,
+      "topic_key": "paper:2603.05574",
+      "topic_title": "PRISM: Personalized Refinement of",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        129
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "PRISM: Personalized Refinement of Imitation Skills for Manipulation via Human Instructions"
+      ]
+    },
+    {
+      "topic_id": 130,
+      "topic_key": "paper:2603.05607",
+      "topic_title": "DreamCAD: Scaling Multi-modal CAD",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        130
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "DreamCAD: Scaling Multi-modal CAD Generation using Differentiable Parametric Surfaces"
+      ]
+    },
+    {
+      "topic_id": 131,
+      "topic_key": "paper:2603.05659",
+      "topic_title": "When Rubrics Fail",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        131
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "When Rubrics Fail: Error Enumeration as Reward in Reference-Free RL Post-Training for"
+      ]
+    },
+    {
+      "topic_id": 132,
+      "topic_key": "paper:2603.05710",
+      "topic_title": "The Rise of AI in Weather and",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        132
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The Rise of AI in Weather and Climate Information and its Impact on Global Inequality"
+      ]
+    },
+    {
+      "topic_id": 133,
+      "topic_key": "paper:2603.05723",
+      "topic_title": "Cultural Perspectives and",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        133
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Cultural Perspectives and Expectations for Generative AI"
+      ]
+    },
+    {
+      "topic_id": 134,
+      "topic_key": "paper:2603.05768",
+      "topic_title": "Bridging Domains through Subspace",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        134
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Bridging Domains through Subspace-Aware Model Merging"
+      ]
+    },
+    {
+      "topic_id": 135,
+      "topic_key": "paper:2603.05773",
+      "topic_title": "Knowing without Acting",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        135
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Knowing without Acting: The Disentangled Geometry of Safety Mechanisms in Large Language Models"
+      ]
+    },
+    {
+      "topic_id": 136,
+      "topic_key": "paper:2603.05780",
+      "topic_title": "Balancing Domestic and Global",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        136
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Balancing Domestic and Global Perspectives: Evaluating Dual-Calibration and LLM-Generated"
+      ]
+    },
+    {
+      "topic_id": 137,
+      "topic_key": "paper:2603.05781",
+      "topic_title": "Visual Words Meet BM25",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        137
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Visual Words Meet BM25: Sparse Auto-Encoder Visual Word Scoring for Image Retrieval"
+      ]
+    },
+    {
+      "topic_id": 138,
+      "topic_key": "paper:2603.05844",
+      "topic_title": "Remote Sensing Image",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        138
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Remote Sensing Image Classification Using Deep Ensemble Learning"
+      ]
+    },
+    {
+      "topic_id": 139,
+      "topic_key": "paper:2603.05937",
+      "topic_title": "Facial Expression Recognition",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        139
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Facial Expression Recognition Using Residual Masking Network"
+      ]
+    },
+    {
+      "topic_id": 140,
+      "topic_key": "paper:2603.05953",
+      "topic_title": "Who We Are, Where We Are",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        140
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Who We Are, Where We Are: Mental Health at the Intersection of Person, Situation, and Large"
+      ]
+    },
+    {
+      "topic_id": 141,
+      "topic_key": "paper:2603.05969",
+      "topic_title": "Imagine How To Change",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        141
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Imagine How To Change: Explicit Procedure Modeling for Change Captioning"
+      ]
+    },
+    {
+      "topic_id": 142,
+      "topic_key": "paper:2603.06071",
+      "topic_title": "Text-Driven Emotionally",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        142
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Text-Driven Emotionally Continuous Talking Face Generation"
+      ]
+    },
+    {
+      "topic_id": 143,
+      "topic_key": "paper:2603.06130",
+      "topic_title": "A Hazard-Informed Data Pipeline",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        143
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "A Hazard-Informed Data Pipeline for Robotics Physical Safety"
+      ]
+    },
+    {
+      "topic_id": 144,
+      "topic_key": "paper:2603.06135",
+      "topic_title": "A Causal Graph Approach to",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        144
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "A Causal Graph Approach to Oppositional Narrative Analysis"
+      ]
+    },
+    {
+      "topic_id": 145,
+      "topic_key": "paper:2603.06138",
+      "topic_title": "Partial Policy Gradients for RL",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        145
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Partial Policy Gradients for RL in LLMs"
+      ]
+    },
+    {
+      "topic_id": 146,
+      "topic_key": "paper:2603.06180",
+      "topic_title": "Contrastive-to-Self-Supervised",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        146
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Contrastive-to-Self-Supervised: A Two-Stage Framework for Script Similarity Learning"
+      ]
+    },
+    {
+      "topic_id": 147,
+      "topic_key": "paper:2603.06270",
+      "topic_title": "HiPP-Prune",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        147
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "HiPP-Prune: Hierarchical Preference-Conditioned Structured Pruning for Vision-Language Models"
+      ]
+    },
+    {
+      "topic_id": 148,
+      "topic_key": "paper:2603.06302",
+      "topic_title": "DEX-AR: A Dynamic Explainability",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        148
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "DEX-AR: A Dynamic Explainability Method for Autoregressive Vision-Language Models"
+      ]
+    },
+    {
+      "topic_id": 149,
+      "topic_key": "paper:2603.06330",
+      "topic_title": "Structured Exploration vs.",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        149
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Structured Exploration vs. Generative Flexibility: A Field Study Comparing Bandit and LLM"
+      ]
+    },
+    {
+      "topic_id": 150,
+      "topic_key": "paper:2603.06361",
+      "topic_title": "CLAIRE: Compressed Latent",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        150
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "CLAIRE: Compressed Latent Autoencoder for Industrial Representation and Evaluation -- A"
+      ]
+    },
+    {
+      "topic_id": 151,
+      "topic_key": "paper:2603.06408",
+      "topic_title": "Physical Simulator In-the-Loop",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        151
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Physical Simulator In-the-Loop Video Generation"
+      ]
+    },
+    {
+      "topic_id": 152,
+      "topic_key": "paper:2603.06459",
+      "topic_title": "Do Foundation Models Know",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        152
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Do Foundation Models Know Geometry? Probing Frozen Features for Continuous Physical Measurement"
+      ]
+    },
+    {
+      "topic_id": 153,
+      "topic_key": "paper:2603.06485",
+      "topic_title": "PONTE: Personalized Orchestration",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        153
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "PONTE: Personalized Orchestration for Natural Language Trustworthy Explanations"
+      ]
+    },
+    {
+      "topic_id": 154,
+      "topic_key": "paper:2603.06542",
+      "topic_title": "RAMoEA-QA: Hierarchical",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        154
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "RAMoEA-QA: Hierarchical Specialization for Robust Respiratory Audio Question Answering"
+      ]
+    },
+    {
+      "topic_id": 155,
+      "topic_key": "paper:2603.01511",
+      "topic_title": "Multimodal Mixture-of-Experts",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        155
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Multimodal Mixture-of-Experts with Retrieval Augmentation for Protein Active Site Identification"
+      ]
+    },
+    {
+      "topic_id": 156,
+      "topic_key": "paper:2602.10473",
+      "topic_title": "Why Human Guidance Matters in",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        156
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Why Human Guidance Matters in Collaborative Vibe Coding"
+      ]
+    },
+    {
+      "topic_id": 157,
+      "topic_key": "paper:2602.11247",
+      "topic_title": "Peak + Accumulation",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        157
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Peak + Accumulation: A Proxy-Level Scoring Formula for Multi-Turn LLM Attack Detection"
+      ]
+    },
+    {
+      "topic_id": 158,
+      "topic_key": "paper:2602.13939",
+      "topic_title": "An Adaptive Model Selection",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        158
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "An Adaptive Model Selection Framework for Demand Forecasting under Horizon-Induced"
+      ]
+    },
+    {
+      "topic_id": 159,
+      "topic_key": "paper:2603.01034",
+      "topic_title": "Reparameterized Tensor Ring",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        159
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery"
+      ]
+    },
+    {
+      "topic_id": 160,
+      "topic_key": "paper:2603.02406",
+      "topic_title": "Rigidity-Aware Geometric",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        160
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Rigidity-Aware Geometric Pretraining for Protein Design and Conformational Ensembles"
+      ]
+    },
+    {
+      "topic_id": 161,
+      "topic_key": "paper:2603.03485",
+      "topic_title": "Phys4D: Fine-Grained Physics",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        161
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Phys4D: Fine-Grained Physics-Consistent 4D Modeling from Video Diffusion"
+      ]
+    },
+    {
+      "topic_id": 162,
+      "topic_key": "paper:2603.03992",
+      "topic_title": "Measuring AI R&D Automation",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        162
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Measuring AI R&D Automation"
+      ]
+    },
+    {
+      "topic_id": 163,
+      "topic_key": "paper:2603.04413",
+      "topic_title": "Simulating Meaning, Nevermore!",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        163
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Simulating Meaning, Nevermore! Introducing ICR: A Semiotic-Hermeneutic Metric for"
+      ]
+    },
+    {
+      "topic_id": 164,
+      "topic_key": "paper:2603.05504",
+      "topic_title": "RoboPocket: Improve Robot",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        164
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "RoboPocket: Improve Robot Policies Instantly with Your Phone"
+      ]
+    },
+    {
+      "topic_id": 169,
+      "topic_key": "paper:2603.05653",
+      "topic_title": "The DSA's Blind Spot",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        169
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The DSA's Blind Spot: Algorithmic Audit of Advertising and Minor Profiling on TikTok"
+      ]
+    },
+    {
+      "topic_id": 170,
+      "topic_key": "paper:2603.05887",
+      "topic_title": "Reconstruct! Don't Encode",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        170
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Reconstruct! Don't Encode: Self-Supervised Representation Reconstruction Loss for High"
+      ]
+    },
+    {
+      "topic_id": 171,
+      "topic_key": "paper:2603.05987",
+      "topic_title": "Technical Report",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        171
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Technical Report: Automated Optical Inspection of Surgical Instruments"
+      ]
+    },
+    {
+      "topic_id": 172,
+      "topic_key": "paper:2603.05995",
+      "topic_title": "TADPO: Reinforcement Learning",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        172
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "TADPO: Reinforcement Learning Goes Off-road"
+      ]
+    },
+    {
+      "topic_id": 173,
+      "topic_key": "paper:2603.06272",
+      "topic_title": "Looking Through Glass Box",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        173
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Looking Through Glass Box"
+      ]
+    },
+    {
+      "topic_id": 174,
+      "topic_key": "paper:2603.06351",
+      "topic_title": "Dynamic Chunking Diffusion Transformer",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        174
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Dynamic Chunking Diffusion Transformer"
+      ]
+    },
+    {
+      "topic_id": 175,
+      "topic_key": "paper:2603.06380",
+      "topic_title": "Kinetic-based regularization",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        175
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Kinetic-based regularization: Learning spatial derivatives and PDE applications"
+      ]
+    },
+    {
+      "topic_id": 176,
+      "topic_key": "paper:2603.06413",
+      "topic_title": "A Reference Architecture of",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        176
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "A Reference Architecture of Reinforcement Learning Frameworks"
+      ]
+    },
+    {
+      "topic_id": 177,
+      "topic_key": "paper:2603.06492",
+      "topic_title": "NOBLE: Accelerating Transformers",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        177
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "NOBLE: Accelerating Transformers with Nonlinear Low-Rank Branches"
+      ]
+    },
+    {
+      "topic_id": 178,
+      "topic_key": "paper:2603.06545",
+      "topic_title": "LiveSense: A Real-Time Wi-Fi",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        178
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 68,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "LiveSense: A Real-Time Wi-Fi Sensing Platform for Range-Doppler on COTS Laptop"
+      ]
+    },
+    {
+      "topic_id": 116,
+      "topic_key": "paper-title:nvidia-engineers-agent-inference-planetary-scale-and-speed",
+      "topic_title": "NVIDIA's AI Engineers",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        116
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 67,
+      "avg_candidate_score": 22,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "Latent Space"
+      ],
+      "top_source_groups": [
+        "newsletter"
+      ],
+      "sample_titles": [
+        "NVIDIA's AI Engineers: Agent Inference at Planetary Scale and \"Speed of Light\" — Nader"
+      ]
+    },
+    {
+      "topic_id": 179,
+      "topic_key": "paper-title:ainews-autoresearch-sparks-recursive-self-improvement",
+      "topic_title": "[AINews] Autoresearch",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        179
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 67,
+      "avg_candidate_score": 18,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "Latent Space"
+      ],
+      "top_source_groups": [
+        "newsletter"
+      ],
+      "sample_titles": [
+        "[AINews] Autoresearch: Sparks of Recursive Self Improvement"
+      ]
+    },
+    {
+      "topic_id": 165,
+      "topic_key": "Isaacus法律重排序模型发布",
+      "topic_title": "Isaacus发布专注于法律领域的重排序模型",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        165
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "Isaacus just shipped a new state-of-the-art model, this time focused on reranking for legal"
+      ]
+    },
+    {
+      "topic_id": 181,
+      "topic_key": "Hugging Face上传TensorBoard日志",
+      "topic_title": "Hugging Face社区提示",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        181
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-03-10",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload"
+      ]
+    },
+    {
+      "topic_id": 25,
+      "topic_key": "paper:2603.07980",
+      "topic_title": "\\$OneMillion-Bench",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        25
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 59,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "\\$OneMillion-Bench: How Far are Language Agents from Human Experts?"
+      ]
+    },
+    {
+      "topic_id": 60,
+      "topic_key": "paper:2603.08309",
+      "topic_title": "Concept-Guided Fine-Tuning",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        60
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 59,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness"
+      ]
+    },
+    {
+      "topic_id": 61,
+      "topic_key": "paper:2603.08703",
+      "topic_title": "HiAR: Efficient Autoregressive",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        61
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 59,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "HiAR: Efficient Autoregressive Long Video Generation via Hierarchical Denoising"
+      ]
+    },
+    {
+      "topic_id": 62,
+      "topic_key": "paper:2603.08013",
+      "topic_title": "PIRA-Bench: A Transition from",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        62
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 59,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "PIRA-Bench: A Transition from Reactive GUI Agents to GUI-based Proactive Intent"
+      ]
+    },
+    {
+      "topic_id": 117,
+      "topic_key": "paper:2603.08652",
+      "topic_title": "CoCo: Code as CoT for Text-to",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        117
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 58,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "CoCo: Code as CoT for Text-to-Image Preview and Rare Concept Generation"
+      ]
+    },
+    {
+      "topic_id": 118,
+      "topic_key": "paper:2603.08708",
+      "topic_title": "FVG-PT: Adaptive Foreground View",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        118
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 58,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "FVG-PT: Adaptive Foreground View-Guided Prompt Tuning for Vision-Language Models"
+      ]
+    },
+    {
+      "topic_id": 166,
+      "topic_key": "paper:2603.08660",
+      "topic_title": "How Far Can Unsupervised RLVR",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        166
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 58,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "How Far Can Unsupervised RLVR Scale LLM Training?"
+      ]
+    },
+    {
+      "topic_id": 167,
+      "topic_key": "paper:2603.08589",
+      "topic_title": "CARE-Edit: Condition-Aware",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        167
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 58,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing"
+      ]
+    },
+    {
+      "topic_id": 168,
+      "topic_key": "paper:2603.08709",
+      "topic_title": "Scale Space Diffusion",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        168
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 58,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Scale Space Diffusion"
+      ]
+    },
+    {
+      "topic_id": 180,
+      "topic_key": "paper-title:production-query-plans-without-data",
+      "topic_title": "Production query plans without",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        180
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 57,
+      "avg_candidate_score": 18,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "Simon Willison's Weblog"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "Production query plans without production data"
+      ]
+    },
+    {
+      "topic_id": 119,
+      "topic_key": "paper:2603.07660",
+      "topic_title": "Holi-Spatial",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        119
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-03-08",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence"
+      ]
+    },
+    {
+      "topic_id": 182,
+      "topic_key": "paper:2603.07700",
+      "topic_title": "TDM-R1: Reinforcing Few-Step",
+      "topic_type": "paper",
+      "member_candidate_ids": [
+        182
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-03-08",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "TDM-R1: Reinforcing Few-Step Diffusion Models with Non-Differentiable Reward"
+      ]
+    },
+    {
+      "topic_id": 183,
+      "topic_key": "应对AI幻觉引发的心理学问题",
+      "topic_title": "如何与经历'AI幻觉'的人交谈",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        183
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 14,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "404 Media AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "How to Talk to Someone Experiencing 'AI Psychosis'"
+      ]
+    },
+    {
+      "topic_id": 184,
+      "topic_key": "PragerU AI宣传车活动",
+      "topic_title": "PragerU的AI宣传车活动",
+      "topic_type": "news",
+      "member_candidate_ids": [
+        184
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 14,
+      "newest_pub_date": "2026-03-09",
+      "top_sources": [
+        "404 Media AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "I Visited the ‘Freedom Truck’ to Meet PragerU’s AI Slop Founders"
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 
 import { normalizeDailySummary } from "../../tools/digest.mjs";
 
-test("normalizeDailySummary keeps core papers pure and rumors only from social/HF posts", () => {
+test("normalizeDailySummary keeps core papers pure and removes rumor module", () => {
   const materials = [
     {
       refId: 1,
@@ -62,14 +62,7 @@ test("normalizeDailySummary keeps core papers pure and rumors only from social/H
           refs: [1, 2],
         },
       ],
-      ai_rumor: [
-        {
-          title: "社区帖子线索",
-          summary: "来自论坛个人帖。",
-          credibility: "中",
-          refs: [1, 3],
-        },
-      ],
+      ai_rumor: [],
       ref_translations: [],
     },
     materials
@@ -78,5 +71,6 @@ test("normalizeDailySummary keeps core papers pure and rumors only from social/H
   assert.equal(daily.hotNews.length >= 1, true);
   assert.equal(daily.hotNews.length + daily.otherNews.length <= 10, true);
   assert.deepEqual(daily.coreTech[0].refs, [2]);
-  assert.deepEqual(daily.aiRumor[0].refs, [3]);
+  assert.equal(Array.isArray(daily.aiRumor), true);
+  assert.equal(daily.aiRumor.length, 0);
 });

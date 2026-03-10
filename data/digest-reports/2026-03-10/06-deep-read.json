@@ -1,0 +1,259 @@
+{
+  "run_date": "2026-03-10",
+  "selected_topic_ids": [
+    165,
+    181,
+    183,
+    184,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 10,
+    "base_members_added": 10,
+    "expanded_added": 10,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 25,
+    "final_targets": 20,
+    "global_cap": 30
+  },
+  "deep_read_links": 20,
+  "materials_total": 20,
+  "materials_windowed": 20,
+  "materials_usable": 20,
+  "materials_by_source": {
+    "arXiv cs.AI": 16,
+    "Hugging Face Posts": 2,
+    "404 Media AI": 2
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 165,
+      "topic_title": "Isaacus发布专注于法律领域的重排序模型",
+      "topic_type": "news",
+      "cross_source_score": 60,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 17,
+          "source": "Hugging Face Posts",
+          "link": "https://huggingface.co/posts/abdurrahmanbutler/289843615429566",
+          "title": "Isaacus just shipped a new state-of-the-art model, this time focused on reranking for legal RAG. Although Kanon 2 Embedder already represents the frontier of legal-domain retrieval, we know that not everyone is ready to re-embed their entire corpus. We also knew there was still accuracy left on the table for teams handling highly sensitive legal work. Enter Kanon 2 Reranker: the world’s best legal reranking model. We tested it across both production RAG pipelines and standalone retrieval tasks, and the results were remarkable. Not only does it outperform the competition in a category where there are still very few serious alternatives, it also delivers major retrieval accuracy gains over our standalone embedder. Those improvements translated into exceptional downstream performance. In our final test, we compared Voyage AI by MongoDB 2.5 Rerank with Kanon 2 Reranker on Legal RAG Bench, using identical embedding models, generative models, and pipeline hyperparameters. The only difference was the reranker. The result: Kanon 2 Reranker decisively outperformed Voyage 2.5 Rerank. On holdout questions, the head-to-head margin was one of the most extreme we have seen: for every 1 question Voyage got right and we got wrong, there were 6 questions we got right and Voyage got wrong. We share an example in the blog post where Voyage Rerank actually underperforms Kanon 2 Embedder on its own, delivering the wrong context to the LLM. In that case, not using a reranker at all would have led to the correct answer. All in all, I’m immensely proud of the performance gains we’ve achieved. But as we always say, the best benchmark is your own data. So redeem your free credits, give Kanon 2 Reranker a try, and see firsthand the difference our models can make:",
+          "pub_date": "2026-03-10T06:43:57.000Z",
+          "content": "Isaacus just shipped a new state-of-the-art model, this time focused on reranking for legal RAG.Although Kanon 2 Embedder already represents the frontier of legal-domain retrieval, we know that not everyone is ready to re-embed their entire corpus. We also knew there was still accuracy left on the table for teams handling highly sensitive legal work.Enter Kanon 2 Reranker: the world’s best legal reranking model.We tested it across both production RAG pipelines and standalone retrieval tasks, and the results were remarkable.Not only does it outperform the competition in a category where there a。"
+        }
+      ]
+    },
+    {
+      "topic_id": 181,
+      "topic_title": "Hugging Face社区提示",
+      "topic_type": "news",
+      "cross_source_score": 60,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        18
+      ],
+      "members": [
+        {
+          "ref_id": 18,
+          "source": "Hugging Face Posts",
+          "link": "https://huggingface.co/posts/AINovice2005/333451320002796",
+          "title": "Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload them to HF Hub as event artifacts, they can be viewed instantly. 🚀 I previously remembered this done in the notus model release: Examples: cc:",
+          "pub_date": "2026-03-09T18:17:44.000Z",
+          "content": "Join the conversation Join the community of Machine Learners and AI enthusiasts. Sign Up Back to feed AINovice2005 posted an update about 10 hours ago Post 96 Pro tip: If you are finetuning any model with tensorboard logs enabled, be sure to upload them to HF Hub as event artifacts, they can be viewed instantly. 🚀 I previously remembered this done in the notus model release: argilla/notus-7b-v1Examples: AINovice2005/ModernBERT-base-lora-cicflow-1m-r8 AINovice2005/ModernBERT-base-lora-cicflow-1m-r4 AINovice2005/ModernBERT-base-lora-cicflow-1m-r16cc: @davidberenstein1957 In this post AINovice20。"
+        }
+      ]
+    },
+    {
+      "topic_id": 183,
+      "topic_title": "如何与经历'AI幻觉'的人交谈",
+      "topic_type": "news",
+      "cross_source_score": 49,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        19
+      ],
+      "members": [
+        {
+          "ref_id": 19,
+          "source": "404 Media AI",
+          "link": "https://www.404media.co/ai-psychosis-help-gemini-chatgpt-claude-chatbot-delusions/",
+          "title": "How to Talk to Someone Experiencing 'AI Psychosis'",
+          "pub_date": "Mon, 09 Mar 2026 14:12:22 GMT",
+          "content": "When David saw his friend Michael’s social media post asking for a second opinion on a programming project, he offered to take a look.“He sent me some of the code, and none of it made sense, none of it ran correctly. Or if it did run, it didn't do anything,” David told me. David and his friend’s names have been changed in this story to protect their privacy. “So I'm like, ‘What is this?"
+        }
+      ]
+    },
+    {
+      "topic_id": 184,
+      "topic_title": "PragerU的AI宣传车活动",
+      "topic_type": "news",
+      "cross_source_score": 49,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        20
+      ],
+      "members": [
+        {
+          "ref_id": 20,
+          "source": "404 Media AI",
+          "link": "https://www.404media.co/i-visited-the-freedom-truck-to-meet-pragerus-ai-slop-founders/",
+          "title": "I Visited the ‘Freedom Truck’ to Meet PragerU’s AI Slop Founders",
+          "pub_date": "Mon, 09 Mar 2026 13:26:08 GMT",
+          "content": "In the parking lot of Seven Oaks Element school in South Carolina on one of the first hot days of the year I watched an AI-generated George Washington talk about the American revolution. “Our rights are a gift from God, not a favor from kings or courts,” slop Washington told me. It spoke from a screen that stretched floor to ceiling, trimmed by a fancy frame. The intended effect is to make it appear as if the founding father is a painting come to life, a piece of history talking to the viewer."
+        }
+      ]
+    },
+    {
+      "topic_id": 1,
+      "topic_title": "ESAA-Security",
+      "topic_type": "paper",
+      "cross_source_score": 70,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        1
+      ],
+      "members": [
+        {
+          "ref_id": 1,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.06365",
+          "title": "ESAA-Security: An Event-Sourced, Verifiable Architecture for Agent-Assisted Security Audits of AI-Generated Code",
+          "pub_date": "Mon, 09 Mar 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:AI-assisted software generation has increased development speed, but it has also amplified a persistent engineering problem: systems that are functionally correct may still be structurally insecure. In practice, prompt-based security review with large language models often suffers from uneven coverage, weak reproducibility, unsupported findings, and the absence of an immutable audit trail."
+        }
+      ]
+    },
+    {
+      "topic_id": 2,
+      "topic_title": "Uncertainty Quantification in LLM",
+      "topic_type": "paper",
+      "cross_source_score": 70,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        2
+      ],
+      "members": [
+        {
+          "ref_id": 2,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2602.05073",
+          "title": "Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities",
+          "pub_date": "Mon, 09 Mar 2026 00:00:00 -0400",
+          "content": "Authors:Changdae Oh, Seongheon Park, To Eun Kim, Jiatong Li, Wendi Li, Samuel Yeh, Xuefeng Du, Hamed Hassani, Paul Bogdan, Dawn Song, Sharon Li View PDF HTML (experimental) Abstract:Uncertainty quantification (UQ) for large language models (LLMs) is a key building block for safety guardrails of daily LLM applications. Yet, even as LLM agents are increasingly deployed in highly complex tasks, most UQ research still centers on single-turn question-answering."
+        }
+      ]
+    },
+    {
+      "topic_id": 3,
+      "topic_title": "SEA-TS: Self-Evolving Agent for",
+      "topic_type": "paper",
+      "cross_source_score": 70,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        3
+      ],
+      "members": [
+        {
+          "ref_id": 3,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.04873",
+          "title": "SEA-TS: Self-Evolving Agent for Autonomous Code Generation of Time Series Forecasting Algorithms",
+          "pub_date": "Mon, 09 Mar 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:Accurate time series forecasting underpins decision-making across domains, yet conventional ML development suffers from data scarcity in new deployments, poor adaptability under distribution shift, and diminishing returns from manual iteration. We propose Self-Evolving Agent for Time Series Algorithms (SEA-TS), a framework that autonomously generates, validates, and optimizes forecasting code via an iterative self-evolution loop."
+        }
+      ]
+    },
+    {
+      "topic_id": 4,
+      "topic_title": "IntelliAsk: Learning to Ask High",
+      "topic_type": "paper",
+      "cross_source_score": 70,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        4
+      ],
+      "members": [
+        {
+          "ref_id": 4,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2602.15849",
+          "title": "IntelliAsk: Learning to Ask High-Quality Research Questions via RLVR",
+          "pub_date": "Mon, 09 Mar 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:Peer review relies on substantive, evidence-based questions, yet current LLMs generate surface-level queries that perform worse than human reviewer questions in expert evaluation. To address this gap, we curate a high-quality dataset of reviewer questions from OpenReview and conduct a human preference study where expert annotators evaluate question-paper pairs across three dimensions: effort, evidence, and grounding."
+        }
+      ]
+    },
+    {
+      "topic_id": 5,
+      "topic_title": "Theory of Code Space",
+      "topic_type": "paper",
+      "cross_source_score": 70,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        5
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.00601",
+          "title": "Theory of Code Space: Do Code Agents Understand Software Architecture?",
+          "pub_date": "Mon, 09 Mar 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:AI code agents excel at isolated tasks yet struggle with multi-file software engineering requiring architectural understanding. We introduce Theory of Code Space (ToCS), a benchmark that evaluates whether agents can construct, maintain, and update coherent architectural beliefs during codebase exploration. Agents explore procedurally generated codebases under partial observability -- opening files under a budget -- and periodically externalize their belief state as structured JSON, producing a time-series of architectural understanding."
+        }
+      ]
+    },
+    {
+      "topic_id": 6,
+      "topic_title": "vLLM Semantic Router",
+      "topic_type": "paper",
+      "cross_source_score": 70,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        6
+      ],
+      "members": [
+        {
+          "ref_id": 6,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.04444",
+          "title": "vLLM Semantic Router: Signal Driven Decision Routing for Mixture-of-Modality Models",
+          "pub_date": "Mon, 09 Mar 2026 00:00:00 -0400",
+          "content": "Authors:Xunzhuo Liu, Huamin Chen, Samzong Lu, Yossi Ovadia, Guohong Wen, Hao Wu, Zhengda Tan, Jintao Zhang, Senan Zedan, Yehudit Kerido, Liav Weiss, Haichen Zhang, Bishen Yu, Asaad Balum, Noa Limoy, Abdallah Samara, Baofa Fan, Brent Salisbury, Ryan Cook, Zhijie Wang, Qiping Pan, Rehan Khan, Avishek Goswami, Houston H. Zhang, Shuyi Wang, Ziang Tang, Fang Han, Zohaib Hassan, Jianqiao Zheng, Avinash Changrani View PDF Abstract:As large language models (LLMs) diversify across modalities, capabilities, and cost profiles, the problem of intelligent request routing -- selecting the right model for ea。"
+        }
+      ]
+    }
+  ]
+}

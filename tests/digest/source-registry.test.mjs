@@ -54,12 +54,34 @@ test("source registry contains all required user-requested sources", () => {
     "deepseek",
     "seed",
     "ali-tech",
+    "stepfun",
     "hacker-news-ai",
     "huggingface-posts",
     "huggingface-papers",
     "arxiv-cs-ai",
     "aitnt-papers",
   ].forEach((id) => assert.equal(ids.has(id), true, `${id} missing`));
+});
+
+test("official company channels are configured for auto crawling when available", () => {
+  const registry = loadSourceRegistry(new URL("../../sources.yml", import.meta.url));
+  const expectedAuto = ["minimax", "kimi", "deepseek", "seed", "ali-tech"];
+
+  for (const id of expectedAuto) {
+    const source = registry.sources.find((item) => item.id === id);
+    assert.equal(Boolean(source), true, `${id} missing`);
+    assert.equal(source?.enabled, true, `${id} should be enabled`);
+    assert.equal(source?.mode, "auto", `${id} should be auto`);
+    assert.equal(source?.ingestion_mode, "page_scrape", `${id} should use page_scrape`);
+    assert.equal(Boolean(source?.url), true, `${id} missing url`);
+  }
+});
+
+test("duplicate newsletter source is disabled by default", () => {
+  const registry = loadSourceRegistry(new URL("../../sources.yml", import.meta.url));
+  const techCrunchNewsletter = registry.sources.find((item) => item.id === "techcrunch-newsletter");
+  assert.equal(Boolean(techCrunchNewsletter), true, "techcrunch-newsletter missing");
+  assert.equal(techCrunchNewsletter?.enabled, false);
 });
 
 test("source registry keeps huggingface api configuration", () => {

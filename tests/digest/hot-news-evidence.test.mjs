@@ -7,7 +7,7 @@ function domain(url) {
   return new URL(url).hostname.replace(/^www\./, "");
 }
 
-test("normalizeDailySummary backfills hot news refs to multi-source evidence when possible", () => {
+test("normalizeDailySummary keeps hot news refs in non-paper buckets", () => {
   const materials = [
     {
       refId: 1,
@@ -62,13 +62,9 @@ test("normalizeDailySummary backfills hot news refs to multi-source evidence whe
   );
 
   assert.equal(daily.hotNews.length >= 1, true);
-  const hasMultiSource = daily.hotNews.some((entry) => {
-    const refs = entry.refs || [];
-    if (refs.length < 2) return false;
-    const domains = new Set(refs.map((id) => domain(materials.find((m) => m.refId === id)?.link)));
-    return domains.size >= 2;
-  });
-  assert.equal(hasMultiSource, true);
+  const refs = daily.hotNews[0]?.refs || [];
+  assert.equal(refs.includes(1), true);
+  assert.equal(refs.includes(3), false);
 });
 
 test("normalizeDailySummary rewrites community quick-news template to content narrative", () => {
@@ -136,7 +132,8 @@ test("normalizeDailySummary rewrites community quick-news template to content na
     materials
   );
 
-  const target = (daily.otherNews || []).find((item) => (item.refs || []).includes(1));
+  const merged = [...(daily.hotNews || []), ...(daily.otherNews || [])];
+  const target = merged.find((item) => (item.refs || []).includes(1));
   assert.ok(target);
   assert.doesNotMatch(target.insight || "", /社区来源快讯更新/);
   assert.doesNotMatch(target.narrative || "", /已纳入当日快讯|建议结合原文核对关键细节/);

@@ -55,3 +55,36 @@ npm run admin
 - `hexo-admin` 适合本地编辑
 - GitHub Pages 是静态托管，不支持在线运行 `/admin`
 - 你当前“公网访问阅读”保持 GitHub Pages 即可；编辑建议在本地完成后推送
+
+## 6) Newsletter 手工导入（需订阅邮箱配合）
+
+当某些 newsletter 不能公开抓取时，把当天内容写到：
+
+- `data/inbox-intel/YYYY-MM-DD.yml`
+
+最小字段（必填）：
+
+- `source_id`
+- `title`
+- `url`
+
+推荐补充字段：
+
+- `published_at`
+- `summary`
+
+示例：
+
+```yaml
+items:
+  - source_id: the-information-ai
+    title: "本期标题"
+    url: "https://..."
+    published_at: "2026-03-08T09:00:00+08:00"
+    summary: "重点摘要"
+```
+
+## 7) 发布迭代记录
+
+- 每次准备发布时，更新根目录 `ITERATION_LOG.md`
+- 记录日期与核心改动（3-6 条，简洁说明影响）

@@ -1,0 +1,30 @@
+{
+  "run_date": "2026-03-09",
+  "enabled": true,
+  "anchor_count": 2,
+  "singleton_candidates": 2,
+  "merged": 0,
+  "kept": 2,
+  "invalid_or_low_confidence": 0,
+  "min_confidence": 0.72,
+  "min_topic_score": 68,
+  "max_items": 24,
+  "decisions": [
+    {
+      "candidate_id": 133,
+      "action": "keep",
+      "target_topic_id": null,
+      "confidence": 0.65,
+      "reason": "主体Anthropic与锚点一致，但事件是发布新工具，与锚点中的法律诉讼事件不同，属于不同进展。",
+      "applied": false
+    },
+    {
+      "candidate_id": 134,
+      "action": "keep",
+      "target_topic_id": null,
+      "confidence": 0.55,
+      "reason": "主体Nvidia与锚点OpenAI不同，且事件是发布平台，与锚点中的收购事件不同，属于不同事件。",
+      "applied": false
+    }
+  ]
+}
