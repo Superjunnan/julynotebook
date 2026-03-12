@@ -34,7 +34,6 @@ date: 2026-02-27 16:14:00
 这个文档也很简单，就是一个 markdown 的文件，openai 提供的官方示例：
 
 ````markdown
-```markdown
 # Sample AGENTS.md file
 
 ## Dev environment tips
@@ -51,6 +50,7 @@ date: 2026-02-27 16:14:00
 - Fix any test or type errors until the whole suite is green.
 - After moving files or changing imports, run `pnpm lint --filter <project_name>` to be sure ESLint and TypeScript rules still pass.
 - Add or update tests for the code you change, even if nobody asked.
+```
 
 ## PR instructions
 - Title format: [<project_name>] <Title>
@@ -136,4 +136,3 @@ date: 2026-02-27 16:14:00
 - **2）动态页面（含接口交互服务等）**：计划中，后续会持续更新；
 
 # vibe coding
-```

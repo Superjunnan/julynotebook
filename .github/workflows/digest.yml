@@ -24,15 +24,22 @@ jobs:
       ZHIPU_MODEL: glm-4.7-flash
       DIGEST_TZ: Asia/Shanghai
       DIGEST_POST_TIME: "04:10:00"
+      DIGEST_LLM_MAX_CONCURRENCY: "2"
+      DIGEST_LLM_MIN_INTERVAL_MS: "10000"
+      DIGEST_LLM_INTERVAL_JITTER_MS: "600"
+      DIGEST_LLM_CACHE_RETENTION_DAYS: "45"
+      DIGEST_CI_MAX_ATTEMPTS: "3"
+      DIGEST_CI_RETRY_BASE_DELAY_MS: "20000"
+      DIGEST_CI_RETRY_MAX_DELAY_MS: "90000"
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "20"
           cache: "npm"
@@ -40,22 +47,35 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
 
-      - name: Run digest
-        run: npm run digest
-
-      - name: Resolve digest file path
-        id: digest_file
+      - name: Resolve digest run metadata
+        id: digest_meta
         run: |
           DIGEST_DATE="$(TZ="${DIGEST_TZ:-Asia/Shanghai}" date +%F)"
           echo "date=${DIGEST_DATE}" >> "$GITHUB_OUTPUT"
           echo "path=source/_posts/digest-${DIGEST_DATE}.md" >> "$GITHUB_OUTPUT"
+          echo "reports_dir=data/digest-reports/${DIGEST_DATE}" >> "$GITHUB_OUTPUT"
+
+      - name: Run digest
+        run: npm run digest:ci
+
+      - name: Upload digest diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: digest-debug-${{ steps.digest_meta.outputs.date }}
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            ${{ steps.digest_meta.outputs.reports_dir }}
+            data/digest-cache.json
+            ${{ steps.digest_meta.outputs.path }}
 
       # 把生成的 digest 和抓取缓存提交回仓库（更省调用、更稳）
       - name: Commit digest + cache
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          DIGEST_PATH="${{ steps.digest_file.outputs.path }}"
+          DIGEST_PATH="${{ steps.digest_meta.outputs.path }}"
           if [ -f "$DIGEST_PATH" ]; then
             git add "$DIGEST_PATH"
           else

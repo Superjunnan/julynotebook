@@ -141,7 +141,7 @@ const ARXIV_MAX_AGE_DAYS = readPositiveIntEnv("DIGEST_ARXIV_MAX_AGE_DAYS", 45);
 const HOT_NEWS_MIN = readPositiveIntEnv("DIGEST_HOT_NEWS_MIN", 3);
 const HOT_NEWS_MAX = readPositiveIntEnv("DIGEST_HOT_NEWS_MAX", 4);
 const QUICK_NEWS_MIN = readPositiveIntEnv("DIGEST_QUICK_NEWS_MIN", 5);
-const QUICK_NEWS_MAX = readPositiveIntEnv("DIGEST_QUICK_NEWS_MAX", 8);
+const QUICK_NEWS_MAX = readPositiveIntEnv("DIGEST_QUICK_NEWS_MAX", 15);
 const SINGLETON_RECLUSTER_ENABLED = String(process.env.DIGEST_SINGLETON_RECLUSTER_ENABLED || "1").trim() !== "0";
 const SINGLETON_RECLUSTER_MAX_ITEMS = readPositiveIntEnv("DIGEST_SINGLETON_RECLUSTER_MAX_ITEMS", 24);
 const SINGLETON_RECLUSTER_ANCHOR_MAX = readPositiveIntEnv("DIGEST_SINGLETON_RECLUSTER_ANCHOR_MAX", 12);
@@ -163,6 +163,10 @@ const TIMEOUT_ZHIPU_MS = readPositiveIntEnv("DIGEST_TIMEOUT_ZHIPU_MS", 120_000);
 
 // 抓网页正文的并发（只是抓网页，不是大模型并发）
 const FETCH_CONCURRENCY = 4;
+const DETAIL_ENRICH_FETCH_CONCURRENCY = readPositiveIntEnv(
+  "DIGEST_DETAIL_ENRICH_FETCH_CONCURRENCY",
+  FETCH_CONCURRENCY
+);
 
 // 一次性把内容丢给大模型会很长，所以每条正文只保留前面这么多字符（控制 token）
 const PER_ARTICLE_MAX_CHARS = 1800;
@@ -174,9 +178,11 @@ const LLM_MAX_RETRIES = 6;
 const LLM_MIN_INTERVAL_MS = readPositiveIntEnv("DIGEST_LLM_MIN_INTERVAL_MS", 8000);
 const LLM_MAX_CONCURRENCY = Math.max(
   1,
-  Math.min(2, readPositiveIntEnv("DIGEST_LLM_MAX_CONCURRENCY", 1))
+  Math.min(2, readPositiveIntEnv("DIGEST_LLM_MAX_CONCURRENCY", 2))
 );
 const LLM_INTERVAL_JITTER_MS = readPositiveIntEnv("DIGEST_LLM_INTERVAL_JITTER_MS", 400);
+const LLM_CACHE_RETENTION_DAYS = readPositiveIntEnv("DIGEST_LLM_CACHE_RETENTION_DAYS", 45);
+const LLM_FORCE_REFRESH = String(process.env.DIGEST_LLM_FORCE_REFRESH || "").trim() === "1";
 
 // 缓存保留天数（避免 cache 无限制膨胀）
 const CACHE_RETENTION_DAYS = Number(process.env.DIGEST_CACHE_RETENTION_DAYS || 14);
@@ -198,6 +204,17 @@ const NEWS_LOOKBACK_DAYS_DEFAULT = readPositiveIntEnv("DIGEST_NEWS_LOOKBACK_DAYS
 const PAPER_LOOKBACK_DAYS_DEFAULT = readPositiveIntEnv("DIGEST_PAPER_LOOKBACK_DAYS", 2);
 const CLUSTER_INPUT_CAP_NEWS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_NEWS", 100);
 const CLUSTER_INPUT_CAP_PAPERS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_PAPERS", 160);
+
+const DIGEST_NEWS_RULES = Object.freeze({
+  hotMin: 0,
+  hotMax: 4,
+  quickMin: 0,
+  quickMax: 15,
+  totalMin: 3,
+  totalMax: 15,
+  coreTechMin: 3,
+  coreTechMax: 6,
+});
 
 /* ==============================
  *  3) 工具函数（读写/时间/超时等）
@@ -243,6 +260,19 @@ function isDnsResolutionError(err) {
 
 function sha256Hex(s) {
   return crypto.createHash("sha256").update(String(s || "")).digest("hex");
+}
+
+function stableJsonStringify(value) {
+  if (value === null || typeof value !== "object") {
+    return JSON.stringify(value);
+  }
+  if (Array.isArray(value)) {
+    return `[${value.map((item) => stableJsonStringify(item)).join(",")}]`;
+  }
+
+  const keys = Object.keys(value).sort();
+  const pairs = keys.map((key) => `${JSON.stringify(key)}:${stableJsonStringify(value[key])}`);
+  return `{${pairs.join(",")}}`;
 }
 
 function formatDateISO(d) {
@@ -335,7 +365,7 @@ function buildIsoDate(year, month, day) {
   return `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
 }
 
-function inferPubDateFromUrlAndTitle(url, title = "") {
+export function inferPubDateFromUrlAndTitle(url, title = "") {
   const raw = `${String(url || "")} ${String(title || "")}`;
 
   const ymdMatch = raw.match(/(20\d{2})[\/._-](\d{1,2})[\/._-](\d{1,2})/);
@@ -344,7 +374,7 @@ function inferPubDateFromUrlAndTitle(url, title = "") {
     if (iso) return iso;
   }
 
-  const zhMatch = raw.match(/(20\d{2})年(\d{1,2})月(\d{1,2})日?/);
+  const zhMatch = raw.match(/(20\d{2})年(\d{1,2})月(\d{1,2})(?:日|号)?/);
   if (zhMatch) {
     const iso = buildIsoDate(zhMatch[1], zhMatch[2], zhMatch[3]);
     if (iso) return iso;
@@ -450,7 +480,7 @@ function isStaleArxivLink(url, nowMs = Date.now()) {
   return ageMs > ARXIV_MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
 }
 
-function extractPublishedDateFromHtml(html, url, title = "") {
+export function extractPublishedDateFromHtml(html, url, title = "") {
   const root = parse(String(html || ""));
 
   const metaSelectors = [
@@ -495,6 +525,10 @@ function extractPublishedDateFromHtml(html, url, title = "") {
   const textDate = inferPubDateFromUrlAndTitle(textSample, title);
   if (textDate) return textDate;
 
+  const htmlSample = String(html || "").replace(/\s+/g, " ").slice(0, 8000);
+  const htmlDate = inferPubDateFromUrlAndTitle(htmlSample, title);
+  if (htmlDate) return htmlDate;
+
   return inferPubDateFromUrlAndTitle(url, title);
 }
 
@@ -533,11 +567,89 @@ function normalizeCache(raw) {
   const x = raw && typeof raw === "object" ? raw : {};
   const fetched = x.fetched && typeof x.fetched === "object" ? x.fetched : {};
   const daily = x.daily && typeof x.daily === "object" ? x.daily : {};
+  const llm = x.llm && typeof x.llm === "object" ? x.llm : {};
   const published = x.published && typeof x.published === "object" ? x.published : {};
   const publishedSignatures = x.publishedSignatures && typeof x.publishedSignatures === "object"
     ? x.publishedSignatures
     : {};
-  return { version: 4, fetched, daily, published, publishedSignatures };
+  return { version: 5, fetched, daily, llm, published, publishedSignatures };
+}
+
+function persistDigestCache(cache, filePath = CACHE_PATH) {
+  if (!cache || typeof cache !== "object") return;
+  cache.fetched = pruneByAtDate(cache.fetched, CACHE_RETENTION_DAYS);
+  cache.daily = pruneByAtDate(cache.daily, DAILY_RETENTION_DAYS);
+  cache.llm = pruneByAtDate(cache.llm, LLM_CACHE_RETENTION_DAYS);
+  cache.published = pruneByAtDate(cache.published, DAILY_RETENTION_DAYS);
+  cache.publishedSignatures = pruneByAtDate(cache.publishedSignatures, DAILY_RETENTION_DAYS);
+  safeWriteJson(filePath, cache);
+}
+
+function attachDigestCachePersistence(cache, filePath = CACHE_PATH) {
+  if (!cache || typeof cache !== "object") return cache;
+  Object.defineProperty(cache, "__persistDigestCache", {
+    value: () => persistDigestCache(cache, filePath),
+    enumerable: false,
+    configurable: true,
+    writable: true,
+  });
+  return cache;
+}
+
+function bestEffortPersistDigestCache(cache, reason = "runtime") {
+  const persist = cache?.__persistDigestCache;
+  if (typeof persist !== "function") return false;
+  try {
+    persist();
+    return true;
+  } catch (error) {
+    console.warn(`[warn] digest cache 持久化失败（${reason}）：${error?.message || error}`);
+    return false;
+  }
+}
+
+function serializeErrorForAudit(error) {
+  if (!error || typeof error !== "object") {
+    return { message: String(error || "unknown error") };
+  }
+  const cause = error?.cause;
+  return {
+    name: String(error?.name || "Error"),
+    message: String(error?.message || "unknown error"),
+    stack: String(error?.stack || "").slice(0, 8000),
+    cause: cause
+      ? {
+        name: String(cause?.name || ""),
+        message: String(cause?.message || String(cause || "")),
+        code: String(cause?.code || ""),
+      }
+      : null,
+  };
+}
+
+function buildRuntimeEnvAuditSnapshot() {
+  return {
+    digest_tz: DIGEST_TZ,
+    runtime_tz: RUN_TZ,
+    digest_post_time: DIGEST_POST_TIME,
+    zhipu_model: String(process.env.ZHIPU_MODEL || "glm-4.7-flash").trim(),
+    llm_max_concurrency: LLM_MAX_CONCURRENCY,
+    llm_min_interval_ms: LLM_MIN_INTERVAL_MS,
+    llm_interval_jitter_ms: LLM_INTERVAL_JITTER_MS,
+    llm_cache_retention_days: LLM_CACHE_RETENTION_DAYS,
+    timeout_zhipu_ms: TIMEOUT_ZHIPU_MS,
+  };
+}
+
+let activeDigestCache = null;
+
+function writeRuntimeErrorReport(dateISO, error) {
+  return writeAuditReport(dateISO, "99-runtime-error", {
+    run_date: dateISO,
+    error: serializeErrorForAudit(error),
+    llm_stats: snapshotLlmRuntimeStats(),
+    runtime: buildRuntimeEnvAuditSnapshot(),
+  });
 }
 
 function pruneByAtDate(obj, retentionDays) {
@@ -1452,6 +1564,123 @@ function scoreItem(item, weight, boostKeywords) {
 
   if (item.pubDate) s += 1;
   return s;
+}
+
+function shouldEnrichCandidateBeforeScoring(item) {
+  if (!item || typeof item !== "object") return false;
+  if (String(item?.ingestionMode || "").trim().toLowerCase() !== "page_scrape") return false;
+  if (!safeHttpUrl(item?.link || "")) return false;
+
+  const hasPubDate = Boolean(formatPubDate(item?.pubDate || ""));
+  const snippet = clipToSentence(finalizeReadableText(item?.contentSnippet || ""), 150);
+  return !hasPubDate || !snippet;
+}
+
+function applyDetailEnrichmentToCandidate(item, enrichment = {}, boostKeywords = []) {
+  if (!item || typeof item !== "object") return item;
+
+  const snippet = clipToSentence(
+    finalizeReadableText(enrichment?.text || enrichment?.lead || ""),
+    150
+  );
+  const pubDate = formatPubDate(enrichment?.pubDate || "");
+
+  if (snippet) {
+    item.contentSnippet = snippet;
+  }
+  if (pubDate) {
+    item.pubDate = pubDate;
+  }
+
+  item.score = scoreItem(item, item.weight, boostKeywords);
+  return item;
+}
+
+export async function enrichCandidatesBeforeScoring(candidates, cache, options = {}) {
+  const boostKeywords = Array.isArray(options?.boostKeywords) ? options.boostKeywords : [];
+  const nextCandidates = (candidates || []).map((item) => ({ ...item }));
+  const stats = {
+    total_candidates: nextCandidates.length,
+    eligible: 0,
+    enriched: 0,
+    cache_hits: 0,
+    fetched: 0,
+    updated_pub_dates: 0,
+    updated_snippets: 0,
+  };
+
+  const eligible = nextCandidates.filter(shouldEnrichCandidateBeforeScoring);
+  stats.eligible = eligible.length;
+  if (!eligible.length) {
+    return { candidates: nextCandidates, stats };
+  }
+
+  const tasks = eligible.map((item) => async () => {
+    const cacheKey = normalizeCandidateUrl(item.link) || item.link;
+    const cachedEntry = cache?.fetched?.[cacheKey] || cache?.fetched?.[item.link];
+    if (cachedEntry?.text || cachedEntry?.pubDate) {
+      return {
+        link: item.link,
+        text: String(cachedEntry.text || ""),
+        pubDate: formatPubDate(cachedEntry.pubDate || "") || "",
+        from_cache: true,
+      };
+    }
+
+    try {
+      const { title, text, pubDate } = await extractArticleText(item.link);
+      const finalTitle = (item.title || title || item.link).trim();
+      const finalPubDate =
+        item.pubDate ||
+        pubDate ||
+        inferPubDateFromUrlAndTitle(item.link, finalTitle) ||
+        null;
+
+      if (!cache?.fetched) cache.fetched = {};
+      cache.fetched[cacheKey] = {
+        title: finalTitle,
+        text: String(text || "").slice(0, PER_ARTICLE_MAX_CHARS),
+        pubDate: finalPubDate,
+        at: todayISO(),
+      };
+
+      return {
+        link: item.link,
+        text: String(text || ""),
+        pubDate: formatPubDate(finalPubDate || "") || "",
+        from_cache: false,
+      };
+    } catch {
+      return null;
+    }
+  });
+
+  const rows = await runWithConcurrency(tasks, DETAIL_ENRICH_FETCH_CONCURRENCY);
+  const byLink = new Map(
+    nextCandidates
+      .filter((item) => item?.link)
+      .map((item) => [normalizeCandidateUrl(item.link) || item.link, item])
+  );
+
+  for (const row of rows || []) {
+    if (!row?.link) continue;
+    const target = byLink.get(normalizeCandidateUrl(row.link) || row.link);
+    if (!target) continue;
+
+    const beforePubDate = formatPubDate(target.pubDate || "");
+    const beforeSnippet = clipToSentence(finalizeReadableText(target.contentSnippet || ""), 150);
+    applyDetailEnrichmentToCandidate(target, row, boostKeywords);
+    const afterPubDate = formatPubDate(target.pubDate || "");
+    const afterSnippet = clipToSentence(finalizeReadableText(target.contentSnippet || ""), 150);
+
+    if (afterPubDate && afterPubDate !== beforePubDate) stats.updated_pub_dates += 1;
+    if (afterSnippet && afterSnippet !== beforeSnippet) stats.updated_snippets += 1;
+    if (afterPubDate || afterSnippet) stats.enriched += 1;
+    if (row.from_cache) stats.cache_hits += 1;
+    else stats.fetched += 1;
+  }
+
+  return { candidates: nextCandidates, stats };
 }
 
 const AI_SIGNAL_REGEXES = [
@@ -3107,8 +3336,8 @@ export function normalizeDailySummary(rawDaily, materials) {
 
   // 公开约束：重点资讯是多源话题叙事；其他快讯可容纳高价值单源信息；核心论文 3~6。
   let mergedNews = [...hotNews, ...otherNews];
-  const hotMax = Math.max(1, HOT_NEWS_MAX);
-  const quickMax = Math.max(1, QUICK_NEWS_MAX);
+  const hotMax = Math.max(1, Math.min(DIGEST_NEWS_RULES.hotMax, HOT_NEWS_MAX));
+  const quickMax = Math.max(1, Math.min(DIGEST_NEWS_RULES.quickMax, QUICK_NEWS_MAX));
 
   const rankedNews = mergedNews
     .slice()
@@ -3127,18 +3356,30 @@ export function normalizeDailySummary(rawDaily, materials) {
   }
 
   const selectedHotKeys = new Set(nextHot.map((entry) => normalizeHotNewsKey(entry)));
-  const nextOther = rankedNews
+  let nextOther = rankedNews
     .filter((entry) => !selectedHotKeys.has(normalizeHotNewsKey(entry)))
     .filter((entry) => qualifiesForQuickNewsEntry(entry, idToItem))
-    .slice(0, quickMax);
+    .slice(0, Math.max(0, Math.min(quickMax, DIGEST_NEWS_RULES.totalMax - nextHot.length)));
 
-  if (coreTech.length < 3) {
+  if (nextHot.length + nextOther.length < DIGEST_NEWS_RULES.totalMin) {
+    const selectedKeys = new Set(
+      [...nextHot, ...nextOther].map((entry) => normalizeHotNewsKey(entry))
+    );
+    const backfill = rankedNews
+      .filter((entry) => !selectedKeys.has(normalizeHotNewsKey(entry)))
+      .filter((entry) => Array.isArray(entry?.refs) && entry.refs.length > 0)
+      .filter((entry) => !isLowValueCommunityEntry(entry, idToItem))
+      .slice(0, Math.max(0, DIGEST_NEWS_RULES.totalMin - nextHot.length - nextOther.length));
+    nextOther = [...nextOther, ...backfill];
+  }
+
+  if (coreTech.length < DIGEST_NEWS_RULES.coreTechMin) {
     const usedCoreRef = new Set(coreTech.flatMap((x) => x.refs || []));
     const extraPapers = (materials || [])
       .filter((m) => m && isPaperLikeMaterial(m) && !newsRefSet.has(m.refId) && !usedCoreRef.has(m.refId))
       .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
     for (const paper of extraPapers) {
-      if (coreTech.length >= 3) break;
+      if (coreTech.length >= DIGEST_NEWS_RULES.coreTechMin) break;
       coreTech.push({
         title: sanitizePaperTitle(finalizeReadableText(refTranslations[paper.refId] || paper.title || ""), "论文进展"),
         summary: clipToSentence(pickMaterialEvidenceSnippet(paper), 180),
@@ -3147,7 +3388,7 @@ export function normalizeDailySummary(rawDaily, materials) {
       });
     }
   }
-  coreTech = coreTech.slice(0, 6);
+  coreTech = coreTech.slice(0, DIGEST_NEWS_RULES.coreTechMax);
 
   const overviewSeed = redactUrlLike(x?.day_overview || x?.overview || "");
   const daily = {
@@ -3247,9 +3488,73 @@ function isTransientModelServerError(e) {
   );
 }
 
+function isTransientNetworkError(e) {
+  const msg = String(e?.message || "");
+  const code = String(e?.cause?.code || e?.code || "").toUpperCase();
+  return (
+    code === "ETIMEDOUT" ||
+    code === "ECONNRESET" ||
+    code === "EPIPE" ||
+    code === "UND_ERR_CONNECT_TIMEOUT" ||
+    code === "UND_ERR_HEADERS_TIMEOUT" ||
+    code === "UND_ERR_SOCKET" ||
+    msg.includes("AbortError") ||
+    msg.includes("aborted") ||
+    msg.includes("timed out") ||
+    msg.includes("fetch failed")
+  );
+}
+
+const llmRuntimeStats = {
+  cache_hits: 0,
+  cache_misses: 0,
+  live_calls: 0,
+  retry_count: 0,
+  rate_limit_errors: 0,
+  transient_errors: 0,
+  timeout_errors: 0,
+};
+
 let llmInFlight = 0;
 let llmNextAllowedAt = 0;
+let llmFailureStreak = 0;
 const llmSlotWaiters = [];
+
+function recordLlmRetry(error) {
+  llmRuntimeStats.retry_count += 1;
+  if (isRateLimitError(error)) {
+    llmRuntimeStats.rate_limit_errors += 1;
+  } else if (isTransientNetworkError(error) && /abort|timed out/i.test(String(error?.message || ""))) {
+    llmRuntimeStats.timeout_errors += 1;
+  } else {
+    llmRuntimeStats.transient_errors += 1;
+  }
+}
+
+function extendLlmCooldown(waitMs) {
+  llmFailureStreak += 1;
+  const multiplier = Math.min(4, llmFailureStreak);
+  const cooldown = Math.min(60_000, Math.max(waitMs, LLM_MIN_INTERVAL_MS) * multiplier);
+  llmNextAllowedAt = Math.max(llmNextAllowedAt, Date.now() + cooldown);
+}
+
+function resetLlmFailureStreak() {
+  llmFailureStreak = 0;
+}
+
+function snapshotLlmRuntimeStats() {
+  return { ...llmRuntimeStats };
+}
+
+export function buildLlmCacheKey({ operation, model, messages, extra = null }) {
+  return sha256Hex(stableJsonStringify({
+    version: 1,
+    operation: String(operation || "").trim(),
+    model: String(model || "").trim(),
+    messages: Array.isArray(messages) ? messages : [],
+    extra,
+  }));
+}
 
 async function acquireLlmSlot() {
   if (llmInFlight < LLM_MAX_CONCURRENCY) {
@@ -3282,24 +3587,38 @@ async function enforceLlmRequestPacing() {
   }
 }
 
-// 指数退避重试：1.5s、3s、6s、12s…最多等到 20s
-async function withRateLimitRetry(fn) {
+// 指数退避重试：1.5s、3s、6s、12s…最多等到 30s
+async function withRateLimitRetry(fn, options = {}) {
+  const sleepFn = typeof options?.sleepFn === "function" ? options.sleepFn : sleep;
+  const minIntervalMs = Number.isFinite(options?.minIntervalMs) ? Number(options.minIntervalMs) : LLM_MIN_INTERVAL_MS;
+  const maxWaitMs = Number.isFinite(options?.maxWaitMs) ? Number(options.maxWaitMs) : 30_000;
+  const onRetry = typeof options?.onRetry === "function" ? options.onRetry : null;
   let attempt = 0;
   while (true) {
     try {
-      return await fn();
+      const out = await fn();
+      resetLlmFailureStreak();
+      return out;
     } catch (e) {
       attempt += 1;
-      const retryable = isRateLimitError(e) || isTransientModelServerError(e);
+      const retryable = isRateLimitError(e) || isTransientModelServerError(e) || isTransientNetworkError(e);
       if (!retryable || attempt > LLM_MAX_RETRIES) throw e;
 
-      const base = Math.max(1500 * Math.pow(2, attempt - 1), Math.floor(LLM_MIN_INTERVAL_MS * 0.75));
+      const base = Math.max(1500 * Math.pow(2, attempt - 1), Math.floor(minIntervalMs * 0.75));
       const jitter = Math.floor(Math.random() * 600);
-      const wait = Math.min(base + jitter, 30000);
+      const wait = Math.min(base + jitter, maxWaitMs);
 
-      const reason = isRateLimitError(e) ? "429 限流" : "模型服务瞬时错误";
+      recordLlmRetry(e);
+      extendLlmCooldown(wait);
+      if (onRetry) onRetry({ attempt, error: e, waitMs: wait });
+
+      const reason = isRateLimitError(e)
+        ? "429 限流"
+        : isTransientNetworkError(e)
+          ? "网络/超时瞬时错误"
+          : "模型服务瞬时错误";
       console.warn(`[retry] 触发${reason}，第${attempt}次重试，等待 ${wait}ms`);
-      await sleep(wait);
+      await sleepFn(wait);
     }
   }
 }
@@ -3341,6 +3660,45 @@ function composeClusterText({ title, snippet, lead = "" }) {
       ? `${baseTitle} ${baseSnippet}`.trim()
       : `${baseTitle} ${baseSnippet} ${baseLead}`.trim();
   return clipToSentence(joined || baseTitle || baseSnippet || baseLead || "", CLUSTER_TEXT_MAX_CHARS);
+}
+
+export function applyClusterEnrichmentToCard(card, enrichment = {}, boostKeywords = []) {
+  if (!card || typeof card !== "object") return card;
+
+  const lead = clipToSentence(
+    finalizeReadableText(enrichment?.lead || ""),
+    Math.min(CLUSTER_ENRICH_MAX_CHARS, 150)
+  );
+  const pubDate = formatPubDate(enrichment?.pubDate || "");
+  const baseItem = card._item && typeof card._item === "object"
+    ? card._item
+    : {
+      title: card.title || "",
+      contentSnippet: card.snippet || "",
+      pubDate: card.pub_date || null,
+      trustTier: card.trust_tier || "",
+      weight: 0,
+      sourceGroup: card.source_group || "",
+      link: card.link || "",
+    };
+
+  if (lead) {
+    card.snippet = lead;
+    baseItem.contentSnippet = lead;
+  }
+  if (pubDate) {
+    card.pub_date = pubDate;
+    baseItem.pubDate = pubDate;
+  }
+
+  card._item = baseItem;
+  card.cluster_text = composeClusterText({
+    title: card.title,
+    snippet: card.snippet || "",
+    lead: "",
+  });
+  card.score = scoreItem(baseItem, baseItem.weight, boostKeywords);
+  return card;
 }
 
 function getPaperCanonicalKey(card) {
@@ -3433,8 +3791,9 @@ function buildCandidateCardsForClustering(candidates, options = {}) {
   });
 }
 
-async function enrichCandidateCardsForClustering(cards, cache) {
+async function enrichCandidateCardsForClustering(cards, cache, options = {}) {
   const nextCards = cards.map((c) => ({ ...c }));
+  const boostKeywords = Array.isArray(options?.boostKeywords) ? options.boostKeywords : [];
   const textMode = normalizeClusterTextMode(CLUSTER_TEXT_MODE);
   const enrichMode = normalizeClusterEnrichMode(CLUSTER_ENRICH_MODE);
   const stats = {
@@ -3508,7 +3867,13 @@ async function enrichCandidateCardsForClustering(cards, cache) {
       if (cachedEntry?.text) {
         const lead = clipToSentence(finalizeReadableText(String(cachedEntry.text || "").slice(0, CLUSTER_ENRICH_MAX_CHARS * 2)), CLUSTER_ENRICH_MAX_CHARS);
         if (lead && lead.length >= 60) {
-          return { candidate_id: card.candidate_id, lead, from_cache: true, fetched: false };
+          return {
+            candidate_id: card.candidate_id,
+            lead,
+            pubDate: formatPubDate(cachedEntry.pubDate || "") || "",
+            from_cache: true,
+            fetched: false,
+          };
         }
       }
 
@@ -3530,7 +3895,13 @@ async function enrichCandidateCardsForClustering(cards, cache) {
       };
 
       if (lead && lead.length >= 60) {
-        return { candidate_id: card.candidate_id, lead, from_cache: false, fetched: true };
+        return {
+          candidate_id: card.candidate_id,
+          lead,
+          pubDate: formatPubDate(finalPubDate || "") || "",
+          from_cache: false,
+          fetched: true,
+        };
       }
       return null;
     } catch {
@@ -3543,11 +3914,14 @@ async function enrichCandidateCardsForClustering(cards, cache) {
     if (!row || !row.candidate_id || !row.lead) continue;
     const target = cardById.get(row.candidate_id);
     if (!target) continue;
-    target.cluster_text = composeClusterText({
-      title: target.title,
-      snippet: target.snippet,
-      lead: row.lead,
-    });
+    applyClusterEnrichmentToCard(
+      target,
+      {
+        lead: row.lead,
+        pubDate: row.pubDate || target.pub_date || target?._item?.pubDate || "",
+      },
+      boostKeywords
+    );
     stats.enriched += 1;
     if (row.from_cache) stats.cache_hits += 1;
     if (row.fetched) stats.fetched += 1;
@@ -3620,7 +3994,7 @@ function normalizeClusterAssignments(rows, cards) {
   return out;
 }
 
-async function requestClusterAssignmentsChunk(chunk, model) {
+async function requestClusterAssignmentsChunk(chunk, model, cache) {
   const system = `
 你是资讯聚类分析师。任务：把候选条目归并为“同一事件/同一论文主题”。
 只输出 JSON，不要解释。
@@ -3658,13 +4032,15 @@ async function requestClusterAssignmentsChunk(chunk, model) {
 ${JSON.stringify(payload)}
 `.trim();
 
-  const content = await withRateLimitRetry(() => zhipuChatCompletion({
+  const { content } = await requestDigestLlmJson({
+    cache,
+    operation: "cluster_assignments_chunk",
     model,
     messages: [
       { role: "system", content: system },
       { role: "user", content: prompt },
     ],
-  }));
+  });
   let parsed = null;
   try {
     parsed = safeParseJsonObject(content);
@@ -3674,7 +4050,7 @@ ${JSON.stringify(payload)}
   return normalizeClusterAssignments(parsed?.assignments || [], chunk);
 }
 
-async function clusterCandidateCardsWithLLM(cards) {
+async function clusterCandidateCardsWithLLM(cards, cache) {
   if (!cards.length) return { assignments: [], chunks: [] };
   const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
   const newsCards = cards.filter((c) => !isPaperCandidateCard(c));
@@ -3686,7 +4062,7 @@ async function clusterCandidateCardsWithLLM(cards) {
   if (newsCards.length > 0) {
     for (let i = 0; i < chunks.length; i += 1) {
       const chunk = chunks[i];
-      let normalized = await requestClusterAssignmentsChunk(chunk, model);
+      let normalized = await requestClusterAssignmentsChunk(chunk, model, cache);
 
       const fallbackIds = normalized.filter((x) => x.fallback).map((x) => Number(x.candidate_id));
       if (
@@ -3700,7 +4076,7 @@ async function clusterCandidateCardsWithLLM(cards) {
         const recoveryChunks = splitIntoChunks(missingCards, recoverySize).slice(0, maxRecoveryCalls);
         const recovered = [];
         for (const smallChunk of recoveryChunks) {
-          const partial = await requestClusterAssignmentsChunk(smallChunk, model);
+          const partial = await requestClusterAssignmentsChunk(smallChunk, model, cache);
           recovered.push(...partial.filter((x) => !x.fallback));
         }
         if (recovered.length > 0) {
@@ -3745,7 +4121,7 @@ async function clusterCandidateCardsWithLLM(cards) {
   };
 }
 
-async function mergeTopicRowsWithLLM(rows, model) {
+async function mergeTopicRowsWithLLM(rows, model, cache) {
   if (!rows.length) return {};
   const system = `
 你是资讯归并编辑。任务：把语义重复的 topic_key 合并到统一 key。
@@ -3769,13 +4145,15 @@ async function mergeTopicRowsWithLLM(rows, model) {
 ${JSON.stringify(rows)}
 `.trim();
 
-  const content = await withRateLimitRetry(() => zhipuChatCompletion({
+  const { content } = await requestDigestLlmJson({
+    cache,
+    operation: "merge_topic_rows",
     model,
     messages: [
       { role: "system", content: system },
       { role: "user", content: prompt },
     ],
-  }));
+  });
   let parsed = null;
   try {
     parsed = safeParseJsonObject(content);
@@ -3807,7 +4185,7 @@ function compactTopicBucketForMerge(key, bucket) {
   };
 }
 
-async function mergeTopicKeysWithLLM(topicBuckets) {
+async function mergeTopicKeysWithLLM(topicBuckets, cache) {
   const entries = Object.entries(topicBuckets || {});
   if (entries.length <= 1) {
     const mapping = {};
@@ -3841,7 +4219,7 @@ async function mergeTopicKeysWithLLM(topicBuckets) {
     const roundMap = {};
 
     for (const chunk of chunks) {
-      const chunkMap = await mergeTopicRowsWithLLM(chunk, model);
+      const chunkMap = await mergeTopicRowsWithLLM(chunk, model, cache);
       for (const row of chunk) {
         const key = row.topic_key;
         const mapped = chunkMap[key];
@@ -4034,7 +4412,7 @@ function buildTopicBucketsFromAssignments(assignments, candidateCards) {
   return topicBuckets;
 }
 
-async function buildMergedKeyMapping(topicBuckets) {
+async function buildMergedKeyMapping(topicBuckets, cache) {
   const newsBuckets = {};
   const paperBuckets = {};
   for (const [key, bucket] of Object.entries(topicBuckets || {})) {
@@ -4045,7 +4423,7 @@ async function buildMergedKeyMapping(topicBuckets) {
     }
   }
 
-  const mergedNewsMapping = await mergeTopicKeysWithLLM(newsBuckets);
+  const mergedNewsMapping = await mergeTopicKeysWithLLM(newsBuckets, cache);
   return {
     ...Object.fromEntries(
       Object.entries(paperBuckets).map(([key, bucket]) => [
@@ -4061,7 +4439,7 @@ async function buildMergedKeyMapping(topicBuckets) {
   };
 }
 
-async function requestSingletonReclusterChunk(singletons, anchors, model) {
+async function requestSingletonReclusterChunk(singletons, anchors, model, cache) {
   const payload = {
     anchors: (anchors || []).map((a) => ({
       topic_id: a.topic_id,
@@ -4105,13 +4483,15 @@ async function requestSingletonReclusterChunk(singletons, anchors, model) {
 ${JSON.stringify(payload)}
 `.trim();
 
-  const content = await withRateLimitRetry(() => zhipuChatCompletion({
+  const { content } = await requestDigestLlmJson({
+    cache,
+    operation: "singleton_recluster_chunk",
     model,
     messages: [
       { role: "system", content: system },
       { role: "user", content: prompt },
     ],
-  }));
+  });
 
   let parsed = null;
   try {
@@ -4123,7 +4503,7 @@ ${JSON.stringify(payload)}
   return Array.isArray(parsed?.decisions) ? parsed.decisions : [];
 }
 
-async function reclusterSingletonNewsTopics(assignments, topicCards, candidateCards) {
+async function reclusterSingletonNewsTopics(assignments, topicCards, candidateCards, cache) {
   const audit = {
     enabled: SINGLETON_RECLUSTER_ENABLED,
     anchor_count: 0,
@@ -4209,7 +4589,7 @@ async function reclusterSingletonNewsTopics(assignments, topicCards, candidateCa
   }
 
   const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
-  const decisionsRaw = await requestSingletonReclusterChunk(singletons, anchors, model);
+  const decisionsRaw = await requestSingletonReclusterChunk(singletons, anchors, model, cache);
   const allowedCandidates = new Set(singletons.map((x) => x.candidate_id));
   const anchorById = new Map(anchors.map((x) => [x.topic_id, x]));
   const nextAssignments = assignments.map((a) => ({ ...a }));
@@ -4503,7 +4883,7 @@ function resolveTopicShortlistQuota(topicCards, target) {
   };
 }
 
-async function shortlistTopicsWithLLM(topicCards) {
+async function shortlistTopicsWithLLM(topicCards, cache) {
   if (!topicCards.length) return { selected_topic_ids: [], reasons: [] };
   const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
   const payload = topicCards.map((t) => ({
@@ -4544,13 +4924,15 @@ async function shortlistTopicsWithLLM(topicCards) {
 ${JSON.stringify(payload)}
 `.trim();
 
-  const content = await withRateLimitRetry(() => zhipuChatCompletion({
+  const { content } = await requestDigestLlmJson({
+    cache,
+    operation: "shortlist_topics",
     model,
     messages: [
       { role: "system", content: system },
       { role: "user", content: prompt },
     ],
-  }));
+  });
   let parsed = null;
   try {
     parsed = safeParseJsonObject(content);
@@ -4936,10 +5318,71 @@ async function zhipuChatCompletion({ model, messages }) {
   }
 }
 
+export async function requestDigestLlmJson(options = {}) {
+  const cache = options?.cache && typeof options.cache === "object" ? options.cache : null;
+  const operation = String(options?.operation || "llm_operation").trim() || "llm_operation";
+  const model = String(options?.model || process.env.ZHIPU_MODEL || "glm-4.7-flash").trim();
+  const messages = Array.isArray(options?.messages) ? options.messages : [];
+  const execute = typeof options?.execute === "function" ? options.execute : zhipuChatCompletion;
+  const forceRefresh = options?.forceRefresh === true || LLM_FORCE_REFRESH;
+  const cacheKey = String(options?.cacheKey || buildLlmCacheKey({
+    operation,
+    model,
+    messages,
+    extra: options?.extra ?? null,
+  })).trim();
+
+  if (!forceRefresh) {
+    const cachedEntry = cache?.llm?.[cacheKey];
+    if (cachedEntry?.content) {
+      llmRuntimeStats.cache_hits += 1;
+      return {
+        content: String(cachedEntry.content || ""),
+        meta: {
+          cached: true,
+          cacheKey,
+          operation,
+          model,
+        },
+      };
+    }
+  }
+
+  llmRuntimeStats.cache_misses += 1;
+  const content = await withRateLimitRetry(
+    async () => {
+      llmRuntimeStats.live_calls += 1;
+      return execute({ model, messages });
+    },
+    options?.retryOptions || {}
+  );
+
+  if (cache) {
+    cache.llm = cache.llm || {};
+    cache.llm[cacheKey] = {
+      operation,
+      model,
+      content: String(content || ""),
+      at: todayISO(),
+    };
+    bestEffortPersistDigestCache(cache, `llm:${operation}`);
+  }
+
+  return {
+    content: String(content || ""),
+    meta: {
+      cached: false,
+      cacheKey,
+      operation,
+      model,
+    },
+  };
+}
+
 /**
  * 基于“话题 dossier + 正文材料”生成最终日报。
  */
-async function summarizeDailyWithLLM(topicDossiers, materials) {
+async function summarizeDailyWithLLM(topicDossiers, materials, cache) {
   const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
   const packedMaterials = (materials || []).map((m) => ({
     id: m.refId,
@@ -4974,8 +5417,8 @@ async function summarizeDailyWithLLM(topicDossiers, materials) {
 2) 不要编造材料里没有的事实；不确定就写“素材未给出细节”
 3) 每条结论都必须给出 refs（来自 materials.id）
 4) 所有文本字段必须中文表达，不可出现占位词
-5) “重点资讯 + 其他快讯”总数必须在 8~12 之间
-6) 核心论文必须在 3~6 篇之间，且 refs 只能引用论文来源
+5) “重点资讯 + 其他快讯”总数必须在 ${DIGEST_NEWS_RULES.totalMin}~${DIGEST_NEWS_RULES.totalMax} 之间
+6) 核心论文必须在 ${DIGEST_NEWS_RULES.coreTechMin}~${DIGEST_NEWS_RULES.coreTechMax} 篇之间，且 refs 只能引用论文来源
 7) 资讯与核心论文不得重复使用同一个 refs
 8) 不要输出“...”或“…”省略表达，必须完整句子
 9) 输出字段固定为：
@@ -5020,8 +5463,8 @@ async function summarizeDailyWithLLM(topicDossiers, materials) {
 }
 
 约束：
-- hot_news 推荐 3-4 条；other_news 推荐 5-8 条；两者合计 8-12 条
-- core_tech 输出 3-6 条
+- hot_news 推荐 1-4 条；other_news 推荐 2-11 条；两者合计 ${DIGEST_NEWS_RULES.totalMin}-${DIGEST_NEWS_RULES.totalMax} 条
+- core_tech 输出 ${DIGEST_NEWS_RULES.coreTechMin}-${DIGEST_NEWS_RULES.coreTechMax} 条
 - refs 仅允许来自 materials.id
 - ref_translations 请优先翻译英文标题
 - topic_id 请优先引用 dossiers.topic_id
@@ -5033,7 +5476,9 @@ ${JSON.stringify(topicDossiers)}
 ${JSON.stringify(packedMaterials)}
 `.trim();
 
-  const content = await zhipuChatCompletion({
+  const { content } = await requestDigestLlmJson({
+    cache,
+    operation: "daily_summary",
     model,
     messages: [
       { role: "system", content: system },
@@ -5082,7 +5527,7 @@ function buildMissingReferenceTranslations(materials, refTranslations) {
   return out;
 }
 
-async function translateMissingReferenceTitlesWithLLM(materials, existing) {
+async function translateMissingReferenceTitlesWithLLM(materials, existing, cache) {
   const refTranslations = buildReferenceTranslationSeed(materials, existing);
   const missing = buildMissingReferenceTranslations(materials, refTranslations);
   if (!missing.length) return refTranslations;
@@ -5110,7 +5555,9 @@ async function translateMissingReferenceTitlesWithLLM(materials, existing) {
 ${JSON.stringify(missing)}
 `.trim();
 
-  const content = await zhipuChatCompletion({
+  const { content } = await requestDigestLlmJson({
+    cache,
+    operation: "translate_missing_reference_titles",
     model,
     messages: [
       { role: "system", content: system },
@@ -5154,21 +5601,37 @@ function makeBiblioLine(refId, url, labelText) {
 function escapeYamlDoubleQuoted(s) {
   return String(s || "")
     .replace(/\\/g, "\\\\")
+    .replace(/\r?\n/g, "\\n")
     .replace(/"/g, "\\\"");
 }
 
-function buildDigestDescription(daily) {
-  const hotNewsHighlights = Array.isArray(daily?.hotNews)
-    ? daily.hotNews
-      .slice(0, 2)
-      .map((x) => clipHeadline(x?.insight || x?.summary || x?.title || "", 30))
-      .map((x) => String(x || "").replace(/[。！？.!?]+$/g, ""))
-      .filter(Boolean)
-    : [];
+function buildOverviewPreviewLines(text, maxLines = 3) {
+  const normalized = normalizeNarrativeBody(text || "");
+  if (!normalized) return [];
 
-  if (hotNewsHighlights.length) {
-    const desc = `热门资讯：${hotNewsHighlights.join("、")}。`;
-    return desc.replace(/。{2,}/g, "。").replace(/、。/g, "。");
+  const out = [];
+  const parts = normalized
+    .split(/[。！？!?；;]+/)
+    .map((part) => finalizeReadableText(part))
+    .map((part) => part.replace(/^主线[:：]\s*/u, "").trim())
+    .filter(Boolean);
+
+  for (const part of parts) {
+    const line = clipHeadline(part, 36);
+    if (!line) continue;
+    const duplicate = out.some((existing) => lexicalSimilarity(existing, line) >= 0.72);
+    if (duplicate) continue;
+    out.push(line);
+    if (out.length >= maxLines) break;
+  }
+
+  return out;
+}
+
+function buildDigestDescription(daily) {
+  const overviewLines = buildOverviewPreviewLines(daily?.overview || "", 3);
+  if (overviewLines.length) {
+    return ["今日主线：", ...overviewLines.map((line) => `- ${line}`)].join("\n");
   }
 
   const corePaperTitles = Array.isArray(daily?.coreTech)
@@ -5183,7 +5646,7 @@ function buildDigestDescription(daily) {
     return desc.replace(/。{2,}/g, "。").replace(/、。/g, "。");
   }
 
-  return "人工智能日报：重点资讯、其他快讯与核心论文。";
+  return "人工智能日报：今日主线、其他快讯与核心论文。";
 }
 
 function buildReferenceLabel(item, translatedTitle) {
@@ -5311,26 +5774,18 @@ tags: [人工智能, 每日资讯]
       const narrative = escapeMd(
         ensureCompleteNarrative(clipToSentence(narrativePlain || narrativeRaw, 300), t?.briefing || t?.summary || t?.insight || "")
       );
-      const signals = buildTopicSignalsFromRefs(t?.refs, idToItem, 3);
       const refsLine = renderRefsList(t?.refs, idToItem, refTranslations);
 
       const order = String(idx + 1).padStart(2, "0");
       md += `### ${order} · ${insight}\n\n`;
       md += `${escapeMd(finalizeReadableText(narrative))}\n\n`;
-      if (signals.length) {
-        md += `关键信号：\n`;
-        for (const signal of signals) {
-          md += `- ${escapeMd(signal)}\n`;
-        }
-        md += `\n`;
-      }
       if (refsLine) {
         md += `参考：${refsLine}\n\n`;
       }
     });
   }
 
-  // 2) 其他快讯（与重点资讯合计 8~12 条）
+  // 2) 其他快讯（与重点资讯合计 3~15 条）
   md += `## 其他快讯\n\n`;
   const otherNews = Array.isArray(daily?.otherNews) ? daily.otherNews : [];
   if (!otherNews.length) {
@@ -5508,10 +5963,13 @@ async function main() {
   const forceLLM = String(process.env.DIGEST_FORCE_LLM || "").trim() === "1";
 
   // cache：用于减少重复抓网页（以及你后续也可以扩展成“昨日素材复用”）
-  const cache = normalizeCache(safeReadJson(CACHE_PATH, null));
+  const cache = attachDigestCachePersistence(normalizeCache(safeReadJson(CACHE_PATH, null)));
+  activeDigestCache = cache;
   cache.fetched = pruneByAtDate(cache.fetched, CACHE_RETENTION_DAYS);
   cache.daily = pruneByAtDate(cache.daily, DAILY_RETENTION_DAYS);
+  cache.llm = pruneByAtDate(cache.llm, LLM_CACHE_RETENTION_DAYS);
   cache.published = pruneByAtDate(cache.published, DAILY_RETENTION_DAYS);
+  cache.publishedSignatures = pruneByAtDate(cache.publishedSignatures, DAILY_RETENTION_DAYS);
 
   const newsCutoff = new Date(cutoffMsForDays(dateISO, newsLookbackDays));
   const paperCutoff = new Date(cutoffMsForDays(dateISO, paperLookbackDays));
@@ -5652,6 +6110,9 @@ async function main() {
   });
   const afterHistoryCount = candidates.length;
 
+  const detailEnrichment = await enrichCandidatesBeforeScoring(candidates, cache, { boostKeywords });
+  candidates = detailEnrichment.candidates;
+
   console.log(`\n[candidates] after filter+dedupe = ${candidates.length}`);
   const candidateTotal = candidates.length;
 
@@ -5674,6 +6135,7 @@ async function main() {
     after_ai_gate: afterAiGateCount,
     after_dedupe: afterDedupeCount,
     after_history_filter: afterHistoryCount,
+    detail_enrichment: detailEnrichment.stats,
     news_cutoff: newsCutoff.toISOString(),
     paper_cutoff: paperCutoff.toISOString(),
     pool_stats: preprocessedPools.stats,
@@ -5701,7 +6163,7 @@ async function main() {
   };
 
   if (candidateCards.length > 0 && !(dryRun && !dryRunLLM) && !skipLLM) {
-    const enriched = await enrichCandidateCardsForClustering(candidateCards, cache);
+    const enriched = await enrichCandidateCardsForClustering(candidateCards, cache, { boostKeywords });
     candidateCards = enriched.cards;
     clusterEnrichment = enriched.stats;
   }
@@ -5745,22 +6207,22 @@ async function main() {
   let shortlistReasons = [];
 
   if (candidateCards.length > 0 && !(dryRun && !dryRunLLM) && !skipLLM) {
-    clusterResult = await clusterCandidateCardsWithLLM(candidateCards);
+    clusterResult = await clusterCandidateCardsWithLLM(candidateCards, cache);
     let workingAssignments = [...clusterResult.assignments];
     let topicBuckets = buildTopicBucketsFromAssignments(workingAssignments, candidateCards);
-    let mergedKeyMapping = await buildMergedKeyMapping(topicBuckets);
+    let mergedKeyMapping = await buildMergedKeyMapping(topicBuckets, cache);
     topicCards = buildTopicCards(workingAssignments, candidateCards, mergedKeyMapping);
 
     let singletonReclusterAudit = {
       enabled: SINGLETON_RECLUSTER_ENABLED,
       note: "not_run",
     };
-    const singletonRecluster = await reclusterSingletonNewsTopics(workingAssignments, topicCards, candidateCards);
+    const singletonRecluster = await reclusterSingletonNewsTopics(workingAssignments, topicCards, candidateCards, cache);
     singletonReclusterAudit = singletonRecluster.audit || singletonReclusterAudit;
     if (singletonRecluster.changed) {
       workingAssignments = singletonRecluster.assignments;
       topicBuckets = buildTopicBucketsFromAssignments(workingAssignments, candidateCards);
-      mergedKeyMapping = await buildMergedKeyMapping(topicBuckets);
+      mergedKeyMapping = await buildMergedKeyMapping(topicBuckets, cache);
       topicCards = buildTopicCards(workingAssignments, candidateCards, mergedKeyMapping);
     }
     clusterResult.assignments = workingAssignments;
@@ -5769,7 +6231,7 @@ async function main() {
       ...singletonReclusterAudit,
     });
 
-    const shortlist = await shortlistTopicsWithLLM(topicCards);
+    const shortlist = await shortlistTopicsWithLLM(topicCards, cache);
     selectedTopicIds = shortlist.selected_topic_ids || [];
     shortlistReasons = shortlist.reasons || [];
 
@@ -5938,10 +6400,11 @@ async function main() {
       console.log(`[cache] reuse daily summary: ${dateISO}`);
     } else {
       try {
-        daily = await withRateLimitRetry(() => summarizeDailyWithLLM(topicDossiers, materials));
+        daily = await summarizeDailyWithLLM(topicDossiers, materials, cache);
         console.log(`[ok] daily summary generated`);
         cache.daily = cache.daily || {};
         cache.daily[dateISO] = { fingerprint, daily, at: dateISO };
+        bestEffortPersistDigestCache(cache, "daily-summary");
       } catch (e) {
         console.warn(`[warn] daily summary failed: ${e?.message || e}`);
         daily = buildFallbackDailySummary(materials);
@@ -5951,8 +6414,10 @@ async function main() {
 
   if (daily && materials.length > 0) {
     try {
-      daily.refTranslations = await withRateLimitRetry(() =>
-        translateMissingReferenceTitlesWithLLM(materials, daily?.refTranslations || {})
+      daily.refTranslations = await translateMissingReferenceTitlesWithLLM(
+        materials,
+        daily?.refTranslations || {},
+        cache
       );
     } catch (error) {
       console.warn(`[warn] ref title translation failed: ${error?.message || error}`);
@@ -5987,6 +6452,7 @@ async function main() {
     final_other_news: (daily.otherNews || []).map((x) => ({ insight: x.insight, refs: x.refs })),
     final_core_tech: (daily.coreTech || []).map((x) => ({ title: x.title, refs: x.refs })),
     reference_count: renderMaterials.length,
+    llm_stats: snapshotLlmRuntimeStats(),
   });
 
   /* 7) 输出 Hexo 文章（即使没有内容，也写一篇空的） */
@@ -6005,8 +6471,6 @@ async function main() {
   fs.writeFileSync(outPath, outMd, "utf-8");
 
   // 写缓存到磁盘
-  cache.fetched = pruneByAtDate(cache.fetched, CACHE_RETENTION_DAYS);
-  cache.daily = pruneByAtDate(cache.daily, DAILY_RETENTION_DAYS);
   cache.published = cache.published || {};
   cache.publishedSignatures = cache.publishedSignatures || {};
   for (const material of renderMaterials) {
@@ -6025,9 +6489,8 @@ async function main() {
       cache.publishedSignatures[signature] = record;
     }
   }
-  cache.published = pruneByAtDate(cache.published, DAILY_RETENTION_DAYS);
-  cache.publishedSignatures = pruneByAtDate(cache.publishedSignatures, DAILY_RETENTION_DAYS);
-  safeWriteJson(CACHE_PATH, cache);
+  persistDigestCache(cache);
+  activeDigestCache = null;
 
   console.log(`\n✅ 已生成：${outPath}`);
   console.log(`✅ 缓存：${CACHE_PATH}`);
@@ -6039,9 +6502,17 @@ const IS_DIRECT_RUN =
 
 if (IS_DIRECT_RUN) {
   main().catch((e) => {
+    const dateISO = getRunDateISO();
+    bestEffortPersistDigestCache(activeDigestCache, "fatal-exit");
+    try {
+      const auditPath = writeRuntimeErrorReport(dateISO, e);
+      console.error(`❌ digest runtime error report：${auditPath}`);
+    } catch (auditError) {
+      console.error("❌ digest runtime error report 写入失败：", auditError);
+    }
     console.error("❌ digest 生成失败：", e);
     process.exit(1);
   });
 }
 
-export { buildDigestMarkdown };
+export { DIGEST_NEWS_RULES, buildDigestMarkdown };

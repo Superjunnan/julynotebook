@@ -1,7 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { buildDigestMarkdown, buildFallbackDailySummary } from "../../tools/digest.mjs";
+import {
+  DIGEST_NEWS_RULES,
+  buildDigestMarkdown,
+  buildFallbackDailySummary,
+} from "../../tools/digest.mjs";
 
 test("buildDigestMarkdown renders key news, quick news, core papers, and rumors", () => {
   const markdown = buildDigestMarkdown(
@@ -43,14 +47,30 @@ test("buildDigestMarkdown renders key news, quick news, core papers, and rumors"
   assert.equal(markdown.indexOf("## 核心论文") < markdown.indexOf("## 参考来源"), true);
   assert.match(markdown, /今日候选总数：123 条/);
   assert.match(markdown, /模型能力提速和商业化渗透同步发生/);
+  assert.match(markdown, /description: "今日主线：\\n- 模型能力提速和商业化渗透同步发生/);
+  assert.doesNotMatch(markdown, /description: "热门资讯：/);
   assert.match(markdown, /### 01 · OpenAI发布新模型/);
   assert.match(markdown, /参考：/);
   assert.match(markdown, />1<\/a>/);
   assert.match(markdown, />2<\/a>/);
+  assert.doesNotMatch(markdown, /关键信号：/);
   assert.doesNotMatch(markdown, /5W1H：|Who\/What：|When\/Where：|Why\/How：/);
   assert.doesNotMatch(markdown, /简报：|研判：|综合来源：/);
   assert.doesNotMatch(markdown, /importance-note|重要性：/);
   assert.doesNotMatch(markdown, /…|\.{3,}/);
+});
+
+test("digest news rules align with confirmed 3 to 15 total range", () => {
+  assert.deepEqual(DIGEST_NEWS_RULES, {
+    hotMin: 0,
+    hotMax: 4,
+    quickMin: 0,
+    quickMax: 15,
+    totalMin: 3,
+    totalMax: 15,
+    coreTechMin: 3,
+    coreTechMax: 6,
+  });
 });
 
 test("fallback markdown avoids untranslated placeholders and raw English titles", () => {
