@@ -1,0 +1,255 @@
+$app-bg = #f7f8fa
+$app-surface = #ffffff
+$app-shadow = 0 12px 26px rgba(121, 113, 112, 0.08)
+$app-text = #333333
+$app-muted = #999999
+$app-primary = #b3c7f7
+$app-primary-text = #38455f
+$app-drawer-active = #e0f0ff
+
+html, body
+  background $app-bg !important
+  color $app-text !important
+  overflow-x hidden
+
+body
+  padding-top unquote('calc(56px + env(safe-area-inset-top, 0px))') !important
+
+@media (prefers-color-scheme: dark)
+  html, body
+    background $app-bg !important
+    color $app-text !important
+
+body.app-noscroll
+  overflow hidden
+
+.headband,
+.sidebar,
+.sidebar-toggle,
+.back-to-top,
+.site-nav,
+.site-author-name
+  display none !important
+
+.header
+  position static !important
+  background transparent !important
+  box-shadow none !important
+
+.site-brand-container
+  position fixed !important
+  top 0
+  left 0
+  right 0
+  z-index 1060
+  min-height 56px !important
+  padding-top unquote('env(safe-area-inset-top, 0px)') !important
+  background rgba(247, 248, 250, 0.96) !important
+  backdrop-filter blur(18px)
+
+.site-nav-toggle
+  display none !important
+
+.site-brand-container .site-meta
+  position relative
+  display flex !important
+  align-items center
+  justify-content center
+  min-height 56px
+  padding 0 64px !important
+
+.site-meta .brand
+  display inline-flex
+  align-items center
+  justify-content center
+  padding 0 !important
+  background transparent !important
+
+.site-meta .logo-line
+  display none !important
+
+.site-title
+  display inline-block
+  max-width 100%
+  font-size 1.18rem !important
+  font-weight 700 !important
+  color $app-text !important
+  letter-spacing 0.01em
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+.header-inner,
+.main-inner,
+.content-wrap
+  width 100% !important
+  background transparent !important
+  box-shadow none !important
+
+.header,
+.header-inner
+  margin-top 0 !important
+  padding-top 0 !important
+
+.main-inner
+  margin-top 0 !important
+  padding-top 0 !important
+
+.content-wrap
+  max-width 760px !important
+  margin 0 auto !important
+  padding 4px 16px 36px !important
+
+.main
+  padding-top 0 !important
+
+.site-brand-container .app-header-action
+  position absolute
+  top unquote('env(safe-area-inset-top, 0px)')
+  width 42px
+  height 56px
+  border none
+  background transparent
+  color #8a8a90
+  display inline-flex
+  align-items center
+  justify-content center
+  font-size 1.24rem
+  cursor pointer
+  z-index 1
+
+.site-brand-container .app-header-action[hidden]
+  display none !important
+
+.app-header-action-left
+  left 12px
+
+.app-header-action-secondary
+  left 46px
+
+.app-header-action-right
+  right 12px
+
+.app-mask
+  position fixed
+  inset 0
+  background rgba(76, 70, 76, 0.26)
+  opacity 0
+  visibility hidden
+  transition opacity .24s ease, visibility .24s ease
+  z-index 1090
+  backdrop-filter blur(2px)
+
+.app-mask.app-mask-visible
+  opacity 1
+  visibility visible
+
+.app-drawer,
+.app-toc-drawer
+  position fixed
+  top 0
+  bottom 0
+  width min(76vw, 280px)
+  padding unquote('calc(16px + env(safe-area-inset-top, 0px))') 0 20px
+  background #efefef
+  box-shadow $app-shadow
+  z-index 1100
+  overflow-y auto
+  transition transform .26s ease
+
+.app-drawer
+  left 0
+  transform translateX(-105%)
+
+.app-toc-drawer
+  right 0
+  transform translateX(105%)
+
+.app-drawer.app-drawer-open,
+.app-toc-drawer.app-drawer-open
+  transform translateX(0)
+
+.app-drawer-title,
+.app-toc-drawer-title
+  margin 0 0 18px
+  padding 14px 22px
+  font-size 1.12rem
+  font-weight 700
+  color $app-text
+
+.app-drawer-menu
+  display flex
+  flex-direction column
+  gap 2px
+
+.app-drawer-menu-item
+  display flex
+  align-items center
+  gap 10px
+  padding 14px 22px
+  border-radius 0
+  color $app-text
+  text-decoration none
+  font-size 1rem
+  font-weight 700
+  transition background-color .2s ease, color .2s ease
+
+.app-drawer-menu-item i
+  width 18px
+  text-align center
+  color $app-muted
+
+.app-drawer-menu-item:hover,
+.app-drawer-menu-item.active
+  background $app-drawer-active
+  color $app-primary-text
+
+.app-drawer-menu-item:hover i,
+.app-drawer-menu-item.active i
+  color $app-primary-text
+
+.app-toc-drawer .post-toc
+  font-size 0.92rem
+  line-height 1.8
+  color $app-text
+
+.app-toc-drawer .post-toc ol,
+.app-toc-drawer .post-toc ul
+  list-style none
+  margin 0
+  padding-left 0
+
+.app-toc-drawer .post-toc .nav-item
+  margin 0 0 12px
+
+.app-toc-drawer .post-toc .nav-link
+  display block
+  padding 6px 22px
+  border-radius 0
+  color #8f8f93
+  text-decoration none
+  transition background-color .2s ease, color .2s ease
+
+.app-toc-drawer .post-toc .nav-link:hover,
+.app-toc-drawer .post-toc .active > .nav-link
+  background $app-drawer-active
+  color $app-primary-text
+
+@media (min-width: 992px)
+  body
+    padding-top 72px !important
+
+  .site-brand-container
+    min-height 64px !important
+
+  .site-brand-container .site-meta
+    min-height 64px
+    padding 0 92px !important
+
+  .site-brand-container .app-header-action
+    height 64px
+    width 48px
+
+  .content-wrap
+    max-width 900px !important
+    padding 24px 24px 48px !important

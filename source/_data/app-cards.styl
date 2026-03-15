@@ -1,0 +1,209 @@
+$card-bg = #fffefd
+$card-shadow = 0 10px 24px rgba(121, 113, 112, 0.06)
+$card-text = #8a8a90
+$card-muted = #aaaaaf
+$card-primary = #878790
+$card-daily-bg = #f6d0d2
+$card-daily-text = #8c6d73
+$card-note-bg = #f4e9b8
+$card-note-text = #908058
+
+.app-feed
+  display flex
+  flex-direction column
+  gap 18px
+
+.app-card
+  display block
+  padding 24px 20px
+  border-radius 20px
+  background $card-bg
+  box-shadow $card-shadow
+  color $card-text
+  text-decoration none
+  transition transform .2s ease, box-shadow .2s ease, background-color .2s ease
+
+.app-card:hover
+  transform translateY(-1px)
+  box-shadow 0 14px 28px rgba(121, 113, 112, 0.08)
+
+.app-card__header
+  display flex
+  align-items center
+  gap 10px
+  margin-bottom 12px
+
+.app-card__icon
+  font-size 1.25rem
+  line-height 1
+  display flex
+  align-items center
+
+.app-card__title
+  flex 1
+  min-width 0
+  margin 0
+  font-size 1.15rem
+  font-weight 600
+  color #333333
+  line-height 1.4
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+.app-card__badge
+  flex 0 0 auto
+  padding 4px 10px
+  border-radius 999px
+  font-size 0.8rem
+  font-weight 600
+  letter-spacing .02em
+
+.app-card--daily .app-card__badge
+  background #ffebe5
+  color #d15247
+
+.app-card--note .app-card__badge
+  background #fdf5e6
+  color #908058
+
+.app-card__meta
+  display flex
+  flex-wrap wrap
+  align-items center
+  gap 14px
+  margin-bottom 16px
+  font-size 0.82rem
+  color #999999
+
+.app-card__meta span
+  display inline-flex
+  align-items center
+  gap 5px
+
+.app-card__meta span:first-child
+  margin-right auto
+
+.app-card__summary-label
+  margin-bottom 8px
+  font-size 0.95rem
+  font-weight 600
+  color #333333
+
+.app-card__summary
+  color #666666
+  font-size 0.95rem
+  line-height 1.6
+  max-height calc(1.6 * 4 * 1em)
+  overflow hidden
+  display -webkit-box
+  -webkit-line-clamp 4
+  -webkit-box-orient vertical
+  text-overflow ellipsis
+
+.app-card__summary p,
+.app-card__summary ol,
+.app-card__summary ul
+  margin 0
+
+.daily-highlights-list
+  padding-left 1.25em
+  margin 0
+  list-style-type decimal
+
+.daily-highlights-list li
+  padding-left 4px
+  margin-bottom 8px
+
+.daily-highlights-list li:last-child
+  margin-bottom 0
+
+.app-card__summary li + li
+  margin-top 10px
+
+.app-card__footer
+  display flex
+  align-items center
+  justify-content space-between
+  gap 14px
+  margin-top 18px
+  font-size 0.84rem
+  color $card-muted
+
+.app-card__footer-arrow
+  color $card-muted
+  font-weight 700
+
+.app-card__tags
+  display flex
+  flex-wrap wrap
+  gap 16px
+
+.app-tag-chip
+  color $card-muted
+  font-size 0.86rem
+  line-height 1.2
+
+.app-month-group + .app-month-group
+  margin-top 28px
+
+.app-month-title
+  margin 0 0 14px
+  font-size 1.35rem
+  font-weight 700
+  color #4e5564
+
+.app-compact-list
+  display flex
+  flex-direction column
+  background $card-bg
+  border-radius 20px
+  box-shadow $card-shadow
+  overflow hidden
+
+.app-compact-item
+  display flex
+  align-items center
+  gap 12px
+  padding 18px 20px
+  color $card-text
+  text-decoration none
+  background rgba(255, 255, 255, 0.72)
+
+.app-compact-item + .app-compact-item
+  margin-top 2px
+
+.app-compact-item__date
+  flex 0 0 56px
+  font-size 0.84rem
+  color $card-muted
+
+.app-compact-item__title
+  flex 1
+  min-width 0
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+  font-size 1rem
+  font-weight 600
+
+.app-compact-item__arrow
+  color $card-muted
+  font-size 1rem
+
+.app-empty-state
+  padding 28px 18px
+  border-radius 22px
+  background rgba(255, 255, 255, 0.6)
+  color $card-muted
+  text-align center
+
+@media (min-width: 992px)
+  .app-card
+    padding 26px 24px
+
+  .app-card__title
+    font-size 1.18rem
+
+  .app-month-title
+    margin-bottom 16px

@@ -1,0 +1,105 @@
+$view-primary = #b3c7f7
+$view-primary-text = #334566
+$view-tab-text = #7c7c81
+
+.app-view
+  display flex
+  flex-direction column
+  gap 22px
+
+.app-tab-strip
+  display flex
+  gap 10px
+  overflow-x auto
+  margin 0
+  padding 2px 0 6px
+  scrollbar-width none
+
+.app-tab-strip::-webkit-scrollbar
+  display none
+
+.app-tab
+  flex 0 0 auto
+  border none
+  border-radius 999px
+  background #ffffff
+  color #666666
+  padding 8px 16px
+  font-size 0.95rem
+  font-weight 600
+  line-height 1
+  cursor pointer
+  appearance none
+  -webkit-appearance none
+  box-shadow 0 2px 8px rgba(0,0,0,0.02)
+  transition background-color .2s ease, color .2s ease, transform .2s ease
+
+.app-tab.is-active
+  background #e0f0ff
+  color #0052d9
+
+.app-tab:focus-visible
+  outline 2px solid rgba(122, 151, 230, 0.45)
+  outline-offset 2px
+
+.home-actions-row
+  display grid
+  grid-template-columns repeat(2, minmax(0, 1fr))
+  gap 12px
+  margin-top 0
+
+.home-action-link
+  display inline-flex
+  align-items center
+  justify-content center
+  min-height 56px
+  border-radius 18px
+  background #ffffff
+  box-shadow 0 10px 22px rgba(121, 113, 112, 0.05)
+  color #4e4e53
+  font-size 1rem
+  font-weight 700
+  text-decoration none
+
+.app-feed-hint
+  margin-top -2px
+  margin-bottom 2px
+  text-align center
+  color #d0d0d4
+  font-size .98rem
+  font-weight 700
+
+.app-view-daily,
+.app-view-notes
+  gap 14px
+
+.app-view-home .app-feed
+  margin-top -2px
+
+.app-filter-hidden
+  display none !important
+
+.category.posts-collapse
+  margin-top 0 !important
+  padding-top 0 !important
+
+.category.posts-collapse::before,
+.category.posts-collapse::after
+  display none !important
+
+.category.posts-collapse .post-block
+  padding 0
+  background transparent
+  box-shadow none
+  margin 0
+
+.category.posts-collapse .post-content
+  margin-top 0
+
+@media (max-width: 767px)
+  .home-actions-row
+    grid-template-columns repeat(2, minmax(0, 1fr))
+
+@media (min-width: 992px)
+  .app-view
+    gap 22px

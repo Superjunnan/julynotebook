@@ -1,0 +1,314 @@
+(() => {
+  const 视图类名前缀 = 'app-view-';
+
+  function 读取根路径() {
+    const root = window.CONFIG && CONFIG.root ? String(CONFIG.root) : '/';
+    return root.endsWith('/') ? root : `${root}/`;
+  }
+
+  function 读取页面配置() {
+    const 节点 = document.querySelector('.next-config[data-name="page"]');
+    if (!节点) return {};
+
+    try {
+      return JSON.parse(节点.textContent || '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  function 规范路径(pathname, root) {
+    let 路径 = pathname || root;
+    if (!路径.startsWith('/')) {
+      路径 = `/${路径}`;
+    }
+    路径 = 路径.replace(/index\.html$/u, '').replace(/\/+$/u, '/');
+    if (!路径.startsWith(root)) {
+      return `${root}${路径.replace(/^\/+/u, '')}`.replace(/\/+$/u, '/');
+    }
+    return 路径;
+  }
+
+  function 规范标题(rawTitle) {
+    return String(rawTitle || document.title || '')
+      .replace(/\s*\|\s*川下の楠木\s*$/u, '')
+      .trim();
+  }
+
+  function 读取文章类型() {
+    const 分类链接 = Array.from(document.querySelectorAll('.post-category a, .post-meta a[href*="/categories/"]'))
+      .map(link => decodeURIComponent(link.getAttribute('href') || ''));
+
+    if (分类链接.some(href => href.includes('/daily-news/') || href.includes('每日资讯') || href.includes('AI 日报'))) {
+      return 'daily-post';
+    }
+    if (分类链接.some(href => href.includes('/july-notes/') || href.includes('july笔记') || href.includes('AI 笔记'))) {
+      return 'note-post';
+    }
+    return 'post';
+  }
+
+  function 识别视图(root, pageConfig) {
+    const 当前路径 = 规范路径(window.location.pathname, root);
+
+    if (当前路径 === 规范路径(root, root)) return 'home';
+    if (当前路径.startsWith(规范路径(`${root}categories/daily-news/`, root))) return 'daily-list';
+    if (当前路径.startsWith(规范路径(`${root}categories/july-notes/`, root))) return 'note-list';
+    if (当前路径.startsWith(规范路径(`${root}iteration-log/`, root))) return 'iteration-log';
+    if (当前路径.startsWith(规范路径(`${root}resume/`, root))) return 'resume';
+    if (pageConfig && pageConfig.isPost) return 读取文章类型();
+    return 'page';
+  }
+
+  function 读取页头标题(view, pageConfig) {
+    switch (view) {
+      case 'home':
+        return '川下の楠木';
+      case 'daily-list':
+        return 'AI 日报';
+      case 'note-list':
+        return 'AI 笔记';
+      case 'daily-post':
+        return 'AI 日报正文';
+      case 'note-post':
+        return 'AI 笔记正文';
+      case 'iteration-log':
+        return '迭代记录';
+      case 'resume':
+        return '简历';
+      default:
+        return 规范标题(pageConfig.title);
+    }
+  }
+
+  function 确保遮罩层() {
+    let 遮罩层 = document.querySelector('.app-mask');
+    if (!遮罩层) {
+      遮罩层 = document.createElement('div');
+      遮罩层.className = 'app-mask';
+      document.body.appendChild(遮罩层);
+    }
+    return 遮罩层;
+  }
+
+  function 生成抽屉菜单(root) {
+    return `
+      <div class="app-drawer-title">川下の楠木</div>
+      <nav class="app-drawer-menu" aria-label="站点主菜单">
+        <a href="${root}" class="app-drawer-menu-item" data-path="${root}">
+          <i class="fa fa-home" aria-hidden="true"></i><span>首页</span>
+        </a>
+        <a href="${root}categories/daily-news/" class="app-drawer-menu-item" data-path="${root}categories/daily-news/">
+          <i class="fa fa-rss" aria-hidden="true"></i><span>AI 日报</span>
+        </a>
+        <a href="${root}categories/july-notes/" class="app-drawer-menu-item" data-path="${root}categories/july-notes/">
+          <i class="fa fa-pen" aria-hidden="true"></i><span>AI 笔记</span>
+        </a>
+        <a href="${root}iteration-log/" class="app-drawer-menu-item" data-path="${root}iteration-log/">
+          <i class="fa fa-history" aria-hidden="true"></i><span>迭代记录</span>
+        </a>
+        <a href="${root}resume/" class="app-drawer-menu-item" data-path="${root}resume/">
+          <i class="fa fa-id-card" aria-hidden="true"></i><span>简历</span>
+        </a>
+      </nav>
+    `;
+  }
+
+  function 确保左侧抽屉(root) {
+    let 抽屉 = document.querySelector('.app-drawer');
+    if (!抽屉) {
+      抽屉 = document.createElement('aside');
+      抽屉.className = 'app-drawer';
+      document.body.appendChild(抽屉);
+    }
+    抽屉.innerHTML = 生成抽屉菜单(root);
+    return 抽屉;
+  }
+
+  function 确保目录抽屉() {
+    let 抽屉 = document.querySelector('.app-toc-drawer');
+    if (!抽屉) {
+      抽屉 = document.createElement('aside');
+      抽屉.className = 'app-toc-drawer';
+      document.body.appendChild(抽屉);
+    }
+    return 抽屉;
+  }
+
+  function 确保页头操作区() {
+    const 品牌容器 = document.querySelector('.site-brand-container');
+    if (!品牌容器) return {};
+
+    let 左按钮 = 品牌容器.querySelector('.app-header-action-left');
+    if (!左按钮) {
+      左按钮 = document.createElement('button');
+      左按钮.type = 'button';
+      左按钮.className = 'app-header-action app-header-action-left';
+      品牌容器.appendChild(左按钮);
+    }
+
+    let 右按钮 = 品牌容器.querySelector('.app-header-action-right');
+    if (!右按钮) {
+      右按钮 = document.createElement('button');
+      右按钮.type = 'button';
+      右按钮.className = 'app-header-action app-header-action-right';
+      品牌容器.appendChild(右按钮);
+    }
+
+    let 次按钮 = 品牌容器.querySelector('.app-header-action-secondary');
+    if (!次按钮) {
+      次按钮 = document.createElement('button');
+      次按钮.type = 'button';
+      次按钮.className = 'app-header-action app-header-action-secondary';
+      品牌容器.appendChild(次按钮);
+    }
+
+    return { 左按钮, 次按钮, 右按钮 };
+  }
+
+  function 关闭所有抽屉() {
+    document.querySelectorAll('.app-drawer, .app-toc-drawer').forEach(node => {
+      node.classList.remove('app-drawer-open');
+    });
+    const 遮罩层 = document.querySelector('.app-mask');
+    if (遮罩层) {
+      遮罩层.classList.remove('app-mask-visible');
+    }
+    document.body.classList.remove('app-noscroll');
+  }
+
+  function 打开抽屉(node, 遮罩层) {
+    if (!node || !遮罩层) return;
+    关闭所有抽屉();
+    node.classList.add('app-drawer-open');
+    遮罩层.classList.add('app-mask-visible');
+    document.body.classList.add('app-noscroll');
+  }
+
+  function 同步页头标题(title) {
+    const 标题节点 = document.querySelector('.site-title');
+    if (!标题节点) return;
+    标题节点.textContent = title;
+    标题节点.setAttribute('data-app-title', title);
+  }
+
+  function 打开菜单(左侧抽屉, 遮罩层) {
+    打开抽屉(左侧抽屉, 遮罩层);
+  }
+
+  function 返回首页或上一页(root) {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.assign(root);
+    }
+  }
+
+  function 同步左侧按钮(view, 左按钮, 次按钮, root, 左侧抽屉, 遮罩层) {
+    if (!左按钮) return;
+
+    if (view === 'home') {
+      左按钮.hidden = false;
+      左按钮.setAttribute('aria-label', '打开菜单');
+      左按钮.innerHTML = '<i class="fa fa-list-ul" aria-hidden="true"></i>';
+      左按钮.onclick = () => 打开菜单(左侧抽屉, 遮罩层);
+      if (次按钮) {
+        次按钮.hidden = true;
+        次按钮.onclick = null;
+      }
+      return;
+    }
+
+    if (view === 'daily-list' || view === 'note-list' || view === 'iteration-log' || view === 'resume') {
+      左按钮.hidden = false;
+      左按钮.setAttribute('aria-label', '返回上一页');
+      左按钮.innerHTML = '<i class="fa fa-angle-left" aria-hidden="true" style="font-size: 1.5rem; transform: translateY(-1px);"></i>';
+      左按钮.onclick = () => 返回首页或上一页(root);
+
+      if (次按钮) {
+        次按钮.hidden = true;
+        次按钮.onclick = null;
+      }
+      return;
+    }
+
+    左按钮.hidden = false;
+    左按钮.setAttribute('aria-label', '返回上一页');
+    左按钮.innerHTML = '<i class="fa fa-angle-left" aria-hidden="true" style="font-size: 1.5rem; transform: translateY(-1px);"></i>';
+    左按钮.onclick = () => 返回首页或上一页(root);
+    if (次按钮) {
+      次按钮.hidden = true;
+      次按钮.onclick = null;
+    }
+  }
+
+  function 同步右按钮(view, 右按钮, 目录抽屉, 遮罩层) {
+    if (!右按钮) return;
+
+    const 目录容器 = document.querySelector('.post-toc-wrap');
+    const 有目录 = Boolean(目录容器 && 目录容器.querySelector('.post-toc'));
+    const 允许展示 = view === 'daily-post' || view === 'note-post' || view === 'post';
+
+    if (!有目录 || !允许展示) {
+      右按钮.hidden = true;
+      右按钮.onclick = null;
+      目录抽屉.innerHTML = '';
+      return;
+    }
+
+    目录抽屉.innerHTML = `
+      <div class="app-toc-drawer-title">目录</div>
+      ${目录容器.innerHTML}
+    `;
+
+    右按钮.hidden = false;
+    右按钮.setAttribute('aria-label', '打开目录');
+    右按钮.innerHTML = '<i class="fa fa-list-ul" aria-hidden="true"></i>';
+    右按钮.onclick = () => 打开抽屉(目录抽屉, 遮罩层);
+  }
+
+  function 同步菜单高亮(root) {
+    const 当前路径 = 规范路径(window.location.pathname, root);
+    document.querySelectorAll('.app-drawer-menu-item').forEach(link => {
+      const 目标路径 = 规范路径(link.getAttribute('data-path') || link.getAttribute('href') || root, root);
+      const 是否命中 = 当前路径 === 目标路径 || (目标路径 !== 规范路径(root, root) && 当前路径.startsWith(目标路径));
+      link.classList.toggle('active', 是否命中);
+    });
+  }
+
+  function 同步视图类名(view) {
+    const 旧类名 = Array.from(document.body.classList).filter(className => className.startsWith(视图类名前缀));
+    if (旧类名.length) {
+      document.body.classList.remove(...旧类名);
+    }
+    document.body.classList.add(`${视图类名前缀}${view}`);
+  }
+
+  function 初始化遮罩关闭(遮罩层) {
+    if (!遮罩层 || 遮罩层.dataset.bound === 'true') return;
+    遮罩层.dataset.bound = 'true';
+    遮罩层.addEventListener('click', 关闭所有抽屉);
+    window.addEventListener('popstate', 关闭所有抽屉);
+    document.addEventListener('pjax:send', 关闭所有抽屉);
+  }
+
+  function 初始化AppShell() {
+    const root = 读取根路径();
+    const pageConfig = 读取页面配置();
+    const view = 识别视图(root, pageConfig);
+    const 遮罩层 = 确保遮罩层();
+    const 左侧抽屉 = 确保左侧抽屉(root);
+    const 目录抽屉 = 确保目录抽屉();
+    const { 左按钮, 次按钮, 右按钮 } = 确保页头操作区();
+
+    初始化遮罩关闭(遮罩层);
+    同步视图类名(view);
+    同步页头标题(读取页头标题(view, pageConfig));
+    同步左侧按钮(view, 左按钮, 次按钮, root, 左侧抽屉, 遮罩层);
+    同步右按钮(view, 右按钮, 目录抽屉, 遮罩层);
+    同步菜单高亮(root);
+  }
+
+  document.addEventListener('DOMContentLoaded', 初始化AppShell);
+  document.addEventListener('pjax:success', 初始化AppShell);
+})();

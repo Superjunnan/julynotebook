@@ -1,125 +1,73 @@
-/**
- * source/js/post-layout.js
- * ------------------------------------------------------------
- * 详情页布局增强：
- * - 把左下角悬浮目录入口迁到右上角
- * - 移动端详情页顶部显示当前页面标题
- * - 压缩历史 digest 中的“关键信号”展示
- */
-
 (() => {
-  function readPageConfig() {
-    const el = document.querySelector('.next-config[data-name="page"]');
-    if (!el) return {};
+  function 读取页面配置() {
+    const 节点 = document.querySelector('.next-config[data-name="page"]');
+    if (!节点) return {};
 
     try {
-      return JSON.parse(el.textContent || "{}");
+      return JSON.parse(节点.textContent || '{}');
     } catch {
       return {};
     }
   }
 
-  function normalizePageTitle(rawTitle) {
-    return String(rawTitle || document.title || "")
-      .replace(/\s*\|\s*川下の楠木\s*$/u, "")
-      .trim();
-  }
+  function 识别详情页类型() {
+    const 分类链接 = Array.from(document.querySelectorAll('.post-category a, .post-meta a[href*="/categories/"]'))
+      .map(link => decodeURIComponent(link.getAttribute('href') || ''));
 
-  function isDetailPage(pageConfig) {
-    if (!pageConfig || pageConfig.isHome) return false;
-    return Boolean(pageConfig.isPost || pageConfig.title || pageConfig.path);
-  }
-
-  function bindSidebarTrigger(pageConfig) {
-    if (!isDetailPage(pageConfig)) return;
-
-    const navRight = document.querySelector(".site-nav-right");
-    const sidebarToggle = document.querySelector(".sidebar-toggle");
-    if (!navRight || !sidebarToggle) return;
-
-    const trigger = navRight.querySelector(".popup-trigger") || document.createElement("div");
-    trigger.classList.add("detail-toc-trigger");
-    trigger.setAttribute("role", "button");
-    trigger.setAttribute("tabindex", "0");
-    trigger.setAttribute("aria-label", "切换目录");
-    trigger.innerHTML = '<i class="fa fa-list-ul" aria-hidden="true"></i>';
-
-    const toggleSidebar = (event) => {
-      event.preventDefault();
-      sidebarToggle.click();
-    };
-
-    trigger.addEventListener("click", toggleSidebar);
-    trigger.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        toggleSidebar(event);
-      }
-    });
-
-    if (!trigger.parentNode) {
-      navRight.appendChild(trigger);
+    if (分类链接.some(href => href.includes('/daily-news/') || href.includes('每日资讯') || href.includes('AI 日报'))) {
+      return 'daily';
     }
-  }
-
-  function applyMobilePageTitle(pageConfig) {
-    if (!isDetailPage(pageConfig)) return;
-    if (!window.matchMedia("(max-width: 767px)").matches) return;
-
-    const pageTitle = normalizePageTitle(pageConfig.title);
-    if (!pageTitle) return;
-
-    document.body.classList.add("detail-page-mobile");
-    const siteTitle = document.querySelector(".site-title");
-    if (siteTitle) {
-      siteTitle.textContent = pageTitle;
+    if (分类链接.some(href => href.includes('/july-notes/') || href.includes('july笔记') || href.includes('AI 笔记'))) {
+      return 'note';
     }
+    return 'default';
   }
 
-  function compactLegacyDigestSignals(pageConfig) {
-    if (!pageConfig?.isPost) return;
+  function 压缩历史关键信号() {
+    const 标记节点 = Array.from(document.querySelectorAll('.post-body p'))
+      .filter(node => String(node.textContent || '').trim() === '关键信号：');
 
-    const markers = Array.from(document.querySelectorAll(".post-body p"))
-      .filter((node) => String(node.textContent || "").trim() === "关键信号：");
+    标记节点.forEach(marker => {
+      if (marker.dataset.compacted === 'true') return;
 
-    markers.forEach((marker) => {
-      const list = marker.nextElementSibling;
-      if (!list || list.tagName !== "UL") return;
+      const 列表节点 = marker.nextElementSibling;
+      if (!列表节点 || 列表节点.tagName !== 'UL') return;
 
-      const items = Array.from(list.querySelectorAll("li"));
-      if (!items.length) {
+      const 条目列表 = Array.from(列表节点.querySelectorAll('li'));
+      if (!条目列表.length) {
         marker.remove();
-        list.remove();
+        列表节点.remove();
         return;
       }
 
-      const compact = document.createElement("div");
-      compact.className = "digest-signal-compact";
-      items.slice(0, 6).forEach((_, index) => {
-        const chip = document.createElement("span");
-        chip.className = "digest-signal-chip";
-        chip.textContent = String(index + 1).padStart(2, "0");
-        compact.appendChild(chip);
+      const 容器 = document.createElement('div');
+      容器.className = 'digest-signal-compact';
+
+      条目列表.slice(0, 6).forEach((_, index) => {
+        const 标签 = document.createElement('span');
+        标签.className = 'digest-signal-chip';
+        标签.textContent = String(index + 1).padStart(2, '0');
+        容器.appendChild(标签);
       });
 
-      marker.replaceWith(compact);
-      list.remove();
+      marker.dataset.compacted = 'true';
+      marker.replaceWith(容器);
+      列表节点.remove();
     });
   }
 
-  function initPostLayout() {
-    const pageConfig = readPageConfig();
-    if (isDetailPage(pageConfig)) {
-      document.body.classList.add("detail-page");
-    }
+  function 初始化详情页布局() {
+    const pageConfig = 读取页面配置();
+    if (!pageConfig || !pageConfig.isPost) return;
 
-    bindSidebarTrigger(pageConfig);
-    applyMobilePageTitle(pageConfig);
-    compactLegacyDigestSignals(pageConfig);
+    document.body.classList.add('detail-page');
+    document.body.classList.toggle('detail-page-mobile', window.matchMedia('(max-width: 767px)').matches);
+    document.body.classList.toggle('detail-page--daily', 识别详情页类型() === 'daily');
+    document.body.classList.toggle('detail-page--note', 识别详情页类型() === 'note');
+
+    压缩历史关键信号();
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initPostLayout, { once: true });
-  } else {
-    initPostLayout();
-  }
+  document.addEventListener('DOMContentLoaded', 初始化详情页布局);
+  document.addEventListener('pjax:success', 初始化详情页布局);
 })();

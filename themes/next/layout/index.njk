@@ -1,0 +1,64 @@
+{% extends '_layout.njk' %}
+
+{% block title %}{{ title }}{% if theme.index_with_subtitle and subtitle %} - {{ subtitle }}{% endif %}{% endblock %}
+
+{% block class %}index posts-expand{% endblock %}
+
+{% block content %}
+  {%- set mixed_feed = site.latest_mixed_posts %}
+
+  <section class="app-view app-view-home">
+    <div class="home-top-tabs app-tab-strip" role="tablist" aria-label="首页内容筛选">
+      <button type="button" class="app-tab home-tab is-active" data-filter="all">全部</button>
+      <button type="button" class="app-tab home-tab" data-filter="daily">AI 日报</button>
+      <button type="button" class="app-tab home-tab" data-filter="note">AI 笔记</button>
+    </div>
+
+    <div id="home-posts-container" class="app-feed">
+      {%- for post in mixed_feed %}
+        <a href="{{ url_for(post.path) }}" class="app-card app-card--{{ post.app_type }} post-title-link" data-app-type="{{ post.app_type }}">
+          <div class="app-card__header">
+            <span class="app-card__icon" aria-hidden="true">{{ post.app_badge.icon }}</span>
+            <h2 class="app-card__title">{{ post.title }}</h2>
+            <span class="app-card__badge">{{ post.app_badge.text }}</span>
+          </div>
+
+          <div class="app-card__meta">
+            <span><i class="far fa-calendar"></i>{{ date(post.date, 'YYYY-MM-DD HH:mm') }}</span>
+            {% if post.app_wordcount_fmt %}
+              <span><i class="far fa-file-word"></i>{{ post.app_wordcount_fmt }}</span>
+            {% endif %}
+            {% if post.app_reading_time %}
+              <span><i class="far fa-clock"></i>{{ post.app_reading_time }} 分钟</span>
+            {% endif %}
+          </div>
+
+          <div class="app-card__summary-label">
+            {% if post.app_type == 'daily' %}今日重点：{% else %}文章概述：{% endif %}
+          </div>
+          <div class="app-card__summary">{{ post.app_excerpt | safe }}</div>
+
+          <div class="app-card__footer">
+            {% if post.app_type == 'daily' %}
+              <span>共 {{ post.app_entry_count or 0 }} 条记录</span>
+            {% else %}
+              <span class="app-card__tags">
+                {% for tag in post.tagsList %}
+                  <span class="app-tag-chip"># {{ tag }}</span>
+                {% endfor %}
+              </span>
+            {% endif %}
+            <span class="app-card__footer-arrow">阅读全文 &gt;</span>
+          </div>
+        </a>
+      {%- endfor %}
+    </div>
+
+    <div class="app-feed-hint">已展示近 60 天最新内容</div>
+
+    <div class="home-actions-row">
+      <a href="{{ url_for('/categories/daily-news/') }}" class="home-action-link">查看全部日报 &gt;</a>
+      <a href="{{ url_for('/categories/july-notes/') }}" class="home-action-link">查看全部笔记 &gt;</a>
+    </div>
+  </section>
+{% endblock %}

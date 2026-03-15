@@ -11,6 +11,9 @@ menu:
 excerpt_description: true
 read_more_btn: true
 
+# 关闭原生暗色模式以保证 UI 一致性白底
+darkmode: false
+
 # 文章信息行（日期 / 分类 / 字数 / 阅读时长）
 post_meta:
   item_text: true
@@ -37,3 +40,5 @@ busuanzi_count:
 custom_file_path:
   style: source/_data/styles.styl
   bodyEnd: source/_data/body-end.njk
+
+pjax: true

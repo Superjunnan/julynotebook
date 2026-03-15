@@ -3678,9 +3678,14 @@ export function applyClusterEnrichmentToCard(card, enrichment = {}, boostKeyword
       pubDate: card.pub_date || null,
       trustTier: card.trust_tier || "",
       weight: 0,
+      score: Number(card.score || 0),
       sourceGroup: card.source_group || "",
       link: card.link || "",
     };
+
+  if (!Number.isFinite(Number(baseItem.score))) {
+    baseItem.score = Number(card.score || 0);
+  }
 
   if (lead) {
     card.snippet = lead;

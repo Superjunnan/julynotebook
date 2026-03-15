@@ -27,13 +27,12 @@ date: 2026-02-27 16:14:00
 为了规范大模型的行为要求准则，我们通常需要在提示词内设定规范，为了不要每次对话都手动输入这类提示词，因而引入了“系统提示词“，每次的对话请求都会默认将这部分的内容作为提示词的一部分传输给服务器作为上下文交互。因为不同的项目对于模型开发的限定会不一样，因此也会有支持全局（即整个工具维度，不限项目）or 支持制定项目范围的系统提示词。
 
 #### 如何配置系统提示词？
-以下是从知乎上找到的各类工具/平台的系统提示词。
+我们先看看系统提示词都有哪些，以下是从知乎上找到的各类工具/平台的系统提示词。
 ![alt text](image.png)
 
-在这个背景下，openai 和 google 联手统一了一个简单的开放标准：AGENTS.md (claude code 似乎不支持)
-这个文档也很简单，就是一个 markdown 的文件，openai 提供的官方示例：
+我们可以看到，不同平台都有属于自己的系统提示词命名方式，在这个背景下，openai 和 google 联手统一了一个简单的开放标准：AGENTS.md (claude code 似乎不支持)。这个文档也很简单，就是一个 markdown 的文件，openai 提供的官方示例：（主要是规范了开发环境、测试说明、代码拉取请求要求说明等等）
 
-````markdown
+```markdown
 # Sample AGENTS.md file
 
 ## Dev environment tips
@@ -50,16 +49,16 @@ date: 2026-02-27 16:14:00
 - Fix any test or type errors until the whole suite is green.
 - After moving files or changing imports, run `pnpm lint --filter <project_name>` to be sure ESLint and TypeScript rules still pass.
 - Add or update tests for the code you change, even if nobody asked.
-```
-
 ## PR instructions
 - Title format: [<project_name>] <Title>
 - Always run `pnpm lint` and `pnpm test` before committing.
+```
 
-（若要全局生效，放置在 codex等工具根目录下，若要项目内生效，则需要放置在项目根目录下）
+
 目前我搜集到网站上分享的提示词：（未实际在项目中使用过； 为了提升效率，我个人觉得系统提示词应该遵循简洁明了的原则，约定一些原则性的要求即可）
 - codex：<https://linux.do/t/topic/1275669>
 - gemini：<https://linux.do/t/topic/1255677>
+（注：若要全局生效，放置在 codex等工具根目录下，若要项目内生效，则需要放置在项目根目录下）
 
 ### 2、Skill & MCP
 
@@ -77,7 +76,7 @@ date: 2026-02-27 16:14:00
 调用 skill 的方式：
 - 1、自然语言：用自然语言和大模型对话，每次对话请求工具（vscode、claude code 等）都会将所有的 skill 说明作为上下文进行交互，大模型会根据对话要求分析后判断是否有匹配场景的 skill 可以使用，如果大模型计划调用 skill 功能，则其会在返回时询问是否要调用对应 skill。
 - 2、手动调用：使用/来调用工具，可以唤起列表，选择后即可调用对应 skill，高亮展示的 skill 点击后还可以阅读其内容（vscode 是支持的）
-![alt text](image-1.png)
+> 注：此处原始截图资源当前缺失，待后续补充。
 
 #### 3）优秀的SKill 推荐
 小红书上搜了一些工具，并非全部都使用过，有空的时候会尝试仅作为记录：
