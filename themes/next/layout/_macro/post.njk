@@ -45,9 +45,9 @@
             {{- next_url(post.path, post.title or __('post.untitled'), {class: 'post-title-link', itemprop: 'url'}) }}
           {%- else %}
             {% if not is_index and post.app_type == 'daily' %}
-              <div class="app-card__header app-card--daily" style="margin-bottom: 24px; pointer-events: none;">
+              <div class="app-card__header app-card--daily app-detail-header" style="pointer-events: none;">
                 <span class="app-card__icon" aria-hidden="true">{{ post.app_badge.icon }}</span>
-                <span class="app-card__title" style="white-space: normal;">{{ post.title }}</span>
+                <span class="app-card__title app-detail-header__title">{{ post.app_display_title or post.title }}</span>
                 <span class="app-card__badge">{{ post.app_badge.text }}</span>
               </div>
             {% else %}
@@ -59,11 +59,11 @@
 
         <div class="post-meta-container">
           {%- if not is_index and post.app_type == 'daily' %}
-            <div class="app-card__meta" style="flex-wrap: nowrap; justify-content: space-between; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
-              <div class="app-detail-meta-left" style="display: flex; gap: 6px;">
+            <div class="app-card__meta app-detail-meta">
+              <div class="app-detail-meta-left">
                 <span><i class="far fa-calendar"></i>{{ date(post.date, 'YYYY-MM-DD HH:mm') }}</span>
               </div>
-              <div class="app-detail-meta-right" style="color: #999;">
+              <div class="app-detail-meta-right">
                 {% if post.app_daily_candidates %}
                   <span>今日候选总数：{{ post.app_daily_candidates }} 条</span>
                 {% endif %}
@@ -155,15 +155,15 @@
           <div class="post-nav">
             <div class="post-nav-item">
               {%- if prev %}
-                <a href="{{ url_for(prev.path) }}" rel="prev" title="{{ escape_html(prev.title or '') }}">
-                  <i class="fa fa-angle-left"></i> {{ prev.title }}
+                <a href="{{ url_for(prev.path) }}" rel="prev" title="{{ escape_html(prev.app_display_title or prev.title or '') }}">
+                  <i class="fa fa-angle-left"></i> <span class="post-nav-link-text">{{ prev.app_display_title or prev.title }}</span>
                 </a>
               {%- endif %}
             </div>
             <div class="post-nav-item">
               {%- if next %}
-                <a href="{{ url_for(next.path) }}" rel="next" title="{{ escape_html(next.title or '') }}">
-                  {{ next.title }} <i class="fa fa-angle-right"></i>
+                <a href="{{ url_for(next.path) }}" rel="next" title="{{ escape_html(next.app_display_title or next.title or '') }}">
+                  <span class="post-nav-link-text">{{ next.app_display_title or next.title }}</span> <i class="fa fa-angle-right"></i>
                 </a>
               {%- endif %}
             </div>

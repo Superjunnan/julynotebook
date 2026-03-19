@@ -10,18 +10,140 @@ function 读取标签数组(data) {
   return data.tags.toArray().map(tag => tag.name);
 }
 
+function 生成显示标题(data, isDaily) {
+  const 原始标题 = String(data.title || '').trim();
+  if (!isDaily) return 原始标题;
+  return 原始标题.replace(/^人工智能日报/u, 'AI日报');
+}
+
+function 去除标题序号(text) {
+  return String(text || '')
+    .replace(/^\s*(?:\d+|[一二三四五六七八九十]+)\s*[·.、:：-]\s*/u, '')
+    .trim();
+}
+
+function 从引用提取标题(dataCite, options = {}) {
+  const { 优先取冒号后半段 = false } = options;
+  const 原始文本 = String(dataCite || '').replace(/^\s*\d+\.\s*/, '').trim();
+  const 标题主体 = 原始文本.split('｜')[0].trim();
+  if (!标题主体) return '';
+
+  if (优先取冒号后半段) {
+    const 分段 = 标题主体.split(/[:：]/u).map(part => part.trim()).filter(Boolean);
+    if (分段.length > 1) {
+      return 分段[分段.length - 1];
+    }
+  }
+
+  return 标题主体;
+}
+
+function 清洗日报标题(text, dataCite = '', options = {}) {
+  const { 类型 = 'news' } = options;
+  let 标题 = 去除标题序号(text)
+    .replace(/^[.&,:：\-–—\s]+/u, '')
+    .replace(/\s+/gu, ' ')
+    .trim();
+
+  const 冒号后标题 = 从引用提取标题(dataCite, { 优先取冒号后半段: true });
+  const 完整引用标题 = 从引用提取标题(dataCite);
+  const 冒号前标题 = 完整引用标题.split(/[:：]/u)[0]?.trim() || '';
+  const 标题异常 =
+    !标题
+    || /让AI$/u.test(标题)
+    || /^[.&,:：\-–—\s]+/u.test(text)
+    || (/[&]/u.test(标题) && !/AI/u.test(标题));
+
+  if (标题异常) {
+    if (类型 === 'paper' && 冒号后标题) {
+      return 冒号后标题;
+    }
+    if (类型 !== 'paper' && 冒号前标题 && 冒号前标题.length >= 8) {
+      return 冒号前标题;
+    }
+    if (完整引用标题) {
+      return 完整引用标题;
+    }
+  }
+
+  return 标题;
+}
+
+function 收集同级节点(h2) {
+  const 节点列表 = [];
+  let 当前节点 = h2.nextElementSibling;
+  while (当前节点 && 当前节点.tagName !== 'H2') {
+    节点列表.push(当前节点);
+    当前节点 = 当前节点.nextElementSibling;
+  }
+  return 节点列表;
+}
+
+function 解析日报结构(htmlContent) {
+  const root = parse(htmlContent || '');
+  const 结果 = {
+    重点资讯: [],
+    其他快讯: [],
+    核心论文: [],
+  };
+
+  root.querySelectorAll('h2').forEach(h2 => {
+    const 标题 = String(h2.text || '').trim();
+    const 节点列表 = 收集同级节点(h2);
+
+    if (标题 === '重点资讯') {
+      节点列表.forEach((node, index) => {
+        if (node.tagName !== 'H3') return;
+
+        let 引用标记 = '';
+        let 探测节点 = node.nextElementSibling;
+        while (探测节点 && 探测节点.tagName !== 'H2' && 探测节点.tagName !== 'H3') {
+          if (
+            (探测节点.tagName === 'P' || 探测节点.tagName === 'DIV')
+            && /参考[:：]/u.test(探测节点.text || '')
+          ) {
+            const 首个引用 = 探测节点.querySelector('a.cite');
+            引用标记 = 首个引用?.getAttribute('data-cite') || '';
+            break;
+          }
+          探测节点 = 探测节点.nextElementSibling;
+        }
+
+        结果.重点资讯.push({
+          index,
+          title: 清洗日报标题(node.text || '', 引用标记),
+        });
+      });
+    }
+
+    if (标题 === '其他快讯' || 标题 === '核心论文') {
+      const 列表节点 = 节点列表.find(node => node.tagName === 'UL' || node.tagName === 'OL');
+      if (!列表节点) return;
+
+      const 目标数组 = 标题 === '其他快讯' ? 结果.其他快讯 : 结果.核心论文;
+      列表节点.querySelectorAll('li').forEach((li, index) => {
+        const 首个引用 = li.querySelector('a.cite');
+        const 原始标题 = li.querySelector('strong')?.text || li.text || '';
+        目标数组.push({
+          index,
+          title: 清洗日报标题(原始标题, 首个引用?.getAttribute('data-cite') || '', {
+            类型: 标题 === '核心论文' ? 'paper' : 'news',
+          }),
+        });
+      });
+    }
+  });
+
+  return 结果;
+}
+
 function 推断摘要(data, htmlContent, isDaily, isNote) {
   if (isDaily) {
-    const root = parse(htmlContent);
-    const headings = root.querySelectorAll('h2, h3');
-    if (headings.length > 0) {
+    const 章节 = 解析日报结构(htmlContent);
+    if (章节.重点资讯.length > 0) {
       let listContent = '<ol class="daily-highlights-list">';
-      headings.forEach(h => {
-        const text = h.text.trim();
-        // Ignore "今日重点", "重点资讯", etc.
-        if (text && !text.includes('今日重点') && !text.includes('今日主线') && !text.includes('资讯') && !text.includes('快讯')) {
-          listContent += `<li>${text}</li>`;
-        }
+      章节.重点资讯.slice(0, 3).forEach(item => {
+        listContent += `<li>${item.title}</li>`;
       });
       listContent += '</ol>';
       return listContent;
@@ -70,7 +192,16 @@ hexo.extend.filter.register('after_post_render', function(data) {
 
     data.tagsList = 标签数组;
     data.app_tags_str = 标签数组.join(',');
-    data.app_entry_count = (htmlContent.match(/<h2/gi) || []).length;
+    data.app_display_title = 生成显示标题(data, isDaily);
+    if (isDaily) {
+      data.title = data.app_display_title;
+    }
+    if (isDaily) {
+      const 章节 = 解析日报结构(htmlContent);
+      data.app_entry_count = 章节.重点资讯.length + 章节.其他快讯.length + 章节.核心论文.length;
+    } else {
+      data.app_entry_count = (htmlContent.match(/<h2/gi) || []).length;
+    }
     data.app_has_toc = (htmlContent.match(/<h[123]/gi) || []).length > 0;
     data.app_excerpt = 推断摘要(data, htmlContent, isDaily, isNote);
     

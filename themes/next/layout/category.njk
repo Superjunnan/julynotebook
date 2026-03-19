@@ -24,7 +24,7 @@
                     <a href="{{ url_for(post.path) }}" class="app-card app-card--daily post-title-link">
                       <div class="app-card__header">
                         <span class="app-card__icon" aria-hidden="true">🤖</span>
-                        <h3 class="app-card__title">{{ post.title }}</h3>
+                        <h3 class="app-card__title">{{ post.app_display_title or post.title }}</h3>
                         <span class="app-card__badge">AI 日报</span>
                       </div>
 
@@ -53,7 +53,7 @@
                   {% for post in group.posts %}
                     <a href="{{ url_for(post.path) }}" class="app-compact-item post-title-link">
                       <span class="app-compact-item__date">{{ date(post.date, 'MM-DD') }}</span>
-                      <span class="app-compact-item__title">{{ post.title }}</span>
+                      <span class="app-compact-item__title">{{ post.app_display_title or post.title }}</span>
                       <span class="app-compact-item__arrow"><i class="fa fa-angle-right"></i></span>
                     </a>
                   {% endfor %}

@@ -19,7 +19,7 @@
         <a href="{{ url_for(post.path) }}" class="app-card app-card--{{ post.app_type }} post-title-link" data-app-type="{{ post.app_type }}">
           <div class="app-card__header">
             <span class="app-card__icon" aria-hidden="true">{{ post.app_badge.icon }}</span>
-            <h2 class="app-card__title">{{ post.title }}</h2>
+            <h2 class="app-card__title">{{ post.app_display_title or post.title }}</h2>
             <span class="app-card__badge">{{ post.app_badge.text }}</span>
           </div>
 

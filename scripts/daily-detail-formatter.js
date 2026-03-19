@@ -1,147 +1,263 @@
 const { parse } = require('node-html-parser');
 
-/**
- * Post-render filter to transform AI Daily (每日资讯) post HTML:
- * 1. Extracts candidate count from blockquotes and removes them
- * 2. Rewrites reference numbers to source names in-place using regex
- * 3. Removes the 参考来源 bibliography section
- */
-hexo.extend.filter.register('after_post_render', function(data) {
-  // Determine if daily by app_type (set by app-post-meta) or by category
-  const isDaily = data.app_type === 'daily' ||
-    (data.categories && data.categories.data &&
-     data.categories.data.some(c => c.name === '每日资讯' || c.name === 'AI 日报'));
+function 是否日报(data) {
+  return data.app_type === 'daily'
+    || Boolean(
+      data.categories
+      && data.categories.data
+      && data.categories.data.some(c => c.name === '每日资讯' || c.name === 'AI 日报')
+    );
+}
 
-  if (data.layout !== 'post' || !isDaily) return data;
+function 去除标题序号(text) {
+  return String(text || '')
+    .replace(/^\s*(?:\d+|[一二三四五六七八九十]+)\s*[·.、:：-]\s*/u, '')
+    .trim();
+}
 
-  try {
-    const root = parse(data.content);
-    let candidateCount = '0';
+function 从引用提取标题(dataCite, options = {}) {
+  const { 优先取冒号后半段 = false } = options;
+  const 原始文本 = String(dataCite || '').replace(/^\s*\d+\.\s*/, '').trim();
+  const 标题主体 = 原始文本.split('｜')[0].trim();
+  if (!标题主体) return '';
 
-    // --------------------------------------------------------------
-    // Step 1: Extract candidate count and remove intro blockquotes
-    // --------------------------------------------------------------
-    const blockquotes = root.querySelectorAll('blockquote');
-    blockquotes.forEach(bq => {
-      const text = (bq.innerText || bq.text || '').trim().replace(/\s+/g, ' ');
-      const match = text.match(/今日候选总数[^\d]*(\d+)/);
-      if (match) {
-        candidateCount = match[1];
-        bq.remove();
-      } else if (text.includes('主线：') || text.includes('今日主线')) {
-        bq.remove();
-      }
-    });
+  if (优先取冒号后半段) {
+    const 分段 = 标题主体.split(/[:：]/u).map(part => part.trim()).filter(Boolean);
+    if (分段.length > 1) return 分段[分段.length - 1];
+  }
 
-    // Set on data; only override if missing or zero
-    if (!data.app_daily_candidates || data.app_daily_candidates === '0') {
-      data.app_daily_candidates = candidateCount;
+  return 标题主体;
+}
+
+function 清洗标题(text, dataCite = '', options = {}) {
+  const { 类型 = 'news' } = options;
+  let 标题 = 去除标题序号(text)
+    .replace(/^[.&,:：\-–—\s]+/u, '')
+    .replace(/\s+/gu, ' ')
+    .trim();
+
+  const 引用完整标题 = 从引用提取标题(dataCite);
+  const 引用尾段标题 = 从引用提取标题(dataCite, { 优先取冒号后半段: true });
+  const 引用前段标题 = 引用完整标题.split(/[:：]/u)[0]?.trim() || '';
+  const 标题异常 =
+    !标题
+    || /让AI$/u.test(标题)
+    || /^[.&,:：\-–—\s]+/u.test(text)
+    || (/[&]/u.test(标题) && !/AI/u.test(标题));
+
+  if (标题异常) {
+    if (类型 === 'paper' && 引用尾段标题) {
+      return 引用尾段标题;
+    }
+    if (类型 !== 'paper' && 引用前段标题 && 引用前段标题.length >= 8) {
+      return 引用前段标题;
+    }
+    if (引用完整标题) {
+      return 引用完整标题;
+    }
+  }
+
+  return 标题;
+}
+
+function 收集后续同级节点(h2) {
+  const 节点列表 = [];
+  let 当前节点 = h2.nextElementSibling;
+  while (当前节点 && 当前节点.tagName !== 'H2') {
+    节点列表.push(当前节点);
+    当前节点 = 当前节点.nextElementSibling;
+  }
+  return 节点列表;
+}
+
+function 规范化引用文本(root) {
+  root.querySelectorAll('a.cite').forEach(aEl => {
+    const citeText = aEl.getAttribute('data-cite') || '';
+    const 原始文本 = citeText.replace(/^\s*\d+\.\s*/, '');
+    const 来源 = 原始文本.split('｜')[1]?.trim();
+    if (来源) {
+      aEl.innerHTML = 来源;
+    }
+  });
+}
+
+function 移除导语块并提取候选数(root, data) {
+  let 候选数 = data.app_daily_candidates || '';
+
+  root.querySelectorAll('blockquote').forEach(bq => {
+    const text = (bq.innerText || bq.text || '').trim().replace(/\s+/g, ' ');
+    const match = text.match(/今日候选总数[^\d]*(\d+)/u);
+    if (match) {
+      候选数 = match[1];
+      bq.remove();
+      return;
     }
 
-    // --------------------------------------------------------------
-    // Step 2: Build a refId -> source label mapping from bibliography
-    // --------------------------------------------------------------
-    const refMap = {};
-    root.querySelectorAll('[id^="ref-"]').forEach(spanEl => {
-      const id = spanEl.id.replace('ref-', '');
-      const aEl = spanEl.parentNode && spanEl.parentNode.querySelector('a');
-      if (aEl) {
-        const href = aEl.getAttribute('href') || '';
-        // Try to extract source label from anchor text e.g. "文章标题｜36Kr AI"
-        const text = (aEl.text || '').trim();
-        const parts = text.split('｜');
-        const source = parts.length > 1 ? parts[parts.length - 1].trim() : '';
-        if (source) refMap[id] = source;
+    if (text.includes('主线：') || text.includes('今日主线')) {
+      bq.remove();
+    }
+  });
+
+  if (候选数 && (!data.app_daily_candidates || data.app_daily_candidates === '0')) {
+    data.app_daily_candidates = 候选数;
+  }
+}
+
+function 移除参考来源章节(root) {
+  root.querySelectorAll('h2').forEach(h2 => {
+    const text = (h2.text || '').trim();
+    if (!text.includes('参考')) return;
+
+    const 后续节点 = 收集后续同级节点(h2);
+    后续节点.forEach(node => {
+      if (node.tagName === 'UL' || node.tagName === 'OL') {
+        node.remove();
       }
     });
+    h2.remove();
+  });
+}
 
-    // Also build from data-cite attributes on any <a class="cite"> tags
-    root.querySelectorAll('a.cite').forEach(aEl => {
-      const citeText = aEl.getAttribute('data-cite') || '';
-      // format: "5. 标题｜SOURCE"
-      const dotIdx = citeText.indexOf('.');
-      const barIdx = citeText.indexOf('｜');
-      if (dotIdx !== -1 && barIdx !== -1) {
-        const id = citeText.substring(0, dotIdx).trim();
-        const source = citeText.substring(barIdx + 1).trim();
-        if (id && source) refMap[id] = source;
+function 构建二级标题节点(h2) {
+  const id = h2.getAttribute('id') || '';
+  const title = (h2.text || '').trim();
+  return `<h2 class="daily-section-title" id="${id}">${title}</h2>`;
+}
+
+function 构建参考来源HTML(anchors) {
+  if (!anchors || anchors.length === 0) return '';
+  const chips = anchors.map(anchor => anchor.toString()).join('');
+  return `<div class="daily-news-card-refs"><span class="refs-label">参考：</span><span class="refs-chips">${chips}</span></div>`;
+}
+
+function 清理正文HTML(html) {
+  return String(html || '')
+    .trim()
+    .replace(/（参考[:：][^）]*）/gu, '')
+    .replace(/\(参考[:：][^)]*\)/gu, '')
+    .replace(/^[：:\s]+/u, '')
+    .trim();
+}
+
+function 编号文本(index) {
+  return String(index + 1).padStart(2, '0');
+}
+
+function 构建重点资讯区块(h2) {
+  const 节点列表 = 收集后续同级节点(h2);
+  const 卡片列表 = [];
+
+  节点列表.forEach(node => {
+    if (node.tagName !== 'H3') return;
+
+    const titleNode = node;
+    const bodyNodes = [];
+    let refsNode = null;
+    let 当前节点 = node.nextElementSibling;
+
+    while (当前节点 && 当前节点.tagName !== 'H2' && 当前节点.tagName !== 'H3') {
+      if ((当前节点.tagName === 'P' || 当前节点.tagName === 'DIV') && /参考[:：]/u.test(当前节点.text || '')) {
+        refsNode = 当前节点;
+      } else {
+        bodyNodes.push(当前节点.toString());
       }
-    });
+      当前节点 = 当前节点.nextElementSibling;
+    }
 
-    // --------------------------------------------------------------
-    // Step 3: Remove 参考来源 section (H2 + following UL)
-    // --------------------------------------------------------------
-    const sectionH2s = root.querySelectorAll('h2');
-    sectionH2s.forEach(h2 => {
-      const text = (h2.text || '').trim();
-      if (text.includes('参考') && (text.includes('来源') || text.includes('内容'))) {
-        // Remove the next sibling UL too
-        let next = h2.nextElementSibling;
-        while (next) {
-          const tag = (next.tagName || '').toUpperCase();
-          const toRemove = next;
-          next = next.nextElementSibling;
-          if (tag === 'UL' || tag === 'OL') {
-            toRemove.remove();
-            break;
-          }
-        }
-        h2.remove();
-      }
-    });
+    const 首个引用 = refsNode?.querySelector('a.cite');
+    const 显示标题 = 清洗标题(titleNode.text || '', 首个引用?.getAttribute('data-cite') || '');
+    const titleId = titleNode.getAttribute('id') || '';
+    const bodyHtml = 清理正文HTML(bodyNodes.join(''));
+    const refsHtml = 构建参考来源HTML(refsNode ? refsNode.querySelectorAll('a.cite') : []);
+    const 序号 = 编号文本(卡片列表.length);
 
-    // --------------------------------------------------------------
-    // Step 4: Rewrite cite tags in content, replacing number with source label
-    // - Works on the raw HTML string after DOM query, to avoid traversal issues
-    // --------------------------------------------------------------
-    let html = root.toString();
-
-    // Replace: <a class="cite" href="..." data-cite="5. TITLE｜SOURCE">5</a>
-    // With:    <a class="cite" href="..." data-cite="...">SOURCE</a>
-    html = html.replace(
-      /<a\s+class="cite"([^>]*?)data-cite="([^"]*)"[^>]*>(\d+)<\/a>/g,
-      (match, attrs, citeText) => {
-        const barIdx = citeText.indexOf('｜');
-        const dotIdx = citeText.indexOf('.');
-        if (barIdx !== -1) {
-          const source = citeText.substring(barIdx + 1).trim();
-          return `<a class="cite"${attrs}data-cite="${citeText}">${source}</a>`;
-        }
-        if (dotIdx !== -1) {
-          const refId = citeText.substring(0, dotIdx).trim();
-          const source = refMap[refId] || citeText.substring(dotIdx + 1).trim();
-          return `<a class="cite"${attrs}data-cite="${citeText}">${source}</a>`;
-        }
-        return match;
-      }
+    卡片列表.push(
+      `<article class="daily-news-card">`
+      + `<h3 class="daily-news-card-title" id="${titleId}"><span class="daily-news-card-title__index">${序号}</span><span class="daily-news-card-title__dot">·</span><span class="daily-news-card-title__text">${显示标题}</span></h3>`
+      + `<div class="daily-news-card-body">${bodyHtml}</div>`
+      + refsHtml
+      + `</article>`
     );
+  });
 
-    // --------------------------------------------------------------
-    // Step 5: Style the 其他快讯 list items as cards
-    // Apply section-level styling
-    // --------------------------------------------------------------
-    // Header sections
-    html = html.replace(/<h2 id="重点资讯"[^>]*>/g, '<h2 class="daily-section-title" id="重点资讯">');
-    html = html.replace(/<h2 id="其他快讯"[^>]*>/g, '<h2 class="daily-section-title" id="其他快讯">');
-    html = html.replace(/<h2 id="核心论文"[^>]*>/g, '<h2 class="daily-section-title" id="核心论文">');
+  节点列表.forEach(node => node.remove());
+  h2.parentNode.exchangeChild(h2, parse(`<section class="daily-section-block">${构建二级标题节点(h2)}${卡片列表.join('')}</section>`).firstChild);
+}
 
-    // UL that contains the news items -> daily-news-list
-    // The UL is marked by its first child being a LI with bold header "01 · ..."
-    // We style each top-level LI as a daily-news-card
-    html = html.replace(/<ul>\n(<li><strong>\d+)/g, '<ul class="daily-news-list">\n$1');
+function 提取列表正文HTML(li, strong, refsNode) {
+  const bodyPieces = [];
+  li.childNodes.forEach(node => {
+    if (node === strong) return;
+    if (refsNode && node === refsNode) return;
+    if (!refsNode && node.nodeType === 1 && node.tagName === 'A' && node.classList.contains('cite')) return;
+    bodyPieces.push(node.toString());
+  });
+  return 清理正文HTML(bodyPieces.join(''));
+}
 
-    // Style each list item as a card
-    html = html.replace(/<li class="daily-news-card"/g, '<li class="daily-news-card">');
+function 构建列表区块(h2, options = {}) {
+  const { 类型 = 'news', 前缀 = 'daily-item' } = options;
+  const 节点列表 = 收集后续同级节点(h2);
+  const 列表节点 = 节点列表.find(node => node.tagName === 'UL' || node.tagName === 'OL');
+  const 卡片列表 = [];
 
-    // Rewrite （参考：...） to styled span
-    html = html.replace(/（参考：([^）]+)）/g, '<span class="daily-news-card-refs"><span class="refs-label">参考：</span>$1</span>');
-    html = html.replace(/\(参考：([^)]+)\)/g, '<span class="daily-news-card-refs"><span class="refs-label">参考：</span>$1</span>');
+  if (列表节点) {
+    列表节点.querySelectorAll('li').forEach((li, index) => {
+      const strong = li.querySelector('strong');
+      const refsNode = li.querySelector('.daily-news-card-refs');
+      const 全部引用 = refsNode ? refsNode.querySelectorAll('a.cite') : li.querySelectorAll('a.cite');
+      const 首个引用 = 全部引用[0];
+      const titleId = `${前缀}-${String(index + 1).padStart(2, '0')}`;
+      const 显示标题 = 清洗标题(strong?.text || li.text || '', 首个引用?.getAttribute('data-cite') || '', {
+        类型,
+      });
+      const bodyHtml = 提取列表正文HTML(li, strong, refsNode);
+      const refsHtml = 构建参考来源HTML(全部引用);
+      const 序号 = 编号文本(index);
 
-    data.content = html;
+      卡片列表.push(
+        `<article class="daily-news-card daily-news-card--${类型}">`
+        + `<h3 class="daily-news-card-title" id="${titleId}"><span class="daily-news-card-title__index">${序号}</span><span class="daily-news-card-title__dot">·</span><span class="daily-news-card-title__text">${显示标题}</span></h3>`
+        + `<div class="daily-news-card-body">${bodyHtml}</div>`
+        + refsHtml
+        + `</article>`
+      );
+    });
+  }
 
+  节点列表.forEach(node => node.remove());
+  h2.parentNode.exchangeChild(h2, parse(`<section class="daily-section-block">${构建二级标题节点(h2)}${卡片列表.join('')}</section>`).firstChild);
+}
+
+hexo.extend.filter.register('after_post_render', function(data) {
+  if (data.layout !== 'post' || !是否日报(data)) return data;
+
+  try {
+    const root = parse(data.content || '');
+
+    移除导语块并提取候选数(root, data);
+    规范化引用文本(root);
+    移除参考来源章节(root);
+
+    root.querySelectorAll('h2').forEach(h2 => {
+      const text = (h2.text || '').trim();
+      if (text === '重点资讯') {
+        构建重点资讯区块(h2);
+        return;
+      }
+      if (text === '其他快讯') {
+        构建列表区块(h2, { 类型: 'news', 前缀: 'daily-news' });
+        return;
+      }
+      if (text === '核心论文') {
+        构建列表区块(h2, { 类型: 'paper', 前缀: 'core-paper' });
+      }
+    });
+
+    data.content = root.toString();
   } catch (error) {
     console.error('daily-detail-formatter error:', error);
   }
 
   return data;
-}, 20); // Run after app-post-meta (priority 10)
+}, 20);

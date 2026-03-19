@@ -2,17 +2,17 @@ a.cite
   display inline-flex
   align-items center
   justify-content center
-  min-width 1.45em
-  height 1.45em
-  padding 0 .35em
-  margin-left 4px
+  min-width 1.35em
+  min-height 1.72em
+  padding 0 10px
+  margin-left 0
   font-size .76em
   font-weight 600
   line-height 1
-  border 1px solid rgba(40, 40, 40, .22)
+  border 1px solid rgba(168, 168, 174, .32)
   border-radius 999px
-  background rgba(40, 40, 40, .08)
-  color rgba(25, 25, 25, .9)
+  background #f3f3f5
+  color #8e8f95
   text-decoration none
   opacity .96
   vertical-align middle
@@ -44,8 +44,11 @@ a.cite:hover
   background #fffefd
   box-shadow 0 12px 26px rgba(121, 113, 112, 0.06)
 
+.detail-page .post-header
+  margin-bottom 12px
+
 .detail-page .post-title
-  margin-bottom 10px
+  margin-bottom 0
   font-size 1.48rem
   font-weight 700
   color #828287
@@ -54,7 +57,32 @@ a.cite:hover
   display none
 
 .detail-page .post-meta-container
-  margin-bottom 10px
+  margin-bottom 0
+
+.app-detail-header
+  margin-bottom 8px
+
+.app-detail-header__title
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+.app-detail-meta
+  flex-wrap nowrap
+  align-items center
+  justify-content space-between
+  gap 12px
+  margin-bottom 0
+  padding-bottom 0
+  color #999
+
+.app-detail-meta-left
+  display flex
+  gap 6px
+
+.app-detail-meta-right
+  flex 0 0 auto
+  color #999
 
 .app-detail-stat
   display inline-flex
@@ -68,13 +96,14 @@ a.cite:hover
   font-weight 600
 
 .detail-page .post-body
+  margin-top 0 !important
   font-size .96rem
   line-height 1.9
   color #95959b
 
 .detail-page .post-body h2
-  margin-top 2.2em
-  margin-bottom .9em
+  margin-top 1.5em
+  margin-bottom .7em
   font-size 1.45rem
   color #8a8a90
 
@@ -83,32 +112,6 @@ a.cite:hover
   margin-bottom .7em
   font-size 1.12rem
   color #8a8a90
-
-.app-section-card
-  margin 22px 0
-  padding 22px 18px
-  border-radius 18px
-  background #fffefd
-  box-shadow 0 10px 22px rgba(121, 113, 112, 0.05)
-
-.app-section-card > h2,
-.app-section-card > h3
-  margin-top 0 !important
-  margin-bottom 14px
-  color #86868b
-
-.app-section-card--bullet ul,
-.app-section-card--bullet ol
-  list-style none
-  margin 0
-  padding-left 0
-
-.app-section-card--bullet li
-  padding 12px 0
-  background transparent
-
-.app-section-card--bullet li + li
-  margin-top 8px
 
 .app-list-unstyled
   list-style none !important
@@ -123,7 +126,7 @@ a.cite:hover
   margin-top 8px
 
 .app-daily-abstract
-  margin 0 0 24px
+  margin 0 0 14px
   padding 16px
   border-radius 16px
   background rgba(255, 255, 255, 0.92)
@@ -163,84 +166,119 @@ a.cite:hover
 
 /* --------- AI Daily Detail Cards --------- */
 .daily-section-title
-  margin-top 1.25em !important
-  margin-bottom 0.75em !important
+  margin-top 1em !important
+  margin-bottom 0.45em !important
+  scroll-margin-top calc(56px + env(safe-area-inset-top, 0px) + 14px)
   font-size 1.25rem !important
   font-weight 700
   color #86868b !important
   border none !important
   padding 0 !important
 
+.daily-section-block
+  padding 18px 16px 20px
+  border-radius 18px
+  background rgba(255, 255, 255, 0.72)
+  box-shadow 0 8px 18px rgba(121, 113, 112, 0.04)
+
+.daily-section-block + .daily-section-block
+  margin-top 16px
+
 .daily-news-card
-  margin-bottom 14px
-  padding 16px 20px
-  border-radius 16px
-  background #ffffff
-  box-shadow 0 8px 18px rgba(121, 113, 112, 0.05)
+  margin 0 0 22px
+  padding 0
+  border-radius 0
+  background transparent
+  box-shadow none
 
 .daily-news-card-title
   margin-top 0 !important
-  margin-bottom 12px !important
+  margin-bottom 16px !important
+  scroll-margin-top calc(56px + env(safe-area-inset-top, 0px) + 14px)
   font-size 1.1rem !important
   font-weight 700
   color #333333 !important
-  line-height 1.45
+  line-height 1.55
+  display block
+
+.daily-news-card-title__index
+  display inline
+  color #8a8a90
+  font-size .95em
+  font-weight 700
+
+.daily-news-card-title__dot
+  display inline
+  color #a0a0a6
+  margin-left 0
+
+.daily-news-card-title__text
+  display inline
 
 .daily-news-card-body
   margin-bottom 16px !important
   font-size 0.95rem
-  line-height 1.7
-  color #666666
-  
+  line-height 1.85
+  color #8c8c92
+
 .daily-news-card-body:last-child
   margin-bottom 0 !important
 
 .daily-news-card-refs
   display flex
-  flex-wrap wrap
+  flex-direction row
   align-items center
-  gap 8px
+  justify-content flex-start
+  gap 10px
   margin 0 !important
-  font-size 0.85rem
+  font-size 0.72rem
   color #999999
+  text-align left
 
 .refs-label
-  margin-right 4px
+  flex 0 0 auto
+  margin-right 0
+  padding-top 0
+  font-size 1em
+
+.refs-chips
+  display inline-flex
+  flex-wrap wrap
+  align-items center
+  justify-content flex-start
+  gap 10px
 
 .daily-news-card-refs a.cite
   margin-left 0
-  padding 4px 12px
-  border none
+  min-height 1.56em
+  padding 0 10px
   border-radius 999px
   background #f3f3f5
-  color #999999
-  font-size 0.8rem
+  color #8f9096
+  font-size 0.72rem
   font-weight 600
   text-decoration none
 
-/* -------- 其他快讯 List Cards -------- */
-.daily-news-list
-  list-style none !important
-  margin 0 !important
-  padding 0 !important
+.detail-page .post-nav
+  gap 12px
 
-.daily-news-list > .daily-news-card
-  display block
-  margin-bottom 14px
-  padding 14px 18px
-  border-radius 16px
-  background #ffffff
-  box-shadow 0 6px 16px rgba(121, 113, 112, 0.05)
+.detail-page .post-nav-item
+  min-width 0
 
-/* Source chip spans inside list cards */
-.daily-news-card-refs
+.detail-page .post-nav-item a
   display flex
-  flex-wrap wrap
   align-items center
   gap 8px
-  margin 8px 0 0 !important
-  font-size 0.82rem
-  color #999999
+  min-width 0
+  font-size .92rem
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+.detail-page .post-nav-item .post-nav-link-text
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
 
 /* Hard CSS fallback: hide 参考来源 section if JS formatter didn't catch it */
 .detail-page .post-body h2[id^="参考"]
