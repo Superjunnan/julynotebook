@@ -45,7 +45,7 @@
             {{- next_url(post.path, post.title or __('post.untitled'), {class: 'post-title-link', itemprop: 'url'}) }}
           {%- else %}
             {% if not is_index and post.app_type == 'daily' %}
-              <div class="app-card__header" style="margin-bottom: 24px; pointer-events: none;">
+              <div class="app-card__header app-card--daily" style="margin-bottom: 24px; pointer-events: none;">
                 <span class="app-card__icon" aria-hidden="true">{{ post.app_badge.icon }}</span>
                 <span class="app-card__title" style="white-space: normal;">{{ post.title }}</span>
                 <span class="app-card__badge">{{ post.app_badge.text }}</span>

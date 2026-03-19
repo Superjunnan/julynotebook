@@ -22,10 +22,17 @@ $card-note-text = #908058
   color $card-text
   text-decoration none
   transition transform .2s ease, box-shadow .2s ease, background-color .2s ease
+  border-bottom none !important
+
+.app-card::before,
+.app-card::after
+  display none !important
 
 .app-card:hover
   transform translateY(-1px)
   box-shadow 0 14px 28px rgba(121, 113, 112, 0.08)
+  border-bottom none !important
+  text-decoration none !important
 
 .app-card__header
   display flex
@@ -94,12 +101,6 @@ $card-note-text = #908058
   color #666666
   font-size 0.95rem
   line-height 1.6
-  max-height calc(1.6 * 4 * 1em)
-  overflow hidden
-  display -webkit-box
-  -webkit-line-clamp 4
-  -webkit-box-orient vertical
-  text-overflow ellipsis
 
 .app-card__summary p,
 .app-card__summary ol,

@@ -36,6 +36,10 @@
   }
 
   function 读取文章类型() {
+    if (document.querySelector('.app-card--daily')) {
+      return 'daily-post';
+    }
+
     const 分类链接 = Array.from(document.querySelectorAll('.post-category a, .post-meta a[href*="/categories/"]'))
       .map(link => decodeURIComponent(link.getAttribute('href') || ''));
 
@@ -69,7 +73,7 @@
       case 'note-list':
         return 'AI 笔记';
       case 'daily-post':
-        return 'AI 日报正文';
+        return 'AI 日报';
       case 'note-post':
         return 'AI 笔记正文';
       case 'iteration-log':

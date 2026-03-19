@@ -163,8 +163,8 @@ a.cite:hover
 
 /* --------- AI Daily Detail Cards --------- */
 .daily-section-title
-  margin-top 2.2em !important
-  margin-bottom 1em !important
+  margin-top 1.25em !important
+  margin-bottom 0.75em !important
   font-size 1.25rem !important
   font-weight 700
   color #86868b !important
@@ -172,8 +172,8 @@ a.cite:hover
   padding 0 !important
 
 .daily-news-card
-  margin-bottom 20px
-  padding 20px 22px
+  margin-bottom 14px
+  padding 16px 20px
   border-radius 16px
   background #ffffff
   box-shadow 0 8px 18px rgba(121, 113, 112, 0.05)
@@ -218,7 +218,38 @@ a.cite:hover
   font-weight 600
   text-decoration none
 
-/* -------------------------------------- */
+/* -------- 其他快讯 List Cards -------- */
+.daily-news-list
+  list-style none !important
+  margin 0 !important
+  padding 0 !important
+
+.daily-news-list > .daily-news-card
+  display block
+  margin-bottom 14px
+  padding 14px 18px
+  border-radius 16px
+  background #ffffff
+  box-shadow 0 6px 16px rgba(121, 113, 112, 0.05)
+
+/* Source chip spans inside list cards */
+.daily-news-card-refs
+  display flex
+  flex-wrap wrap
+  align-items center
+  gap 8px
+  margin 8px 0 0 !important
+  font-size 0.82rem
+  color #999999
+
+/* Hard CSS fallback: hide 参考来源 section if JS formatter didn't catch it */
+.detail-page .post-body h2[id^="参考"]
+  display none !important
+
+.detail-page .post-body h2[id^="参考"] + ul
+  display none !important
+
+/* -------- .app-card--daily badge fix -------- */
 
 .digest-signal-compact
   display flex

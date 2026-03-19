@@ -59,18 +59,27 @@ body.app-noscroll
   padding 0 64px !important
 
 .site-meta .brand
-  display inline-flex
+  position fixed !important
+  top unquote('env(safe-area-inset-top, 0px)') !important
+  height 56px !important
+  left 50% !important
+  transform translateX(-50%) !important
+  display flex
   align-items center
   justify-content center
   padding 0 !important
+  margin 0 !important
   background transparent !important
+  z-index 1070
 
 .site-meta .logo-line
   display none !important
 
 .site-title
   display inline-block
-  max-width 100%
+  margin 0 !important
+  padding 0 !important
+  max-width 60vw
   font-size 1.18rem !important
   font-weight 700 !important
   color $app-text !important
@@ -149,7 +158,7 @@ body.app-noscroll
   position fixed
   top 0
   bottom 0
-  width min(76vw, 280px)
+  width min(60vw, 220px)
   padding unquote('calc(16px + env(safe-area-inset-top, 0px))') 0 20px
   background #efefef
   box-shadow $app-shadow
@@ -192,6 +201,8 @@ body.app-noscroll
   text-decoration none
   font-size 1rem
   font-weight 700
+  border none !important
+  border-bottom none !important
   transition background-color .2s ease, color .2s ease
 
 .app-drawer-menu-item i
