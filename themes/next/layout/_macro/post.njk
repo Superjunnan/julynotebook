@@ -44,8 +44,8 @@
             {%- endif %}
             {{- next_url(post.path, post.title or __('post.untitled'), {class: 'post-title-link', itemprop: 'url'}) }}
           {%- else %}
-            {% if not is_index and post.app_type == 'daily' %}
-              <div class="app-card__header app-card--daily app-detail-header" style="pointer-events: none;">
+            {% if not is_index and (post.app_type == 'daily' or post.app_type == 'note') %}
+              <div class="app-card__header app-card--{{ post.app_type }} app-detail-header" style="pointer-events: none;">
                 <span class="app-card__icon" aria-hidden="true">{{ post.app_badge.icon }}</span>
                 <span class="app-card__title app-detail-header__title">{{ post.app_display_title or post.title }}</span>
                 <span class="app-card__badge">{{ post.app_badge.text }}</span>
@@ -68,6 +68,22 @@
                   <span>今日候选总数：{{ post.app_daily_candidates }} 条</span>
                 {% endif %}
               </div>
+            </div>
+          {%- elif not is_index and post.app_type == 'note' %}
+            <div class="app-card__meta app-detail-meta app-detail-meta--note">
+              <span><i class="far fa-calendar"></i>{{ date(post.date, 'YYYY-MM-DD') }}</span>
+              {%- if post.categories and post.categories.length %}
+                {%- set noteCategory = post.categories.toArray()[0] %}
+                <span><i class="far fa-folder"></i>{{ noteCategory.name }}</span>
+              {%- endif %}
+              {%- if theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
+                <span title="{{ __('post.views') }}" id="busuanzi_container_page_pv">
+                  <i class="{{ theme.busuanzi_count.post_views_icon }}"></i>
+                  <span id="busuanzi_value_page_pv"></span>
+                </span>
+              {%- endif %}
+              <span><i class="far fa-file-word"></i>{{ post.app_wordcount_fmt }}</span>
+              <span><i class="far fa-clock"></i>{{ post.app_reading_time }} 分钟</span>
             </div>
           {%- else %}
             {{ partial('_partials/post/post-meta.njk') }}

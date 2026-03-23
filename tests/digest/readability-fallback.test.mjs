@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 
 import { extractReadableFromHtml } from "../../tools/digest.mjs";
 
@@ -45,4 +46,23 @@ test("extractReadableFromHtml uses aitnt-specific content block and trims noisy 
   assert.match(parsed.text, /75%的任务已被模型覆盖/);
   assert.match(parsed.text, /未来十年冲击将持续扩大/);
   assert.doesNotMatch(parsed.text, /AITNT资源拓展/);
+});
+
+test("extractReadableFromHtml suppresses harmless jsdom css parsing warnings", () => {
+  const script = `
+    import { extractReadableFromHtml } from './tools/digest.mjs';
+    const html = '<!doctype html><html><head><style>body{color:red} @@@</style></head><body><article><h1>T</h1><p>Hello</p></article></body></html>';
+    const parsed = extractReadableFromHtml(html, 'https://example.com/story');
+    process.stdout.write(JSON.stringify(parsed));
+  `;
+
+  const result = spawnSync(process.execPath, ["--input-type=module", "-e", script], {
+    cwd: process.cwd(),
+    encoding: "utf-8",
+  });
+
+  assert.equal(result.status, 0);
+  assert.doesNotMatch(result.stderr, /Could not parse CSS stylesheet/);
+  assert.match(result.stdout, /"title":"T"/);
+  assert.match(result.stdout, /"text":"THello"/);
 });

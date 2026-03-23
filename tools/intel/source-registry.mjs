@@ -63,6 +63,12 @@ function normalizeSource(source, defaults) {
     include_url_patterns: Array.isArray(merged.include_url_patterns)
       ? merged.include_url_patterns.map((item) => String(item).trim()).filter(Boolean)
       : [],
+    preferred_in: String(
+      merged.preferred_in || merged.preferredIn || merged.edition_scope || merged.editionScope || ""
+    ).trim(),
+    availability_scope: String(
+      merged.availability_scope || merged.availabilityScope || ""
+    ).trim(),
     required_inputs: Array.isArray(merged.required_inputs)
       ? merged.required_inputs.map((item) => String(item).trim()).filter(Boolean)
       : [],

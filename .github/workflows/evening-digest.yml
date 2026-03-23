@@ -1,10 +1,9 @@
-name: Daily AI Digest
+name: Evening AI Digest
 
 on:
   schedule:
-    # GitHub Actions cron 用 UTC；Asia/Shanghai 06:05 = UTC 前一天 22:05
-    # 避开整点，降低调度延迟概率
-    - cron: "5 22 * * *"
+    # GitHub Actions cron 用 UTC；Asia/Shanghai 19:40 = UTC 11:40
+    - cron: "40 11 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -25,9 +24,9 @@ jobs:
     env:
       ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
       ZHIPU_MODEL: glm-4.7-flash
-      DIGEST_PROFILE: morning
+      DIGEST_PROFILE: evening
       DIGEST_TZ: Asia/Shanghai
-      DIGEST_POST_TIME: "06:00:00"
+      DIGEST_POST_TIME: "19:40:00"
       DIGEST_LLM_MAX_CONCURRENCY: "1"
       DIGEST_LLM_MIN_INTERVAL_MS: "20000"
       DIGEST_LLM_INTERVAL_JITTER_MS: "600"
@@ -56,8 +55,8 @@ jobs:
         run: |
           DIGEST_DATE="$(TZ="${DIGEST_TZ:-Asia/Shanghai}" date +%F)"
           echo "date=${DIGEST_DATE}" >> "$GITHUB_OUTPUT"
-          echo "path=source/_posts/digest-${DIGEST_DATE}.md" >> "$GITHUB_OUTPUT"
-          echo "reports_dir=data/digest-reports/${DIGEST_DATE}" >> "$GITHUB_OUTPUT"
+          echo "path=source/_posts/evening-digest-${DIGEST_DATE}.md" >> "$GITHUB_OUTPUT"
+          echo "reports_dir=data/digest-reports/evening/${DIGEST_DATE}" >> "$GITHUB_OUTPUT"
 
       - name: Run digest
         run: npm run digest:ci
@@ -66,7 +65,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v6
         with:
-          name: digest-debug-${{ steps.digest_meta.outputs.date }}
+          name: evening-digest-debug-${{ steps.digest_meta.outputs.date }}
           retention-days: 7
           if-no-files-found: warn
           path: |
@@ -74,7 +73,6 @@ jobs:
             data/digest-cache.json
             ${{ steps.digest_meta.outputs.path }}
 
-      # 把生成的 digest 和抓取缓存提交回仓库（更省调用、更稳）
       - name: Commit digest + cache
         run: |
           git config user.name "github-actions[bot]"
@@ -87,7 +85,7 @@ jobs:
           fi
           git add data/digest-cache.json || true
 
-          unexpected_deletes="$(git diff --cached --name-status | awk '$1=="D" && $2 ~ /^source\/_posts\// && $2 !~ /^source\/_posts\/digest-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$/ {print $2}')"
+          unexpected_deletes="$(git diff --cached --name-status | awk '$1=="D" && $2 ~ /^source\/_posts\// && $2 !~ /^source\/_posts\/(digest|evening-digest)-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$/ {print $2}')"
           if [ -n "$unexpected_deletes" ]; then
             echo "::error::Unsafe deletion detected under source/_posts (non-digest files):"
             echo "$unexpected_deletes"
@@ -97,7 +95,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: update daily digest"
+            git commit -m "chore: update evening digest"
             git push
           fi
 

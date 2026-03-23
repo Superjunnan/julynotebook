@@ -52,3 +52,56 @@ test("normalizeSources keeps restricted manual sources even when they do not hav
   assert.equal(sources.length, 1);
   assert.equal(sources[0].id, "ali-tech");
 });
+
+test("getRunnableSources keeps preferred evening domestic sources available to both editions", () => {
+  const sources = normalizeSources([
+    {
+      id: "techcrunch-ai",
+      enabled: true,
+      mode: "auto",
+      ingestion_mode: "direct_feed",
+      parser: "rss",
+      url: "https://example.com",
+      feed_url: "https://example.com/feed",
+    },
+    {
+      id: "aibase-news",
+      enabled: true,
+      mode: "auto",
+      ingestion_mode: "page_scrape",
+      parser: "generic_links",
+      url: "https://example.com/aibase",
+      preferred_in: "evening",
+    },
+    {
+      id: "baidu-qianfan",
+      enabled: true,
+      mode: "auto",
+      ingestion_mode: "page_scrape",
+      parser: "generic_links",
+      url: "https://example.com/baidu",
+      preferred_in: "evening",
+    },
+    {
+      id: "kimi",
+      enabled: true,
+      mode: "auto",
+      ingestion_mode: "page_scrape",
+      parser: "generic_links",
+      url: "https://example.com/kimi",
+      preferred_in: "both",
+    },
+  ]);
+
+  const morning = getRunnableSources(sources, { edition: "morning" });
+  const evening = getRunnableSources(sources, { edition: "evening" });
+
+  assert.deepEqual(
+    morning.map((item) => item.id),
+    ["techcrunch-ai", "aibase-news", "baidu-qianfan", "kimi"]
+  );
+  assert.deepEqual(
+    evening.map((item) => item.id),
+    ["techcrunch-ai", "aibase-news", "baidu-qianfan", "kimi"]
+  );
+});

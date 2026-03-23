@@ -24,6 +24,9 @@ test("source registry contains all required user-requested sources", () => {
     "aibase-news",
     "36kr-ai",
     "aitnt-news",
+    "leiphone-ai",
+    "jiqizhixin-articles",
+    "volcengine-articles",
     "stratechery",
     "ben-evans-newsletter",
     "the-information-ai",
@@ -55,6 +58,11 @@ test("source registry contains all required user-requested sources", () => {
     "seed",
     "ali-tech",
     "stepfun",
+    "baidu-qianfan",
+    "tencent-hunyuan",
+    "xiaomi-hyperai",
+    "qwen-blog",
+    "qbitai-news",
     "hacker-news-ai",
     "huggingface-posts",
     "huggingface-papers",
@@ -65,7 +73,17 @@ test("source registry contains all required user-requested sources", () => {
 
 test("official company channels are configured for auto crawling when available", () => {
   const registry = loadSourceRegistry(new URL("../../sources.yml", import.meta.url));
-  const expectedAuto = ["minimax", "kimi", "deepseek", "seed", "ali-tech"];
+  const expectedAuto = [
+    "minimax",
+    "kimi",
+    "zhipu",
+    "deepseek",
+    "seed",
+    "ali-tech",
+    "baidu-qianfan",
+    "tencent-hunyuan",
+    "qwen-blog",
+  ];
 
   for (const id of expectedAuto) {
     const source = registry.sources.find((item) => item.id === id);
@@ -74,6 +92,60 @@ test("official company channels are configured for auto crawling when available"
     assert.equal(source?.mode, "auto", `${id} should be auto`);
     assert.equal(source?.ingestion_mode, "page_scrape", `${id} should use page_scrape`);
     assert.equal(Boolean(source?.url), true, `${id} missing url`);
+  }
+});
+
+test("domestic evening digest sources retain evening preference metadata", () => {
+  const registry = loadSourceRegistry(new URL("../../sources.yml", import.meta.url));
+  const eveningPreferredIds = new Set(
+    registry.sources
+      .filter((source) => source.preferred_in === "evening" || source.preferred_in === "both")
+      .map((source) => source.id)
+  );
+
+  [
+    "aibase-news",
+    "36kr-ai",
+    "aitnt-news",
+    "leiphone-ai",
+    "jiqizhixin-articles",
+    "volcengine-articles",
+    "minimax",
+    "kimi",
+    "zhipu",
+    "deepseek",
+    "seed",
+    "ali-tech",
+    "stepfun",
+    "baidu-qianfan",
+    "tencent-hunyuan",
+    "xiaomi-hyperai",
+    "qwen-blog",
+    "qbitai-news",
+  ].forEach((id) => assert.equal(eveningPreferredIds.has(id), true, `${id} should prefer evening digest`));
+});
+
+test("new domestic public sources are runnable for evening digest", () => {
+  const registry = loadSourceRegistry(new URL("../../sources.yml", import.meta.url));
+  const expected = {
+    "leiphone-ai": "page_scrape",
+    "jiqizhixin-articles": "page_scrape",
+    "volcengine-articles": "page_scrape",
+    "qbitai-news": "direct_feed",
+  };
+
+  for (const [id, mode] of Object.entries(expected)) {
+    const source = registry.sources.find((item) => item.id === id);
+    assert.equal(Boolean(source), true, `${id} missing`);
+    assert.equal(source?.enabled, true, `${id} should be enabled`);
+    assert.equal(source?.mode, "auto", `${id} should be auto`);
+    assert.equal(source?.ingestion_mode, mode, `${id} should use ${mode}`);
+    assert.equal(source?.preferred_in, "evening", `${id} should prefer evening digest`);
+    if (mode === "direct_feed") {
+      assert.equal(Boolean(source?.feed_url), true, `${id} missing feed_url`);
+    } else {
+      assert.equal(Boolean(source?.url), true, `${id} missing url`);
+    }
   }
 });
 

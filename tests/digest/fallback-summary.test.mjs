@@ -1,47 +1,193 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { buildFallbackDailySummary } from "../../tools/digest.mjs";
+import { normalizeDailySummary } from "../../tools/digest.mjs";
 
-test("buildFallbackDailySummary groups materials by bucket hint", () => {
-  const daily = buildFallbackDailySummary([
+test("normalizeDailySummary can backfill hot news to at least three entries", () => {
+  const materials = [
     { refId: 1, title: "OpenAI ships Operator API", source: "TechCrunch AI", bucketHint: "hot_news" },
-    { refId: 2, title: "Sparse reasoning paper", source: "arXiv cs.AI", bucketHint: "core_tech" },
-    { refId: 3, title: "Karpathy hints at new coding loop", source: "Andrej Karpathy", sourceGroup: "opinion", bucketHint: "ai_rumor" },
-  ]);
+    { refId: 2, title: "Anthropic expands Claude enterprise agent access", source: "The Verge AI", bucketHint: "hot_news" },
+    { refId: 3, title: "Google Gemini adds coding workflow support", source: "Google AI Blog", bucketHint: "hot_news" },
+    { refId: 4, title: "Sparse reasoning paper", source: "arXiv cs.AI", bucketHint: "core_tech", sourceGroup: "paper" },
+  ];
 
-  assert.equal(daily.hotNews.length, 0);
-  assert.equal(daily.otherNews.length >= 1, true);
-  assert.equal(Array.isArray(daily.otherNews), true);
-  assert.equal(daily.coreTech.length, 1);
-  assert.equal(daily.aiRumor.length, 0);
+  const daily = normalizeDailySummary(
+    {
+      hot_news: [
+        {
+          topic_id: 1,
+          insight: "OpenAI 更新 Operator API",
+          narrative: "OpenAI 面向企业扩展了 Operator API。",
+          refs: [1],
+          mention_count: 1,
+          cross_verify_score: 60,
+        },
+      ],
+      other_news: [
+        {
+          topic_id: 2,
+          insight: "Anthropic 扩展企业 Agent 访问",
+          narrative: "Anthropic 更新了 Claude 企业 Agent 访问能力。",
+          refs: [2],
+          mention_count: 1,
+          cross_verify_score: 68,
+        },
+        {
+          topic_id: 3,
+          insight: "Google Gemini 强化代码工作流",
+          narrative: "Google 为 Gemini 加强了 coding workflow 支持。",
+          refs: [3],
+          mention_count: 1,
+          cross_verify_score: 66,
+        },
+      ],
+      core_tech: [
+        {
+          topic_id: 4,
+          title: "Sparse reasoning paper",
+          summary: "paper",
+          refs: [4],
+        },
+      ],
+    },
+    materials
+  );
+
+  assert.equal(daily.hotNews.length >= 3, true);
+  assert.equal(daily.hotNews.some((item) => (item.refs || [])[0] === 2), true);
+  assert.equal(daily.hotNews.some((item) => (item.refs || [])[0] === 3), true);
 });
 
-test("buildFallbackDailySummary uses concise Chinese fallback copy", () => {
-  const daily = buildFallbackDailySummary([
+test("normalizeDailySummary does not backfill low-value community entries into hot news", () => {
+  const materials = [
     {
       refId: 1,
-      title: "Why AI startups are selling the same equity at two different prices",
-      source: "TechCrunch AI",
-      sourceGroup: "foreign_media",
+      title: "社区用户讨论 Claude 好不好用",
+      source: "Hacker News AI",
+      sourceGroup: "community",
       bucketHint: "hot_news",
-      trustTier: "high",
+      trustTier: "low",
+      domain: "news.ycombinator.com",
+      text: "用户在社区里讨论体验，没有新增事实。",
     },
     {
       refId: 2,
-      title: "Reasoning as Gradient: Scaling MLE Agents Beyond Tree Search",
-      source: "arXiv cs.AI",
-      sourceGroup: "paper",
-      bucketHint: "core_tech",
+      title: "OpenAI 发布企业级推理平台",
+      source: "OpenAI News",
+      sourceGroup: "company_view",
       trustTier: "high",
+      domain: "openai.com",
+      text: "官方发布企业级推理平台。",
+      bucketHint: "core_tech",
     },
-  ]);
+    {
+      refId: 3,
+      title: "Anthropic 发布新版 Claude 企业能力",
+      source: "Anthropic News",
+      sourceGroup: "company_view",
+      trustTier: "high",
+      domain: "anthropic.com",
+      text: "官方发布新版 Claude 企业能力。",
+      bucketHint: "hot_news",
+    },
+    {
+      refId: 4,
+      title: "Google Gemini 更新开发者平台",
+      source: "Google AI Blog",
+      sourceGroup: "company_view",
+      trustTier: "high",
+      domain: "blog.google",
+      text: "Gemini 开发者平台更新。",
+      bucketHint: "hot_news",
+    },
+  ];
 
-  assert.equal(daily.hotNews.length, 0);
-  assert.equal(daily.coreTech[0].title, "论文进展 1");
-  assert.equal(daily.otherNews.length, 1);
-  assert.equal((daily.otherNews[0].narrative || "").length > 20, true);
-  assert.doesNotMatch(daily.otherNews[0].narrative || "", /5W1H：|Who\/What：|When\/Where：|Why\/How：/);
-  assert.equal(daily.coreTech[0].summary, "该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。");
-  assert.doesNotMatch(daily.otherNews[0].narrative || "", /等待模型总结|人工复核/);
+  const daily = normalizeDailySummary(
+    {
+      hot_news: [],
+      other_news: [
+        { topic_id: 1, insight: "社区讨论", narrative: "社区讨论", refs: [1], mention_count: 1, cross_verify_score: 40 },
+        { topic_id: 2, insight: "OpenAI 发布平台", narrative: "OpenAI 发布平台", refs: [2], mention_count: 1, cross_verify_score: 72 },
+        { topic_id: 3, insight: "Anthropic 企业能力", narrative: "Anthropic 企业能力", refs: [3], mention_count: 1, cross_verify_score: 70 },
+        { topic_id: 4, insight: "Gemini 平台更新", narrative: "Gemini 平台更新", refs: [4], mention_count: 1, cross_verify_score: 68 },
+      ],
+      core_tech: [],
+    },
+    materials
+  );
+
+  assert.equal(daily.hotNews.length >= 3, true);
+  assert.equal(daily.hotNews.some((item) => (item.refs || [])[0] === 1), false);
+});
+
+test("normalizeDailySummary can backfill multi-source hot news when similar domestic topics cluster together", () => {
+  const daily = normalizeDailySummary(
+    {
+      hot_news: [],
+      other_news: [
+        {
+          topic_id: 11,
+          insight: "阿里云与 AI 商业化收入目标",
+          narrative: "阿里云与 AI 商业化收入目标。",
+          refs: [1, 2],
+          mention_count: 2,
+          cross_verify_score: 82,
+        },
+        {
+          topic_id: 12,
+          insight: "字节短剧 Agent 小云雀",
+          narrative: "字节发布短剧 Agent 小云雀。",
+          refs: [3],
+          mention_count: 1,
+          cross_verify_score: 66,
+        },
+      ],
+      core_tech: [],
+    },
+    [
+      {
+        refId: 1,
+        title: "阿里云与AI商业化收入目标剑指千亿美元",
+        source: "AIBase",
+        sourceGroup: "domestic_media",
+        trustTier: "medium",
+        link: "https://news.aibase.com/1",
+        domain: "aibase.com",
+        text: "媒体报道。",
+        bucketHint: "hot_news",
+        score: 26,
+        pubDate: "2026-03-20",
+      },
+      {
+        refId: 2,
+        title: "吴泳铭：阿里云与AI商业收入未来五年冲刺千亿美元",
+        source: "36Kr AI",
+        sourceGroup: "domestic_media",
+        trustTier: "medium",
+        link: "https://36kr.com/2",
+        domain: "36kr.com",
+        text: "媒体跟进报道。",
+        bucketHint: "hot_news",
+        score: 25,
+        pubDate: "2026-03-20",
+      },
+      {
+        refId: 3,
+        title: "字节发布短剧Agent小云雀，基于Seedance 2.0",
+        source: "AITNT 资讯",
+        sourceGroup: "domestic_media",
+        trustTier: "medium",
+        link: "https://aitntnews.com/3",
+        domain: "aitntnews.com",
+        text: "媒体报道。",
+        bucketHint: "hot_news",
+        score: 24,
+        pubDate: "2026-03-20",
+      },
+    ]
+  );
+
+  assert.equal(daily.hotNews.length >= 1, true);
+  assert.equal((daily.hotNews[0].refs || []).length >= 2, true);
+  assert.equal((daily.hotNews[0].crossVerifyScore || 0) >= 82, true);
 });

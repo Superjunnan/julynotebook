@@ -10,10 +10,17 @@ function 读取标签数组(data) {
   return data.tags.toArray().map(tag => tag.name);
 }
 
-function 生成显示标题(data, isDaily) {
+function 生成显示标题(data, isDaily, digestEdition = '') {
   const 原始标题 = String(data.title || '').trim();
   if (!isDaily) return 原始标题;
-  return 原始标题.replace(/^人工智能日报/u, 'AI日报');
+  if (digestEdition === 'evening') {
+    return 原始标题
+      .replace(/^人工智能晚报/u, 'AI晚报')
+      .replace(/^人工智能日报/u, 'AI晚报');
+  }
+  return 原始标题
+    .replace(/^人工智能日报/u, 'AI日报')
+    .replace(/^人工智能晚报/u, 'AI日报');
 }
 
 function 去除标题序号(text) {
@@ -178,12 +185,17 @@ hexo.extend.filter.register('after_post_render', function(data) {
     const 标签数组 = 读取标签数组(data);
     const isDaily = 分类名称.some(name => name === '每日资讯' || name === 'AI 日报');
     const isNote = 分类名称.some(name => name === 'july笔记' || name === 'AI 笔记');
+    const digestEdition = String(data.digest_edition || '').trim().toLowerCase();
     const htmlContent = data.content || '';
 
     data.app_type = isDaily ? 'daily' : (isNote ? 'note' : 'default');
 
     if (isDaily) {
-      data.app_badge = { text: 'AI 日报', color: '#9d473d', bg: '#f8d9d4', icon: '🤖' };
+      if (digestEdition === 'evening') {
+        data.app_badge = { text: 'AI 晚报', color: '#8a5a2b', bg: '#fde7cc', icon: '🤖' };
+      } else {
+        data.app_badge = { text: 'AI 日报', color: '#9d473d', bg: '#f8d9d4', icon: '🤖' };
+      }
     } else if (isNote) {
       data.app_badge = { text: 'AI 笔记', color: '#8d7630', bg: '#f6ebbf', icon: '📔' };
     } else {
@@ -192,7 +204,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 
     data.tagsList = 标签数组;
     data.app_tags_str = 标签数组.join(',');
-    data.app_display_title = 生成显示标题(data, isDaily);
+    data.app_display_title = 生成显示标题(data, isDaily, digestEdition);
     if (isDaily) {
       data.title = data.app_display_title;
     }

@@ -28,7 +28,7 @@ import crypto from "crypto";
 import Parser from "rss-parser";
 import { parse } from "node-html-parser";
 import { Readability } from "@mozilla/readability";
-import { JSDOM } from "jsdom";
+import { JSDOM, VirtualConsole } from "jsdom";
 import { fileURLToPath } from "node:url";
 
 import { loadLocalIntake } from "./intel/local-intake.mjs";
@@ -101,6 +101,18 @@ const CONFIG_PATH = path.join(ROOT, "sources.yml");
 const POSTS_DIR = path.join(ROOT, "source", "_posts");
 const CACHE_PATH = path.join(ROOT, "data", "digest-cache.json");
 const REPORTS_DIR = path.join(ROOT, "data", "digest-reports");
+const LLM_PACING_LOCK_DIR = path.join(ROOT, "data", ".llm-pacing.lock");
+const LLM_PACING_STATE_PATH = path.join(ROOT, "data", "llm-pacing-state.json");
+
+function normalizeDigestEdition(raw) {
+  const value = String(raw || "morning").trim().toLowerCase();
+  if (value === "evening") return "evening";
+  return "morning";
+}
+
+const DIGEST_EDITION = normalizeDigestEdition(
+  process.env.DIGEST_PROFILE || process.env.DIGEST_EDITION || "morning"
+);
 
 // 从项目根目录加载 .env（仅用于本地开发；线上用 GitHub Secrets/环境变量）
 loadDotEnv(ROOT);
@@ -174,11 +186,11 @@ const PER_ARTICLE_MAX_CHARS = 1800;
 // 429（Too Many Requests 限流）重试次数
 const LLM_MAX_RETRIES = 6;
 
-// 如果 429/500 多，建议把间隔调大：8000~12000
-const LLM_MIN_INTERVAL_MS = readPositiveIntEnv("DIGEST_LLM_MIN_INTERVAL_MS", 8000);
+// 免费接口更稳的默认值：全局严格串行，且上一请求完成后再等待 20s 才发下一次。
+const LLM_MIN_INTERVAL_MS = readPositiveIntEnv("DIGEST_LLM_MIN_INTERVAL_MS", 20_000);
 const LLM_MAX_CONCURRENCY = Math.max(
   1,
-  Math.min(2, readPositiveIntEnv("DIGEST_LLM_MAX_CONCURRENCY", 2))
+  Math.min(1, readPositiveIntEnv("DIGEST_LLM_MAX_CONCURRENCY", 1))
 );
 const LLM_INTERVAL_JITTER_MS = readPositiveIntEnv("DIGEST_LLM_INTERVAL_JITTER_MS", 400);
 const LLM_CACHE_RETENTION_DAYS = readPositiveIntEnv("DIGEST_LLM_CACHE_RETENTION_DAYS", 45);
@@ -199,14 +211,16 @@ const DIGEST_TZ = String(
 ).trim() || "UTC";
 
 // 文章 front-matter 的发布时间（HH:mm:ss）
-const DIGEST_POST_TIME = String(process.env.DIGEST_POST_TIME || "08:00:00").trim() || "08:00:00";
+const DIGEST_POST_TIME_RAW = String(process.env.DIGEST_POST_TIME || "").trim();
+const DIGEST_MORNING_POST_TIME_RAW = String(process.env.DIGEST_MORNING_POST_TIME || "").trim();
+const DIGEST_EVENING_POST_TIME_RAW = String(process.env.DIGEST_EVENING_POST_TIME || "").trim();
 const NEWS_LOOKBACK_DAYS_DEFAULT = readPositiveIntEnv("DIGEST_NEWS_LOOKBACK_DAYS", 5);
 const PAPER_LOOKBACK_DAYS_DEFAULT = readPositiveIntEnv("DIGEST_PAPER_LOOKBACK_DAYS", 2);
 const CLUSTER_INPUT_CAP_NEWS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_NEWS", 100);
 const CLUSTER_INPUT_CAP_PAPERS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_PAPERS", 160);
 
 const DIGEST_NEWS_RULES = Object.freeze({
-  hotMin: 0,
+  hotMin: 3,
   hotMax: 4,
   quickMin: 0,
   quickMax: 15,
@@ -215,6 +229,52 @@ const DIGEST_NEWS_RULES = Object.freeze({
   coreTechMin: 3,
   coreTechMax: 6,
 });
+
+function getDigestEditionConfig(edition = DIGEST_EDITION) {
+  if (normalizeDigestEdition(edition) === "evening") {
+    return {
+      edition: "evening",
+      region: "domestic",
+      label: "AI晚报",
+      fileName: (dateISO) => `evening-digest-${dateISO}.md`,
+      reportsDir: (dateISO) => path.join(REPORTS_DIR, "evening", String(dateISO || "")),
+      tags: ["人工智能", "每日资讯", "AI 晚报", "国内AI"],
+      descriptionFallback: "AI晚报：国内模型公司、平台产品与产业动态汇总。",
+    };
+  }
+
+  return {
+    edition: "morning",
+    region: "global",
+    label: "AI日报",
+    fileName: (dateISO) => `digest-${dateISO}.md`,
+    reportsDir: (dateISO) => path.join(REPORTS_DIR, String(dateISO || "")),
+    tags: ["人工智能", "每日资讯"],
+    descriptionFallback: "AI日报：今日主线、其他快讯与核心论文。",
+  };
+}
+
+const DIGEST_EDITION_CONFIG = getDigestEditionConfig(DIGEST_EDITION);
+function resolveEditionDefaultPostTime(edition = DIGEST_EDITION_CONFIG.edition) {
+  return normalizeDigestEdition(edition) === "evening" ? "19:40:00" : "06:00:00";
+}
+
+function resolveConfiguredDigestPostTime(edition = DIGEST_EDITION_CONFIG.edition) {
+  const normalizedEdition = normalizeDigestEdition(edition);
+  const editionRaw = normalizedEdition === "evening"
+    ? DIGEST_EVENING_POST_TIME_RAW
+    : DIGEST_MORNING_POST_TIME_RAW;
+  if (editionRaw) return normalizeTimeOfDay(editionRaw);
+
+  // 兼容历史本地 .env 中遗留的通用默认值，避免晚报被错误写成 09:00 或 08:00。
+  if (DIGEST_POST_TIME_RAW && !["08:00:00", "09:00:00"].includes(DIGEST_POST_TIME_RAW)) {
+    return normalizeTimeOfDay(DIGEST_POST_TIME_RAW);
+  }
+
+  return resolveEditionDefaultPostTime(normalizedEdition);
+}
+
+const DIGEST_POST_TIME = resolveConfiguredDigestPostTime(DIGEST_EDITION_CONFIG.edition);
 
 /* ==============================
  *  3) 工具函数（读写/时间/超时等）
@@ -319,6 +379,42 @@ function formatDateISOInTimeZone(date, timeZone) {
 
 function todayISO(timeZone = RUN_TZ) {
   return formatDateISOInTimeZone(new Date(), timeZone);
+}
+
+function formatTimeInTimeZone(date, timeZone = RUN_TZ) {
+  const tz = normalizeTimeZone(timeZone);
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: tz,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  }).formatToParts(date);
+
+  const hh = parts.find((p) => p.type === "hour")?.value;
+  const mm = parts.find((p) => p.type === "minute")?.value;
+  const ss = parts.find((p) => p.type === "second")?.value;
+  if (!hh || !mm || !ss) return "00:00:00";
+  return `${hh}:${mm}:${ss}`;
+}
+
+function normalizeTimeOfDay(raw) {
+  const value = String(raw || "").trim();
+  if (/^\d{2}:\d{2}:\d{2}$/.test(value)) return value;
+  return "08:00:00";
+}
+
+function resolveDigestFrontMatterDateTime(dateISO, configuredTime, options = {}) {
+  const timeZone = normalizeTimeZone(options?.timeZone || RUN_TZ);
+  const safeTime = normalizeTimeOfDay(configuredTime);
+  const now = options?.now instanceof Date ? options.now : new Date();
+  const today = formatDateISOInTimeZone(now, timeZone);
+  if (String(dateISO || "").trim() !== today) {
+    return `${dateISO} ${safeTime}`;
+  }
+
+  const currentTime = formatTimeInTimeZone(now, timeZone);
+  return `${dateISO} ${currentTime < safeTime ? currentTime : safeTime}`;
 }
 
 function getRunDateISO() {
@@ -555,8 +651,12 @@ function safeSlug(text, fallback = "report") {
   return v || fallback;
 }
 
+function getDigestReportsDateDir(dateISO, edition = DIGEST_EDITION) {
+  return getDigestEditionConfig(edition).reportsDir(dateISO);
+}
+
 function writeAuditReport(dateISO, fileName, payload) {
-  const dir = path.join(REPORTS_DIR, String(dateISO || ""));
+  const dir = getDigestReportsDateDir(dateISO);
   fs.mkdirSync(dir, { recursive: true });
   const fullPath = path.join(dir, `${safeSlug(fileName)}.json`);
   fs.writeFileSync(fullPath, JSON.stringify(payload, null, 2), "utf-8");
@@ -572,7 +672,28 @@ function normalizeCache(raw) {
   const publishedSignatures = x.publishedSignatures && typeof x.publishedSignatures === "object"
     ? x.publishedSignatures
     : {};
-  return { version: 5, fetched, daily, llm, published, publishedSignatures };
+  const publishedByEdition = x.publishedByEdition && typeof x.publishedByEdition === "object"
+    ? x.publishedByEdition
+    : {
+        morning: published,
+        evening: {},
+      };
+  const publishedSignaturesByEdition = x.publishedSignaturesByEdition && typeof x.publishedSignaturesByEdition === "object"
+    ? x.publishedSignaturesByEdition
+    : {
+        morning: publishedSignatures,
+        evening: {},
+      };
+  return {
+    version: 6,
+    fetched,
+    daily,
+    llm,
+    published,
+    publishedSignatures,
+    publishedByEdition,
+    publishedSignaturesByEdition,
+  };
 }
 
 function persistDigestCache(cache, filePath = CACHE_PATH) {
@@ -582,6 +703,26 @@ function persistDigestCache(cache, filePath = CACHE_PATH) {
   cache.llm = pruneByAtDate(cache.llm, LLM_CACHE_RETENTION_DAYS);
   cache.published = pruneByAtDate(cache.published, DAILY_RETENTION_DAYS);
   cache.publishedSignatures = pruneByAtDate(cache.publishedSignatures, DAILY_RETENTION_DAYS);
+  if (cache.publishedByEdition && typeof cache.publishedByEdition === "object") {
+    for (const [edition, records] of Object.entries(cache.publishedByEdition)) {
+      cache.publishedByEdition[edition] = pruneByAtDate(records, DAILY_RETENTION_DAYS);
+    }
+  }
+  if (cache.publishedSignaturesByEdition && typeof cache.publishedSignaturesByEdition === "object") {
+    for (const [edition, records] of Object.entries(cache.publishedSignaturesByEdition)) {
+      cache.publishedSignaturesByEdition[edition] = pruneByAtDate(records, DAILY_RETENTION_DAYS);
+    }
+  }
+  if (cache.publishedByEdition && typeof cache.publishedByEdition === "object") {
+    for (const [edition, records] of Object.entries(cache.publishedByEdition)) {
+      cache.publishedByEdition[edition] = pruneByAtDate(records, DAILY_RETENTION_DAYS);
+    }
+  }
+  if (cache.publishedSignaturesByEdition && typeof cache.publishedSignaturesByEdition === "object") {
+    for (const [edition, records] of Object.entries(cache.publishedSignaturesByEdition)) {
+      cache.publishedSignaturesByEdition[edition] = pruneByAtDate(records, DAILY_RETENTION_DAYS);
+    }
+  }
   safeWriteJson(filePath, cache);
 }
 
@@ -821,12 +962,47 @@ export function dedupeCandidatesEarly(candidates) {
 }
 
 export function filterPreviouslyPublished(items, cache, options = {}) {
-  const published = cache?.published && typeof cache.published === "object"
-    ? cache.published
+  const edition = normalizeDigestEdition(options?.edition || DIGEST_EDITION);
+  const publishedByEdition = cache?.publishedByEdition && typeof cache.publishedByEdition === "object"
+    ? cache.publishedByEdition
     : {};
-  const publishedSignatures = cache?.publishedSignatures && typeof cache.publishedSignatures === "object"
-    ? cache.publishedSignatures
+  const publishedSignaturesByEdition = cache?.publishedSignaturesByEdition && typeof cache.publishedSignaturesByEdition === "object"
+    ? cache.publishedSignaturesByEdition
     : {};
+  const published = publishedByEdition[edition] && typeof publishedByEdition[edition] === "object"
+    ? publishedByEdition[edition]
+    : (cache?.published && typeof cache.published === "object" && edition === "morning" ? cache.published : {});
+  const publishedSignatures = publishedSignaturesByEdition[edition] && typeof publishedSignaturesByEdition[edition] === "object"
+    ? publishedSignaturesByEdition[edition]
+    : (cache?.publishedSignatures && typeof cache.publishedSignatures === "object" && edition === "morning"
+        ? cache.publishedSignatures
+        : {});
+  const otherPublished = {};
+  const otherPublishedSignatures = {};
+  for (const [otherEdition, records] of Object.entries(publishedByEdition)) {
+    if (otherEdition === edition || !records || typeof records !== "object") continue;
+    Object.assign(otherPublished, records);
+  }
+  for (const [otherEdition, records] of Object.entries(publishedSignaturesByEdition)) {
+    if (otherEdition === edition || !records || typeof records !== "object") continue;
+    Object.assign(otherPublishedSignatures, records);
+  }
+  if (
+    edition !== "morning" &&
+    Object.keys(otherPublished).length === 0 &&
+    cache?.published &&
+    typeof cache.published === "object"
+  ) {
+    Object.assign(otherPublished, cache.published);
+  }
+  if (
+    edition !== "morning" &&
+    Object.keys(otherPublishedSignatures).length === 0 &&
+    cache?.publishedSignatures &&
+    typeof cache.publishedSignatures === "object"
+  ) {
+    Object.assign(otherPublishedSignatures, cache.publishedSignatures);
+  }
   const runDate = String(options?.runDate || "").trim();
   const keepFollowUpEvidence = options?.keepFollowUpEvidence === true;
 
@@ -857,10 +1033,19 @@ export function filterPreviouslyPublished(items, cache, options = {}) {
         return false;
       }
     }
+    if (signature && otherPublishedSignatures[signature] && !shouldKeepFollowUpEvidence(item, otherPublishedSignatures[signature])) {
+      return false;
+    }
 
     const canonical = normalizeCandidateUrl(link);
     const publishedInfo = published[link] || (canonical ? published[canonical] : null);
-    if (!publishedInfo) return true;
+    const otherPublishedInfo = otherPublished[link] || (canonical ? otherPublished[canonical] : null);
+    if (!publishedInfo) {
+      if (otherPublishedInfo && !shouldKeepFollowUpEvidence(item, otherPublishedInfo)) {
+        return false;
+      }
+      return true;
+    }
 
     const publishedDate = String(publishedInfo?.at || "").trim();
     if (runDate && publishedDate === runDate) {
@@ -868,7 +1053,13 @@ export function filterPreviouslyPublished(items, cache, options = {}) {
       return true;
     }
 
-    return shouldKeepFollowUpEvidence(item, publishedInfo);
+    if (!shouldKeepFollowUpEvidence(item, publishedInfo)) return false;
+
+    if (otherPublishedInfo && !shouldKeepFollowUpEvidence(item, otherPublishedInfo)) {
+      return false;
+    }
+
+    return true;
   });
 }
 
@@ -980,6 +1171,12 @@ export function normalizeSources(rawSources) {
       ? s.required_inputs.map((item) => String(item).trim()).filter(Boolean)
       : [];
     const display_name_zh = String(s.display_name_zh || s.displayNameZh || "").trim();
+    const preferred_in = String(
+      s.preferred_in || s.preferredIn || s.edition_scope || s.editionScope || ""
+    ).trim().toLowerCase();
+    const availability_scope = String(
+      s.availability_scope || s.availabilityScope || ""
+    ).trim().toLowerCase();
 
     const requiresPublicLocation = mode === "auto";
 
@@ -1003,6 +1200,8 @@ export function normalizeSources(rawSources) {
       parser,
       link_selector,
       display_name_zh,
+      preferred_in,
+      availability_scope,
       include_keywords,
       exclude_keywords,
       include_url_patterns,
@@ -1014,9 +1213,28 @@ export function normalizeSources(rawSources) {
   return sources;
 }
 
-export function getRunnableSources(sources) {
+export function isSourceEnabledForEdition(source, edition = DIGEST_EDITION) {
+  const targetEdition = normalizeDigestEdition(edition);
+  const scope = String(source?.availability_scope || source?.availabilityScope || "").trim().toLowerCase();
+  if (!scope) return true;
+  if (scope === "both") return true;
+  return scope === targetEdition;
+}
+
+function getSourceEditionPreferenceBonus(sourceLike, edition = DIGEST_EDITION) {
+  const targetEdition = normalizeDigestEdition(edition);
+  const preferredIn = String(
+    sourceLike?.preferred_in || sourceLike?.preferredIn || sourceLike?.edition_scope || ""
+  ).trim().toLowerCase();
+  if (!preferredIn || preferredIn === "both") return 0;
+  return preferredIn === targetEdition ? 2 : -1;
+}
+
+export function getRunnableSources(sources, options = {}) {
+  const edition = normalizeDigestEdition(options?.edition || DIGEST_EDITION);
   return (sources || []).filter((source) => {
     if (!source?.enabled) return false;
+    if (!isSourceEnabledForEdition(source, edition)) return false;
     if (source.mode !== "auto") return false;
     return (
       source.ingestion_mode === "direct_feed" ||
@@ -1108,6 +1326,7 @@ export function normalizeHuggingFaceApiItems(source, payload) {
     sourceId: source?.id || "",
     sourceGroup: source?.group || "",
     sourceDisplayZh: source?.display_name_zh || "",
+    preferredIn: source?.preferred_in || "",
     weight: source?.weight || 0,
     bucketHint: source?.bucket_hint || "",
     trustTier: source?.trust_tier || "",
@@ -1483,6 +1702,16 @@ function fallbackExtractFromHtml(html) {
   };
 }
 
+function createReadabilityVirtualConsole() {
+  const virtualConsole = new VirtualConsole();
+  virtualConsole.on("jsdomError", (error) => {
+    if (error?.type === "css-parsing") return;
+    const message = error?.stack || error?.message || String(error);
+    console.error(message);
+  });
+  return virtualConsole;
+}
+
 export function extractReadableFromHtml(html, url) {
   const rawHtml = String(html || "");
   const siteSpecific = extractSiteSpecificContent(url, rawHtml);
@@ -1499,7 +1728,10 @@ export function extractReadableFromHtml(html, url) {
     if (!candidateHtml) continue;
 
     try {
-      const dom = new JSDOM(candidateHtml, { url });
+      const dom = new JSDOM(candidateHtml, {
+        url,
+        virtualConsole: createReadabilityVirtualConsole(),
+      });
       const reader = new Readability(dom.window.document);
       const parsed = reader.parse();
       const title = normalizeExtractedText(parsed?.title || "") || extractTitleFromHtml(candidateHtml);
@@ -1548,6 +1780,7 @@ async function extractArticleText(url) {
 function scoreItem(item, weight, boostKeywords) {
   let s = 0;
   s += Number(weight || 0);
+  s += getSourceEditionPreferenceBonus(item, DIGEST_EDITION);
   s += getTrustWeight(item?.trustTier);
   s += recencyBonus(item?.pubDate);
 
@@ -1717,7 +1950,7 @@ function isTrustedNewsSource(item) {
   const trustTier = String(item?.trustTier || "").toLowerCase();
   const sourceGroup = String(item?.sourceGroup || "").toLowerCase();
   if (trustTier === "high") return true;
-  return ["company", "foreign_media", "newsletter", "domestic_media", "briefing"].includes(sourceGroup);
+  return ["company", "company_view", "foreign_media", "newsletter", "domestic_media", "briefing"].includes(sourceGroup);
 }
 
 export function splitCandidatesByPool(candidates) {
@@ -3008,6 +3241,41 @@ const ENTITY_KEYWORDS = [
   "deepseek", "luma", "cursor", "huggingface", "arxiv",
 ];
 
+const HEAD_AI_ENTITY_RULES = Object.freeze([
+  { label: "OpenAI", weight: 14, patterns: [/\bopenai\b/i, /\bchatgpt\b/i, /\bgpt-?\d/i, /\boperator\b/i] },
+  { label: "Anthropic", weight: 13, patterns: [/\banthropic\b/i, /\bclaude\b/i] },
+  { label: "Google/DeepMind", weight: 13, patterns: [/\bgoogle\b/i, /\bdeepmind\b/i, /\bgemini\b/i] },
+  { label: "Meta", weight: 11, patterns: [/\bmeta\b/i, /\bllama\b/i] },
+  { label: "xAI", weight: 10, patterns: [/\bxai\b/i, /\bgrok\b/i] },
+  { label: "NVIDIA", weight: 12, patterns: [/\bnvidia\b/i, /\bcuda\b/i, /\bdlss\b/i, /英伟达/i] },
+  { label: "阿里/通义/Qwen", weight: 12, patterns: [/阿里|通义|千问/i, /\bqwen\b/i, /\btongyi\b/i] },
+  { label: "字节/豆包/Seed", weight: 12, patterns: [/字节|豆包|火山引擎|seed/i, /\bdoubao\b/i, /\bseedance\b/i] },
+  { label: "腾讯/混元", weight: 11, patterns: [/腾讯|混元/i, /\bhunyuan\b/i] },
+  { label: "智谱/GLM", weight: 11, patterns: [/智谱/i, /\bglm\b/i] },
+  { label: "MiniMax", weight: 11, patterns: [/minimax/i] },
+  { label: "月之暗面/Kimi", weight: 11, patterns: [/月之暗面|kimi/i, /\bmoonshot\b/i] },
+  { label: "DeepSeek", weight: 11, patterns: [/deepseek/i] },
+  { label: "百度/文心/千帆", weight: 10, patterns: [/百度|文心|千帆/i, /\bernie\b/i, /\bqianfan\b/i] },
+  { label: "华为/盘古", weight: 10, patterns: [/华为|盘古/i] },
+  { label: "小米", weight: 9, patterns: [/小米/i, /\bxiaomi\b/i] },
+]);
+
+const AI_EVENT_VALUE_RULES = Object.freeze([
+  { label: "model_release", weight: 12, patterns: [/发布.*模型|推出.*模型|上线.*模型|新模型|旗舰模型/i, /\b(model|reasoning|multimodal)\b.{0,18}\b(release|launch|ship|update)/i] },
+  { label: "api_platform_update", weight: 11, patterns: [/api|平台|开放平台|开发者|sdk|agent平台|工作流/i, /\bapi\b|\bplatform\b|\bsdk\b|\bworkflow\b|\bagent\b/i] },
+  { label: "commercialization_revenue", weight: 10, patterns: [/收入|营收|商业化|付费|客户|订单|变现|采购|签约|融资/i, /\brevenue\b|\bmonetiz/i] },
+  { label: "policy_regulation_legal", weight: 9, patterns: [/政策|监管|法案|诉讼|法院|司法部|合规|版权|安全审查/i, /\bpolicy\b|\bregulation\b|\blawsuit\b|\bdoj\b/i] },
+  { label: "chip_compute_infra", weight: 10, patterns: [/芯片|gpu|算力|推理卡|数据中心|存储|infra|基础设施|训练集群/i, /\bgpu\b|\binfra\b|\bdatacenter\b|\bcompute\b/i] },
+  { label: "benchmark_safety", weight: 8, patterns: [/benchmark|榜单|测评|评测|安全|红队|风险|对齐|幻觉/i, /基准|测试|安全/i] },
+  { label: "product_launch", weight: 7, patterns: [/上线|发布|推出|开放内测|公测|接入/i, /\blaunch\b|\brollout\b|\bship\b/i] },
+]);
+
+const FOLLOW_UP_INDICATOR_PATTERNS = [
+  /后续|进展|更新|补充|新增|再度|二次|进一步|详解|拆解|复盘|回应/i,
+  /上线后|财报|收入|客户|落地|签约|部署|量产|商用|量产交付/i,
+  /\bfollow-?up\b|\bafter\b|\bpost-?launch\b|\bdetails\b|\bupdate\b/i,
+];
+
 function extractEntityHits(text) {
   const lower = String(text || "").toLowerCase();
   const out = new Set();
@@ -3243,6 +3511,7 @@ function buildFallbackQuickNewsEntry(material) {
 export function normalizeDailySummary(rawDaily, materials) {
   const allowed = new Set(materials.map((m) => m.refId));
   const x = rawDaily && typeof rawDaily === "object" ? rawDaily : {};
+  const isFallbackSummary = /回退结果|LLM流程异常/.test(String(x?.notice || ""));
   const refTranslationsIn = Array.isArray(x.ref_translations) ? x.ref_translations : [];
   const refTranslations = {};
   for (const item of refTranslationsIn) {
@@ -3337,6 +3606,7 @@ export function normalizeDailySummary(rawDaily, materials) {
   // 公开约束：重点资讯是多源话题叙事；其他快讯可容纳高价值单源信息；核心论文 3~6。
   let mergedNews = [...hotNews, ...otherNews];
   const hotMax = Math.max(1, Math.min(DIGEST_NEWS_RULES.hotMax, HOT_NEWS_MAX));
+  const hotMin = Math.max(1, Math.min(hotMax, HOT_NEWS_MIN));
   const quickMax = Math.max(1, Math.min(DIGEST_NEWS_RULES.quickMax, QUICK_NEWS_MAX));
 
   const rankedNews = mergedNews
@@ -3352,7 +3622,37 @@ export function normalizeDailySummary(rawDaily, materials) {
   if (!nextHot.length) {
     nextHot = rankedNews
       .filter((entry) => qualifiesForHotNewsEntry(entry, idToItem, { allowOfficialFallback: true }))
-      .slice(0, 1);
+      .slice(0, hotMin);
+  }
+
+  if (!nextHot.length && isFallbackSummary) {
+    const usedKeys = new Set();
+    const backfillHot = buildClusterBackfillHotNews(
+      (materials || []).filter((m) => m && !isPaperLikeMaterial(m)),
+      idToItem,
+      usedKeys,
+      hotMax
+    );
+    if (backfillHot.length > 0) {
+      nextHot = backfillHot.slice(0, hotMax);
+    }
+  }
+
+  if (nextHot.length < hotMin) {
+    const selectedHotKeys = new Set(nextHot.map((entry) => normalizeHotNewsKey(entry)));
+    const needed = Math.max(0, hotMin - nextHot.length);
+    const backfillHot = rankedNews
+      .filter((entry) => !selectedHotKeys.has(normalizeHotNewsKey(entry)))
+      .filter((entry) => qualifiesForQuickNewsEntry(entry, idToItem))
+      .filter((entry) => Array.isArray(entry?.refs) && entry.refs.length > 0)
+      .filter((entry) => !isLowValueCommunityEntry(entry, idToItem))
+      .filter((entry) => !analyzeNewsEntryEvidence(entry, idToItem).onlyCommunityOrNewsletter)
+      .sort((a, b) =>
+        scoreDailyNewsEntry(b, idToItem) - scoreDailyNewsEntry(a, idToItem) ||
+        Number(b.crossVerifyScore || 0) - Number(a.crossVerifyScore || 0)
+      )
+      .slice(0, needed);
+    nextHot = [...nextHot, ...backfillHot].slice(0, hotMax);
   }
 
   const selectedHotKeys = new Set(nextHot.map((entry) => normalizeHotNewsKey(entry)));
@@ -3435,12 +3735,31 @@ export function buildFallbackDailySummary(materials) {
   news.sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
   papers.sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
 
-  const hotNews = news
-    .slice(0, Math.min(news.length, HOT_NEWS_MAX))
-    .map((item) => buildFallbackHotNewsEntry(item, buildFallbackEntryTitle(item, indexByBucket)));
+  const idToItem = {};
+  for (const item of news) {
+    idToItem[item.refId] = item;
+  }
+  const usedHotKeys = new Set();
+  const clusteredHotNews = buildClusterBackfillHotNews(news, idToItem, usedHotKeys, HOT_NEWS_MAX);
+  const usedHotRefs = new Set(clusteredHotNews.flatMap((entry) => entry.refs || []));
+  const eventRefsIndex = {};
+  for (const hint of buildEventHints(news)) {
+    const refs = Array.isArray(hint?.refs) ? hint.refs.filter((id) => idToItem[id]) : [];
+    for (const ref of refs) {
+      eventRefsIndex[ref] = [...new Set([...(eventRefsIndex[ref] || []), ...refs])];
+    }
+  }
+  const hotNews = clusteredHotNews.length > 0
+    ? clusteredHotNews
+    : news
+        .slice(0, Math.min(news.length, HOT_NEWS_MAX))
+        .map((item) => buildFallbackHotNewsEntry(item, buildFallbackEntryTitle(item, indexByBucket)))
+        .map((entry) => augmentEntryEvidence(entry, eventRefsIndex, idToItem));
 
-  const otherNews = news
-    .slice(hotNews.length, hotNews.length + QUICK_NEWS_MAX)
+  const otherNewsSource = news.filter((item) => !usedHotRefs.has(item.refId));
+  const otherNewsOffset = clusteredHotNews.length > 0 ? 0 : hotNews.length;
+  const otherNews = otherNewsSource
+    .slice(otherNewsOffset, otherNewsOffset + QUICK_NEWS_MAX)
     .map((item) => buildFallbackQuickNewsEntry(item));
 
   let coreTech = papers.slice(0, 6).map((paper, idx) => ({
@@ -3519,6 +3838,7 @@ let llmInFlight = 0;
 let llmNextAllowedAt = 0;
 let llmFailureStreak = 0;
 const llmSlotWaiters = [];
+const LLM_PACING_LOCK_STALE_MS = 10 * 60 * 1000;
 
 function recordLlmRetry(error) {
   llmRuntimeStats.retry_count += 1;
@@ -3571,20 +3891,91 @@ function releaseLlmSlot() {
   if (next) next();
 }
 
+function readSharedLlmPacingState() {
+  try {
+    const raw = fs.readFileSync(LLM_PACING_STATE_PATH, "utf-8");
+    const parsed = JSON.parse(raw);
+    return {
+      nextAllowedAt: Number(parsed?.nextAllowedAt || 0),
+    };
+  } catch {
+    return { nextAllowedAt: 0 };
+  }
+}
+
+function writeSharedLlmPacingState(nextAllowedAt) {
+  try {
+    fs.mkdirSync(path.dirname(LLM_PACING_STATE_PATH), { recursive: true });
+    fs.writeFileSync(
+      LLM_PACING_STATE_PATH,
+      JSON.stringify({ nextAllowedAt: Number(nextAllowedAt || 0) }, null, 2),
+      "utf-8"
+    );
+  } catch (error) {
+    console.warn(`[warn] 写入 LLM 节流状态失败：${String(error?.message || error)}`);
+  }
+}
+
+async function acquireSharedLlmPacingLock() {
+  fs.mkdirSync(path.dirname(LLM_PACING_LOCK_DIR), { recursive: true });
+  while (true) {
+    try {
+      fs.mkdirSync(LLM_PACING_LOCK_DIR);
+      fs.writeFileSync(
+        path.join(LLM_PACING_LOCK_DIR, "owner.json"),
+        JSON.stringify({
+          pid: process.pid,
+          acquiredAt: new Date().toISOString(),
+        }, null, 2),
+        "utf-8"
+      );
+      return true;
+    } catch (error) {
+      if (error?.code !== "EEXIST") throw error;
+      try {
+        const stat = fs.statSync(LLM_PACING_LOCK_DIR);
+        if (Date.now() - Number(stat?.mtimeMs || 0) > LLM_PACING_LOCK_STALE_MS) {
+          fs.rmSync(LLM_PACING_LOCK_DIR, { recursive: true, force: true });
+          continue;
+        }
+      } catch {}
+      await sleep(250);
+    }
+  }
+}
+
+function releaseSharedLlmPacingLock() {
+  try {
+    fs.rmSync(LLM_PACING_LOCK_DIR, { recursive: true, force: true });
+  } catch {}
+}
+
 async function enforceLlmRequestPacing() {
   await acquireLlmSlot();
+  let lockHeld = false;
   try {
+    lockHeld = await acquireSharedLlmPacingLock();
+    const sharedState = readSharedLlmPacingState();
+    llmNextAllowedAt = Math.max(llmNextAllowedAt, Number(sharedState?.nextAllowedAt || 0));
     const now = Date.now();
     const waitMs = Math.max(0, llmNextAllowedAt - now);
     if (waitMs > 0) {
       await sleep(waitMs);
     }
-    const jitter = Math.floor(Math.random() * Math.max(1, LLM_INTERVAL_JITTER_MS));
-    llmNextAllowedAt = Date.now() + LLM_MIN_INTERVAL_MS + jitter;
+    return { lockHeld };
   } catch (error) {
+    if (lockHeld) releaseSharedLlmPacingLock();
     releaseLlmSlot();
     throw error;
   }
+}
+
+function finalizeLlmRequestPacing(token = null) {
+  const jitter = Math.floor(Math.random() * Math.max(1, LLM_INTERVAL_JITTER_MS));
+  llmNextAllowedAt = Math.max(llmNextAllowedAt, Date.now() + LLM_MIN_INTERVAL_MS + jitter);
+  writeSharedLlmPacingState(llmNextAllowedAt);
+  if (token?.lockHeld) releaseSharedLlmPacingLock();
+  releaseLlmSlot();
 }
 
 // 指数退避重试：1.5s、3s、6s、12s…最多等到 30s
@@ -3794,6 +4185,151 @@ function buildCandidateCardsForClustering(candidates, options = {}) {
       _item: item,
     };
   });
+}
+
+function normalizePubDayForPrecluster(card) {
+  const formatted = formatPubDate(card?.pub_date || card?._item?.pubDate || "");
+  return formatted ? formatted.slice(0, 10) : "";
+}
+
+function isLikelyFollowUpCard(card) {
+  const text = `${card?.title || ""} ${card?.snippet || ""} ${card?.cluster_text || ""}`.trim();
+  return FOLLOW_UP_INDICATOR_PATTERNS.some((pattern) => pattern.test(text));
+}
+
+function entityOverlapCount(aSet, bSet) {
+  if (!aSet?.size || !bSet?.size) return 0;
+  let count = 0;
+  for (const value of aSet) {
+    if (bSet.has(value)) count += 1;
+  }
+  return count;
+}
+
+function shouldPreclusterMergeCard(card, group) {
+  if (!card || !group) return false;
+  if (isPaperCandidateCard(card)) return false;
+  if (!group.pub_day || group.pub_day !== normalizePubDayForPrecluster(card)) return false;
+  if (group.has_follow_up || isLikelyFollowUpCard(card)) return false;
+
+  const cardText = `${card?.title || ""} ${card?.snippet || ""}`.trim();
+  const lexical = lexicalSimilarity(cardText, group.seed_text);
+  const overlap = tokenOverlapCount(cardTokensForExpansion(card), group.tokens);
+  const entities = extractEntityHits(cardText);
+  const entityOverlap = entityOverlapCount(entities, group.entities);
+
+  if (entityOverlap > 0 && lexical >= 0.1 && overlap >= 2) return true;
+  if (lexical >= 0.7 && overlap >= 3) return true;
+  return false;
+}
+
+export function buildPreclusterCandidateGroups(cards) {
+  const items = Array.isArray(cards) ? cards.filter(Boolean) : [];
+  if (!items.length) return [];
+
+  const sorted = [...items].sort((a, b) =>
+    Number(b?.score || 0) - Number(a?.score || 0) ||
+    Number(a?.candidate_id || 0) - Number(b?.candidate_id || 0)
+  );
+  const groups = [];
+
+  for (const card of sorted) {
+    const seedText = `${card?.title || ""} ${card?.snippet || ""}`.trim();
+    const nextPubDay = normalizePubDayForPrecluster(card);
+    const nextTokens = cardTokensForExpansion(card);
+    const nextEntities = extractEntityHits(seedText);
+
+    let targetGroup = null;
+    for (const group of groups) {
+      if (shouldPreclusterMergeCard(card, group)) {
+        targetGroup = group;
+        break;
+      }
+    }
+
+    if (!targetGroup) {
+      groups.push({
+        representative_id: Number(card?.candidate_id || 0),
+        member_ids: [Number(card?.candidate_id || 0)],
+        pub_day: nextPubDay,
+        seed_text: seedText,
+        tokens: new Set(nextTokens),
+        entities: new Set(nextEntities),
+        has_follow_up: isLikelyFollowUpCard(card),
+      });
+      continue;
+    }
+
+    targetGroup.member_ids.push(Number(card?.candidate_id || 0));
+    for (const token of nextTokens) targetGroup.tokens.add(token);
+    for (const entity of nextEntities) targetGroup.entities.add(entity);
+    if (String(seedText || "").length > String(targetGroup.seed_text || "").length) {
+      targetGroup.seed_text = seedText;
+    }
+  }
+
+  return groups
+    .map((group) => ({
+      representative_id: group.representative_id,
+      member_ids: [...new Set(group.member_ids)].sort((a, b) => a - b),
+      pub_day: group.pub_day,
+      pub_date: group.pub_day,
+      member_count: [...new Set(group.member_ids)].length,
+      has_follow_up: Boolean(group.has_follow_up),
+      topic_seed: clipHeadline(group.seed_text || "当日话题", 50),
+    }))
+    .sort((a, b) =>
+      Number(a.member_ids?.[0] || 0) - Number(b.member_ids?.[0] || 0)
+    );
+}
+
+function buildPreclusterCandidateCards(cards, groups) {
+  const cardById = new Map((cards || []).map((card) => [Number(card?.candidate_id || 0), card]));
+  return (groups || []).map((group) => {
+    const members = (group.member_ids || []).map((id) => cardById.get(id)).filter(Boolean);
+    const representative = members[0];
+    const sources = [...new Set(members.map((member) => member?.source).filter(Boolean))];
+    const domains = [...new Set(members.map((member) => member?.domain).filter(Boolean))];
+    const mergedSnippet = clipToSentence(
+      members
+        .map((member) => finalizeReadableText(member?.snippet || member?.cluster_text || member?.title || ""))
+        .filter(Boolean)
+        .slice(0, 3)
+        .join("；"),
+      CLUSTER_TEXT_MAX_CHARS
+    );
+
+    return {
+      ...representative,
+      snippet: mergedSnippet || representative?.snippet || representative?.title || "",
+      cluster_text: mergedSnippet || representative?.cluster_text || representative?.snippet || representative?.title || "",
+      _precluster_member_ids: members.map((member) => member.candidate_id),
+      _precluster_sources: sources,
+      _precluster_domains: domains,
+      _precluster_size: members.length,
+    };
+  });
+}
+
+function expandPreclusterAssignments(assignments, clusterCards) {
+  const cardById = new Map((clusterCards || []).map((card) => [Number(card?.candidate_id || 0), card]));
+  const expanded = [];
+
+  for (const assignment of assignments || []) {
+    const candidateId = Number(assignment?.candidate_id || 0);
+    const clusterCard = cardById.get(candidateId);
+    const memberIds = Array.isArray(clusterCard?._precluster_member_ids) && clusterCard._precluster_member_ids.length
+      ? clusterCard._precluster_member_ids
+      : [candidateId];
+    for (const memberId of memberIds) {
+      expanded.push({
+        ...assignment,
+        candidate_id: memberId,
+      });
+    }
+  }
+
+  return expanded.sort((a, b) => Number(a.candidate_id || 0) - Number(b.candidate_id || 0));
 }
 
 async function enrichCandidateCardsForClustering(cards, cache, options = {}) {
@@ -4060,13 +4596,23 @@ async function clusterCandidateCardsWithLLM(cards, cache) {
   const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
   const newsCards = cards.filter((c) => !isPaperCandidateCard(c));
   const paperCards = cards.filter((c) => isPaperCandidateCard(c));
-  const chunks = splitIntoChunks(newsCards, CLUSTER_BATCH_SIZE);
+  const preclusterGroups = buildPreclusterCandidateGroups(newsCards);
+  const newsCardById = new Map(newsCards.map((card) => [card.candidate_id, card]));
+  const representativeToGroup = new Map(
+    preclusterGroups.map((group) => [Number(group.representative_id), group])
+  );
+  const representativeNewsCards = preclusterGroups
+    .map((group) => newsCardById.get(Number(group.representative_id)))
+    .filter(Boolean);
+  const chunks = splitIntoChunks(representativeNewsCards, CLUSTER_BATCH_SIZE);
   const allAssignments = [];
   const chunkAudit = [];
 
-  if (newsCards.length > 0) {
+  if (representativeNewsCards.length > 0) {
     for (let i = 0; i < chunks.length; i += 1) {
       const chunk = chunks[i];
+      const chunkStart = Date.now();
+      console.log(`[cluster-chunk] start ${i + 1}/${chunks.length} size=${chunk.length}`);
       let normalized = await requestClusterAssignmentsChunk(chunk, model, cache);
 
       const fallbackIds = normalized.filter((x) => x.fallback).map((x) => Number(x.candidate_id));
@@ -4081,6 +4627,7 @@ async function clusterCandidateCardsWithLLM(cards, cache) {
         const recoveryChunks = splitIntoChunks(missingCards, recoverySize).slice(0, maxRecoveryCalls);
         const recovered = [];
         for (const smallChunk of recoveryChunks) {
+          console.log(`[cluster-recovery] chunk=${i + 1}/${chunks.length} size=${smallChunk.length}`);
           const partial = await requestClusterAssignmentsChunk(smallChunk, model, cache);
           recovered.push(...partial.filter((x) => !x.fallback));
         }
@@ -4090,14 +4637,37 @@ async function clusterCandidateCardsWithLLM(cards, cache) {
         }
       }
 
-      allAssignments.push(...normalized);
+      const expandedAssignments = [];
+      for (const assignment of normalized) {
+        const group = representativeToGroup.get(Number(assignment?.candidate_id));
+        if (!group || !Array.isArray(group.member_ids) || group.member_ids.length <= 1) {
+          expandedAssignments.push(assignment);
+          continue;
+        }
+        for (const memberId of group.member_ids) {
+          expandedAssignments.push({
+            ...assignment,
+            candidate_id: Number(memberId),
+            confidence: Math.max(Number(assignment?.confidence || 0.5), 0.76),
+            deterministic: true,
+            precluster_expanded: true,
+          });
+        }
+      }
+
+      allAssignments.push(...expandedAssignments);
       chunkAudit.push({
         chunk_index: i + 1,
         chunk_size: chunk.length,
-        assignments: normalized.length,
+        representative_assignments: normalized.length,
+        assignments: expandedAssignments.length,
         fallback_assignments: normalized.filter((x) => x.fallback).length,
         strategy: "llm_news",
+        elapsed_ms: Date.now() - chunkStart,
       });
+      console.log(
+        `[cluster-chunk] done ${i + 1}/${chunks.length} reps=${normalized.length} expanded=${expandedAssignments.length} elapsed_ms=${Date.now() - chunkStart}`
+      );
     }
   }
 
@@ -4117,8 +4687,15 @@ async function clusterCandidateCardsWithLLM(cards, cache) {
   return {
     assignments: allAssignments,
     chunks: chunkAudit,
+    precluster: {
+      group_count: preclusterGroups.length,
+      representative_count: representativeNewsCards.length,
+      reduced_count: Math.max(0, newsCards.length - representativeNewsCards.length),
+      groups: preclusterGroups,
+    },
     mode_breakdown: {
       news_input: newsCards.length,
+      news_after_precluster: representativeNewsCards.length,
       paper_input: paperCards.length,
       paper_deterministic: paperCards.length,
       llm_chunk_count: chunks.length,
@@ -4213,6 +4790,7 @@ async function mergeTopicKeysWithLLM(topicBuckets, cache) {
   for (let round = 1; round <= TOPIC_MERGE_MAX_ROUNDS; round += 1) {
     const workingEntries = Object.entries(workingBuckets);
     if (workingEntries.length <= 1) break;
+    console.log(`[topic-merge] round=${round} buckets=${workingEntries.length}`);
 
     const rows = workingEntries
       .map(([key, bucket]) => compactTopicBucketForMerge(key, bucket))
@@ -4224,6 +4802,7 @@ async function mergeTopicKeysWithLLM(topicBuckets, cache) {
     const roundMap = {};
 
     for (const chunk of chunks) {
+      console.log(`[topic-merge] round=${round} chunk_size=${chunk.length}`);
       const chunkMap = await mergeTopicRowsWithLLM(chunk, model, cache);
       for (const row of chunk) {
         const key = row.topic_key;
@@ -4275,6 +4854,7 @@ async function mergeTopicKeysWithLLM(topicBuckets, cache) {
     }
 
     workingBuckets = nextBuckets;
+    console.log(`[topic-merge] round=${round} next_buckets=${Object.keys(nextBuckets).length}${reduced ? "" : " (stable)"}`);
     if (!reduced) break;
   }
 
@@ -4370,7 +4950,7 @@ function buildTopicCards(assignments, cards, mergedKeyMapping) {
 
     const inferredType = paperVotes >= Math.ceil(members.length / 2) ? "paper" : "news";
 
-    out.push({
+    const topicRow = {
       topic_id: topicId,
       topic_key: topic.merged_key,
       topic_title: clipHeadline(topic.merged_title, 40),
@@ -4384,11 +4964,15 @@ function buildTopicCards(assignments, cards, mergedKeyMapping) {
       top_sources: [...new Set(members.map((m) => m.source).filter(Boolean))].slice(0, 5),
       top_source_groups: [...new Set(members.map((m) => String(m?._item?.sourceGroup || "").trim()).filter(Boolean))].slice(0, 5),
       sample_titles: members.map((m) => m.title).filter(Boolean).slice(0, 5),
-    });
+    };
+    topicRow.scorecard = buildTopicScorecard(topicRow, { edition: DIGEST_EDITION });
+    topicRow.topic_total_score = topicRow.scorecard.total;
+    out.push(topicRow);
     topicId += 1;
   }
 
   return out.sort((a, b) =>
+    scoreTopicForSelection(b) - scoreTopicForSelection(a) ||
     Number(b.cross_source_score || 0) - Number(a.cross_source_score || 0) ||
     Number(b.mention_count || 0) - Number(a.mention_count || 0)
   );
@@ -4688,7 +5272,96 @@ function estimateAiTopicSignal(topic) {
   return hit;
 }
 
-export function scoreTopicForSelection(topic) {
+function collectWeightedSignals(text, rules) {
+  const hay = String(text || "");
+  let score = 0;
+  const matches = [];
+  for (const rule of rules || []) {
+    if (!Array.isArray(rule?.patterns) || !rule.patterns.length) continue;
+    const hit = rule.patterns.some((pattern) => {
+      if (pattern instanceof RegExp) return pattern.test(hay);
+      return String(hay).includes(String(pattern || ""));
+    });
+    if (!hit) continue;
+    score += Number(rule.weight || 0);
+    matches.push(String(rule.label || "").trim());
+  }
+  return { score, matches };
+}
+
+function buildTopicSignalSeed(topic) {
+  return [
+    String(topic?.topic_title || ""),
+    ...(Array.isArray(topic?.sample_titles) ? topic.sample_titles : []),
+    ...(Array.isArray(topic?.top_sources) ? topic.top_sources : []),
+    ...(Array.isArray(topic?.top_source_groups) ? topic.top_source_groups : []),
+  ].join(" ");
+}
+
+function buildEntrySignalSeed(entry, idToItem) {
+  const materials = (Array.isArray(entry?.refs) ? entry.refs : [])
+    .map((ref) => idToItem?.[ref])
+    .filter(Boolean);
+  return [
+    String(entry?.title || ""),
+    String(entry?.insight || ""),
+    String(entry?.narrative || ""),
+    String(entry?.summary || ""),
+    ...materials.map((material) => `${material?.title || ""} ${String(material?.text || "").slice(0, 220)}`),
+  ].join(" ");
+}
+
+function estimateHeadEntityPriority(text) {
+  return collectWeightedSignals(text, HEAD_AI_ENTITY_RULES);
+}
+
+function estimateAiIndustryValue(text) {
+  return collectWeightedSignals(text, AI_EVENT_VALUE_RULES);
+}
+
+function estimateDomesticAiTopicSignal(topic) {
+  if (!topic || typeof topic !== "object") return 0;
+  const seed = buildTopicSignalSeed(topic);
+
+  const text = seed.toLowerCase();
+  const regexes = [
+    /\b(minimax|kimi|deepseek|stepfun|step\s*fun|glm|doubao|seedance|seed)\b/i,
+    /智谱|阿里|通义|字节|豆包|腾讯|混元|阶跃|小米|月之暗面|百度|文心|千帆|夸克|零一万物|百川|昆仑万维|商汤|讯飞|华为/i,
+    /minimax|kimi|deepseek|stepfun|moonshot|qwen|tongyi|doubao|hunyuan|mimo|wenxin|ernie|qianfan/i,
+  ];
+
+  let hit = 0;
+  for (const re of regexes) {
+    if (re.test(text)) hit += 1;
+  }
+  return hit;
+}
+
+function isPreferredEveningTopic(topic) {
+  return estimateDomesticAiTopicSignal(topic) > 0;
+}
+
+function prioritizeTopicIdsForEdition(topicIds, topicById, edition = DIGEST_EDITION) {
+  if (normalizeDigestEdition(edition) !== "evening") return topicIds;
+  return [...topicIds].sort((a, b) => {
+    const aTopic = topicById.get(a);
+    const bTopic = topicById.get(b);
+    const domesticDelta = estimateDomesticAiTopicSignal(bTopic) - estimateDomesticAiTopicSignal(aTopic);
+    if (domesticDelta !== 0) return domesticDelta;
+    const scoreDelta =
+      scoreTopicForSelection(bTopic, { edition }) - scoreTopicForSelection(aTopic, { edition });
+    if (scoreDelta !== 0) return scoreDelta;
+    return 0;
+  });
+}
+
+function isCompanyLikeSourceGroup(group) {
+  const normalized = String(group || "").trim().toLowerCase();
+  return normalized === "company" || normalized === "company_view";
+}
+
+export function buildTopicScorecard(topic, options = {}) {
+  const edition = normalizeDigestEdition(options?.edition || DIGEST_EDITION);
   const cross = Number(topic?.cross_source_score || 0);
   const mention = Number(topic?.mention_count || 0);
   const diversity = Number(topic?.source_diversity || 0);
@@ -4716,21 +5389,57 @@ export function scoreTopicForSelection(topic) {
   const corroborationBonus = topic?.topic_type === "news"
     ? Math.min(24, Math.max(0, (mention - 1) * 4 + (diversity - 1) * 6))
     : 0;
+  const domesticAiSignal = estimateDomesticAiTopicSignal(topic);
+  const eveningDomesticAdjustment = edition === "evening"
+    ? (domesticAiSignal > 0
+      ? 42 + Math.min(18, domesticAiSignal * 6)
+      : -36)
+    : 0;
+  const headEntity = estimateHeadEntityPriority(buildTopicSignalSeed(topic));
+  const industryValue = estimateAiIndustryValue(buildTopicSignalSeed(topic));
 
-  return (
-    cross * 1.5 +
-    mention * 4.5 +
-    diversity * 6 +
-    candidateScore * 0.7 +
-    freshnessBoost -
-    weakAiPenalty +
-    aiSignalBonus -
-    paperPenalty -
-    communityPenalty -
-    singletonPenalty -
+  const crossValidation = cross * 1.5 + mention * 4.5 + diversity * 6 + corroborationBonus;
+  const sourceCredibility = candidateScore * 0.7;
+  const recency = freshnessBoost;
+  const entityPriority = headEntity.score;
+  const industryValueScore = industryValue.score;
+  const aiRelevance = aiSignalBonus;
+  const penalties =
+    paperPenalty +
+    communityPenalty +
+    singletonPenalty +
     concentrationPenalty +
-    corroborationBonus
-  );
+    weakAiPenalty;
+  const total =
+    crossValidation +
+    sourceCredibility +
+    recency +
+    entityPriority +
+    industryValueScore +
+    aiRelevance +
+    eveningDomesticAdjustment -
+    penalties;
+
+  return {
+    total,
+    cross_validation: crossValidation,
+    source_credibility: sourceCredibility,
+    recency,
+    entity_priority: entityPriority,
+    industry_value: industryValueScore,
+    ai_relevance: aiRelevance,
+    edition_bias: eveningDomesticAdjustment,
+    penalties: -penalties,
+    signals: [
+      ...headEntity.matches.map((match) => `entity:${match}`),
+      ...industryValue.matches.map((match) => `value:${match}`),
+      ...(domesticAiSignal > 0 ? ["edition:domestic-evening"] : []),
+    ],
+  };
+}
+
+export function scoreTopicForSelection(topic, options = {}) {
+  return buildTopicScorecard(topic, options).total;
 }
 
 function analyzeNewsEntryEvidence(entry, idToItem) {
@@ -4752,7 +5461,7 @@ function analyzeNewsEntryEvidence(entry, idToItem) {
     materials.length
   );
   const crossVerifyScore = Number(entry?.crossVerifyScore || entry?.cross_verify_score || 0);
-  const hasCompany = materials.some((material) => material?.sourceGroup === "company");
+  const hasCompany = materials.some((material) => isCompanyLikeSourceGroup(material?.sourceGroup));
   const hasHighTrustNonCommunity = materials.some((material) =>
     material?.trustTier === "high" && material?.sourceGroup !== "community"
   );
@@ -4781,9 +5490,12 @@ function analyzeNewsEntryEvidence(entry, idToItem) {
   };
 }
 
-function scoreDailyNewsEntry(entry, idToItem) {
+export function scoreDailyNewsEntry(entry, idToItem) {
   const evidence = analyzeNewsEntryEvidence(entry, idToItem);
   let score = Number(entry?.crossVerifyScore || entry?.cross_verify_score || 0);
+  const signalSeed = buildEntrySignalSeed(entry, idToItem);
+  const headEntity = estimateHeadEntityPriority(signalSeed);
+  const industryValue = estimateAiIndustryValue(signalSeed);
 
   if (evidence.refs.length >= 2) score += 14;
   if (evidence.domains.size >= 2) score += 14;
@@ -4792,6 +5504,8 @@ function scoreDailyNewsEntry(entry, idToItem) {
   if (evidence.hasCompany) score += 12;
   if (evidence.hasHighTrustNonCommunity) score += 8;
   score += evidence.highTrustCount * 5;
+  score += Math.min(20, headEntity.score);
+  score += Math.min(16, industryValue.score);
   if (evidence.singleton && !evidence.hasCompany) score -= 6;
   if (evidence.onlyCommunity) score -= 4;
   if (isLowValueCommunityEntry(entry, idToItem)) score -= 32;
@@ -4890,7 +5604,11 @@ function resolveTopicShortlistQuota(topicCards, target) {
 
 async function shortlistTopicsWithLLM(topicCards, cache) {
   if (!topicCards.length) return { selected_topic_ids: [], reasons: [] };
+  console.log(`[shortlist] start topics=${topicCards.length}`);
   const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
+  const edition = DIGEST_EDITION;
+  const domesticPreferredTopics = topicCards.filter((topic) => isPreferredEveningTopic(topic));
+  const domesticTopicCount = domesticPreferredTopics.length;
   const payload = topicCards.map((t) => ({
     topic_id: t.topic_id,
     topic_title: t.topic_title,
@@ -4901,10 +5619,15 @@ async function shortlistTopicsWithLLM(topicCards, cache) {
     cross_source_score: t.cross_source_score,
     top_sources: t.top_sources,
     sample_titles: t.sample_titles.slice(0, 3),
+    domestic_signal: estimateDomesticAiTopicSignal(t),
   }));
 
   const target = Math.max(6, Math.min(12, TOPIC_SHORTLIST_N));
   const quota = resolveTopicShortlistQuota(topicCards, target);
+  const minPreferredEveningTopics =
+    edition === "evening"
+      ? Math.min(domesticTopicCount, Math.max(4, Math.floor(target * 0.7)))
+      : 0;
 
   const system = `
 你是 AI 资讯选题主编。任务：从话题簇中选出最有价值的话题。
@@ -4919,7 +5642,11 @@ async function shortlistTopicsWithLLM(topicCards, cache) {
 2) 至少包含 ${quota.min_news} 个 news；若存在论文话题，至少包含 ${quota.min_papers} 个 paper
 3) paper 不超过 ${quota.max_papers} 个，避免压缩资讯覆盖面
 4) 优先保留与 AI 技术/产业强相关的话题，剔除关联弱的泛社会或娱乐化事件
-5) 输出合法 JSON：
+${edition === "evening"
+  ? `5) 这是 AI晚报（国内版）。默认优先中国 AI 公司、模型、云平台、应用、商业化与政策进展；如果国内高质量话题足够，尽量不要选择纯国外公司动态。
+6) 在有足够候选的前提下，至少保留 ${minPreferredEveningTopics} 个与 MiniMax、智谱、阿里/通义、字节/豆包/Seed、腾讯/混元、阶跃、Kimi/月之暗面、DeepSeek、百度/文心、小米等直接相关的话题。`
+  : `5) 在信息质量相当时，优先多源交叉验证、产业影响更大的话题。`}
+${edition === "evening" ? "7" : "6"}) 输出合法 JSON：
 {
   "selected_topic_ids": [1,2,3],
   "reasons": [{ "topic_id": 1, "reason": "一句话理由" }]
@@ -4957,17 +5684,26 @@ ${JSON.stringify(payload)}
   const topicById = new Map(topicCards.map((t) => [t.topic_id, t]));
   const rankedIds = [...topicCards]
     .sort((a, b) =>
-      scoreTopicForSelection(b) - scoreTopicForSelection(a) ||
+      scoreTopicForSelection(b, { edition }) - scoreTopicForSelection(a, { edition }) ||
       Number(b.cross_source_score || 0) - Number(a.cross_source_score || 0)
     )
     .map((t) => t.topic_id);
-  const candidateOrder = [...new Set([...ids, ...rankedIds])];
+  const candidateOrder = prioritizeTopicIdsForEdition(
+    [...new Set([...ids, ...rankedIds])],
+    topicById,
+    edition
+  );
   const newsOrder = candidateOrder.filter((id) => topicById.get(id)?.topic_type === "news");
   const paperOrder = candidateOrder.filter((id) => topicById.get(id)?.topic_type === "paper");
+  const preferredEveningNewsOrder =
+    edition === "evening"
+      ? newsOrder.filter((id) => isPreferredEveningTopic(topicById.get(id)))
+      : [];
   const selected = [];
   const selectedSet = new Set();
   let newsPicked = 0;
   let paperPicked = 0;
+  let preferredEveningPicked = 0;
 
   const pushOne = (id) => {
     const topic = topicById.get(id);
@@ -4976,6 +5712,7 @@ ${JSON.stringify(payload)}
     selectedSet.add(id);
     if (topic.topic_type === "paper") paperPicked += 1;
     else newsPicked += 1;
+    if (edition === "evening" && isPreferredEveningTopic(topic)) preferredEveningPicked += 1;
     return true;
   };
 
@@ -4997,6 +5734,20 @@ ${JSON.stringify(payload)}
   };
 
   takeByType(newsOrder, "news", quota.min_news);
+  if (edition === "evening" && minPreferredEveningTopics > 0) {
+    while (preferredEveningPicked < minPreferredEveningTopics) {
+      let picked = false;
+      for (const id of preferredEveningNewsOrder) {
+        if (selected.length >= target) break;
+        if (selectedSet.has(id)) continue;
+        if (pushOne(id)) {
+          picked = true;
+          break;
+        }
+      }
+      if (!picked) break;
+    }
+  }
   takeByType(paperOrder, "paper", quota.min_papers);
   takeByType(paperOrder, "paper", quota.preferred_papers);
 
@@ -5042,12 +5793,30 @@ ${JSON.stringify(payload)}
     reasons.push({ topic_id: id, reason: clipToSentence(fallbackReason, 80) });
   }
 
+  console.log(`[shortlist] done selected=${ids.length}`);
   return { selected_topic_ids: ids, reasons };
 }
 
 function topicSeedTokens(topic) {
   const seed = `${topic?.topic_title || ""} ${(topic?.sample_titles || []).join(" ")}`.trim();
   return buildEventTokenSet({ title: seed, contentSnippet: seed, text: "" });
+}
+
+function estimateDomesticAiMaterialSignal(material) {
+  if (!material || typeof material !== "object") return 0;
+  const seed = [
+    String(material?.title || ""),
+    String(material?.contentSnippet || ""),
+    String(material?.snippet || ""),
+    String(material?.text || "").slice(0, 400),
+    String(material?.source || ""),
+    String(material?.sourceDisplayZh || ""),
+  ].join(" ");
+  return estimateDomesticAiTopicSignal({
+    topic_title: seed,
+    sample_titles: [seed],
+    top_sources: [String(material?.source || "")],
+  });
 }
 
 function cardTokensForExpansion(card) {
@@ -5068,6 +5837,7 @@ function tokenOverlapCount(aSet, bSet) {
 }
 
 function buildTopicDeepReadPlan(selectedTopicIds, topicCards, candidateCards) {
+  const edition = DIGEST_EDITION;
   const cardById = new Map(candidateCards.map((c) => [c.candidate_id, c]));
   const topicById = new Map(topicCards.map((t) => [t.topic_id, t]));
   const selected = [];
@@ -5098,6 +5868,9 @@ function buildTopicDeepReadPlan(selectedTopicIds, topicCards, candidateCards) {
     }
     if (isStaleArxivLink(card?.link || "")) {
       stats.dropped_by_stale_arxiv += 1;
+      return false;
+    }
+    if (edition === "evening" && estimateDomesticAiMaterialSignal(card?._item || card) <= 0) {
       return false;
     }
     return true;
@@ -5276,7 +6049,7 @@ async function zhipuChatCompletion({ model, messages }) {
   }
 
   const endpoint = "https://open.bigmodel.cn/api/paas/v4/chat/completions";
-  await enforceLlmRequestPacing();
+  const pacingToken = await enforceLlmRequestPacing();
   try {
     const resp = await fetchWithTimeout(
       endpoint,
@@ -5319,7 +6092,7 @@ async function zhipuChatCompletion({ model, messages }) {
 
     return content;
   } finally {
-    releaseLlmSlot();
+    finalizeLlmRequestPacing(pacingToken);
   }
 }
 
@@ -5388,6 +6161,7 @@ export async function requestDigestLlmJson(options = {}) {
  * 基于“话题 dossier + 正文材料”生成最终日报。
  */
 async function summarizeDailyWithLLM(topicDossiers, materials, cache) {
+  console.log(`[summary] start dossiers=${topicDossiers.length}, materials=${materials.length}`);
   const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
   const packedMaterials = (materials || []).map((m) => ({
     id: m.refId,
@@ -5422,7 +6196,7 @@ async function summarizeDailyWithLLM(topicDossiers, materials, cache) {
 2) 不要编造材料里没有的事实；不确定就写“素材未给出细节”
 3) 每条结论都必须给出 refs（来自 materials.id）
 4) 所有文本字段必须中文表达，不可出现占位词
-5) “重点资讯 + 其他快讯”总数必须在 ${DIGEST_NEWS_RULES.totalMin}~${DIGEST_NEWS_RULES.totalMax} 之间
+5) 重点资讯至少 ${DIGEST_NEWS_RULES.hotMin} 条；“重点资讯 + 其他快讯”总数必须在 ${DIGEST_NEWS_RULES.totalMin}~${DIGEST_NEWS_RULES.totalMax} 之间
 6) 核心论文必须在 ${DIGEST_NEWS_RULES.coreTechMin}~${DIGEST_NEWS_RULES.coreTechMax} 篇之间，且 refs 只能引用论文来源
 7) 资讯与核心论文不得重复使用同一个 refs
 8) 不要输出“...”或“…”省略表达，必须完整句子
@@ -5468,7 +6242,7 @@ async function summarizeDailyWithLLM(topicDossiers, materials, cache) {
 }
 
 约束：
-- hot_news 推荐 1-4 条；other_news 推荐 2-11 条；两者合计 ${DIGEST_NEWS_RULES.totalMin}-${DIGEST_NEWS_RULES.totalMax} 条
+- hot_news 推荐 ${DIGEST_NEWS_RULES.hotMin}-${DIGEST_NEWS_RULES.hotMax} 条；other_news 推荐 0-${DIGEST_NEWS_RULES.quickMax} 条；两者合计 ${DIGEST_NEWS_RULES.totalMin}-${DIGEST_NEWS_RULES.totalMax} 条
 - core_tech 输出 ${DIGEST_NEWS_RULES.coreTechMin}-${DIGEST_NEWS_RULES.coreTechMax} 条
 - refs 仅允许来自 materials.id
 - ref_translations 请优先翻译英文标题
@@ -5492,7 +6266,9 @@ ${JSON.stringify(packedMaterials)}
   });
 
   const parsed = safeParseJsonObject(content);
-  return normalizeDailySummary(parsed, materials);
+  const normalized = normalizeDailySummary(parsed, materials);
+  console.log(`[summary] done hot=${normalized.hotNews.length}, other=${normalized.otherNews.length}, core=${normalized.coreTech.length}`);
+  return normalized;
 }
 
 function buildReferenceTranslationSeed(materials, existing) {
@@ -5633,7 +6409,8 @@ function buildOverviewPreviewLines(text, maxLines = 3) {
   return out;
 }
 
-function buildDigestDescription(daily) {
+function buildDigestDescription(daily, options = {}) {
+  const editionConfig = getDigestEditionConfig(options?.edition || DIGEST_EDITION);
   const overviewLines = buildOverviewPreviewLines(daily?.overview || "", 3);
   if (overviewLines.length) {
     return ["今日主线：", ...overviewLines.map((line) => `- ${line}`)].join("\n");
@@ -5651,7 +6428,7 @@ function buildDigestDescription(daily) {
     return desc.replace(/。{2,}/g, "。").replace(/、。/g, "。");
   }
 
-  return "人工智能日报：今日主线、其他快讯与核心论文。";
+  return editionConfig.descriptionFallback;
 }
 
 function buildReferenceLabel(item, translatedTitle) {
@@ -5723,9 +6500,15 @@ function buildTopicSignalsFromRefs(refs, idToItem, maxSignals = 3) {
  *  10) 生成 Hexo Markdown
  * ============================== */
 
-function buildDigestMarkdown(dateISO, daily, materials) {
-  const title = `人工智能日报 · ${dateISO}`;
-  const description = escapeYamlDoubleQuoted(buildDigestDescription(daily));
+function buildDigestMarkdown(dateISO, daily, materials, options = {}) {
+  const editionConfig = getDigestEditionConfig(options?.edition || DIGEST_EDITION);
+  const digestRegion = String(options?.region || editionConfig.region).trim() || editionConfig.region;
+  const title = `${editionConfig.label} · ${dateISO}`;
+  const description = escapeYamlDoubleQuoted(buildDigestDescription(daily, { edition: editionConfig.edition }));
+  const frontMatterDateTime = resolveDigestFrontMatterDateTime(dateISO, options?.postTime || DIGEST_POST_TIME, {
+    timeZone: options?.timeZone || RUN_TZ,
+    now: options?.now,
+  });
 
   // 把 materials 做成 id -> item 的映射（方便 refs 转链接）
   const idToItem = {};
@@ -5736,10 +6519,12 @@ function buildDigestMarkdown(dateISO, daily, materials) {
 
   let md = `---
 title: "${title}"
-date: ${dateISO} ${DIGEST_POST_TIME}
+date: ${frontMatterDateTime}
 description: "${description}"
 categories: [每日资讯]
-tags: [人工智能, 每日资讯]
+tags: [${editionConfig.tags.join(", ")}]
+digest_edition: ${editionConfig.edition}
+digest_region: ${digestRegion}
 ---
 
 `;
@@ -5959,7 +6744,8 @@ async function main() {
   const paperLookbackDays = Number(defaults.paper_lookback_days || defaults.lookback_days || PAPER_LOOKBACK_DAYS_DEFAULT);
   const boostKeywords = Array.isArray(defaults.boost_keywords) ? defaults.boost_keywords : [];
   const sources = normalizeSources(cfg.sources);
-  const runnableSources = getRunnableSources(sources);
+  const editionSources = sources.filter((source) => isSourceEnabledForEdition(source, DIGEST_EDITION));
+  const runnableSources = getRunnableSources(sources, { edition: DIGEST_EDITION });
   const sourceById = new Map(sources.map((source) => [source.id, source]));
   const dateISO = getRunDateISO();
   const dryRun = String(process.env.DIGEST_DRY_RUN || "").trim() === "1";
@@ -5980,11 +6766,12 @@ async function main() {
   const paperCutoff = new Date(cutoffMsForDays(dateISO, paperLookbackDays));
 
   console.log(`=== Digest 生成开始：${dateISO} ===`);
+  console.log(`edition=${DIGEST_EDITION_CONFIG.edition}, region=${DIGEST_EDITION_CONFIG.region}, label=${DIGEST_EDITION_CONFIG.label}`);
   console.log(`tz=${RUN_TZ}, post_time=${DIGEST_POST_TIME}`);
   console.log(`news_lookback_days=${newsLookbackDays}, paper_lookback_days=${paperLookbackDays}, top_n=${TOP_N}, deep_read_n=${DEEP_READ_N}, extra_candidates=${Number.isFinite(EXTRA_CANDIDATES) ? EXTRA_CANDIDATES : 0}`);
   console.log(`cache_retention_days=${CACHE_RETENTION_DAYS}, daily_retention_days=${DAILY_RETENTION_DAYS}`);
   console.log(`llm_pacing: max_concurrency=${LLM_MAX_CONCURRENCY}, min_interval_ms=${LLM_MIN_INTERVAL_MS}, jitter_ms=${LLM_INTERVAL_JITTER_MS}`);
-  console.log(`sources=${sources.length}, runnable_sources=${runnableSources.length}${dryRun ? " (dry-run)" : ""}`);
+  console.log(`sources=${sources.length}, edition_sources=${editionSources.length}, runnable_sources=${runnableSources.length}${dryRun ? " (dry-run)" : ""}`);
 
   const localIntake = await loadLocalIntake({
     manualPath: path.join(ROOT, "data", "manual-intel", `${dateISO}.yml`),
@@ -5998,7 +6785,7 @@ async function main() {
   const waitingSources = [];
   const fetchStats = [];
 
-  for (const source of sources) {
+  for (const source of editionSources) {
     if (!source.enabled || source.mode === "auto") continue;
     console.log(
       `[source] ${source.name} uses ${source.ingestion_mode} and waits for ${source.required_inputs.join(", ") || "local intake"}`
@@ -6011,13 +6798,18 @@ async function main() {
   }
 
   /* 1) 抓候选（RSS / page_scrape） */
-  let candidates = localIntake.map((item) => {
+  let candidates = localIntake.filter((item) => {
+    const sourceMeta = sourceById.get(item.sourceId);
+    if (!sourceMeta) return true;
+    return isSourceEnabledForEdition(sourceMeta, DIGEST_EDITION);
+  }).map((item) => {
     const sourceMeta = sourceById.get(item.sourceId) || null;
     return {
       ...item,
       source: sourceMeta?.name || item.sourceName || item.sourceId,
       sourceGroup: sourceMeta?.group || "",
       sourceDisplayZh: item.sourceDisplayZh || sourceMeta?.display_name_zh || "",
+      preferredIn: item.preferredIn || sourceMeta?.preferred_in || "",
       weight: sourceMeta?.weight || 0,
       bucketHint: item.bucketHint || sourceMeta?.bucket_hint || "",
       trustTier: item.trustTier || sourceMeta?.trust_tier || "",
@@ -6039,6 +6831,7 @@ async function main() {
           sourceId: s.id,
           sourceGroup: s.group || "",
           sourceDisplayZh: s.display_name_zh || "",
+          preferredIn: s.preferred_in || "",
           weight: s.weight || 0,
           bucketHint: s.bucket_hint || "",
           trustTier: s.trust_tier || "",
@@ -6049,7 +6842,12 @@ async function main() {
         const items = await fetchPageScrapeItems(s);
         console.log(`[ok] ${sourceName} links=${items.length}`);
         fetchStats.push({ source: sourceName, mode: `${s.ingestion_mode}/${s.parser}`, status: "ok", count: items.length, count_type: "links" });
-        candidates.push(...items.map((it) => ({ ...it, weight: s.weight || 0, ingestionMode: s.ingestion_mode })));
+        candidates.push(...items.map((it) => ({
+          ...it,
+          preferredIn: it.preferredIn || s.preferred_in || "",
+          weight: s.weight || 0,
+          ingestionMode: s.ingestion_mode,
+        })));
       } else if (s.ingestion_mode === "api_json") {
         let items = [];
         try {
@@ -6066,6 +6864,7 @@ async function main() {
         candidates.push(...items.map((it) => ({
           ...it,
           weight: it.weight || s.weight || 0,
+          preferredIn: it.preferredIn || s.preferred_in || "",
           ingestionMode: it.ingestionMode || s.ingestion_mode,
         })));
       } else {
@@ -6110,6 +6909,7 @@ async function main() {
 
   /* 2.6) 剔除近期已经发布过的内容（链接 + 标题签名） */
   candidates = filterPreviouslyPublished(candidates, cache, {
+    edition: DIGEST_EDITION,
     runDate: dateISO,
     keepFollowUpEvidence: true,
   });
@@ -6147,7 +6947,7 @@ async function main() {
   });
 
   if (skipLLM && !dryRun) {
-    throw new Error("当前流程要求 LLM 聚类与选题，不能在非 dry-run 模式下跳过 LLM。");
+    console.warn("[warn] 当前以 skipLLM 模式运行：将使用本地回退选题与总结结果生成文章。");
   }
 
   const scoredCandidates = candidates
@@ -6166,6 +6966,19 @@ async function main() {
     skipped_with_long_snippet: 0,
     skipped_low_quality_source: 0,
   };
+  const preclusterGroups = buildPreclusterCandidateGroups(candidateCards);
+  const preclusterAudit = {
+    input_cards: candidateCards.length,
+    grouped_cards: preclusterGroups.length,
+    merged_away: Math.max(0, candidateCards.length - preclusterGroups.length),
+    multi_member_groups: preclusterGroups.filter((group) => (group.member_ids || []).length > 1).length,
+    groups: preclusterGroups.map((group) => ({
+      representative_id: group.representative_id,
+      member_ids: group.member_ids,
+      pub_date: group.pub_date,
+      topic_seed: group.topic_seed,
+    })),
+  };
 
   if (candidateCards.length > 0 && !(dryRun && !dryRunLLM) && !skipLLM) {
     const enriched = await enrichCandidateCardsForClustering(candidateCards, cache, { boostKeywords });
@@ -6173,8 +6986,13 @@ async function main() {
     clusterEnrichment = enriched.stats;
   }
 
+  const effectiveClusterCards =
+    !(dryRun && !dryRunLLM) && !skipLLM
+      ? buildPreclusterCandidateCards(candidateCards, buildPreclusterCandidateGroups(candidateCards))
+      : candidateCards;
+
   const droppedByClusterCap = Math.max(0, scoredCandidates.length - candidateCards.length);
-  console.log(`[cluster] cards=${candidateCards.length}${droppedByClusterCap > 0 ? ` (dropped_by_cap=${droppedByClusterCap})` : ""}`);
+  console.log(`[cluster] cards=${effectiveClusterCards.length}${droppedByClusterCap > 0 ? ` (dropped_by_cap=${droppedByClusterCap})` : ""}`);
 
   writeAuditReport(dateISO, "03-cluster-input", {
     run_date: dateISO,
@@ -6186,12 +7004,13 @@ async function main() {
     cluster_enrich_mode: normalizeClusterEnrichMode(CLUSTER_ENRICH_MODE),
     cluster_text_max_chars: CLUSTER_TEXT_MAX_CHARS,
     cluster_enrich_force_top_news: CLUSTER_ENRICH_FORCE_TOP_NEWS,
-    input_count: candidateCards.length,
-    input_news_count: candidateCards.filter((c) => !isPaperCandidateCard(c)).length,
-    input_paper_count: candidateCards.filter((c) => isPaperCandidateCard(c)).length,
+    input_count: effectiveClusterCards.length,
+    input_news_count: effectiveClusterCards.filter((c) => !isPaperCandidateCard(c)).length,
+    input_paper_count: effectiveClusterCards.filter((c) => isPaperCandidateCard(c)).length,
     dropped_by_cap: droppedByClusterCap,
     enrichment: clusterEnrichment,
-    candidates: candidateCards.map((c) => ({
+    precluster: preclusterAudit,
+    candidates: effectiveClusterCards.map((c) => ({
       candidate_id: c.candidate_id,
       title: c.title,
       snippet_len: String(c.snippet || "").length,
@@ -6211,8 +7030,8 @@ async function main() {
   let selectedTopicIds = [];
   let shortlistReasons = [];
 
-  if (candidateCards.length > 0 && !(dryRun && !dryRunLLM) && !skipLLM) {
-    clusterResult = await clusterCandidateCardsWithLLM(candidateCards, cache);
+  if (effectiveClusterCards.length > 0 && !(dryRun && !dryRunLLM) && !skipLLM) {
+    clusterResult = await clusterCandidateCardsWithLLM(effectiveClusterCards, cache);
     let workingAssignments = [...clusterResult.assignments];
     let topicBuckets = buildTopicBucketsFromAssignments(workingAssignments, candidateCards);
     let mergedKeyMapping = await buildMergedKeyMapping(topicBuckets, cache);
@@ -6222,6 +7041,7 @@ async function main() {
       enabled: SINGLETON_RECLUSTER_ENABLED,
       note: "not_run",
     };
+    console.log(`[singleton-recluster] start topics=${topicCards.length}`);
     const singletonRecluster = await reclusterSingletonNewsTopics(workingAssignments, topicCards, candidateCards, cache);
     singletonReclusterAudit = singletonRecluster.audit || singletonReclusterAudit;
     if (singletonRecluster.changed) {
@@ -6231,6 +7051,7 @@ async function main() {
       topicCards = buildTopicCards(workingAssignments, candidateCards, mergedKeyMapping);
     }
     clusterResult.assignments = workingAssignments;
+    console.log(`[singleton-recluster] done changed=${singletonRecluster.changed ? 1 : 0} singleton_topics=${Number(singletonReclusterAudit.singleton_news_topics || 0)}`);
     writeAuditReport(dateISO, "04a-singleton-recluster", {
       run_date: dateISO,
       ...singletonReclusterAudit,
@@ -6265,6 +7086,7 @@ async function main() {
           cross_source_score: t.cross_source_score,
           top_source_groups: t.top_source_groups,
           top_sources: t.top_sources,
+          scorecard: buildTopicScorecard(t, { edition: DIGEST_EDITION }),
         })),
     });
   } else {
@@ -6277,7 +7099,13 @@ async function main() {
       fallback: true,
     }));
     topicCards = buildTopicCards(fallbackAssignments, candidateCards, null);
-    selectedTopicIds = topicCards.slice(0, Math.max(8, TOPIC_SHORTLIST_N)).map((t) => t.topic_id);
+    const fallbackTopicById = new Map(topicCards.map((t) => [t.topic_id, t]));
+    const fallbackTopicIds = prioritizeTopicIdsForEdition(
+      topicCards.map((t) => t.topic_id),
+      fallbackTopicById,
+      DIGEST_EDITION
+    );
+    selectedTopicIds = fallbackTopicIds.slice(0, Math.max(8, TOPIC_SHORTLIST_N));
     writeAuditReport(dateISO, "04-llm-clusters", {
       run_date: dateISO,
       note: "dry-run/skip-llm 模式：使用单条目占位 topic，不用于正式发布。",
@@ -6399,16 +7227,18 @@ async function main() {
         topics: topicDossiers.map((t) => ({ topic_id: t.topic_id, refs: t.refs })),
       })
     );
-    const cached = cache.daily?.[dateISO];
+    const dailyCacheKey = `${DIGEST_EDITION}:${dateISO}`;
+    const cached = cache.daily?.[dailyCacheKey] || (DIGEST_EDITION === "morning" ? cache.daily?.[dateISO] : null);
     if (!forceLLM && cached?.fingerprint === fingerprint && cached?.daily) {
       daily = cached.daily;
-      console.log(`[cache] reuse daily summary: ${dateISO}`);
+      console.log(`[cache] reuse daily summary: ${dailyCacheKey}`);
     } else {
       try {
+        console.log(`[summary] start topics=${topicDossiers.length} materials=${materials.length}`);
         daily = await summarizeDailyWithLLM(topicDossiers, materials, cache);
         console.log(`[ok] daily summary generated`);
         cache.daily = cache.daily || {};
-        cache.daily[dateISO] = { fingerprint, daily, at: dateISO };
+        cache.daily[dailyCacheKey] = { fingerprint, daily, at: dateISO };
         bestEffortPersistDigestCache(cache, "daily-summary");
       } catch (e) {
         console.warn(`[warn] daily summary failed: ${e?.message || e}`);
@@ -6418,6 +7248,9 @@ async function main() {
   }
 
   if (daily && materials.length > 0) {
+    if (skipLLM || (dryRun && !dryRunLLM)) {
+      daily.refTranslations = buildReferenceTranslationSeed(materials, daily?.refTranslations || {});
+    } else {
     try {
       daily.refTranslations = await translateMissingReferenceTitlesWithLLM(
         materials,
@@ -6427,6 +7260,7 @@ async function main() {
     } catch (error) {
       console.warn(`[warn] ref title translation failed: ${error?.message || error}`);
       daily.refTranslations = buildReferenceTranslationSeed(materials, daily?.refTranslations || {});
+    }
     }
   }
 
@@ -6452,6 +7286,7 @@ async function main() {
         mention_count: t.mention_count,
         source_diversity: t.source_diversity,
         cross_source_score: t.cross_source_score,
+        scorecard: buildTopicScorecard(t, { edition: DIGEST_EDITION }),
       })),
     final_hot_news: (daily.hotNews || []).map((x) => ({ insight: x.insight, refs: x.refs })),
     final_other_news: (daily.otherNews || []).map((x) => ({ insight: x.insight, refs: x.refs })),
@@ -6461,8 +7296,11 @@ async function main() {
   });
 
   /* 7) 输出 Hexo 文章（即使没有内容，也写一篇空的） */
-  const outPath = path.join(POSTS_DIR, `digest-${dateISO}.md`);
-  const outMd = buildDigestMarkdown(dateISO, daily, renderMaterials);
+  const outPath = path.join(POSTS_DIR, DIGEST_EDITION_CONFIG.fileName(dateISO));
+  const outMd = buildDigestMarkdown(dateISO, daily, renderMaterials, {
+    edition: DIGEST_EDITION_CONFIG.edition,
+    region: DIGEST_EDITION_CONFIG.region,
+  });
 
   if (dryRun) {
     console.log(`\n[dry-run] would write: ${outPath}`);
@@ -6478,6 +7316,10 @@ async function main() {
   // 写缓存到磁盘
   cache.published = cache.published || {};
   cache.publishedSignatures = cache.publishedSignatures || {};
+  cache.publishedByEdition = cache.publishedByEdition || {};
+  cache.publishedSignaturesByEdition = cache.publishedSignaturesByEdition || {};
+  cache.publishedByEdition[DIGEST_EDITION] = cache.publishedByEdition[DIGEST_EDITION] || {};
+  cache.publishedSignaturesByEdition[DIGEST_EDITION] = cache.publishedSignaturesByEdition[DIGEST_EDITION] || {};
   for (const material of renderMaterials) {
     const key = String(material.link || "").trim();
     if (!key) continue;
@@ -6485,13 +7327,21 @@ async function main() {
     const record = {
       title: material.title || "",
       at: dateISO,
+      edition: DIGEST_EDITION,
     };
-    cache.published[key] = record;
-    cache.published[canonical] = record;
+    if (DIGEST_EDITION === "morning") {
+      cache.published[key] = record;
+      cache.published[canonical] = record;
+    }
+    cache.publishedByEdition[DIGEST_EDITION][key] = record;
+    cache.publishedByEdition[DIGEST_EDITION][canonical] = record;
 
     const signature = buildCandidateSignature(material);
     if (signature) {
-      cache.publishedSignatures[signature] = record;
+      if (DIGEST_EDITION === "morning") {
+        cache.publishedSignatures[signature] = record;
+      }
+      cache.publishedSignaturesByEdition[DIGEST_EDITION][signature] = record;
     }
   }
   persistDigestCache(cache);

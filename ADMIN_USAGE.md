@@ -14,7 +14,7 @@ npm run admin
 http://localhost:4000/admin/
 ```
 
-说明：已使用本地覆盖配置 `_config.local.yml`，所以本地访问路径固定是 `/admin/`，不会再受线上 `root: /julynotebook/` 影响。
+说明：已使用本地覆盖配置 `_config.local.yml`，所以本地访问路径固定是 `/admin/`，不会再受线上 `root: /julynotebook/` 影响。`npm run admin` 现在会自动探测 4000 端口；如果被占用，会自动切换到 4001/4002 等空闲端口并打印实际访问地址。
 
 如果提示 `Port 4000 has been used`：
 
@@ -88,3 +88,20 @@ items:
 
 - 每次准备发布时，更新根目录 `ITERATION_LOG.md`
 - 记录日期与核心改动（3-6 条，简洁说明影响）
+
+## 8) 发布前刷新 AI 笔记摘要
+
+- 首页与 `AI 笔记` 列表页的“文章概述”优先使用笔记 front matter 中的 `description`
+- 发布前执行：
+
+```bash
+npm run notes:summarize
+```
+
+- 如果希望强制重写现有摘要：
+
+```bash
+npm run notes:summarize -- --force
+```
+
+- 脚本会调用智谱接口，为 `july笔记 / AI 笔记` 分类文章生成一段式中文摘要，并写回 Markdown front matter 的 `description`

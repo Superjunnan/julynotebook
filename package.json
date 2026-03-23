@@ -7,12 +7,13 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "admin": "hexo server -d --config _config.yml,_config.local.yml",
+    "admin": "node tools/start-admin.mjs",
     "admin:4001": "hexo server -d -p 4001 --config _config.yml,_config.local.yml",
+    "notes:summarize": "node tools/refresh-note-summaries.mjs",
     "digest": "node tools/digest.mjs",
     "digest:ci": "node tools/run-digest-with-retry.mjs",
     "test:digest": "node --test tests/digest/*.test.mjs",
-    "test:digest:live": "DIGEST_RUN_LIVE_LLM_TESTS=1 DIGEST_LLM_MAX_CONCURRENCY=1 DIGEST_LLM_MIN_INTERVAL_MS=12000 DIGEST_LLM_INTERVAL_JITTER_MS=1 node --test tests/digest/live-zhipu-smoke.test.mjs",
+    "test:digest:live": "DIGEST_RUN_LIVE_LLM_TESTS=1 DIGEST_LLM_MAX_CONCURRENCY=1 DIGEST_LLM_MIN_INTERVAL_MS=20000 DIGEST_LLM_INTERVAL_JITTER_MS=1 node --test tests/digest/live-zhipu-smoke.test.mjs",
     "new:note": "hexo new july-note"
   },
   "hexo": {

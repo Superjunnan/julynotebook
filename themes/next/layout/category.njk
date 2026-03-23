@@ -21,11 +21,11 @@
               {% if group.is_expanded %}
                 <div class="app-feed">
                   {% for post in group.posts %}
-                    <a href="{{ url_for(post.path) }}" class="app-card app-card--daily post-title-link">
+                    <a href="{{ url_for(post.path) }}" class="app-card app-card--daily{% if post.digest_edition == 'evening' %} app-card--evening{% endif %} post-title-link">
                       <div class="app-card__header">
-                        <span class="app-card__icon" aria-hidden="true">🤖</span>
+                        <span class="app-card__icon" aria-hidden="true">{{ post.app_badge.icon or '🤖' }}</span>
                         <h3 class="app-card__title">{{ post.app_display_title or post.title }}</h3>
-                        <span class="app-card__badge">AI 日报</span>
+                        <span class="app-card__badge">{{ post.app_badge.text or 'AI 日报' }}</span>
                       </div>
 
                       <div class="app-card__meta">

@@ -59,22 +59,27 @@ $card-note-text = #908058
   text-overflow ellipsis
 
 .app-card__badge
+  display inline-flex
+  align-items center
+  justify-content center
   flex 0 0 auto
-  padding 4px 10px
+  min-height 30px
+  padding 0 12px
   border-radius 999px
-  font-size 0.8rem
+  font-size 0.76rem
   font-weight 600
-  letter-spacing .02em
+  line-height 1.05
+  letter-spacing 0
 
 .app-card--daily .app-card__badge
   background #ffebe5
   color #d15247
   align-self flex-start
   margin-left auto
-  padding 3px 9px
-  font-size .74rem
-  line-height 1.1
-  letter-spacing 0
+
+.app-card--evening .app-card__badge
+  background #fdebd7
+  color #a56a2c
 
 .app-card--note .app-card__badge
   background #fdf5e6

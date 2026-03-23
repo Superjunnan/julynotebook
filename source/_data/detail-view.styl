@@ -52,6 +52,7 @@ a.cite:hover
   font-size 1.48rem
   font-weight 700
   color #828287
+  text-align left !important
 
 .detail-page .post-description
   display none
@@ -60,9 +61,16 @@ a.cite:hover
   margin-bottom 0
 
 .app-detail-header
+  display flex
+  align-items center
+  justify-content flex-start
+  gap 6px
+  width 100%
   margin-bottom 8px
 
 .app-detail-header__title
+  flex 1
+  min-width 0
   white-space nowrap
   overflow hidden
   text-overflow ellipsis
@@ -83,6 +91,21 @@ a.cite:hover
 .app-detail-meta-right
   flex 0 0 auto
   color #999
+
+.app-detail-meta--note
+  flex-wrap wrap
+  justify-content flex-start
+  gap 12px 14px
+
+.app-detail-meta--note span
+  display inline-flex
+  align-items center
+  gap 5px
+
+.app-detail-meta--note #busuanzi_container_page_pv
+  display inline-flex
+  align-items center
+  gap 5px
 
 .app-detail-stat
   display inline-flex
@@ -200,20 +223,6 @@ a.cite:hover
   color #333333 !important
   line-height 1.55
   display block
-
-.daily-news-card-title__index
-  display inline
-  color #8a8a90
-  font-size .95em
-  font-weight 700
-
-.daily-news-card-title__dot
-  display inline
-  color #a0a0a6
-  margin-left 0
-
-.daily-news-card-title__text
-  display inline
 
 .daily-news-card-body
   margin-bottom 16px !important

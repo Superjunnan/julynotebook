@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 
 import { normalizeDailySummary } from "../../tools/digest.mjs";
 
-test("normalizeDailySummary keeps only multi-source narratives in hot news and demotes strong single-source news to quick news", () => {
+test("normalizeDailySummary keeps multi-source narratives first and can backfill high-value single-source items to meet hot minimum", () => {
   const materials = [
     {
       refId: 1,
@@ -83,8 +83,8 @@ test("normalizeDailySummary keeps only multi-source narratives in hot news and d
     materials
   );
 
-  assert.deepEqual(daily.hotNews.map((item) => item.refs), [[1, 2, 3]]);
-  assert.equal(daily.otherNews.some((item) => (item.refs || []).includes(4)), true);
+  assert.deepEqual(daily.hotNews.map((item) => item.refs), [[1, 2, 3], [4]]);
+  assert.equal(daily.otherNews.some((item) => (item.refs || []).includes(4)), false);
 });
 
 test("normalizeDailySummary allows a high-value single-source community item in quick news but not in hot news", () => {

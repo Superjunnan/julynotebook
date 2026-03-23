@@ -143,6 +143,10 @@ function 编号文本(index) {
   return String(index + 1).padStart(2, '0');
 }
 
+function 构建条目标题HTML(titleId, 序号, 显示标题) {
+  return `<h3 class="daily-news-card-title" id="${titleId}">${序号} · ${显示标题}</h3>`;
+}
+
 function 构建重点资讯区块(h2) {
   const 节点列表 = 收集后续同级节点(h2);
   const 卡片列表 = [];
@@ -173,7 +177,7 @@ function 构建重点资讯区块(h2) {
 
     卡片列表.push(
       `<article class="daily-news-card">`
-      + `<h3 class="daily-news-card-title" id="${titleId}"><span class="daily-news-card-title__index">${序号}</span><span class="daily-news-card-title__dot">·</span><span class="daily-news-card-title__text">${显示标题}</span></h3>`
+      + 构建条目标题HTML(titleId, 序号, 显示标题)
       + `<div class="daily-news-card-body">${bodyHtml}</div>`
       + refsHtml
       + `</article>`
@@ -217,7 +221,7 @@ function 构建列表区块(h2, options = {}) {
 
       卡片列表.push(
         `<article class="daily-news-card daily-news-card--${类型}">`
-        + `<h3 class="daily-news-card-title" id="${titleId}"><span class="daily-news-card-title__index">${序号}</span><span class="daily-news-card-title__dot">·</span><span class="daily-news-card-title__text">${显示标题}</span></h3>`
+        + 构建条目标题HTML(titleId, 序号, 显示标题)
         + `<div class="daily-news-card-body">${bodyHtml}</div>`
         + refsHtml
         + `</article>`

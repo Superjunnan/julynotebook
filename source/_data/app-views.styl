@@ -103,3 +103,78 @@ $view-tab-text = #7c7c81
 @media (min-width: 992px)
   .app-view
     gap 22px
+
+.iteration-page
+  display flex
+  flex-direction column
+  gap 18px
+
+.iteration-intro-card,
+.iteration-rules-card,
+.iteration-entry-card
+  padding 18px 18px 20px
+  border-radius 20px
+  background rgba(255, 255, 255, 0.82)
+  box-shadow 0 10px 24px rgba(121, 113, 112, 0.05)
+
+.iteration-intro-card p,
+.iteration-entry-card ul,
+.iteration-rules-card ul
+  margin 0
+
+.iteration-rules-card h2
+  margin 0 0 12px
+  font-size 1.12rem
+  color #4f5767
+
+.iteration-rules-card ul,
+.iteration-entry-card ul
+  padding-left 1.1rem
+
+.iteration-rules-card li,
+.iteration-entry-card li
+  color #74747a
+
+.iteration-rules-card li + li,
+.iteration-entry-card li + li
+  margin-top 10px
+
+.iteration-timeline
+  position relative
+  display flex
+  flex-direction column
+  gap 18px
+  padding-left 22px
+
+.iteration-timeline::before
+  content ''
+  position absolute
+  left 8px
+  top 8px
+  bottom 8px
+  width 2px
+  border-radius 999px
+  background rgba(197, 205, 220, 0.65)
+
+.iteration-entry
+  position relative
+
+.iteration-entry::before
+  content ''
+  position absolute
+  left -18px
+  top 10px
+  width 10px
+  height 10px
+  border-radius 50%
+  background #e9edf6
+  box-shadow 0 0 0 4px #f7f8fa
+
+.iteration-entry-date
+  margin 0 0 8px
+  font-size 1.15rem
+  font-weight 700
+  color #4e5564
+
+.iteration-entry-card code
+  font-size .85em

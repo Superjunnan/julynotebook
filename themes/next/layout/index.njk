@@ -16,7 +16,7 @@
 
     <div id="home-posts-container" class="app-feed">
       {%- for post in mixed_feed %}
-        <a href="{{ url_for(post.path) }}" class="app-card app-card--{{ post.app_type }} post-title-link" data-app-type="{{ post.app_type }}">
+        <a href="{{ url_for(post.path) }}" class="app-card app-card--{{ post.app_type }}{% if post.digest_edition == 'evening' %} app-card--evening{% endif %} post-title-link" data-app-type="{{ post.app_type }}">
           <div class="app-card__header">
             <span class="app-card__icon" aria-hidden="true">{{ post.app_badge.icon }}</span>
             <h2 class="app-card__title">{{ post.app_display_title or post.title }}</h2>

@@ -89,6 +89,7 @@ sources:
     ingestion_mode: page_scrape
     parser: generic_links
     group: domestic_media
+    preferred_in: evening
     bucket_hint: hot_news
     trust_tier: medium
     promotional_risk: medium
@@ -105,6 +106,7 @@ sources:
     ingestion_mode: page_scrape
     parser: generic_links
     group: domestic_media
+    preferred_in: evening
     bucket_hint: hot_news
     trust_tier: medium
     promotional_risk: high
@@ -124,6 +126,7 @@ sources:
     ingestion_mode: page_scrape
     parser: generic_links
     group: domestic_media
+    preferred_in: evening
     bucket_hint: hot_news
     trust_tier: medium
     promotional_risk: medium
@@ -134,6 +137,111 @@ sources:
       - agent
     weight: 7
     notes: Public AI news listing.
+
+  - id: leiphone-ai
+    name: 雷锋网 AI
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: domestic_media
+    preferred_in: evening
+    bucket_hint: hot_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://www.leiphone.com/category/ai
+    include_url_patterns:
+      - /category/ai/
+    include_keywords:
+      - ai
+      - 大模型
+      - 模型
+      - agent
+      - 智能体
+      - 豆包
+      - 智谱
+      - kimi
+      - deepseek
+      - minimax
+      - 通义
+      - 混元
+      - 文心
+      - 盘古
+    exclude_keywords:
+      - 活动
+      - 直播
+      - 峰会
+    weight: 6
+    notes: 雷锋网 AI 频道公开列表页，可补充国内大模型与产业动态。
+
+  - id: jiqizhixin-articles
+    name: 机器之心
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: domestic_media
+    preferred_in: evening
+    bucket_hint: quick_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://www.jiqizhixin.com/
+    include_url_patterns:
+      - /short_urls/
+    include_keywords:
+      - ai
+      - 大模型
+      - 模型
+      - agent
+      - 智能体
+      - 豆包
+      - 智谱
+      - kimi
+      - deepseek
+      - minimax
+      - 通义
+      - 混元
+      - 文心
+      - 盘古
+    exclude_keywords:
+      - 活动
+      - 课程
+      - 招聘
+    weight: 5
+    notes: 机器之心首页可抓取 short_urls 文章入口，适合作为国内资讯补充源。
+
+  - id: volcengine-articles
+    name: 火山引擎开发者
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: company_view
+    preferred_in: evening
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://developer.volcengine.com/articles
+    include_url_patterns:
+      - /articles/
+    include_keywords:
+      - 豆包
+      - 火山
+      - 火山引擎
+      - 扣子
+      - 方舟
+      - seed
+      - agent
+      - 智能体
+      - 模型
+      - 发布
+      - 更新
+    exclude_keywords:
+      - 活动
+      - 课程
+      - 训练营
+    weight: 6
+    notes: 火山引擎开发者文章列表公开可抓取，适合追踪豆包、方舟与 Seed 相关动态。
 
   - id: openai-news
     name: OpenAI News
@@ -689,6 +797,7 @@ sources:
     ingestion_mode: page_scrape
     parser: generic_links
     group: company_view
+    preferred_in: evening
     bucket_hint: hot_news
     trust_tier: high
     promotional_risk: medium
@@ -711,6 +820,7 @@ sources:
     ingestion_mode: page_scrape
     parser: generic_links
     group: company_view
+    preferred_in: evening
     bucket_hint: hot_news
     trust_tier: high
     promotional_risk: medium
@@ -729,18 +839,26 @@ sources:
   - id: zhipu
     name: 智谱
     enabled: true
-    mode: restricted
-    ingestion_mode: manual_capture
-    parser: local_yaml
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
     group: company_view
-    bucket_hint: ai_rumor
+    preferred_in: evening
+    bucket_hint: hot_news
     trust_tier: high
-    promotional_risk: high
-    url: https://www.zhipuai.cn/news
-    required_inputs:
-      - official_article_url
+    promotional_risk: medium
+    url: https://www.zhipuai.cn/zh/news
+    include_url_patterns:
+      - /zh/news/
+    include_keywords:
+      - 智谱
+      - glm
+      - agent
+      - 清言
+      - 发布
+      - 更新
     weight: 5
-    notes: Official website news channel is JS-heavy; keep manual capture for stable ingestion.
+    notes: 智谱新闻页当前为 Next.js 服务端渲染，可稳定抓取公开新闻链接。
 
   - id: deepseek
     name: DeepSeek
@@ -749,6 +867,7 @@ sources:
     ingestion_mode: page_scrape
     parser: generic_links
     group: company_view
+    preferred_in: evening
     bucket_hint: hot_news
     trust_tier: high
     promotional_risk: medium
@@ -771,20 +890,29 @@ sources:
     ingestion_mode: page_scrape
     parser: generic_links
     group: company_view
+    preferred_in: evening
     bucket_hint: hot_news
     trust_tier: medium
     promotional_risk: medium
-    url: https://seed.bytedance.com/zh/research?view_from=homepage_tab
+    url: https://seed.bytedance.com/zh/blog
     include_url_patterns:
       - /zh/blog/
-      - /zh/public_papers
+      - /zh/seed
+      - /zh/seedance
+      - /zh/seedream
+      - /zh/realtime_voice
+      - /zh/seed-music
     include_keywords:
       - seed
       - bytedance
+      - 字节
+      - 豆包
       - model
+      - 大模型
       - 发布
+      - 更新
     weight: 4
-    notes: ByteDance Seed official research page (links to blog and paper portal).
+    notes: ByteDance Seed 团队动态页公开可抓取，能补到 Seed/Seedance/Seedream 等产品与研究更新。
 
   - id: ali-tech
     name: 阿里技术
@@ -793,6 +921,7 @@ sources:
     ingestion_mode: page_scrape
     parser: generic_links
     group: company_view
+    preferred_in: evening
     bucket_hint: hot_news
     trust_tier: high
     promotional_risk: medium
@@ -815,6 +944,7 @@ sources:
     ingestion_mode: manual_capture
     parser: local_yaml
     group: company_view
+    preferred_in: evening
     bucket_hint: hot_news
     trust_tier: medium
     promotional_risk: medium
@@ -823,6 +953,152 @@ sources:
       - official_article_url
     weight: 4
     notes: Official site is JS-heavy; keep manual capture until a stable crawlable feed is available.
+
+  - id: baidu-qianfan
+    name: 百度千帆
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: company_view
+    preferred_in: evening
+    bucket_hint: hot_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://cloud.baidu.com/product-s/qianfan_home
+    include_url_patterns:
+      - /product/codingplan.html
+      - /doc/qianfan-docs/
+      - /qianfan/ais/console/onlineTest/
+    include_keywords:
+      - 文心
+      - 千帆
+      - ERNIE
+      - 模型
+      - agent
+      - 智能体
+      - coding plan
+      - 发布
+      - 更新
+    exclude_keywords:
+      - 招募
+      - 比赛
+      - 活动
+      - 联系我们
+    weight: 5
+    notes: 百度千帆公开产品页可提取 Coding Plan、模型更新与文档更新入口，作为百度大模型与平台更新源。
+
+  - id: tencent-hunyuan
+    name: 腾讯混元
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: company_view
+    preferred_in: evening
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://cloud.tencent.com/document/product/1729/97765
+    include_url_patterns:
+      - /document/product/1729/
+    include_keywords:
+      - 混元
+      - hunyuan
+      - 模型
+      - 智能体
+      - agent
+      - 发布
+      - 更新
+    weight: 4
+    notes: 腾讯混元公开变更日志页可抓取详情链接，作为官方更新源。
+
+  - id: xiaomi-hyperai
+    name: 小米 AI
+    enabled: true
+    mode: restricted
+    ingestion_mode: manual_capture
+    parser: local_yaml
+    group: company_view
+    preferred_in: evening
+    bucket_hint: hot_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://www.mi.com/
+    required_inputs:
+      - official_article_url
+    weight: 3
+    notes: 小米 AI 相关公开更新入口分散，先保留为人工补录信源。
+
+  - id: qwen-blog
+    name: Qwen Blog
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: generic_links
+    group: company_view
+    preferred_in: evening
+    bucket_hint: hot_news
+    trust_tier: high
+    promotional_risk: medium
+    url: https://qwenlm.github.io/zh/blog/
+    include_url_patterns:
+      - /zh/blog/
+    include_keywords:
+      - qwen
+      - 通义
+      - 模型
+      - 发布
+      - 更新
+      - 开源
+    weight: 5
+    notes: 通义 / Qwen 官方博客，适合追踪模型发布与开源动作。
+
+  - id: qbitai-news
+    name: 量子位
+    enabled: true
+    mode: auto
+    ingestion_mode: direct_feed
+    parser: rss
+    group: domestic_media
+    preferred_in: evening
+    bucket_hint: quick_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://www.qbitai.com/category/%e8%b5%84%e8%ae%af
+    feed_url: https://www.qbitai.com/category/%e8%b5%84%e8%ae%af/feed
+    include_keywords:
+      - ai
+      - 大模型
+      - 模型
+      - agent
+      - 智能体
+      - 字节
+      - 阿里
+      - 腾讯
+      - 百度
+      - 华为
+      - 小米
+      - 智谱
+      - kimi
+      - moonshot
+      - minimax
+      - deepseek
+      - 阶跃
+      - seed
+      - 豆包
+      - 通义
+      - 混元
+      - 文心
+      - 盘古
+    exclude_keywords:
+      - 招聘
+      - 活动
+      - 直播
+      - 大会
+      - 课程
+    weight: 4
+    notes: 国内 AI 媒体快讯源，补官方源之外的产业动态与产品跟进。
 
   - id: hacker-news-ai
     name: Hacker News AI

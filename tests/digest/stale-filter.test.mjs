@@ -36,3 +36,26 @@ test("filterPreviouslyPublished keeps same-day items during rerun", () => {
 
   assert.deepEqual(filtered.map((item) => item.link), ["https://example.com/same"]);
 });
+
+test("filterPreviouslyPublished removes same-day items already published by another edition", () => {
+  const filtered = filterPreviouslyPublished(
+    [
+      { title: "Same topic in evening", link: "https://example.com/same", pubDate: "2026-03-04" },
+    ],
+    {
+      publishedByEdition: {
+        morning: {
+          "https://example.com/same": { at: "2026-03-04", edition: "morning" },
+        },
+        evening: {},
+      },
+      publishedSignaturesByEdition: {
+        morning: {},
+        evening: {},
+      },
+    },
+    { runDate: "2026-03-04", edition: "evening" }
+  );
+
+  assert.deepEqual(filtered, []);
+});

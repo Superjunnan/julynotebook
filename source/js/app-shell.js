@@ -75,7 +75,7 @@
       case 'daily-post':
         return 'AI 日报';
       case 'note-post':
-        return 'AI 笔记正文';
+        return 'AI 笔记';
       case 'iteration-log':
         return '迭代记录';
       case 'resume':
@@ -208,27 +208,45 @@
     }
   }
 
+  function 获取滚动偏移() {
+    const 顶栏 = document.querySelector('.site-brand-container');
+    const 顶栏高度 = 顶栏 ? 顶栏.getBoundingClientRect().height : 56;
+    return 顶栏高度 + 14;
+  }
+
+  function 滚动到目录目标(hash) {
+    const 原始锚点 = String(hash || '').trim();
+    if (!原始锚点 || !原始锚点.startsWith('#')) return;
+
+    const 锚点 = decodeURIComponent(原始锚点.slice(1));
+    const 目标节点 = document.getElementById(锚点);
+    if (!目标节点) return;
+
+    const 目标位置 = Math.max(
+      0,
+      window.scrollY + 目标节点.getBoundingClientRect().top - 获取滚动偏移()
+    );
+
+    window.requestAnimationFrame(() => {
+      window.scrollTo({
+        top: 目标位置,
+        behavior: 'smooth',
+      });
+    });
+
+    if (window.history && typeof window.history.replaceState === 'function') {
+      window.history.replaceState(null, '', `#${encodeURIComponent(锚点)}`);
+    }
+  }
+
   function 同步左侧按钮(view, 左按钮, 次按钮, root, 左侧抽屉, 遮罩层) {
     if (!左按钮) return;
 
-    if (view === 'home') {
+    if (view === 'home' || view === 'daily-list' || view === 'note-list' || view === 'iteration-log' || view === 'resume') {
       左按钮.hidden = false;
       左按钮.setAttribute('aria-label', '打开菜单');
       左按钮.innerHTML = '<i class="fa fa-list-ul" aria-hidden="true"></i>';
       左按钮.onclick = () => 打开菜单(左侧抽屉, 遮罩层);
-      if (次按钮) {
-        次按钮.hidden = true;
-        次按钮.onclick = null;
-      }
-      return;
-    }
-
-    if (view === 'daily-list' || view === 'note-list' || view === 'iteration-log' || view === 'resume') {
-      左按钮.hidden = false;
-      左按钮.setAttribute('aria-label', '返回上一页');
-      左按钮.innerHTML = '<i class="fa fa-angle-left" aria-hidden="true" style="font-size: 1.5rem; transform: translateY(-1px);"></i>';
-      左按钮.onclick = () => 返回首页或上一页(root);
-
       if (次按钮) {
         次按钮.hidden = true;
         次按钮.onclick = null;
@@ -296,6 +314,21 @@
     document.addEventListener('pjax:send', 关闭所有抽屉);
   }
 
+  function 初始化目录抽屉交互(目录抽屉) {
+    if (!目录抽屉 || 目录抽屉.dataset.bound === 'true') return;
+
+    目录抽屉.dataset.bound = 'true';
+    目录抽屉.addEventListener('click', event => {
+      const 链接 = event.target.closest('a[href^="#"]');
+      if (!链接) return;
+
+      event.preventDefault();
+      const hash = 链接.getAttribute('href') || '';
+      关闭所有抽屉();
+      滚动到目录目标(hash);
+    });
+  }
+
   function 初始化AppShell() {
     const root = 读取根路径();
     const pageConfig = 读取页面配置();
@@ -306,6 +339,7 @@
     const { 左按钮, 次按钮, 右按钮 } = 确保页头操作区();
 
     初始化遮罩关闭(遮罩层);
+    初始化目录抽屉交互(目录抽屉);
     同步视图类名(view);
     同步页头标题(读取页头标题(view, pageConfig));
     同步左侧按钮(view, 左按钮, 次按钮, root, 左侧抽屉, 遮罩层);

@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
 
 import {
   DIGEST_NEWS_RULES,
@@ -62,7 +63,7 @@ test("buildDigestMarkdown renders key news, quick news, core papers, and rumors"
 
 test("digest news rules align with confirmed 3 to 15 total range", () => {
   assert.deepEqual(DIGEST_NEWS_RULES, {
-    hotMin: 0,
+    hotMin: 3,
     hotMax: 4,
     quickMin: 0,
     quickMax: 15,
@@ -175,4 +176,136 @@ test("core paper block prefers translated Chinese title over original English ti
 
   assert.match(markdown, /复杂功能交付评测框架/);
   assert.doesNotMatch(markdown, /\*\*FeatureBench: Benchmarking Agentic Coding/);
+});
+
+test("evening digest markdown uses dedicated title, metadata, and domestic tags", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-03-20",
+    {
+      overview: "国内模型公司在产品发布、开放平台和商业化协同上继续加速。",
+      candidateTotal: 66,
+      hotNews: [
+        {
+          insight: "Kimi 发布新能力",
+          narrative: "Moonshot 面向国内开发者推出新版本能力，重点强调开放平台调用与场景适配。",
+          refs: [1],
+        },
+      ],
+      otherNews: [],
+      coreTech: [
+        {
+          title: "国内多模态评测更新",
+          summary: "研究进一步补齐了中文多模态能力的评测基线。",
+          refs: [2],
+        },
+      ],
+      aiRumor: [],
+      refTranslations: {},
+    },
+    [
+      { refId: 1, title: "Kimi release", source: "Kimi", link: "https://example.com/1" },
+      { refId: 2, title: "Paper", source: "arXiv cs.AI", link: "https://example.com/2" },
+    ],
+    {
+      edition: "evening",
+      region: "domestic",
+    }
+  );
+
+  assert.match(markdown, /title: "AI晚报 · 2026-03-20"/);
+  assert.match(markdown, /digest_edition: evening/);
+  assert.match(markdown, /digest_region: domestic/);
+  assert.match(markdown, /tags: \[人工智能, 每日资讯, AI 晚报, 国内AI\]/);
+  assert.match(markdown, /国内模型公司在产品发布、开放平台和商业化协同上继续加速/);
+});
+
+test("buildDigestMarkdown uses current local time when same-day manual run is earlier than configured post time", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-03-20",
+    {
+      overview: "国内模型公司在产品发布、开放平台和商业化协同上继续加速。",
+      hotNews: [],
+      otherNews: [],
+      coreTech: [],
+      aiRumor: [],
+    },
+    [],
+    {
+      edition: "evening",
+      region: "domestic",
+      postTime: "19:40:00",
+      timeZone: "Asia/Shanghai",
+      now: new Date("2026-03-20T09:19:35.000Z"),
+    }
+  );
+
+  assert.match(markdown, /date: 2026-03-20 17:19:35/);
+});
+
+test("evening digest ignores legacy generic local post time and falls back to evening default", () => {
+  const output = execFileSync(
+    process.execPath,
+    [
+      "--input-type=module",
+      "-e",
+      `
+        import { buildDigestMarkdown } from './tools/digest.mjs';
+        const md = buildDigestMarkdown(
+          '2026-03-20',
+          { overview: 'x', hotNews: [], otherNews: [], coreTech: [], aiRumor: [] },
+          [],
+          { edition: 'evening', region: 'domestic', timeZone: 'Asia/Shanghai', now: new Date('2026-03-20T09:19:35.000Z') }
+        );
+        process.stdout.write(md);
+      `,
+    ],
+    {
+      cwd: new URL("../..", import.meta.url),
+      env: {
+        ...process.env,
+        DIGEST_PROFILE: "evening",
+        DIGEST_POST_TIME: "09:00:00",
+        DIGEST_EVENING_POST_TIME: "",
+        DIGEST_MORNING_POST_TIME: "",
+      },
+      encoding: "utf8",
+    }
+  );
+
+  assert.match(output, /title: "AI晚报 · 2026-03-20"/);
+  assert.match(output, /date: 2026-03-20 17:19:35/);
+});
+
+test("morning digest ignores legacy generic local post time and falls back to morning default", () => {
+  const output = execFileSync(
+    process.execPath,
+    [
+      "--input-type=module",
+      "-e",
+      `
+        import { buildDigestMarkdown } from './tools/digest.mjs';
+        const md = buildDigestMarkdown(
+          '2026-03-20',
+          { overview: 'x', hotNews: [], otherNews: [], coreTech: [], aiRumor: [] },
+          [],
+          { edition: 'morning', region: 'global', timeZone: 'Asia/Shanghai', now: new Date('2026-03-20T09:19:35.000Z') }
+        );
+        process.stdout.write(md);
+      `,
+    ],
+    {
+      cwd: new URL("../..", import.meta.url),
+      env: {
+        ...process.env,
+        DIGEST_PROFILE: "morning",
+        DIGEST_POST_TIME: "09:00:00",
+        DIGEST_EVENING_POST_TIME: "",
+        DIGEST_MORNING_POST_TIME: "",
+      },
+      encoding: "utf8",
+    }
+  );
+
+  assert.match(output, /title: "AI日报 · 2026-03-20"/);
+  assert.match(output, /date: 2026-03-20 06:00:00/);
 });
