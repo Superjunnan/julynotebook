@@ -225,21 +225,40 @@
     const 目标节点 = document.getElementById(锚点);
     if (!目标节点) return;
 
-    const 目标位置 = Math.max(
-      0,
-      window.scrollY + 目标节点.getBoundingClientRect().top - 获取滚动偏移()
-    );
+    const 滚动容器 = document.scrollingElement || document.documentElement || document.body;
+    const 执行滚动 = () => {
+      if (typeof 目标节点.scrollIntoView === 'function') {
+        目标节点.scrollIntoView({
+          block: 'start',
+          inline: 'nearest',
+          behavior: 'auto',
+        });
+      }
 
-    window.requestAnimationFrame(() => {
+      const 当前滚动 = typeof 滚动容器.scrollTop === 'number'
+        ? 滚动容器.scrollTop
+        : (window.scrollY || window.pageYOffset || 0);
+      const 目标位置 = Math.max(
+        0,
+        当前滚动 + 目标节点.getBoundingClientRect().top - 获取滚动偏移()
+      );
+
+      滚动容器.scrollTop = 目标位置;
       window.scrollTo({
         top: 目标位置,
         behavior: 'smooth',
       });
-    });
+    };
 
-    if (window.history && typeof window.history.replaceState === 'function') {
-      window.history.replaceState(null, '', `#${encodeURIComponent(锚点)}`);
-    }
+    window.setTimeout(() => {
+      if (window.location.hash !== 原始锚点) {
+        window.location.hash = hash;
+      }
+
+      window.requestAnimationFrame(() => {
+        执行滚动();
+      });
+    }, 80);
   }
 
   function 同步左侧按钮(view, 左按钮, 次按钮, root, 左侧抽屉, 遮罩层) {

@@ -133,13 +133,14 @@ test("日报详情页条目标题应使用普通流式排版而不是flex标题�
 test("日报详情页分区应由整块底色色块包裹并通过间距区分模块", async () => {
   const { css } = await buildAndReadPages();
 
-  assert.match(css, /\.daily-section-block\s*\{[^}]*padding:\s*18px 16px 20px;[^}]*border-radius:\s*18px;[^}]*background:\s*rgba\(255,\s*255,\s*255,\s*0\.72\);/);
+  assert.match(css, /\.daily-section-block\s*\{[^}]*padding:\s*14px 16px 18px;[^}]*border-radius:\s*18px;[^}]*background:\s*rgba\(255,\s*255,\s*255,\s*0\.72\);/);
   assert.match(css, /\.daily-section-block \+ \.daily-section-block\s*\{[^}]*margin-top:\s*16px/);
 });
 
 test("日报详情页目录定位应通过scroll-margin-top确保标题进入可视区顶部", async () => {
   const { css } = await buildAndReadPages();
 
+  assert.match(css, /\.daily-section-title\s*\{[^}]*margin-top:\s*0 !important;[^}]*margin-bottom:\s*0\.25em !important;/);
   assert.match(css, /\.daily-section-title\s*\{[^}]*scroll-margin-top:\s*calc\(56px \+ env\(safe-area-inset-top,\s*0px\) \+ 14px\)/);
   assert.match(css, /\.daily-news-card-title\s*\{[^}]*scroll-margin-top:\s*calc\(56px \+ env\(safe-area-inset-top,\s*0px\) \+ 14px\)/);
 });
@@ -193,12 +194,21 @@ test("首页日报与笔记徽标应复用统一高度，不再出现一个过�
   assert.doesNotMatch(css, /\.app-card--note \.app-card__badge\s*\{[^}]*padding:/);
 });
 
+test("首页顶部 tabs 与内容列表之间的间距应收紧", async () => {
+  const { css } = await buildAndReadPages();
+
+  assert.match(css, /\.app-view-home\s*\{[^}]*gap:\s*14px/);
+  assert.match(css, /\.home-top-tabs\.app-tab-strip\s*\{[^}]*padding:\s*2px 0 2px/);
+});
+
 test("目录点击逻辑应先关闭抽屉恢复滚动，再按页头偏移滚动到目标标题", async () => {
   const { appShell } = await buildAndReadPages();
 
   assert.match(appShell, /目录抽屉\.addEventListener\('click'/);
   assert.match(appShell, /关闭所有抽屉\(\)/);
-  assert.match(appShell, /window\.scrollTo\(/);
+  assert.match(appShell, /window\.setTimeout\(/);
+  assert.match(appShell, /window\.location\.hash = hash/);
+  assert.match(appShell, /scrollIntoView/);
 });
 
 test("首页外的主列表页左侧应显示菜单按钮而不是返回上一页", async () => {
