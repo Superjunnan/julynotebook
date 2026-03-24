@@ -178,6 +178,37 @@ test("core paper block prefers translated Chinese title over original English ti
   assert.doesNotMatch(markdown, /\*\*FeatureBench: Benchmarking Agentic Coding/);
 });
 
+test("core paper block seeds Chinese title from material title even when refTranslations is empty", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-03-03",
+    {
+      hotNews: [],
+      otherNews: [],
+      coreTech: [
+        {
+          title: "EDM-ARS: A Domain-Specific Multi-Agent System for Automated Educational Data Mining Research",
+          summary: "该论文提出了面向教育数据挖掘研究的多智能体系统。",
+          refs: [16],
+        },
+      ],
+      aiRumor: [],
+      refTranslations: {},
+    },
+    [
+      {
+        refId: 16,
+        title: "EDM-ARS：面向自动化教育数据挖掘研究的领域特定多智能体系统",
+        source: "arXiv cs.AI",
+        link: "https://example.com/paper-16",
+      },
+    ]
+  );
+
+  assert.match(markdown, /面向自动化教育数据挖掘研究的领域特定多智能体系统/);
+  assert.doesNotMatch(markdown, /\*\*论文研究进展\*\*/);
+  assert.doesNotMatch(markdown, /\*\*论文进展/);
+});
+
 test("evening digest markdown uses dedicated title, metadata, and domestic tags", () => {
   const markdown = buildDigestMarkdown(
     "2026-03-20",

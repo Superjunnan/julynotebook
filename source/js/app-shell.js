@@ -179,6 +179,9 @@
       遮罩层.classList.remove('app-mask-visible');
     }
     document.body.classList.remove('app-noscroll');
+    document.querySelectorAll('.app-header-action-right').forEach(node => {
+      node.setAttribute('aria-expanded', 'false');
+    });
   }
 
   function 打开抽屉(node, 遮罩层) {
@@ -268,25 +271,32 @@
     if (!右按钮) return;
 
     const 目录容器 = document.querySelector('.post-toc-wrap');
-    const 有目录 = Boolean(目录容器 && 目录容器.querySelector('.post-toc'));
+    const 目录主体 = 目录容器 && 目录容器.querySelector('.post-toc, .nav');
+    const 有目录 = Boolean(目录主体 && 目录主体.querySelector('a[href^="#"]'));
     const 允许展示 = view === 'daily-post' || view === 'note-post' || view === 'post';
 
     if (!有目录 || !允许展示) {
       右按钮.hidden = true;
       右按钮.onclick = null;
+      右按钮.setAttribute('aria-expanded', 'false');
       目录抽屉.innerHTML = '';
       return;
     }
 
     目录抽屉.innerHTML = `
       <div class="app-toc-drawer-title">目录</div>
-      ${目录容器.innerHTML}
+      ${目录容器.querySelector('.post-toc')?.outerHTML || 目录容器.innerHTML}
     `;
 
     右按钮.hidden = false;
     右按钮.setAttribute('aria-label', '打开目录');
+    右按钮.setAttribute('aria-expanded', 'false');
     右按钮.innerHTML = '<i class="fa fa-list-ul" aria-hidden="true"></i>';
-    右按钮.onclick = () => 打开抽屉(目录抽屉, 遮罩层);
+    右按钮.onclick = () => {
+      const 已打开 = 目录抽屉.classList.contains('app-drawer-open');
+      已打开 ? 关闭所有抽屉() : 打开抽屉(目录抽屉, 遮罩层);
+      右按钮.setAttribute('aria-expanded', 已打开 ? 'false' : 'true');
+    };
   }
 
   function 同步菜单高亮(root) {

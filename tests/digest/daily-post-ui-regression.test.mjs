@@ -212,6 +212,16 @@ test("首页外的主列表页左侧应显示菜单按钮而不是返回上一�
   assert.doesNotMatch(菜单分支片段, /返回上一页/);
 });
 
+test("详情页目录按钮应保留可点击层级并允许切换打开目录抽屉", async () => {
+  const { appShell, css } = await buildAndReadPages();
+
+  assert.match(appShell, /querySelector\('\.post-toc, \.nav'\)/);
+  assert.match(appShell, /const 已打开 = 目录抽屉\.classList\.contains\('app-drawer-open'\)/);
+  assert.match(appShell, /已打开 \? 关闭所有抽屉\(\) : 打开抽屉\(目录抽屉, 遮罩层\)/);
+  assert.match(css, /\.site-brand-container \.app-header-action\s*\{[^}]*z-index:\s*1080/);
+  assert.match(css, /\.site-meta \.brand\s*\{[^}]*pointer-events:\s*none/);
+});
+
 test("迭代记录页应去除重复主标题并改为日期时间线卡片", async () => {
   const { iteration, css } = await buildAndReadPages();
 

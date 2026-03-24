@@ -6513,9 +6513,12 @@ function buildDigestMarkdown(dateISO, daily, materials, options = {}) {
   // 把 materials 做成 id -> item 的映射（方便 refs 转链接）
   const idToItem = {};
   for (const m of materials) idToItem[m.refId] = m;
-  const refTranslations = daily?.refTranslations && typeof daily.refTranslations === "object"
-    ? daily.refTranslations
-    : {};
+  const refTranslations = buildReferenceTranslationSeed(
+    materials,
+    daily?.refTranslations && typeof daily.refTranslations === "object"
+      ? daily.refTranslations
+      : {}
+  );
 
   let md = `---
 title: "${title}"
@@ -6633,13 +6636,16 @@ digest_region: ${digestRegion}
   } else {
     for (const h of coreTech) {
       const refs = Array.isArray(h?.refs) ? h.refs : [];
+      const firstMaterial = refs.length ? idToItem[refs[0]] : null;
       const translatedRefTitle = refs.length
         ? finalizeReadableText(refTranslations[refs[0]] || "")
         : "";
+      const materialTitle = cleanReferenceTitle(firstMaterial?.title || "", 120);
       const titleSeed = finalizeReadableText(h?.title || "");
       const localizedTitle = toChineseLikeTitle(
         (titleSeed && hasCjk(titleSeed) && titleSeed) ||
         (translatedRefTitle && hasCjk(translatedRefTitle) && clipHeadline(translatedRefTitle, 28)) ||
+        (materialTitle && hasCjk(materialTitle) && clipHeadline(materialTitle, 28)) ||
         "论文研究进展",
         "论文研究进展"
       );
