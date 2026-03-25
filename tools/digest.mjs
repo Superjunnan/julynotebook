@@ -138,6 +138,7 @@ const CLUSTER_ENRICH_FETCH_CONCURRENCY = readPositiveIntEnv("DIGEST_CLUSTER_ENRI
 const CLUSTER_ENRICH_FORCE_TOP_NEWS = readPositiveIntEnv("DIGEST_CLUSTER_ENRICH_FORCE_TOP_NEWS", 20);
 const CLUSTER_ENRICH_MIN_SNIPPET = readPositiveIntEnv("DIGEST_CLUSTER_ENRICH_MIN_SNIPPET", 90);
 const CLUSTER_ENRICH_MAX_CHARS = readPositiveIntEnv("DIGEST_CLUSTER_ENRICH_MAX_CHARS", 320);
+const IFANR_BRIEF_MAX_ARTICLES = readPositiveIntEnv("DIGEST_IFANR_BRIEF_MAX_ARTICLES", 2);
 const CLUSTER_TEXT_MODE = String(process.env.DIGEST_CLUSTER_TEXT_MODE || "title_lead").trim().toLowerCase();
 const CLUSTER_ENRICH_MODE = String(process.env.DIGEST_CLUSTER_ENRICH_MODE || "hybrid").trim().toLowerCase();
 const TOPIC_MIN_NEWS = readPositiveIntEnv("DIGEST_TOPIC_MIN_NEWS", 6);
@@ -246,11 +247,11 @@ function getDigestEditionConfig(edition = DIGEST_EDITION) {
   return {
     edition: "morning",
     region: "global",
-    label: "AI日报",
+    label: "AI早报",
     fileName: (dateISO) => `digest-${dateISO}.md`,
     reportsDir: (dateISO) => path.join(REPORTS_DIR, String(dateISO || "")),
     tags: ["人工智能", "每日资讯"],
-    descriptionFallback: "AI日报：今日主线、其他快讯与核心论文。",
+    descriptionFallback: "AI早报：今日主线、其他快讯与核心论文。",
   };
 }
 
@@ -398,6 +399,20 @@ function formatTimeInTimeZone(date, timeZone = RUN_TZ) {
   return `${hh}:${mm}:${ss}`;
 }
 
+function formatDigestDisplayDate(dateISO, timeZone = RUN_TZ) {
+  const value = String(dateISO || "").trim();
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return value;
+
+  const noonUtc = new Date(`${match[1]}-${match[2]}-${match[3]}T12:00:00Z`);
+  const weekday = new Intl.DateTimeFormat("zh-CN", {
+    weekday: "short",
+    timeZone: normalizeTimeZone(timeZone),
+  }).format(noonUtc);
+
+  return `${match[2]}.${match[3]} ${weekday}`;
+}
+
 function normalizeTimeOfDay(raw) {
   const value = String(raw || "").trim();
   if (/^\d{2}:\d{2}:\d{2}$/.test(value)) return value;
@@ -414,7 +429,7 @@ function resolveDigestFrontMatterDateTime(dateISO, configuredTime, options = {})
   }
 
   const currentTime = formatTimeInTimeZone(now, timeZone);
-  return `${dateISO} ${currentTime < safeTime ? currentTime : safeTime}`;
+  return `${dateISO} ${currentTime}`;
 }
 
 function getRunDateISO() {
@@ -1537,10 +1552,181 @@ function keywordMatchesHaystack(haystack, keyword) {
 }
 
 // 抓 page_scrape：从公开页面提取文章链接
+function isIfanrMorningBriefTitle(title) {
+  const text = String(title || "").replace(/\s+/g, " ").trim();
+  if (!text) return false;
+  return /^早报[｜|]/.test(text);
+}
+
+export function extractIfanrMorningBriefArticleLinks(html, listUrl) {
+  const root = parse(String(html || ""));
+  const links = [];
+  const seen = new Set();
+
+  for (const anchor of root.querySelectorAll("a[href]")) {
+    const href = String(anchor.getAttribute("href") || "").trim();
+    if (!href) continue;
+
+    let absoluteUrl = "";
+    try {
+      absoluteUrl = new URL(href, listUrl).toString();
+    } catch {
+      continue;
+    }
+
+    const safeUrl = safeHttpUrl(absoluteUrl);
+    if (!safeUrl) continue;
+
+    let pathname = "";
+    try {
+      const parsed = new URL(safeUrl);
+      const host = parsed.hostname.replace(/^www\./, "");
+      if (host !== "ifanr.com") continue;
+      pathname = parsed.pathname || "";
+    } catch {
+      continue;
+    }
+
+    if (!/^\/\d{6,}(?:\/)?$/.test(pathname)) continue;
+
+    const title = String(anchor.text || "").replace(/\s+/g, " ").trim();
+    if (!isIfanrMorningBriefTitle(title)) continue;
+    if (seen.has(safeUrl)) continue;
+
+    seen.add(safeUrl);
+    links.push(safeUrl);
+  }
+
+  return links;
+}
+
+function extractIfanrBriefSnippetFromNodes(nodes) {
+  const parts = [];
+  for (const node of nodes || []) {
+    const tag = String(node?.tagName || "").toLowerCase();
+    if (!["p", "blockquote", "ul", "ol"].includes(tag)) continue;
+
+    let text = "";
+    if (tag === "ul" || tag === "ol") {
+      const bullets = node.querySelectorAll("li").map((li) => finalizeReadableText(li.text || ""));
+      text = bullets.filter(Boolean).join("；");
+    } else {
+      text = finalizeReadableText(node.text || "");
+    }
+
+    if (!text) continue;
+    if (/^(🔗\s*)?相关阅读[:：]?/i.test(text)) continue;
+    parts.push(text);
+    if (parts.join(" ").length >= 280) break;
+  }
+
+  return clipToSentence(parts.join(" "), 220);
+}
+
+const IFANR_BRIEF_NEGATIVE_AI_PATTERNS = [
+  /没有\s*ai/i,
+  /无\s*ai/i,
+  /并非\s*ai/i,
+  /非\s*ai/i,
+  /不涉及\s*ai/i,
+  /没有\s*人工智能/i,
+  /无\s*人工智能/i,
+  /不涉及\s*人工智能/i,
+  /没有\s*大模型/i,
+  /无\s*大模型/i,
+];
+
+function isIfanrBriefAiRelevant(title, snippet) {
+  const hay = `${String(title || "")} ${String(snippet || "")}`.trim();
+  if (!hay) return false;
+  if (IFANR_BRIEF_NEGATIVE_AI_PATTERNS.some((pattern) => pattern.test(hay))) return false;
+  return hasAiSignalText(hay);
+}
+
+export function extractIfanrMorningBriefItems(html, source, articleUrl, options = {}) {
+  const root = parse(String(html || ""));
+  const article = root.querySelector("article.c-article-content") || root.querySelector("article") || root;
+  const headings = article.querySelectorAll("h3");
+  const articleTitle = finalizeReadableText(
+    options.articleTitle ||
+    root.querySelector("h1.c-single-normal__title")?.text ||
+    root.querySelector("h1")?.text ||
+    ""
+  );
+  const articlePubDate = formatPubDate(
+    options.pubDate || extractPublishedDateFromHtml(html, articleUrl, articleTitle)
+  );
+
+  const items = [];
+  const seen = new Set();
+
+  headings.forEach((heading, index) => {
+    const title = finalizeReadableText(String(heading.text || "").replace(/^[#\d\.\-、\s]+/g, ""));
+    if (!title || title.length < 4) return;
+
+    const nodes = [];
+    let cursor = heading.nextElementSibling;
+    while (cursor) {
+      if (String(cursor.tagName || "").toLowerCase() === "h3") break;
+      nodes.push(cursor);
+      cursor = cursor.nextElementSibling;
+    }
+
+    const snippet = extractIfanrBriefSnippetFromNodes(nodes);
+    if (!snippet) return;
+    if (!isIfanrBriefAiRelevant(title, snippet)) return;
+
+    const itemLink = `${articleUrl}#__brief-${index + 1}`;
+    if (seen.has(itemLink)) return;
+    if (!sourceMatchesFilters(itemLink, `${title} ${snippet}`, source)) return;
+
+    seen.add(itemLink);
+    items.push({
+      source: source.name,
+      sourceId: source.id,
+      sourceGroup: source.group || "",
+      sourceDisplayZh: source.display_name_zh || "",
+      title,
+      link: itemLink,
+      pubDate: articlePubDate || inferPubDateFromUrlAndTitle(articleUrl, title) || null,
+      contentSnippet: snippet,
+      weight: source.weight || 0,
+      bucketHint: source.bucket_hint || "",
+      trustTier: source.trust_tier || "",
+      sourceMode: source.mode,
+      ingestionMode: source.ingestion_mode || "page_scrape",
+      meta: {
+        roundupTitle: articleTitle,
+        roundupLink: articleUrl,
+      },
+    });
+  });
+
+  return items;
+}
+
 async function fetchPageScrapeItems(source) {
   const listUrl = source.url;
   const res = await fetchWithTimeout(listUrl, {}, TIMEOUT_HTML_MS);
   const html = await res.text();
+
+  if (String(source?.parser || "").trim() === "ifanr_morning_brief") {
+    const articleUrls = extractIfanrMorningBriefArticleLinks(html, listUrl).slice(0, IFANR_BRIEF_MAX_ARTICLES);
+    const items = [];
+    for (const articleUrl of articleUrls) {
+      const articleRes = await fetchWithTimeout(articleUrl, {}, TIMEOUT_HTML_MS);
+      const articleHtml = await articleRes.text();
+      const articleTitle = extractTitleFromHtml(articleHtml);
+      const articlePubDate = extractPublishedDateFromHtml(articleHtml, articleUrl, articleTitle);
+      const articleItems = extractIfanrMorningBriefItems(articleHtml, source, articleUrl, {
+        articleTitle,
+        pubDate: articlePubDate,
+      });
+      items.push(...articleItems);
+      if (items.length >= 40) break;
+    }
+    return items.slice(0, 40);
+  }
 
   const root = parse(html);
   const anchors = source.link_selector
@@ -6503,7 +6689,7 @@ function buildTopicSignalsFromRefs(refs, idToItem, maxSignals = 3) {
 function buildDigestMarkdown(dateISO, daily, materials, options = {}) {
   const editionConfig = getDigestEditionConfig(options?.edition || DIGEST_EDITION);
   const digestRegion = String(options?.region || editionConfig.region).trim() || editionConfig.region;
-  const title = `${editionConfig.label} · ${dateISO}`;
+  const title = `${editionConfig.label} · ${formatDigestDisplayDate(dateISO, options?.timeZone || RUN_TZ)}`;
   const description = escapeYamlDoubleQuoted(buildDigestDescription(daily, { edition: editionConfig.edition }));
   const frontMatterDateTime = resolveDigestFrontMatterDateTime(dateISO, options?.postTime || DIGEST_POST_TIME, {
     timeZone: options?.timeZone || RUN_TZ,
@@ -7376,4 +7562,7 @@ if (IS_DIRECT_RUN) {
   });
 }
 
-export { DIGEST_NEWS_RULES, buildDigestMarkdown };
+export {
+  DIGEST_NEWS_RULES,
+  buildDigestMarkdown,
+};

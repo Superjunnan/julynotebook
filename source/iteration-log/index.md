@@ -19,6 +19,19 @@ header: false
 
 <section class="iteration-timeline">
 <article class="iteration-entry">
+<h2 class="iteration-entry-date">2026-03-25</h2>
+<div class="iteration-entry-card">
+<ul>
+<li><code>爱范儿早报</code> 以“混合模式”接入主链路：先从早报栏目页发现当天 / 最近文章，再进入详情页按 <code>h3</code> 分段抽取简讯，并仅保留 AI 相关条目参与候选、交叉验证和平台背书。</li>
+<li>早报 / 晚报标题与徽标规范统一：列表与详情页改为 <code>AI早报 / AI晚报 · MM.DD 周X</code> 展示，早报 badge 同步改为 <code>AI早报</code>，避免继续混用“AI日报”和完整日期格式。</li>
+<li>日报生成时间语义修正：新生成内容的 <code>date</code> 现在写入任务实际完成时间，不再沿用固定 <code>06:00 / 19:40</code> 作为成稿时间，手动运行也不会显示未来时间。</li>
+<li>晚报来源池继续补强并产出新样例：在扩充国内公开自动源的基础上，真实生成了 <code>evening-digest-2026-03-25</code>，首页与日报列表页均可直接走查最新晚报效果。</li>
+<li>移动端详情页交互与排版继续收口：修复右上角目录菜单在 iPhone 上的跳转和禁滚问题，并收紧首页 Tab 区、详情分区标题与模块卡片之间的间距。</li>
+</ul>
+</div>
+</article>
+
+<article class="iteration-entry">
 <h2 class="iteration-entry-date">2026-03-23</h2>
 <div class="iteration-entry-card">
 <ul>

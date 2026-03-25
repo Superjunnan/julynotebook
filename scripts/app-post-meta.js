@@ -1,5 +1,55 @@
 const { parse } = require('node-html-parser');
 
+function 标准化时区(raw) {
+  const value = String(raw || '').trim();
+  return value || 'Asia/Shanghai';
+}
+
+const DIGEST_TZ = 标准化时区(
+  process.env.DIGEST_TZ
+  || process.env.TZ
+  || Intl.DateTimeFormat().resolvedOptions().timeZone
+);
+
+function 从日报标题提取日期(text) {
+  const match = String(text || '').match(/(\d{4})-(\d{2})-(\d{2})/);
+  if (!match) return '';
+  return `${match[1]}-${match[2]}-${match[3]}`;
+}
+
+function 格式化日报展示日期(dateInput, timeZone = DIGEST_TZ) {
+  if (!dateInput) return '';
+
+  let iso = '';
+  if (dateInput instanceof Date && !Number.isNaN(dateInput.getTime())) {
+    const parts = new Intl.DateTimeFormat('en-CA', {
+      timeZone,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }).formatToParts(dateInput);
+    const y = parts.find((part) => part.type === 'year')?.value;
+    const m = parts.find((part) => part.type === 'month')?.value;
+    const d = parts.find((part) => part.type === 'day')?.value;
+    if (y && m && d) {
+      iso = `${y}-${m}-${d}`;
+    }
+  } else if (/^\d{4}-\d{2}-\d{2}$/.test(String(dateInput || '').trim())) {
+    iso = String(dateInput).trim();
+  }
+
+  if (!iso) return '';
+  const match = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return '';
+
+  const date = new Date(`${match[1]}-${match[2]}-${match[3]}T12:00:00Z`);
+  const weekday = new Intl.DateTimeFormat('zh-CN', {
+    weekday: 'short',
+    timeZone,
+  }).format(date);
+  return `${match[2]}.${match[3]} ${weekday}`;
+}
+
 function 读取分类(data) {
   if (!data.categories || !data.categories.data) return [];
   return data.categories.data.map(category => category.name);
@@ -13,14 +63,15 @@ function 读取标签数组(data) {
 function 生成显示标题(data, isDaily, digestEdition = '') {
   const 原始标题 = String(data.title || '').trim();
   if (!isDaily) return 原始标题;
+  const digestDateISO = 从日报标题提取日期(原始标题);
+  const 展示日期 = digestDateISO
+    ? 格式化日报展示日期(digestDateISO)
+    : 格式化日报展示日期(data.date);
+  if (!展示日期) return 原始标题;
   if (digestEdition === 'evening') {
-    return 原始标题
-      .replace(/^人工智能晚报/u, 'AI晚报')
-      .replace(/^人工智能日报/u, 'AI晚报');
+    return `AI晚报 · ${展示日期}`;
   }
-  return 原始标题
-    .replace(/^人工智能日报/u, 'AI日报')
-    .replace(/^人工智能晚报/u, 'AI日报');
+  return `AI早报 · ${展示日期}`;
 }
 
 function 去除标题序号(text) {
@@ -194,7 +245,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
       if (digestEdition === 'evening') {
         data.app_badge = { text: 'AI 晚报', color: '#8a5a2b', bg: '#fde7cc', icon: '🤖' };
       } else {
-        data.app_badge = { text: 'AI 日报', color: '#9d473d', bg: '#f8d9d4', icon: '🤖' };
+        data.app_badge = { text: 'AI早报', color: '#9d473d', bg: '#f8d9d4', icon: '🤖' };
       }
     } else if (isNote) {
       data.app_badge = { text: 'AI 笔记', color: '#8d7630', bg: '#f6ebbf', icon: '📔' };

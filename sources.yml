@@ -1100,6 +1100,49 @@ sources:
     weight: 4
     notes: 国内 AI 媒体快讯源，补官方源之外的产业动态与产品跟进。
 
+  - id: ifanr-brief
+    name: 爱范儿早报
+    enabled: true
+    mode: auto
+    ingestion_mode: page_scrape
+    parser: ifanr_morning_brief
+    group: domestic_media
+    preferred_in: evening
+    bucket_hint: quick_news
+    trust_tier: medium
+    promotional_risk: medium
+    url: https://www.ifanr.com/category/ifanrnews
+    include_keywords:
+      - ai
+      - 大模型
+      - 模型
+      - agent
+      - 智能体
+      - openai
+      - anthropic
+      - gemini
+      - claude
+      - 智谱
+      - kimi
+      - deepseek
+      - minimax
+      - 通义
+      - 豆包
+      - 混元
+      - 文心
+      - 盘古
+    exclude_keywords:
+      - 汽车销量
+      - 手机发布
+      - 耳机
+      - 评测
+      - 活动
+      - 直播
+      - 大会
+      - 招聘
+    weight: 3
+    notes: 爱范儿早报作为混合源接入：先发现 roundup 文章，再按 h3 分段抽取 AI 相关条目。
+
   - id: hacker-news-ai
     name: Hacker News AI
     enabled: true

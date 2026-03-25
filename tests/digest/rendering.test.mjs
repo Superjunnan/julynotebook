@@ -243,7 +243,7 @@ test("evening digest markdown uses dedicated title, metadata, and domestic tags"
     }
   );
 
-  assert.match(markdown, /title: "AI晚报 · 2026-03-20"/);
+  assert.match(markdown, /title: "AI晚报 · 03\.20 周五"/);
   assert.match(markdown, /digest_edition: evening/);
   assert.match(markdown, /digest_region: domestic/);
   assert.match(markdown, /tags: \[人工智能, 每日资讯, AI 晚报, 国内AI\]/);
@@ -303,11 +303,11 @@ test("evening digest ignores legacy generic local post time and falls back to ev
     }
   );
 
-  assert.match(output, /title: "AI晚报 · 2026-03-20"/);
+  assert.match(output, /title: "AI晚报 · 03\.20 周五"/);
   assert.match(output, /date: 2026-03-20 17:19:35/);
 });
 
-test("morning digest ignores legacy generic local post time and falls back to morning default", () => {
+test("morning digest uses current completion time and renders early-edition display title", () => {
   const output = execFileSync(
     process.execPath,
     [
@@ -337,6 +337,6 @@ test("morning digest ignores legacy generic local post time and falls back to mo
     }
   );
 
-  assert.match(output, /title: "AI日报 · 2026-03-20"/);
-  assert.match(output, /date: 2026-03-20 06:00:00/);
+  assert.match(output, /title: "AI早报 · 03\.20 周五"/);
+  assert.match(output, /date: 2026-03-20 17:19:35/);
 });

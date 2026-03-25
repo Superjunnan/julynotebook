@@ -55,7 +55,7 @@ function buildAndReadPages() {
 
 test("首页日报卡片摘要只展示真实资讯标题且不重复序号", async () => {
   const { home } = await buildAndReadPages();
-  const cardStart = home.indexOf("AI日报 · 2026-03-19");
+  const cardStart = home.indexOf("AI早报 · 03.19 周四");
   assert.notEqual(cardStart, -1);
   const cardHtml = home.slice(cardStart, cardStart + 2200);
 
@@ -65,20 +65,21 @@ test("首页日报卡片摘要只展示真实资讯标题且不重复序号", as
   assert.doesNotMatch(cardHtml, /<li>参考来源<\/li>/);
 });
 
-test("首页与详情页日报标题统一显示为AI日报", async () => {
+test("首页与详情页早报标题统一显示为AI早报，并使用月日加星期格式", async () => {
   const { home, daily } = await buildAndReadPages();
 
-  assert.match(home, /AI日报 · 2026-03-19/);
-  assert.doesNotMatch(home, /人工智能日报 · 2026-03-19/);
-  assert.match(daily, /AI日报 · 2026-03-19/);
+  assert.match(home, /AI早报 · 03\.19 周四/);
+  assert.doesNotMatch(home, /AI日报 · 2026-03-19/);
+  assert.match(home, /class="app-card__badge">AI早报</);
+  assert.match(daily, /AI早报 · 03\.19 周四/);
   assert.doesNotMatch(daily, /人工智能日报 · 2026-03-19/);
-  assert.match(daily, /rel="prev" title="AI日报 · 2026-03-18"/);
-  assert.doesNotMatch(daily, /rel="prev" title="人工智能日报 · 2026-03-18"/);
+  assert.match(daily, /class="app-card__badge">AI早报</);
+  assert.match(daily, /rel="prev" title="AI早报 · 03\.18 周三"/);
 });
 
 test("首页日报卡片条数统计应等于重点资讯、其他快讯和核心论文总和", async () => {
   const { home } = await buildAndReadPages();
-  const cardStart = home.indexOf("AI日报 · 2026-03-19");
+  const cardStart = home.indexOf("AI早报 · 03.19 周四");
   assert.notEqual(cardStart, -1);
   const cardHtml = home.slice(cardStart, cardStart + 2200);
 

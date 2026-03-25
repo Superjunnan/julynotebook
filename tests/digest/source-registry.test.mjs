@@ -63,6 +63,7 @@ test("source registry contains all required user-requested sources", () => {
     "xiaomi-hyperai",
     "qwen-blog",
     "qbitai-news",
+    "ifanr-brief",
     "hacker-news-ai",
     "huggingface-posts",
     "huggingface-papers",
@@ -122,6 +123,7 @@ test("domestic evening digest sources retain evening preference metadata", () =>
     "xiaomi-hyperai",
     "qwen-blog",
     "qbitai-news",
+    "ifanr-brief",
   ].forEach((id) => assert.equal(eveningPreferredIds.has(id), true, `${id} should prefer evening digest`));
 });
 
@@ -132,6 +134,7 @@ test("new domestic public sources are runnable for evening digest", () => {
     "jiqizhixin-articles": "page_scrape",
     "volcengine-articles": "page_scrape",
     "qbitai-news": "direct_feed",
+    "ifanr-brief": "page_scrape",
   };
 
   for (const [id, mode] of Object.entries(expected)) {
