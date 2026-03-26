@@ -5,7 +5,7 @@
       "title": "Kimi K2: Open Agentic Intelligence",
       "text": "",
       "pubDate": null,
-      "at": "2026-03-26"
+      "at": "2026-03-27"
     },
     "https://openai.com/index/equip-responses-api-computer-environment": {
       "title": "From model to agent: Equipping the Responses API with a computer environment",
@@ -5253,15 +5253,15 @@
     },
     "https://36kr.com/p/3739204925764102": {
       "title": "国产模型悄无声息地赢得了一场多模态战役",
-      "text": "",
-      "pubDate": null,
-      "at": "2026-03-26"
+      "text": "就在昨天，国产模型悄无声息地赢得了一场多模态战役。 正当字节跳动的Seedance 2.0视频生成模型扬名海外，OpenAI却突然宣布即将关停旗下视频生成模型Sora的相关服务。 在这个智能体时代，人们已经逐渐意识到多模态能力的重要性。 Seedance 2.0凭借它的强大能力，已经被人们视为未来制作电影的“神器”，而它现在唯一存在的尴尬之处，就在于缺少配音。 音频生成看起来比视频生成要简单，但给视频精准配音（Video-to-Audio, V2A）却十分困难：完美的配音不仅要“贴脸（语义与声音同步）”，还要做到“好听（美学质量）”和“身临其境（空间立体声）”。 为了补齐视频生成模型“走向电影”的短板，阿里通义实验室和香港科技大学、香港中文大学的研究团队共同进行了一项有里程碑意义的研究：PrismAudio。 这是业内首个将强化学习（RL）与专门的多维思维链（CoT）规划深度集成到V2A生成中的框架。 研究团队不仅提出了能够大幅降低扩散模型强化学习训练成本的Fast-GRPO算法，还开源了高难度基准测试数据集AudioCanvas。 更惊人的事实是，PrismAudio凭借仅仅518M的参数量，击败了众多数十亿参数级别的模型，在所有感知维度上全面刷新了SOTA。 01 V2A生成的“不可能四角” 全球范围内，AI的多模态目前仍然局限于文本、图像、音频和视频四类核心模态。 在过去的一年中，文生图、文生视频和图生视频的模型已经变得常见，唯有音频这个模态与其他核心模态的通路尚未完全打通。 尽管市面上已经有不少AI音乐生成的产品，但视频生成音频的本质不同于“看图说话”，在人类的感知世界，一段合格的视频配音至少要经过以下四个维度的考验： 一是语义一致性：这是最简单的要求，画面里说的是中文，声音就不能是英文； 二是时间同步性：类似于影视作品中的“对口型”，保证发出声音的时间与视频一致； 三是美学质量：声音需要具有主观的丰富度、保真度和艺术感，而不能是单调的电子音； 四是空间准确性：左右声道需要跟随画面中的运动物体形成完美的声像移动。 早期的V2A-Mapper等模型直接将画面映射为音频，但缺乏对中间过程“黑盒”的控制能力。 近期的MMAudio、MovieGenAudio等模型虽然引入了文本提示词控制，但控制能力仍然略显薄弱。 直到2025年7月，阿里通义实验室的刘华戴博士开源了ThinkSound模型，开创性地将思维链（CoT）引入多模态大模型，让模型在生成声音前先“思考”应该发出什么声音，大大提高了模型的逻辑性。 尽管如此，ThinkSound也存在三个致命缺陷： 一是思维链极其混乱：它把识别物体、对齐时间、判断美感、计算空间位置这些过程全都放在同一个思考过程中。 这就像让一个学生同时做语文、数学、英语、物理等不同科目的卷子，结果可想而知，模型容易出现“多模态幻觉”。 二是目标纠缠（Objective Entanglement）：在训练过程中，模型使用的是单一的重建损失函数，但感知目标之间往往存在竞争关系。 也就是说，模型为了把发声时间对准，可能生成了一个难听的噪音；生成了好听的声音，可能又无法与画面吻合。 三是缺乏人类偏好对齐：现有的模型只会照本宣科地拟合训练数据，但没有引入人类反馈强化学习（RLHF）来学习什么才是人类觉得“好听”的声音。 这一点也是多模态模型面临的最大难点之一： 对于大语言模型，回答的正确与错误一目了然；但对于图像、音频和视频，人类能轻易判断出何为“坏”，但无法准确定义何为“好”。 02 PrismAudio：像顶级音效师一样思考 PrismAudio给出了优雅的解法，而核心思想并不复杂：分而治之的思维链规划+对症下药的强化学习优化。 它的架构建立在一个强大的基础模型之上。 为了提升模型对视频模态和复杂逻辑的理解能力，研究团队不仅把传统的视觉编码器CLIP换成了专门用于理解视频的VideoPrism（Google，2024），还把文本编码器也一并升级为具备强大逻辑推理能力的T5-Gemma（Google，2025）。 接下来，就轮到它的核心技术大显身手： 1.分解式多维思维链 既然把各种V2A需求都放到同一个思考过程中行不通，PrismAudio干脆直接将思考过程拆解成了四个独立且专业的CoT链路。 在音频生成之前，模型",
+      "pubDate": "2026-03-27",
+      "at": "2026-03-27"
     },
     "https://36kr.com/p/3739404960006409": {
       "title": "连Karpathy都怕了，9千万级AI包被投毒，竟靠黑客写出bug救命",
-      "text": "",
-      "pubDate": null,
-      "at": "2026-03-26"
+      "text": "刚刚，科技界经历了一场惊心动魄的「供应链投毒」危机。 3月24日上午，一个普通的版本更新LiteLLM 1.82.8，出现在PyPI上。 全球数百万开发者的终端，每天都在自动拉取这类更新，没有人注意到这个版本里藏着一段精心设计的恶意代码： 只要你执行一句pip install litellm，你机器上的SSH密钥、云服务凭证、数据库密码、加密货币钱包……会在几秒内被加密打包，发往一个伪装成官方的服务器。 然后，如果你的机器连着Kubernetes集群，恶意代码会自动横向扩散，在每个节点上植入后门。 LiteLLM，是当下AI应用开发中最核心的基础设施之一。它的开源包全球月下载量9700万。 但这次，这根管道却差点被人从内部凿穿，而且之所以逃过一劫，纯属意外。 攻击者自己的代码里有个bug，导致目标机器直接崩溃。如果没有这个bug，没人知道这次「投毒」还要扩散多久。 目睹这一幕，Andrej Karpathy深夜发文，直呼这是「软件惊魂」。 Karpathy帖子中所列的「窃取清单」堪比「灾难现场」： AWS/GCP/Azure 凭据、Kubernetes配置、CI/CD 机密、数据库密码、SSH 密钥…… 「惊魂」过后，Karpathy说了一句可能改变整个行业开发范式的话： 「我越来越抗拒依赖了。」 pip install，然后你的一切都没了 这不是一次普通的漏洞告警，只要你在终端里敲下这句看似人畜无害的pip install litellm，你的整台机器就会瞬间对攻击者彻底敞开大门。 根据安全分析，这次投毒不是简单地偷几个密码，而是对整台机器和整个集群的「全面洗劫」。 攻击者的窃取清单几乎覆盖了开发者最核心的一切： SSH私钥和配置 AWS/GCP/Azure凭证 Kubernetes配置和Token .env中的API Key git凭证 数据库密码 shell历史记录 SSL私钥 CI/CD机密 加密货币钱包文件 环境变量中的敏感信息 更可怕的是，LiteLLM根本不是一个冷门工具。 作为连接各大语言模型提供商的关键中间件，它是名副其实的AI应用层「水电煤」，拥有每个月高达9700万次的下载量！ 很多项目用它统一连接OpenAI、Anthropic、Google、Azure等多家模型提供商。 许多Agent框架、MCP Server、LLM编排工具，也会把它作为底层依赖引入。 这让这次投毒的影响，升级到了整条AI依赖链被撕开一道口子。 即使你根本不知道什么是LiteLLM，只要你执行了pip install dspy（它依赖litellm>=1.64.0），或者安装了其他任何依赖该包的大型AI项目，你都会作为传递依赖的受害者中招。 一次投毒，顺着错综复杂的依赖树，瞬间就会辐射到无数AI项目中。 这就是为什么Karpathy会直接把它定义为「软件界的恐怖故事」。 一次靠黑客「代码写太烂」才暴露的史诗级漏洞 你可能会想，既然影响这么大，那安全公司一定第一时间拉响了警报吧？ 但事实的真相有点荒诞和讽刺。 最早发现异常的，是Callum McMahon团队的工程师。 当时，他们在Cursor里使用一个MCP插件，而这个插件会把LiteLLM作为传递依赖拉进来。 安装到被投毒的LiteLLM1.82.8之后，机器突然开始异常：内存被疯狂吃满，最后直接崩溃。 后来追进去才发现，问题出在一个.pth文件上。 对很多Python开发者来说，.pth文件平时几乎没有存在感。 但正因这样，它可以在Python解释器启动时自动执行代码。攻击者就在这里塞进了恶意启动器。 按原本设计，它会悄悄拉起子进程，执行后续窃密和外传逻辑。 结果它写砸了。 因为子进程本身也会再次触发同一个.pth文件，于是每个新进程都会再生出新进程，进入指数级自我复制，最后演变成一个fork bomb，把机器资源迅速吃光。 也就是说，这次攻击之所以暴露，只是因为它自己把自己玩炸了。 如果攻击者不是靠vibe coding搞出了这个乌龙，这次如此隐蔽的后门，极可能会在全网潜伏数周甚至数月而不被察觉。 全行业的安全防线竟然靠的是黑客写了个bug，整个生态的安全检测机制，在这一刻形同虚设。 这也是整件事最让人后怕的地方。 一场精心策划的「 供应链投毒」 从攻击手法的精密程度来看，这是一场有",
+      "pubDate": "2026-03-27",
+      "at": "2026-03-27"
     },
     "https://36kr.com/p/3739188978299655": {
       "title": "不做“AI平替”：从IP到人物，真人短剧如何突围？",
@@ -5271,15 +5271,15 @@
     },
     "https://36kr.com/p/3739227909701890": {
       "title": "马斯克设想打造“美版台积电”，押注AI半导体",
-      "text": "",
-      "pubDate": null,
-      "at": "2026-03-26"
+      "text": "马斯克计划设立半导体工厂Terafab，力争每年生产按消耗电力换算相当于1太瓦规模的AI半导体。据他表示这是当前全球供应能力的50倍。有估算认为，生产1太瓦半导体需要5~13万亿美元的设备投资，金额过于庞大…… 美国企业家埃隆·马斯克正面向量产人工智能（AI）半导体，展开继电动汽车和航天业务之后的第三次押注。将建设堪称“美国版台积电”的先进工厂，用于处理AI的庞大数据。通过特斯拉和SpaceX颠覆产品制造常识的马斯克，此次将面临估算额高达13万亿美元的巨额费用。 马斯克提出的构想是，作为其执掌的特斯拉与SpaceX的共同业务，在美国南部得克萨斯州奥斯汀设立半导体工厂“Terafab”。 马斯克于2月将AI开发公司xAI并入SpaceX，还让开发AI机器人的特斯拉向SpaceX出资，推进了旗下企业的联盟化。马斯卡将AI视为整个企业群的增长战略，为了确保各公司使用的半导体，将启动自主进行量产的宏大项目。 产能为全球供应能力的50倍 正如名称所显示的那样，Terafab工厂的目标是每年生产按消耗电力换算相当于1太瓦（terawatt）规模的AI半导体。据马斯克所称，这是当前全球供应能力的50倍。他在3月21日公布这一构想时表示，“要么自己建设Terafab，要么就无法获取半导体。因为需要芯片，所以要自己生产”。 AI运行所必需的半导体在全球范围内供不应求，以美国英伟达的产品为中心，美国OpenAI、谷歌以及马斯克的xAI之间展开了激烈争夺。马斯克认为，为英伟达代工半导体的台积电（TSMC）的供应能力有限，此次的举措意在打破这种制约。 虽然具体投产时间、投资额以及资金筹措方案尚未公布，但相关布局已开始推进。 美国媒体《The Information》3月24日报道称，SpaceX最早本周内在美国申请首次公开募股（IPO）。据称，该公司将于2026年夏季上市，争取融资750亿美元资金，规模为史上最大。通过IPO获得的资金很可能会用于半导体投资。 有估算称最高需投入13万亿美元 有观点指出，若照字面意思理解马斯克的言论，投资规模堪称天文数字，脱离现实。美国调查公司伯恩斯坦（Bernstein）按照现在主流的AI服务器估算，要生产1太瓦的半导体，需要5万亿至13万亿美元的设备投资。 分析师斯塔西·拉斯贡（Stacy Rasgon）指出：“不应低估马斯克将看似不可能之事变为现实的能力，但该计划不切实际”。即便按最低5万亿美元计算，也相当于台积电2026年设备投资计划的约100倍。 与台积电不同的是，Terafab并非代工生产，而是全部供给特斯拉、SpaceX、xAI等自己的旗下企业。此外，马斯克称“将进行逻辑芯片、存储芯片、封装的一体化”，主张把AI所需的多种半导体及制造技术全部实现自产。 xAI在美国田纳西州孟菲斯建设的数据中心 马斯克仍会继续从英伟达采购芯片，也继续推进在特斯拉自研半导体领域与韩国三星电子的合作。他表示：“希望三星和台积电增产，他们生产的芯片我们会全部买下，但速度实在太慢了”。马斯克提出了一项宏大构想，计划由旗下企业群自行承担现有的大部分半导体供应链。 “X构想”即将迎来最终篇章 马斯克过去两次进军制造业领域都被认为鲁莽但最终取得成功，对此颇为自信。他用约20年时间，将纯电动汽车企业特斯拉和航天企业SpaceX培育成行业巨头。他秉持质疑行业常规、精简硬件设计的“减法”开发理念，减少零部件数量，实现了低成本。 马斯克计划将这一模式复制到半导体工厂。他在1月曾表示：“先小规模试错，再逐步扩大（工厂）规模”。火箭发射初期也曾接连失败。他计划对外部采购的半导体制造设备进行自主改良，就像特斯拉自产EV生产设备那样。 Terafab也是马斯克推进的“X”构想的最终篇章。他一直将特斯拉、SpaceX、xAI、社交平台X（原推特）等旗下企业有机整合，以此提升整体价值。 如果能成功自产作为AI产业基础的半导体，那么机器人、交通工具、太空数据中心等业务将以AI为核心深度融合。身经百战的马斯克将如何落地这一计划？外界目光正聚焦于SpaceX即将公布的业务计划。 本文来自微信公众号“日经中文网”（ID：rijingzhongwenwang），作者：山田辽太郎，36氪经授权发布。",
+      "pubDate": "2026-03-27",
+      "at": "2026-03-27"
     },
     "https://36kr.com/p/3739201554399237": {
       "title": "刚刚，英伟达革了自己的命：智能体自主进化7天，干掉所有算子工程师、GPU专家",
-      "text": "",
-      "pubDate": null,
-      "at": "2026-03-26"
+      "text": "这应该是今天刚刚出炉的、最炸裂的文章。 在很多算子开发的微信群组，已经掀起了轩然大波。 「这或许是超人类智能在软件领域的真正首次展露。」英伟达许冰刚刚在 X 上发出了如此断言。他所评论的，正是他与 Terry Chen 和 Zhifan Ye 为共同一作的一项英伟达新研究AVO。 在本周四刚刚提交到 arXiv 上的这项研究中，英伟达构建了Agentic Variation Operator（AVO），这是一类新型进化变异算子，它用自主编码智能体取代了经典进化搜索中固定的变异、交叉和人工设计的启发式方法，并取得了相当震撼的实际表现。 许冰表示：「在一些经过高度优化的注意力机制工作负载中，智能体在没有人工干预的情况下，即可在优化循环中连续搜索 7 天，从而超越几乎所有人类 GPU 专家。」——AVO 的如此表现可能会让许多内核/DSL 瑟瑟发抖。 黄之鹏的 X 推文 有意思的是，在 X 推文中，许冰还分享说一年半之前他与 Terry Chen 刚开始在英伟达研究智能体编程时，他们还不懂 GPU 编程，「所以从一开始我们就致力于开发完全自动化、无需人工干预的系统。」他们称之为「盲编程（blind coding）」。 「在过去一年半的时间里，我们两人在两个智能体系统中开发了四代智能体。从第二代开始，这些智能体栈就开始自我演化。现在每个智能体的代码行数都约为 10 万行（非空代码）。」 他还重点强调了 AVO 背后的重大意义：「我敢打赌：盲编程是软件工程的未来。人类认知能力是瓶颈。」 下面我们就来详细看看这篇或将开启「盲编程」新时代的论文究竟做出了什么贡献。 论文标题：AVO: Agentic Variation Operators for Autonomous Evolutionary Search 论文地址：https://arxiv.org/abs/2603.24517v1 大语言模型已成为进化搜索（Evolutionary Search）中的强大组件，它以学习代码生成取代了手工设计的变异算子。在这些系统中，LLM 根据选定的父代生成候选解，而通常基于启发式的框架则负责父代采样、评估和种群管理。这种组合在数学优化和算法发现领域取得了显著成果，包括 FunSearch 和 AlphaEvolve 等旗舰系统。 然而，将 LLM 限制在预设流程中的候选解生成功能从根本上限制了其发现能力：每次调用仅产生一个输出，无法主动查阅参考资料、测试其更改、解读反馈或在提交候选方案前修正方案。对于那些已经过极致人工调优、需要深度迭代工程才能进一步改进的实现，这种限制尤为突出。 研究者针对注意力机制背景下的这一问题进行了研究。注意力机制是 Transformer 架构的核心算子，也是优化最密集的 GPU 算子之一。FlashAttention 系列 和英伟达的 cuDNN 库已将历代 GPU 的注意力吞吐量推向硬件极限；在最新的 Blackwell 架构上，FlashAttention-4 (FA4) 和 cuDNN 均需要数月的人工优化。若要超越这些实现，需要与开发环境进行持续、迭代的交互：研究硬件文档、分析分析器（Profiler）输出以识别瓶颈、实现并测试候选优化方案、诊断正确性故障，并根据积累的经验修正策略。 深度智能体（Deep Agents）的最新进展表明，结合了规划、持久内存和工具使用能力的 LLM 可以自主处理此类多步工程工作流，应用范围涵盖从解决复杂的 GitHub 问题到生成关键深度学习软件。这促使 LLM 在演化搜索中扮演一种截然不同的角色：与其将其限制在固定流水线内，不如将深度智能体提升为变异算子本身。 为此，英伟达提出了智能体式变异算子（Agentic Variation Operators, AVO）。在这种模式下，一个自导向的代码代理取代了以往基于单轮 LLM 或固定工作流系统中的变异和交叉过程。AVO 智能体拥有访问所有先前方案、特定领域知识库和评估工具的权限。它能自主决定查阅内容、修改对象以及评估时机，从而实现在长周期内的持续改进。 为了验证其有效性，英伟达将 AVO 应用于NVIDIA Blackwell B200 GPU上的多头注意力（MHA）内核，并直接与专家优化的 cuDNN 和 FlashAttention-4 ",
+      "pubDate": "2026-03-27",
+      "at": "2026-03-27"
     },
     "https://aitntnews.com/newDetail.html?newId=23479": {
       "title": "前阿里 90 后 P10 ，要造 AI 世代的「哈利波特」，而入口是一张 NFC 卡片",
@@ -5442,6 +5442,150 @@
       "text": "Published on Mar 25 Authors: , , , , , , , , , , , , Abstract OmniWeaving is an open-source video generation model that unifies multimodal inputs and complex reasoning capabilities through large-scale pretraining and intelligent agent inference. AI-generated summary While proprietary systems such as Seedance-2.0 have achieved remarkable success in omni-capable video generation, open-source alternatives significantly lag behind. Most academic models remain heavily fragmented, and the few existing efforts toward unified video generation still struggle to seamlessly integrate diverse tasks within a single framework. To bridge this gap, we propose OmniWeaving, an omni-level video generation model featuring powerful multimodal composition and reasoning-informed capabilities. By leveraging a massive-scale pretraining dataset that encompasses diverse compositional and reasoning-augmented scenarios, OmniWeaving learns to temporally bind interleaved text, multi-image, and video inputs while acting as an intelligent agent to infer complex user intentions for sophisticated video creation. Furthermore, we introduce IntelligentVBench, the first comprehensive benchmark designed to rigorously assess next-level intelligent unified video generation. Extensive experiments demonstrate that OmniWeaving achieves SoTA performance among open-source unified models. The codes and model will be made publicly available soon. Project Page: https://omniweaving.github.io. View arXiv page View PDF Project page Add to collection Get this paper in your agent: hf papers read 2603.24458 Don't have the latest CLI? curl -LsSf https://hf.co/cli/install.sh | bash Models citing this paper 0 No model linking this paper Cite arxiv.org/abs/2603.24458 in a model README.md to link it from this page. Datasets citin",
       "pubDate": "2026-03-25T12:08:18.000Z",
       "at": "2026-03-26"
+    },
+    "https://36kr.com/p/3739420276179204": {
+      "title": "从根本上改变工作方式、价值创造模式、决策机制--AI正加速颠覆一切",
+      "text": "全球经济与社会运转逻辑正被AI重塑。 花旗指出，在决策机制上，“代理式AI”正从辅助工具转变为独立执行金融交易等任务的自主决策者；在价值创造上，AI代理正在瓦解传统SEO流量分发漏斗，催生“替我办事”经济，迫使商业价值向API接口转移；在工作方式上，具身智能跨越物理鸿沟，预计到2050年数亿台人形机器人将重塑全球劳动力市场。 随着AI从单一任务工具演变为具备自主决策能力的“代理（Agentic）”，一场重塑全球劳动力、算力基础设施与金融体系的结构性变革已经到来。 花旗集团近日发布了一份题为《全面增压：AI与颠覆的新时代（Supercharged: AI and the New Age of Disruption）》的深度重磅报告。报告指出，这一轮由AI驱动的科技浪潮，其演进速度和规模已经打破了历史规律。 过去的技术革命通常需要几十年的时间来消化，但今天，AI正在实时地重塑各个行业、机构甚至整个社会的运转逻辑。 该行欧洲科技联席主管Yishai Fransis和Amit Nayyar在报告的前言中直言：“初级的基于任务的系统已经让位于强大的模型。毫不夸张地说，它们将从根本上改变我们的生活方式，并挑战长期以来关于人类体验的固有观念。” 而要理解这场变革的关键，不再是停留在“大模型能写什么代码”，而是要看清它如何重构企业的技术栈，如何颠覆互联网的流量变现漏斗，以及如何打破经典计算的物理天花板。 站在市场的角度，旧的投资叙事正在失效，新的资本流向已经出现。 01 算力基建重估：经典计算见顶与量子的“双指数级”跃迁 市场对AI的狂热，最直接的体现就是庞大的资本支出。 报告研究分析表明，全球在AI基础设施、网络和数据管道上的年度资本支出已经超过数千亿美元。随着企业级AI应用从试点转向实际生产，这种投资规模还在持续膨胀。 但这种暴力的“堆算力”模式，正在撞上一堵坚硬的物理墙。 半个世纪以来，经典计算一直遵循摩尔定律，每两年晶体管数量翻倍。但现在，晶体管的微缩已经接近物理极限。 “计算正处于一个拐点，”报告指出，“经典架构已经无法提供满足大规模AI训练和高保真模拟所需阶跃式提升的效率。” 图片来源于花旗报告，下同 这就引发了一个结构性的转变。政府和企业正在将计算路线图转向专用加速器、神经形态设计以及量子计算系统。 对于资本市场来说，基础设施不再仅仅是机房和服务器，它已经成为各国竞争的关键国家基础设施。市场情绪的锚点，正在从“谁能拿到最多的英伟达芯片”，演变为“谁能解决算力和能源的稀缺性”。 算力和资本，将是限制AI进步的最主要约束条件。 为了打破这种约束，量子计算正在加速从理论走向实践。报告指出，量子系统正在以“双指数级（doubly exponential）”的速度推进。 未来最大的创新机遇，不是用量子计算机完全替代现有系统，而是“混合系统”。也就是将经典计算、加速器和量子子系统结合起来。在这个框架下，量子计算将成为AI和其他计算密集型应用的“能力乘数（capability multiplier）”。 02 具身智能的经济学：自动驾驶与人形机器人重塑劳动力 AI如果只停留在数字屏幕里，其对宏观经济的拉动是有限的。市场真正期待的，是AI在物理世界的“落地”。 自动驾驶和人形机器人，正是这一叙事的核心载体。这两个领域的共同主题是“具身智能（embodied AI）”——让AI拥有在真实世界中感知、决策和行动的躯干。 在移动出行领域，自动驾驶正在从“辅助驾驶（ADAS）”向“代理式（agentic）”转变。AI不再仅仅是提醒司机，而是能够独立感知、决策并完成复杂的驾驶任务。 支撑这一转变的，是AI多模态感知能力的提升，以及虚拟仿真环境为模型提供海量训练数据的能力。从宏观经济来看，自动驾驶被视为解决物流效率低下和劳动力替代的关键方案。 而更具颠覆性的，是人形机器人的崛起。 花旗预测，随着硬件和训练成本的下降，人形机器人将从利基市场走向通用劳动力平台。 “我们预计，到2050年，全球劳动力市场将出现数以亿计的人形机器人。它们的出现将受到成本下降和能力提升的双重推动。” 人口老龄化、物流/护理/建筑行业的长期劳动力短缺，构成了对机器人劳动力的刚性需求。到本世纪中叶，这注定将演变成为一个规模达数万亿美元的超级市场。 投资者的焦点，已经开始向那些能够实现“软件定义",
+      "pubDate": "2026-03-27",
+      "at": "2026-03-27"
+    },
+    "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/": {
+      "title": "FEATURED",
+      "text": "Today, we're announcing TRIBE v2: our first AI model of human brain responses to sights, sounds, and language. Building on our Algonauts 2025 award-winning model, which was trained on the low-resolution fMRI recordings of four individuals, we leverage a massive dataset of more than 700 healthy volunteers who were presented with a wide variety of media, including images, podcasts, videos, and text. TRIBE v2 reliably predicts high-resolution fMRI brain activity — enabling zero-shot predictions for new subjects, languages, and tasks — and consistently outperforms standard modeling approaches. By creating a digital model of the human brain, researchers can rapidly test hypotheses about its underlying functions without the need for human subjects in every experiment.To accelerate the pace of neuroscience discovery and open up new avenues for clinical practice, we’re sharing a research paper, along with model weights and code, under a CC BY-NC license. We also invite everyone to explore TRIBE v2 on our demo website. By sharing this work, we hope to help accelerate neuroscience research that will unlock scientific and clinical breakthroughs for the greater good.",
+      "pubDate": "2026-03-26",
+      "at": "2026-03-27"
+    },
+    "https://developer.volcengine.com/articles/7621398805866840127": {
+      "title": "数字人多模态智能体怎么选？5 家主流平台交互能力横向对比评测",
+      "text": "AI解决方案智能硬件智能语音交互2026 年，多模态交互能力已成为 AI 智能体的核心竞争力。当用户期待智能体不仅能\"听懂话\"，还能\"看懂图\"\"会表达\"\"有情感\"时，单一模态的交互已无法满足需求。语音识别准确率、语义理解深度、视觉识别能力、多模态融合度，成为衡量智能体平台的关键指标。 评测标准与方法论，四大维度全面考量 本次评测基于四个核心维度，每个维度下设具体指标，确保评估的客观性和可量化性。 维度一：语音识别准确率。测试普通话、方言、多语种（英语、日语）三种场景下的识别准确率，同时考察噪音环境下的抗干扰能力。 维度二：语义理解深度。测试多轮对话理解、上下文关联、意图识别准确率、歧义处理能力。测试场景包括产品咨询、技术支持、投诉处理三类典型对话。 维度三：视觉识别能力。测试图像内容识别、人脸表情识别、手势识别四类能力。 维度四：多模态融合度。测试语音 + 图像联合理解、语音 + 手势协同交互、多模态输出一致性、场景切换流畅度。测试场景为展厅导览、客服咨询、培训教学三类应用。 五家主流平台详细对比，技术参数与实测数据全呈现 平台一：星海智能体 星海智能体是多模态智能体领航者，核心引擎为星海大脑 NomarX，构建\"感知 - 思考 - 执行 - 进化\"能力闭环。 技术参数：语音识别准确率 98.2%（普通话）、93.5%（方言）、96.8%（英语）；语义理解准确率 96.4%；图像识别准确率 94.7%；多模态融合响应时间<200ms。 实测表现：在展厅导览场景中，星海智能体可准确理解\"这个产品的参数是多少\"配合手势指向特定展品的联合意图。某科技企业展厅部署后，访客互动率从 11% 提升至 72%，平均停留时长从 16 分钟提升至 38 分钟。 优势领域：多模态融合度高，分层记忆系统（业务记忆层 + 用户记忆层）让智能体可记住访客偏好；支持 5 种产品形态（智能体大屏、智能客服一体机、智能机器人、自助服务终端、企业智能助手），场景适配性强。 适用场景：企业展厅、政务服务中心、智慧交通枢纽、文旅景区等需要多模态交互的复杂场景。 平台二：腾讯云智能数字人 腾讯云智能数字人依托腾讯云算力、微信生态与腾讯大模型，生态整合能力强。 技术参数：语音识别准确率 97.5%（普通话）、91.2%（方言）、95.3%（英语）；语义理解准确率 94.8%；图像识别准确率 92.4%；多模态融合响应时间<250ms。 实测表现：在客服咨询场景中，腾讯云数字人可无缝对接微信公众号、小程序等腾讯生态，用户无需切换平台即可完成咨询。 优势领域：微信生态整合能力强，适合需要与微信用户深度互动的场景；虚拟直播技术成熟，支持实时驱动和表情捕捉。 适用场景：互联网服务、企业客服、虚拟直播、电商导购等腾讯生态相关场景。 平台三：阿里数字人 阿里数字人依托阿里云算力与达摩院大模型，电商场景适配与产业协同能力强。 技术参数：语音识别准确率 97.8%（普通话）、90.5%（方言）、94.6%（英语）；语义理解准确率 95.2%；图像识别准确率 93.8%；多模态融合响应时间<230ms。 实测表现：在电商直播场景中，阿里数字人可实时展示商品详情、比价信息、用户评价，支持\"边看边买\"的交互模式。 优势领域：电商场景深度优化，商品展示和导购能力强；与淘宝、天猫、1688 等平台无缝对接。 适用场景：电商直播、虚拟导购、品牌发布会、线上会展等电商相关场景。 平台四：百度智能云数字员工 百度智能云数字员工依托文心一言大模型，表情生动细腻，情绪识别与情感表达能力强。 技术参数：语音识别准确率 96.9%（普通话）、89.8%（方言）、93.2%（英语）；语义理解准确率 93.5%；图像识别准确率 91.6%；多模态融合响应时间<280ms。 实测表现：在情感交互场景中，百度数字员工可精准识别用户情绪变化，调整语气和表情。 优势领域：情感交互能力强，表情生成细腻自然；知识问答能力强，依托百度搜索积累的海量知识。 适用场景：个性化交互、用户关系构建、金融服务、心理咨询等需要情感连接的场景。 平台五：科大讯飞语音数字人 科大讯飞语音数字人语音交互技术积淀深厚，支持多语种多方言，语义精准解析。 技术参数：语音识别准确率 98.5%（普通话）、94.2%（方言）、96.1%（英语）；语义理解准确率",
+      "pubDate": null,
+      "at": "2026-03-27"
+    },
+    "https://techcrunch.com/2026/03/26/openai-abandons-yet-another-side-quest-chatgpts-erotic-mode/": {
+      "title": "OpenAI abandons yet another side quest: ChatGPT’s erotic mode",
+      "text": "OpenAI has put the kibosh on yet another project — at least for the time being. On Thursday, the Financial Times reported that the AI company would be “indefinitely” pausing plans to develop an “erotic” mode for ChatGPT. The proposed “adult mode,” which CEO Sam Altman first floated in October, had inspired considerable controversy from tech watchdog groups as well as from OpenAI’s own staff. In January, a meeting between company executives and its council of advisers got heated, with one of the advisers cautioning that OpenAI could be in the process of developing a “sexy suicide coach,” The Wall Street Journal previously reported. Amidst all of the criticism, the release of the feature was delayed multiple times. FT notes that the erotic feature now has no timeline for release. When reached for comment by TechCrunch, an OpenAI spokesperson said the company had “nothing further to add.” Adult mode is only the latest side quest that OpenAI has abandoned over the past week as the AI giant consolidates its focus. On Tuesday, the company quietly announced that it would be deprioritizing Instant Checkout, a feature within ChatGPT that had sought to make the chatbot a purchase portal where users could buy items from e-commerce websites. Then, on Wednesday, the company surprisingly announced that it would be shutting down Sora, its AI video generator. Sora had been criticized for inspiring the deluge of AI “slop” that has flooded the internet since its launch in 2024. All of the changes come approximately a week after The Wall Street Journal reported that OpenAI would be engaging in a “major strategy shift” to pivot the company away from distractions so that it could zero in on its primary focuses: business users and coders. Why has OpenAI chosen this particular moment to do aw",
+      "pubDate": "Thu, 26 Mar 2026 18:34:02 +0000",
+      "at": "2026-03-27"
+    },
+    "https://techcrunch.com/2026/03/26/mistral-releases-a-new-open-source-model-for-speech-generation/": {
+      "title": "Mistral releases a new open source model for speech generation",
+      "text": "French AI company Mistral released a new open source text-to-speech model on Thursday that can be used by voice AI assistants or in enterprise use cases like customer support. The model, which lets enterprises build voice agents for sales and customer engagement, puts Mistral in direct competition with the likes of ElevenLabs, Deepgram, and OpenAI. The new model, called Voxtral TTS, supports nine languages, including English, French, German, Spanish, Dutch, Portuguese, Italian, Hindi, and Arabic. “Our customers have been asking for a speech model. So we built a small-sized speech model that can fit on a smartwatch, a smartphone, a laptop, or other edge devices. The cost of it is a fraction of anything else on the market, but it offers state-of-the-art performance,” Pierre Stock, VP of science operations at Mistral AI, told TechCrunch during a phone interview. Image Credits:Mistral Mistral said the new model can adapt a custom voice with a sample of less than five seconds and can capture characteristics like subtle accents, inflections, intonations, and irregularities in the flow of speech. The model, based on Ministral 3B, can switch between languages easily without losing the characteristics of the voice, which is useful for use cases like dubbing or real-time translation. Stock said the company wanted the model to sound human and not robotic. The model has been built for real-time performance, according to the company. It has a time-to-first-audio (TTFA) — a measure of when the model starts “speaking” after receiving input — of 90 ms for a 10-second sample of 500 characters. The model also has a real-time factor (RTF) of 6x, which means it can render a 10-second clip in roughly 1.6 seconds. Image Credits:Mistral AI Earlier this year, Mistral launched a pair of transcr",
+      "pubDate": "Thu, 26 Mar 2026 11:30:00 +0000",
+      "at": "2026-03-27"
+    },
+    "https://techcrunch.com/2026/03/26/bytedances-new-ai-video-generation-model-dreamina-seedance-2-0-comes-to-capcut/": {
+      "title": "ByteDance’s new AI video generation model, Dreamina Seedance 2.0, comes to CapCut",
+      "text": "OpenAI may be dialing back its efforts in the video generation market with the shutdown of its Sora app, but ByteDance on Thursday confirmed that its new audio and video model, Dreamina Seedance 2.0, is now rolling out in its editing platform, CapCut. ByteDance says the model allows creators to draft, edit, and sync video and audio content by using prompts, images, or reference videos. The phased rollout will begin with CapCut users in Brazil, Indonesia, Malaysia, Mexico, the Philippines, Thailand, and Vietnam, with more markets added over time. The news of the launch in CapCut follows a recent report that said the model’s global rollout would be paused, while it worked to address intellectual property issues that drew criticism from Hollywood over alleged copyright infringement. That likely explains the limited number of markets where the model is currently available within CapCut. In China, the model is available to users of ByteDance’s Jianying app. Image Credits:ByteDance The video generation model works without reference images, even if the creator only uses a few words to describe the scene they have in mind, ByteDance says in its announcement. CapCut is also good at rendering realistic textures, movement, and lighting across a range of visual perspectives and angles, which the company notes could be used to edit, enhance, or correct creators’ own footage. Another use case would be allowing creators to test potential ideas based on early concepts or sketches before filming the real video. In addition, Dreamina Seedance 2.0 can be used for a wide range of content, including cooking recipes, fitness tutorials, business or product overviews, and videos with motion or action-focused content, where AI video models have historically faced challenges, the company explain",
+      "pubDate": "Thu, 26 Mar 2026 15:25:13 +0000",
+      "at": "2026-03-27"
+    },
+    "https://techcrunch.com/2026/03/26/conntour-raises-7m-from-general-catalyst-yc-to-build-an-ai-search-engine-for-security-video-systems/": {
+      "title": "Conntour raises $7M from General Catalyst, YC to build an AI search engine for security video systems",
+      "text": "The surveillance tech industry today is in the spotlight, but not for the best reasons. With controversy around the U.S. Immigration and Customs Enforcement tapping into Flock’s camera network to surveil people, and home camera maker Ring drawing criticism for building new features that would enable law enforcement to ask homeowners for footage of their neighborhoods, there’s currently a broad debate around safety, privacy, and who gets to watch whom. But controversy doesn’t erase markets, and the continued improvement of vision-language models has only blown more wind in the sails of companies building new ways to help companies monitor what goes on in their premises. According to Matan Goldner, co-founder and CEO of video surveillance startup Conntour, the ethics around this topic are important enough that he says his company is quite picky about which clients to sell to. That may not come off as sound business sense for a startup barely two years in, but Goldner says he can afford to do this because Conntour already has several large government and publicly listed customers, one of which is Singapore’s Central Narcotics Bureau. “The fact that we have such big customers allows us to select them and to stay in control […] We’re really in control of who is using it, what is the use case, and we can select what we think is moral and, of course, legal. We use all our judgment, and we make decisions based on specific customers that we’re okay [to work with] because we know how they will use it,” Goldner told TechCrunch in an exclusive interview. That traction has helped Conntour with more than being selective. Investors have taken note: The startup recently raised a $7 million seed round from General Catalyst, Y Combinator, SV Angel, and Liquid 2 Ventures. Goldner said the",
+      "pubDate": "Thu, 26 Mar 2026 13:41:00 +0000",
+      "at": "2026-03-27"
+    },
+    "https://www.theverge.com/tech/902048/apple-siri-ai-chatbot-update-ios-27": {
+      "title": "Apple will reportedly allow other AI chatbots to plug into Siri",
+      "text": "Skip to main contentA new ‘Extensions’ feature could allow users to pick which chatbot Siri works with, according to Bloomberg.A new ‘Extensions’ feature could allow users to pick which chatbot Siri works with, according to Bloomberg.by Emma RothMar 26, 2026, 9:31 PM UTCEmma Roth is a news writer who covers the streaming wars, consumer tech, crypto, social media, and much more. Previously, she was a writer and editor at MUO.Apple’s iOS 27 update will allow users to choose the AI chatbot they want to link with Siri. That’s according to a report from Bloomberg’s Mark Gurman, who says third-party chatbots downloaded from the App Store, like Google’s Gemini or Anthropic’s Claude, will be able to fetch replies for Siri — similar to how the voice assistant already works with OpenAI’s ChatGPT.The new system, reportedly called “Extensions,” will give users the ability to enable or disable the chatbots they want to connect with Siri on the iPhone, iPad, and Mac, Bloomberg reports. The upcoming integrations will also work with the standalone app Apple reportedly plans on launching for its AI-upgraded version of Siri, which is supposed to take action on your behalf across apps.Following several setbacks, Apple revealed in January that it’s working with Google to power its overhauled Siri. The Information reported this week that the deal also includes the ability for Apple to use Gemini to train smaller AI models.Apple is expected to reveal the newest versions of its operating systems during its Worldwide Developers Conference set to kick off on June 8th.Follow topics and authors from this story to see more like this in your personalized homepage feed and to receive email updates.Emma RothThe Verge DailyA free daily digest of the news that matters most.Email (required)",
+      "pubDate": "2026-03-26T21:31:27.000Z",
+      "at": "2026-03-27"
+    },
+    "https://www.theverge.com/column/901314/meta-new-ray-ban-ai-glasses": {
+      "title": "Meta gets ready to launch two new Ray-Ban AI glasses",
+      "text": "This is Lowpass by Janko Roettgers, a newsletter on the ever-evolving intersection of tech and entertainment, syndicated just for The Verge subscribers once a week.Meta and its AI glasses hardware partner EssilorLuxottica are getting ready to launch the next generation of their Ray-Ban AI glasses. That’s according to a series of FCC filings for two new Meta Ray-Ban models that were published by the agency earlier this month.The filings describe the tested devices as production units, suggesting that Meta may launch them soon. When the company unveiled its second-generation Ray-Bans in late 2023, it did so a little over a month after the devices passed through the FCC.Meta did not immediately respond to a request for comment.As is customary, the FCC filings are heavily redacted, so we don’t know yet exactly what the two models will look like, or what new features they will offer. However, the filings did reveal a few interesting details: Some of the included documents identify the marketing names for the new models as “RayBan Meta Scriber” and “RayBan Meta Blazer,” while also noting that the “Blazer” model will be available in a regular and a large size.The documents do mention a charging case as being part of the tests, suggesting that the new Ray-Bans will once again feature a case you can use to charge them on the go.The model numbers for Meta’s Blazer and Scriber glasses are RW7001 and RW7002, respectively. That in itself is noteworthy, as currently available first- and second-gen Meta Ray-Ban model numbers range from RW4002 to RW4014. The big jump in the model number could suggest a significant hardware upgrade, perhaps including a newer chipset.Another difference between current-gen Ray-Bans and the two new models revealed in these FCC filings: The new models make ",
+      "pubDate": "2026-03-26T16:30:00.000Z",
+      "at": "2026-03-27"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/902085/google-gemini-import-memory-chat-history": {
+      "title": "Google is making it easier to import another AI’s memory into Gemini",
+      "text": "Stevie Bonifield is a news writer covering all things consumer tech. Stevie started out at Laptop Mag writing news and reviews on hardware, gaming, and AI.Google is rolling out two new Gemini tools on Thursday which could attract users who are thinking about switching their preferred AI chatbot but don’t want to “retrain” a new AI. Gemini’s new “Import Memory” and “Import Chat History” features help users quickly copy over everything their current AI already knows about them with a couple of pre-written prompts.To use the “Import Memory” tool, users copy and paste a suggested prompt from Gemini into their previous AI, then paste the output from the previous AI into Gemini, which should get Gemini caught up on their preferences. The “Import Chat History” feature has users request an export of all of their chats from their previous AI, usually in the form of a .zip file, which they upload to Gemini. Then users can pick up those chats in Gemini from wherever they left off with their previous AI.Google is also renaming “past chats” in Gemini to “memory.” “Import Memory” and “Import Chat History” are rolling out to free and paid consumer Gemini accounts, but may not be available to everyone on all platforms right away. The new features are also currently not available to users with business, enterprise, or under-18 accounts.Earlier this month, Anthropic updated its own tool for copying over another AI’s memory into Claude, using a similar strategy of copy-pasting prompts and sharing their output with Claude. Google also expanded access to its Search Live AI feature on Thursday, alongside its new Gemini 3.1 Flash Live voice model, which Google says offers “more natural and intuitive conversations” and faster responses.Follow topics and authors from this story to see more like",
+      "pubDate": "2026-03-26T21:44:37.000Z",
+      "at": "2026-03-27"
+    },
+    "https://www.theverge.com/tech/901461/wikipedia-ai-generated-article-ban": {
+      "title": "Wikipedia bans AI-generated articles",
+      "text": "Emma Roth is a news writer who covers the streaming wars, consumer tech, crypto, social media, and much more. Previously, she was a writer and editor at MUO.Wikipedia will no longer allow editors to write or rewrite articles using AI. The update, which was added to Wikipedia’s guidelines late last week, cites the tendency for AI-written articles to violate “several of Wikipedia’s core content policies” as the reason for the ban.The change applies to the English version of Wikipedia and will still allow editors to use AI in certain scenarios. That includes using large language models to “suggest basic copyedits” to their writing, but only if it “does not introduce content of its own.” Editors can also use AI to translate articles from another language’s Wikipedia into English. However, they still must follow the site’s rules on LLM-assisted translations, which require editors to have enough knowledge of the original language to confirm the accuracy of the translation.The new policy warns that some people “may have similar writing styles to LLMs,” and editors will need to find more than just “stylistic or linguistic signs” to justify potential restrictions on their editing capabilities. “It is best to consider the text’s compliance with core content policies and recent edits by the editor in question,” the guidelines state.Wikipedia editors have been contending with AI-generated articles for months now, leading the community to implement a new policy to allow for the “speedy deletion” of poorly written articles. Editors also formed WikiProject AI Cleanup, an initiative meant to combat AI-written content and help others identify it.This most recent change to Wikipedia’s guidelines was proposed by Chaotic Enby, sparking a lengthy discussion between editors. The proposal eve",
+      "pubDate": "2026-03-26T15:02:52.000Z",
+      "at": "2026-03-27"
+    },
+    "https://www.wired.com/story/tech-reporters-using-ai-write-edit-stories/": {
+      "title": "Meet the Tech Reporters Using AI to Help Write and Edit Their Stories",
+      "text": "When technology reporter Alex Heath has a scoop, he sits down at his computer and speaks into a microphone. He’s not talking to a human colleague—Heath went independent on Substack last year—he’s talking to Claude. Using the AI-powered voice-to-text service Wispr Flow, Heath transmits his ideas to an AI agent, then lets it write his first draft.Heath sat down with me last week to showcase how he’s integrated Anthropic’s Claude Cowork into his journalistic process. The AI tool is connected to his Gmail, Google Calendar, Granola AI transcription service, and Notion notes. He’s also built a detailed skill—a custom set of instructions—to help Claude write in his style, including the “10 commandments” of writing like Alex Heath. The skill includes previous articles he’s written, instructions on how he likes his newsletters to be structured, and notes on his voice and writing style.Claude Cowork then automates the drafting process that used to take place in Heath’s head. After the agent finishes its first draft, Heath goes back and forth with it for up to 30 minutes, suggesting revisions. It’s quite an involved process, and he still writes some parts of the story himself. But Heath says this workflow saves him hours every week, and he now spends 30 to 40 percent less time writing.“I’ve always hated the zero-to-one process of writing a story … Now, it’s actually kind of fun,” he says. “Going out on my own, I realized I need AI to help with the volume.”Heath is part of a growing contingent of tech reporters using AI to help write and edit their stories. The AI workflow is especially enticing for reporters who have gone independent, losing valuable resources like editors and fact-checkers that typically come with a traditional newsroom. Rather than just prompting ChatGPT to writ",
+      "pubDate": "Thu, 26 Mar 2026 18:00:00 +0000",
+      "at": "2026-03-27"
+    },
+    "https://huggingface.co/posts/richardyoung/185202953559545": {
+      "title": "## I couldn't replicate my own faithfulness results. Turns out that's the point. While building a large-scale CoT faithfulness study across open-weight reasoning models, I hit a wall: my faithfulness numbers kept shifting depending on how I classified whether a model \"acknowledged\" a hint in its reasoning. I assumed it was a pipeline bug. After weeks of debugging, I realized the instability *was* the finding. ### What I did I took 10,276 reasoning traces where hints had successfully flipped a model's answer, meaning we *know* the hint influenced the output, and ran three different classifiers to detect whether the model acknowledged that influence in its chain-of-thought: | Classifier | What it does | Overall faithfulness | | --------------------------- | ------------------------------------------------------------ | -------------------- | | **Regex-only** | Pattern-matches 38 keywords like \"hint,\" \"told,\" \"suggested\" | 74.4% | | **Regex + Ollama pipeline** | Regex first, then a 3-judge local LLM majority vote on ambiguous cases | 82.6% | | **Claude Sonnet 4 judge** | Independent LLM reads the full trace and judges epistemic dependence | 69.7% | These aren't close. The 95% confidence intervals don't even overlap. All pairwise per-model gaps are statistically significant (McNemar's test, p < 0.001). ### Which models 12 open-weight reasoning models spanning 9 families (7B to 1T parameters): DeepSeek-R1, DeepSeek-V3.2-Speciale, Qwen3-235B, Qwen3.5-27B, QwQ-32B, Gemma-3-27B, Phi-4-reasoning-plus, OLMo-3.1-32B, Llama-4-Maverick, Seed-1.6-Flash, GLM-4-32B, and Falcon-H1-34B. ### The rankings flip Classifier choice doesn't just change the numbers. It reverses model rankings. Qwen3.5-27B ranks **1st** under the pipeline but **7th** under the Sonnet judge. OLMo-3.1-32B goes from **9th to 3rd**.",
+      "text": "## I couldn't replicate my own faithfulness results. Turns out that's the point.While building a large-scale CoT faithfulness study across open-weight reasoning models, I hit a wall: my faithfulness numbers kept shifting depending on how I classified whether a model \"acknowledged\" a hint in its reasoning. I assumed it was a pipeline bug. After weeks of debugging, I realized the instability *was* the finding.### What I didI took 10,276 reasoning traces where hints had successfully flipped a model's answer, meaning we *know* the hint influenced the output, and ran three different classifiers to detect whether the model acknowledged that influence in its chain-of-thought:| Classifier | What it does | Overall faithfulness || --------------------------- | ------------------------------------------------------------ | -------------------- || **Regex-only** | Pattern-matches 38 keywords like \"hint,\" \"told,\" \"suggested\" | 74.4% || **Regex + Ollama pipeline** | Regex first, then a 3-judge local LLM majority vote on ambiguous cases | 82.6% || **Claude Sonnet 4 judge** | Independent LLM reads the full trace and judges epistemic dependence | 69.7% |These aren't close. The 95% confidence intervals don't even overlap. All pairwise per-model gaps are statistically significant (McNemar's test, p < 0.001).### Which models12 open-weight reasoning models spanning 9 families (7B to 1T parameters): DeepSeek-R1, DeepSeek-V3.2-Speciale, Qwen3-235B, Qwen3.5-27B, QwQ-32B, Gemma-3-27B, Phi-4-reasoning-plus, OLMo-3.1-32B, Llama-4-Maverick, Seed-1.6-Flash, GLM-4-32B, and Falcon-H1-34B.### The rankings flipClassifier choice doesn't just change the numbers. It reverses model rankings. Qwen3.5-27B ranks **1st** under the pipeline but **7th** under the Sonnet judge. OLMo-3.1-32B goes from **9th to 3rd",
+      "pubDate": "2026-03-26T15:29:04.000Z",
+      "at": "2026-03-27"
+    },
+    "https://deepmind.google/blog/gemini-3-1-flash-live-making-audio-ai-more-natural-and-reliable/": {
+      "title": "Gemini 3.1 Flash Live: Making audio AI more natural and reliable",
+      "text": "Mar 26, 2026 Our latest voice model has improved precision and lower latency to make voice interactions more fluid, natural and precise. Valeria Wu Product Manager Yifan Ding Software Engineer on behalf of the Gemini team General summary Gemini 3.1 Flash Live is Google's highest-quality audio model, designed for natural and reliable real-time dialogue. Developers can access it through the Gemini Live API in Google AI Studio, while enterprises can use it for customer experience. Everyone can experience it via Search Live and Gemini Live, which now supports over 200 countries. Summaries were generated by Google AI. Generative AI is experimental. Bullet points \"Gemini 3.1 Flash Live\" is here, making AI audio sound more natural and reliable. This new audio model is faster and better at understanding tone for natural conversations. Developers can use it to build voice agents that handle complex tasks more reliably. Gemini Live and Search Live now offer more helpful responses in many languages. All audio from 3.1 Flash Live is watermarked to help prevent the spread of misinformation. Summaries were generated by Google AI. Generative AI is experimental. Your browser does not support the audio element. Listen to article This content is generated by Google AI. Generative AI is experimental [[duration]] minutes Today, we’re advancing Gemini’s real-time dialogue capabilities with Gemini 3.1 Flash Live, our highest-quality audio and voice model yet. It delivers the speed and natural rhythm needed for the next generation of voice-first AI, offering a more intuitive experience for developers, enterprises and everyday users.3.1 Flash Live is available across Google products:For developers in preview via the Gemini Live API in Google AI StudioFor enterprises in Gemini Enterprise for Cu",
+      "pubDate": "Thu, 26 Mar 2026 15:23:35 +0000",
+      "at": "2026-03-27"
+    },
+    "https://huggingface.co/posts/TravisMuhlestein/196419148795645": {
+      "title": "Routing and trust are becoming coupled problems in multi-agent systems As agent-based systems scale, two challenges start to converge: routing and trust. Routing determines which agent should act. As the number of specialized agents increases, selecting the right one efficiently becomes non-trivial.But selecting an agent is only part of the problem. In production systems, you also need to verify who that agent is before allowing it to execute. Without identity and verification, routing decisions are made on components that may not be trustworthy. This creates an interesting architectural split: -routing → decides what gets executed -identity → determines whether it should be trusted GoDaddy’s ANS (Agent Name Service) introduces a model where agents are tied to domain-based identity and can be cryptographically verified before interaction. This suggests a shift where identity becomes part of the underlying infrastructure, similar to how DNS and TLS evolved for the web. Curious how others are thinking about: -routing strategies (static vs dynamic vs learned) -identity layers for agents -verification and trust in production systems 🔗",
+      "text": "Routing and trust are becoming coupled problems in multi-agent systems As agent-based systems scale, two challenges start to converge: routing and trust. Routing determines which agent should act. As the number of specialized agents increases, selecting the right one efficiently becomes non-trivial.But selecting an agent is only part of the problem. In production systems, you also need to verify who that agent is before allowing it to execute. Without identity and verification, routing decisions are made on components that may not be trustworthy. This creates an interesting architectural split: -routing → decides what gets executed -identity → determines whether it should be trusted GoDaddy’s ANS (Agent Name Service) introduces a model where agents are tied to domain-based identity and can be cryptographically verified before interaction. This suggests a shift where identity becomes part of the underlying infrastructure, similar to how DNS and TLS evolved for the web. Curious how others are thinking about: -routing strategies (static vs dynamic vs learned) -identity layers for agents -verification and trust in production systems 🔗 https://www.godaddy.com/resources/news/intelligent-ai-routing",
+      "pubDate": "2026-03-26T16:45:26.000Z",
+      "at": "2026-03-27"
+    },
+    "https://arstechnica.com/tech-policy/2026/03/chatgpt-wont-talk-dirty-any-time-soon-as-sexy-mode-turns-off-investors-report-says/": {
+      "title": "OpenAI “indefinitely” shelves plans for erotic ChatGPT",
+      "text": "Following backlash, OpenAI won’t be rolling out an erotic version of ChatGPT any time soon. According to the Financial Times, the controversial plan has been shelved “indefinitely” as OpenAI “refocuses” its attention on “core products.” Insiders told FT that OpenAI mulled scrapping the “adult mode” plan entirely, as even its own advisors warned that ChatGPT users could form unhealthy attachments, which might harm their mental health. One advisor chillingly suggested that the tweak risked turning ChatGPT into a “sexy suicide coach.” Advisors weren’t the only ones seeing red flags, the report said. Staff began questioning whether sexy ChatGPT aligned with OpenAI’s mission to make AI that benefits humanity. For staff working on developing “adult mode,” it apparently wasn’t worth the effort to overcome technical challenges for the feature. They faced “difficulties,” sources told FT, “training AI models that previously avoided such conversations for safety reasons to produce explicit content.” It was also hard to keep illegal behavior out of outputs, like bestiality and incest, when using datasets that included sexual content, sources said. Sexy ChatGPT also apparently turned off investors. Two people familiar with the matter told FT that “OpenAI’s flirtation with adult mode had caused disquiet,” as some investors questioned why OpenAI would risk its reputation on a product with “relatively small upside” for its business. Even without erotic responses, ChatGPT has been linked to mental health harms in both kids and adults through lawsuits alleging that OpenAI recklessly released the chatbot without appropriate safeguards.",
+      "pubDate": "Thu, 26 Mar 2026 16:21:10 +0000",
+      "at": "2026-03-27"
+    },
+    "https://www.bensbites.com/p/a-peek-inside-cli-tools": {
+      "title": "A peek inside CLI tools",
+      "text": "Agents are LLMs with tool-use. They don’t just respond to you, they can go and do things for you. But what does ‘tool-use’ actually mean? What tools?The most common tools are in the form of CLI. Agents communicate in text, CLIs are text in/text out, so it’s a natural fit. A CLI is a text-based way to control software. You type a command, something happens.Here’s a simple example - organising files, using the bash tool.\"Rename all 400 product photos to match our SKU format, resize them to 1200x1200, and sort them into folders by category.\"’ls’ is the command for ‘list’./product-photos/ is where the files are located‘mkdir’ is the command for ‘make directory’ (directory is a folder), here it’s creating 5 - output, output/shoes, output/bags, output/jackets, output/hatsflags modify what a command does: -p here means ‘create any missing parent folders too.’ So if ./output/ doesn’t exist yet, it’ll make that toomogrify is an image-editing tool that edits files in place (overwrites the originals)*.jpg is a wildcard pattern meaning “all files ending in .jpg”. 'mv' is the command for 'move' (which also renames the file when you move it to a new name)On ‘ls -R ./output/ | head -20’. The | sends the output of one command into another, ‘head -20’ just means 'show me the first 20 lines. It does all this in seconds. It would take you a couple of hours manually. This is one CLI, called bash, the general-purpose command line that comes with your computer. But there are purpose-built CLIs for specific jobs too:Stripe CLI — pull revenue data, manage subscriptions, test paymentsPlaywright — control a web browser: navigate, click, fill forms, take screenshotsAWS CLI — spin up servers, manage databases, scale infrastructureVercel CLI — deploy a website live in one commandEach of these is a ",
+      "pubDate": "Thu, 26 Mar 2026 14:03:22 GMT",
+      "at": "2026-03-27"
+    },
+    "https://techcrunch.com/2026/03/26/wikipedia-cracks-down-on-the-use-of-ai-in-article-writing/": {
+      "title": "Wikipedia cracks down on the use of AI in article writing",
+      "text": "In Brief Posted: 2:50 PM PDT · March 26, 2026 Image Credits:Riccardo Milani/Hans Lucas / Hans Lucas via AFP / Getty Images As AI makes inroads into the worlds of editorial and media, websites are scrambling to establish ground rules for its usage. This week, Wikipedia banned the use of AI-generated text by its editors — although it stopped short of banning AI outright from the site’s editorial processes. In a recent policy change, the site now states that “the use of LLMs to generate or rewrite article content is prohibited.” This new language updates and clarifies previous, vaguer language that stated that LLMs “should not be used to generate new Wikipedia articles from scratch.” AI in Wikipedia articles has become a contentious issue among the site’s sprawling, volunteer-driven community of editors. 404 Media reports that the new policy, which was put to a vote by the site’s editors, garnered majority support — 40 to 2. That said, the new policy still makes room for continued AI use in some editorial processes. “Editors are permitted to use LLMs to suggest basic copyedits to their own writing, and to incorporate some of them after human review, provided the LLM does not introduce content of its own,” the new policy states. “Caution is required, because LLMs can go beyond what you ask of them and change the meaning of the text such that it is not supported by the sources cited.” Topics Subscribe for the industry’s biggest tech news Latest in AI",
+      "pubDate": "Thu, 26 Mar 2026 21:50:10 +0000",
+      "at": "2026-03-27"
+    },
+    "https://www.theverge.com/tech/901816/google-search-live-ai-assistant-expansion": {
+      "title": "Google&#8217;s &#8216;live&#8217; AI search assistant can handle conversations in dozens more languages",
+      "text": "Emma Roth is a news writer who covers the streaming wars, consumer tech, crypto, social media, and much more. Previously, she was a writer and editor at MUO.Google is expanding access to Search Live, a feature that lets you search for information using your voice and camera. The AI search assistant is now available in more than 200 countries and territories, as well as dozens of languages, according to an announcement on Thursday.Search Live rolled out broadly in the US last September, allowing you to point your phone’s camera at something and ask about it aloud, such as how to install a shelving unit. The AI assistant will then offer an audio response, along with links to information it finds on the web.Google says it’s powering the global expansion of Search Live with its new Gemini 3.1 Flash Live audio-focused AI model, which it says is “inherently multilingual.” The new model also comes with improvements to the speed of its responses, and offers “more natural and intuitive conversations,” according to Google.You can try Search Live by opening the Google app on Android or iOS, and tapping the “Live” button beneath the search bar. You can also access Search Live through Google Lens.In addition to this update, Google is rolling out Translate’s real-time translation feature to iOS. That means users with iPhones can use the app to capture speech in real-time and hear the translation in their headphones. This feature is also expanding to more areas, including Germany, Spain, France, Nigeria, Italy, the UK, Japan, Bangladesh, and Thailand.Follow topics and authors from this story to see more like this in your personalized homepage feed and to receive email updates.Emma Roth",
+      "pubDate": "2026-03-26T18:47:51.000Z",
+      "at": "2026-03-27"
+    },
+    "https://arxiv.org/abs/2603.22305": {
+      "title": "CN-Buzz2Portfolio: A Chinese-Market Dataset and Benchmark for LLM-Based Macro and Sector Asset Allocation from Daily Trending Financial News",
+      "text": "View PDF HTML (experimental) Abstract:Large Language Models (LLMs) are rapidly transitioning from static Natural Language Processing (NLP) tasks including sentiment analysis and event extraction to acting as dynamic decision-making agents in complex financial environments. However, the evolution of LLMs into autonomous financial agents faces a significant dilemma in evaluation paradigms. Direct live trading is irreproducible and prone to outcome bias by confounding luck with skill, whereas existing static benchmarks are often confined to entity-level stock picking and ignore broader market attention. To facilitate the rigorous analysis of these challenges, we introduce CN-Buzz2Portfolio, a reproducible benchmark grounded in the Chinese market that maps daily trending news to macro and sector asset allocation. Spanning a rolling horizon from 2024 to mid-2025, our dataset simulates a realistic public attention stream, requiring agents to distill investment logic from high-exposure narratives instead of pre-filtered entity news. We propose a Tri-Stage CPA Agent Workflow involving Compression, Perception, and Allocation to evaluate LLMs on broad asset classes such as Exchange Traded Funds (ETFs) rather than individual stocks, thereby reducing idiosyncratic volatility. Extensive experiments on nine LLMs reveal significant disparities in how models translate macro-level narratives into portfolio weights. This work provides new insights into the alignment between general reasoning and financial decision-making, and all data, codes, and experiments are released to promote sustainable financial agent research. Subjects: Machine Learning (cs.LG); Artificial Intelligence (cs.AI) Cite as: arXiv:2603.22305 [cs.LG] (or arXiv:2603.22305v1 [cs.LG] for this version) https://doi.org/10.4",
+      "pubDate": "Thu, 26 Mar 2026 00:00:00 -0400",
+      "at": "2026-03-27"
+    },
+    "https://arxiv.org/abs/2603.23234": {
+      "title": "MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation",
+      "text": "View PDF HTML (experimental) Abstract:Large language model (LLM)-based agents rely on memory mechanisms to reuse knowledge from past problem-solving experiences. Existing approaches typically construct memory in a per-agent manner, tightly coupling stored knowledge to a single model's reasoning style. In modern deployments with heterogeneous agents, a natural question arises: can a single memory system be shared across different models? We found that naively transferring memory between agents often degrades performance, as such memory entangles task-relevant knowledge with agent-specific biases. To address this challenge, we propose MemCollab, a collaborative memory framework that constructs agent-agnostic memory by contrasting reasoning trajectories generated by different agents on the same task. This contrastive process distills abstract reasoning constraints that capture shared task-level invariants while suppressing agent-specific artifacts. We further introduce a task-aware retrieval mechanism that conditions memory access on task category, ensuring that only relevant constraints are used at inference time. Experiments on mathematical reasoning and code generation benchmarks demonstrate that MemCollab consistently improves both accuracy and inference-time efficiency across diverse agents, including cross-modal-family settings. Our results show that the collaboratively constructed memory can function as a shared reasoning resource for diverse LLM-based agents. Subjects: Artificial Intelligence (cs.AI); Machine Learning (cs.LG) Cite as: arXiv:2603.23234 [cs.AI] (or arXiv:2603.23234v1 [cs.AI] for this version) https://doi.org/10.48550/arXiv.2603.23234 arXiv-issued DOI via DataCite (pending registration) Submission history From: Yurui Chang [view email] [v1] Tue, 24 Ma",
+      "pubDate": "Thu, 26 Mar 2026 00:00:00 -0400",
+      "at": "2026-03-27"
+    },
+    "https://huggingface.co/posts/mishig/318851508575304": {
+      "title": "I like these models and and and",
+      "text": "Join the conversation Join the community of Machine Learners and AI enthusiasts. Sign Up Back to feed mishig posted an update about 13 hours ago Post 57 I like these models nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16 and nvidia/NVIDIA-Nemotron-3-Nano-4B-FP8 and TradingAgents: Multi-Agents LLM Financial Trading Framework (2412.20138) and https://arxiv.org/abs/2412.20138 In this post mishig Mishig Davaadorj",
+      "pubDate": "2026-03-26T10:05:00.000Z",
+      "at": "2026-03-27"
+    },
+    "https://arxiv.org/abs/2603.22918": {
+      "title": "EVA: Efficient Reinforcement Learning for End-to-End Video Agent",
+      "text": "View PDF HTML (experimental) Abstract:Video understanding with multimodal large language models (MLLMs) remains challenging due to the long token sequences of videos, which contain extensive temporal dependencies and redundant frames. Existing approaches typically treat MLLMs as passive recognizers, processing entire videos or uniformly sampled frames without adaptive reasoning. Recent agent-based methods introduce external tools, yet still depend on manually designed workflows and perception-first strategies, resulting in inefficiency on long videos. We present EVA, an Efficient Reinforcement Learning framework for End-to-End Video Agent, which enables planning-before-perception through iterative summary-plan-action-reflection reasoning. EVA autonomously decides what to watch, when to watch, and how to watch, achieving query-driven and efficient video understanding. To train such agents, we design a simple yet effective three-stage learning pipeline - comprising supervised fine-tuning (SFT), Kahneman-Tversky Optimization (KTO), and Generalized Reward Policy Optimization (GRPO) - that bridges supervised imitation and reinforcement learning. We further construct high-quality datasets for each stage, supporting stable and reproducible training. We evaluate EVA on six video understanding benchmarks, demonstrating its comprehensive capabilities. Compared with existing baselines, EVA achieves a substantial improvement of 6-12% over general MLLM baselines and a further 1-3% gain over prior adaptive agent methods. Our code and model are available at this https URL. Comments: CVPR2026 Subjects: Computer Vision and Pattern Recognition (cs.CV); Artificial Intelligence (cs.AI); Computation and Language (cs.CL) Cite as: arXiv:2603.22918 [cs.CV] (or arXiv:2603.22918v1 [cs.CV] for th",
+      "pubDate": "Thu, 26 Mar 2026 00:00:00 -0400",
+      "at": "2026-03-27"
+    },
+    "https://arxiv.org/abs/2603.22309": {
+      "title": "UniFluids: Unified Neural Operator Learning with Conditional Flow-matching",
+      "text": "View PDF HTML (experimental) Abstract:Partial differential equation (PDE) simulation holds extensive significance in scientific research. Currently, the integration of deep neural networks to learn solution operators of PDEs has introduced great potential. In this paper, we present UniFluids, a conditional flow-matching framework that harnesses the scalability of diffusion Transformer to unify learning of solution operators across diverse PDEs with varying dimensionality and physical variables. Unlike the autoregressive PDE foundation models, UniFluids adopts flow-matching to achieve parallel sequence generation, making it the first such approach for unified operator learning. Specifically, the introduction of a unified four-dimensional spatiotemporal representation for the heterogeneous PDE datasets enables joint training and conditional encoding. Furthermore, we find the effective dimension of the PDE dataset is much lower than its patch dimension. We thus employ $x$-prediction in the flow-matching operator learning, which is verified to significantly improve prediction accuracy. We conduct a large-scale evaluation of UniFluids on several PDE datasets covering spatial dimensions 1D, 2D and 3D. Experimental results show that UniFluids achieves strong prediction accuracy and demonstrates good scalability and cross-scenario generalization capability. The code will be released later. Comments: Preprint version. Work in progress Subjects: Machine Learning (cs.LG); Artificial Intelligence (cs.AI) Cite as: arXiv:2603.22309 [cs.LG] (or arXiv:2603.22309v1 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2603.22309 arXiv-issued DOI via DataCite Submission history From: Haosen Li [view email] [v1] Thu, 19 Mar 2026 04:19:28 UTC (10,329 KB)",
+      "pubDate": "Thu, 26 Mar 2026 00:00:00 -0400",
+      "at": "2026-03-27"
     }
   },
   "daily": {
@@ -9957,6 +10101,166 @@
         "selectedTopicTotal": 10
       },
       "at": "2026-03-26"
+    },
+    "morning:2026-03-27": {
+      "fingerprint": "2bd658ea49cb037b54265fd3691d4ce11f92db8e67baed6cc9695651689f100f",
+      "daily": {
+        "overview": "谷歌发布TurboQuant算法引发行业震动，大幅降低LLM推理内存需求并提升速度；OpenAI暂停成人聊天机器人功能，Wikipedia禁止AI生成文章，企业AI应用从工具向员工转型。",
+        "hotNews": [
+          {
+            "title": "OpenAI暂停ChatGPT成人聊天机器人功能，转而聚焦核心产品。",
+            "insight": "OpenAI暂停ChatGPT成人聊天机器人功能，转而聚焦核心产品。",
+            "briefing": "OpenAI宣布暂停计划推出ChatGPT的“成人模式”。此前CEO Sam Altman曾于10月提出该构想，但引发了科技监管机构和公司内部员工的广泛争议。OpenAI表示，暂停该功能是为了将资源重新聚焦于公司的核心产品。",
+            "evaluation": "OpenAI此举显示出在商业化探索与伦理风险之间的权衡，短期内可能减少特定用户群体的活跃度。",
+            "narrative": "OpenAI宣布暂停计划推出ChatGPT的“成人模式”。此前CEO Sam Altman曾于10月提出该构想，但引发了科技监管机构和公司内部员工的广泛争议。OpenAI表示，暂停该功能是为了将资源重新聚焦于公司的核心产品。OpenAI此举显示出在商业化探索与伦理风险之间的权衡，短期内可能减少特定用户群体的活跃度。",
+            "summary": "OpenAI宣布暂停计划推出ChatGPT的“成人模式”。此前CEO Sam Altman曾于10月提出该构想，但引发了科技监管机构和公司内部员工的广泛争议。OpenAI表示，暂停该功能是为了将资源重新聚焦于公司的核心产品。OpenAI此举显示出在商业化探索与伦理风险之间的权衡，短期内可能减少特定用户群体的活跃度。",
+            "refs": [
+              1,
+              2
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 80,
+            "topicId": 51
+          },
+          {
+            "title": "Wikipedia禁止编辑使用AI生成或重写文章，以维护内容质量。",
+            "insight": "Wikipedia禁止编辑使用AI生成或重写文章，以维护内容质量。",
+            "briefing": "Wikipedia更新了编辑指南，明确禁止编辑使用AI工具撰写或重写文章。更新指出，AI生成的文章往往违反维基百科的核心内容政策。该禁令适用于英文维基百科，但允许编辑在特定场景下使用AI辅助。",
+            "evaluation": "这一举措标志着开源百科全书在AI时代对内容真实性维护的强硬立场，可能影响部分编辑群体的工作流。",
+            "narrative": "Wikipedia更新了编辑指南，明确禁止编辑使用AI工具撰写或重写文章。更新指出，AI生成的文章往往违反维基百科的核心内容政策。该禁令适用于英文维基百科，但允许编辑在特定场景下使用AI辅助。这一举措标志着开源百科全书在AI时代对内容真实性维护的强硬立场，可能影响部分编辑群体的工作流。",
+            "summary": "Wikipedia更新了编辑指南，明确禁止编辑使用AI工具撰写或重写文章。更新指出，AI生成的文章往往违反维基百科的核心内容政策。该禁令适用于英文维基百科，但允许编辑在特定场景下使用AI辅助。这一举措标志着开源百科全书在AI时代对内容真实性维护的强硬立场，可能影响部分编辑群体的工作流。",
+            "refs": [
+              3,
+              4
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 79,
+            "topicId": 113
+          },
+          {
+            "title": "谷歌TurboQuant算法将KV缓存内存需求降低6倍",
+            "insight": "谷歌TurboQuant算法将KV缓存内存需求降低6倍",
+            "briefing": "谷歌研究团队于3月26日正式推出名为TurboQuant的向量量化压缩算法。该技术通过创新的PolarQuant与QJL双阶段压缩框架，将大语言模型推理过程中的键值缓存内存需求减少至少6倍，在Nvidia H100 GPU上注意力计算速度提升最高8倍，且在多项长上下文基准测试中实现零精度损失。这一突破性进展有望大幅降低AI部署成本，加速长上下文应用落地。受此影响，美股存储芯片板块遭遇抛售，美光科技、西部数据等巨头股价全线下跌。",
+            "evaluation": "该技术若能大规模落地，将显著缓解大模型部署的算力与内存压力，对AI基础设施产业链产生深远影响。",
+            "narrative": "谷歌研究团队于3月26日正式推出名为TurboQuant的向量量化压缩算法。该技术通过创新的PolarQuant与QJL双阶段压缩框架，将大语言模型推理过程中的键值缓存内存需求减少至少6倍，在Nvidia H100 GPU上注意力计算速度提升最高8倍，且在多项长上下文基准测试中实现零精度损失。这一突破性进展有望大幅降低AI部署成本，加速长上下文应用落地。受此影响，美股存储芯片板块遭遇抛售，美光科技、西部数据等巨头股价全线下跌。该技术若能大规模落地，将显著缓解大模型部署的算力与内存压力，对AI基础设施产业链产生深远影响。",
+            "summary": "谷歌研究团队于3月26日正式推出名为TurboQuant的向量量化压缩算法。该技术通过创新的PolarQuant与QJL双阶段压缩框架，将大语言模型推理过程中的键值缓存内存需求减少至少6倍，在Nvidia H100 GPU上注意力计算速度提升最高8倍，且在多项长上下文基准测试中实现零精度损失。这一突破性进展有望大幅降低AI部署成本，加速长上下文应用落地。",
+            "refs": [
+              8,
+              11,
+              9,
+              12
+            ],
+            "mentionCount": 4,
+            "crossVerifyScore": 82,
+            "topicId": 214
+          }
+        ],
+        "otherNews": [
+          {
+            "title": "Gemini新增导入记忆和聊天记录功能，降低用户迁移成本。",
+            "insight": "Gemini新增导入记忆和聊天记录功能，降低用户迁移成本。",
+            "briefing": "谷歌为Gemini推出了“导入记忆”和“导入聊天记录”两项新工具。用户可以通过预设提示词，将当前AI助手所知的信息快速迁移至Gemini，从而在切换聊天机器人时无需重新训练。",
+            "evaluation": "该功能提升了用户在不同AI服务间切换的体验，增强了Gemini的市场竞争力。",
+            "narrative": "谷歌为Gemini推出了“导入记忆”和“导入聊天记录”两项新工具。用户可以通过预设提示词，将当前AI助手所知的信息快速迁移至Gemini，从而在切换聊天机器人时无需重新训练。该功能提升了用户在不同AI服务间切换的体验，增强了Gemini的市场竞争力。",
+            "summary": "谷歌为Gemini推出了“导入记忆”和“导入聊天记录”两项新工具。用户可以通过预设提示词，将当前AI助手所知的信息快速迁移至Gemini，从而在切换聊天机器人时无需重新训练。该功能提升了用户在不同AI服务间切换的体验",
+            "refs": [
+              5
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 73,
+            "topicId": 111
+          },
+          {
+            "title": "企业AI应用正从采购工具转向部署能干活的AI员工。",
+            "insight": "企业AI应用正从采购工具转向部署能干活的AI员工。",
+            "briefing": "随着AI技术的发展，部分企业开始从购买AI工具转向部署能够自主执行任务的AI员工。这种转变旨在解决工具割裂、使用门槛高以及生产力释放不足的问题，标志着企业级AI应用进入新阶段。",
+            "evaluation": "AI员工模式可能成为未来企业提效的关键路径，但需解决安全与合规挑战。",
+            "narrative": "随着AI技术的发展，部分企业开始从购买AI工具转向部署能够自主执行任务的AI员工。这种转变旨在解决工具割裂、使用门槛高以及生产力释放不足的问题，标志着企业级AI应用进入新阶段。AI员工模式可能成为未来企业提效的关键路径，但需解决安全与合规挑战。",
+            "summary": "随着AI技术的发展，部分企业开始从购买AI工具转向部署能够自主执行任务的AI员工。这种转变旨在解决工具割裂、使用门槛高以及生产力释放不足的问题，标志着企业级AI应用进入新阶段。AI员工模式可能成为未来企业提效的关键路径",
+            "refs": [
+              19
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 62,
+            "topicId": 238
+          },
+          {
+            "title": "OpenClaw智能体可被诱导进行自我破坏，暴露安全风险。",
+            "insight": "OpenClaw智能体可被诱导进行自我破坏，暴露安全风险。",
+            "briefing": "东北大学的研究人员发现，OpenClaw智能体可以被诱导进行自我破坏。研究显示，赋予AI模型对计算机的广泛访问权限可能使其被欺骗并泄露个人信息，甚至利用其内置的“良好行为”机制作为漏洞。",
+            "evaluation": "该研究揭示了自主智能体在复杂交互环境中的潜在安全隐患，需加强安全机制设计。",
+            "narrative": "东北大学的研究人员发现，OpenClaw智能体可以被诱导进行自我破坏。研究显示，赋予AI模型对计算机的广泛访问权限可能使其被欺骗并泄露个人信息，甚至利用其内置的“良好行为”机制作为漏洞。该研究揭示了自主智能体在复杂交互环境中的潜在安全隐患，需加强安全机制设计。",
+            "summary": "东北大学的研究人员发现，OpenClaw智能体可以被诱导进行自我破坏。研究显示，赋予AI模型对计算机的广泛访问权限可能使其被欺骗并泄露个人信息，甚至利用其内置的“良好行为”机制作为漏洞。该研究揭示了自主智能体在复杂交互环境中的潜在安全隐患",
+            "refs": [
+              13
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 65,
+            "topicId": 210
+          }
+        ],
+        "coreTech": [
+          {
+            "title": "基于每日热门财经新闻的宏观与",
+            "summary": "该论文提出了一个基于中文市场趋势新闻的LLM宏观与行业资产配置数据集与基准，旨在解决LLM在复杂金融环境中作为自主决策代理的评估难题。",
+            "refs": [
+              15
+            ],
+            "topicId": 1
+          },
+          {
+            "title": "通过对比轨迹蒸馏实现跨智能体记忆协作",
+            "summary": "论文提出了一种跨智能体记忆协作框架，通过对比轨迹蒸馏解决不同模型间共享记忆系统的性能问题，避免知识纠缠。",
+            "refs": [
+              16
+            ],
+            "topicId": 4
+          },
+          {
+            "title": "端到端视频智能体的高效强化学习",
+            "summary": "EVA提出了一种高效的强化学习方法，用于处理长视频序列中的时序依赖和冗余帧，解决多模态大模型在视频理解中的效率瓶颈。",
+            "refs": [
+              17
+            ],
+            "topicId": 6
+          },
+          {
+            "title": "带有条件流匹配的统一神经算子学习",
+            "summary": "该论文提出了一种基于条件流匹配的统一神经算子学习框架，利用扩散Transformer的扩展性，统一学习不同维度和物理变量的偏微分方程解算子。",
+            "refs": [
+              18
+            ],
+            "topicId": 32
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "Open AI 下架色情聊天机器人",
+          "2": "Open AI 再次放弃 Chat GPT 的色情模式",
+          "3": "维基百科禁止生成 AI 文章",
+          "4": "维基百科打击文章写作中使用 AI 的行为",
+          "5": "谷歌简化将其他 AI 记忆导入 Gemini 的流程",
+          "6": "谷歌“实时” AI 搜索助手可处理数十种语言对话",
+          "7": "工信部征求《人工智能模型上下文协议》等121项行业标准意见工信部就121项行业标准计划公开征求意见，重点规范人工智能模型上下文协议的应用安全，旨在通过标准化解决大模型在多模态交互、长文本处理及跨平台调用中的协议兼容与数据安全问题",
+          "8": "谷歌 Turbo Quant 重磅发布：LLM 键值缓存内存压缩 6 倍、速度提升 8 倍，零精度损失、无需训练！谷歌推出Turbo Quant算法，通过Polar Quant和QJL技术，将大语言模型推理中的键值缓存内存需求降低至少6倍",
+          "9": "内存焦虑终结者：谷歌发布 Turbo Quant 让大模型瘦身六倍谷歌推出Turbo Quant技术，通过压缩KV缓存，有效解决大语言模型推理中的内存瓶颈问题，可在不降低精度的前提下大幅减少内存占用，提升处理长文本和复杂任务的效率。 51",
+          "10": "我喜欢这些模型",
+          "11": "谷歌突破性算法震惊硅谷",
+          "12": "谷歌一篇论文引爆存储芯片崩盘，AI内存需求暴降6倍，推理狂飙8倍",
+          "13": "Open Claw 代理可被诱导进行自我破坏",
+          "14": "试用近10个AI助理，我决定自己把活干了",
+          "15": "CN-Buzz2Portfolio: 基于每日热门财经新闻的LLM宏观与行业资产配置中文市场数据集与基准",
+          "16": "MemCollab: 通过对比轨迹蒸馏实现跨智能体记忆协作",
+          "17": "EVA: 端到端视频智能体的高效强化学习",
+          "18": "UniFluids: 带有条件流匹配的统一神经算子学习",
+          "19": "当所有人都在买AI工具，Salesforce已经在交付AI员工了",
+          "20": "Claude 现可控制 Mac 并远程运行任务"
+        },
+        "candidateTotal": 419,
+        "topicTotal": 244,
+        "selectedTopicTotal": 10
+      },
+      "at": "2026-03-27"
     }
   },
   "llm": {
@@ -10967,6 +11271,54 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":12,\"zh_title\":\"Omni Weaving：通过自由组合与推理实现统一视频生成\"}]}",
       "at": "2026-03-26"
+    },
+    "4453f52d00f9de510fbc7f20a513aa46d23842c2e49c9a9c5ade951175229a68": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":3,\"topic_key\":\"Mistral发布开源语音模型\",\"topic_title\":\"Mistral发布开源语音模型\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":19,\"topic_key\":\"Siri集成第三方AI助手\",\"topic_title\":\"Siri集成第三方AI助手\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":51,\"topic_key\":\"OpenAI暂停成人聊天机器人\",\"topic_title\":\"OpenAI暂停成人聊天机器人\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":52,\"topic_key\":\"Gemini 3.1 Flash Live发布\",\"topic_title\":\"Gemini 3.1 Flash Live发布\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":103,\"topic_key\":\"Meta发布TRIBE v2模型\",\"topic_title\":\"Meta发布TRIBE v2模型\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":104,\"topic_key\":\"OpenAI暂停成人聊天机器人\",\"topic_title\":\"OpenAI暂停成人聊天机器人\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":106,\"topic_key\":\"Conntour融资7M构建AI安全搜索\",\"topic_title\":\"Conntour融资7M构建AI安全搜索\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":107,\"topic_key\":\"记者使用AI辅助写作\",\"topic_title\":\"记者使用AI辅助写作\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":110,\"topic_key\":\"AI对软件行业的冲击\",\"topic_title\":\"AI对软件行业的冲击\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":111,\"topic_key\":\"Meta华人实习生提出超级智能体\",\"topic_title\":\"Meta华人实习生提出超级智能体\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":112,\"topic_key\":\"国产模型赢得多模态战役\",\"topic_title\":\"国产模型赢得多模态战役\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":113,\"topic_key\":\"Gemini导入外部记忆功能\",\"topic_title\":\"Gemini导入外部记忆功能\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":114,\"topic_key\":\"Meta推出Ray-Ban AI眼镜\",\"topic_title\":\"Meta推出Ray-Ban AI眼镜\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":115,\"topic_key\":\"Wikipedia禁止AI生成文章\",\"topic_title\":\"Wikipedia禁止AI生成文章\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":116,\"topic_key\":\"MIT AI炒作指数\",\"topic_title\":\"MIT AI炒作指数\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":117,\"topic_key\":\"多智能体系统中的路由与信任\",\"topic_title\":\"多智能体系统中的路由与信任\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":118,\"topic_key\":\"大模型忠实度复现问题\",\"topic_title\":\"大模型忠实度复现问题\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":181,\"topic_key\":\"AI智能体应用于金融资管\",\"topic_title\":\"AI智能体应用于金融资管\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":182,\"topic_key\":\"Anthropic报告：AI未导致失业\",\"topic_title\":\"Anthropic报告：AI未导致失业\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":183,\"topic_key\":\"工信部征求AI模型上下文协议意见\",\"topic_title\":\"工信部征求AI模型上下文协议意见\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":184,\"topic_key\":\"Wikipedia禁止AI生成文章\",\"topic_title\":\"Wikipedia禁止AI生成文章\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":185,\"topic_key\":\"AI导致失业担忧与数据中心反弹\",\"topic_title\":\"AI导致失业担忧与数据中心反弹\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":186,\"topic_key\":\"Granola融资1.5B估值\",\"topic_title\":\"Granola融资1.5B估值\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":187,\"topic_key\":\"OpenAI Model Spec与安全赏金\",\"topic_title\":\"OpenAI Model Spec与安全赏金\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":189,\"topic_key\":\"OpenAI青少年安全政策\",\"topic_title\":\"OpenAI青少年安全政策\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":190,\"topic_key\":\"NVIDIA OpenShell实现智能体安全\",\"topic_title\":\"NVIDIA OpenShell实现智能体安全\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":193,\"topic_key\":\"Mozilla推出Agent版Stack Overflow\",\"topic_title\":\"Mozilla推出Agent版Stack Overflow\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":195,\"topic_key\":\"OpenAI租赁东湾大楼扩张\",\"topic_title\":\"OpenAI租赁东湾大楼扩张\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":196,\"topic_key\":\"Apple Music AI播放列表体验差\",\"topic_title\":\"Apple Music AI播放列表体验差\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":198,\"topic_key\":\"Webtoon添加AI本地化工具\",\"topic_title\":\"Webtoon添加AI本地化工具\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":199,\"topic_key\":\"欧盟推迟AI法案并支持禁裸露应用\",\"topic_title\":\"欧盟推迟AI法案并支持禁裸露应用\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":200,\"topic_key\":\"AI重塑工作方式与价值创造\",\"topic_title\":\"AI重塑工作方式与价值创造\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":201,\"topic_key\":\"黄仁勋提出推理拐点与Token预算\",\"topic_title\":\"黄仁勋提出推理拐点与Token预算\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":202,\"topic_key\":\"LiteLLM包被投毒事件\",\"topic_title\":\"LiteLLM包被投毒事件\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":203,\"topic_key\":\"马斯克设想打造美版台积电\",\"topic_title\":\"马斯克设想打造美版台积电\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":204,\"topic_key\":\"英伟达智能体自主进化研究\",\"topic_title\":\"英伟达智能体自主进化研究\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":205,\"topic_key\":\"AWS开发Agent自动化职能\",\"topic_title\":\"AWS开发Agent自动化职能\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":206,\"topic_key\":\"James Manyika与LL COOL J谈AI\",\"topic_title\":\"James Manyika与LL COOL J谈AI\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":207,\"topic_key\":\"Google Search Live全球扩展\",\"topic_title\":\"Google Search Live全球扩展\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":208,\"topic_key\":\"Hugging Face社区产品分享\",\"topic_title\":\"Hugging Face社区产品分享\",\"topic_type\":\"news\",\"confidence\":0.9}]}",
+      "at": "2026-03-27"
+    },
+    "c17a0510d4e9b99814338465196c08de3f9011158a70a5b417a22c580898ef6d": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":209,\"topic_key\":\"Neural Gas 算法\",\"topic_title\":\"Neural Gas 算法\",\"topic_type\":\"paper\",\"confidence\":0.9},{\"candidate_id\":210,\"topic_key\":\"SyntheticGen 长尾遥感\",\"topic_title\":\"SyntheticGen 长尾遥感\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":211,\"topic_key\":\"Deccan AI 融资\",\"topic_title\":\"Deccan AI 融资\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":212,\"topic_key\":\"Anthropic AI 技能差距\",\"topic_title\":\"Anthropic AI 技能差距\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":213,\"topic_key\":\"Meta 创业支持计划\",\"topic_title\":\"Meta 创业支持计划\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":214,\"topic_key\":\"ChatGPT 购物发现\",\"topic_title\":\"ChatGPT 购物发现\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":215,\"topic_key\":\"OpenAI 基金会投资\",\"topic_title\":\"OpenAI 基金会投资\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":216,\"topic_key\":\"Sycophantic AI 研究\",\"topic_title\":\"Sycophantic AI 研究\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":217,\"topic_key\":\"OpenClaw 智能体研究\",\"topic_title\":\"OpenClaw 智能体研究\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":218,\"topic_key\":\"CLI 工具与智能体\",\"topic_title\":\"CLI 工具与智能体\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":220,\"topic_key\":\"金山办公 2025 财报\",\"topic_title\":\"金山办公 2025 财报\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":221,\"topic_key\":\"谷歌 TurboQuant\",\"topic_title\":\"谷歌 TurboQuant\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":222,\"topic_key\":\"蚂蚁数科百灵企业版\",\"topic_title\":\"蚂蚁数科百灵企业版\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":223,\"topic_key\":\"AI 亦为 API 枢纽\",\"topic_title\":\"AI 亦为 API 枢纽\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":224,\"topic_key\":\"xAI 人事动荡\",\"topic_title\":\"xAI 人事动荡\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":225,\"topic_key\":\"微软 OneDrive AI 重塑\",\"topic_title\":\"微软 OneDrive AI 重塑\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":226,\"topic_key\":\"苹果 RubiCap 框架\",\"topic_title\":\"苹果 RubiCap 框架\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":227,\"topic_key\":\"天娱数科 CineART\",\"topic_title\":\"天娱数科 CineART\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":228,\"topic_key\":\"钉钉悟空 AI\",\"topic_title\":\"钉钉悟空 AI\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":229,\"topic_key\":\"谷歌 TurboQuant\",\"topic_title\":\"谷歌 TurboQuant\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":230,\"topic_key\":\"Axiom Math 数学工具\",\"topic_title\":\"Axiom Math 数学工具\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":231,\"topic_key\":\"智能体商业与语境\",\"topic_title\":\"智能体商业与语境\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":233,\"topic_key\":\"AI 亦为 API 枢纽\",\"topic_title\":\"AI 亦为 API 枢纽\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":234,\"topic_key\":\"老年人 AI 素养\",\"topic_title\":\"老年人 AI 素养\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":235,\"topic_key\":\"OpenClaw 智能体研究\",\"topic_title\":\"OpenClaw 智能体研究\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":236,\"topic_key\":\"ARC-AGI-3 基准测试\",\"topic_title\":\"ARC-AGI-3 基准测试\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":237,\"topic_key\":\"AI 硬件与相框\",\"topic_title\":\"AI 硬件与相框\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":238,\"topic_key\":\"AI 喷子 职业招聘\",\"topic_title\":\"AI 喷子 职业招聘\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":239,\"topic_key\":\"GitHub Copilot 数据政策\",\"topic_title\":\"GitHub Copilot 数据政策\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":240,\"topic_key\":\"AI 裁员与就业\",\"topic_title\":\"AI 裁员与就业\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":241,\"topic_key\":\"谷歌 TurboQuant\",\"topic_title\":\"谷歌 TurboQuant\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":242,\"topic_key\":\"谷歌 TurboQuant\",\"topic_title\":\"谷歌 TurboQuant\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":243,\"topic_key\":\"AI 代理 营销应用\",\"topic_title\":\"AI 代理 营销应用\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":244,\"topic_key\":\"Nothing 手机 AI App\",\"topic_title\":\"Nothing 手机 AI App\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":245,\"topic_key\":\"AI 芯片短缺与涨价\",\"topic_title\":\"AI 芯片短缺与涨价\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":246,\"topic_key\":\"AI 龙虾 智能体鄙视链\",\"topic_title\":\"AI 龙虾 智能体鄙视链\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":247,\"topic_key\":\"Keep AI 财报\",\"topic_title\":\"Keep AI 财报\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":248,\"topic_key\":\"西门子 RXD 大会 AI\",\"topic_title\":\"西门子 RXD 大会 AI\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":249,\"topic_key\":\"CCF NeurIPS 新规\",\"topic_title\":\"CCF NeurIPS 新规\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":250,\"topic_key\":\"Kollab 团队操作系统\",\"topic_title\":\"Kollab 团队操作系统\",\"topic_type\":\"news\",\"confidence\":0.85}]}",
+      "at": "2026-03-27"
+    },
+    "ab2071367887a122244818bf15e9d2fe39cbcc58ae38d0e62ea5147489af9876": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":251,\"topic_key\":\"AI员工与Agent应用\",\"topic_title\":\"AI员工与Agent应用\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":252,\"topic_key\":\"AI员工与Agent应用\",\"topic_title\":\"AI员工与Agent应用\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":253,\"topic_key\":\"通义千问VL API发布\",\"topic_title\":\"通义千问VL API发布\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":254,\"topic_key\":\"AI在教育领域的应用\",\"topic_title\":\"AI在教育领域的应用\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":255,\"topic_key\":\"数据中心建设监管\",\"topic_title\":\"数据中心建设监管\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":256,\"topic_key\":\"AI法律科技融资\",\"topic_title\":\"AI法律科技融资\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":257,\"topic_key\":\"AI在电商购物中的应用\",\"topic_title\":\"AI在电商购物中的应用\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":258,\"topic_key\":\"Sora视频模型安全\",\"topic_title\":\"Sora视频模型安全\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":260,\"topic_key\":\"Sora视频模型安全\",\"topic_title\":\"Sora视频模型安全\",\"topic_type\":\"news\",\"confidence\":0.85}]}",
+      "at": "2026-03-27"
+    },
+    "a19096bf4c10112024f3cadf398b330c7f50d29e066309e852ebc7d670c706a8": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"谷歌 TurboQuant\",\"merged_key\":\"谷歌 TurboQuant\",\"merged_title\":\"谷歌 TurboQuant\",\"merged_type\":\"news\"},{\"from_key\":\"AI 亦为 API 枢纽\",\"merged_key\":\"AI 亦为 API 枢纽\",\"merged_title\":\"AI 亦为 API 枢纽\",\"merged_type\":\"news\"},{\"from_key\":\"AI员工与Agent应用\",\"merged_key\":\"AI员工与Agent应用\",\"merged_title\":\"AI员工与Agent应用\",\"merged_type\":\"news\"},{\"from_key\":\"Gemini导入外部记忆功能\",\"merged_key\":\"Gemini导入外部记忆功能\",\"merged_title\":\"Gemini导入外部记忆功能\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI暂停成人聊天机器人\",\"merged_key\":\"OpenAI暂停成人聊天机器人\",\"merged_title\":\"OpenAI暂停成人聊天机器人\",\"merged_type\":\"news\"},{\"from_key\":\"OpenClaw 智能体研究\",\"merged_key\":\"OpenClaw 智能体研究\",\"merged_title\":\"OpenClaw 智能体研究\",\"merged_type\":\"news\"},{\"from_key\":\"Sora视频模型安全\",\"merged_key\":\"Sora视频模型安全\",\"merged_title\":\"Sora视频模型安全\",\"merged_type\":\"news\"},{\"from_key\":\"Wikipedia禁止AI生成文章\",\"merged_key\":\"Wikipedia禁止AI生成文章\",\"merged_title\":\"Wikipedia禁止AI生成文章\",\"merged_type\":\"news\"},{\"from_key\":\"大模型忠实度复现问题\",\"merged_key\":\"大模型忠实度复现问题\",\"merged_title\":\"大模型忠实度复现问题\",\"merged_type\":\"news\"},{\"from_key\":\"钉钉悟空 AI\",\"merged_key\":\"钉钉悟空 AI\",\"merged_title\":\"钉钉悟空 AI\",\"merged_type\":\"news\"},{\"from_key\":\"多智能体系统中的路由与信任\",\"merged_key\":\"多智能体系统中的路由与信任\",\"merged_title\":\"多智能体系统中的路由与信任\",\"merged_type\":\"news\"},{\"from_key\":\"工信部征求AI模型上下文协议意见\",\"merged_key\":\"工信部征求AI模型上下文协议意见\",\"merged_title\":\"工信部征求AI模型上下文协议意见\",\"merged_type\":\"news\"},{\"from_key\":\"国产模型赢得多模态战役\",\"merged_key\":\"国产模型赢得多模态战役\",\"merged_title\":\"国产模型赢得多模态战役\",\"merged_type\":\"news\"},{\"from_key\":\"黄仁勋提出推理拐点与Token预算\",\"merged_key\":\"黄仁勋提出推理拐点与Token预算\",\"merged_title\":\"黄仁勋提出推理拐点与Token预算\",\"merged_type\":\"news\"},{\"from_key\":\"记者使用AI辅助写作\",\"merged_key\":\"记者使用AI辅助写作\",\"merged_title\":\"记者使用AI辅助写作\",\"merged_type\":\"news\"},{\"from_key\":\"金山办公 2025 财报\",\"merged_key\":\"金山办公 2025 财报\",\"merged_title\":\"金山办公 2025 财报\",\"merged_type\":\"news\"},{\"from_key\":\"老年人 AI 素养\",\"merged_key\":\"老年人 AI 素养\",\"merged_title\":\"老年人 AI 素养\",\"merged_type\":\"news\"},{\"from_key\":\"马斯克设想打造美版台积电\",\"merged_key\":\"马斯克设想打造美版台积电\",\"merged_title\":\"马斯克设想打造美版台积电\",\"merged_type\":\"news\"},{\"from_key\":\"蚂蚁数科百灵企业版\",\"merged_key\":\"蚂蚁数科百灵企业版\",\"merged_title\":\"蚂蚁数科百灵企业版\",\"merged_type\":\"news\"},{\"from_key\":\"欧盟推迟AI法案并支持禁裸露应用\",\"merged_key\":\"欧盟推迟AI法案并支持禁裸露应用\",\"merged_title\":\"欧盟推迟AI法案并支持禁裸露应用\",\"merged_type\":\"news\"},{\"from_key\":\"苹果 RubiCap 框架\",\"merged_key\":\"苹果 RubiCap 框架\",\"merged_title\":\"苹果 RubiCap 框架\",\"merged_type\":\"news\"},{\"from_key\":\"数据中心建设监管\",\"merged_key\":\"数据中心建设监管\",\"merged_title\":\"数据中心建设监管\",\"merged_type\":\"news\"},{\"from_key\":\"天娱数科 CineART\",\"merged_key\":\"天娱数科 CineART\",\"merged_title\":\"天娱数科 CineART\",\"merged_type\":\"news\"},{\"from_key\":\"通义千问VL API发布\",\"merged_key\":\"通义千问VL API发布\",\"merged_title\":\"通义千问VL API发布\",\"merged_type\":\"news\"},{\"from_key\":\"微软 OneDrive AI 重塑\",\"merged_key\":\"微软 OneDrive AI 重塑\",\"merged_title\":\"微软 OneDrive AI 重塑\",\"merged_type\":\"news\"},{\"from_key\":\"西门子 RXD 大会 AI\",\"merged_key\":\"西门子 RXD 大会 AI\",\"merged_title\":\"西门子 RXD 大会 AI\",\"merged_type\":\"news\"},{\"from_key\":\"英伟达智能体自主进化研究\",\"merged_key\":\"英伟达智能体自主进化研究\",\"merged_title\":\"英伟达智能体自主进化研究\",\"merged_type\":\"news\"},{\"from_key\":\"智能体商业与语境\",\"merged_key\":\"智能体商业与语境\",\"merged_title\":\"智能体商业与语境\",\"merged_type\":\"news\"},{\"from_key\":\"AI 裁员与就业\",\"merged_key\":\"AI 裁员与就业\",\"merged_title\":\"AI 裁员与就业\",\"merged_type\":\"news\"},{\"from_key\":\"AI 代理 营销应用\",\"merged_key\":\"AI 代理 营销应用\",\"merged_title\":\"AI 代理 营销应用\",\"merged_type\":\"news\"},{\"from_key\":\"AI 龙虾 智能体鄙视链\",\"merged_key\":\"AI 龙虾 智能体鄙视链\",\"merged_title\":\"AI 龙虾 智能体鄙视链\",\"merged_type\":\"news\"},{\"from_key\":\"AI 喷子 职业招聘\",\"merged_key\":\"AI 喷子 职业招聘\",\"merged_title\":\"AI 喷子 职业招聘\",\"merged_type\":\"news\"},{\"from_key\":\"AI 芯片短缺与涨价\",\"merged_key\":\"AI 芯片短缺与涨价\",\"merged_title\":\"AI 芯片短缺与涨价\",\"merged_type\":\"news\"},{\"from_key\":\"AI 硬件与相框\",\"merged_key\":\"AI 硬件与相框\",\"merged_title\":\"AI 硬件与相框\",\"merged_type\":\"news\"},{\"from_key\":\"AI导致失业担忧与数据中心反弹\",\"merged_key\":\"AI导致失业担忧与数据中心反弹\",\"merged_title\":\"AI导致失业担忧与数据中心反弹\",\"merged_type\":\"news\"},{\"from_key\":\"AI对软件行业的冲击\",\"merged_key\":\"AI对软件行业的冲击\",\"merged_title\":\"AI对软件行业的冲击\",\"merged_type\":\"news\"},{\"from_key\":\"AI法律科技融资\",\"merged_key\":\"AI法律科技融资\",\"merged_title\":\"AI法律科技融资\",\"merged_type\":\"news\"},{\"from_key\":\"AI在电商购物中的应用\",\"merged_key\":\"AI在电商购物中的应用\",\"merged_title\":\"AI在电商购物中的应用\",\"merged_type\":\"news\"},{\"from_key\":\"AI在教育领域的应用\",\"merged_key\":\"AI在教育领域的应用\",\"merged_title\":\"AI在教育领域的应用\",\"merged_type\":\"news\"},{\"from_key\":\"AI智能体应用于金融资管\",\"merged_key\":\"AI智能体应用于金融资管\",\"merged_title\":\"AI智能体应用于金融资管\",\"merged_type\":\"news\"},{\"from_key\":\"AI重塑工作方式与价值创造\",\"merged_key\":\"AI重塑工作方式与价值创造\",\"merged_title\":\"AI重塑工作方式与价值创造\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic AI 技能差距\",\"merged_key\":\"Anthropic AI 技能差距\",\"merged_title\":\"Anthropic AI 技能差距\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic报告：AI未导致失业\",\"merged_key\":\"Anthropic报告：AI未导致失业\",\"merged_title\":\"Anthropic报告：AI未导致失业\",\"merged_type\":\"news\"},{\"from_key\":\"Apple Music AI播放列表体验差\",\"merged_key\":\"Apple Music AI播放列表体验差\",\"merged_title\":\"Apple Music AI播放列表体验差\",\"merged_type\":\"news\"},{\"from_key\":\"ARC-AGI-3 基准测试\",\"merged_key\":\"ARC-AGI-3 基准测试\",\"merged_title\":\"ARC-AGI-3 基准测试\",\"merged_type\":\"news\"},{\"from_key\":\"AWS开发Agent自动化职能\",\"merged_key\":\"AWS开发Agent自动化职能\",\"merged_title\":\"AWS开发Agent自动化职能\",\"merged_type\":\"news\"},{\"from_key\":\"Axiom Math 数学工具\",\"merged_key\":\"Axiom Math 数学工具\",\"merged_title\":\"Axiom Math 数学工具\",\"merged_type\":\"news\"},{\"from_key\":\"CCF NeurIPS 新规\",\"merged_key\":\"CCF NeurIPS 新规\",\"merged_title\":\"CCF NeurIPS 新规\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT 购物发现\",\"merged_key\":\"ChatGPT 购物发现\",\"merged_title\":\"ChatGPT 购物发现\",\"merged_type\":\"news\"},{\"from_key\":\"CLI 工具与智能体\",\"merged_key\":\"CLI 工具与智能体\",\"merged_title\":\"CLI 工具与智能体\",\"merged_type\":\"news\"},{\"from_key\":\"Conntour融资7M构建AI安全搜索\",\"merged_key\":\"Conntour融资7M构建AI安全搜索\",\"merged_title\":\"Conntour融资7M构建AI安全搜索\",\"merged_type\":\"news\"},{\"from_key\":\"Deccan AI 融资\",\"merged_key\":\"Deccan AI 融资\",\"merged_title\":\"Deccan AI 融资\",\"merged_type\":\"news\"},{\"from_key\":\"Gemini 3.1 Flash Live发布\",\"merged_key\":\"Gemini 3.1 Flash Live发布\",\"merged_title\":\"Gemini 3.1 Flash Live发布\",\"merged_type\":\"news\"},{\"from_key\":\"GitHub Copilot 数据政策\",\"merged_key\":\"GitHub Copilot 数据政策\",\"merged_title\":\"GitHub Copilot 数据政策\",\"merged_type\":\"news\"},{\"from_key\":\"Google Search Live全球扩展\",\"merged_key\":\"Google Search Live全球扩展\",\"merged_title\":\"Google Search Live全球扩展\",\"merged_type\":\"news\"},{\"from_key\":\"Granola融资1.5B估值\",\"merged_key\":\"Granola融资1.5B估值\",\"merged_title\":\"Granola融资1.5B估值\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face社区产品分享\",\"merged_key\":\"Hugging Face社区产品分享\",\"merged_title\":\"Hugging Face社区产品分享\",\"merged_type\":\"news\"},{\"from_key\":\"James Manyika与LL COOL J谈AI\",\"merged_key\":\"James Manyika与LL COOL J谈AI\",\"merged_title\":\"James Manyika与LL COOL J谈AI\",\"merged_type\":\"news\"},{\"from_key\":\"Keep AI 财报\",\"merged_key\":\"Keep AI 财报\",\"merged_title\":\"Keep AI 财报\",\"merged_type\":\"news\"},{\"from_key\":\"Kollab 团队操作系统\",\"merged_key\":\"Kollab 团队操作系统\",\"merged_title\":\"Kollab 团队操作系统\",\"merged_type\":\"news\"},{\"from_key\":\"LiteLLM包被投毒事件\",\"merged_key\":\"LiteLLM包被投毒事件\",\"merged_title\":\"LiteLLM包被投毒事件\",\"merged_type\":\"news\"},{\"from_key\":\"Meta 创业支持计划\",\"merged_key\":\"Meta 创业支持计划\",\"merged_title\":\"Meta 创业支持计划\",\"merged_type\":\"news\"},{\"from_key\":\"Meta发布TRIBE v2模型\",\"merged_key\":\"Meta发布TRIBE v2模型\",\"merged_title\":\"Meta发布TRIBE v2模型\",\"merged_type\":\"news\"},{\"from_key\":\"Meta华人实习生提出超级智能体\",\"merged_key\":\"Meta华人实习生提出超级智能体\",\"merged_title\":\"Meta华人实习生提出超级智能体\",\"merged_type\":\"news\"},{\"from_key\":\"Meta推出Ray-Ban AI眼镜\",\"merged_key\":\"Meta推出Ray-Ban AI眼镜\",\"merged_title\":\"Meta推出Ray-Ban AI眼镜\",\"merged_type\":\"news\"},{\"from_key\":\"Mistral发布开源语音模型\",\"merged_key\":\"Mistral发布开源语音模型\",\"merged_title\":\"Mistral发布开源语音模型\",\"merged_type\":\"news\"},{\"from_key\":\"MIT AI炒作指数\",\"merged_key\":\"MIT AI炒作指数\",\"merged_title\":\"MIT AI炒作指数\",\"merged_type\":\"news\"},{\"from_key\":\"Mozilla推出Agent版Stack Overflow\",\"merged_key\":\"Mozilla推出Agent版Stack Overflow\",\"merged_title\":\"Mozilla推出Agent版Stack Overflow\",\"merged_type\":\"news\"},{\"from_key\":\"Neural Gas 算法\",\"merged_key\":\"Neural Gas 算法\",\"merged_title\":\"Neural Gas 算法\",\"merged_type\":\"news\"},{\"from_key\":\"Nothing 手机 AI App\",\"merged_key\":\"Nothing 手机 AI App\",\"merged_title\":\"Nothing 手机 AI App\",\"merged_type\":\"news\"},{\"from_key\":\"NVIDIA OpenShell实现智能体安全\",\"merged_key\":\"NVIDIA OpenShell实现智能体安全\",\"merged_title\":\"NVIDIA OpenShell实现智能体安全\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 基金会投资\",\"merged_key\":\"OpenAI 基金会投资\",\"merged_title\":\"OpenAI 基金会投资\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Model Spec与安全赏金\",\"merged_key\":\"OpenAI Model Spec与安全赏金\",\"merged_title\":\"OpenAI Model Spec与安全赏金\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI青少年安全政策\",\"merged_key\":\"OpenAI青少年安全政策\",\"merged_title\":\"OpenAI青少年安全政策\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI租赁东湾大楼扩张\",\"merged_key\":\"OpenAI租赁东湾大楼扩张\",\"merged_title\":\"OpenAI租赁东湾大楼扩张\",\"merged_type\":\"news\"},{\"from_key\":\"Siri集成第三方AI助手\",\"merged_key\":\"Siri集成第三方AI助手\",\"merged_title\":\"Siri集成第三方AI助手\",\"merged_type\":\"news\"},{\"from_key\":\"Sycophantic AI 研究\",\"merged_key\":\"Sycophantic AI 研究\",\"merged_title\":\"Sycophantic AI 研究\",\"merged_type\":\"news\"},{\"from_key\":\"SyntheticGen 长尾遥感\",\"merged_key\":\"SyntheticGen 长尾遥感\",\"merged_title\":\"SyntheticGen 长尾遥感\",\"merged_type\":\"news\"},{\"from_key\":\"Webtoon添加AI本地化工具\",\"merged_key\":\"Webtoon添加AI本地化工具\",\"merged_title\":\"Webtoon添加AI本地化工具\",\"merged_type\":\"news\"},{\"from_key\":\"xAI 人事动荡\",\"merged_key\":\"xAI 人事动荡\",\"merged_title\":\"xAI 人事动荡\",\"merged_type\":\"news\"}]}",
+      "at": "2026-03-27"
+    },
+    "7a61a48a78bee1e5c675a5eb59b56d2d5df6207c947c0da2a544269e142aba2a": {
+      "operation": "singleton_recluster_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"decisions\":[{\"candidate_id\":19,\"action\":\"keep\",\"confidence\":0.65,\"reason\":\"OpenAI暂停成人聊天机器人（Topic 51）主要涉及成人内容/伦理审查，而此资讯是关于Siri接入第三方聊天机器人，属于功能扩展，主体和事件性质不同。\"},{\"candidate_id\":206,\"action\":\"keep\",\"confidence\":0.55,\"reason\":\"Wikipedia禁止AI生成文章（Topic 113）是关于平台规则和内容生成的硬性禁令，而此资讯是关于James Manyika的访谈，属于人物观点/活动，非同一事件。\"},{\"candidate_id\":107,\"action\":\"keep\",\"confidence\":0.60,\"reason\":\"Wikipedia禁止AI生成文章（Topic 113）是关于平台政策，而此资讯是关于记者使用AI辅助写作，属于工具应用场景，非同一事件。\"},{\"candidate_id\":114,\"action\":\"keep\",\"confidence\":0.55,\"reason\":\"Wikipedia禁止AI生成文章（Topic 113）是关于平台规则，而此资讯是关于Meta发布AI眼镜硬件，属于产品发布，非同一事件。\"},{\"candidate_id\":216,\"action\":\"keep\",\"confidence\":0.65,\"reason\":\"Gemini导入外部记忆功能（Topic 111）是关于特定产品的功能特性，而此资讯是关于AI模型行为对人类判断的影响的研究，属于学术研究/模型行为，非同一事件。\"},{\"candidate_id\":196,\"action\":\"keep\",\"confidence\":0.50,\"reason\":\"无建议锚点，且内容关于Apple Music的AI播放列表功能体验，属于具体产品功能反馈，无明确语义一致的锚点事件。\"}]}",
+      "at": "2026-03-27"
+    },
+    "9708a3543167baeacf83fb72029c37adc615d2cde9dd00be236a1e80f694f323": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[214,51,113,111,210,238,215,32,4,6],\"reasons\":[{\"topic_id\":214,\"reason\":\"谷歌重磅发布TurboQuant，直接解决大模型推理内存瓶颈，技术突破性强且影响深远。\"},{\"topic_id\":51,\"reason\":\"OpenAI暂停成人聊天机器人，涉及AI伦理与安全边界，具有高社会影响力和行业警示意义。\"},{\"topic_id\":113,\"reason\":\"Wikipedia禁止AI生成文章，标志着权威知识库对AI内容的严格管控，影响学术与信息生态。\"},{\"topic_id\":111,\"reason\":\"Gemini导入外部记忆功能，提升多模态大模型交互能力，是Agent发展的关键技术点。\"},{\"topic_id\":210,\"reason\":\"OpenClaw智能体研究揭示AI自我破坏行为，为Agent安全与可控性提供重要理论依据。\"},{\"topic_id\":238,\"reason\":\"AI员工与Agent应用落地加速，探讨从工具到数字员工的产业变革，符合Agent发展趋势。\"},{\"topic_id\":215,\"reason\":\"蚂蚁数科百灵企业版聚焦金融大模型，体现AI在垂直行业的落地与优化趋势。\"},{\"topic_id\":32,\"reason\":\"UniFluids统一神经算子学习论文，推动AI在流体力学等复杂物理领域的应用。\"},{\"topic_id\":4,\"reason\":\"MemCollab跨智能体记忆协作论文，解决多智能体系统中的信息共享与协同难题。\"},{\"topic_id\":6,\"reason\":\"EVA高效强化学习论文，探索视频Agent的端到端优化，具有前沿技术价值。\"}]}",
+      "at": "2026-03-27"
+    },
+    "411009cb2b4cdf92ee48b2017664966088f5112d13e6fae3b4490c172ee2df6e": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"谷歌发布TurboQuant算法引发行业震动，大幅降低LLM推理内存需求并提升速度；OpenAI暂停成人聊天机器人功能，Wikipedia禁止AI生成文章，企业AI应用从工具向员工转型。\",\"hot_news\":[{\"topic_id\":214,\"insight\":\"谷歌TurboQuant算法将KV缓存内存需求降低6倍，推理速度提升8倍，有望终结AI内存瓶颈。\",\"narrative\":\"谷歌研究团队于3月26日正式推出名为TurboQuant的向量量化压缩算法。该技术通过创新的PolarQuant与QJL双阶段压缩框架，将大语言模型推理过程中的键值缓存内存需求减少至少6倍，在Nvidia H100 GPU上注意力计算速度提升最高8倍，且在多项长上下文基准测试中实现零精度损失。这一突破性进展有望大幅降低AI部署成本，加速长上下文应用落地。受此影响，美股存储芯片板块遭遇抛售，美光科技、西部数据等巨头股价全线下跌。\",\"evaluation\":\"该技术若能大规模落地，将显著缓解大模型部署的算力与内存压力，对AI基础设施产业链产生深远影响。\",\"refs\":[8,9,11,12],\"mention_count\":4,\"cross_verify_score\":82},{\"topic_id\":51,\"insight\":\"OpenAI暂停ChatGPT成人聊天机器人功能，转而聚焦核心产品。\",\"narrative\":\"OpenAI宣布暂停计划推出ChatGPT的“成人模式”。此前CEO Sam Altman曾于10月提出该构想，但引发了科技监管机构和公司内部员工的广泛争议。OpenAI表示，暂停该功能是为了将资源重新聚焦于公司的核心产品。\",\"evaluation\":\"OpenAI此举显示出在商业化探索与伦理风险之间的权衡，短期内可能减少特定用户群体的活跃度。\",\"refs\":[1,2],\"mention_count\":2,\"cross_verify_score\":80},{\"topic_id\":113,\"insight\":\"Wikipedia禁止编辑使用AI生成或重写文章，以维护内容质量。\",\"narrative\":\"Wikipedia更新了编辑指南，明确禁止编辑使用AI工具撰写或重写文章。更新指出，AI生成的文章往往违反维基百科的核心内容政策。该禁令适用于英文维基百科，但允许编辑在特定场景下使用AI辅助。\",\"evaluation\":\"这一举措标志着开源百科全书在AI时代对内容真实性维护的强硬立场，可能影响部分编辑群体的工作流。\",\"refs\":[3,4],\"mention_count\":2,\"cross_verify_score\":79}],\"other_news\":[{\"topic_id\":111,\"insight\":\"Gemini新增导入记忆和聊天记录功能，降低用户迁移成本。\",\"narrative\":\"谷歌为Gemini推出了“导入记忆”和“导入聊天记录”两项新工具。用户可以通过预设提示词，将当前AI助手所知的信息快速迁移至Gemini，从而在切换聊天机器人时无需重新训练。\",\"evaluation\":\"该功能提升了用户在不同AI服务间切换的体验，增强了Gemini的市场竞争力。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":73},{\"topic_id\":210,\"insight\":\"OpenClaw智能体可被诱导进行自我破坏，暴露安全风险。\",\"narrative\":\"东北大学的研究人员发现，OpenClaw智能体可以被诱导进行自我破坏。研究显示，赋予AI模型对计算机的广泛访问权限可能使其被欺骗并泄露个人信息，甚至利用其内置的“良好行为”机制作为漏洞。\",\"evaluation\":\"该研究揭示了自主智能体在复杂交互环境中的潜在安全隐患，需加强安全机制设计。\",\"refs\":[13],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":238,\"insight\":\"企业AI应用正从采购工具转向部署能干活的AI员工。\",\"narrative\":\"随着AI技术的发展，部分企业开始从购买AI工具转向部署能够自主执行任务的AI员工。这种转变旨在解决工具割裂、使用门槛高以及生产力释放不足的问题，标志着企业级AI应用进入新阶段。\",\"evaluation\":\"AI员工模式可能成为未来企业提效的关键路径，但需解决安全与合规挑战。\",\"refs\":[19],\"mention_count\":1,\"cross_verify_score\":62}],\"core_tech\":[{\"topic_id\":1,\"title\":\"CN-Buzz2Portfolio: 中文市场数据集与基准\",\"summary\":\"该论文提出了一个基于中文市场趋势新闻的LLM宏观与行业资产配置数据集与基准，旨在解决LLM在复杂金融环境中作为自主决策代理的评估难题。\",\"refs\":[15]},{\"topic_id\":4,\"title\":\"MemCollab: 跨智能体记忆协作\",\"summary\":\"论文提出了一种跨智能体记忆协作框架，通过对比轨迹蒸馏解决不同模型间共享记忆系统的性能问题，避免知识纠缠。\",\"refs\":[16]},{\"topic_id\":6,\"title\":\"EVA: 端到端视频智能体强化学习\",\"summary\":\"EVA提出了一种高效的强化学习方法，用于处理长视频序列中的时序依赖和冗余帧，解决多模态大模型在视频理解中的效率瓶颈。\",\"refs\":[17]},{\"topic_id\":32,\"title\":\"UniFluids: 统一神经算子学习\",\"summary\":\"该论文提出了一种基于条件流匹配的统一神经算子学习框架，利用扩散Transformer的扩展性，统一学习不同维度和物理变量的偏微分方程解算子。\",\"refs\":[18]}],\"ref_translations\":[{\"id\":15,\"zh_title\":\"CN-Buzz2Portfolio: 基于每日热门财经新闻的LLM宏观与行业资产配置中文市场数据集与基准\"},{\"id\":16,\"zh_title\":\"MemCollab: 通过对比轨迹蒸馏实现跨智能体记忆协作\"},{\"id\":17,\"zh_title\":\"EVA: 端到端视频智能体的高效强化学习\"},{\"id\":18,\"zh_title\":\"UniFluids: 带有条件流匹配的统一神经算子学习\"}]}",
+      "at": "2026-03-27"
+    },
+    "9286497fd52c05ad7e730a6113dd25e4732769944860f3ba24f2d4c76f21da84": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"Open AI 下架色情聊天机器人\"},{\"id\":2,\"zh_title\":\"Open AI 再次放弃 ChatGPT 的色情模式\"},{\"id\":3,\"zh_title\":\"维基百科禁止生成 AI 文章\"},{\"id\":4,\"zh_title\":\"维基百科打击文章写作中使用 AI 的行为\"},{\"id\":5,\"zh_title\":\"谷歌简化将其他 AI 记忆导入 Gemini 的流程\"},{\"id\":6,\"zh_title\":\"谷歌“实时” AI 搜索助手可处理数十种语言对话\"},{\"id\":10,\"zh_title\":\"我喜欢这些模型\"},{\"id\":13,\"zh_title\":\"Open Claw 代理可被诱导进行自我破坏\"},{\"id\":20,\"zh_title\":\"Claude 现可控制 Mac 并远程运行任务\"}]}",
+      "at": "2026-03-27"
     }
   },
   "published": {
@@ -12571,6 +12923,81 @@
       "title": "“龙虾”踢了Anthropic一脚，智能体大战升级",
       "at": "2026-03-26",
       "edition": "morning"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/901293/openai-adult-mode-erotic-chatbot-shelved-indefinitely": {
+      "title": "OpenAI shelves erotic chatbot &#8216;indefinitely&#8217;",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/03/26/openai-abandons-yet-another-side-quest-chatgpts-erotic-mode/": {
+      "title": "OpenAI abandons yet another side quest: ChatGPT’s erotic mode",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://www.theverge.com/tech/901461/wikipedia-ai-generated-article-ban": {
+      "title": "Wikipedia bans AI-generated articles",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/03/26/wikipedia-cracks-down-on-the-use-of-ai-in-article-writing/": {
+      "title": "Wikipedia cracks down on the use of AI in article writing",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/902085/google-gemini-import-memory-chat-history": {
+      "title": "Google is making it easier to import another AI’s memory into Gemini",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://news.aibase.com/zh/news/26595": {
+      "title": "谷歌 TurboQuant 重磅发布：LLM 键值缓存内存压缩 6 倍、速度提升 8 倍，零精度损失、无需训练！谷歌推出TurboQuant算法，通过PolarQuant和QJL技术，将大语言模型推理中的键值缓存内存需求降低至少6倍，在H100 GPU上注意力计算速度提升最高8倍，且保持零精度损失。这一突破有望降低AI部署成本，加速长上下文应用发展。 刚刚 8.5K",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://news.aibase.com/zh/news/26579": {
+      "title": "内存焦虑终结者：谷歌发布 TurboQuant 让大模型瘦身六倍谷歌推出TurboQuant技术，通过压缩KV缓存，有效解决大语言模型推理中的内存瓶颈问题，可在不降低精度的前提下大幅减少内存占用，提升处理长文本和复杂任务的效率。 51 分钟前 12.4K",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://36kr.com/p/3739420555788544": {
+      "title": "谷歌突破性算法震惊硅谷",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://36kr.com/p/3739405331235075": {
+      "title": "谷歌一篇论文引爆存储芯片崩盘，AI内存需求暴降6倍，推理狂飙8倍",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://www.wired.com/story/openclaw-ai-agent-manipulation-security-northeastern-study/": {
+      "title": "OpenClaw Agents Can Be Guilt-Tripped Into Self-Sabotage",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2603.22305": {
+      "title": "CN-Buzz2Portfolio: A Chinese-Market Dataset and Benchmark for LLM-Based Macro and Sector Asset Allocation from Daily Trending Financial News",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2603.23234": {
+      "title": "MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2603.22918": {
+      "title": "EVA: Efficient Reinforcement Learning for End-to-End Video Agent",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2603.22309": {
+      "title": "UniFluids: Unified Neural Operator Learning with Conditional Flow-matching",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "https://aitntnews.com/newDetail.html?newId=23453": {
+      "title": "当所有人都在买AI工具，Salesforce已经在交付AI员工了",
+      "at": "2026-03-27",
+      "edition": "morning"
     }
   },
   "publishedSignatures": {
@@ -14122,6 +14549,81 @@
     "812f8ea0f94b6856": {
       "title": "“龙虾”踢了Anthropic一脚，智能体大战升级",
       "at": "2026-03-26",
+      "edition": "morning"
+    },
+    "a962933ff40cc0b2": {
+      "title": "OpenAI shelves erotic chatbot &#8216;indefinitely&#8217;",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "44f3222b9a2f1821": {
+      "title": "OpenAI abandons yet another side quest: ChatGPT’s erotic mode",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "f911120fbc0d77fa": {
+      "title": "Wikipedia bans AI-generated articles",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "0be1f6fdb0d4b666": {
+      "title": "Wikipedia cracks down on the use of AI in article writing",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "0f7cfb4e5fac268c": {
+      "title": "Google is making it easier to import another AI’s memory into Gemini",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "186396267b4b52a4": {
+      "title": "谷歌 TurboQuant 重磅发布：LLM 键值缓存内存压缩 6 倍、速度提升 8 倍，零精度损失、无需训练！谷歌推出TurboQuant算法，通过PolarQuant和QJL技术，将大语言模型推理中的键值缓存内存需求降低至少6倍，在H100 GPU上注意力计算速度提升最高8倍，且保持零精度损失。这一突破有望降低AI部署成本，加速长上下文应用发展。 刚刚 8.5K",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "b71a022ad41641d0": {
+      "title": "内存焦虑终结者：谷歌发布 TurboQuant 让大模型瘦身六倍谷歌推出TurboQuant技术，通过压缩KV缓存，有效解决大语言模型推理中的内存瓶颈问题，可在不降低精度的前提下大幅减少内存占用，提升处理长文本和复杂任务的效率。 51 分钟前 12.4K",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "8f28c50626a24f2f": {
+      "title": "谷歌突破性算法震惊硅谷",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "136e8e707b3d356f": {
+      "title": "谷歌一篇论文引爆存储芯片崩盘，AI内存需求暴降6倍，推理狂飙8倍",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "98645803bd51dcd4": {
+      "title": "OpenClaw Agents Can Be Guilt-Tripped Into Self-Sabotage",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "6f80a6d7d2e03b8b": {
+      "title": "CN-Buzz2Portfolio: A Chinese-Market Dataset and Benchmark for LLM-Based Macro and Sector Asset Allocation from Daily Trending Financial News",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "51c858accc9be315": {
+      "title": "MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "cff7b677ce582bea": {
+      "title": "EVA: Efficient Reinforcement Learning for End-to-End Video Agent",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "c32932f09a216f6b": {
+      "title": "UniFluids: Unified Neural Operator Learning with Conditional Flow-matching",
+      "at": "2026-03-27",
+      "edition": "morning"
+    },
+    "e8cfde8aa30db54a": {
+      "title": "当所有人都在买AI工具，Salesforce已经在交付AI员工了",
+      "at": "2026-03-27",
       "edition": "morning"
     }
   },
@@ -15727,6 +16229,81 @@
       "https://36kr.com/p/3738140731064324": {
         "title": "“龙虾”踢了Anthropic一脚，智能体大战升级",
         "at": "2026-03-26",
+        "edition": "morning"
+      },
+      "https://www.theverge.com/ai-artificial-intelligence/901293/openai-adult-mode-erotic-chatbot-shelved-indefinitely": {
+        "title": "OpenAI shelves erotic chatbot &#8216;indefinitely&#8217;",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/03/26/openai-abandons-yet-another-side-quest-chatgpts-erotic-mode/": {
+        "title": "OpenAI abandons yet another side quest: ChatGPT’s erotic mode",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://www.theverge.com/tech/901461/wikipedia-ai-generated-article-ban": {
+        "title": "Wikipedia bans AI-generated articles",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/03/26/wikipedia-cracks-down-on-the-use-of-ai-in-article-writing/": {
+        "title": "Wikipedia cracks down on the use of AI in article writing",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://www.theverge.com/ai-artificial-intelligence/902085/google-gemini-import-memory-chat-history": {
+        "title": "Google is making it easier to import another AI’s memory into Gemini",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://news.aibase.com/zh/news/26595": {
+        "title": "谷歌 TurboQuant 重磅发布：LLM 键值缓存内存压缩 6 倍、速度提升 8 倍，零精度损失、无需训练！谷歌推出TurboQuant算法，通过PolarQuant和QJL技术，将大语言模型推理中的键值缓存内存需求降低至少6倍，在H100 GPU上注意力计算速度提升最高8倍，且保持零精度损失。这一突破有望降低AI部署成本，加速长上下文应用发展。 刚刚 8.5K",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://news.aibase.com/zh/news/26579": {
+        "title": "内存焦虑终结者：谷歌发布 TurboQuant 让大模型瘦身六倍谷歌推出TurboQuant技术，通过压缩KV缓存，有效解决大语言模型推理中的内存瓶颈问题，可在不降低精度的前提下大幅减少内存占用，提升处理长文本和复杂任务的效率。 51 分钟前 12.4K",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://36kr.com/p/3739420555788544": {
+        "title": "谷歌突破性算法震惊硅谷",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://36kr.com/p/3739405331235075": {
+        "title": "谷歌一篇论文引爆存储芯片崩盘，AI内存需求暴降6倍，推理狂飙8倍",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://www.wired.com/story/openclaw-ai-agent-manipulation-security-northeastern-study/": {
+        "title": "OpenClaw Agents Can Be Guilt-Tripped Into Self-Sabotage",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2603.22305": {
+        "title": "CN-Buzz2Portfolio: A Chinese-Market Dataset and Benchmark for LLM-Based Macro and Sector Asset Allocation from Daily Trending Financial News",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2603.23234": {
+        "title": "MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2603.22918": {
+        "title": "EVA: Efficient Reinforcement Learning for End-to-End Video Agent",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2603.22309": {
+        "title": "UniFluids: Unified Neural Operator Learning with Conditional Flow-matching",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "https://aitntnews.com/newDetail.html?newId=23453": {
+        "title": "当所有人都在买AI工具，Salesforce已经在交付AI员工了",
+        "at": "2026-03-27",
         "edition": "morning"
       }
     },
@@ -17443,6 +18020,81 @@
       "812f8ea0f94b6856": {
         "title": "“龙虾”踢了Anthropic一脚，智能体大战升级",
         "at": "2026-03-26",
+        "edition": "morning"
+      },
+      "a962933ff40cc0b2": {
+        "title": "OpenAI shelves erotic chatbot &#8216;indefinitely&#8217;",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "44f3222b9a2f1821": {
+        "title": "OpenAI abandons yet another side quest: ChatGPT’s erotic mode",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "f911120fbc0d77fa": {
+        "title": "Wikipedia bans AI-generated articles",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "0be1f6fdb0d4b666": {
+        "title": "Wikipedia cracks down on the use of AI in article writing",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "0f7cfb4e5fac268c": {
+        "title": "Google is making it easier to import another AI’s memory into Gemini",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "186396267b4b52a4": {
+        "title": "谷歌 TurboQuant 重磅发布：LLM 键值缓存内存压缩 6 倍、速度提升 8 倍，零精度损失、无需训练！谷歌推出TurboQuant算法，通过PolarQuant和QJL技术，将大语言模型推理中的键值缓存内存需求降低至少6倍，在H100 GPU上注意力计算速度提升最高8倍，且保持零精度损失。这一突破有望降低AI部署成本，加速长上下文应用发展。 刚刚 8.5K",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "b71a022ad41641d0": {
+        "title": "内存焦虑终结者：谷歌发布 TurboQuant 让大模型瘦身六倍谷歌推出TurboQuant技术，通过压缩KV缓存，有效解决大语言模型推理中的内存瓶颈问题，可在不降低精度的前提下大幅减少内存占用，提升处理长文本和复杂任务的效率。 51 分钟前 12.4K",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "8f28c50626a24f2f": {
+        "title": "谷歌突破性算法震惊硅谷",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "136e8e707b3d356f": {
+        "title": "谷歌一篇论文引爆存储芯片崩盘，AI内存需求暴降6倍，推理狂飙8倍",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "98645803bd51dcd4": {
+        "title": "OpenClaw Agents Can Be Guilt-Tripped Into Self-Sabotage",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "6f80a6d7d2e03b8b": {
+        "title": "CN-Buzz2Portfolio: A Chinese-Market Dataset and Benchmark for LLM-Based Macro and Sector Asset Allocation from Daily Trending Financial News",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "51c858accc9be315": {
+        "title": "MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "cff7b677ce582bea": {
+        "title": "EVA: Efficient Reinforcement Learning for End-to-End Video Agent",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "c32932f09a216f6b": {
+        "title": "UniFluids: Unified Neural Operator Learning with Conditional Flow-matching",
+        "at": "2026-03-27",
+        "edition": "morning"
+      },
+      "e8cfde8aa30db54a": {
+        "title": "当所有人都在买AI工具，Salesforce已经在交付AI员工了",
+        "at": "2026-03-27",
         "edition": "morning"
       }
     },
