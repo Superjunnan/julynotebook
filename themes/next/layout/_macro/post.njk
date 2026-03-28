@@ -171,14 +171,14 @@
           <div class="post-nav">
             <div class="post-nav-item">
               {%- if prev %}
-                <a href="{{ url_for(prev.path) }}" rel="prev" title="{{ escape_html(prev.app_display_title or prev.title or '') }}">
+                <a href="{{ url_for(prev.path) }}" rel="prev" data-scroll-top="true" title="{{ escape_html(prev.app_display_title or prev.title or '') }}">
                   <i class="fa fa-angle-left"></i> <span class="post-nav-link-text">{{ prev.app_display_title or prev.title }}</span>
                 </a>
               {%- endif %}
             </div>
             <div class="post-nav-item">
               {%- if next %}
-                <a href="{{ url_for(next.path) }}" rel="next" title="{{ escape_html(next.app_display_title or next.title or '') }}">
+                <a href="{{ url_for(next.path) }}" rel="next" data-scroll-top="true" title="{{ escape_html(next.app_display_title or next.title or '') }}">
                   <span class="post-nav-link-text">{{ next.app_display_title or next.title }}</span> <i class="fa fa-angle-right"></i>
                 </a>
               {%- endif %}

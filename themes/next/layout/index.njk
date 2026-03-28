@@ -34,7 +34,7 @@
           </div>
 
           <div class="app-card__summary-label">
-            {% if post.app_type == 'daily' %}今日重点：{% else %}文章概述：{% endif %}
+            {% if post.app_type == 'daily' %}今日主线：{% else %}文章概述：{% endif %}
           </div>
           <div class="app-card__summary">{{ post.app_excerpt | safe }}</div>
 

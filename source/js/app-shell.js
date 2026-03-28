@@ -1,5 +1,6 @@
 (() => {
   const 视图类名前缀 = 'app-view-';
+  const 下一页回顶标记 = 'app-scroll-top-on-next-page';
 
   function 读取根路径() {
     const root = window.CONFIG && CONFIG.root ? String(CONFIG.root) : '/';
@@ -15,6 +16,10 @@
     } catch {
       return {};
     }
+  }
+
+  function 是桌面固定左栏模式() {
+    return Boolean(window.matchMedia && window.matchMedia('(min-width: 1024px)').matches);
   }
 
   function 规范路径(pathname, root) {
@@ -123,7 +128,16 @@
     if (!抽屉) {
       抽屉 = document.createElement('aside');
       抽屉.className = 'app-drawer';
-      document.body.appendChild(抽屉);
+    }
+    const 桌面容器 = 是桌面固定左栏模式() ? document.querySelector('.main') : null;
+    const 目标容器 = 桌面容器 || document.body;
+    if (抽屉.parentElement !== 目标容器) {
+      if (桌面容器) {
+        const 主内容区 = 桌面容器.querySelector('.main-inner');
+        桌面容器.insertBefore(抽屉, 主内容区 || null);
+      } else {
+        目标容器.appendChild(抽屉);
+      }
     }
     抽屉.innerHTML = 生成抽屉菜单(root);
     return 抽屉;
@@ -142,29 +156,36 @@
   function 确保页头操作区() {
     const 品牌容器 = document.querySelector('.site-brand-container');
     if (!品牌容器) return {};
+    const 定位容器 = 品牌容器.querySelector('.site-meta') || 品牌容器;
 
-    let 左按钮 = 品牌容器.querySelector('.app-header-action-left');
+    let 左按钮 = 定位容器.querySelector('.app-header-action-left') || 品牌容器.querySelector('.app-header-action-left');
     if (!左按钮) {
       左按钮 = document.createElement('button');
       左按钮.type = 'button';
       左按钮.className = 'app-header-action app-header-action-left';
-      品牌容器.appendChild(左按钮);
+    }
+    if (左按钮.parentElement !== 定位容器) {
+      定位容器.appendChild(左按钮);
     }
 
-    let 右按钮 = 品牌容器.querySelector('.app-header-action-right');
+    let 右按钮 = 定位容器.querySelector('.app-header-action-right') || 品牌容器.querySelector('.app-header-action-right');
     if (!右按钮) {
       右按钮 = document.createElement('button');
       右按钮.type = 'button';
       右按钮.className = 'app-header-action app-header-action-right';
-      品牌容器.appendChild(右按钮);
+    }
+    if (右按钮.parentElement !== 定位容器) {
+      定位容器.appendChild(右按钮);
     }
 
-    let 次按钮 = 品牌容器.querySelector('.app-header-action-secondary');
+    let 次按钮 = 定位容器.querySelector('.app-header-action-secondary') || 品牌容器.querySelector('.app-header-action-secondary');
     if (!次按钮) {
       次按钮 = document.createElement('button');
       次按钮.type = 'button';
       次按钮.className = 'app-header-action app-header-action-secondary';
-      品牌容器.appendChild(次按钮);
+    }
+    if (次按钮.parentElement !== 定位容器) {
+      定位容器.appendChild(次按钮);
     }
 
     return { 左按钮, 次按钮, 右按钮 };
@@ -252,7 +273,8 @@
 
     window.setTimeout(() => {
       if (window.location.hash !== 原始锚点) {
-        window.location.hash = hash;
+        const 基础路径 = `${window.location.pathname}${window.location.search}`;
+        window.history.replaceState(window.history.state, '', `${基础路径}${原始锚点}`);
       }
 
       window.requestAnimationFrame(() => {
@@ -261,8 +283,56 @@
     }, 80);
   }
 
+  function 标记下一页回顶() {
+    try {
+      window.sessionStorage.setItem(下一页回顶标记, '1');
+    } catch {
+      // ignore sessionStorage errors
+    }
+  }
+
+  function 处理下一页回顶() {
+    let 需要回顶 = false;
+    try {
+      需要回顶 = window.sessionStorage.getItem(下一页回顶标记) === '1';
+      if (需要回顶) {
+        window.sessionStorage.removeItem(下一页回顶标记);
+      }
+    } catch {
+      需要回顶 = false;
+    }
+
+    if (!需要回顶) return;
+
+    const 执行回顶 = () => {
+      const 滚动容器 = document.scrollingElement || document.documentElement || document.body;
+      if (滚动容器) {
+        滚动容器.scrollTop = 0;
+      }
+      window.scrollTo({
+        top: 0,
+        behavior: 'auto',
+      });
+    };
+
+    window.requestAnimationFrame(() => {
+      执行回顶();
+      window.setTimeout(执行回顶, 60);
+    });
+  }
+
   function 同步左侧按钮(view, 左按钮, 次按钮, root, 左侧抽屉, 遮罩层) {
     if (!左按钮) return;
+
+    if (是桌面固定左栏模式()) {
+      左按钮.hidden = true;
+      左按钮.onclick = null;
+      if (次按钮) {
+        次按钮.hidden = true;
+        次按钮.onclick = null;
+      }
+      return;
+    }
 
     if (view === 'home' || view === 'daily-list' || view === 'note-list' || view === 'iteration-log' || view === 'resume') {
       左按钮.hidden = false;
@@ -343,6 +413,17 @@
     document.addEventListener('pjax:send', 关闭所有抽屉);
   }
 
+  function 初始化页面跳转回顶() {
+    if (document.body.dataset.scrollTopBound === 'true') return;
+
+    document.body.dataset.scrollTopBound = 'true';
+    document.addEventListener('click', event => {
+      const 链接 = event.target.closest('a[data-scroll-top="true"]');
+      if (!链接) return;
+      标记下一页回顶();
+    });
+  }
+
   function 初始化目录抽屉交互(目录抽屉) {
     if (!目录抽屉 || 目录抽屉.dataset.bound === 'true') return;
 
@@ -369,11 +450,16 @@
 
     初始化遮罩关闭(遮罩层);
     初始化目录抽屉交互(目录抽屉);
+    初始化页面跳转回顶();
     同步视图类名(view);
     同步页头标题(读取页头标题(view, pageConfig));
     同步左侧按钮(view, 左按钮, 次按钮, root, 左侧抽屉, 遮罩层);
     同步右按钮(view, 右按钮, 目录抽屉, 遮罩层);
     同步菜单高亮(root);
+    if (是桌面固定左栏模式()) {
+      document.body.classList.remove('app-noscroll');
+    }
+    处理下一页回顶();
   }
 
   document.addEventListener('DOMContentLoaded', 初始化AppShell);

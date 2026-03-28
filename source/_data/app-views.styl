@@ -55,11 +55,25 @@ $view-tab-text = #7c7c81
   min-height 56px
   border-radius 18px
   background #ffffff
-  box-shadow 0 10px 22px rgba(121, 113, 112, 0.05)
+  box-shadow none
+  border-bottom none !important
+  border none !important
   color #4e4e53
   font-size 1rem
   font-weight 700
   text-decoration none
+
+.home-action-link:hover
+  border none !important
+  border-bottom none !important
+  text-decoration none !important
+  color #4e4e53
+
+.home-action-link:focus-visible
+  border none !important
+  border-bottom none !important
+  text-decoration none !important
+  color #4e4e53
 
 .app-feed-hint
   margin-top -2px
@@ -85,30 +99,68 @@ $view-tab-text = #7c7c81
 .app-filter-hidden
   display none !important
 
-.category.posts-collapse
+.category.category-app-list
   margin-top 0 !important
   padding-top 0 !important
 
-.category.posts-collapse::before,
-.category.posts-collapse::after
+.category.category-app-list::before,
+.category.category-app-list::after
   display none !important
 
-.category.posts-collapse .post-block
+.category.category-app-list .post-block
   padding 0
   background transparent
   box-shadow none
   margin 0
 
-.category.posts-collapse .post-content
-  margin-top 0
+.category.category-app-list > .app-list-shell
+  margin 0 !important
+  padding 0 !important
+  width 100%
+
+.category.category-app-list .post-content
+  margin 0 !important
+  padding 0 !important
+  position static !important
+
+.category.category-app-list .post-block:first-of-type
+  padding-top 0 !important
+
+.category.category-app-list .post-block::before,
+.category.category-app-list .post-block:before,
+.category.category-app-list .post-block::after,
+.category.category-app-list .post-block:after,
+.category.category-app-list .post-content::before,
+.category.category-app-list .post-content:before,
+.category.category-app-list .post-content .post-header,
+.category.category-app-list .post-content .post-header::before,
+.category.category-app-list .post-content .collection-header,
+.category.category-app-list .post-content .collection-header::before,
+.category.category-app-list .post-content .collection-title::before,
+.category.category-app-list .post-content .collection-year::before
+  display none !important
+  content none !important
+  width 0 !important
+  height 0 !important
+  margin 0 !important
+  background transparent !important
+  position static !important
+
+.category.category-app-list .post-content .post-header
+  border 0 !important
+  margin 0 !important
+  padding 0 !important
 
 @media (max-width: 767px)
   .home-actions-row
     grid-template-columns repeat(2, minmax(0, 1fr))
 
-@media (min-width: 992px)
+@media (min-width: 1024px)
   .app-view
     gap 22px
+
+body.app-view-iteration-log .post-block:first-of-type
+  padding-top 0 !important
 
 .iteration-page
   display flex
@@ -184,3 +236,48 @@ $view-tab-text = #7c7c81
 
 .iteration-entry-card code
   font-size .85em
+
+@media (min-width: 1024px)
+  body.app-view-iteration-log .post-block
+    width 100% !important
+    margin 0 !important
+    padding 0 !important
+    background transparent !important
+    box-shadow none !important
+
+  body.app-view-iteration-log .post-body
+    visibility visible !important
+    opacity 1 !important
+    margin 0 !important
+    text-align left !important
+
+  body.app-view-iteration-log .iteration-page
+    gap 20px
+
+  body.app-view-iteration-log .iteration-timeline
+    gap 20px
+    padding-left 0
+
+  body.app-view-iteration-log .iteration-timeline::before
+    left 86px
+    top 10px
+    bottom 10px
+
+  body.app-view-iteration-log .iteration-entry
+    display grid
+    grid-template-columns 96px minmax(0, 1fr)
+    column-gap 18px
+    align-items start
+
+  body.app-view-iteration-log .iteration-entry::before
+    left 81px
+    top 10px
+
+  body.app-view-iteration-log .iteration-entry-date
+    margin 0
+    padding-right 18px
+    text-align right
+    align-self start
+
+  body.app-view-iteration-log .iteration-entry-card
+    margin 0

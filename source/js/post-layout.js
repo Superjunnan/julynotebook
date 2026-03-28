@@ -43,7 +43,7 @@
       const 容器 = document.createElement('div');
       容器.className = 'digest-signal-compact';
 
-      条目列表.slice(0, 6).forEach((_, index) => {
+      条目列表.slice(0, 4).forEach((_, index) => {
         const 标签 = document.createElement('span');
         标签.className = 'digest-signal-chip';
         标签.textContent = String(index + 1).padStart(2, '0');

@@ -1,117 +1,120 @@
 {% extends '_layout.njk' %}
 
+{%- set isDailyCategory = page.category == 'AI 日报' or page.category == '每日资讯' -%}
+{%- set isNoteCategory = page.category == 'AI 笔记' or page.category == 'july笔记' -%}
+
 {% block title %}{{ __('title.category') }}: {{ page.category }} | {{ title }}{% endblock %}
 
-{% block class %}category posts-collapse{% endblock %}
+{% block class %}{% if isDailyCategory or isNoteCategory %}category category-app-list{% else %}category posts-collapse{% endif %}{% endblock %}
 
 {% block content %}
-  {%- set isDaily = page.category == 'AI 日报' or page.category == '每日资讯' %}
-  {%- set isNote = page.category == 'AI 笔记' or page.category == 'july笔记' %}
+  {%- set isDaily = isDailyCategory %}
+  {%- set isNote = isNoteCategory %}
 
-  <div class="post-block">
-    <div class="post-content">
-      {% if isDaily %}
-        {%- set dailyGroups = site.daily_archive_view %}
+  {% if isDaily %}
+    {%- set dailyGroups = site.daily_archive_view %}
 
-        <section class="app-view app-view-daily">
-          {% for group in dailyGroups %}
-            <section class="app-month-group">
-              <h2 class="app-month-title">{{ group.month }}</h2>
+    <section class="app-list-shell app-view app-view-daily">
+      {% for group in dailyGroups %}
+        <section class="app-month-group">
+          <h2 class="app-month-title">{{ group.month }}</h2>
 
-              {% if group.is_expanded %}
-                <div class="app-feed">
-                  {% for post in group.posts %}
-                    <a href="{{ url_for(post.path) }}" class="app-card app-card--daily{% if post.digest_edition == 'evening' %} app-card--evening{% endif %} post-title-link">
-                      <div class="app-card__header">
-                        <span class="app-card__icon" aria-hidden="true">{{ post.app_badge.icon or '🤖' }}</span>
-                        <h3 class="app-card__title">{{ post.app_display_title or post.title }}</h3>
-                        <span class="app-card__badge">{{ post.app_badge.text or 'AI 日报' }}</span>
-                      </div>
+          {% if group.is_expanded %}
+            <div class="app-feed">
+              {% for post in group.posts %}
+                <a href="{{ url_for(post.path) }}" class="app-card app-card--daily{% if post.digest_edition == 'evening' %} app-card--evening{% endif %} post-title-link">
+                  <div class="app-card__header">
+                    <span class="app-card__icon" aria-hidden="true">{{ post.app_badge.icon or '🤖' }}</span>
+                    <h3 class="app-card__title">{{ post.app_display_title or post.title }}</h3>
+                    <span class="app-card__badge">{{ post.app_badge.text or 'AI 日报' }}</span>
+                  </div>
 
-                      <div class="app-card__meta">
-                        <span><i class="far fa-calendar"></i>{{ date(post.date, 'YYYY-MM-DD HH:mm') }}</span>
-                        {% if post.app_wordcount_fmt %}
-                          <span><i class="far fa-file-word"></i>{{ post.app_wordcount_fmt }}</span>
-                        {% endif %}
-                        {% if post.app_reading_time %}
-                          <span><i class="far fa-clock"></i>{{ post.app_reading_time }} 分钟</span>
-                        {% endif %}
-                      </div>
+                  <div class="app-card__meta">
+                    <span><i class="far fa-calendar"></i>{{ date(post.date, 'YYYY-MM-DD HH:mm') }}</span>
+                    {% if post.app_wordcount_fmt %}
+                      <span><i class="far fa-file-word"></i>{{ post.app_wordcount_fmt }}</span>
+                    {% endif %}
+                    {% if post.app_reading_time %}
+                      <span><i class="far fa-clock"></i>{{ post.app_reading_time }} 分钟</span>
+                    {% endif %}
+                  </div>
 
-                      <div class="app-card__summary-label">今日重点：</div>
-                      <div class="app-card__summary">{{ post.app_excerpt | safe }}</div>
+                  <div class="app-card__summary-label">今日主线：</div>
+                  <div class="app-card__summary">{{ post.app_excerpt | safe }}</div>
 
-                      <div class="app-card__footer">
-                        <span>共 {{ post.app_entry_count or 0 }} 条记录</span>
-                        <span class="app-card__footer-arrow">阅读全文 &gt;</span>
-                      </div>
-                    </a>
-                  {% endfor %}
-                </div>
-              {% else %}
-                <div class="app-compact-list">
-                  {% for post in group.posts %}
-                    <a href="{{ url_for(post.path) }}" class="app-compact-item post-title-link">
-                      <span class="app-compact-item__date">{{ date(post.date, 'MM-DD') }}</span>
-                      <span class="app-compact-item__title">{{ post.app_display_title or post.title }}</span>
-                      <span class="app-compact-item__arrow"><i class="fa fa-angle-right"></i></span>
-                    </a>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </section>
-          {% endfor %}
-        </section>
-      {% elif isNote %}
-        {%- set notesData = site.notes_archive_view %}
-
-        <section class="app-view app-view-notes">
-          <div class="note-top-tabs app-tab-strip" role="tablist" aria-label="笔记标签筛选">
-            <button type="button" class="app-tab note-tab is-active" data-tag="all">全部</button>
-            {% for tag in notesData.tags %}
-              <button type="button" class="app-tab note-tab" data-tag="{{ tag }}">{{ tag }}</button>
-            {% endfor %}
-          </div>
-
-          <div id="note-posts-container" class="app-feed">
-            {%- for post in notesData.posts %}
-              <a href="{{ url_for(post.path) }}" class="app-card app-card--note note-card post-title-link" data-tags="{{ post.app_tags_str }}">
-                <div class="app-card__header">
-                  <span class="app-card__icon" aria-hidden="true">📔</span>
-                  <h2 class="app-card__title">{{ post.title }}</h2>
-                  <span class="app-card__badge">AI 笔记</span>
-                </div>
-
-                <div class="app-card__meta">
-                  <span><i class="far fa-calendar"></i>{{ date(post.date, 'YYYY-MM-DD HH:mm') }}</span>
-                  {% if post.app_wordcount_fmt %}
-                    <span><i class="far fa-file-word"></i>{{ post.app_wordcount_fmt }}</span>
-                  {% endif %}
-                  {% if post.app_reading_time %}
-                    <span><i class="far fa-clock"></i>{{ post.app_reading_time }} 分钟</span>
-                  {% endif %}
-                </div>
-
-                <div class="app-card__summary-label">文章概述：</div>
-                <div class="app-card__summary">{{ post.app_excerpt | safe }}</div>
-
-                <div class="app-card__footer">
-                  <span class="app-card__tags">
-                    {% for tag in post.tagsList %}
-                      <span class="app-tag-chip"># {{ tag }}</span>
-                    {% endfor %}
-                  </span>
-                  <span class="app-card__footer-arrow">阅读全文 &gt;</span>
-                </div>
-              </a>
-            {%- endfor %}
-          </div>
-
-          {% if not notesData.posts.length %}
-            <div class="app-empty-state">当前暂无可展示的笔记。</div>
+                  <div class="app-card__footer">
+                    <span>共 {{ post.app_entry_count or 0 }} 条记录</span>
+                    <span class="app-card__footer-arrow">阅读全文 &gt;</span>
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
+          {% else %}
+            <div class="app-compact-list">
+              {% for post in group.posts %}
+                <a href="{{ url_for(post.path) }}" class="app-compact-item post-title-link">
+                  <span class="app-compact-item__date">{{ date(post.date, 'MM-DD') }}</span>
+                  <span class="app-compact-item__title">{{ post.app_display_title or post.title }}</span>
+                  <span class="app-compact-item__arrow"><i class="fa fa-angle-right"></i></span>
+                </a>
+              {% endfor %}
+            </div>
           {% endif %}
         </section>
-      {% else %}
+      {% endfor %}
+    </section>
+  {% elif isNote %}
+    {%- set notesData = site.notes_archive_view %}
+
+    <section class="app-list-shell app-view app-view-notes">
+      <div class="note-top-tabs app-tab-strip" role="tablist" aria-label="笔记标签筛选">
+        <button type="button" class="app-tab note-tab is-active" data-tag="all">全部</button>
+        {% for tag in notesData.tags %}
+          <button type="button" class="app-tab note-tab" data-tag="{{ tag }}">{{ tag }}</button>
+        {% endfor %}
+      </div>
+
+      <div id="note-posts-container" class="app-feed">
+        {%- for post in notesData.posts %}
+          <a href="{{ url_for(post.path) }}" class="app-card app-card--note note-card post-title-link" data-tags="{{ post.app_tags_str }}">
+            <div class="app-card__header">
+              <span class="app-card__icon" aria-hidden="true">📔</span>
+              <h2 class="app-card__title">{{ post.title }}</h2>
+              <span class="app-card__badge">AI 笔记</span>
+            </div>
+
+            <div class="app-card__meta">
+              <span><i class="far fa-calendar"></i>{{ date(post.date, 'YYYY-MM-DD HH:mm') }}</span>
+              {% if post.app_wordcount_fmt %}
+                <span><i class="far fa-file-word"></i>{{ post.app_wordcount_fmt }}</span>
+              {% endif %}
+              {% if post.app_reading_time %}
+                <span><i class="far fa-clock"></i>{{ post.app_reading_time }} 分钟</span>
+              {% endif %}
+            </div>
+
+            <div class="app-card__summary-label">文章概述：</div>
+            <div class="app-card__summary">{{ post.app_excerpt | safe }}</div>
+
+            <div class="app-card__footer">
+              <span class="app-card__tags">
+                {% for tag in post.tagsList %}
+                  <span class="app-tag-chip"># {{ tag }}</span>
+                {% endfor %}
+              </span>
+              <span class="app-card__footer-arrow">阅读全文 &gt;</span>
+            </div>
+          </a>
+        {%- endfor %}
+      </div>
+
+      {% if not notesData.posts.length %}
+        <div class="app-empty-state">当前暂无可展示的笔记。</div>
+      {% endif %}
+    </section>
+  {% else %}
+    <div class="post-block">
+      <div class="post-content">
         {% import '_macro/post-collapse.njk' as post_template with context %}
         <div class="collection-title">
           <h1 class="collection-header">
@@ -120,9 +123,9 @@
           </h1>
         </div>
         {{ post_template.render(page.posts) }}
-      {% endif %}
+      </div>
     </div>
-  </div>
+  {% endif %}
 
   {%- if not isDaily and not isNote %}
     {%- include '_partials/pagination.njk' -%}

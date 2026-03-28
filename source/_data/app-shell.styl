@@ -26,7 +26,6 @@ body.app-noscroll
 .headband,
 .sidebar,
 .sidebar-toggle,
-.back-to-top,
 .site-nav,
 .site-author-name
   display none !important
@@ -44,8 +43,8 @@ body.app-noscroll
   z-index 1060
   min-height 56px !important
   padding-top unquote('env(safe-area-inset-top, 0px)') !important
-  background rgba(247, 248, 250, 0.96) !important
-  backdrop-filter blur(18px)
+  background rgba(247, 248, 250, 0.88) !important
+  backdrop-filter blur(14px)
 
 .site-nav-toggle
   display none !important
@@ -155,6 +154,46 @@ body.app-noscroll
   opacity 1
   visibility visible
 
+.back-to-top
+  position fixed !important
+  right 18px
+  bottom 22px
+  display flex !important
+  align-items center
+  justify-content center
+  width 42px
+  height 42px
+  border-radius 999px
+  background rgba(255, 255, 255, 0.72)
+  box-shadow 0 10px 24px rgba(121, 113, 112, 0.08)
+  color #8b8c92 !important
+  border none !important
+  backdrop-filter blur(12px)
+  opacity 0
+  visibility hidden
+  transform translateY(8px)
+  transition opacity .22s ease, visibility .22s ease, transform .22s ease
+  z-index 1040
+
+.back-to-top span
+  display none !important
+
+.back-to-top .fa
+  width auto !important
+  font-size 1rem
+
+.back-to-top:hover
+  color #6f7076 !important
+  border none !important
+
+.back-to-top.back-to-top-on
+  opacity 1
+  visibility visible
+  transform translateY(0)
+
+body:not(.app-view-home):not(.app-view-daily-list):not(.app-view-note-list):not(.app-view-daily-post):not(.app-view-note-post):not(.app-view-post) .back-to-top
+  display none !important
+
 .app-drawer,
 .app-toc-drawer
   position fixed
@@ -250,21 +289,336 @@ body.app-noscroll
   background $app-drawer-active
   color $app-primary-text
 
-@media (min-width: 992px)
+.post-content::before,
+.post-content:before,
+.posts-collapse .post-content::before,
+.posts-collapse .post-content:before,
+.category.posts-collapse .post-content::before,
+.category.posts-collapse .post-content:before,
+.app-view-daily-list .posts-collapse .post-content::before,
+.app-view-daily-list .posts-collapse .post-content:before,
+.app-view-note-list .posts-collapse .post-content::before,
+.app-view-note-list .posts-collapse .post-content:before
+  display none !important
+  content none !important
+  width 0 !important
+  height 0 !important
+  margin 0 !important
+  background transparent !important
+  position static !important
+  opacity 0 !important
+  border 0 !important
+  box-shadow none !important
+  left auto !important
+  right auto !important
+  top auto !important
+  bottom auto !important
+
+body.app-view-daily-list .post-content::before,
+body.app-view-daily-list .post-content:before,
+body.app-view-daily-list .post-content::after,
+body.app-view-daily-list .post-content:after,
+body.app-view-daily-list .collection-year::before,
+body.app-view-daily-list .collection-year:before,
+body.app-view-daily-list .collection-year::after,
+body.app-view-daily-list .collection-year:after,
+body.app-view-note-list .post-content::before,
+body.app-view-note-list .post-content:before,
+body.app-view-note-list .post-content::after,
+body.app-view-note-list .post-content:after,
+body.app-view-note-list .collection-year::before,
+body.app-view-note-list .collection-year:before,
+body.app-view-note-list .collection-year::after,
+body.app-view-note-list .collection-year:after
+  display none !important
+  content none !important
+  width 0 !important
+  height 0 !important
+  margin 0 !important
+  background transparent !important
+  position static !important
+  border 0 !important
+  box-shadow none !important
+  opacity 0 !important
+
+.category.category-app-list .post-content,
+.category.category-app-list .posts-collapse .post-content,
+.category.category-app-list .app-view-daily .post-content,
+.category.category-app-list .app-view-notes .post-content
+  margin 0 !important
+  margin-left 0 !important
+  margin-right 0 !important
+  padding 0 !important
+  padding-left 0 !important
+  border-left 0 !important
+  background transparent !important
+  box-shadow none !important
+  position static !important
+
+.category.category-app-list .post-block,
+.category.category-app-list .posts-collapse,
+.category.category-app-list .posts-collapse .post-block,
+.category.category-app-list .posts-collapse .post-content,
+.main-inner.category.category-app-list > .post-block,
+.main-inner.category.category-app-list > .post-block > .post-content
+  margin 0 !important
+  padding 0 !important
+  border 0 !important
+  box-shadow none !important
+  background transparent !important
+  position static !important
+  width 100% !important
+  max-width none !important
+
+.category.category-app-list .post-content::before,
+.category.category-app-list .post-content:before,
+.category.category-app-list .post-block::before,
+.category.category-app-list .post-block:before,
+.category.category-app-list .posts-collapse::before,
+.category.category-app-list .posts-collapse:before,
+.category.category-app-list .posts-collapse .post-content::before,
+.category.category-app-list .posts-collapse .post-content:before,
+.category.category-app-list .app-view-daily .post-content::before,
+.category.category-app-list .app-view-daily .post-content:before,
+.category.category-app-list .app-view-notes .post-content::before,
+.category.category-app-list .app-view-notes .post-content:before,
+.main-inner.category.category-app-list > .post-block > .post-content::before,
+.main-inner.category.category-app-list > .post-block > .post-content:before
+  all unset !important
+  display none !important
+  content none !important
+  width 0 !important
+  height 0 !important
+  margin 0 !important
+  background transparent !important
+  position static !important
+
+@media (min-width: 1024px)
   body
-    padding-top 72px !important
+    padding-top 0 !important
+
+  .app-mask
+    display none !important
+
+  .app-header-action-left,
+  .app-header-action-secondary
+    display none !important
+
+  .main
+    display grid !important
+    grid-template-columns 196px 980px
+    column-gap 12px
+    row-gap 14px
+    align-items start
+    justify-content center
+    position relative
+    width unquote('min(calc(100vw - 64px), 1188px)') !important
+    max-width 1188px !important
+    margin 20px auto 0 !important
+
+  .column
+    display contents !important
+    width auto !important
+    max-width none !important
+    height auto !important
+    min-height auto !important
+    margin 0 !important
+    overflow visible !important
+    visibility visible !important
+    pointer-events auto !important
+
+  .column .header
+    display contents !important
+    margin 0 !important
+    padding 0 !important
+    background transparent !important
+    box-shadow none !important
+
+  .column .site-nav,
+  .site-nav,
+  .column .sidebar,
+  .sidebar,
+  .site-nav-right,
+  .column .site-nav-right
+    display none !important
+
+  .app-drawer
+    grid-column 1
+    grid-row 2
+    position sticky
+    top 0
+    left auto
+    right auto
+    bottom auto
+    width 196px
+    padding 0
+    border-radius 14px
+    background rgba(255, 255, 255, 0.9)
+    box-shadow 0 10px 22px rgba(121, 113, 112, 0.06)
+    transform none !important
+    z-index 1040
+    margin 0
+    box-sizing border-box
+    align-self auto
+    justify-self stretch
+
+  .app-drawer-title
+    display none !important
+
+  .app-drawer-menu
+    gap 6px
+    margin 0
+    padding 8px
+
+  .app-drawer-menu-item
+    padding 11px 14px
+    border-radius 14px
 
   .site-brand-container
-    min-height 64px !important
+    position static !important
+    top auto !important
+    left auto !important
+    right auto !important
+    grid-column 2
+    grid-row 1
+    width 980px !important
+    max-width 980px !important
+    min-height 56px !important
+    margin 0 !important
+    padding-top 0 !important
+    background transparent !important
+    backdrop-filter none
 
   .site-brand-container .site-meta
-    min-height 64px
-    padding 0 92px !important
+    width 100% !important
+    max-width none !important
+    margin 0 !important
+    min-height 56px
+    padding 0 !important
 
-  .site-brand-container .app-header-action
-    height 64px
-    width 48px
+  .site-meta .brand
+    position absolute !important
+    top 0 !important
+    left 50% !important
+    transform translateX(-50%) !important
+    width auto !important
+    height 56px !important
+
+  .main-inner
+    grid-column 2
+    grid-row 2
+    width 980px !important
+    max-width 980px !important
+    min-width 0 !important
+    margin 0 !important
+    padding 0 !important
+
+  .app-header-action-right
+    right 16px !important
 
   .content-wrap
-    max-width 900px !important
-    padding 24px 24px 48px !important
+    width 100% !important
+    max-width none !important
+    margin 0 !important
+    padding 0 0 36px !important
+
+  .footer
+    display grid !important
+    grid-template-columns 196px 980px
+    column-gap 12px
+    justify-content center
+    width unquote('min(calc(100vw - 64px), 1188px)') !important
+    max-width 1188px !important
+    margin 18px auto 0 !important
+    padding-left 0 !important
+    box-sizing border-box
+
+  .footer-inner
+    grid-column 2
+    width 980px !important
+    max-width 980px !important
+    margin 0 !important
+    padding 0 0 18px !important
+    box-sizing border-box
+    display flex
+    flex-direction column
+    align-items center
+    text-align center
+
+  .footer-inner .copyright,
+  .footer-inner .powered-by,
+  .footer-inner .busuanzi-count
+    width auto !important
+    max-width 100%
+    margin-left auto
+    margin-right auto
+    text-align center
+
+  .category.category-app-list .app-view-daily .app-month-group
+    position static
+    display grid
+    grid-template-columns 92px minmax(0, 1fr)
+    column-gap 12px
+    align-items start
+    padding-left 0
+
+  .category.category-app-list .app-view-daily .app-month-title
+    margin 0
+    position static
+    left auto
+    top auto
+    width auto
+    padding-top 64px
+    text-align right
+    font-size 1rem
+    line-height 1.2
+
+  .category.category-app-list .app-view-daily .app-month-group > .app-feed,
+  .category.category-app-list .app-view-daily .app-month-group > .app-compact-list
+    min-width 0
+
+  .category.category-app-list .app-view-daily .app-month-group + .app-month-group
+    margin-top 18px
+
+.posts-collapse .post-content::before,
+.posts-collapse .post-content:before,
+.post-content::before,
+.post-content:before,
+.post-content::after,
+.post-content:after,
+.posts-collapse .post-content::after,
+.posts-collapse .post-content:after,
+.post-block::before,
+.post-block:before,
+.category.posts-collapse .post-content::before,
+.category.posts-collapse .post-content:before,
+.category.posts-collapse .post-content::after,
+.category.posts-collapse .post-content:after,
+.category.category-app-list .post-content::before,
+.category.category-app-list .post-content:before,
+.category.category-app-list .post-content::after,
+.category.category-app-list .post-content:after,
+.category.category-app-list .post-block::before,
+.category.category-app-list .post-block:before,
+.category.category-app-list .post-block::after,
+.category.category-app-list .post-block:after,
+.category.category-app-list .post-content .collection-year::after,
+.category.category-app-list .post-content .collection-year:after,
+.category.category-app-list .post-content .collection-year::before,
+.category.category-app-list .post-content .collection-year:before,
+.posts-collapse .collection-year::before,
+.posts-collapse .collection-year:before,
+.posts-collapse .post-content .collection-year::before,
+.posts-collapse .post-content .collection-year:before,
+.posts-collapse .collection-year::after,
+.posts-collapse .collection-year:after,
+.posts-collapse .post-content .collection-year::after,
+.posts-collapse .post-content .collection-year:after
+  content none !important
+  display none !important
+  width 0 !important
+  height 0 !important
+  opacity 0 !important
+  background transparent !important
+  border 0 !important
+  position static !important

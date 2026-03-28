@@ -92,7 +92,24 @@
     应用筛选(默认值);
   }
 
+  function 清理列表页主题残留类() {
+    const 列表容器 = document.querySelector('.main-inner.category.category-app-list');
+    if (!列表容器) return;
+
+    列表容器.classList.remove('posts-collapse');
+    列表容器.querySelectorAll('.posts-collapse').forEach(node => {
+      node.classList.remove('posts-collapse');
+    });
+    列表容器.querySelectorAll('.post-content').forEach(node => {
+      node.classList.remove('post-content');
+    });
+    列表容器.querySelectorAll('.post-block').forEach(node => {
+      node.classList.remove('post-block');
+    });
+  }
+
   function 初始化视图脚本() {
+    清理列表页主题残留类();
     初始化首页筛选();
     初始化笔记筛选();
   }
