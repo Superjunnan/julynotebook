@@ -40,6 +40,63 @@
       .trim();
   }
 
+  function 确保桌面内容容器() {
+    const 主容器 = document.querySelector('.main');
+    if (!主容器) return null;
+
+    const 列容器 = 主容器.querySelector('.column');
+    const 页头容器 = 列容器 && 列容器.querySelector('.header');
+    const 品牌容器 = document.querySelector('.site-brand-container');
+    const 主内容区 = 主容器.querySelector('.main-inner');
+    let 桌面壳层 = 主容器.querySelector('.app-desktop-shell');
+    let 右侧内容壳层 = 桌面壳层 && 桌面壳层.querySelector('.app-desktop-content-shell');
+
+    if (是桌面固定左栏模式()) {
+      if (!桌面壳层) {
+        桌面壳层 = document.createElement('div');
+        桌面壳层.className = 'app-desktop-shell';
+      }
+
+      if (!右侧内容壳层) {
+        右侧内容壳层 = document.createElement('div');
+        右侧内容壳层.className = 'app-desktop-content-shell';
+        桌面壳层.appendChild(右侧内容壳层);
+      }
+
+      if (桌面壳层.parentElement !== 主容器) {
+        主容器.appendChild(桌面壳层);
+      }
+
+      if (品牌容器) {
+        if (品牌容器.parentElement !== 主容器) {
+          主容器.insertBefore(品牌容器, 桌面壳层);
+        } else if (品牌容器.nextElementSibling !== 桌面壳层) {
+          主容器.insertBefore(品牌容器, 桌面壳层);
+        }
+      }
+
+      if (主内容区 && 主内容区.parentElement !== 右侧内容壳层) {
+        右侧内容壳层.appendChild(主内容区);
+      }
+
+      return { 桌面壳层, 右侧内容壳层 };
+    }
+
+    if (品牌容器 && 页头容器 && 品牌容器.parentElement !== 页头容器) {
+      页头容器.insertBefore(品牌容器, 页头容器.firstChild || null);
+    }
+
+    if (主内容区 && 主内容区.parentElement !== 主容器) {
+      主容器.appendChild(主内容区);
+    }
+
+    if (桌面壳层) {
+      桌面壳层.remove();
+    }
+
+    return null;
+  }
+
   function 读取文章类型() {
     if (document.querySelector('.app-card--daily')) {
       return 'daily-post';
@@ -129,12 +186,11 @@
       抽屉 = document.createElement('aside');
       抽屉.className = 'app-drawer';
     }
-    const 桌面容器 = 是桌面固定左栏模式() ? document.querySelector('.main') : null;
+    const 桌面容器 = 是桌面固定左栏模式() ? document.querySelector('.app-desktop-shell') : null;
     const 目标容器 = 桌面容器 || document.body;
     if (抽屉.parentElement !== 目标容器) {
       if (桌面容器) {
-        const 主内容区 = 桌面容器.querySelector('.main-inner');
-        桌面容器.insertBefore(抽屉, 主内容区 || null);
+        桌面容器.insertBefore(抽屉, 桌面容器.firstChild || null);
       } else {
         目标容器.appendChild(抽屉);
       }
@@ -443,6 +499,8 @@
     const root = 读取根路径();
     const pageConfig = 读取页面配置();
     const view = 识别视图(root, pageConfig);
+    同步视图类名(view);
+    确保桌面内容容器();
     const 遮罩层 = 确保遮罩层();
     const 左侧抽屉 = 确保左侧抽屉(root);
     const 目录抽屉 = 确保目录抽屉();
@@ -451,7 +509,6 @@
     初始化遮罩关闭(遮罩层);
     初始化目录抽屉交互(目录抽屉);
     初始化页面跳转回顶();
-    同步视图类名(view);
     同步页头标题(读取页头标题(view, pageConfig));
     同步左侧按钮(view, 左按钮, 次按钮, root, 左侧抽屉, 遮罩层);
     同步右按钮(view, 右按钮, 目录抽屉, 遮罩层);

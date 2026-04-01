@@ -1,0 +1,419 @@
+{
+  "run_date": "2026-04-01",
+  "selected_topic_ids": [
+    175,
+    195,
+    186,
+    183,
+    101,
+    102,
+    223,
+    193,
+    209,
+    207,
+    1,
+    2,
+    8,
+    124,
+    136,
+    14
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 16,
+    "base_members_added": 18,
+    "expanded_added": 2,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 25,
+    "final_targets": 20,
+    "global_cap": 30
+  },
+  "deep_read_links": 20,
+  "materials_total": 20,
+  "materials_windowed": 20,
+  "materials_usable": 20,
+  "materials_by_source": {
+    "arXiv cs.AI": 7,
+    "AIBase": 6,
+    "AITNT 资讯": 3,
+    "火山引擎开发者": 1,
+    "36Kr AI": 1,
+    "雷锋网 AI": 1,
+    "Hugging Face Posts": 1
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 175,
+      "topic_title": "国内大模型Coding Plan",
+      "topic_type": "news",
+      "cross_source_score": 57,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        13
+      ],
+      "members": [
+        {
+          "ref_id": 13,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=23643",
+          "title": "国内大模型厂商 Token/Coding Plan 汇总对比：MiniMax、智谱、阶跃、Kimi 怎么选",
+          "pub_date": "2026-04-01",
+          "content": "我自己用 Coding Plan 也有一段时间了，最开始只是为了省点 API 钱，后来各家陆续推出固定月费套餐，我发现选起来比想象中复杂。Codex、Claude Code、Cline、OpenClaw 这些工具让开发者越来越习惯用自然语言驱动代码生成和任务执行，但高频调用带来的 API 成本也成了一笔固定开销。为此，国内主流大模型厂商纷纷推出了面向开发者的固定月费套餐，业内统称为 Coding Plan。 这类套餐的本质是用一笔可预期的月费，换取远高于按量付费的调用额度。但各家在模型规模、开源策略、模态支持、计费方式和限额透明度上差异明显。这篇文章是我基于厂商官网和公开文档，对 MiniMax、智谱 GLM、阶跃星辰和 Kimi 四家方案做的一次系统梳理，方便我自己后续回看，也分享给你参考。 一、MiniMax Token Plan MiniMax 在 2026 年 3 月将 Coding Plan 升级为 Token Plan，把文本、语音、图像、视频等能力打包进同一订阅。 模型与开源情况 MiniMax Token Plan 的核心模型是 MiniMax-M2.7，官方未公开其具体总参数量，M2 系列采用 MoE 架构。开。"
+        }
+      ]
+    },
+    {
+      "topic_id": 195,
+      "topic_title": "国产独立大模型公司MiniMax与智谱财报对比",
+      "topic_type": "news",
+      "cross_source_score": 57,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        15
+      ],
+      "members": [
+        {
+          "ref_id": 15,
+          "source": "36Kr AI",
+          "link": "https://36kr.com/p/3748106298524422",
+          "title": "国产独立大模型公司的未来，估计是出海+垂类To B",
+          "pub_date": "2026-04-01",
+          "content": "港股科技公司的财报已经发布完毕，市场的焦点无疑是两家大模型上市公司——MiniMax和智谱。从财报当中，我们不难发现，两家公司的收入分布几乎完全相反： 智谱几乎所有的收入均来自国内，而MiniMax则有73%的收入来自海外； 智谱的绝大部分收入可以定义为To B，而MiniMax则有约三分之二的收入来自To C（注：AI原生产品收入不完全是、但绝大部分是To C）。 智谱的收入有73.7%来自本地化大模型部署，这些部署往往是基于行业和企业需求高度定制化的。 据说月之暗面也在策划上市，我们目前尚未看到招股说明书，但是根据媒体报道，它今年第一季度来自海外的收入增长十分强劲。或许我们会看到月之暗面与MiniMax类似，大部分收入来自海外？不管怎么说，不会像智谱那样主要依靠国内市场。 我认为这毫无疑问代表了国产独立大模型公司（这个独立，是指独立于互联网大厂之外）的两条可行的发展路线：出海，以及国内垂类To B。不一定非要二选一，也可以两个都做，不过在现实中总会有所侧重。至于其他业务，包括国内To C以及“通用型”的To B，肯定还是会做，但我不认为独立大模型公司有多少竞争优势。 为什么呢？因为国内To C显然是互联网大厂的地盘。在通用AI应用方面，字节的豆包、阿里的夸克和千问都十分强大，腾讯的元宝则还没有放弃进入第一集团的希望。在。"
+        }
+      ]
+    },
+    {
+      "topic_id": 186,
+      "topic_title": "字节跳动Seed计划开启2027届大模型人才招聘",
+      "topic_type": "news",
+      "cross_source_score": 60,
+      "mention_count": 2,
+      "source_count": 1,
+      "member_count": 2,
+      "refs": [
+        7,
+        8
+      ],
+      "members": [
+        {
+          "ref_id": 7,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/26754",
+          "title": "字节跳动 Seed 计划火热开启:2027届大模型天才抢夺战正式打响!字节跳动启动Seed2027届大模型人才校园招聘，面向全球招募顶尖学子，涵盖正式与实习岗位。计划旨在发掘培养大模型研发人才，以“种子”寓意希望，邀请年轻开发者共同挑战智能上限。 27 分钟前 9.0K",
+          "pub_date": "2026-04-01",
+          "content": "面对全球人工智能领域的激烈竞争，字节跳动（ByteDance）于2026年4月1日正式发布了 Seed2027届大模型人才校园招聘计划。该项目旨在全球范围内发掘并培养具备大模型研发潜力的顶尖学子，涵盖了正式校招及关键的实习岗位。此次招聘以“Seed”为名，寓意种子与希望。字节跳动表示，将通过该项目邀请优秀的年轻开发者加入，共同“向智能上限发起挑战”。这不仅是一次普通的人才招募，更是字节跳动在大模型底层技术、多模态架构以及前沿应用领域深耕布局的重要一环。关键招聘信息面向群体: 主要针对2027届及相关学段的毕业生（含本科、硕士及博士）。核心领域: 聚焦大语言模型（LLM）、多模态理解与生成、强化学习、模型架构优化及大规模分布式训练等前沿 AI 技术岗位。培养模式: 入选者将获得接触大规模算力集群的机会，并在资深科学家指导下，参与核心业务场景的大模型迭代与实战。随着大模型技术迈入2026年的高速演进期，大厂对于“塔尖”人才的抢夺已提前至2027届。字节跳动此次通过 Seed 项目提前落子，彰显了其在 AI 军备竞赛中持续领跑的野心。"
+        },
+        {
+          "ref_id": 8,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/26751",
+          "title": "大模型抢人战升级！字节跳动 Seed 开启全球校招，豪掷“虚拟股”招募百位天才字节跳动启动全球校招计划，面向2027届应届生及实习生，旨在发掘和储备大模型领域顶尖人才，计划在全球招募百位“AI种子”，以应对技术快速迭代，强化底层人才投入。 52 分钟前 9.1K",
+          "pub_date": "2026-04-01",
+          "content": "在大模型领域的军备竞赛中，顶级人才始终是最稀缺的战略资源。4月1日消息，字节跳动旗下大模型人才培养计划 Seed 已正式启动新一轮全球校招。本次招聘涵盖了2027届应届生及在校实习生，旨在全球范围内发掘并储备大模型领域的顶尖科研与工程力量。规模扩容:全球锁定百位“AI 种子”面对日新月异的技术迭代，字节跳动有限公司今年显著加大了对底层人才的投入力度:招募规模: 计划在全球范围内招募约100位2027届大模型相关专业的优秀人才。培养闭环: Seed 项目不仅提供一线业务的实战机会，更配套了深度的技术导师制，帮助校招生快速进入核心研发链路。激励“核武器”:专项虚拟股首次亮相为了在激烈的人才争夺战中脱颖而出，字节跳动祭出了极具诚意的激励方案:长期绑定: 字节特别推出了面向大模型人才的专项**“虚拟股”**激励机制。价值对齐: 这一举措旨在强化对核心人才的长期吸引力，将人才收益与大模型业务的增长潜力深度挂钩，体现了公司对 AI 战略方向的坚定信心。行业观察:互联网巨头进入“前置抢人”阶段从字节跳动的布局来看，大模型人才的竞争早已从社会招聘下沉到了更早期的校园阶段。通过 Seed 计划，字节正试图在技术爆发的前夜，建立起属于自己的、具备原生 AI 思维的梯队。结语:为下一代算力寻找“大脑”当各大厂商都在拼算力、拼参数时，字节跳动选择通过机制创新和重金激励，在全球范围内“预订”未来的技术领袖。"
+        }
+      ]
+    },
+    {
+      "topic_id": 183,
+      "topic_title": "阿里Wan2.7-Image发布",
+      "topic_type": "news",
+      "cross_source_score": 59,
+      "mention_count": 2,
+      "source_count": 1,
+      "member_count": 2,
+      "refs": [
+        9,
+        10
+      ],
+      "members": [
+        {
+          "ref_id": 9,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/26761",
+          "title": "告别 AI 标准脸：阿里发布 Wan2.7-Image，开启“千人千面”新时代阿里发布Wan2.7-Image模型，在人像定制、色彩控制和长文本渲染方面实现突破，旨在解决AI生成图像“千篇一律”的问题。模型已上线阿里云百炼平台API并开放体验，核心升级包括虚拟“捏脸”和精准调色盘功能，显著提升创作自由度。 刚刚 9.7K",
+          "pub_date": "2026-04-01",
+          "content": "阿里大模型团队今日正式发布图像生成与编辑统一模型 Wan2.7-Image。相比前代，该模型在人像定制化、色彩控制以及长文本渲染方面实现了质的飞跃，旨在打破 AI 生成图像中常见的“千篇一律”感。目前，该模型已在阿里云百炼平台上线 API，并在万相官网开放体验。核心升级:虚拟“捏脸”与精准调色盘Wan2.7-Image 引入了多项行业领先的差异化功能，极大提升了创作的自由度:千人千面: 强化了虚拟角色“捏脸”能力。用户可以通过提示词精准控制骨相、眼形（如杏仁眼、丹凤眼）及五官细节，彻底告别标准化的 AI 脸。精准调色盘: 全新支持色彩控制功能。用户可以提取参考图的颜色占比，无论是梵高的明黄还是毕加索的冷蓝，都能精准复刻到新生成的作品中。3K Token 超长文本渲染: 解决了 AI 写字的难题，支持多达12种语言，最高可渲染一页 A4纸大小的复杂文字、表格或公式，且达到印刷级质量。在图像编辑领域，Wan2.7-Image 推出了“交互式编辑”功能。用户只需通过精准框选，即可在指定区域实现元素的添加、对齐、移动甚至像素级的逻辑替换（例如:将冰块替换为水果，同时保持环境光影不变）。此外，该模型支持多达12张的组图生成，并能确保多主体（如合影、家具组合）在不同画面中的风格与特征高度统一。阿里表示，Wan2.7-Image 采用了生成与理解统一的模型架构。通。"
+        },
+        {
+          "ref_id": 10,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/26759",
+          "title": "告别AI标准脸!阿里Wan2.7-Image发布:能写A4纸论文，还能像素级“捏脸”阿里发布Wan2.7-Image模型，突破传统AI生图局限，告别“标准脸”实现“千人千面”。模型强化虚拟角色捏脸功能，支持从骨相、眼眸到五官细节的全方位定制，精准控制脸型、眼型等特征，提升视觉效果与个性化体验。 刚刚 9.2K",
+          "pub_date": "2026-04-01",
+          "content": "今日，阿里正式发布了图像生成与编辑的统一大模型 Wan2.7-Image。该模型不仅在视觉效果上实现了质的飞跃，更通过全链路的能力升级，打破了传统 AI 生图“标准脸”和“指令对齐难”的局限。告别 AI 脸，迈入“千人千面”时代Wan2.7-Image 显著强化了虚拟角色捏脸功能。用户可以从骨相、眼眸到五官细微处进行全方位定制，精准控制鹅蛋脸、丹凤眼、深邃眼窝等具体特征。这一进步彻底终结了以往 AI 生成人像千篇一律的机械感，实现了真正的个性化表达。“调色盘”与“印刷级”文字渲染在艺术表现力方面，模型全新支持**“调色盘”功能**，允许用户一键提取参考图的色调占比（如马蒂斯的红色系或梵高的黄色系），精准迁移至新作品。此外，Wan2.7-Image 在长文本渲染上表现惊人，支持最高3K token 输入，可稳定输出包含复杂公式、表格的一整页 A4纸内容，达到印刷级质量，支持12种语言。交互式编辑与多主体一致性模型具备强大的交互式编辑能力，支持通过精准框选实现元素的对齐、移动或替换。例如，用户可以框选图中人物互换位置，或将冰块替换为水果，实现“指哪改哪”的像素级操控。同时，模型最多支持 9图多主体一致性，在生成 AI 女团或家具组合时，能完美保持风格与特征的统一。底。"
+        }
+      ]
+    },
+    {
+      "topic_id": 101,
+      "topic_title": "AI智能体安全白皮书",
+      "topic_type": "news",
+      "cross_source_score": 57,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        11
+      ],
+      "members": [
+        {
+          "ref_id": 11,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/26753",
+          "title": "AI 从“很能说”迈向“很能干”，阿里巴巴联合上海人工智能实验室发布安全白皮书阿里巴巴与上海人工智能实验室联合发布AI白皮书，强调在AI向智能体进化过程中，安全与责任至关重要。白皮书分析了当前AI智能体普及的安全隐患，并提出了行业治理的中国方案。 36 分钟前 9.3K",
+          "pub_date": "2026-04-01",
+          "content": "当全球 AI 技术正加速从对话式交互向具备自主行动能力的“智能体（Agent）”进化时，安全与责任成为了行业必须共同守护的生命线。在近日举行的上海浦江 AI 学术年会上，阿里巴巴联合上海人工智能实验室正式发布了名为《守己利他：智能时代做负责任的技术》的 AI 白皮书。这份文件不仅深度剖析了当前 AI 智能体普及过程中的安全隐患，更针对性地提出了行业治理的中国方案。从“能说”到“能干”：风险正集中暴露白皮书敏锐地指出，当前全球 AI 产业正经历从单纯的语言交互到复杂任务执行的跨越。然而，随着智能体在各行各业的渗透，安全风险也随之集中显现。守己： 强调企业应严守安全底线，加强自律，确保技术开发不逾矩。利他： 倡导技术应用应以社会福祉为先，解决实际问题而非制造新的矛盾。合作： 呼吁全行业打破技术孤岛，通过共享安全策略来应对共同的挑战。安全是社会信任的生命线在阿里巴巴（中国）网络技术有限公司与上海人工智能实验室有限公司看来，安全绝非单打独斗能够解决的问题。白皮书分享了业界针对智能体安全隐患的最新解决策略，提出全行业应以“共识求共赢”，共同构建一套负责任的技术体系，以应对智能时代可能出现的伦理与技术双重挑战。行业观察：大模型下半场，“很安全”才是入场券随着上海人工智能创新中心等顶尖科研力量的加入，国内 AI 产业正在从盲目追求参数规模转向追求安全可控。这。"
+        }
+      ]
+    },
+    {
+      "topic_id": 102,
+      "topic_title": "Genspark融资",
+      "topic_type": "news",
+      "cross_source_score": 57,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        12
+      ],
+      "members": [
+        {
+          "ref_id": 12,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/26749",
+          "title": "​20 人团队撬动 110 亿估值！前百度高管创业作Genspark融资3. 85 亿美元AI创业项目Genspark完成3.85亿美元B轮扩展融资，投后估值约110亿元。团队仅约20人，核心能力为能交付结果的“全职Agent”，超越传统对话AI。 2 小时前 7.7K",
+          "pub_date": "2026-04-01",
+          "content": "在AI创业领域，一支“精锐小部队”再次向市场证明了什么叫技术爆发力。据媒体报道，由前百度副总裁景鲲与技术大牛朱凯华联手打造的AI项目 Genspark，于2026年3月宣布完成B轮融资扩展。本次募资总额达3.85亿美元，投后估值约16亿美元（折合人民币约110亿元）。令人惊叹的是，撑起这百亿身家的团队规模仅有约20人。核心能力:不只是对话，是能交付结果的“全职Agent”与传统的聊天机器人不同，Genspark 被定位为一站式AI工作空间。它不仅能理解指令，更能直接跨环节交付工作成果:多能助手: 支持一键生成专业级PPT。物理世界交互: 具备代拨电话功能，可自主完成餐厅预约等现实任务。性能霸榜: 在GAIA测评中，其综合表现已超越了Manus等一众竞品，并成功跻身A16Z发布的《Top50Gen AI Apps》榜单。全球战果:日本月访问量逼近1500万次目前，Genspark 在海外市场展现出了极强的渗透力，尤其在日本市场增长迅猛。数据显示，2026年1月其在日本的月访问量已突破1496万次。截至目前，全球已有超过1000家机构将该平台引入其B端或C端业务流中。背景深厚:百度系老兵的再次跨越创始团队的背景无疑是其获得资本青睐的重要底牌。景鲲曾任百度副总裁、智能生活事业群组（SLG）总经理，是小度背后的关键推手;朱凯华则曾任百度首席架构师。这。"
+        }
+      ]
+    },
+    {
+      "topic_id": 223,
+      "topic_title": "上海AI实验室共建国产软硬件适配验证平台",
+      "topic_type": "news",
+      "cross_source_score": 57,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        18
+      ],
+      "members": [
+        {
+          "ref_id": 18,
+          "source": "雷锋网 AI",
+          "link": "https://www.leiphone.com/category/ai/g9uztc7y94L82Eaw.html",
+          "title": "上海人工智能实验室联合商汤大装置等共建AI全链路验证平台与生态社区",
+          "pub_date": "2026-04-01",
+          "content": "近日，在第二届浦江AI学术年会上，上海人工智能实验室（上海AI实验室）联合北京智源研究院、中国科学院计算技术研究所、北京开源芯片研究院、商汤科技、IDEA数字经济研究院等机构，共同发起“国产软硬件适配验证合作计划”。该计划拟推出覆盖AI全流程的软硬件验证平台及自主生态社区，并预计年内正式对外提供服务。该验证平台将聚焦国产算力底座与人工智能应用生态的协同发展，打造集资源接入、环境适配、评测验证、成果发布与生态共建于一体的综合性载体，为人工智能赋能千行百业提供坚实支撑。作为核心合作伙伴，商汤将依托大装置全面参与平台建设与生态共建。 不止于验证：面向应用的全链条赋能平台本次推出的验证平台不仅局限于基础测试验证，更强调以真实应用场景为导向，推动产业级落地能力建设。一方面，平台将构建覆盖“芯片-中间层-框架-模型-集群”的全链路验证体系，建立“芯片-应用”双向选择机制，打通产业链上下游，实现从“单点参与”向“协同联动”的跃迁。另一方面，平台与生态社区将持续支持多类型国产软硬件组合适配，通过标准化任务编排、统一评测指标与专业报告输出，为用户提供精准选型依据与产品设计参考，推动AI从“能做”走向“好用、易用、可规模化推广”。依托大装置全栈能力，商汤已全面通过芯片兼容性、可靠性及成熟度验证，持续打通大模型国产落地“最后一公里”，为行业应用提供安全、稳定、可持续的技术支撑。三。"
+        }
+      ]
+    },
+    {
+      "topic_id": 193,
+      "topic_title": "个人发布德语小模型qwen3-0.6b-german",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        20
+      ],
+      "members": [
+        {
+          "ref_id": 20,
+          "source": "Hugging Face Posts",
+          "link": "https://huggingface.co/posts/philipp-zettl/719476111198425",
+          "title": "I'm unemployed, I have a gaming GPU, and I just published a German LLM. qwen3-0.6b-german - fine-tuned Qwen3-0.6B in ~40h on an RTX 4070 Ti, using the exact same instruct datasets as the LLäMmlein paper (ACL 2025). HellaSwag-DE: 0.3111 → 0.3193 ✅ ARC-DE: 0.2352 → 0.2575 ✅ MMlu-DE: 0.3600 → 0.2475 🔻 (alignment tax - known trade-off) Instruction fine-tuning trades some factual breadth for better reasoning and format following. The model is more useful, even if not better on every metric. Weights, LoRA adapter, full training script and logs all public. It ain't much, but it's honest work.",
+          "pub_date": "2026-04-01T10:44:59.000Z",
+          "content": "I'm unemployed, I have a gaming GPU, and I just published a German LLM.qwen3-0.6b-german - fine-tuned Qwen3-0.6B in ~40h on an RTX 4070 Ti, using the exact same instruct datasets as the LLäMmlein paper (ACL 2025).HellaSwag-DE: 0.3111 → 0.3193 ✅ARC-DE: 0.2352 → 0.2575 ✅MMlu-DE: 0.3600 → 0.2475 🔻 (alignment tax - known trade-off)Instruction fine-tuning trades some factual breadth for better reasoning and format following. The model is more useful, even if not better on every metric.Weights, LoRA adapter, full training script and logs all public."
+        }
+      ]
+    },
+    {
+      "topic_id": 209,
+      "topic_title": "大厂AI Lab调整与腾讯混元团队",
+      "topic_type": "news",
+      "cross_source_score": 57,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        16
+      ],
+      "members": [
+        {
+          "ref_id": 16,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=23634",
+          "title": "对话马骁腾：大厂AI Lab没死，只是换了个活法",
+          "pub_date": "2026-04-01",
+          "content": "Lab首席科学家马骁腾博士 近期，大厂的AI实验室正迎来一场深度结构性调整。 3月20日，腾讯宣布成立近十年的AI Lab正式撤销，大部分团队并入大语言模型部混元团队，向首席AI科学家姚顺雨汇报。更早的3月16日，阿里则成立了Alibaba Token Hub（ATH）事业群，由CEO吴泳铭直管，通义实验室与MaaS、千问、悟空、AI创新事业部实现全面统一，被纳入token事业群强调业务联动。 当创新部门与业务中台的边界变得模糊，科研探索的长期价值似乎让位于商业落地的现实诉求。曾承担着前沿技术探索的AI Lab，在大厂成为一种过去式。 近期，我们与Mind Lab首席科学家马骁腾展开深度对话。“无论阿里也好，腾讯也罢，整合原因都一样，大模型太贵了。”他告诉我们，国内大厂频繁调整AI Lab，不是因为它们做得不好，而是这种模式已经不适应大模型转型需要了。 大厂的AI Lab退出历史舞台的同时，近年硅谷开始流行一个新概念Neo Lab，专指由顶级AI研究者创立的，以提升智能为目标的研究型实验室。其中最为瞩目的代表就是图灵奖获得者杨立昆创立的AMI Labs。 Mind Lab是个人专属智能体公司Mindverse去年成立的一家Neo Lab。 Mind Lab的成员均毕业于全球知名学府，有OpenAI、Deepseek、Seed 等顶尖实验室的工作经历。例。"
+        }
+      ]
+    },
+    {
+      "topic_id": 207,
+      "topic_title": "百度中标11亿AI智算一体机项目",
+      "topic_type": "news",
+      "cross_source_score": 57,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 17,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=23651",
+          "title": "11亿AI大单，百度拿下！",
+          "pub_date": "2026-04-01",
+          "content": "采购260台智算一体机。 智东西3月31日消息，昨日，中国联通发布2026年中国联通山东济南市行业客户智算一体机服务项目中标候选人公示，百度以2.9亿元中标。 该项目于3月9日发布招标文件，采购内容包含260台智算一体机。此次中标的智算一体机参数为64核、主频2.7GHz，功耗400W。 ▲采购设备配置要求 其采购的设备交货地点为，10%抽检部分送至济南市历城区烈士山北路14号附近联通鲍山机房，其余智算一体机送至甲方指定地点。 并且项目要求自合同签订且银行保函出具之日起16个工作日（以中标单位的投标文件为准）内完成所有设备到货。 今年3月，百度已经连拿2个济南市亿元级大单。3月6日，百度以8.37亿元中标2026年山东济南市大模型创新工场基础设施服务项目，该项目采购内容为：人工智能服务器（训练型）204台、人工智能服务器（推理型）476台、人工智能服务器（训练+推理型）60台。 去年5月，百度与山东省济南市政府签署了人工智能产业发展战略协议，双方将在AI基础设施建设、数据要素产业、“车路云”一体化等领域展开合作。"
+        }
+      ]
+    },
+    {
+      "topic_id": 1,
+      "topic_title": "Mimosa Framework",
+      "topic_type": "paper",
+      "cross_source_score": 67,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        1
+      ],
+      "members": [
+        {
+          "ref_id": 1,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.28986",
+          "title": "Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research",
+          "pub_date": "Wed, 01 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:Current Autonomous Scientific Research (ASR) systems, despite leveraging large language models (LLMs) and agentic architectures, remain constrained by fixed workflows and toolsets that prevent adaptation to evolving tasks and environments. We introduce Mimosa, an evolving multi-agent framework that automatically synthesizes task-specific multi-agent workflows and iteratively refines them through experimental feedback."
+        }
+      ]
+    },
+    {
+      "topic_id": 2,
+      "topic_title": "PSPA-Bench: A Personalized",
+      "topic_type": "paper",
+      "cross_source_score": 67,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        2
+      ],
+      "members": [
+        {
+          "ref_id": 2,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.29318",
+          "title": "PSPA-Bench: A Personalized Benchmark for Smartphone GUI Agent",
+          "pub_date": "Wed, 01 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:Smartphone GUI agents execute tasks by operating directly on app interfaces, offering a path to broad capability without deep system integration. However, real-world smartphone use is highly personalized: users adopt diverse workflows and preferences, challenging agents to deliver customized assistance rather than generic solutions. Existing GUI agent benchmarks cannot adequately capture this personalization dimension due to sparse user-specific data and the lack of fine-grained evaluation metrics."
+        }
+      ]
+    },
+    {
+      "topic_id": 8,
+      "topic_title": "ELT-Bench-Verified",
+      "topic_type": "paper",
+      "cross_source_score": 67,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        3
+      ],
+      "members": [
+        {
+          "ref_id": 3,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.29399",
+          "title": "ELT-Bench-Verified: Benchmark Quality Issues Underestimate AI Agent Capabilities",
+          "pub_date": "Wed, 01 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:Constructing Extract-Load-Transform (ELT) pipelines is a labor-intensive data engineering task and a high-impact target for AI automation. On ELT-Bench, the first benchmark for end-to-end ELT pipeline construction, AI agents initially showed low success rates, suggesting they lacked practical utility. We revisit these results and identify two factors causing a substantial underestimation of agent capabilities."
+        }
+      ]
+    },
+    {
+      "topic_id": 124,
+      "topic_title": "SkillTester: Benchmarking Utility",
+      "topic_type": "paper",
+      "cross_source_score": 66,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        5
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.28815",
+          "title": "SkillTester: Benchmarking Utility and Security of Agent Skills",
+          "pub_date": "Wed, 01 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:This technical report presents SkillTester, a tool for evaluating the utility and security of agent skills. Its evaluation framework combines paired baseline and with-skill execution conditions with a separate security probe suite. Grounded in a comparative utility principle and a user-facing simplicity principle, the framework normalizes raw execution artifacts into a utility score, a security score, and a three-level security status label."
+        }
+      ]
+    },
+    {
+      "topic_id": 136,
+      "topic_title": "SLVMEval: Synthetic Meta",
+      "topic_type": "paper",
+      "cross_source_score": 66,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        6
+      ],
+      "members": [
+        {
+          "ref_id": 6,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.29186",
+          "title": "SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation",
+          "pub_date": "Wed, 01 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:This paper proposes the synthetic long-video meta-evaluation (SLVMEval), a benchmark for meta-evaluating text-to-video (T2V) evaluation systems. The proposed SLVMEval benchmark focuses on assessing these systems on videos of up to 10,486 s (approximately 3 h). The benchmark targets a fundamental requirement, namely, whether the systems can accurately assess video quality in settings that are easy for humans to assess. We adopt a pairwise comparison-based meta-evaluation framework."
+        }
+      ]
+    },
+    {
+      "topic_id": 14,
+      "topic_title": "An Empirical Study of Multi-Agent",
+      "topic_type": "paper",
+      "cross_source_score": 67,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        4
+      ],
+      "members": [
+        {
+          "ref_id": 4,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.29632",
+          "title": "An Empirical Study of Multi-Agent Collaboration for Automated Research",
+          "pub_date": "Wed, 01 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:As AI agents evolve, the community is rapidly shifting from single Large Language Models (LLMs) to Multi-Agent Systems (MAS) to overcome cognitive bottlenecks in automated research. However, the optimal multi-agent coordination framework for these autonomous agents remains largely unexplored. In this paper, we present a systematic empirical study investigating the comparative efficacy of distinct multi-agent structures for automated machine learning optimization."
+        }
+      ]
+    }
+  ]
+}

@@ -130,6 +130,16 @@ function 构建参考来源HTML(anchors) {
   return `<div class="daily-news-card-refs"><span class="refs-label">参考：</span><span class="refs-chips">${chips}</span></div>`;
 }
 
+function 提取区块空态文本(节点列表) {
+  const 文本片段 = 节点列表
+    .filter(node => node.tagName !== 'UL' && node.tagName !== 'OL')
+    .map(node => (node.innerText || node.text || '').trim())
+    .filter(Boolean);
+
+  if (!文本片段.length) return '';
+  return 文本片段.join(' ').replace(/\s+/g, ' ').trim();
+}
+
 function 清理正文HTML(html) {
   return String(html || '')
     .trim()
@@ -203,6 +213,7 @@ function 构建列表区块(h2, options = {}) {
   const { 类型 = 'news', 前缀 = 'daily-item' } = options;
   const 节点列表 = 收集后续同级节点(h2);
   const 列表节点 = 节点列表.find(node => node.tagName === 'UL' || node.tagName === 'OL');
+  const 空态文本 = 提取区块空态文本(节点列表);
   const 卡片列表 = [];
 
   if (列表节点) {
@@ -230,7 +241,10 @@ function 构建列表区块(h2, options = {}) {
   }
 
   节点列表.forEach(node => node.remove());
-  h2.parentNode.exchangeChild(h2, parse(`<section class="daily-section-block">${构建二级标题节点(h2)}${卡片列表.join('')}</section>`).firstChild);
+  const 空态HTML = !卡片列表.length && 空态文本
+    ? `<p class="daily-section-empty">${空态文本}</p>`
+    : '';
+  h2.parentNode.exchangeChild(h2, parse(`<section class="daily-section-block">${构建二级标题节点(h2)}${卡片列表.join('')}${空态HTML}</section>`).firstChild);
 }
 
 hexo.extend.filter.register('after_post_render', function(data) {

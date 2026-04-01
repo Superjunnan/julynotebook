@@ -28,6 +28,10 @@ function buildAndReadPages() {
         path.join(repoRoot, "public/2026/03/19/digest-2026-03-19/index.html"),
         "utf-8"
       ),
+      evening0329: readFileSync(
+        path.join(repoRoot, "public/2026/03/29/evening-digest-2026-03-29/index.html"),
+        "utf-8"
+      ),
       dailyList: readFileSync(
         path.join(repoRoot, "public/categories/daily-news/index.html"),
         "utf-8"
@@ -114,6 +118,15 @@ test("日报详情页参考来源应使用间距分隔而非顿号", async () =>
   assert.match(daily, /daily-news-card-refs/);
   assert.doesNotMatch(daily, /AIBase<\/a>、<a class="cite"/);
   assert.doesNotMatch(daily, /36Kr AI<\/a>、<a class="cite"/);
+});
+
+test("03-29 晚报应展示真实论文引用，而不是空论文占位或伪论文标题", async () => {
+  const { evening0329 } = await buildAndReadPages();
+
+  assert.match(evening0329, /核心论文/);
+  assert.doesNotMatch(evening0329, /当日无优质论文|今日暂无有价值论文更新/);
+  assert.match(evening0329, /论文平台重点更新｜arXiv cs\.AI/);
+  assert.doesNotMatch(evening0329, /Dreamina Seedance 2\.0登陆CapCut｜36Kr AI/);
 });
 
 test("日报详情页内容布局应保持旧版流式排版并收紧页头间距", async () => {
@@ -236,27 +249,31 @@ test("移动端顶部固定栏应保持浅底弱化样式，不再回到主题�
   assert.match(css, /\.site-brand-container\s*\{[^}]*min-height:\s*56px !important;[^}]*background:\s*rgba\(247,\s*248,\s*250,\s*0\.88\) !important;[^}]*backdrop-filter:\s*blur\(14px\)/);
 });
 
-test("桌面端应使用标题行加左侧固定导航和右侧主内容区布局", async () => {
+test("桌面端应使用统一内容容器布局，标题行独立于左侧固定导航和右侧主内容区", async () => {
   const { css, appShell, dailyList, notesList } = await buildAndReadPages();
 
   assert.match(css, /@media \(min-width: 1024px\)/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*body\s*\{[\s\S]*padding-top:\s*0 !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.main\s*\{[\s\S]*display:\s*grid !important;[\s\S]*grid-template-columns:\s*196px 980px;[\s\S]*column-gap:\s*12px;[\s\S]*row-gap:\s*14px;[\s\S]*justify-content:\s*center;[\s\S]*width:\s*min\(calc\(100vw - 64px\),\s*1188px\) !important;[\s\S]*margin:\s*20px auto 0 !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.column\s*\{[\s\S]*display:\s*contents !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.column \.header\s*\{[\s\S]*display:\s*contents !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.site-brand-container\s*\{[\s\S]*position:\s*static !important;[\s\S]*grid-column:\s*2;[\s\S]*grid-row:\s*1;[\s\S]*width:\s*980px !important;[\s\S]*max-width:\s*980px !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-drawer\s*\{[\s\S]*position:\s*sticky;[\s\S]*top:\s*0;[\s\S]*width:\s*196px;[\s\S]*padding:\s*0;[\s\S]*border-radius:\s*14px;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.main\s*\{[\s\S]*display:\s*block !important;[\s\S]*width:\s*min\(calc\(100vw - 64px\),\s*1180px\) !important;[\s\S]*margin:\s*20px auto 0 !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.column\s*\{[\s\S]*display:\s*none !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-desktop-shell\s*\{[\s\S]*display:\s*grid !important;[\s\S]*grid-template-columns:\s*196px minmax\(0,\s*1fr\);[\s\S]*column-gap:\s*12px;[\s\S]*align-items:\s*start;[\s\S]*width:\s*100% !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-desktop-content-shell\s*\{[\s\S]*display:\s*flex;[\s\S]*flex-direction:\s*column;[\s\S]*gap:\s*16px;[\s\S]*min-width:\s*0;[\s\S]*width:\s*100%;[\s\S]*align-self:\s*stretch;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.site-brand-container\s*\{[\s\S]*position:\s*static !important;[\s\S]*width:\s*calc\(100% - 208px\) !important;[\s\S]*max-width:\s*none !important;[\s\S]*margin:\s*0 0 16px auto !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.site-brand-container \.site-meta\s*\{[\s\S]*width:\s*100% !important;[\s\S]*justify-content:\s*center;[\s\S]*padding:\s*0 !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.site-meta \.brand\s*\{[\s\S]*position:\s*static !important;[\s\S]*top:\s*auto !important;[\s\S]*left:\s*auto !important;[\s\S]*transform:\s*none !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-drawer\s*\{[\s\S]*position:\s*sticky;[\s\S]*top:\s*0;[\s\S]*width:\s*196px;[\s\S]*padding:\s*0;[\s\S]*border-radius:\s*18px;/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-mask\s*\{[\s\S]*display:\s*none !important;/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-header-action-left,\s*\.app-header-action-secondary\s*\{[\s\S]*display:\s*none !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.site-brand-container \.site-meta\s*\{[\s\S]*width:\s*100% !important;[\s\S]*max-width:\s*none !important;[\s\S]*padding:\s*0 !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.main-inner\s*\{[\s\S]*grid-column:\s*2;[\s\S]*grid-row:\s*2;[\s\S]*width:\s*980px !important;[\s\S]*max-width:\s*980px !important;[\s\S]*margin:\s*0 !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.footer\s*\{[\s\S]*display:\s*grid !important;[\s\S]*grid-template-columns:\s*196px 980px;[\s\S]*column-gap:\s*12px;[\s\S]*justify-content:\s*center;[\s\S]*width:\s*min\(calc\(100vw - 64px\),\s*1188px\) !important;[\s\S]*margin:\s*18px auto 0 !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.footer-inner\s*\{[\s\S]*grid-column:\s*2;[\s\S]*width:\s*980px !important;[\s\S]*padding:\s*0 0 18px !important;[\s\S]*align-items:\s*center;[\s\S]*text-align:\s*center;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.main-inner\s*\{[\s\S]*width:\s*100% !important;[\s\S]*max-width:\s*none !important;[\s\S]*margin:\s*0 !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.content-wrap\s*\{[\s\S]*max-width:\s*none !important;[\s\S]*margin:\s*0 !important;[\s\S]*padding:\s*0 0 36px !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-view-home,\s*\.app-list-shell,\s*body\.app-view-iteration-log \.iteration-page\s*\{[\s\S]*width:\s*100% !important;[\s\S]*max-width:\s*none !important;[\s\S]*margin:\s*0 !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.footer\s*\{[\s\S]*width:\s*min\(calc\(100vw - 64px\),\s*1180px\) !important;[\s\S]*max-width:\s*1180px !important;[\s\S]*margin:\s*18px auto 0 !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.footer-inner\s*\{[\s\S]*width:\s*calc\(100% - 208px\) !important;[\s\S]*max-width:\s*none !important;[\s\S]*margin-left:\s*auto !important;[\s\S]*padding:\s*0 0 18px !important;[\s\S]*align-items:\s*center;[\s\S]*text-align:\s*center;/);
   assert.match(dailyList, /class="main-inner category category-app-list"/);
   assert.match(notesList, /class="main-inner category category-app-list"/);
   assert.doesNotMatch(dailyList, /class="main-inner category posts-collapse"/);
   assert.doesNotMatch(notesList, /class="main-inner category posts-collapse"/);
-  assert.match(appShell, /function 读取页头标题/);
+  assert.match(appShell, /function 确保桌面内容容器/);
 });
 
 test("AI日报和AI笔记列表页不应保留主题默认的浅色竖向时间线", async () => {
@@ -271,17 +288,19 @@ test("AI日报和AI笔记列表页不应保留主题默认的浅色竖向时间�
   assert.doesNotMatch(notesList, /posts-collapse/);
 });
 
-test("桌面端AI日报列表月份标题应作为左侧月份列展示并与首张卡片顶部对齐", async () => {
+test("桌面端AI日报列表月份标题应左对齐展示在对应内容列表顶部", async () => {
   const { css } = await buildAndReadPages();
 
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.category\.category-app-list \.app-view-daily \.app-month-group\s*\{[\s\S]*position:\s*static;[\s\S]*display:\s*grid;[\s\S]*grid-template-columns:\s*92px minmax\(0,\s*1fr\);[\s\S]*column-gap:\s*12px;[\s\S]*align-items:\s*start;[\s\S]*padding-left:\s*0/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.category\.category-app-list \.app-view-daily \.app-month-title\s*\{[\s\S]*margin:\s*0;[\s\S]*position:\s*static;[\s\S]*left:\s*auto;[\s\S]*top:\s*auto;[\s\S]*width:\s*auto;[\s\S]*padding-top:\s*64px;[\s\S]*text-align:\s*right;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.category\.category-app-list \.app-view-daily\s*\{[\s\S]*display:\s*flex;[\s\S]*flex-direction:\s*column;[\s\S]*gap:\s*18px/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.category\.category-app-list \.app-view-daily \.app-month-group\s*\{[\s\S]*display:\s*block;[\s\S]*width:\s*100%;[\s\S]*margin:\s*0;[\s\S]*padding-left:\s*0/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.category\.category-app-list \.app-view-daily \.app-month-title\s*\{[\s\S]*margin:\s*0 0 16px;[\s\S]*position:\s*static;[\s\S]*left:\s*auto;[\s\S]*top:\s*auto;[\s\S]*width:\s*auto;[\s\S]*padding-top:\s*0;[\s\S]*text-align:\s*left;/);
 });
 
-test("PC 固定左栏应与标题下方内容顶部对齐，并且迭代记录页首块不应保留额外顶部留白", async () => {
+test("PC 固定左栏应与右侧内容容器顶部对齐，并且迭代记录页首块不应保留额外顶部留白", async () => {
   const { css, iteration } = await buildAndReadPages();
 
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-drawer\s*\{[\s\S]*grid-column:\s*1;[\s\S]*grid-row:\s*2;[\s\S]*top:\s*0;[\s\S]*width:\s*196px;[\s\S]*padding:\s*0;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-desktop-shell\s*\{[\s\S]*column-gap:\s*12px/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-drawer\s*\{[\s\S]*top:\s*0;[\s\S]*width:\s*196px;[\s\S]*padding:\s*0;/);
   assert.match(css, /body\.app-view-iteration-log \.post-block:first-of-type\s*\{[^}]*padding-top:\s*0 !important;/);
   assert.match(iteration, /class="iteration-page"/);
 });

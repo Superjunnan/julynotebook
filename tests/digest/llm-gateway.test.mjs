@@ -5,9 +5,15 @@ import path from "node:path";
 import { spawn, spawnSync } from "node:child_process";
 
 import {
+  buildLlmPacingLogLine,
   buildTopicScorecard,
   buildLlmCacheKey,
+  computeLlmRetryDelayMs,
   requestDigestLlmJson,
+  requestClusterAssignmentsChunkWithAdaptiveSplit,
+  mergeTopicRowsWithLLMAdaptiveSplit,
+  resolveLlmExecutionConfig,
+  resolveLlmPacingConfig,
 } from "../../tools/digest.mjs";
 
 test("buildLlmCacheKey stays stable for equivalent request payloads", () => {
@@ -128,9 +134,188 @@ test("requestDigestLlmJson retries transient failures and eventually succeeds", 
   assert.equal(attempts, 2);
 });
 
+test("resolveLlmPacingConfig keeps free-tier calls serialized and enforces a conservative minimum interval", () => {
+  const config = resolveLlmPacingConfig({
+    DIGEST_LLM_MAX_CONCURRENCY: "2",
+    DIGEST_LLM_MIN_INTERVAL_MS: "20000",
+    DIGEST_LLM_INTERVAL_JITTER_MS: "600",
+  });
+
+  assert.equal(config.maxConcurrency, 1);
+  assert.equal(config.minIntervalMs, 35000);
+  assert.equal(config.intervalJitterMs, 600);
+});
+
+test("resolveLlmExecutionConfig prefers longer timeouts and fewer internal retries by default", () => {
+  const defaults = resolveLlmExecutionConfig({});
+  assert.equal(defaults.timeoutMs, 240000);
+  assert.equal(defaults.maxRetries, 3);
+
+  const custom = resolveLlmExecutionConfig({
+    DIGEST_TIMEOUT_ZHIPU_MS: "300000",
+    DIGEST_LLM_MAX_RETRIES: "2",
+  });
+  assert.equal(custom.timeoutMs, 300000);
+  assert.equal(custom.maxRetries, 2);
+});
+
+test("computeLlmRetryDelayMs gives timeout aborts a materially longer cooldown than the base interval", () => {
+  const timeoutError = new Error("This operation was aborted");
+  timeoutError.name = "AbortError";
+
+  const timeoutWait = computeLlmRetryDelayMs(timeoutError, {
+    attempt: 1,
+    minIntervalMs: 35000,
+    maxWaitMs: 300000,
+    timeoutMs: 240000,
+  });
+  const rateLimitWait = computeLlmRetryDelayMs(
+    new Error("智谱接口请求失败：HTTP 429 Too Many Requests"),
+    {
+      attempt: 1,
+      minIntervalMs: 35000,
+      maxWaitMs: 300000,
+      timeoutMs: 240000,
+    }
+  );
+
+  assert.ok(timeoutWait >= 120000, `expected timeout wait >= 120000ms, got ${timeoutWait}`);
+  assert.ok(timeoutWait > rateLimitWait, `expected timeout wait > rate-limit wait, got timeout=${timeoutWait} rate=${rateLimitWait}`);
+});
+
+test("requestClusterAssignmentsChunkWithAdaptiveSplit splits only the failed oversized chunk and preserves assignments", async () => {
+  const chunk = Array.from({ length: 8 }, (_, idx) => ({
+    candidate_id: idx + 1,
+    title: `Candidate ${idx + 1}`,
+    cluster_text: `Candidate ${idx + 1} cluster text`,
+    snippet: `Candidate ${idx + 1} snippet`,
+    source: "Test Source",
+    source_group: "media",
+    bucket_hint: "news",
+    trust_tier: 2,
+    pub_date: `2026-03-${String(idx + 1).padStart(2, "0")}`,
+    domain: "example.com",
+  }));
+
+  const callSizes = [];
+  const executeChunk = async (currentChunk) => {
+    callSizes.push(currentChunk.map((item) => item.candidate_id));
+    if (currentChunk.length > 4) {
+      const error = new Error("This operation was aborted");
+      error.name = "AbortError";
+      throw error;
+    }
+    return currentChunk.map((item) => ({
+      candidate_id: item.candidate_id,
+      topic_key: `topic-${item.candidate_id}`,
+      topic_title: `Topic ${item.candidate_id}`,
+      topic_type: "news",
+      confidence: 0.92,
+    }));
+  };
+
+  const assignments = await requestClusterAssignmentsChunkWithAdaptiveSplit(chunk, {
+    executeChunk,
+    minChunkSize: 2,
+    maxDepth: 3,
+  });
+
+  assert.deepEqual(
+    callSizes,
+    [
+      [1, 2, 3, 4, 5, 6, 7, 8],
+      [1, 2, 3, 4],
+      [5, 6, 7, 8],
+    ]
+  );
+  assert.deepEqual(
+    assignments.map((item) => item.candidate_id),
+    [1, 2, 3, 4, 5, 6, 7, 8]
+  );
+  assert.ok(assignments.every((item) => item.topic_key.startsWith("topic-")));
+});
+
+test("requestClusterAssignmentsChunkWithAdaptiveSplit can split an odd-sized chunk once it exceeds the adaptive threshold", async () => {
+  const chunk = Array.from({ length: 17 }, (_, idx) => ({
+    candidate_id: idx + 1,
+    title: `Candidate ${idx + 1}`,
+    cluster_text: `Candidate ${idx + 1} cluster text`,
+    snippet: `Candidate ${idx + 1} snippet`,
+    source: "Test Source",
+    source_group: "media",
+    bucket_hint: "news",
+    trust_tier: 2,
+    pub_date: `2026-03-${String((idx % 9) + 1).padStart(2, "0")}`,
+    domain: "example.com",
+  }));
+
+  const callSizes = [];
+  const executeChunk = async (currentChunk) => {
+    callSizes.push(currentChunk.map((item) => item.candidate_id));
+    if (currentChunk.length > 9) {
+      const error = new Error("This operation was aborted");
+      error.name = "AbortError";
+      throw error;
+    }
+    return currentChunk.map((item) => ({
+      candidate_id: item.candidate_id,
+      topic_key: `topic-${item.candidate_id}`,
+      topic_title: `Topic ${item.candidate_id}`,
+      topic_type: "news",
+      confidence: 0.88,
+    }));
+  };
+
+  const assignments = await requestClusterAssignmentsChunkWithAdaptiveSplit(chunk, {
+    executeChunk,
+    minChunkSize: 10,
+    maxDepth: 2,
+  });
+
+  assert.deepEqual(
+    callSizes,
+    [
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [10, 11, 12, 13, 14, 15, 16, 17],
+    ]
+  );
+  assert.equal(assignments.length, 17);
+});
+
+test("buildLlmPacingLogLine exposes retry cooldown diagnostics for CI debugging", () => {
+  const nextAllowedAt = Date.parse("2026-03-31T05:30:00.000Z");
+  const line = buildLlmPacingLogLine("retry_cooldown_extended", {
+    operation: "cluster_chunk",
+    model: "glm-4.7-flash",
+    attempt: 2,
+    reason: "rate_limit",
+    requested_wait_ms: 35000,
+    cooldown_ms: 70000,
+    failure_streak: 2,
+    next_allowed_at: nextAllowedAt,
+  });
+
+  assert.match(line, /^\[llm-pacing\] retry_cooldown_extended /);
+  assert.match(line, /operation=cluster_chunk/);
+  assert.match(line, /model=glm-4\.7-flash/);
+  assert.match(line, /attempt=2/);
+  assert.match(line, /reason=rate_limit/);
+  assert.match(line, /requested_wait_ms=35000/);
+  assert.match(line, /cooldown_ms=70000/);
+  assert.match(line, /failure_streak=2/);
+  assert.match(line, /next_allowed_at=2026-03-31T05:30:00\.000Z/);
+});
+
 test("llm queue waits for previous response to finish before starting next request when concurrency is 1", () => {
+  const statePath = path.join(process.cwd(), "data", "llm-pacing-state.json");
+  const lockPath = path.join(process.cwd(), "data", ".llm-pacing.lock");
+  fs.rmSync(statePath, { force: true });
+  fs.rmSync(lockPath, { recursive: true, force: true });
+
   const script = `
     process.env.ZHIPU_API_KEY = 'dummy-key';
+    process.env.DIGEST_LLM_DISABLE_SAFE_FLOOR = '1';
     process.env.DIGEST_LLM_MAX_CONCURRENCY = '1';
     process.env.DIGEST_LLM_MIN_INTERVAL_MS = '50';
     process.env.DIGEST_LLM_INTERVAL_JITTER_MS = '1';
@@ -182,14 +367,19 @@ test("llm queue waits for previous response to finish before starting next reque
     encoding: "utf-8",
   });
 
-  assert.equal(result.status, 0, result.stderr);
-  const timing = JSON.parse(result.stdout);
-  assert.equal(timing.starts.length, 2);
-  assert.equal(timing.ends.length, 2);
-  assert.ok(
-    timing.starts[1] >= timing.ends[0] + 40,
-    `expected second request to start after first response plus interval, got starts=${JSON.stringify(timing.starts)} ends=${JSON.stringify(timing.ends)}`
-  );
+  try {
+    assert.equal(result.status, 0, result.stderr);
+    const timing = JSON.parse(result.stdout);
+    assert.equal(timing.starts.length, 2);
+    assert.equal(timing.ends.length, 2);
+    assert.ok(
+      timing.starts[1] >= timing.ends[0] + 40,
+      `expected second request to start after first response plus interval, got starts=${JSON.stringify(timing.starts)} ends=${JSON.stringify(timing.ends)}`
+    );
+  } finally {
+    fs.rmSync(statePath, { force: true });
+    fs.rmSync(lockPath, { recursive: true, force: true });
+  }
 });
 
 test("llm queue serializes requests across parallel node processes when concurrency is 1", async () => {
@@ -201,6 +391,7 @@ test("llm queue serializes requests across parallel node processes when concurre
   const script = `
     import process from 'node:process';
     process.env.ZHIPU_API_KEY = 'dummy-key';
+    process.env.DIGEST_LLM_DISABLE_SAFE_FLOOR = '1';
     process.env.DIGEST_LLM_MAX_CONCURRENCY = '1';
     process.env.DIGEST_LLM_MIN_INTERVAL_MS = '80';
     process.env.DIGEST_LLM_INTERVAL_JITTER_MS = '1';
@@ -283,4 +474,108 @@ test("buildTopicScorecard returns explainable component scores", () => {
   assert.equal(scorecard.industry_value > 0, true);
   assert.equal(scorecard.recency >= 0, true);
   assert.equal(Array.isArray(scorecard.signals), true);
+});
+
+test("mergeTopicRowsWithLLMAdaptiveSplit splits failed oversized chunk and merges object results", async () => {
+  const rows = Array.from({ length: 8 }, (_, i) => ({
+    topic_key: `key-${i + 1}`,
+    topic_title: `Topic ${i + 1}`,
+    topic_type: "news",
+    count: 1,
+    sample_titles: [],
+  }));
+
+  const callSizes = [];
+  const executeChunk = async (currentChunk) => {
+    callSizes.push(currentChunk.map((r) => r.topic_key));
+    if (currentChunk.length > 4) {
+      const error = new Error("This operation was aborted");
+      error.name = "AbortError";
+      throw error;
+    }
+    const out = {};
+    for (const r of currentChunk) {
+      out[r.topic_key] = { merged_key: r.topic_key, merged_title: r.topic_title, merged_type: "news" };
+    }
+    return out;
+  };
+
+  const result = await mergeTopicRowsWithLLMAdaptiveSplit(rows, { executeChunk, minChunkSize: 2, maxDepth: 3 });
+
+  assert.deepEqual(callSizes, [
+    ["key-1", "key-2", "key-3", "key-4", "key-5", "key-6", "key-7", "key-8"],
+    ["key-1", "key-2", "key-3", "key-4"],
+    ["key-5", "key-6", "key-7", "key-8"],
+  ]);
+  assert.equal(Object.keys(result).length, 8);
+  for (let i = 1; i <= 8; i++) {
+    assert.equal(result[`key-${i}`].merged_key, `key-${i}`);
+  }
+});
+
+test("mergeTopicRowsWithLLMAdaptiveSplit rethrows when chunk size reaches minChunkSize", async () => {
+  const rows = Array.from({ length: 3 }, (_, i) => ({
+    topic_key: `k-${i}`,
+    topic_title: `T${i}`,
+    topic_type: "news",
+    count: 1,
+    sample_titles: [],
+  }));
+
+  const executeChunk = async () => {
+    const error = new Error("This operation was aborted");
+    error.name = "AbortError";
+    throw error;
+  };
+
+  await assert.rejects(
+    () => mergeTopicRowsWithLLMAdaptiveSplit(rows, { executeChunk, minChunkSize: 3, maxDepth: 5 }),
+    (err) => err.name === "AbortError"
+  );
+});
+
+test("mergeTopicRowsWithLLMAdaptiveSplit rethrows when maxDepth is reached", async () => {
+  const rows = Array.from({ length: 20 }, (_, i) => ({
+    topic_key: `k-${i}`,
+    topic_title: `T${i}`,
+    topic_type: "news",
+    count: 1,
+    sample_titles: [],
+  }));
+
+  const executeChunk = async () => {
+    const error = new Error("This operation was aborted");
+    error.name = "AbortError";
+    throw error;
+  };
+
+  await assert.rejects(
+    () => mergeTopicRowsWithLLMAdaptiveSplit(rows, { executeChunk, minChunkSize: 1, maxDepth: 0 }),
+    (err) => err.name === "AbortError"
+  );
+});
+
+test("withRateLimitRetry honours maxRetries:0 and does not retry on first failure", async () => {
+  const cache = { llm: {} };
+  let attempts = 0;
+
+  await assert.rejects(
+    () => requestDigestLlmJson({
+      cache,
+      operation: "cluster_assignments_chunk",
+      model: "glm-4.7-flash",
+      messages: [{ role: "user", content: "test" }],
+      retryOptions: {
+        sleepFn: async () => { throw new Error("sleep should not be called"); },
+        maxRetries: 0,
+      },
+      execute: async () => {
+        attempts += 1;
+        throw new Error("智谱接口请求失败：HTTP 503 Service Unavailable");
+      },
+    }),
+    (err) => err.message.includes("503")
+  );
+
+  assert.equal(attempts, 1);
 });

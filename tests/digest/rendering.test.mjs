@@ -69,9 +69,28 @@ test("digest news rules align with confirmed 3 to 15 total range", () => {
     quickMax: 15,
     totalMin: 3,
     totalMax: 15,
-    coreTechMin: 3,
+    coreTechMin: 0,
     coreTechMax: 6,
   });
+});
+
+test("buildDigestMarkdown renders the optional paper module empty state when no paper survives", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-03-29",
+    {
+      overview: "当日产业与产品更新较多，但没有满足要求的论文材料。",
+      hotNews: [],
+      otherNews: [],
+      coreTech: [],
+      aiRumor: [],
+      refTranslations: {},
+    },
+    []
+  );
+
+  assert.match(markdown, /## 核心论文/);
+  assert.match(markdown, /当日无优质论文/);
+  assert.doesNotMatch(markdown, /今日暂无有价值论文更新/);
 });
 
 test("fallback markdown avoids untranslated placeholders and raw English titles", () => {
@@ -207,6 +226,38 @@ test("core paper block seeds Chinese title from material title even when refTran
   assert.match(markdown, /面向自动化教育数据挖掘研究的领域特定多智能体系统/);
   assert.doesNotMatch(markdown, /\*\*论文研究进展\*\*/);
   assert.doesNotMatch(markdown, /\*\*论文进展/);
+});
+
+test("material Chinese title should override stale existing translated title when rendering references", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-03-29",
+    {
+      hotNews: [],
+      otherNews: [
+        {
+          insight: "华为诺亚方舟实验室主任王云鹤辞去主任职位，华为AI迎来人事变动。",
+          narrative: "王云鹤官宣离职，华为 AI 研究体系出现人事变化。",
+          refs: [1],
+        },
+      ],
+      coreTech: [],
+      aiRumor: [],
+      refTranslations: {
+        1: "字节跳动新AI视频生成模型Dreamina Seedance 2.0登陆CapCut",
+      },
+    },
+    [
+      {
+        refId: 1,
+        title: "深度｜华为 AI，迎来大变",
+        source: "36Kr AI",
+        link: "https://36kr.com/p/3742379822399492",
+      },
+    ]
+  );
+
+  assert.match(markdown, /深度｜华为 AI，迎来大变｜36Kr AI/);
+  assert.doesNotMatch(markdown, /Dreamina Seedance 2\.0登陆CapCut｜36Kr AI/);
 });
 
 test("evening digest markdown uses dedicated title, metadata, and domestic tags", () => {

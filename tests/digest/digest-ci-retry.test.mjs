@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 
 import {
+  buildDigestAttemptLogLine,
   computeDigestRetryDelayMs,
   shouldRetryDigestRunOutput,
 } from "../../tools/run-digest-with-retry.mjs";
@@ -23,4 +24,24 @@ test("computeDigestRetryDelayMs uses bounded backoff", () => {
   assert.equal(computeDigestRetryDelayMs(1, { baseDelayMs: 20_000, maxDelayMs: 90_000 }), 20_000);
   assert.equal(computeDigestRetryDelayMs(2, { baseDelayMs: 20_000, maxDelayMs: 90_000 }), 40_000);
   assert.equal(computeDigestRetryDelayMs(4, { baseDelayMs: 20_000, maxDelayMs: 90_000 }), 90_000);
+});
+
+test("buildDigestAttemptLogLine prints attempt context for CI investigation", () => {
+  const line = buildDigestAttemptLogLine({
+    attempt: 2,
+    maxAttempts: 3,
+    profile: "morning",
+    date: "2026-03-31",
+    model: "glm-4.7-flash",
+    baseDelayMs: 60_000,
+    maxDelayMs: 240_000,
+  });
+
+  assert.match(line, /^\[ci-retry\] digest attempt /);
+  assert.match(line, /attempt=2\/3/);
+  assert.match(line, /profile=morning/);
+  assert.match(line, /date=2026-03-31/);
+  assert.match(line, /model=glm-4\.7-flash/);
+  assert.match(line, /base_delay_ms=60000/);
+  assert.match(line, /max_delay_ms=240000/);
 });

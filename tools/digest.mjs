@@ -77,6 +77,84 @@ function readPositiveIntEnv(name, fallback) {
   return Math.floor(n);
 }
 
+function readPositiveIntFromSource(envSource, name, fallback) {
+  const raw = String(envSource?.[name] || "").trim();
+  if (!raw) return fallback;
+
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n <= 0) {
+    return fallback;
+  }
+
+  return Math.floor(n);
+}
+
+const LLM_SAFE_MIN_INTERVAL_MS = 35_000;
+
+export function resolveLlmPacingConfig(envSource = process.env) {
+  const unsafeFloorDisabled = String(envSource?.DIGEST_LLM_DISABLE_SAFE_FLOOR || "").trim() === "1";
+  const requestedMinIntervalMs = readPositiveIntFromSource(
+    envSource,
+    "DIGEST_LLM_MIN_INTERVAL_MS",
+    LLM_SAFE_MIN_INTERVAL_MS
+  );
+  return {
+    maxConcurrency: 1,
+    minIntervalMs: unsafeFloorDisabled
+      ? requestedMinIntervalMs
+      : Math.max(LLM_SAFE_MIN_INTERVAL_MS, requestedMinIntervalMs),
+    intervalJitterMs: readPositiveIntFromSource(envSource, "DIGEST_LLM_INTERVAL_JITTER_MS", 400),
+    safeMinIntervalMs: LLM_SAFE_MIN_INTERVAL_MS,
+  };
+}
+
+export function resolveLlmExecutionConfig(envSource = process.env) {
+  return {
+    timeoutMs: readPositiveIntFromSource(envSource, "DIGEST_TIMEOUT_ZHIPU_MS", 240_000),
+    maxRetries: readPositiveIntFromSource(envSource, "DIGEST_LLM_MAX_RETRIES", 3),
+  };
+}
+
+function formatLogFieldValue(key, value) {
+  if (value === undefined || value === null || value === "") return null;
+
+  if (value instanceof Date) {
+    return Number.isFinite(value.getTime()) ? value.toISOString() : null;
+  }
+
+  if (typeof value === "number") {
+    if (!Number.isFinite(value)) return null;
+    if (/_at$/.test(key)) {
+      if (value <= 0) return null;
+      return new Date(value).toISOString();
+    }
+    return String(Math.round(value));
+  }
+
+  if (typeof value === "boolean") {
+    return value ? "1" : "0";
+  }
+
+  const text = String(value).trim();
+  if (!text) return null;
+  return /\s/.test(text) ? JSON.stringify(text) : text;
+}
+
+export function buildLlmPacingLogLine(event, fields = {}) {
+  const label = String(event || "").trim() || "event";
+  const parts = ["[llm-pacing]", label];
+  for (const [key, rawValue] of Object.entries(fields || {})) {
+    const value = formatLogFieldValue(key, rawValue);
+    if (value === null) continue;
+    parts.push(`${key}=${value}`);
+  }
+  return parts.join(" ");
+}
+
+function logLlmPacing(event, fields = {}) {
+  console.error(buildLlmPacingLogLine(event, { pid: process.pid, ...fields }));
+}
+
 function readBoundedFloatEnv(name, fallback, min, max) {
   const raw = String(process.env[name] || "").trim();
   if (!raw) return fallback;
@@ -128,10 +206,14 @@ const DOMAIN_CAP_DEEP_READ = readPositiveIntEnv("DIGEST_DOMAIN_CAP_DEEP_READ", 5
 const DOMAIN_CAP_FINAL = readPositiveIntEnv("DIGEST_DOMAIN_CAP_FINAL", 4);
 const TOPIC_SHORTLIST_N = readPositiveIntEnv("DIGEST_TOPIC_SHORTLIST_N", 10);
 const CLUSTER_BATCH_SIZE = readPositiveIntEnv("DIGEST_CLUSTER_BATCH_SIZE", 40);
+const CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE = readPositiveIntEnv("DIGEST_CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE", 10);
+const CLUSTER_ADAPTIVE_MAX_DEPTH = readPositiveIntEnv("DIGEST_CLUSTER_ADAPTIVE_MAX_DEPTH", 3);
 const CLUSTER_INPUT_CAP = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP", 260);
 const CLUSTER_TEXT_MAX_CHARS = readPositiveIntEnv("DIGEST_CLUSTER_TEXT_MAX_CHARS", 380);
-const TOPIC_MERGE_BATCH_SIZE = readPositiveIntEnv("DIGEST_TOPIC_MERGE_BATCH_SIZE", 120);
+const TOPIC_MERGE_BATCH_SIZE = readPositiveIntEnv("DIGEST_TOPIC_MERGE_BATCH_SIZE", 30);
 const TOPIC_MERGE_MAX_ROUNDS = readPositiveIntEnv("DIGEST_TOPIC_MERGE_MAX_ROUNDS", 2);
+const TOPIC_MERGE_ADAPTIVE_MIN_CHUNK_SIZE = readPositiveIntEnv("DIGEST_TOPIC_MERGE_ADAPTIVE_MIN_CHUNK_SIZE", 10);
+const TOPIC_MERGE_ADAPTIVE_MAX_DEPTH = readPositiveIntEnv("DIGEST_TOPIC_MERGE_ADAPTIVE_MAX_DEPTH", 3);
 const ZHIPU_MAX_TOKENS = readPositiveIntEnv("DIGEST_ZHIPU_MAX_TOKENS", 4096);
 const CLUSTER_ENRICH_MAX_ITEMS = readPositiveIntEnv("DIGEST_CLUSTER_ENRICH_MAX_ITEMS", 24);
 const CLUSTER_ENRICH_FETCH_CONCURRENCY = readPositiveIntEnv("DIGEST_CLUSTER_ENRICH_FETCH_CONCURRENCY", 6);
@@ -142,7 +224,7 @@ const IFANR_BRIEF_MAX_ARTICLES = readPositiveIntEnv("DIGEST_IFANR_BRIEF_MAX_ARTI
 const CLUSTER_TEXT_MODE = String(process.env.DIGEST_CLUSTER_TEXT_MODE || "title_lead").trim().toLowerCase();
 const CLUSTER_ENRICH_MODE = String(process.env.DIGEST_CLUSTER_ENRICH_MODE || "hybrid").trim().toLowerCase();
 const TOPIC_MIN_NEWS = readPositiveIntEnv("DIGEST_TOPIC_MIN_NEWS", 6);
-const TOPIC_MIN_PAPERS = readPositiveIntEnv("DIGEST_TOPIC_MIN_PAPERS", 3);
+const TOPIC_MIN_PAPERS = readPositiveIntEnv("DIGEST_TOPIC_MIN_PAPERS", 0);
 const TOPIC_MAX_PAPERS = readPositiveIntEnv("DIGEST_TOPIC_MAX_PAPERS", 6);
 const TOPIC_DEEP_READ_PER_TOPIC = readPositiveIntEnv("DIGEST_TOPIC_DEEP_READ_PER_TOPIC", 6);
 const TOPIC_DEEP_READ_DOMAIN_CAP = readPositiveIntEnv("DIGEST_TOPIC_DEEP_READ_DOMAIN_CAP", 3);
@@ -169,10 +251,11 @@ const SINGLETON_RECLUSTER_MIN_CONFIDENCE = readBoundedFloatEnv(
 // 预抓取兜底：正文抽取/网络失败时，用更多候选填满 TopN（不要设太大，避免抓太多网页）
 const EXTRA_CANDIDATES = Number(process.env.DIGEST_EXTRA_CANDIDATES || 0);
 
-// 网络超时（毫秒）——你网络慢就调大一点
+// 网络超时（毫秒）——大模型请求默认放宽到 240s，避免重型 prompt 过早超时。
 const TIMEOUT_RSS_MS = 120_000;  // RSS 抓取超时：120s
 const TIMEOUT_HTML_MS = 25_000;  // 网页正文抓取超时：25s
-const TIMEOUT_ZHIPU_MS = readPositiveIntEnv("DIGEST_TIMEOUT_ZHIPU_MS", 120_000); // 大模型请求超时：默认120s
+const LLM_EXECUTION_CONFIG = resolveLlmExecutionConfig(process.env);
+const TIMEOUT_ZHIPU_MS = LLM_EXECUTION_CONFIG.timeoutMs;
 
 // 抓网页正文的并发（只是抓网页，不是大模型并发）
 const FETCH_CONCURRENCY = 4;
@@ -184,18 +267,20 @@ const DETAIL_ENRICH_FETCH_CONCURRENCY = readPositiveIntEnv(
 // 一次性把内容丢给大模型会很长，所以每条正文只保留前面这么多字符（控制 token）
 const PER_ARTICLE_MAX_CHARS = 1800;
 
-// 429（Too Many Requests 限流）重试次数
-const LLM_MAX_RETRIES = 6;
+// 429（Too Many Requests 限流）重试次数：默认收紧到 3，避免单次逻辑调用被重试放大。
+const LLM_MAX_RETRIES = LLM_EXECUTION_CONFIG.maxRetries;
 
-// 免费接口更稳的默认值：全局严格串行，且上一请求完成后再等待 20s 才发下一次。
-const LLM_MIN_INTERVAL_MS = readPositiveIntEnv("DIGEST_LLM_MIN_INTERVAL_MS", 20_000);
-const LLM_MAX_CONCURRENCY = Math.max(
-  1,
-  Math.min(1, readPositiveIntEnv("DIGEST_LLM_MAX_CONCURRENCY", 1))
-);
-const LLM_INTERVAL_JITTER_MS = readPositiveIntEnv("DIGEST_LLM_INTERVAL_JITTER_MS", 400);
+// 免费接口使用保守节流：强制串行，且上一请求完成后至少等待 35s。
+const LLM_PACING_CONFIG = resolveLlmPacingConfig(process.env);
+const LLM_MIN_INTERVAL_MS = LLM_PACING_CONFIG.minIntervalMs;
+const LLM_MAX_CONCURRENCY = LLM_PACING_CONFIG.maxConcurrency;
+const LLM_INTERVAL_JITTER_MS = LLM_PACING_CONFIG.intervalJitterMs;
 const LLM_CACHE_RETENTION_DAYS = readPositiveIntEnv("DIGEST_LLM_CACHE_RETENTION_DAYS", 45);
 const LLM_FORCE_REFRESH = String(process.env.DIGEST_LLM_FORCE_REFRESH || "").trim() === "1";
+const LLM_RETRY_COOLDOWN_MAX_MS = Math.max(
+  readPositiveIntEnv("DIGEST_LLM_RETRY_COOLDOWN_MAX_MS", 300_000),
+  TIMEOUT_ZHIPU_MS
+);
 
 // 缓存保留天数（避免 cache 无限制膨胀）
 const CACHE_RETENTION_DAYS = Number(process.env.DIGEST_CACHE_RETENTION_DAYS || 14);
@@ -227,7 +312,7 @@ const DIGEST_NEWS_RULES = Object.freeze({
   quickMax: 15,
   totalMin: 3,
   totalMax: 15,
-  coreTechMin: 3,
+  coreTechMin: 0,
   coreTechMax: 6,
 });
 
@@ -580,8 +665,16 @@ function getRunDateAnchorMs(runDate) {
 }
 
 function cutoffMsForDays(runDate, days) {
-  const anchorMs = getRunDateAnchorMs(runDate);
-  return anchorMs - Number(days || 0) * 24 * 60 * 60 * 1000;
+  const raw = String(runDate || "").trim();
+  const offsetDays = Math.max(0, Number(days || 0));
+  if (!raw) return Date.now() - offsetDays * 24 * 60 * 60 * 1000;
+
+  const parsed = Date.parse(`${raw}T00:00:00.000Z`);
+  if (!Number.isFinite(parsed)) {
+    return Date.now() - offsetDays * 24 * 60 * 60 * 1000;
+  }
+
+  return parsed - offsetDays * 24 * 60 * 60 * 1000;
 }
 
 function isStaleArxivLink(url, nowMs = Date.now()) {
@@ -792,7 +885,12 @@ function buildRuntimeEnvAuditSnapshot() {
     llm_max_concurrency: LLM_MAX_CONCURRENCY,
     llm_min_interval_ms: LLM_MIN_INTERVAL_MS,
     llm_interval_jitter_ms: LLM_INTERVAL_JITTER_MS,
+    llm_max_retries: LLM_MAX_RETRIES,
     llm_cache_retention_days: LLM_CACHE_RETENTION_DAYS,
+    llm_retry_cooldown_max_ms: LLM_RETRY_COOLDOWN_MAX_MS,
+    cluster_adaptive_min_chunk_size: CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE,
+    cluster_adaptive_max_depth: CLUSTER_ADAPTIVE_MAX_DEPTH,
+    topic_merge_batch_size: TOPIC_MERGE_BATCH_SIZE,
     timeout_zhipu_ms: TIMEOUT_ZHIPU_MS,
   };
 }
@@ -2768,7 +2866,7 @@ function clipToSentence(text, maxChars = 260) {
   );
 
   if (punct >= Math.floor(limit * 0.55)) {
-    const end = sliced[punct] === "." || sliced[punct] === "!" || sliced[punct] === "?" ? punct + 1 : punct + 2;
+    const end = punct + 1;
     const clipped = trimDanglingSentenceTail(sliced.slice(0, end));
     if (!clipped) return "";
     return /[。！？.!?]$/.test(clipped) ? clipped : `${clipped}。`;
@@ -2835,7 +2933,7 @@ function cleanTemplateNarrative(text) {
     .replace(/已纳入当日快讯，建议结合原文核对关键细节。?/g, "")
     .replace(/社区来源发布了“[^”]+”相关动态，已纳入当日快讯，建议结合原文核对关键细节。?/g, "")
     .replace(/社区来源快讯更新/g, "")
-    .replace(/[。！？]\s*[A-Za-z][A-Za-z0-9\s-]{1,18}$/g, "。")
+    .replace(/[。！？]\s*[A-Za-z][A-Za-z0-9-]{1,8}$/g, "。")
     .trim();
 }
 
@@ -3065,22 +3163,20 @@ function getChineseSourceLabel(item) {
       break;
   }
 
-  if (item?.bucketHint === "core_tech") return "论文平台";
+  if (isPaperLikeMaterial(item)) return "论文平台";
   if (item?.bucketHint === "ai_rumor") return "线索来源";
   return "资讯来源";
 }
 
 function isPaperLikeMaterial(item) {
   if (!item) return false;
-  const group = String(item?.sourceGroup || "").trim();
+  const group = String(item?.sourceGroup || item?.source_group || "").trim().toLowerCase();
   if (group === "paper") return true;
 
-  const source = String(item?.source || "").toLowerCase();
   const link = String(item?.link || "").toLowerCase();
   return (
-    source.includes("arxiv") ||
-    source.includes("paper") ||
     link.includes("arxiv.org/abs/") ||
+    link.includes("arxiv.org/pdf/") ||
     link.includes("huggingface.co/papers/")
   );
 }
@@ -3116,7 +3212,7 @@ function buildFallbackEntryTitle(material, indexByBucket) {
 }
 
 function buildFallbackEntrySummary(material) {
-  if (material?.bucketHint === "core_tech") {
+  if (isPaperLikeMaterial(material)) {
     return "该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。";
   }
   if (material?.bucketHint === "ai_rumor") {
@@ -3196,7 +3292,7 @@ function mergeNarrativeAndEvaluation(narrative, evaluation) {
 function buildFallbackHotNewsEntry(material, insightSeed = "") {
   const sourceLabel = getChineseSourceLabel(material);
   const title = redactUrlLike(material?.title || material?.contentSnippet || "");
-  const insight = clipToChars(insightSeed || title || `${sourceLabel}动态`, 36);
+  const insight = clipHeadline(insightSeed || title || `${sourceLabel}动态`, 56);
   const briefing = normalizeNarrativeBody(
     title || `来自${sourceLabel}的行业动态，建议关注后续披露与执行进展。`
   );
@@ -3294,8 +3390,8 @@ function buildHotNewsEntryFromLLM(item, allowedRefIds) {
   const narrative = mergeNarrativeAndEvaluation(briefing, evaluation);
 
   return {
-    title: clipToChars(insightSeed || "当日AI关键动态", 36),
-    insight: clipToChars(insightSeed || "当日AI关键动态", 36),
+    title: clipHeadline(insightSeed || "当日AI关键动态", 56),
+    insight: clipHeadline(insightSeed || "当日AI关键动态", 56),
     briefing,
     evaluation,
     narrative,
@@ -3789,7 +3885,7 @@ export function normalizeDailySummary(rawDaily, materials) {
     })
     .filter(Boolean);
 
-  // 公开约束：重点资讯是多源话题叙事；其他快讯可容纳高价值单源信息；核心论文 3~6。
+  // 公开约束：重点资讯是多源话题叙事；其他快讯可容纳高价值单源信息；核心论文可为空。
   let mergedNews = [...hotNews, ...otherNews];
   const hotMax = Math.max(1, Math.min(DIGEST_NEWS_RULES.hotMax, HOT_NEWS_MAX));
   const hotMin = Math.max(1, Math.min(hotMax, HOT_NEWS_MIN));
@@ -4003,6 +4099,7 @@ function isTransientNetworkError(e) {
     code === "UND_ERR_CONNECT_TIMEOUT" ||
     code === "UND_ERR_HEADERS_TIMEOUT" ||
     code === "UND_ERR_SOCKET" ||
+    e?.name === "AbortError" ||
     msg.includes("AbortError") ||
     msg.includes("aborted") ||
     msg.includes("timed out") ||
@@ -4037,11 +4134,39 @@ function recordLlmRetry(error) {
   }
 }
 
-function extendLlmCooldown(waitMs) {
+function extendLlmCooldown(waitMs, context = {}) {
   llmFailureStreak += 1;
+  const previousNextAllowedAt = llmNextAllowedAt;
   const multiplier = Math.min(4, llmFailureStreak);
-  const cooldown = Math.min(60_000, Math.max(waitMs, LLM_MIN_INTERVAL_MS) * multiplier);
+  const cooldown = Math.min(LLM_RETRY_COOLDOWN_MAX_MS, Math.max(waitMs, LLM_MIN_INTERVAL_MS) * multiplier);
   llmNextAllowedAt = Math.max(llmNextAllowedAt, Date.now() + cooldown);
+  writeSharedLlmPacingState(llmNextAllowedAt);
+  logLlmPacing("retry_cooldown_extended", {
+    ...context,
+    requested_wait_ms: waitMs,
+    cooldown_ms: cooldown,
+    failure_streak: llmFailureStreak,
+    previous_next_allowed_at: previousNextAllowedAt,
+    next_allowed_at: llmNextAllowedAt,
+  });
+}
+
+export function computeLlmRetryDelayMs(error, options = {}) {
+  const attempt = Math.max(1, Number(options?.attempt || 1));
+  const minIntervalMs = Number.isFinite(options?.minIntervalMs) ? Number(options.minIntervalMs) : LLM_MIN_INTERVAL_MS;
+  const timeoutMs = Number.isFinite(options?.timeoutMs) ? Number(options.timeoutMs) : TIMEOUT_ZHIPU_MS;
+  const maxWaitMs = Number.isFinite(options?.maxWaitMs)
+    ? Number(options.maxWaitMs)
+    : Math.max(LLM_RETRY_COOLDOWN_MAX_MS, minIntervalMs * 4);
+  const jitter = Number.isFinite(options?.jitterMs)
+    ? Math.max(0, Number(options.jitterMs))
+    : Math.floor(Math.random() * 600);
+  const base = Math.max(minIntervalMs, 1500 * Math.pow(2, attempt - 1));
+  const message = `${error?.name || ""} ${error?.message || error || ""}`.trim();
+  const isTimeoutAbort = isTransientNetworkError(error) && /abort|aborted|timed out/i.test(message);
+  const timeoutFloor = Math.min(maxWaitMs, Math.max(base, Math.ceil(timeoutMs * 0.5)));
+  const waitFloor = isTimeoutAbort ? timeoutFloor : base;
+  return Math.min(waitFloor + jitter, maxWaitMs);
 }
 
 function resetLlmFailureStreak() {
@@ -4136,15 +4261,25 @@ function releaseSharedLlmPacingLock() {
   } catch {}
 }
 
-async function enforceLlmRequestPacing() {
+async function enforceLlmRequestPacing(context = {}) {
   await acquireLlmSlot();
   let lockHeld = false;
   try {
     lockHeld = await acquireSharedLlmPacingLock();
     const sharedState = readSharedLlmPacingState();
-    llmNextAllowedAt = Math.max(llmNextAllowedAt, Number(sharedState?.nextAllowedAt || 0));
+    const localNextAllowedAt = Number(llmNextAllowedAt || 0);
+    const sharedNextAllowedAt = Number(sharedState?.nextAllowedAt || 0);
+    llmNextAllowedAt = Math.max(localNextAllowedAt, sharedNextAllowedAt);
     const now = Date.now();
     const waitMs = Math.max(0, llmNextAllowedAt - now);
+    logLlmPacing(waitMs > 0 ? "wait_before_request" : "dispatch_ready", {
+      ...context,
+      local_next_allowed_at: localNextAllowedAt,
+      shared_next_allowed_at: sharedNextAllowedAt,
+      effective_next_allowed_at: llmNextAllowedAt,
+      wait_ms: waitMs,
+      in_flight: llmInFlight,
+    });
     if (waitMs > 0) {
       await sleep(waitMs);
     }
@@ -4156,20 +4291,30 @@ async function enforceLlmRequestPacing() {
   }
 }
 
-function finalizeLlmRequestPacing(token = null) {
+function finalizeLlmRequestPacing(token = null, context = {}) {
   const jitter = Math.floor(Math.random() * Math.max(1, LLM_INTERVAL_JITTER_MS));
   llmNextAllowedAt = Math.max(llmNextAllowedAt, Date.now() + LLM_MIN_INTERVAL_MS + jitter);
   writeSharedLlmPacingState(llmNextAllowedAt);
+  logLlmPacing("request_complete", {
+    ...context,
+    min_interval_ms: LLM_MIN_INTERVAL_MS,
+    jitter_ms: jitter,
+    next_allowed_at: llmNextAllowedAt,
+  });
   if (token?.lockHeld) releaseSharedLlmPacingLock();
   releaseLlmSlot();
 }
 
-// 指数退避重试：1.5s、3s、6s、12s…最多等到 30s
+// 指数退避重试：超时/AbortError 会使用更长的冷却，降低超时后立即补发导致的 429。
 async function withRateLimitRetry(fn, options = {}) {
   const sleepFn = typeof options?.sleepFn === "function" ? options.sleepFn : sleep;
   const minIntervalMs = Number.isFinite(options?.minIntervalMs) ? Number(options.minIntervalMs) : LLM_MIN_INTERVAL_MS;
-  const maxWaitMs = Number.isFinite(options?.maxWaitMs) ? Number(options.maxWaitMs) : 30_000;
+  const logContext = options?.logContext && typeof options.logContext === "object" ? options.logContext : {};
+  const maxWaitMs = Number.isFinite(options?.maxWaitMs)
+    ? Number(options.maxWaitMs)
+    : Math.max(LLM_RETRY_COOLDOWN_MAX_MS, minIntervalMs * 4);
   const onRetry = typeof options?.onRetry === "function" ? options.onRetry : null;
+  const effectiveMaxRetries = Number.isFinite(options?.maxRetries) ? Math.max(0, Number(options.maxRetries)) : LLM_MAX_RETRIES;
   let attempt = 0;
   while (true) {
     try {
@@ -4179,22 +4324,36 @@ async function withRateLimitRetry(fn, options = {}) {
     } catch (e) {
       attempt += 1;
       const retryable = isRateLimitError(e) || isTransientModelServerError(e) || isTransientNetworkError(e);
-      if (!retryable || attempt > LLM_MAX_RETRIES) throw e;
+      if (!retryable || attempt > effectiveMaxRetries) throw e;
 
-      const base = Math.max(1500 * Math.pow(2, attempt - 1), Math.floor(minIntervalMs * 0.75));
-      const jitter = Math.floor(Math.random() * 600);
-      const wait = Math.min(base + jitter, maxWaitMs);
+      const wait = computeLlmRetryDelayMs(e, {
+        attempt,
+        minIntervalMs,
+        maxWaitMs,
+        timeoutMs: TIMEOUT_ZHIPU_MS,
+      });
+      const reason = isRateLimitError(e)
+        ? "rate_limit"
+        : isTransientNetworkError(e)
+          ? "transient_network"
+          : "transient_model";
+      const errorExcerpt = String(e?.message || e).split("\n")[0].slice(0, 160);
 
       recordLlmRetry(e);
-      extendLlmCooldown(wait);
+      extendLlmCooldown(wait, {
+        ...logContext,
+        attempt,
+        reason,
+        error_excerpt: errorExcerpt,
+      });
       if (onRetry) onRetry({ attempt, error: e, waitMs: wait });
 
-      const reason = isRateLimitError(e)
+      const retryReason = isRateLimitError(e)
         ? "429 限流"
         : isTransientNetworkError(e)
           ? "网络/超时瞬时错误"
           : "模型服务瞬时错误";
-      console.warn(`[retry] 触发${reason}，第${attempt}次重试，等待 ${wait}ms`);
+      console.warn(`[retry] 触发${retryReason}，第${attempt}次重试，等待 ${wait}ms`);
       await sleepFn(wait);
     }
   }
@@ -4213,16 +4372,13 @@ function normalizeClusterEnrichMode(mode) {
 }
 
 function isPaperCandidateCard(card) {
-  const group = String(card?.source_group || "").toLowerCase();
-  const hint = String(card?.bucket_hint || "").toLowerCase();
-  const source = String(card?.source || "").toLowerCase();
-  const link = String(card?.link || "").toLowerCase();
-  return (
-    group === "paper" ||
-    hint === "core_tech" ||
-    source.includes("arxiv") ||
-    link.includes("arxiv.org/abs/") ||
-    link.includes("arxiv.org/pdf/")
+  return isPaperLikeMaterial(
+    card?._item || {
+      sourceGroup: card?.source_group || "",
+      source_group: card?.source_group || "",
+      source: card?.source || "",
+      link: card?.link || "",
+    }
   );
 }
 
@@ -4721,7 +4877,7 @@ function normalizeClusterAssignments(rows, cards) {
   return out;
 }
 
-async function requestClusterAssignmentsChunk(chunk, model, cache) {
+async function requestClusterAssignmentsChunk(chunk, model, cache, retryOptions = {}) {
   const system = `
 你是资讯聚类分析师。任务：把候选条目归并为“同一事件/同一论文主题”。
 只输出 JSON，不要解释。
@@ -4767,6 +4923,7 @@ ${JSON.stringify(payload)}
       { role: "system", content: system },
       { role: "user", content: prompt },
     ],
+    retryOptions,
   });
   let parsed = null;
   try {
@@ -4775,6 +4932,47 @@ ${JSON.stringify(payload)}
     console.warn(`[warn] cluster chunk parse failed, fallback to single assignments: ${error?.message || error}`);
   }
   return normalizeClusterAssignments(parsed?.assignments || [], chunk);
+}
+
+export async function requestClusterAssignmentsChunkWithAdaptiveSplit(chunk, options = {}) {
+  const innerMaxRetries = Number.isFinite(options?.innerMaxRetries) ? Math.max(0, Number(options.innerMaxRetries)) : 0;
+  const executeChunk = typeof options?.executeChunk === "function"
+    ? options.executeChunk
+    : (currentChunk) => requestClusterAssignmentsChunk(
+      currentChunk,
+      options?.model || process.env.ZHIPU_MODEL || "glm-4.7-flash",
+      options?.cache || null,
+      { maxRetries: innerMaxRetries }
+    );
+  const minChunkSize = Math.max(1, Number(options?.minChunkSize || CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE));
+  const maxDepth = Math.max(0, Number(options?.maxDepth || CLUSTER_ADAPTIVE_MAX_DEPTH));
+
+  async function run(currentChunk, depth = 0) {
+    try {
+      return await executeChunk(currentChunk, { depth });
+    } catch (error) {
+      const retryable = isRateLimitError(error) || isTransientModelServerError(error) || isTransientNetworkError(error);
+      const canSplit = retryable && currentChunk.length > minChunkSize && currentChunk.length > 1 && depth < maxDepth;
+      if (!canSplit) throw error;
+
+      const midpoint = Math.ceil(currentChunk.length / 2);
+      const leftChunk = currentChunk.slice(0, midpoint);
+      const rightChunk = currentChunk.slice(midpoint);
+      const reason = isRateLimitError(error)
+        ? "rate_limit"
+        : isTransientNetworkError(error)
+          ? "transient_network"
+          : "transient_model";
+      console.warn(
+        `[cluster-adaptive] split depth=${depth} size=${currentChunk.length} into=${leftChunk.length}+${rightChunk.length} reason=${reason}`
+      );
+      const left = await run(leftChunk, depth + 1);
+      const right = await run(rightChunk, depth + 1);
+      return [...left, ...right];
+    }
+  }
+
+  return run(Array.isArray(chunk) ? chunk : [], 0);
 }
 
 async function clusterCandidateCardsWithLLM(cards, cache) {
@@ -4799,7 +4997,10 @@ async function clusterCandidateCardsWithLLM(cards, cache) {
       const chunk = chunks[i];
       const chunkStart = Date.now();
       console.log(`[cluster-chunk] start ${i + 1}/${chunks.length} size=${chunk.length}`);
-      let normalized = await requestClusterAssignmentsChunk(chunk, model, cache);
+      let normalized = await requestClusterAssignmentsChunkWithAdaptiveSplit(chunk, {
+        model,
+        cache,
+      });
 
       const fallbackIds = normalized.filter((x) => x.fallback).map((x) => Number(x.candidate_id));
       if (
@@ -4943,6 +5144,43 @@ ${JSON.stringify(rows)}
   return out;
 }
 
+export async function mergeTopicRowsWithLLMAdaptiveSplit(rows, options = {}) {
+  const model = options?.model || process.env.ZHIPU_MODEL || "glm-4.7-flash";
+  const cache = options?.cache || null;
+  const executeChunk = typeof options?.executeChunk === "function"
+    ? options.executeChunk
+    : (currentChunk) => mergeTopicRowsWithLLM(currentChunk, model, cache);
+  const minChunkSize = Math.max(1, Number(options?.minChunkSize || TOPIC_MERGE_ADAPTIVE_MIN_CHUNK_SIZE));
+  const maxDepth = Math.max(0, Number(options?.maxDepth || TOPIC_MERGE_ADAPTIVE_MAX_DEPTH));
+
+  async function run(currentChunk, depth = 0) {
+    try {
+      return await executeChunk(currentChunk, { depth });
+    } catch (error) {
+      const retryable = isRateLimitError(error) || isTransientModelServerError(error) || isTransientNetworkError(error);
+      const canSplit = retryable && currentChunk.length > minChunkSize && currentChunk.length > 1 && depth < maxDepth;
+      if (!canSplit) throw error;
+
+      const midpoint = Math.ceil(currentChunk.length / 2);
+      const leftChunk = currentChunk.slice(0, midpoint);
+      const rightChunk = currentChunk.slice(midpoint);
+      const reason = isRateLimitError(error)
+        ? "rate_limit"
+        : isTransientNetworkError(error)
+          ? "transient_network"
+          : "transient_model";
+      console.warn(
+        `[merge-adaptive] split depth=${depth} size=${currentChunk.length} into=${leftChunk.length}+${rightChunk.length} reason=${reason}`
+      );
+      const leftResult = await run(leftChunk, depth + 1);
+      const rightResult = await run(rightChunk, depth + 1);
+      return { ...leftResult, ...rightResult };
+    }
+  }
+
+  return run(Array.isArray(rows) ? rows : [], 0);
+}
+
 function compactTopicBucketForMerge(key, bucket) {
   return {
     topic_key: key,
@@ -4989,7 +5227,7 @@ async function mergeTopicKeysWithLLM(topicBuckets, cache) {
 
     for (const chunk of chunks) {
       console.log(`[topic-merge] round=${round} chunk_size=${chunk.length}`);
-      const chunkMap = await mergeTopicRowsWithLLM(chunk, model, cache);
+      const chunkMap = await mergeTopicRowsWithLLMAdaptiveSplit(chunk, { model, cache });
       for (const row of chunk) {
         const key = row.topic_key;
         const mapped = chunkMap[key];
@@ -5757,34 +5995,23 @@ function resolveTopicShortlistQuota(topicCards, target) {
   const newsTotal = topicCards.filter((t) => t.topic_type === "news").length;
   const paperTotal = topicCards.filter((t) => t.topic_type === "paper").length;
   const hardMinNews = Math.min(newsTotal, Math.max(3, TOPIC_MIN_NEWS));
-  const hardMinPapers = Math.min(paperTotal, Math.max(0, TOPIC_MIN_PAPERS));
-  let maxPapers = Math.min(
-    paperTotal,
-    Math.max(hardMinPapers, TOPIC_MAX_PAPERS),
-    Math.max(0, target - 3)
-  );
-  if (paperTotal === 0) maxPapers = 0;
-
-  let preferredPapers = Math.min(
+  const newsTarget = Math.min(newsTotal, Math.max(hardMinNews, Math.max(0, target)));
+  const minPapers = Math.min(paperTotal, Math.max(0, TOPIC_MIN_PAPERS));
+  const maxPapers = Math.min(paperTotal, Math.max(0, TOPIC_MAX_PAPERS));
+  const preferredPapers = Math.min(
     maxPapers,
-    Math.max(hardMinPapers, Math.round(target * 0.35))
+    Math.max(minPapers, Math.round(Math.max(0, target) * 0.35))
   );
-
-  let minNews = Math.min(newsTotal, Math.max(hardMinNews, target - preferredPapers));
-  if (minNews + hardMinPapers > target) {
-    minNews = Math.max(0, target - hardMinPapers);
-  }
-
-  const minPapers = Math.min(hardMinPapers, Math.max(0, target - minNews));
-  preferredPapers = Math.min(maxPapers, Math.max(minPapers, preferredPapers));
 
   return {
     news_total: newsTotal,
     paper_total: paperTotal,
-    min_news: minNews,
+    min_news: hardMinNews,
+    news_target: newsTarget,
     min_papers: minPapers,
     preferred_papers: preferredPapers,
     max_papers: Math.max(minPapers, maxPapers),
+    total_cap: newsTarget + Math.max(minPapers, maxPapers),
   };
 }
 
@@ -5793,8 +6020,6 @@ async function shortlistTopicsWithLLM(topicCards, cache) {
   console.log(`[shortlist] start topics=${topicCards.length}`);
   const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
   const edition = DIGEST_EDITION;
-  const domesticPreferredTopics = topicCards.filter((topic) => isPreferredEveningTopic(topic));
-  const domesticTopicCount = domesticPreferredTopics.length;
   const payload = topicCards.map((t) => ({
     topic_id: t.topic_id,
     topic_title: t.topic_title,
@@ -5810,10 +6035,6 @@ async function shortlistTopicsWithLLM(topicCards, cache) {
 
   const target = Math.max(6, Math.min(12, TOPIC_SHORTLIST_N));
   const quota = resolveTopicShortlistQuota(topicCards, target);
-  const minPreferredEveningTopics =
-    edition === "evening"
-      ? Math.min(domesticTopicCount, Math.max(4, Math.floor(target * 0.7)))
-      : 0;
 
   const system = `
 你是 AI 资讯选题主编。任务：从话题簇中选出最有价值的话题。
@@ -5824,13 +6045,13 @@ async function shortlistTopicsWithLLM(topicCards, cache) {
 请从下面话题簇中筛选最值得深读的 topic_id。
 标准：热点程度、行业影响、时效性、来源权威、跨源一致性。
 要求：
-1) 选出 ${target} 个左右 topic_id（允许 8-12 范围）
-2) 至少包含 ${quota.min_news} 个 news；若存在论文话题，至少包含 ${quota.min_papers} 个 paper
-3) paper 不超过 ${quota.max_papers} 个，避免压缩资讯覆盖面
+1) 优先选出 ${quota.news_target} 个左右 news topic；若存在高质量论文话题，可额外补充 0-${quota.max_papers} 个 paper（不计入前述 news 目标）
+2) 至少包含 ${quota.min_news} 个 news；paper 可为 0 个，不强制
+3) paper 不超过 ${quota.max_papers} 个，总量通常不超过 ${quota.total_cap} 个 topic_id
 4) 优先保留与 AI 技术/产业强相关的话题，剔除关联弱的泛社会或娱乐化事件
 ${edition === "evening"
-  ? `5) 这是 AI晚报（国内版）。默认优先中国 AI 公司、模型、云平台、应用、商业化与政策进展；如果国内高质量话题足够，尽量不要选择纯国外公司动态。
-6) 在有足够候选的前提下，至少保留 ${minPreferredEveningTopics} 个与 MiniMax、智谱、阿里/通义、字节/豆包/Seed、腾讯/混元、阶跃、Kimi/月之暗面、DeepSeek、百度/文心、小米等直接相关的话题。`
+  ? `5) 这是 AI晚报（东八区视角）。在同等质量下，优先中国 AI 公司、模型、云平台、应用、商业化与政策进展，但不要把国外高质量动态硬性排除。
+6) 若与 MiniMax、智谱、阿里/通义、字节/豆包/Seed、腾讯/混元、阶跃、Kimi/月之暗面、DeepSeek、百度/文心、小米等直接相关的话题质量足够，应优先靠前。`
   : `5) 在信息质量相当时，优先多源交叉验证、产业影响更大的话题。`}
 ${edition === "evening" ? "7" : "6"}) 输出合法 JSON：
 {
@@ -5864,7 +6085,7 @@ ${JSON.stringify(payload)}
   ids = [...new Set(ids)];
 
   if (!ids.length) {
-    ids = topicCards.slice(0, target).map((t) => t.topic_id);
+    ids = topicCards.slice(0, quota.total_cap).map((t) => t.topic_id);
   }
 
   const topicById = new Map(topicCards.map((t) => [t.topic_id, t]));
@@ -5881,24 +6102,23 @@ ${JSON.stringify(payload)}
   );
   const newsOrder = candidateOrder.filter((id) => topicById.get(id)?.topic_type === "news");
   const paperOrder = candidateOrder.filter((id) => topicById.get(id)?.topic_type === "paper");
-  const preferredEveningNewsOrder =
-    edition === "evening"
-      ? newsOrder.filter((id) => isPreferredEveningTopic(topicById.get(id)))
-      : [];
   const selected = [];
   const selectedSet = new Set();
   let newsPicked = 0;
   let paperPicked = 0;
-  let preferredEveningPicked = 0;
 
   const pushOne = (id) => {
     const topic = topicById.get(id);
     if (!topic || selectedSet.has(id)) return false;
+    if (topic.topic_type === "paper") {
+      if (paperPicked >= quota.max_papers || selected.length >= quota.total_cap) return false;
+    } else if (newsPicked >= quota.news_target) {
+      return false;
+    }
     selected.push(id);
     selectedSet.add(id);
     if (topic.topic_type === "paper") paperPicked += 1;
     else newsPicked += 1;
-    if (edition === "evening" && isPreferredEveningTopic(topic)) preferredEveningPicked += 1;
     return true;
   };
 
@@ -5906,26 +6126,10 @@ ${JSON.stringify(payload)}
     while ((type === "paper" ? paperPicked : newsPicked) < count) {
       let picked = false;
       for (const id of order) {
-        if (selected.length >= target) break;
+        if (type === "paper" && selected.length >= quota.total_cap) break;
         if (selectedSet.has(id)) continue;
         const topic = topicById.get(id);
         if (!topic || topic.topic_type !== type) continue;
-        if (type === "paper" && paperPicked >= quota.max_papers) continue;
-        pushOne(id);
-        picked = true;
-        break;
-      }
-      if (!picked) break;
-    }
-  };
-
-  takeByType(newsOrder, "news", quota.min_news);
-  if (edition === "evening" && minPreferredEveningTopics > 0) {
-    while (preferredEveningPicked < minPreferredEveningTopics) {
-      let picked = false;
-      for (const id of preferredEveningNewsOrder) {
-        if (selected.length >= target) break;
-        if (selectedSet.has(id)) continue;
         if (pushOne(id)) {
           picked = true;
           break;
@@ -5933,33 +6137,34 @@ ${JSON.stringify(payload)}
       }
       if (!picked) break;
     }
-  }
-  takeByType(paperOrder, "paper", quota.min_papers);
+  };
+
+  takeByType(newsOrder, "news", quota.min_news);
+  takeByType(newsOrder, "news", quota.news_target);
   takeByType(paperOrder, "paper", quota.preferred_papers);
 
   for (const id of candidateOrder) {
-    if (selected.length >= target) break;
+    if (selected.length >= quota.total_cap) break;
     if (selectedSet.has(id)) continue;
     const topic = topicById.get(id);
     if (!topic) continue;
-    if (topic.topic_type === "paper" && paperPicked >= quota.max_papers) continue;
     pushOne(id);
   }
 
-  // 兜底：若上一步因配比限制导致未达目标，再补齐剩余高分话题。
+  // 兜底：若上一步仍有容量，则补齐剩余高分话题，但 news/paper 仍遵守各自上限。
   for (const id of candidateOrder) {
-    if (selected.length >= target) break;
+    if (selected.length >= quota.total_cap) break;
     if (selectedSet.has(id)) continue;
     pushOne(id);
   }
 
   if (!selected.length) {
-    for (const id of rankedIds.slice(0, target)) {
-      if (selected.length >= target) break;
+    for (const id of rankedIds) {
+      if (selected.length >= quota.total_cap) break;
       pushOne(id);
     }
   }
-  ids = selected.slice(0, target);
+  ids = selected.slice(0, quota.total_cap);
   const selectedSetFinal = new Set(ids);
 
   const reasonsIn = Array.isArray(parsed?.reasons) ? parsed.reasons : [];
@@ -6022,8 +6227,8 @@ function tokenOverlapCount(aSet, bSet) {
   return n;
 }
 
-function buildTopicDeepReadPlan(selectedTopicIds, topicCards, candidateCards) {
-  const edition = DIGEST_EDITION;
+function buildTopicDeepReadPlan(selectedTopicIds, topicCards, candidateCards, options = {}) {
+  const edition = normalizeDigestEdition(options?.edition || DIGEST_EDITION);
   const cardById = new Map(candidateCards.map((c) => [c.candidate_id, c]));
   const topicById = new Map(topicCards.map((t) => [t.topic_id, t]));
   const selected = [];
@@ -6056,9 +6261,6 @@ function buildTopicDeepReadPlan(selectedTopicIds, topicCards, candidateCards) {
       stats.dropped_by_stale_arxiv += 1;
       return false;
     }
-    if (edition === "evening" && estimateDomesticAiMaterialSignal(card?._item || card) <= 0) {
-      return false;
-    }
     return true;
   };
 
@@ -6068,7 +6270,14 @@ function buildTopicDeepReadPlan(selectedTopicIds, topicCards, candidateCards) {
     const members = (topic.member_candidate_ids || [])
       .map((id) => cardById.get(id))
       .filter(Boolean)
-      .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
+      .sort((a, b) => {
+        if (edition === "evening") {
+          const domesticDelta =
+            estimateDomesticAiMaterialSignal(b?._item || b) - estimateDomesticAiMaterialSignal(a?._item || a);
+          if (domesticDelta !== 0) return domesticDelta;
+        }
+        return Number(b?.score || 0) - Number(a?.score || 0);
+      });
     const domainSeen = new Map();
     let localCount = 0;
 
@@ -6142,10 +6351,18 @@ function buildTopicDeepReadPlan(selectedTopicIds, topicCards, candidateCards) {
       });
     }
 
-    candidates.sort((a, b) =>
-      Number(b.overlap || 0) - Number(a.overlap || 0) ||
-      Number(b.card?.score || 0) - Number(a.card?.score || 0)
-    );
+    candidates.sort((a, b) => {
+      if (edition === "evening") {
+        const domesticDelta =
+          estimateDomesticAiMaterialSignal(b.card?._item || b.card) -
+          estimateDomesticAiMaterialSignal(a.card?._item || a.card);
+        if (domesticDelta !== 0) return domesticDelta;
+      }
+      return (
+        Number(b.overlap || 0) - Number(a.overlap || 0) ||
+        Number(b.card?.score || 0) - Number(a.card?.score || 0)
+      );
+    });
 
     for (const row of candidates) {
       if (selected.length >= softMin) break;
@@ -6165,10 +6382,16 @@ function buildTopicDeepReadPlan(selectedTopicIds, topicCards, candidateCards) {
     }
   }
 
-  const sorted = selected.sort((a, b) =>
-    Number(topicById.get(b.topicId)?.cross_source_score || 0) - Number(topicById.get(a.topicId)?.cross_source_score || 0) ||
-    Number(b?.score || 0) - Number(a?.score || 0)
-  );
+  const sorted = selected.sort((a, b) => {
+    if (edition === "evening") {
+      const domesticDelta = estimateDomesticAiMaterialSignal(b) - estimateDomesticAiMaterialSignal(a);
+      if (domesticDelta !== 0) return domesticDelta;
+    }
+    return (
+      Number(topicById.get(b.topicId)?.cross_source_score || 0) - Number(topicById.get(a.topicId)?.cross_source_score || 0) ||
+      Number(b?.score || 0) - Number(a?.score || 0)
+    );
+  });
   const globalCap = Math.max(
     softMax,
     Math.min(
@@ -6228,15 +6451,24 @@ function buildTopicDossiers(topicCards, selectedTopicIds, materials) {
  * - thinking disabled：避免内容跑到 reasoning_content
  * - response_format json_object：强制输出 JSON
  */
-async function zhipuChatCompletion({ model, messages }) {
+async function zhipuChatCompletion({ model, messages, operation }) {
   const apiKey = process.env.ZHIPU_API_KEY;
   if (!apiKey) {
     throw new Error("缺少环境变量 ZHIPU_API_KEY。请先 export ZHIPU_API_KEY=你的智谱key");
   }
 
   const endpoint = "https://open.bigmodel.cn/api/paas/v4/chat/completions";
-  const pacingToken = await enforceLlmRequestPacing();
+  const pacingContext = {
+    operation: String(operation || "").trim() || "llm_operation",
+    model,
+  };
+  const pacingToken = await enforceLlmRequestPacing(pacingContext);
   try {
+    logLlmPacing("request_dispatch", {
+      ...pacingContext,
+      timeout_ms: TIMEOUT_ZHIPU_MS,
+      message_count: Array.isArray(messages) ? messages.length : 0,
+    });
     const resp = await fetchWithTimeout(
       endpoint,
       {
@@ -6278,7 +6510,7 @@ async function zhipuChatCompletion({ model, messages }) {
 
     return content;
   } finally {
-    finalizeLlmRequestPacing(pacingToken);
+    finalizeLlmRequestPacing(pacingToken, pacingContext);
   }
 }
 
@@ -6313,12 +6545,22 @@ export async function requestDigestLlmJson(options = {}) {
   }
 
   llmRuntimeStats.cache_misses += 1;
+  const retryOptions = options?.retryOptions && typeof options.retryOptions === "object"
+    ? options.retryOptions
+    : {};
   const content = await withRateLimitRetry(
     async () => {
       llmRuntimeStats.live_calls += 1;
-      return execute({ model, messages });
+      return execute({ model, messages, operation });
     },
-    options?.retryOptions || {}
+    {
+      ...retryOptions,
+      logContext: {
+        ...(retryOptions.logContext && typeof retryOptions.logContext === "object" ? retryOptions.logContext : {}),
+        operation,
+        model,
+      },
+    }
   );
 
   if (cache) {
@@ -6383,7 +6625,7 @@ async function summarizeDailyWithLLM(topicDossiers, materials, cache) {
 3) 每条结论都必须给出 refs（来自 materials.id）
 4) 所有文本字段必须中文表达，不可出现占位词
 5) 重点资讯至少 ${DIGEST_NEWS_RULES.hotMin} 条；“重点资讯 + 其他快讯”总数必须在 ${DIGEST_NEWS_RULES.totalMin}~${DIGEST_NEWS_RULES.totalMax} 之间
-6) 核心论文必须在 ${DIGEST_NEWS_RULES.coreTechMin}~${DIGEST_NEWS_RULES.coreTechMax} 篇之间，且 refs 只能引用论文来源
+6) 核心论文可以为 0~${DIGEST_NEWS_RULES.coreTechMax} 篇；若没有足够高质量论文，请留空并不要硬凑；refs 只能引用论文来源
 7) 资讯与核心论文不得重复使用同一个 refs
 8) 不要输出“...”或“…”省略表达，必须完整句子
 9) 输出字段固定为：
@@ -6429,7 +6671,7 @@ async function summarizeDailyWithLLM(topicDossiers, materials, cache) {
 
 约束：
 - hot_news 推荐 ${DIGEST_NEWS_RULES.hotMin}-${DIGEST_NEWS_RULES.hotMax} 条；other_news 推荐 0-${DIGEST_NEWS_RULES.quickMax} 条；两者合计 ${DIGEST_NEWS_RULES.totalMin}-${DIGEST_NEWS_RULES.totalMax} 条
-- core_tech 输出 ${DIGEST_NEWS_RULES.coreTechMin}-${DIGEST_NEWS_RULES.coreTechMax} 条
+- core_tech 输出 0-${DIGEST_NEWS_RULES.coreTechMax} 条；没有优质论文时允许留空
 - refs 仅允许来自 materials.id
 - ref_translations 请优先翻译英文标题
 - topic_id 请优先引用 dossiers.topic_id
@@ -6463,7 +6705,6 @@ function buildReferenceTranslationSeed(materials, existing) {
   for (const material of materials || []) {
     const id = Number(material?.refId);
     if (!Number.isInteger(id)) continue;
-    if (map[id] && hasCjk(map[id])) continue;
 
     const title = cleanReferenceTitle(material?.title || "", 120);
     if (title && hasCjk(title)) {
@@ -6818,7 +7059,7 @@ digest_region: ${digestRegion}
   md += `## 核心论文\n\n`;
   const coreTech = Array.isArray(daily?.coreTech) ? daily.coreTech : [];
   if (!coreTech.length) {
-    md += `（暂无符合门槛的核心论文）\n\n`;
+    md += `（当日无优质论文）\n\n`;
   } else {
     for (const h of coreTech) {
       const refs = Array.isArray(h?.refs) ? h.refs : [];
@@ -6961,6 +7202,7 @@ async function main() {
   console.log(`edition=${DIGEST_EDITION_CONFIG.edition}, region=${DIGEST_EDITION_CONFIG.region}, label=${DIGEST_EDITION_CONFIG.label}`);
   console.log(`tz=${RUN_TZ}, post_time=${DIGEST_POST_TIME}`);
   console.log(`news_lookback_days=${newsLookbackDays}, paper_lookback_days=${paperLookbackDays}, top_n=${TOP_N}, deep_read_n=${DEEP_READ_N}, extra_candidates=${Number.isFinite(EXTRA_CANDIDATES) ? EXTRA_CANDIDATES : 0}`);
+  console.log(`cluster_batch_size=${CLUSTER_BATCH_SIZE}, cluster_adaptive_min_chunk_size=${CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE}, cluster_adaptive_max_depth=${CLUSTER_ADAPTIVE_MAX_DEPTH}, topic_merge_batch_size=${TOPIC_MERGE_BATCH_SIZE}, timeout_zhipu_ms=${TIMEOUT_ZHIPU_MS}, llm_max_retries=${LLM_MAX_RETRIES}`);
   console.log(`cache_retention_days=${CACHE_RETENTION_DAYS}, daily_retention_days=${DAILY_RETENTION_DAYS}`);
   console.log(`llm_pacing: max_concurrency=${LLM_MAX_CONCURRENCY}, min_interval_ms=${LLM_MIN_INTERVAL_MS}, jitter_ms=${LLM_INTERVAL_JITTER_MS}`);
   console.log(`sources=${sources.length}, edition_sources=${editionSources.length}, runnable_sources=${runnableSources.length}${dryRun ? " (dry-run)" : ""}`);
@@ -7109,6 +7351,13 @@ async function main() {
 
   const detailEnrichment = await enrichCandidatesBeforeScoring(candidates, cache, { boostKeywords });
   candidates = detailEnrichment.candidates;
+  const postEnrichmentPools = preprocessCandidatePools(candidates, {
+    runDate: dateISO,
+    newsLookbackDays,
+    paperLookbackDays,
+    applyAiGate: false,
+  });
+  candidates = [...postEnrichmentPools.news, ...postEnrichmentPools.papers];
 
   console.log(`\n[candidates] after filter+dedupe = ${candidates.length}`);
   const candidateTotal = candidates.length;
@@ -7133,6 +7382,8 @@ async function main() {
     after_dedupe: afterDedupeCount,
     after_history_filter: afterHistoryCount,
     detail_enrichment: detailEnrichment.stats,
+    after_detail_enrichment_time_filter: candidates.length,
+    post_enrichment_pool_stats: postEnrichmentPools.stats,
     news_cutoff: newsCutoff.toISOString(),
     paper_cutoff: paperCutoff.toISOString(),
     pool_stats: preprocessedPools.stats,
@@ -7565,4 +7816,6 @@ if (IS_DIRECT_RUN) {
 export {
   DIGEST_NEWS_RULES,
   buildDigestMarkdown,
+  buildTopicDeepReadPlan,
+  resolveTopicShortlistQuota,
 };

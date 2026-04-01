@@ -61,6 +61,23 @@ export function computeDigestRetryDelayMs(attempt, options = {}) {
   return Math.min(maxDelayMs, baseDelayMs * Math.pow(2, boundedAttempt - 1));
 }
 
+export function buildDigestAttemptLogLine(options = {}) {
+  const attempt = Math.max(1, Number.parseInt(String(options?.attempt || 1), 10) || 1);
+  const maxAttempts = Math.max(attempt, Number.parseInt(String(options?.maxAttempts || attempt), 10) || attempt);
+  const profile = String(options?.profile || "").trim();
+  const date = String(options?.date || "").trim();
+  const model = String(options?.model || "").trim();
+  const baseDelayMs = Number.isFinite(options?.baseDelayMs) ? Number(options.baseDelayMs) : 0;
+  const maxDelayMs = Number.isFinite(options?.maxDelayMs) ? Number(options.maxDelayMs) : 0;
+  const parts = ["[ci-retry] digest attempt", `attempt=${attempt}/${maxAttempts}`];
+  if (profile) parts.push(`profile=${profile}`);
+  if (date) parts.push(`date=${date}`);
+  if (model) parts.push(`model=${model}`);
+  if (baseDelayMs > 0) parts.push(`base_delay_ms=${Math.round(baseDelayMs)}`);
+  if (maxDelayMs > 0) parts.push(`max_delay_ms=${Math.round(maxDelayMs)}`);
+  return parts.join(" ");
+}
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -100,11 +117,12 @@ async function main() {
   const maxAttempts = readPositiveIntEnv("DIGEST_CI_MAX_ATTEMPTS", 3);
   const baseDelayMs = readPositiveIntEnv("DIGEST_CI_RETRY_BASE_DELAY_MS", 20_000);
   const maxDelayMs = readPositiveIntEnv("DIGEST_CI_RETRY_MAX_DELAY_MS", 90_000);
+  const profile = String(process.env.DIGEST_PROFILE || process.env.DIGEST_EDITION || "morning").trim() || "morning";
+  const date = String(process.env.DIGEST_DATE || "").trim();
+  const model = String(process.env.ZHIPU_MODEL || "glm-4.7-flash").trim() || "glm-4.7-flash";
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    if (attempt > 1) {
-      console.log(`[ci-retry] 开始第 ${attempt}/${maxAttempts} 次 digest 尝试`);
-    }
+    console.log(buildDigestAttemptLogLine({ attempt, maxAttempts, profile, date, model, baseDelayMs, maxDelayMs }));
 
     const result = await runDigestAttempt();
     if (result.code === 0) return;

@@ -1,0 +1,5356 @@
+{
+  "run_date": "2026-04-01",
+  "cluster_input_cap": 260,
+  "cluster_input_cap_news": 100,
+  "cluster_input_cap_papers": 160,
+  "cluster_batch_size": 40,
+  "cluster_text_mode": "title_lead",
+  "cluster_enrich_mode": "hybrid",
+  "cluster_text_max_chars": 380,
+  "cluster_enrich_force_top_news": 20,
+  "input_count": 253,
+  "input_news_count": 93,
+  "input_paper_count": 160,
+  "dropped_by_cap": 179,
+  "enrichment": {
+    "cluster_text_mode": "title_lead",
+    "enrich_mode": "hybrid",
+    "total_cards": 260,
+    "considered": 24,
+    "enriched": 23,
+    "cache_hits": 17,
+    "fetched": 6,
+    "skipped_with_long_snippet": 94,
+    "skipped_low_quality_source": 160
+  },
+  "precluster": {
+    "input_cards": 260,
+    "grouped_cards": 253,
+    "merged_away": 7,
+    "multi_member_groups": 4,
+    "groups": [
+      {
+        "representative_id": 1,
+        "member_ids": [
+          1
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Mimosa Framework: Toward Evolving Multi-Agent"
+      },
+      {
+        "representative_id": 2,
+        "member_ids": [
+          2
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "PSPA-Bench: A Personalized Benchmark for"
+      },
+      {
+        "representative_id": 3,
+        "member_ids": [
+          3
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Perfecting Human-AI Interaction at Clinical"
+      },
+      {
+        "representative_id": 4,
+        "member_ids": [
+          4
+        ],
+        "pub_date": "2026-03-30",
+        "topic_seed": "Okta&#8217;s CEO is betting big on AI agent"
+      },
+      {
+        "representative_id": 5,
+        "member_ids": [
+          5
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Working Paper: Towards a Category-theoretic"
+      },
+      {
+        "representative_id": 6,
+        "member_ids": [
+          6
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "SciVisAgentBench: A Benchmark for Evaluating"
+      },
+      {
+        "representative_id": 7,
+        "member_ids": [
+          7
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AEC-Bench: A Multimodal Benchmark for Agentic"
+      },
+      {
+        "representative_id": 8,
+        "member_ids": [
+          8
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "ELT-Bench-Verified: Benchmark Quality Issues"
+      },
+      {
+        "representative_id": 9,
+        "member_ids": [
+          9
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "The Triadic Cognitive Architecture: Bounding"
+      },
+      {
+        "representative_id": 10,
+        "member_ids": [
+          10
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Improving Efficiency of GPU Kernel"
+      },
+      {
+        "representative_id": 11,
+        "member_ids": [
+          11
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "APEX-EM: Non-Parametric Online Learning for"
+      },
+      {
+        "representative_id": 12,
+        "member_ids": [
+          12
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "LatentPilot: Scene-Aware Vision-and-Language"
+      },
+      {
+        "representative_id": 13,
+        "member_ids": [
+          13
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Hallucination-aware intermediate"
+      },
+      {
+        "representative_id": 14,
+        "member_ids": [
+          14
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "An Empirical Study of Multi-Agent"
+      },
+      {
+        "representative_id": 15,
+        "member_ids": [
+          15
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "6GAgentGym: Tool Use, Data Synthesis"
+      },
+      {
+        "representative_id": 16,
+        "member_ids": [
+          16
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Architecting Secure AI Agents: Perspectives"
+      },
+      {
+        "representative_id": 17,
+        "member_ids": [
+          17
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Trace2Skill: Distill Trajectory-Local Lessons"
+      },
+      {
+        "representative_id": 18,
+        "member_ids": [
+          18
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "GUIDE: Resolving Domain Bias in GUI Agents"
+      },
+      {
+        "representative_id": 19,
+        "member_ids": [
+          19
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Emergence WebVoyager: Toward Consistent and"
+      },
+      {
+        "representative_id": 20,
+        "member_ids": [
+          20
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "The Future of AI is Many arXiv:2603.29075v1"
+      },
+      {
+        "representative_id": 21,
+        "member_ids": [
+          21
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Knowledge database development by large"
+      },
+      {
+        "representative_id": 22,
+        "member_ids": [
+          22
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "SimMOF: AI agent for Automated MOF"
+      },
+      {
+        "representative_id": 23,
+        "member_ids": [
+          23
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Xuanwu: Evolving General Multimodal Models"
+      },
+      {
+        "representative_id": 24,
+        "member_ids": [
+          24
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Beyond pass@1: A Reliability Science"
+      },
+      {
+        "representative_id": 25,
+        "member_ids": [
+          25
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "ASI-Evolve: AI Accelerates AI"
+      },
+      {
+        "representative_id": 26,
+        "member_ids": [
+          26
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "View-oriented Conversation Compiler for Agent"
+      },
+      {
+        "representative_id": 27,
+        "member_ids": [
+          27
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Measuring the metacognition of AI"
+      },
+      {
+        "representative_id": 28,
+        "member_ids": [
+          28
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Symphony for Medical Coding: A Next"
+      },
+      {
+        "representative_id": 29,
+        "member_ids": [
+          29
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "CausalPulse: An Industrial-Grade"
+      },
+      {
+        "representative_id": 30,
+        "member_ids": [
+          30
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Reasoning-Driven Synthetic Data Generation"
+      },
+      {
+        "representative_id": 31,
+        "member_ids": [
+          31
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AgentFixer: From Failure Detection to Fix"
+      },
+      {
+        "representative_id": 32,
+        "member_ids": [
+          32
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Structured Intent as a Protocol-Like"
+      },
+      {
+        "representative_id": 33,
+        "member_ids": [
+          33
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Extending MONA in Camera Dropbox"
+      },
+      {
+        "representative_id": 34,
+        "member_ids": [
+          34
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "The Last Fingerprint: How Markdown Training"
+      },
+      {
+        "representative_id": 35,
+        "member_ids": [
+          35
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "CREST: Constraint-Release Execution for Multi"
+      },
+      {
+        "representative_id": 36,
+        "member_ids": [
+          36
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "The impact of multi-agent debate protocols on"
+      },
+      {
+        "representative_id": 37,
+        "member_ids": [
+          37
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Multi-Agent LLMs for Adaptive Acquisition in"
+      },
+      {
+        "representative_id": 38,
+        "member_ids": [
+          38
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AutoWorld: Scaling Multi-Agent Traffic"
+      },
+      {
+        "representative_id": 39,
+        "member_ids": [
+          39
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Design Principles for the Construction of a"
+      },
+      {
+        "representative_id": 40,
+        "member_ids": [
+          40
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "The Model Says Walk: How Surface Heuristics"
+      },
+      {
+        "representative_id": 41,
+        "member_ids": [
+          41
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Trojan-Speak: Bypassing Constitutional"
+      },
+      {
+        "representative_id": 42,
+        "member_ids": [
+          42
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Economics of Human and AI Collaboration: When"
+      },
+      {
+        "representative_id": 43,
+        "member_ids": [
+          43
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Developing Adaptive Context Compression"
+      },
+      {
+        "representative_id": 44,
+        "member_ids": [
+          44
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Multi-Layered Memory Architectures for LLM"
+      },
+      {
+        "representative_id": 45,
+        "member_ids": [
+          45
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Scaling the Long Video Understanding of"
+      },
+      {
+        "representative_id": 46,
+        "member_ids": [
+          46
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "M-MiniGPT4: Multilingual VLLM Alignment via"
+      },
+      {
+        "representative_id": 47,
+        "member_ids": [
+          47
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "MemFactory: Unified Inference & Training"
+      },
+      {
+        "representative_id": 48,
+        "member_ids": [
+          48
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Interview-Informed Generative Agents for"
+      },
+      {
+        "representative_id": 49,
+        "member_ids": [
+          49
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Hybrid Framework for Robotic Manipulation"
+      },
+      {
+        "representative_id": 50,
+        "member_ids": [
+          50
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "CoMaTrack: Competitive Multi-Agent Game"
+      },
+      {
+        "representative_id": 51,
+        "member_ids": [
+          51
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "UniAI-GraphRAG: Synergizing Ontology-Guided"
+      },
+      {
+        "representative_id": 52,
+        "member_ids": [
+          52
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "100x Cost & Latency Reduction: Performance"
+      },
+      {
+        "representative_id": 53,
+        "member_ids": [
+          53
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "ContractSkill: Repairable Contract-Based"
+      },
+      {
+        "representative_id": 54,
+        "member_ids": [
+          54
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "SleepVLM: Explainable and Rule-Grounded Sleep"
+      },
+      {
+        "representative_id": 55,
+        "member_ids": [
+          55
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "JaWildText: A Benchmark for Vision-Language"
+      },
+      {
+        "representative_id": 56,
+        "member_ids": [
+          56
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "ResAdapt: Adaptive Resolution for Efficient"
+      },
+      {
+        "representative_id": 57,
+        "member_ids": [
+          57
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Claude Code leak exposes a Tamagotchi-style"
+      },
+      {
+        "representative_id": 58,
+        "member_ids": [
+          58
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "Unify-Agent: A Unified Multimodal Agent for"
+      },
+      {
+        "representative_id": 59,
+        "member_ids": [
+          59
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "ChartDiff: A Large-Scale Benchmark for"
+      },
+      {
+        "representative_id": 60,
+        "member_ids": [
+          60
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Enhancing Policy Learning with World-Action"
+      },
+      {
+        "representative_id": 61,
+        "member_ids": [
+          61
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Drop the Hierarchy and Roles: How Self"
+      },
+      {
+        "representative_id": 62,
+        "member_ids": [
+          62
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "PAR$^2$-RAG: Planned Active Retrieval and"
+      },
+      {
+        "representative_id": 63,
+        "member_ids": [
+          63
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "GISTBench: Evaluating LLM User Understanding"
+      },
+      {
+        "representative_id": 64,
+        "member_ids": [
+          64
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Webscraper: Leverage Multimodal Large"
+      },
+      {
+        "representative_id": 65,
+        "member_ids": [
+          65
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "BenchScope: How Many Independent Signals Does"
+      },
+      {
+        "representative_id": 66,
+        "member_ids": [
+          66
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AI-Generated Prior Authorization Letters"
+      },
+      {
+        "representative_id": 67,
+        "member_ids": [
+          67
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Spatiotemporal Robustness of Temporal Logic"
+      },
+      {
+        "representative_id": 68,
+        "member_ids": [
+          68
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "ATP-Bench: Towards Agentic Tool Planning for"
+      },
+      {
+        "representative_id": 69,
+        "member_ids": [
+          69
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "A Multi-Modal Dataset for Ground Reaction"
+      },
+      {
+        "representative_id": 70,
+        "member_ids": [
+          70
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "GUARD-SLM: Token Activation-Based Defense"
+      },
+      {
+        "representative_id": 71,
+        "member_ids": [
+          71
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "OccSim: Multi-kilometer Simulation with Long"
+      },
+      {
+        "representative_id": 72,
+        "member_ids": [
+          72
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Privacy Guard & Token Parsimony by Prompt and"
+      },
+      {
+        "representative_id": 73,
+        "member_ids": [
+          73
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Understand and Accelerate Memory Processing"
+      },
+      {
+        "representative_id": 74,
+        "member_ids": [
+          74
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Human-Like Lifelong Memory: A Neuroscience"
+      },
+      {
+        "representative_id": 75,
+        "member_ids": [
+          75
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "A Latent Risk-Aware Machine Learning Approach"
+      },
+      {
+        "representative_id": 76,
+        "member_ids": [
+          76
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "WybeCoder: Verified Imperative Code"
+      },
+      {
+        "representative_id": 77,
+        "member_ids": [
+          77
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Long-Document QA with Chain-of-Structured"
+      },
+      {
+        "representative_id": 78,
+        "member_ids": [
+          78
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "MemRerank: Preference Memory for Personalized"
+      },
+      {
+        "representative_id": 79,
+        "member_ids": [
+          79
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Self-Improving Code Generation via Semantic"
+      },
+      {
+        "representative_id": 80,
+        "member_ids": [
+          80
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Beyond Corner Patches: Semantics-Aware"
+      },
+      {
+        "representative_id": 81,
+        "member_ids": [
+          81
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AGFT: Alignment-Guided Fine-Tuning for Zero"
+      },
+      {
+        "representative_id": 82,
+        "member_ids": [
+          82
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Few-shot Writer Adaptation via Multimodal In"
+      },
+      {
+        "representative_id": 83,
+        "member_ids": [
+          83
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "KEditVis: A Visual Analytics System for"
+      },
+      {
+        "representative_id": 84,
+        "member_ids": [
+          84
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "From Skeletons to Semantics: Design and"
+      },
+      {
+        "representative_id": 85,
+        "member_ids": [
+          85
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "VectorGym: A Multitask Benchmark for SVG Code"
+      },
+      {
+        "representative_id": 86,
+        "member_ids": [
+          86
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Performance Evaluation of LLMs in Automated"
+      },
+      {
+        "representative_id": 87,
+        "member_ids": [
+          87
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Empirical Comparison of Agent Communication"
+      },
+      {
+        "representative_id": 88,
+        "member_ids": [
+          88
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Compliance-Aware Predictive Process"
+      },
+      {
+        "representative_id": 89,
+        "member_ids": [
+          89
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "A Multi-Agent Rhizomatic Pipeline for Non"
+      },
+      {
+        "representative_id": 90,
+        "member_ids": [
+          90
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Multi-Agent Memory from a Computer"
+      },
+      {
+        "representative_id": 91,
+        "member_ids": [
+          91
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AgentDrift: Unsafe Recommendation Drift Under"
+      },
+      {
+        "representative_id": 92,
+        "member_ids": [
+          92
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "InCoder-32B: Code Foundation Model for"
+      },
+      {
+        "representative_id": 93,
+        "member_ids": [
+          93
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "X-World: Controllable Ego-Centric Multi"
+      },
+      {
+        "representative_id": 94,
+        "member_ids": [
+          94
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Beyond Hard Constraints: Budget-Conditioned"
+      },
+      {
+        "representative_id": 95,
+        "member_ids": [
+          95
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "LLMON: An LLM-native Markup Language to"
+      },
+      {
+        "representative_id": 96,
+        "member_ids": [
+          96
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Building evidence-based knowledge graphs from"
+      },
+      {
+        "representative_id": 97,
+        "member_ids": [
+          97
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "LG-HCC: Local Geometry-Aware Hierarchical"
+      },
+      {
+        "representative_id": 98,
+        "member_ids": [
+          98
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Gradient Labs gives every bank customer an AI"
+      },
+      {
+        "representative_id": 99,
+        "member_ids": [
+          99
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "Quoting Georgi Gerganov <blockquote"
+      },
+      {
+        "representative_id": 100,
+        "member_ids": [
+          100
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Anthropic 回应 Claude Code 源码泄露"
+      },
+      {
+        "representative_id": 101,
+        "member_ids": [
+          101
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "银行普惠 AI 时代：OpenAI 联手 Gradient Labs"
+      },
+      {
+        "representative_id": 102,
+        "member_ids": [
+          102
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "ClawHub 推出官方中国镜像站！国内 AI Agent"
+      },
+      {
+        "representative_id": 103,
+        "member_ids": [
+          103,
+          259
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Anthropic 发送 DMCA 通知，大规模下架 8100"
+      },
+      {
+        "representative_id": 104,
+        "member_ids": [
+          104
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Claude 源码泄露催生“反封号”神器，国内开发者展开生存自救Anthropic源码泄露意等进展"
+      },
+      {
+        "representative_id": 105,
+        "member_ids": [
+          105
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AI 从“很能说”迈向“很能干”，阿里巴巴联合上海人工智能实验室发布安全白皮书阿里巴巴与上海等进展"
+      },
+      {
+        "representative_id": 106,
+        "member_ids": [
+          106
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "20 人团队撬动 110 亿估值！前百度高管创业作Genspark融资3. 85"
+      },
+      {
+        "representative_id": 107,
+        "member_ids": [
+          107
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AI can push your Stream Deck buttons for you"
+      },
+      {
+        "representative_id": 108,
+        "member_ids": [
+          108,
+          209
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Claude is.. nesting I am enlisting Gemini's"
+      },
+      {
+        "representative_id": 109,
+        "member_ids": [
+          109
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "CutClaw: Agentic Hours-Long Video Editing via"
+      },
+      {
+        "representative_id": 110,
+        "member_ids": [
+          110
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "Think Anywhere in Code Generation Recent"
+      },
+      {
+        "representative_id": 111,
+        "member_ids": [
+          111
+        ],
+        "pub_date": "2026-03-30",
+        "topic_seed": "CARLA-Air: Fly Drones Inside a CARLA World -"
+      },
+      {
+        "representative_id": 112,
+        "member_ids": [
+          112
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "SeGPruner: Semantic-Geometric Visual Token"
+      },
+      {
+        "representative_id": 113,
+        "member_ids": [
+          113
+        ],
+        "pub_date": "2026-03-30",
+        "topic_seed": "HandX: Scaling Bimanual Motion and"
+      },
+      {
+        "representative_id": 114,
+        "member_ids": [
+          114
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Towards Computational Social Dynamics of Semi"
+      },
+      {
+        "representative_id": 115,
+        "member_ids": [
+          115
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "REFINE: Real-world Exploration of Interactive"
+      },
+      {
+        "representative_id": 116,
+        "member_ids": [
+          116
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Learning to Generate Formally Verifiable Step"
+      },
+      {
+        "representative_id": 117,
+        "member_ids": [
+          117
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "FlowPIE: Test-Time Scientific Idea Evolution"
+      },
+      {
+        "representative_id": 118,
+        "member_ids": [
+          118
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Beyond the Steeper Curve: AI-Mediated"
+      },
+      {
+        "representative_id": 119,
+        "member_ids": [
+          119
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Reinforced Reasoning for End-to-End"
+      },
+      {
+        "representative_id": 120,
+        "member_ids": [
+          120
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Spontaneous Functional Differentiation in"
+      },
+      {
+        "representative_id": 121,
+        "member_ids": [
+          121
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Owl-AuraID 1.0: An Intelligent System for"
+      },
+      {
+        "representative_id": 122,
+        "member_ids": [
+          122
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "ShapE-GRPO: Shapley-Enhanced Reward"
+      },
+      {
+        "representative_id": 123,
+        "member_ids": [
+          123
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "C-TRAIL: A Commonsense World Framework for"
+      },
+      {
+        "representative_id": 124,
+        "member_ids": [
+          124
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "ScoringBench: A Benchmark for Evaluating"
+      },
+      {
+        "representative_id": 125,
+        "member_ids": [
+          125
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Byzantine-Robust and Communication-Efficient"
+      },
+      {
+        "representative_id": 126,
+        "member_ids": [
+          126
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Smartphone-Based Identification of Unknown"
+      },
+      {
+        "representative_id": 127,
+        "member_ids": [
+          127
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "StepCache: Step-Level Reuse with Lightweight"
+      },
+      {
+        "representative_id": 128,
+        "member_ids": [
+          128
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "GaloisSAT: Differentiable Boolean"
+      },
+      {
+        "representative_id": 129,
+        "member_ids": [
+          129
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "SkillTester: Benchmarking Utility and"
+      },
+      {
+        "representative_id": 130,
+        "member_ids": [
+          130
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Time is Not Compute: Scaling Laws for Wall"
+      },
+      {
+        "representative_id": 131,
+        "member_ids": [
+          131
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "SNEAKDOOR: Stealthy Backdoor Attacks against"
+      },
+      {
+        "representative_id": 132,
+        "member_ids": [
+          132
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Incentives, Equilibria, and the Limits of"
+      },
+      {
+        "representative_id": 133,
+        "member_ids": [
+          133
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "GMA-SAWGAN-GP: A Novel Data Generative"
+      },
+      {
+        "representative_id": 134,
+        "member_ids": [
+          134
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "OneComp: One-Line Revolution for Generative"
+      },
+      {
+        "representative_id": 135,
+        "member_ids": [
+          135
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Robust Multi-Agent Reinforcement Learning for"
+      },
+      {
+        "representative_id": 136,
+        "member_ids": [
+          136
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Differentiable Initialization-Accelerated CPU"
+      },
+      {
+        "representative_id": 137,
+        "member_ids": [
+          137
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "CivicShield: A Cross-Domain Defense-in-Depth"
+      },
+      {
+        "representative_id": 138,
+        "member_ids": [
+          138
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Towards Explainable Stakeholder-Aware"
+      },
+      {
+        "representative_id": 139,
+        "member_ids": [
+          139
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Designing FSMs Specifications from"
+      },
+      {
+        "representative_id": 140,
+        "member_ids": [
+          140
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Efficient and Scalable Granular-ball Graph"
+      },
+      {
+        "representative_id": 141,
+        "member_ids": [
+          141
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "SLVMEval: Synthetic Meta Evaluation Benchmark"
+      },
+      {
+        "representative_id": 142,
+        "member_ids": [
+          142
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "3D Architect: An Automated Approach to Three"
+      },
+      {
+        "representative_id": 143,
+        "member_ids": [
+          143
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "SyriSign: A Parallel Corpus for Arabic Text"
+      },
+      {
+        "representative_id": 144,
+        "member_ids": [
+          144
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Monodense Deep Neural Model for Determining"
+      },
+      {
+        "representative_id": 145,
+        "member_ids": [
+          145
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "PRISM: A Multi-View Multi-Capability Retail"
+      },
+      {
+        "representative_id": 146,
+        "member_ids": [
+          146
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Sima AIunty: Caste Audit in LLM-Driven"
+      },
+      {
+        "representative_id": 147,
+        "member_ids": [
+          147
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Deep Learning-Based Anomaly Detection in"
+      },
+      {
+        "representative_id": 148,
+        "member_ids": [
+          148
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Extend3D: Town-Scale 3D Generation"
+      },
+      {
+        "representative_id": 149,
+        "member_ids": [
+          149
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Security in LLM-as-a-Judge arXiv:2603.29403v1"
+      },
+      {
+        "representative_id": 150,
+        "member_ids": [
+          150
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "An Isotropic Approach to Efficient"
+      },
+      {
+        "representative_id": 151,
+        "member_ids": [
+          151
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Impact of enriched meaning representations"
+      },
+      {
+        "representative_id": 152,
+        "member_ids": [
+          152
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "TrafficMoE: Heterogeneity-aware Mixture of"
+      },
+      {
+        "representative_id": 153,
+        "member_ids": [
+          153
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Baby Scale: Investigating Models Trained on"
+      },
+      {
+        "representative_id": 154,
+        "member_ids": [
+          154
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Quantization with Unified Adaptive"
+      },
+      {
+        "representative_id": 155,
+        "member_ids": [
+          155
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Reducing Complexity for Quantum Approaches in"
+      },
+      {
+        "representative_id": 156,
+        "member_ids": [
+          156
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Learn2Fold: Structured Origami Generation"
+      },
+      {
+        "representative_id": 157,
+        "member_ids": [
+          157
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "FigAgent: Towards Automatic Method"
+      },
+      {
+        "representative_id": 158,
+        "member_ids": [
+          158
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "IMAGAgent: Orchestrating Multi-Turn Image"
+      },
+      {
+        "representative_id": 159,
+        "member_ids": [
+          159
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Semantic Interaction for Narrative Map"
+      },
+      {
+        "representative_id": 160,
+        "member_ids": [
+          160
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Concept frustration: Aligning human concepts"
+      },
+      {
+        "representative_id": 161,
+        "member_ids": [
+          161
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Mind the Gap: A Framework for Assessing"
+      },
+      {
+        "representative_id": 162,
+        "member_ids": [
+          162
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "BotVerse: Real-Time Event-Driven Simulation"
+      },
+      {
+        "representative_id": 163,
+        "member_ids": [
+          163
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "TSHA: A Benchmark for Visual Language Models"
+      },
+      {
+        "representative_id": 164,
+        "member_ids": [
+          164
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "DIAL: Decoupling Intent and Action via Latent"
+      },
+      {
+        "representative_id": 165,
+        "member_ids": [
+          165
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Towards Empowering Consumers through Sentence"
+      },
+      {
+        "representative_id": 166,
+        "member_ids": [
+          166
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Wildfire Suppression: Complexity, Models"
+      },
+      {
+        "representative_id": 167,
+        "member_ids": [
+          167
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Generative AI in Action: Field Experimental"
+      },
+      {
+        "representative_id": 168,
+        "member_ids": [
+          168
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "End-to-End Image Compression with"
+      },
+      {
+        "representative_id": 169,
+        "member_ids": [
+          169
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Bethe Ansatz with a Large Language Model"
+      },
+      {
+        "representative_id": 170,
+        "member_ids": [
+          170
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Enhancing Structural Mapping with LLM-derived"
+      },
+      {
+        "representative_id": 171,
+        "member_ids": [
+          171
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Phyelds: A Pythonic Framework for Aggregate"
+      },
+      {
+        "representative_id": 172,
+        "member_ids": [
+          172
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Scalable AI-assisted Workflow Management for"
+      },
+      {
+        "representative_id": 173,
+        "member_ids": [
+          173
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Aligned, Orthogonal or In-conflict: When can"
+      },
+      {
+        "representative_id": 174,
+        "member_ids": [
+          174
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "OpenAI卖广告到底卖得怎么样了？ OpenAI 从 2 月 13 号开始宣布上线广告"
+      },
+      {
+        "representative_id": 175,
+        "member_ids": [
+          175
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Anthropic首席产品官万字分享：AI时代的“现象级产品”为什么难产？"
+      },
+      {
+        "representative_id": 176,
+        "member_ids": [
+          176
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "全球投资者正把大模型公司推向“市梦率” 2026年3月31日"
+      },
+      {
+        "representative_id": 177,
+        "member_ids": [
+          177
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Claude Code开源发酵：负责人反省，平替版狂飙10万星 智东西4月1日报道，今天下午"
+      },
+      {
+        "representative_id": 178,
+        "member_ids": [
+          178
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "翻遍Claude Code泄露的50万行代码 Claude Code"
+      },
+      {
+        "representative_id": 179,
+        "member_ids": [
+          179
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "TRAE SOLO“龙虾化” 字节也开始做“OpenClaw”了，但它先把战场放在了工作台上"
+      },
+      {
+        "representative_id": 180,
+        "member_ids": [
+          180
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "比全球最强推理引擎还快2倍，斯坦福 在大语言模型推理领域"
+      },
+      {
+        "representative_id": 181,
+        "member_ids": [
+          181
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AI编程的底牌 这或许是2026年愚人节前夜，科技圈收到的最荒诞也最“硬核”的一份礼物"
+      },
+      {
+        "representative_id": 182,
+        "member_ids": [
+          182
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "中国 AI 公司，该怎么「抄 Claude Code 的作业」？ 如果几天前有人告诉我"
+      },
+      {
+        "representative_id": 183,
+        "member_ids": [
+          183
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "欧洲巨头Mistral AI 砸 8.3 亿美元抢占算力高地 当近期的注意力都被中美吸引的时候"
+      },
+      {
+        "representative_id": 184,
+        "member_ids": [
+          184
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "国内大模型厂商 Token/Coding Plan 汇总对比：MiniMax、智谱"
+      },
+      {
+        "representative_id": 185,
+        "member_ids": [
+          185
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "别等ASI了！OpenAI上演「资产大逃亡」 全世界都在等ASI降临"
+      },
+      {
+        "representative_id": 186,
+        "member_ids": [
+          186
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "被高估的自主Agent，被低估的人机协作｜对话美国东北大学AP江航 给AI装人格，是产品包装"
+      },
+      {
+        "representative_id": 187,
+        "member_ids": [
+          187
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "从Claude Code刚泄漏的源码 今天（2026年3月31日）"
+      },
+      {
+        "representative_id": 188,
+        "member_ids": [
+          188,
+          255
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "Accelerating the next phase of AI OpenAI"
+      },
+      {
+        "representative_id": 189,
+        "member_ids": [
+          189
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "Mar 31, 2026AnnouncementsAustralian"
+      },
+      {
+        "representative_id": 190,
+        "member_ids": [
+          190
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "datasette-extract 0.3a0 <p><strong>Release:</s等进展"
+      },
+      {
+        "representative_id": 191,
+        "member_ids": [
+          191,
+          192,
+          233,
+          234,
+          236
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "datasette-enrichments-llm 0.2a0"
+      },
+      {
+        "representative_id": 193,
+        "member_ids": [
+          193
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Quoting Soohoon Choi <blockquote"
+      },
+      {
+        "representative_id": 194,
+        "member_ids": [
+          194
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "联想 YOGA AI Mini 惊艳登场：首搭 DingOS"
+      },
+      {
+        "representative_id": 195,
+        "member_ids": [
+          195
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AI文游火了！网友用灵光手搓人生模拟器，内容创业悄然生变AI文游正流行，用户通过自然语言对话"
+      },
+      {
+        "representative_id": 196,
+        "member_ids": [
+          196
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "可灵AI推出会员模型优惠计划:3.0系列视频模型限时8折起可灵AI于2026年4月1日推出“等进展"
+      },
+      {
+        "representative_id": 197,
+        "member_ids": [
+          197
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "告别“组装商”标签！联想宣布转型AI原生公司：新财年要靠AI“交付” 1000"
+      },
+      {
+        "representative_id": 198,
+        "member_ids": [
+          198
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "告别 AI 标准脸：阿里发布 Wan2.7-Image"
+      },
+      {
+        "representative_id": 199,
+        "member_ids": [
+          199
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "告别AI标准脸!阿里Wan2.7-Image发布:能写A4纸论文"
+      },
+      {
+        "representative_id": 200,
+        "member_ids": [
+          200
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "年GMV破 160 亿后，交个朋友加码AI： 500"
+      },
+      {
+        "representative_id": 201,
+        "member_ids": [
+          201
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "键盘进化：苹果 iOS 27 将引入 AI 纠错，打造“系统级"
+      },
+      {
+        "representative_id": 202,
+        "member_ids": [
+          202
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "字节跳动 Seed 计划火热开启:2027届大模型天才抢夺战正式打响!字节跳动启动Seed2等进展"
+      },
+      {
+        "representative_id": 203,
+        "member_ids": [
+          203
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "鲍德熹联合爱奇艺首发科幻短片，全流程 AI 制作时代已至《天问》作为首部全流程AI制作的科幻短片"
+      },
+      {
+        "representative_id": 204,
+        "member_ids": [
+          204
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "大模型抢人战升级！字节跳动 Seed 开启全球校招"
+      },
+      {
+        "representative_id": 205,
+        "member_ids": [
+          205
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "一名英国青少年向 ChatGPT 询问自杀方式后身亡英国16岁少年卢卡·塞拉"
+      },
+      {
+        "representative_id": 206,
+        "member_ids": [
+          206
+        ],
+        "pub_date": "",
+        "topic_seed": "从“单兵作战”到团队协作：Coding Plan + Agents 团队重构 AI"
+      },
+      {
+        "representative_id": 207,
+        "member_ids": [
+          207
+        ],
+        "pub_date": "",
+        "topic_seed": "有方舟 Coding Plan 点击上方👆蓝字关注我们！"
+      },
+      {
+        "representative_id": 208,
+        "member_ids": [
+          208
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Apr 1, 2026•13 min readAnthropic's entire"
+      },
+      {
+        "representative_id": 210,
+        "member_ids": [
+          210
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "Shifting to AI model customization is an"
+      },
+      {
+        "representative_id": 211,
+        "member_ids": [
+          211
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "AI benchmarks are broken. Here’s what we need"
+      },
+      {
+        "representative_id": 212,
+        "member_ids": [
+          212
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "I'm unemployed, I have a gaming GPU, and I"
+      },
+      {
+        "representative_id": 213,
+        "member_ids": [
+          213
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "一个月突变，Linux内核大佬懵了：上个月还是“AI垃圾”"
+      },
+      {
+        "representative_id": 214,
+        "member_ids": [
+          214
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "国产独立大模型公司的未来 港股科技公司的财报已经发布完毕"
+      },
+      {
+        "representative_id": 215,
+        "member_ids": [
+          215
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AI时代，教育何往？ 你现在就可以做一个实验。 打开任何一个AI——ChatGPT、Claude"
+      },
+      {
+        "representative_id": 216,
+        "member_ids": [
+          216
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "小牛电动胡依林：一家成立12年的两轮电动车厂商决定转型AI 文｜邱晓芬 编辑｜苏建勋"
+      },
+      {
+        "representative_id": 217,
+        "member_ids": [
+          217
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "教练，我想上AI培训班 最近一段时间，我总是能在各个地方看到AI职业培训的广告。其中有些说得天花乱坠"
+      },
+      {
+        "representative_id": 218,
+        "member_ids": [
+          218
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "向AI投毒被曝光，GEO生意却更好了？ 「核心提示」 3·15曝光后的GEO江湖：AI优化是技术革命"
+      },
+      {
+        "representative_id": 219,
+        "member_ids": [
+          219
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "比特币“挖矿”企业转向AI数据中心 日经中文网·2026年04月01日"
+      },
+      {
+        "representative_id": 220,
+        "member_ids": [
+          220
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Twitter创始人谈AI时代的组织：AI替代中层 日前，Block CEO"
+      },
+      {
+        "representative_id": 221,
+        "member_ids": [
+          221
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "我一个人，用AI “一个人也能做跨境电商？还做得不错？” 放在三年前，这个问题可能会换来一堆质疑"
+      },
+      {
+        "representative_id": 222,
+        "member_ids": [
+          222
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "行业突发：AI三大原则发布 脑极体独家获悉，4月1日"
+      },
+      {
+        "representative_id": 223,
+        "member_ids": [
+          223
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "YC掌门人惊呼：这就是 AGI！4天、零读码 一位开发者用四天时间"
+      },
+      {
+        "representative_id": 224,
+        "member_ids": [
+          224
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "AI代码的“屎山危机”才刚刚开始 苹果刚刚把一款名为Anything的应用从App"
+      },
+      {
+        "representative_id": 225,
+        "member_ids": [
+          225
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "医生最强助手！国产临床级AI医疗产品发布 中国高质量医疗体系建设，必然要求循证医学全面落地"
+      },
+      {
+        "representative_id": 226,
+        "member_ids": [
+          226
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "11亿AI大单，百度拿下！ 采购260台智算一体机。 智东西3月31日消息，昨日"
+      },
+      {
+        "representative_id": 227,
+        "member_ids": [
+          227
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "我在叽伴App，被 AI 治愈了！ 目前的 AI 应用市场，几乎被\"对话框\"统治"
+      },
+      {
+        "representative_id": 228,
+        "member_ids": [
+          228
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "对话马骁腾：大厂AI Lab没死 Lab首席科学家马骁腾博士 近期"
+      },
+      {
+        "representative_id": 229,
+        "member_ids": [
+          229
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Anthropic is having a month A human really"
+      },
+      {
+        "representative_id": 230,
+        "member_ids": [
+          230
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "OpenAI, not yet public, raises $3B from"
+      },
+      {
+        "representative_id": 231,
+        "member_ids": [
+          231
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Yupp shuts down after raising $33M from a16z"
+      },
+      {
+        "representative_id": 232,
+        "member_ids": [
+          232
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "Nomadic raises $8.4 million to wrangle the"
+      },
+      {
+        "representative_id": 235,
+        "member_ids": [
+          235
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "llm-all-models-async 0.1 <p><strong>Release:</等进展"
+      },
+      {
+        "representative_id": 237,
+        "member_ids": [
+          237
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "llm-echo 0.3 <p><strong>Release:</strong> <a"
+      },
+      {
+        "representative_id": 238,
+        "member_ids": [
+          238
+        ],
+        "pub_date": "2026-03-30",
+        "topic_seed": "Mr. Chatterbox is a (weak) Victorian-era"
+      },
+      {
+        "representative_id": 239,
+        "member_ids": [
+          239
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "The AI video apps gaining ground after OpenAI"
+      },
+      {
+        "representative_id": 240,
+        "member_ids": [
+          240
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Baidu’s robotaxis froze in traffic A Baidu"
+      },
+      {
+        "representative_id": 241,
+        "member_ids": [
+          241
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "Art schools are being torn apart by AI The"
+      },
+      {
+        "representative_id": 242,
+        "member_ids": [
+          242
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "You can order Grubhub and Uber Eats"
+      },
+      {
+        "representative_id": 243,
+        "member_ids": [
+          243
+        ],
+        "pub_date": "2026-03-30",
+        "topic_seed": "All the latest in AI &#8216;music&#8217;"
+      },
+      {
+        "representative_id": 244,
+        "member_ids": [
+          244
+        ],
+        "pub_date": "2026-03-27",
+        "topic_seed": "#9开发者重大利好！OpenAI 推出 Codex 插件 AI"
+      },
+      {
+        "representative_id": 245,
+        "member_ids": [
+          245
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "上海人工智能实验室联合商汤大装置等共建AI全链路验证平台与生态社区 近日，在第二届浦江AI学术年会上"
+      },
+      {
+        "representative_id": 246,
+        "member_ids": [
+          246
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "对话邓智航｜以「龙虾」为起点，起底从单个 Agent 到 Agentic Web"
+      },
+      {
+        "representative_id": 247,
+        "member_ids": [
+          247
+        ],
+        "pub_date": "2026-03-30",
+        "topic_seed": "指尖上的智慧革命：Vocci AI笔记戒指 凌晨三点的惊醒，可能是当代职场人最具共鸣的焦虑场景"
+      },
+      {
+        "representative_id": 248,
+        "member_ids": [
+          248
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "The latest AI news we announced in March 2026"
+      },
+      {
+        "representative_id": 249,
+        "member_ids": [
+          249
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Mercor says it was hit by cyberattack tied to"
+      },
+      {
+        "representative_id": 250,
+        "member_ids": [
+          250
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "Salesforce announces an AI-heavy makeover for"
+      },
+      {
+        "representative_id": 251,
+        "member_ids": [
+          251
+        ],
+        "pub_date": "2026-03-31",
+        "topic_seed": "Exclusive: Runway launches $10M fund"
+      },
+      {
+        "representative_id": 252,
+        "member_ids": [
+          252
+        ],
+        "pub_date": "2026-03-30",
+        "topic_seed": "AI chip startup Rebellions raises $400"
+      },
+      {
+        "representative_id": 253,
+        "member_ids": [
+          253
+        ],
+        "pub_date": "2026-03-30",
+        "topic_seed": "Qodo raises $70M for code verification as AI"
+      },
+      {
+        "representative_id": 254,
+        "member_ids": [
+          254
+        ],
+        "pub_date": "2026-03-30",
+        "topic_seed": "Why OpenAI really shut down Sora OpenAI's"
+      },
+      {
+        "representative_id": 256,
+        "member_ids": [
+          256
+        ],
+        "pub_date": "2026-03-30",
+        "topic_seed": "Helping disaster response teams turn AI into"
+      },
+      {
+        "representative_id": 257,
+        "member_ids": [
+          257
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "I Asked ChatGPT What WIRED’s Reviewers"
+      },
+      {
+        "representative_id": 258,
+        "member_ids": [
+          258
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "‘BLOCKADE’: The Right Is Using AI Content"
+      },
+      {
+        "representative_id": 260,
+        "member_ids": [
+          260
+        ],
+        "pub_date": "2026-04-01",
+        "topic_seed": "llm-echo 0.4 <p><strong>Release:</strong> <a"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "candidate_id": 1,
+      "title": "Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 33,
+      "link": "https://arxiv.org/abs/2603.28986"
+    },
+    {
+      "candidate_id": 2,
+      "title": "PSPA-Bench: A Personalized Benchmark for Smartphone GUI Agent",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 31,
+      "link": "https://arxiv.org/abs/2603.29318"
+    },
+    {
+      "candidate_id": 3,
+      "title": "Perfecting Human-AI Interaction at Clinical Scale. Turning Production Signals into Safer",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 31,
+      "link": "https://arxiv.org/abs/2603.29893"
+    },
+    {
+      "candidate_id": 4,
+      "title": "Okta&#8217;s CEO is betting big on AI agent identity",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-30",
+      "domain": "theverge.com",
+      "score": 21.90689059560852,
+      "link": "https://www.theverge.com/podcast/902264/oktas-ceo-is-betting-big-on-ai-agent-identity"
+    },
+    {
+      "candidate_id": 5,
+      "title": "Working Paper: Towards a Category-theoretic Comparative Framework for Artificial General",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.28906"
+    },
+    {
+      "candidate_id": 6,
+      "title": "SciVisAgentBench: A Benchmark for Evaluating Scientific Data Analysis and Visualization Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.29139"
+    },
+    {
+      "candidate_id": 7,
+      "title": "AEC-Bench: A Multimodal Benchmark for Agentic Systems in Architecture, Engineering, and",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.29199"
+    },
+    {
+      "candidate_id": 8,
+      "title": "ELT-Bench-Verified: Benchmark Quality Issues Underestimate AI Agent Capabilities",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.29399"
+    },
+    {
+      "candidate_id": 9,
+      "title": "The Triadic Cognitive Architecture: Bounding Autonomous Action via Spatio-Temporal and",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.30031"
+    },
+    {
+      "candidate_id": 10,
+      "title": "Improving Efficiency of GPU Kernel Optimization Agents using a Domain-Specific Language and",
+      "snippet_len": 139,
+      "cluster_text_len": 139,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.29010"
+    },
+    {
+      "candidate_id": 11,
+      "title": "APEX-EM: Non-Parametric Online Learning for Autonomous Agents via Structured Procedural",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.29093"
+    },
+    {
+      "candidate_id": 12,
+      "title": "LatentPilot: Scene-Aware Vision-and-Language Navigation by Dreaming Ahead with Latent",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.29165"
+    },
+    {
+      "candidate_id": 13,
+      "title": "Hallucination-aware intermediate representation edit in large vision-language models",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.29405"
+    },
+    {
+      "candidate_id": 14,
+      "title": "An Empirical Study of Multi-Agent Collaboration for Automated Research",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.29632"
+    },
+    {
+      "candidate_id": 15,
+      "title": "6GAgentGym: Tool Use, Data Synthesis",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.29656"
+    },
+    {
+      "candidate_id": 16,
+      "title": "Architecting Secure AI Agents: Perspectives on System-Level Defenses Against Indirect",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.30016"
+    },
+    {
+      "candidate_id": 17,
+      "title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.25158"
+    },
+    {
+      "candidate_id": 18,
+      "title": "GUIDE: Resolving Domain Bias in GUI Agents through Real-Time Web Video Retrieval and Plug",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2603.26266"
+    },
+    {
+      "candidate_id": 19,
+      "title": "Emergence WebVoyager: Toward Consistent and Transparent Evaluation of (Web) Agents in The Wild",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29020"
+    },
+    {
+      "candidate_id": 20,
+      "title": "The Future of AI is Many",
+      "snippet_len": 129,
+      "cluster_text_len": 129,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29075"
+    },
+    {
+      "candidate_id": 21,
+      "title": "Knowledge database development by large language models for countermeasures against viruses",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29149"
+    },
+    {
+      "candidate_id": 22,
+      "title": "SimMOF: AI agent for Automated MOF Simulations",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29152"
+    },
+    {
+      "candidate_id": 23,
+      "title": "Xuanwu: Evolving General Multimodal Models into an Industrial-Grade Foundation for Content",
+      "snippet_len": 137,
+      "cluster_text_len": 137,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29211"
+    },
+    {
+      "candidate_id": 24,
+      "title": "Beyond pass@1: A Reliability Science Framework for Long-Horizon LLM Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29231"
+    },
+    {
+      "candidate_id": 25,
+      "title": "ASI-Evolve: AI Accelerates AI",
+      "snippet_len": 95,
+      "cluster_text_len": 95,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29640"
+    },
+    {
+      "candidate_id": 26,
+      "title": "View-oriented Conversation Compiler for Agent Trace Analysis",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29678"
+    },
+    {
+      "candidate_id": 27,
+      "title": "Measuring the metacognition of AI",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29693"
+    },
+    {
+      "candidate_id": 28,
+      "title": "Symphony for Medical Coding: A Next-Generation Agentic System for Scalable and Explainable",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29709"
+    },
+    {
+      "candidate_id": 29,
+      "title": "CausalPulse: An Industrial-Grade Neurosymbolic Multi-Agent Copilot for Causal Diagnostics",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29755"
+    },
+    {
+      "candidate_id": 30,
+      "title": "Reasoning-Driven Synthetic Data Generation and Evaluation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29791"
+    },
+    {
+      "candidate_id": 31,
+      "title": "AgentFixer: From Failure Detection to Fix Recommendations in LLM Agentic Systems",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29848"
+    },
+    {
+      "candidate_id": 32,
+      "title": "Structured Intent as a Protocol-Like Communication Layer: Cross-Model Robustness, Framework",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29953"
+    },
+    {
+      "candidate_id": 33,
+      "title": "Extending MONA in Camera Dropbox: Reproduction, Learned Approval, and Design Implications",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29993"
+    },
+    {
+      "candidate_id": 34,
+      "title": "The Last Fingerprint: How Markdown Training Shapes LLM Prose",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.27006"
+    },
+    {
+      "candidate_id": 35,
+      "title": "CREST: Constraint-Release Execution for Multi-Robot Warehouse Shelf Rearrangement",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.28803"
+    },
+    {
+      "candidate_id": 36,
+      "title": "The impact of multi-agent debate protocols on debate quality",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.28813"
+    },
+    {
+      "candidate_id": 37,
+      "title": "Multi-Agent LLMs for Adaptive Acquisition in Bayesian Optimization",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.28959"
+    },
+    {
+      "candidate_id": 38,
+      "title": "AutoWorld: Scaling Multi-Agent Traffic Simulation with Self-Supervised World Models",
+      "snippet_len": 145,
+      "cluster_text_len": 145,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.28963"
+    },
+    {
+      "candidate_id": 39,
+      "title": "Design Principles for the Construction of a Benchmark Evaluating Security Operation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.28998"
+    },
+    {
+      "candidate_id": 40,
+      "title": "The Model Says Walk: How Surface Heuristics Override Implicit Constraints in LLM Reasoning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29025"
+    },
+    {
+      "candidate_id": 41,
+      "title": "Trojan-Speak: Bypassing Constitutional Classifiers with No Jailbreak Tax via Adversarial",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29038"
+    },
+    {
+      "candidate_id": 42,
+      "title": "Economics of Human and AI Collaboration: When is Partial Automation More Attractive than",
+      "snippet_len": 143,
+      "cluster_text_len": 143,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29121"
+    },
+    {
+      "candidate_id": 43,
+      "title": "Developing Adaptive Context Compression Techniques for Large Language Models (LLMs) in Long",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29193"
+    },
+    {
+      "candidate_id": 44,
+      "title": "Multi-Layered Memory Architectures for LLM Agents: An Experimental Evaluation of Long-Term",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29194"
+    },
+    {
+      "candidate_id": 45,
+      "title": "Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29252"
+    },
+    {
+      "candidate_id": 46,
+      "title": "M-MiniGPT4: Multilingual VLLM Alignment via Translated Data",
+      "snippet_len": 131,
+      "cluster_text_len": 131,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29467"
+    },
+    {
+      "candidate_id": 47,
+      "title": "MemFactory: Unified Inference & Training Framework for Agent Memory",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29493"
+    },
+    {
+      "candidate_id": 48,
+      "title": "Interview-Informed Generative Agents for Product Discovery",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.29890"
+    },
+    {
+      "candidate_id": 49,
+      "title": "Hybrid Framework for Robotic Manipulation: Integrating Reinforcement Learning and Large",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.30022"
+    },
+    {
+      "candidate_id": 50,
+      "title": "CoMaTrack: Competitive Multi-Agent Game-Theoretic Tracking with Vision-Language-Action Models",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.22846"
+    },
+    {
+      "candidate_id": 51,
+      "title": "UniAI-GraphRAG: Synergizing Ontology-Guided Extraction, Multi-Dimensional Clustering, and",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.25152"
+    },
+    {
+      "candidate_id": 52,
+      "title": "100x Cost & Latency Reduction: Performance Analysis of AI Query Approximation using",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.15970"
+    },
+    {
+      "candidate_id": 53,
+      "title": "ContractSkill: Repairable Contract-Based Skills for Multimodal Web Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.20340"
+    },
+    {
+      "candidate_id": 54,
+      "title": "SleepVLM: Explainable and Rule-Grounded Sleep Staging via a Vision-Language Model",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.26738"
+    },
+    {
+      "candidate_id": 55,
+      "title": "JaWildText: A Benchmark for Vision-Language Models on Japanese Scene Text Understanding",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.27942"
+    },
+    {
+      "candidate_id": 56,
+      "title": "ResAdapt: Adaptive Resolution for Efficient Multimodal Reasoning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2603.28610"
+    },
+    {
+      "candidate_id": 57,
+      "title": "Claude Code leak exposes a Tamagotchi-style ‘pet’ and an always-on agent",
+      "snippet_len": 181,
+      "cluster_text_len": 181,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "theverge.com",
+      "score": 23.70043971814109,
+      "link": "https://www.theverge.com/ai-artificial-intelligence/904776/anthropic-claude-source-code-leak"
+    },
+    {
+      "candidate_id": 58,
+      "title": "Unify-Agent: A Unified Multimodal Agent for World-Grounded Image Synthesis",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "huggingface.co",
+      "score": 25,
+      "link": "https://huggingface.co/papers/2603.29620"
+    },
+    {
+      "candidate_id": 59,
+      "title": "ChartDiff: A Large-Scale Benchmark for Comprehending Pairs of Charts",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.28902"
+    },
+    {
+      "candidate_id": 60,
+      "title": "Enhancing Policy Learning with World-Action Model",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.28955"
+    },
+    {
+      "candidate_id": 61,
+      "title": "Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures",
+      "snippet_len": 125,
+      "cluster_text_len": 125,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.28990"
+    },
+    {
+      "candidate_id": 62,
+      "title": "PAR$^2$-RAG: Planned Active Retrieval and Reasoning for Multi-Hop Question Answering",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29085"
+    },
+    {
+      "candidate_id": 63,
+      "title": "GISTBench: Evaluating LLM User Understanding via Evidence-Based Interest Verification",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29112"
+    },
+    {
+      "candidate_id": 64,
+      "title": "Webscraper: Leverage Multimodal Large Language Models for Index-Content Web Scraping",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29161"
+    },
+    {
+      "candidate_id": 65,
+      "title": "BenchScope: How Many Independent Signals Does Your Benchmark Provide?",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29357"
+    },
+    {
+      "candidate_id": 66,
+      "title": "AI-Generated Prior Authorization Letters: Strong Clinical Content, Weak Administrative",
+      "snippet_len": 135,
+      "cluster_text_len": 135,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29366"
+    },
+    {
+      "candidate_id": 67,
+      "title": "Spatiotemporal Robustness of Temporal Logic Tasks using Multi-Objective Reasoning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29868"
+    },
+    {
+      "candidate_id": 68,
+      "title": "ATP-Bench: Towards Agentic Tool Planning for MLLM Interleaved Generation",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29902"
+    },
+    {
+      "candidate_id": 69,
+      "title": "A Multi-Modal Dataset for Ground Reaction Force Estimation Using Consumer Wearable Sensors",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.28784"
+    },
+    {
+      "candidate_id": 70,
+      "title": "GUARD-SLM: Token Activation-Based Defense Against Jailbreak Attacks for Small Language Models",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.28817"
+    },
+    {
+      "candidate_id": 71,
+      "title": "OccSim: Multi-kilometer Simulation with Long-horizon Occupancy World Models",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.28887"
+    },
+    {
+      "candidate_id": 72,
+      "title": "Privacy Guard & Token Parsimony by Prompt and Context Handling and LLM Routing",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.28972"
+    },
+    {
+      "candidate_id": 73,
+      "title": "Understand and Accelerate Memory Processing Pipeline for Disaggregated LLM Inference",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29002"
+    },
+    {
+      "candidate_id": 74,
+      "title": "Human-Like Lifelong Memory: A Neuroscience-Grounded Architecture for Infinite Interaction",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29023"
+    },
+    {
+      "candidate_id": 75,
+      "title": "A Latent Risk-Aware Machine Learning Approach for Predicting Operational Success in",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29041"
+    },
+    {
+      "candidate_id": 76,
+      "title": "WybeCoder: Verified Imperative Code Generation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29088"
+    },
+    {
+      "candidate_id": 77,
+      "title": "Long-Document QA with Chain-of-Structured-Thought and Fine-Tuned SLMs",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29232"
+    },
+    {
+      "candidate_id": 78,
+      "title": "MemRerank: Preference Memory for Personalized Product Reranking",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29247"
+    },
+    {
+      "candidate_id": 79,
+      "title": "Self-Improving Code Generation via Semantic Entropy and Behavioral Consensus",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29292"
+    },
+    {
+      "candidate_id": 80,
+      "title": "Beyond Corner Patches: Semantics-Aware Backdoor Attack in Federated Learning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29328"
+    },
+    {
+      "candidate_id": 81,
+      "title": "AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29410"
+    },
+    {
+      "candidate_id": 82,
+      "title": "Few-shot Writer Adaptation via Multimodal In-Context Learning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29450"
+    },
+    {
+      "candidate_id": 83,
+      "title": "KEditVis: A Visual Analytics System for Knowledge Editing of Large Language Models",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29689"
+    },
+    {
+      "candidate_id": 84,
+      "title": "From Skeletons to Semantics: Design and Deployment of a Hybrid Edge-Based Action Detection",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29777"
+    },
+    {
+      "candidate_id": 85,
+      "title": "VectorGym: A Multitask Benchmark for SVG Code Generation, Sketching",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29852"
+    },
+    {
+      "candidate_id": 86,
+      "title": "Performance Evaluation of LLMs in Automated RDF Knowledge Graph Generation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.29878"
+    },
+    {
+      "candidate_id": 87,
+      "title": "Empirical Comparison of Agent Communication Protocols for Task Orchestration",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.22823"
+    },
+    {
+      "candidate_id": 88,
+      "title": "Compliance-Aware Predictive Process Monitoring",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.26948"
+    },
+    {
+      "candidate_id": 89,
+      "title": "A Multi-Agent Rhizomatic Pipeline for Non-Linear Literature Analysis",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.28336"
+    },
+    {
+      "candidate_id": 90,
+      "title": "Multi-Agent Memory from a Computer Architecture Perspective",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.10062"
+    },
+    {
+      "candidate_id": 91,
+      "title": "AgentDrift: Unsafe Recommendation Drift Under Tool Corruption Hidden by Ranking Metrics in",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.12564"
+    },
+    {
+      "candidate_id": 92,
+      "title": "InCoder-32B: Code Foundation Model for Industrial Scenarios",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.16790"
+    },
+    {
+      "candidate_id": 93,
+      "title": "X-World: Controllable Ego-Centric Multi-Camera World Models for Scalable End-to-End Driving",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.19979"
+    },
+    {
+      "candidate_id": 94,
+      "title": "Beyond Hard Constraints: Budget-Conditioned Reachability For Safe Offline Reinforcement Learning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.22292"
+    },
+    {
+      "candidate_id": 95,
+      "title": "LLMON: An LLM-native Markup Language to Leverage Structure and Semantics at the LLM Interface",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.22519"
+    },
+    {
+      "candidate_id": 96,
+      "title": "Building evidence-based knowledge graphs from full-text literature for disease-specific",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.28325"
+    },
+    {
+      "candidate_id": 97,
+      "title": "LG-HCC: Local Geometry-Aware Hierarchical Context Compression for 3D Gaussian Splatting",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2603.28431"
+    },
+    {
+      "candidate_id": 98,
+      "title": "Gradient Labs gives every bank customer an AI account manager",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "OpenAI News",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "openai.com",
+      "score": 24,
+      "link": "https://openai.com/index/gradient-labs"
+    },
+    {
+      "candidate_id": 99,
+      "title": "Quoting Georgi Gerganov",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "simonwillison.net",
+      "score": 20.643856189774723,
+      "link": "https://simonwillison.net/2026/Mar/30/georgi-gerganov/#atom-everything"
+    },
+    {
+      "candidate_id": 100,
+      "title": "Anthropic 回应 Claude Code 源码泄露：自动化程度仍需提高Anthropic核心开发者承认，Claude Code源代码泄露系人为失误导致",
+      "snippet_len": 131,
+      "cluster_text_len": 131,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 23.60418569631167,
+      "link": "https://news.aibase.com/zh/news/26768"
+    },
+    {
+      "candidate_id": 101,
+      "title": "银行普惠 AI 时代：OpenAI 联手 Gradient Labs 打造“数字客户经理”OpenAI与Gradient Labs合作，利用GPT-5.4模型为普通银行用户提供专属客户经理体验",
+      "snippet_len": 121,
+      "cluster_text_len": 121,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 23.60418569631167,
+      "link": "https://news.aibase.com/zh/news/26767"
+    },
+    {
+      "candidate_id": 102,
+      "title": "ClawHub 推出官方中国镜像站！国内 AI Agent 开发者访问技能库再无延迟OpenClaw生态核心技能注册中心ClawHub正式上线中国镜像",
+      "snippet_len": 139,
+      "cluster_text_len": 139,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 23.60418569631167,
+      "link": "https://news.aibase.com/zh/news/26760"
+    },
+    {
+      "candidate_id": 103,
+      "title": "Anthropic 发送 DMCA 通知，大规模下架 8100 个源码仓库Anthropic就Claude代码泄露事件发起法律行动，向GitHub提交DMCA通知要求删除非法源码仓库",
+      "snippet_len": 115,
+      "cluster_text_len": 115,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 23.60418569631167,
+      "link": "https://news.aibase.com/zh/news/26758"
+    },
+    {
+      "candidate_id": 104,
+      "title": "Claude 源码泄露催生“反封号”神器，国内开发者展开生存自救Anthropic源码泄露意外揭示其严苛账户审查机制，催生反封号工具CC-Gateway。此前该公司对中国IP采取严厉封禁策略",
+      "snippet_len": 129,
+      "cluster_text_len": 129,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 23.60418569631167,
+      "link": "https://news.aibase.com/zh/news/26757"
+    },
+    {
+      "candidate_id": 105,
+      "title": "AI 从“很能说”迈向“很能干”，阿里巴巴联合上海人工智能实验室发布安全白皮书阿里巴巴与上海人工智能实验室联合发布AI白皮书，强调在AI向智能体进化过程中，安全与责任至关重要",
+      "snippet_len": 136,
+      "cluster_text_len": 136,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 23.60418569631167,
+      "link": "https://news.aibase.com/zh/news/26753"
+    },
+    {
+      "candidate_id": 106,
+      "title": "20 人团队撬动 110 亿估值！前百度高管创业作Genspark融资3. 85 亿美元AI创业项目Genspark完成3.85亿美元B轮扩展融资，投后估值约110亿元。团队仅约20人",
+      "snippet_len": 136,
+      "cluster_text_len": 136,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 23.60418569631167,
+      "link": "https://news.aibase.com/zh/news/26749"
+    },
+    {
+      "candidate_id": 107,
+      "title": "AI can push your Stream Deck buttons for you",
+      "snippet_len": 97,
+      "cluster_text_len": 97,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "theverge.com",
+      "score": 21.584962500721154,
+      "link": "https://www.theverge.com/tech/905021/elgato-stream-deck-mcp-ai-agent-update"
+    },
+    {
+      "candidate_id": 108,
+      "title": "Claude is.. nesting I am enlisting Gemini's help in analyzing model traces. Recently",
+      "snippet_len": 233,
+      "cluster_text_len": 233,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "huggingface.co",
+      "score": 27.584962500721154,
+      "link": "https://huggingface.co/posts/nightmedia/758736627855560"
+    },
+    {
+      "candidate_id": 109,
+      "title": "CutClaw: Agentic Hours-Long Video Editing via Music Synchronization",
+      "snippet_len": 102,
+      "cluster_text_len": 102,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "huggingface.co",
+      "score": 23,
+      "link": "https://huggingface.co/papers/2603.29664"
+    },
+    {
+      "candidate_id": 110,
+      "title": "Think Anywhere in Code Generation",
+      "snippet_len": 144,
+      "cluster_text_len": 144,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "huggingface.co",
+      "score": 23,
+      "link": "https://huggingface.co/papers/2603.29957"
+    },
+    {
+      "candidate_id": 111,
+      "title": "CARLA-Air: Fly Drones Inside a CARLA World -- A Unified Infrastructure for Air-Ground",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-03-30",
+      "domain": "huggingface.co",
+      "score": 23,
+      "link": "https://huggingface.co/papers/2603.28032"
+    },
+    {
+      "candidate_id": 112,
+      "title": "SeGPruner: Semantic-Geometric Visual Token Pruner for 3D Question Answering",
+      "snippet_len": 89,
+      "cluster_text_len": 89,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "huggingface.co",
+      "score": 23,
+      "link": "https://huggingface.co/papers/2603.29437"
+    },
+    {
+      "candidate_id": 113,
+      "title": "HandX: Scaling Bimanual Motion and Interaction Generation",
+      "snippet_len": 120,
+      "cluster_text_len": 120,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-03-30",
+      "domain": "huggingface.co",
+      "score": 23,
+      "link": "https://huggingface.co/papers/2603.28766"
+    },
+    {
+      "candidate_id": 114,
+      "title": "Towards Computational Social Dynamics of Semi-Autonomous AI Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28928"
+    },
+    {
+      "candidate_id": 115,
+      "title": "REFINE: Real-world Exploration of Interactive Feedback and Student Behaviour",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29142"
+    },
+    {
+      "candidate_id": 116,
+      "title": "Learning to Generate Formally Verifiable Step-by-Step Logic Reasoning via Structured Formal",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29500"
+    },
+    {
+      "candidate_id": 117,
+      "title": "FlowPIE: Test-Time Scientific Idea Evolution with Flow-Guided Literature Exploration",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29557"
+    },
+    {
+      "candidate_id": 118,
+      "title": "Beyond the Steeper Curve: AI-Mediated Metacognitive Decoupling and the Limits of the",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29681"
+    },
+    {
+      "candidate_id": 119,
+      "title": "Reinforced Reasoning for End-to-End Retrosynthetic Planning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29723"
+    },
+    {
+      "candidate_id": 120,
+      "title": "Spontaneous Functional Differentiation in Large Language Models: A Brain-Like Intelligence",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29735"
+    },
+    {
+      "candidate_id": 121,
+      "title": "Owl-AuraID 1.0: An Intelligent System for Autonomous Scientific Instrumentation and",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29828"
+    },
+    {
+      "candidate_id": 122,
+      "title": "ShapE-GRPO: Shapley-Enhanced Reward Allocation for Multi-Candidate LLM Training",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29871"
+    },
+    {
+      "candidate_id": 123,
+      "title": "C-TRAIL: A Commonsense World Framework for Trajectory Planning in Autonomous Driving",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29908"
+    },
+    {
+      "candidate_id": 124,
+      "title": "ScoringBench: A Benchmark for Evaluating Tabular Foundation Models with Proper Scoring Rules",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29928"
+    },
+    {
+      "candidate_id": 125,
+      "title": "Byzantine-Robust and Communication-Efficient Distributed Training: Compressive and Cyclic",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28780"
+    },
+    {
+      "candidate_id": 126,
+      "title": "Smartphone-Based Identification of Unknown Liquids via Active Vibration Sensing",
+      "snippet_len": 140,
+      "cluster_text_len": 140,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28787"
+    },
+    {
+      "candidate_id": 127,
+      "title": "StepCache: Step-Level Reuse with Lightweight Verification and Selective Patching for LLM Serving",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28795"
+    },
+    {
+      "candidate_id": 128,
+      "title": "GaloisSAT: Differentiable Boolean Satisfiability Solving via Finite Field Algebra",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28796"
+    },
+    {
+      "candidate_id": 129,
+      "title": "SkillTester: Benchmarking Utility and Security of Agent Skills",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28815"
+    },
+    {
+      "candidate_id": 130,
+      "title": "Time is Not Compute: Scaling Laws for Wall-Clock Constrained Training on Consumer GPUs",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28823"
+    },
+    {
+      "candidate_id": 131,
+      "title": "SNEAKDOOR: Stealthy Backdoor Attacks against Distribution Matching-based Dataset Condensation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28824"
+    },
+    {
+      "candidate_id": 132,
+      "title": "Incentives, Equilibria, and the Limits of Healthcare AI",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28825"
+    },
+    {
+      "candidate_id": 133,
+      "title": "GMA-SAWGAN-GP: A Novel Data Generative Framework to Enhance IDS Detection Performance",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28838"
+    },
+    {
+      "candidate_id": 134,
+      "title": "OneComp: One-Line Revolution for Generative AI Model Compression",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28845"
+    },
+    {
+      "candidate_id": 135,
+      "title": "Robust Multi-Agent Reinforcement Learning for Small UAS Separation Assurance under GPS",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28900"
+    },
+    {
+      "candidate_id": 136,
+      "title": "Differentiable Initialization-Accelerated CPU-GPU Hybrid Combinatorial Scheduling",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.28943"
+    },
+    {
+      "candidate_id": 137,
+      "title": "CivicShield: A Cross-Domain Defense-in-Depth Framework for Securing Government-Facing AI",
+      "snippet_len": 120,
+      "cluster_text_len": 120,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29062"
+    },
+    {
+      "candidate_id": 138,
+      "title": "Towards Explainable Stakeholder-Aware Requirements Prioritisation in Aged-Care Digital Health",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29114"
+    },
+    {
+      "candidate_id": 139,
+      "title": "Designing FSMs Specifications from Requirements with GPT 4.0",
+      "snippet_len": 135,
+      "cluster_text_len": 135,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29140"
+    },
+    {
+      "candidate_id": 140,
+      "title": "Efficient and Scalable Granular-ball Graph Coarsening Method for Large-scale Graph Node",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29148"
+    },
+    {
+      "candidate_id": 141,
+      "title": "SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29186"
+    },
+    {
+      "candidate_id": 142,
+      "title": "3D Architect: An Automated Approach to Three-Dimensional Modeling",
+      "snippet_len": 147,
+      "cluster_text_len": 147,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29191"
+    },
+    {
+      "candidate_id": 143,
+      "title": "SyriSign: A Parallel Corpus for Arabic Text to Syrian Arabic Sign Language Translation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29219"
+    },
+    {
+      "candidate_id": 144,
+      "title": "Monodense Deep Neural Model for Determining Item Price Elasticity",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29261"
+    },
+    {
+      "candidate_id": 145,
+      "title": "PRISM: A Multi-View Multi-Capability Retail Video Dataset for Embodied Vision-Language Models",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29281"
+    },
+    {
+      "candidate_id": 146,
+      "title": "Sima AIunty: Caste Audit in LLM-Driven Matchmaking",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29288"
+    },
+    {
+      "candidate_id": 147,
+      "title": "Deep Learning-Based Anomaly Detection in Spacecraft Telemetry on Edge Devices",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29375"
+    },
+    {
+      "candidate_id": 148,
+      "title": "Extend3D: Town-Scale 3D Generation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29387"
+    },
+    {
+      "candidate_id": 149,
+      "title": "Security in LLM-as-a-Judge",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29403"
+    },
+    {
+      "candidate_id": 150,
+      "title": "An Isotropic Approach to Efficient Uncertainty Quantification with Gradient Norms",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29466"
+    },
+    {
+      "candidate_id": 151,
+      "title": "Impact of enriched meaning representations for language generation in dialogue tasks: A",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29518"
+    },
+    {
+      "candidate_id": 152,
+      "title": "TrafficMoE: Heterogeneity-aware Mixture of Experts for Encrypted Traffic Classification",
+      "snippet_len": 123,
+      "cluster_text_len": 123,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29520"
+    },
+    {
+      "candidate_id": 153,
+      "title": "Baby Scale: Investigating Models Trained on Individual Children's Language Input",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29522"
+    },
+    {
+      "candidate_id": 154,
+      "title": "Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29535"
+    },
+    {
+      "candidate_id": 155,
+      "title": "Reducing Complexity for Quantum Approaches in Train Load Optimization",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29543"
+    },
+    {
+      "candidate_id": 156,
+      "title": "Learn2Fold: Structured Origami Generation with World Model Planning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29585"
+    },
+    {
+      "candidate_id": 157,
+      "title": "FigAgent: Towards Automatic Method Illustration Figure Generation for AI Scientific Papers",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29590"
+    },
+    {
+      "candidate_id": 158,
+      "title": "IMAGAgent: Orchestrating Multi-Turn Image Editing via Constraint-Aware Planning and Reflection",
+      "snippet_len": 147,
+      "cluster_text_len": 147,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29602"
+    },
+    {
+      "candidate_id": 159,
+      "title": "Semantic Interaction for Narrative Map Sensemaking",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29651"
+    },
+    {
+      "candidate_id": 160,
+      "title": "Concept frustration: Aligning human concepts and machine representations",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29654"
+    },
+    {
+      "candidate_id": 161,
+      "title": "Mind the Gap: A Framework for Assessing Pitfalls in Multimodal Active Learning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29677"
+    },
+    {
+      "candidate_id": 162,
+      "title": "BotVerse: Real-Time Event-Driven Simulation of Social Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29741"
+    },
+    {
+      "candidate_id": 163,
+      "title": "TSHA: A Benchmark for Visual Language Models in Trustworthy Safety Hazard Assessment Scenarios",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29759"
+    },
+    {
+      "candidate_id": 164,
+      "title": "DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29844"
+    },
+    {
+      "candidate_id": 165,
+      "title": "Towards Empowering Consumers through Sentence-level Readability Scoring in German ESG Reports",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29861"
+    },
+    {
+      "candidate_id": 166,
+      "title": "Wildfire Suppression: Complexity, Models",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29865"
+    },
+    {
+      "candidate_id": 167,
+      "title": "Generative AI in Action: Field Experimental Evidence from Alibaba's Customer Service Operations",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29888"
+    },
+    {
+      "candidate_id": 168,
+      "title": "End-to-End Image Compression with Segmentation Guided Dual Coding for Wind Turbines",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29927"
+    },
+    {
+      "candidate_id": 169,
+      "title": "Bethe Ansatz with a Large Language Model",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29932"
+    },
+    {
+      "candidate_id": 170,
+      "title": "Enhancing Structural Mapping with LLM-derived Abstractions for Analogical Reasoning in",
+      "snippet_len": 148,
+      "cluster_text_len": 148,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29997"
+    },
+    {
+      "candidate_id": 171,
+      "title": "Phyelds: A Pythonic Framework for Aggregate Computing",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.29999"
+    },
+    {
+      "candidate_id": 172,
+      "title": "Scalable AI-assisted Workflow Management for Detector Design Optimization Using Distributed",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.30014"
+    },
+    {
+      "candidate_id": 173,
+      "title": "Aligned, Orthogonal or In-conflict: When can we safely optimize Chain-of-Thought?",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2603.30036"
+    },
+    {
+      "candidate_id": 174,
+      "title": "OpenAI卖广告到底卖得怎么样了？",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 22.539030204684515,
+      "link": "https://36kr.com/p/3748152711103240"
+    },
+    {
+      "candidate_id": 175,
+      "title": "Anthropic首席产品官万字分享：AI时代的“现象级产品”为什么难产？",
+      "snippet_len": 124,
+      "cluster_text_len": 124,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 22.539030204684515,
+      "link": "https://36kr.com/p/3748204044092165"
+    },
+    {
+      "candidate_id": 176,
+      "title": "全球投资者正把大模型公司推向“市梦率”",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 22.539030204684515,
+      "link": "https://36kr.com/p/3748129288782343"
+    },
+    {
+      "candidate_id": 177,
+      "title": "Claude Code开源发酵：负责人反省，平替版狂飙10万星",
+      "snippet_len": 132,
+      "cluster_text_len": 132,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 22.539030204684515,
+      "link": "https://36kr.com/p/3748212115702272"
+    },
+    {
+      "candidate_id": 178,
+      "title": "翻遍Claude Code泄露的50万行代码",
+      "snippet_len": 133,
+      "cluster_text_len": 133,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 22.539030204684515,
+      "link": "https://36kr.com/p/3748066073051652"
+    },
+    {
+      "candidate_id": 179,
+      "title": "TRAE SOLO“龙虾化”",
+      "snippet_len": 144,
+      "cluster_text_len": 144,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 22.539030204684515,
+      "link": "https://36kr.com/p/3747994426897156"
+    },
+    {
+      "candidate_id": 180,
+      "title": "比全球最强推理引擎还快2倍，斯坦福",
+      "snippet_len": 110,
+      "cluster_text_len": 110,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 22.539030204684515,
+      "link": "https://36kr.com/p/3747805945824004"
+    },
+    {
+      "candidate_id": 181,
+      "title": "AI编程的底牌",
+      "snippet_len": 149,
+      "cluster_text_len": 149,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 22.247927513443585,
+      "link": "https://36kr.com/p/3747777476702726"
+    },
+    {
+      "candidate_id": 182,
+      "title": "中国 AI 公司，该怎么「抄 Claude Code 的作业」？",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 22.247927513443585,
+      "link": "https://36kr.com/p/3747753489613318"
+    },
+    {
+      "candidate_id": 183,
+      "title": "欧洲巨头Mistral AI 砸 8.3 亿美元抢占算力高地",
+      "snippet_len": 137,
+      "cluster_text_len": 137,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aitntnews.com",
+      "score": 22.247927513443585,
+      "link": "https://aitntnews.com/newDetail.html?newId=23645"
+    },
+    {
+      "candidate_id": 184,
+      "title": "国内大模型厂商 Token/Coding Plan 汇总对比：MiniMax、智谱、阶跃",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aitntnews.com",
+      "score": 22.247927513443585,
+      "link": "https://aitntnews.com/newDetail.html?newId=23643"
+    },
+    {
+      "candidate_id": 185,
+      "title": "别等ASI了！OpenAI上演「资产大逃亡」",
+      "snippet_len": 105,
+      "cluster_text_len": 105,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aitntnews.com",
+      "score": 22.247927513443585,
+      "link": "https://aitntnews.com/newDetail.html?newId=23641"
+    },
+    {
+      "candidate_id": 186,
+      "title": "被高估的自主Agent，被低估的人机协作｜对话美国东北大学AP江航",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aitntnews.com",
+      "score": 22.247927513443585,
+      "link": "https://aitntnews.com/newDetail.html?newId=23638"
+    },
+    {
+      "candidate_id": 187,
+      "title": "从Claude Code刚泄漏的源码",
+      "snippet_len": 89,
+      "cluster_text_len": 89,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-03-31",
+      "domain": "aitntnews.com",
+      "score": 22.539030204684515,
+      "link": "https://aitntnews.com/newDetail.html?newId=23629"
+    },
+    {
+      "candidate_id": 188,
+      "title": "两大最强AI梦幻联动！Codex 被 OpenAI 做成插件",
+      "snippet_len": 276,
+      "cluster_text_len": 276,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-03-31",
+      "domain": "aitntnews.com",
+      "score": 22.247927513443585,
+      "link": "https://aitntnews.com/newDetail.html?newId=23627"
+    },
+    {
+      "candidate_id": 189,
+      "title": "Mar 31, 2026AnnouncementsAustralian government and Anthropic sign MOU for AI safety and research",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Anthropic News",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "anthropic.com",
+      "score": 22.247927513443585,
+      "link": "https://www.anthropic.com/news/australia-MOU"
+    },
+    {
+      "candidate_id": 190,
+      "title": "datasette-extract 0.3a0",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "simonwillison.net",
+      "score": 22,
+      "link": "https://simonwillison.net/2026/Apr/1/datasette-extract/#atom-everything"
+    },
+    {
+      "candidate_id": 191,
+      "title": "datasette-enrichments-llm 0.2a0",
+      "snippet_len": 303,
+      "cluster_text_len": 303,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "simonwillison.net",
+      "score": 22,
+      "link": "https://simonwillison.net/2026/Apr/1/datasette-enrichments-llm/#atom-everything"
+    },
+    {
+      "candidate_id": 193,
+      "title": "Quoting Soohoon Choi",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "simonwillison.net",
+      "score": 22,
+      "link": "https://simonwillison.net/2026/Apr/1/soohoon-choi/#atom-everything"
+    },
+    {
+      "candidate_id": 194,
+      "title": "联想 YOGA AI Mini 惊艳登场：首搭 DingOS，要把 AI 塞进 0.65L 空间联想4月1日发布YOGA AI Mini迷你主机，采用圆柱形设计，体积0.65L，重量仅600g",
+      "snippet_len": 101,
+      "cluster_text_len": 101,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26769"
+    },
+    {
+      "candidate_id": 195,
+      "title": "AI文游火了！网友用灵光手搓人生模拟器，内容创业悄然生变AI文游正流行，用户通过自然语言对话，利用AI助手创作文字游戏，并在社交平台以9.9至30元的价格出售。这种玩法满足了年轻人的创作需求",
+      "snippet_len": 129,
+      "cluster_text_len": 129,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26766"
+    },
+    {
+      "candidate_id": 196,
+      "title": "可灵AI推出会员模型优惠计划:3.0系列视频模型限时8折起可灵AI于2026年4月1日推出“会员模型优惠计划”，旨在降低高阶视频创作门槛。活动持续至6月30日，覆盖Web和App端。期间",
+      "snippet_len": 104,
+      "cluster_text_len": 104,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26763"
+    },
+    {
+      "candidate_id": 197,
+      "title": "告别“组装商”标签！联想宣布转型AI原生公司：新财年要靠AI“交付” 1000 亿美金联想集团宣布转型为AI原生公司，未来所有产品、服务及流程都将以人工智能为核心重构",
+      "snippet_len": 139,
+      "cluster_text_len": 139,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26762"
+    },
+    {
+      "candidate_id": 198,
+      "title": "告别 AI 标准脸：阿里发布 Wan2.7-Image，开启“千人千面”新时代阿里发布Wan2.7-Image模型，在人像定制、色彩控制和长文本渲染方面实现突破",
+      "snippet_len": 133,
+      "cluster_text_len": 133,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26761"
+    },
+    {
+      "candidate_id": 199,
+      "title": "告别AI标准脸!阿里Wan2.7-Image发布:能写A4纸论文，还能像素级“捏脸”阿里发布Wan2.7-Image模型，突破传统AI生图局限，告别“标准脸”实现“千人千面”",
+      "snippet_len": 143,
+      "cluster_text_len": 143,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26759"
+    },
+    {
+      "candidate_id": 200,
+      "title": "年GMV破 160 亿后，交个朋友加码AI： 500 万条商品信息已交由AI处理交个朋友控股成立六周年之际，披露了深度集成AI技术的战略布局。公司2025年全年GMV达160.2亿元",
+      "snippet_len": 137,
+      "cluster_text_len": 137,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26756"
+    },
+    {
+      "candidate_id": 201,
+      "title": "键盘进化：苹果 iOS 27 将引入 AI 纠错，打造“系统级 Grammarly”苹果计划在2026年WWDC上发布iOS 27，对iPhone原生输入法进行重大AI升级",
+      "snippet_len": 135,
+      "cluster_text_len": 135,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26755"
+    },
+    {
+      "candidate_id": 202,
+      "title": "字节跳动 Seed 计划火热开启:2027届大模型天才抢夺战正式打响!字节跳动启动Seed2027届大模型人才校园招聘，面向全球招募顶尖学子，涵盖正式与实习岗位。计划旨在发掘培养大模型研发人才",
+      "snippet_len": 138,
+      "cluster_text_len": 138,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26754"
+    },
+    {
+      "candidate_id": 203,
+      "title": "鲍德熹联合爱奇艺首发科幻短片，全流程 AI 制作时代已至《天问》作为首部全流程AI制作的科幻短片，由鲍德熹监制、爱奇艺联合发起，上线9小时即登顶双榜，标志着电影工业迎来“奥本海默时刻”",
+      "snippet_len": 110,
+      "cluster_text_len": 110,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26752"
+    },
+    {
+      "candidate_id": 204,
+      "title": "大模型抢人战升级！字节跳动 Seed 开启全球校招，豪掷“虚拟股”招募百位天才字节跳动启动全球校招计划，面向2027届应届生及实习生，旨在发掘和储备大模型领域顶尖人才",
+      "snippet_len": 122,
+      "cluster_text_len": 122,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26751"
+    },
+    {
+      "candidate_id": 205,
+      "title": "一名英国青少年向 ChatGPT 询问自杀方式后身亡英国16岁少年卢卡·塞拉·沃克向ChatGPT询问自杀方法后身亡，引发对生成式AI在心理健康保护方面漏洞的担忧",
+      "snippet_len": 148,
+      "cluster_text_len": 148,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "news.aibase.com",
+      "score": 21.169925001442312,
+      "link": "https://news.aibase.com/zh/news/26750"
+    },
+    {
+      "candidate_id": 206,
+      "title": "从“单兵作战”到团队协作：Coding Plan + Agents 团队重构 AI 开发范式",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "火山引擎开发者",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "developer.volcengine.com",
+      "score": 21.169925001442312,
+      "link": "https://developer.volcengine.com/articles/7622375970246230057"
+    },
+    {
+      "candidate_id": 207,
+      "title": "有方舟 Coding Plan",
+      "snippet_len": 128,
+      "cluster_text_len": 128,
+      "source": "火山引擎开发者",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "developer.volcengine.com",
+      "score": 21.169925001442312,
+      "link": "https://developer.volcengine.com/articles/7622875954743083062"
+    },
+    {
+      "candidate_id": 208,
+      "title": "Apr 1, 2026•13 min readAnthropic's entire agent architecture just leaked, and competitors",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "AI Breakfast",
+      "source_group": "newsletter",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aibreakfast.beehiiv.com",
+      "score": 21.169925001442312,
+      "link": "https://aibreakfast.beehiiv.com/p/anthropic-s-entire-agent-architecture-just-leaked-and-competitors-are-taking-notes"
+    },
+    {
+      "candidate_id": 210,
+      "title": "Shifting to AI model customization is an architectural imperative",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "MIT Technology Review AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "technologyreview.com",
+      "score": 21,
+      "link": "https://www.technologyreview.com/2026/03/31/1134762/shifting-to-ai-model-customization-is-an-architectural-imperative/"
+    },
+    {
+      "candidate_id": 211,
+      "title": "AI benchmarks are broken. Here’s what we need instead.",
+      "snippet_len": 115,
+      "cluster_text_len": 115,
+      "source": "MIT Technology Review AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "technologyreview.com",
+      "score": 21,
+      "link": "https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/"
+    },
+    {
+      "candidate_id": 212,
+      "title": "I'm unemployed, I have a gaming GPU, and I just published a German LLM. qwen3-0.6b-german",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "huggingface.co",
+      "score": 21,
+      "link": "https://huggingface.co/posts/philipp-zettl/719476111198425"
+    },
+    {
+      "candidate_id": 213,
+      "title": "一个月突变，Linux内核大佬懵了：上个月还是“AI垃圾”，这个月AI Bug报告却突然靠谱？",
+      "snippet_len": 111,
+      "cluster_text_len": 111,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 20.08746284125034,
+      "link": "https://36kr.com/p/3748150234989061"
+    },
+    {
+      "candidate_id": 214,
+      "title": "国产独立大模型公司的未来",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 20.08746284125034,
+      "link": "https://36kr.com/p/3748106298524422"
+    },
+    {
+      "candidate_id": 215,
+      "title": "AI时代，教育何往？",
+      "snippet_len": 149,
+      "cluster_text_len": 149,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 20.08746284125034,
+      "link": "https://36kr.com/p/3748081382638337"
+    },
+    {
+      "candidate_id": 216,
+      "title": "小牛电动胡依林：一家成立12年的两轮电动车厂商决定转型AI",
+      "snippet_len": 107,
+      "cluster_text_len": 107,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 20.08746284125034,
+      "link": "https://36kr.com/p/3748233045541637"
+    },
+    {
+      "candidate_id": 217,
+      "title": "教练，我想上AI培训班",
+      "snippet_len": 109,
+      "cluster_text_len": 109,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 20.08746284125034,
+      "link": "https://36kr.com/p/3748089986728449"
+    },
+    {
+      "candidate_id": 218,
+      "title": "向AI投毒被曝光，GEO生意却更好了？",
+      "snippet_len": 112,
+      "cluster_text_len": 112,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 20.08746284125034,
+      "link": "https://36kr.com/p/3748112740450824"
+    },
+    {
+      "candidate_id": 219,
+      "title": "比特币“挖矿”企业转向AI数据中心",
+      "snippet_len": 136,
+      "cluster_text_len": 136,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 20.08746284125034,
+      "link": "https://36kr.com/p/3747984369058566"
+    },
+    {
+      "candidate_id": 220,
+      "title": "Twitter创始人谈AI时代的组织：AI替代中层",
+      "snippet_len": 126,
+      "cluster_text_len": 126,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 20.08746284125034,
+      "link": "https://36kr.com/p/3747952985490178"
+    },
+    {
+      "candidate_id": 221,
+      "title": "我一个人，用AI",
+      "snippet_len": 97,
+      "cluster_text_len": 97,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 20.08746284125034,
+      "link": "https://36kr.com/p/3747947088003588"
+    },
+    {
+      "candidate_id": 222,
+      "title": "行业突发：AI三大原则发布",
+      "snippet_len": 137,
+      "cluster_text_len": 137,
+      "source": "36Kr AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "36kr.com",
+      "score": 20.08746284125034,
+      "link": "https://36kr.com/p/3747766248293127"
+    },
+    {
+      "candidate_id": 223,
+      "title": "YC掌门人惊呼：这就是 AGI！4天、零读码",
+      "snippet_len": 140,
+      "cluster_text_len": 140,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aitntnews.com",
+      "score": 20.08746284125034,
+      "link": "https://aitntnews.com/newDetail.html?newId=23663"
+    },
+    {
+      "candidate_id": 224,
+      "title": "AI代码的“屎山危机”才刚刚开始",
+      "snippet_len": 130,
+      "cluster_text_len": 130,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aitntnews.com",
+      "score": 20.08746284125034,
+      "link": "https://aitntnews.com/newDetail.html?newId=23656"
+    },
+    {
+      "candidate_id": 225,
+      "title": "医生最强助手！国产临床级AI医疗产品发布",
+      "snippet_len": 113,
+      "cluster_text_len": 113,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aitntnews.com",
+      "score": 20.08746284125034,
+      "link": "https://aitntnews.com/newDetail.html?newId=23653"
+    },
+    {
+      "candidate_id": 226,
+      "title": "11亿AI大单，百度拿下！",
+      "snippet_len": 144,
+      "cluster_text_len": 144,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aitntnews.com",
+      "score": 20.08746284125034,
+      "link": "https://aitntnews.com/newDetail.html?newId=23651"
+    },
+    {
+      "candidate_id": 227,
+      "title": "我在叽伴App，被 AI 治愈了！",
+      "snippet_len": 138,
+      "cluster_text_len": 138,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aitntnews.com",
+      "score": 20.08746284125034,
+      "link": "https://aitntnews.com/newDetail.html?newId=23640"
+    },
+    {
+      "candidate_id": 228,
+      "title": "对话马骁腾：大厂AI Lab没死",
+      "snippet_len": 100,
+      "cluster_text_len": 100,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "aitntnews.com",
+      "score": 20.08746284125034,
+      "link": "https://aitntnews.com/newDetail.html?newId=23634"
+    },
+    {
+      "candidate_id": 229,
+      "title": "Anthropic is having a month",
+      "snippet_len": 97,
+      "cluster_text_len": 97,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "techcrunch.com",
+      "score": 24.39231742277876,
+      "link": "https://techcrunch.com/2026/03/31/anthropic-is-having-a-month/"
+    },
+    {
+      "candidate_id": 230,
+      "title": "OpenAI, not yet public, raises $3B from retail investors in monster $122B fund raise",
+      "snippet_len": 121,
+      "cluster_text_len": 121,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/"
+    },
+    {
+      "candidate_id": 231,
+      "title": "Yupp shuts down after raising $33M from a16z crypto’s Chris Dixon",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/2026/03/31/yupp-ai-shuts-down-33m-a16z-crypto-chris-dixon/"
+    },
+    {
+      "candidate_id": 232,
+      "title": "Nomadic raises $8.4 million to wrangle the data pouring off autonomous vehicles",
+      "snippet_len": 102,
+      "cluster_text_len": 102,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/2026/03/31/nomadic-raises-8-4-million-to-wrangle-the-data-pouring-off-avs/"
+    },
+    {
+      "candidate_id": 235,
+      "title": "llm-all-models-async 0.1",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "simonwillison.net",
+      "score": 20,
+      "link": "https://simonwillison.net/2026/Mar/31/llm-all-models-async/#atom-everything"
+    },
+    {
+      "candidate_id": 237,
+      "title": "llm-echo 0.3",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "simonwillison.net",
+      "score": 20,
+      "link": "https://simonwillison.net/2026/Mar/31/llm-echo-2/#atom-everything"
+    },
+    {
+      "candidate_id": 238,
+      "title": "Mr. Chatterbox is a (weak) Victorian-era ethically trained model you can run on your own",
+      "snippet_len": 107,
+      "cluster_text_len": 107,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-03-30",
+      "domain": "simonwillison.net",
+      "score": 20,
+      "link": "https://simonwillison.net/2026/Mar/30/mr-chatterbox/#atom-everything"
+    },
+    {
+      "candidate_id": 239,
+      "title": "The AI video apps gaining ground after OpenAI declared Sora dead",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "SiliconValley.com",
+      "source_group": "foreign_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "siliconvalley.com",
+      "score": 19,
+      "link": "https://www.siliconvalley.com/2026/04/01/the-ai-video-apps-gaining-ground-after-openai-declared-sora-dead/"
+    },
+    {
+      "candidate_id": 240,
+      "title": "Baidu’s robotaxis froze in traffic",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "theverge.com",
+      "score": 19,
+      "link": "https://www.theverge.com/ai-artificial-intelligence/905012/baidu-apollo-robotaxi-freeze-china"
+    },
+    {
+      "candidate_id": 241,
+      "title": "Art schools are being torn apart by AI",
+      "snippet_len": 118,
+      "cluster_text_len": 118,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "theverge.com",
+      "score": 19,
+      "link": "https://www.theverge.com/tech/903954/art-schools-generative-ai-education-creative-jobs"
+    },
+    {
+      "candidate_id": 242,
+      "title": "You can order Grubhub and Uber Eats ‘conversationally’ with Alexa Plus",
+      "snippet_len": 149,
+      "cluster_text_len": 149,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "theverge.com",
+      "score": 19,
+      "link": "https://www.theverge.com/ai-artificial-intelligence/903938/alexa-plus-order-food-grubhub-uber-eats"
+    },
+    {
+      "candidate_id": 243,
+      "title": "All the latest in AI &#8216;music&#8217;",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-30",
+      "domain": "theverge.com",
+      "score": 19,
+      "link": "https://www.theverge.com/ai-artificial-intelligence/903196/ai-music-suno-udio-art-lawsuit"
+    },
+    {
+      "candidate_id": 244,
+      "title": "#9开发者重大利好！OpenAI 推出 Codex 插件",
+      "snippet_len": 111,
+      "cluster_text_len": 111,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-03-27",
+      "domain": "news.aibase.com",
+      "score": 19,
+      "link": "https://news.aibase.com/zh/news/26630"
+    },
+    {
+      "candidate_id": 245,
+      "title": "上海人工智能实验室联合商汤大装置等共建AI全链路验证平台与生态社区",
+      "snippet_len": 110,
+      "cluster_text_len": 110,
+      "source": "雷锋网 AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "leiphone.com",
+      "score": 19,
+      "link": "https://www.leiphone.com/category/ai/g9uztc7y94L82Eaw.html"
+    },
+    {
+      "candidate_id": 246,
+      "title": "对话邓智航｜以「龙虾」为起点，起底从单个 Agent 到 Agentic Web 的安全重构",
+      "snippet_len": 147,
+      "cluster_text_len": 147,
+      "source": "雷锋网 AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-03-31",
+      "domain": "leiphone.com",
+      "score": 19,
+      "link": "https://www.leiphone.com/category/ai/iXImSdRxxrL8er4F.html"
+    },
+    {
+      "candidate_id": 247,
+      "title": "指尖上的智慧革命：Vocci AI笔记戒指",
+      "snippet_len": 133,
+      "cluster_text_len": 133,
+      "source": "雷锋网 AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-03-30",
+      "domain": "leiphone.com",
+      "score": 19,
+      "link": "https://www.leiphone.com/category/ai/OTeosUEC6EQxOQk2.html"
+    },
+    {
+      "candidate_id": 248,
+      "title": "The latest AI news we announced in March 2026",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Google AI Blog",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "blog.google",
+      "score": 21.32192809488736,
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-march-2026/"
+    },
+    {
+      "candidate_id": 249,
+      "title": "Mercor says it was hit by cyberattack tied to compromise of open-source LiteLLM project",
+      "snippet_len": 145,
+      "cluster_text_len": 145,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "techcrunch.com",
+      "score": 18,
+      "link": "https://techcrunch.com/2026/03/31/mercor-says-it-was-hit-by-cyberattack-tied-to-compromise-of-open-source-litellm-project/"
+    },
+    {
+      "candidate_id": 250,
+      "title": "Salesforce announces an AI-heavy makeover for Slack",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "techcrunch.com",
+      "score": 22.247927513443585,
+      "link": "https://techcrunch.com/2026/03/31/salesforce-announces-an-ai-heavy-makeover-for-slack-with-30-new-features/"
+    },
+    {
+      "candidate_id": 251,
+      "title": "Exclusive: Runway launches $10M fund, Builders program to support early-stage AI startups",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-31",
+      "domain": "techcrunch.com",
+      "score": 18,
+      "link": "https://techcrunch.com/2026/03/31/exclusive-runway-launches-10m-fund-builders-program-to-support-early-stage-ai-startups/"
+    },
+    {
+      "candidate_id": 252,
+      "title": "AI chip startup Rebellions raises $400 million at $2.3B valuation in pre-IPO round",
+      "snippet_len": 147,
+      "cluster_text_len": 147,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-30",
+      "domain": "techcrunch.com",
+      "score": 18,
+      "link": "https://techcrunch.com/2026/03/30/ai-chip-startup-rebellions-raises-400-million-at-2-3b-valuation-in-pre-ipo-round/"
+    },
+    {
+      "candidate_id": 253,
+      "title": "Qodo raises $70M for code verification as AI coding scales",
+      "snippet_len": 113,
+      "cluster_text_len": 113,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-30",
+      "domain": "techcrunch.com",
+      "score": 18,
+      "link": "https://techcrunch.com/2026/03/30/qodo-bets-on-code-verification-as-ai-coding-scales-raises-70m/"
+    },
+    {
+      "candidate_id": 254,
+      "title": "Why OpenAI really shut down Sora",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-30",
+      "domain": "techcrunch.com",
+      "score": 18,
+      "link": "https://techcrunch.com/2026/03/29/why-openai-really-shut-down-sora/"
+    },
+    {
+      "candidate_id": 256,
+      "title": "Helping disaster response teams turn AI into action across Asia",
+      "snippet_len": 72,
+      "cluster_text_len": 72,
+      "source": "OpenAI News",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-03-30",
+      "domain": "openai.com",
+      "score": 18,
+      "link": "https://openai.com/index/helping-disaster-response-teams-asia"
+    },
+    {
+      "candidate_id": 257,
+      "title": "I Asked ChatGPT What WIRED’s Reviewers Recommend. Its Answers Were All Wrong",
+      "snippet_len": 105,
+      "cluster_text_len": 105,
+      "source": "WIRED AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "wired.com",
+      "score": 18,
+      "link": "https://www.wired.com/story/i-asked-chatgpt-what-wired-reviewers-recommend-its-answers-were-all-wrong/"
+    },
+    {
+      "candidate_id": 258,
+      "title": "‘BLOCKADE’: The Right Is Using AI Content Scanners to Try to Supercharge Book Banning",
+      "snippet_len": 113,
+      "cluster_text_len": 113,
+      "source": "404 Media AI",
+      "source_group": "foreign_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-04-01",
+      "domain": "404media.co",
+      "score": 18,
+      "link": "https://www.404media.co/blockade-the-right-is-using-ai-content-scanners-to-try-to-supercharge-book-banning/"
+    },
+    {
+      "candidate_id": 260,
+      "title": "llm-echo 0.4",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-04-01",
+      "domain": "simonwillison.net",
+      "score": 18,
+      "link": "https://simonwillison.net/2026/Mar/31/llm-echo/#atom-everything"
+    }
+  ]
+}
