@@ -205,6 +205,7 @@ const DEEP_READ_N = readPositiveIntEnv("DIGEST_DEEP_READ_N", Math.max(TOP_N + 15
 const DOMAIN_CAP_DEEP_READ = readPositiveIntEnv("DIGEST_DOMAIN_CAP_DEEP_READ", 5);
 const DOMAIN_CAP_FINAL = readPositiveIntEnv("DIGEST_DOMAIN_CAP_FINAL", 4);
 const TOPIC_SHORTLIST_N = readPositiveIntEnv("DIGEST_TOPIC_SHORTLIST_N", 10);
+const TOPIC_SHORTLIST_PRE_CAP = readPositiveIntEnv("DIGEST_TOPIC_SHORTLIST_PRE_CAP", 80);
 const CLUSTER_BATCH_SIZE = readPositiveIntEnv("DIGEST_CLUSTER_BATCH_SIZE", 20);
 const CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE = readPositiveIntEnv("DIGEST_CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE", 5);
 const CLUSTER_ADAPTIVE_MAX_DEPTH = readPositiveIntEnv("DIGEST_CLUSTER_ADAPTIVE_MAX_DEPTH", 3);
@@ -6037,16 +6038,32 @@ async function shortlistTopicsWithLLM(topicCards, cache) {
   console.log(`[shortlist] start topics=${topicCards.length}`);
   const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
   const edition = DIGEST_EDITION;
-  const payload = topicCards.map((t) => ({
+
+  // Pre-filter to top TOPIC_SHORTLIST_PRE_CAP topics by score to keep prompt size manageable.
+  // Always keep all news topics first, then fill remaining slots with papers by score.
+  const preCap = Math.max(20, TOPIC_SHORTLIST_PRE_CAP);
+  const newsCards = topicCards.filter((t) => t.topic_type !== "paper");
+  const paperCards = topicCards.filter((t) => t.topic_type === "paper");
+  const sortByScore = (a, b) =>
+    (Number(b.cross_source_score || 0) + Number(b.mention_count || 0) * 5) -
+    (Number(a.cross_source_score || 0) + Number(a.mention_count || 0) * 5);
+  const sortedNews = newsCards.slice().sort(sortByScore);
+  const sortedPapers = paperCards.slice().sort(sortByScore);
+  const paperSlots = Math.max(0, preCap - sortedNews.length);
+  const filteredCards = [...sortedNews, ...sortedPapers.slice(0, paperSlots)];
+  if (filteredCards.length < topicCards.length) {
+    console.log(`[shortlist] pre-cap ${topicCards.length}→${filteredCards.length} (news=${sortedNews.length} papers=${Math.min(sortedPapers.length, paperSlots)})`);
+  }
+
+  const payload = filteredCards.map((t) => ({
     topic_id: t.topic_id,
     topic_title: t.topic_title,
     topic_type: t.topic_type,
     mention_count: t.mention_count,
     source_diversity: t.source_diversity,
-    top_source_groups: t.top_source_groups,
+    top_source_groups: (t.top_source_groups || []).slice(0, 2),
     cross_source_score: t.cross_source_score,
-    top_sources: t.top_sources,
-    sample_titles: t.sample_titles.slice(0, 3),
+    top_sources: (t.top_sources || []).slice(0, 2),
     domestic_signal: estimateDomesticAiTopicSignal(t),
   }));
 
