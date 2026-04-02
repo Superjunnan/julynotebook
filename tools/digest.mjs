@@ -210,7 +210,7 @@ const CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE = readPositiveIntEnv("DIGEST_CLUSTER_ADAPT
 const CLUSTER_ADAPTIVE_MAX_DEPTH = readPositiveIntEnv("DIGEST_CLUSTER_ADAPTIVE_MAX_DEPTH", 3);
 const CLUSTER_INPUT_CAP = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP", 260);
 const CLUSTER_TEXT_MAX_CHARS = readPositiveIntEnv("DIGEST_CLUSTER_TEXT_MAX_CHARS", 380);
-const TOPIC_MERGE_BATCH_SIZE = readPositiveIntEnv("DIGEST_TOPIC_MERGE_BATCH_SIZE", 30);
+const TOPIC_MERGE_BATCH_SIZE = readPositiveIntEnv("DIGEST_TOPIC_MERGE_BATCH_SIZE", 15);
 const TOPIC_MERGE_MAX_ROUNDS = readPositiveIntEnv("DIGEST_TOPIC_MERGE_MAX_ROUNDS", 2);
 const TOPIC_MERGE_ADAPTIVE_MIN_CHUNK_SIZE = readPositiveIntEnv("DIGEST_TOPIC_MERGE_ADAPTIVE_MIN_CHUNK_SIZE", 10);
 const TOPIC_MERGE_ADAPTIVE_MAX_DEPTH = readPositiveIntEnv("DIGEST_TOPIC_MERGE_ADAPTIVE_MAX_DEPTH", 3);
@@ -5105,7 +5105,7 @@ async function clusterCandidateCardsWithLLM(cards, cache) {
   };
 }
 
-async function mergeTopicRowsWithLLM(rows, model, cache) {
+async function mergeTopicRowsWithLLM(rows, model, cache, retryOptions = {}) {
   if (!rows.length) return {};
   const system = `
 你是资讯归并编辑。任务：把语义重复的 topic_key 合并到统一 key。
@@ -5137,6 +5137,7 @@ ${JSON.stringify(rows)}
       { role: "system", content: system },
       { role: "user", content: prompt },
     ],
+    retryOptions,
   });
   let parsed = null;
   try {
@@ -5162,9 +5163,10 @@ ${JSON.stringify(rows)}
 export async function mergeTopicRowsWithLLMAdaptiveSplit(rows, options = {}) {
   const model = options?.model || process.env.ZHIPU_MODEL || "glm-4.7-flash";
   const cache = options?.cache || null;
+  const innerMaxRetries = Number.isFinite(options?.innerMaxRetries) ? Number(options.innerMaxRetries) : 0;
   const executeChunk = typeof options?.executeChunk === "function"
     ? options.executeChunk
-    : (currentChunk) => mergeTopicRowsWithLLM(currentChunk, model, cache);
+    : (currentChunk) => mergeTopicRowsWithLLM(currentChunk, model, cache, { maxRetries: innerMaxRetries });
   const minChunkSize = Math.max(1, Number(options?.minChunkSize || TOPIC_MERGE_ADAPTIVE_MIN_CHUNK_SIZE));
   const maxDepth = Math.max(0, Number(options?.maxDepth || TOPIC_MERGE_ADAPTIVE_MAX_DEPTH));
 
