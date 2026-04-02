@@ -1,0 +1,34 @@
+{
+  "run_date": "2026-04-02",
+  "error": {
+    "name": "AbortError",
+    "message": "This operation was aborted",
+    "stack": "AbortError: This operation was aborted\n    at node:internal/deps/undici/undici:13510:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async fetchWithTimeout (file:///Users/nanmuchuan/Desktop/july-blog/tools/digest.mjs:375:17)\n    at async zhipuChatCompletion (file:///Users/nanmuchuan/Desktop/july-blog/tools/digest.mjs:6489:18)\n    at async withRateLimitRetry (file:///Users/nanmuchuan/Desktop/july-blog/tools/digest.mjs:4336:19)\n    at async requestDigestLlmJson (file:///Users/nanmuchuan/Desktop/july-blog/tools/digest.mjs:6568:19)\n    at async mergeTopicRowsWithLLM (file:///Users/nanmuchuan/Desktop/july-blog/tools/digest.mjs:5132:23)\n    at async run (file:///Users/nanmuchuan/Desktop/july-blog/tools/digest.mjs:5175:14)\n    at async run (file:///Users/nanmuchuan/Desktop/july-blog/tools/digest.mjs:5192:26)\n    at async mergeTopicKeysWithLLM (file:///Users/nanmuchuan/Desktop/july-blog/tools/digest.mjs:5247:24)",
+    "cause": null
+  },
+  "llm_stats": {
+    "cache_hits": 0,
+    "cache_misses": 9,
+    "live_calls": 9,
+    "retry_count": 0,
+    "rate_limit_errors": 0,
+    "transient_errors": 0,
+    "timeout_errors": 0
+  },
+  "runtime": {
+    "digest_tz": "Asia/Shanghai",
+    "runtime_tz": "Asia/Shanghai",
+    "digest_post_time": "06:00:00",
+    "zhipu_model": "glm-4.7-flash",
+    "llm_max_concurrency": 1,
+    "llm_min_interval_ms": 35000,
+    "llm_interval_jitter_ms": 600,
+    "llm_max_retries": 3,
+    "llm_cache_retention_days": 45,
+    "llm_retry_cooldown_max_ms": 300000,
+    "cluster_adaptive_min_chunk_size": 5,
+    "cluster_adaptive_max_depth": 3,
+    "topic_merge_batch_size": 15,
+    "timeout_zhipu_ms": 240000
+  }
+}

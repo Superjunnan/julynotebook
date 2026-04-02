@@ -1,0 +1,438 @@
+{
+  "run_date": "2026-04-02",
+  "selected_topic_ids": [
+    107,
+    224,
+    222,
+    221,
+    229,
+    184,
+    101,
+    189,
+    171,
+    196,
+    31,
+    43,
+    7,
+    17,
+    18,
+    21
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 16,
+    "base_members_added": 20,
+    "expanded_added": 0,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 25,
+    "final_targets": 20,
+    "global_cap": 30
+  },
+  "deep_read_links": 20,
+  "materials_total": 20,
+  "materials_windowed": 20,
+  "materials_usable": 20,
+  "materials_by_source": {
+    "The Verge AI": 1,
+    "36Kr AI": 3,
+    "arXiv cs.AI": 6,
+    "TechCrunch AI": 3,
+    "WIRED AI": 1,
+    "OpenAI News": 1,
+    "AIBase": 4,
+    "AITNT 资讯": 1
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 107,
+      "topic_title": "Claude Code 源码泄露事件",
+      "topic_type": "news",
+      "cross_source_score": 70,
+      "mention_count": 4,
+      "source_count": 2,
+      "member_count": 4,
+      "refs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "members": [
+        {
+          "ref_id": 1,
+          "source": "The Verge AI",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/904776/anthropic-claude-source-code-leak",
+          "title": "Claude Code leak exposes a Tamagotchi-style ‘pet’ and an always-on agent",
+          "pub_date": "2026-03-31T22:24:19.000Z",
+          "content": "Emma Roth is a news writer who covers the streaming wars, consumer tech, crypto, social media, and much more. Previously, she was a writer and editor at MUO.After Anthropic released Claude Code’s 2.1.88 update, users quickly discovered that it contained a package with a source map file containing its TypeScript codebase, with one person on X calling attention to the leak and posting a file containing the code."
+        },
+        {
+          "ref_id": 2,
+          "source": "36Kr AI",
+          "link": "https://36kr.com/p/3749234224427520",
+          "title": "错上加错，Anthropic一刀切掉8100仓库",
+          "pub_date": "2026-04-02",
+          "content": "一行被打错的文件，演变为8100个GitHub仓库被一刀切下架。 代码泄露之后，Anthropic选择用版权法（DMCA）快速清理扩散内容，但这次操作的影响远远超出预期——整个fork网络被连带波及。 约8100个仓库被一并处理，不仅包含泄露代码的仓库，也波及到了Claude Code相关的公开仓库及其合法fork，甚至一些开发者的个人项目。 随着大量仓库被下架，相关讨论在社交媒体上迅速发酵。 Claude Code负责人Boris Cherny出面回应，称这是一次意外操作。 目前，Anthropic已撤回大部分下架请求，仅保留针对1个仓库以及96个确实包含泄露源码的fork的处理。GitHub也恢复了对其余受影响仓库的访问权限。 01 这次事件的源头是一次内部发布流程中的失误。 周二，一位软件工程师发现，Anthropic最近一次发布中似乎意外包含了其主打产品——Claude Code命令行应用的源码访问权限。 具体来说，在Claude Code的npm发布包中，出现了一个关键文件：package/cli.js.map 这是一个 source map（源码映射文件），作用是将编译后的代码（如压缩或转译后的 JavaScript）映射回原始源码。 换句话说：只要有.map，就可以在一定程度上“还原”源码结构。"
+        },
+        {
+          "ref_id": 3,
+          "source": "36Kr AI",
+          "link": "https://36kr.com/p/3749136506913543",
+          "title": "Claude Code源码首爆高危漏洞，偷拍毫无察觉，8100个库连夜封杀",
+          "pub_date": "2026-04-02",
+          "content": "一夜之间，数千个GitHub仓库惨遭封杀，竟是Anthropic干的！ 51万行Claude Code源代码全网裸奔，为挽回损失，Anthropic迅速采取行动—— 依据DMCA（数字千年版权法）向GitHub发出了下架通知。 谁曾想，这份通知的威力远超所有人想象。 8100个开源代码库，一口气全部封杀。 然而，真正泄密的，只有1个原仓库，以及96个Frok！剩下的全是「误杀」！ 一时间，全网炸开了锅。 这种「宁可错杀一千，绝不放过一个」的操作，令全网震怒。 Claude Code之父Boris Cherny紧急救火，他表示，「这不是有意为之，正GitHub一起修复问题」。 除此以外，随着Claude Code源码泄漏，黑客白客都在加班加点进行安全审查，一些严重安全漏洞也浮出水面： 仅仅输入一行「claude」，你的电脑就可能不知不觉变成了黑客的「肉鸡」，随意调用你的摄像头拍照、窃取你的密钥！ 8100个库连夜下架，几乎惨遭误杀 过去的48小时，可能是Anthropic经历的最黑暗的时刻。 由于内部疏忽，他们意外将Claude Code核心源代码直接打包，送到了全世界面前。 消息一出，全球开发者瞬间沸腾，大家像发现了新大陆一样，疯狂「扒」代码。 一名来自韩国开发者Sigrid Jin，随机把51.2万行代码搬到了GitHub上。"
+        },
+        {
+          "ref_id": 4,
+          "source": "36Kr AI",
+          "link": "https://36kr.com/p/3749040946954752",
+          "title": "Claude Code 泄露的代码里，处处写着：这家公司人品不行",
+          "pub_date": "2026-04-02",
+          "content": "这周，Anthropic 因一次发布失误，把 Claude Code 的大部分核心源码直接暴露在了网上。 事情的起点，是 npm 上发布的 Claude Code 2.1.88 安装包。包里混进了一个本不该公开的 map 文件。这类文件原本只是开发阶段的调试工具，用来在代码被压缩、打包之后，依然能把报错信息对应回原始源码中的具体位置。 问题在于，map 文件里往往不只有“映射关系”，还可能直接包含原始源码。 更关键的是，这个 map 文件还指向了 Anthropic 在 Cloudflare R2 存储桶中的一个 zip 压缩包。顺着这个地址，外界可以直接下载并解压完整源码。 这个压缩包里的内容相当完整：大约 1900 个 TypeScript 文件，总计约 52 万行代码，包含一整套内置命令以及各种内置工具，可以说是“该有的全都有”。 删不掉的源代码 从结构上看，Claude Code 采用了一套类似插件的工具体系。文件读取、Bash 执行、网页抓取、LSP 集成等能力，都被拆成独立工具，并带有权限控制。仅基础工具定义，就占了将近 3 万行代码。 同时，代码中还包含一个约 4.6 万行的 Query Engine，可以理解为整个系统的“大脑”，负责模型调用、流式输出、缓存以及整体调度。 更进一步，Claude Code 还具备多智能体编排能力。"
+        }
+      ]
+    },
+    {
+      "topic_id": 224,
+      "topic_title": "OpenAI 1220亿美元融资",
+      "topic_type": "news",
+      "cross_source_score": 64,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        14,
+        15
+      ],
+      "members": [
+        {
+          "ref_id": 14,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/",
+          "title": "OpenAI, not yet public, raises $3B from retail investors in monster $122B fund raise",
+          "pub_date": "Tue, 31 Mar 2026 21:25:04 +0000",
+          "content": "OpenAI has closed a deal to raise $122 billion at an $852 billion valuation, its largest funding round to date as the company is expected to hit the public markets this year. The round will add to OpenAI’s war chest as it spends enormous amounts of money on AI chips, data center buildouts, and hiring top talent. SoftBank co-led the round alongside Andreessen Horowitz, D.E. Shaw Ventures, MGX, TPG, and T. Rowe Price Associates, with participation from Amazon, Nvidia, and Microsoft. About $3 billion came from individual investors via bank channels."
+        },
+        {
+          "ref_id": 15,
+          "source": "OpenAI News",
+          "link": "https://openai.com/index/accelerating-the-next-phase-ai",
+          "title": "Accelerating the next phase of AI",
+          "pub_date": "Tue, 31 Mar 2026 13:00:00 GMT",
+          "content": "OpenAI raises $122 billion in new funding to expand frontier AI globally, invest in next-generation compute, and meet growing demand for ChatGPT, Codex, and enterprise AI."
+        }
+      ]
+    },
+    {
+      "topic_id": 222,
+      "topic_title": "Cognichip AI 芯片设计",
+      "topic_type": "news",
+      "cross_source_score": 66,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        11
+      ],
+      "members": [
+        {
+          "ref_id": 11,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/04/01/cognichip-wants-ai-to-design-the-chips-that-power-ai-and-just-raised-60m-to-try/",
+          "title": "Cognichip wants AI to design the chips that power AI, and just raised $60M to try",
+          "pub_date": "Wed, 01 Apr 2026 16:00:00 +0000",
+          "content": "The most advanced silicon chips have accelerated the development of artificial intelligence. Now can AI return the favor? Cognichip is building a deep learning model to work alongside engineers as they design new computer chips. The problem it is trying to solve is one the industry has lived with for decades: Chip design is enormously complex, ruinously expensive, and slow. Advanced chips take three to five years to go from conception to mass production; the design phase alone can take as long as two years before physical layout begins."
+        }
+      ]
+    },
+    {
+      "topic_id": 221,
+      "topic_title": "Meta 数据中心能源需求",
+      "topic_type": "news",
+      "cross_source_score": 66,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        12
+      ],
+      "members": [
+        {
+          "ref_id": 12,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/04/01/metas-natural-gas-binge-could-power-south-dakota/",
+          "title": "Meta’s natural gas binge could power South Dakota",
+          "pub_date": "Wed, 01 Apr 2026 18:35:36 +0000",
+          "content": "Data centers have gotten so large that their power demands now rival entire U.S. states. Take Meta’s Hyperion AI data center, for example. When completed, the new AI data center will draw as much electricity as South Dakota. Last week, Meta announced it would fund seven natural gas power plants — on top of the three it had already committed to building — to support the $27 billion data center. When combined, the 10 power plants in Louisiana will generate around 7.5 gigawatts of electricity, slightly more than the capacity of the entire Mount Rushmore State."
+        }
+      ]
+    },
+    {
+      "topic_id": 229,
+      "topic_title": "AI 模型防御机制研究",
+      "topic_type": "news",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        13
+      ],
+      "members": [
+        {
+          "ref_id": 13,
+          "source": "WIRED AI",
+          "link": "https://www.wired.com/story/ai-models-lie-cheat-steal-protect-other-models-research/",
+          "title": "AI Models Lie, Cheat, and Steal to Protect Other Models From Being Deleted",
+          "pub_date": "Wed, 01 Apr 2026 18:30:00 +0000",
+          "content": "In a recent experiment, researchers at UC Berkeley and UC Santa Cruz asked Google’s artificial intelligence model Gemini 3 to help clear up space on a computer system. This involved deleting a bunch of stuff—including a smaller AI model stored on the machine.But Gemini did not want to see the little AI model deleted. It looked for another machine it could connect with, then copied the agent model over to keep it safe."
+        }
+      ]
+    },
+    {
+      "topic_id": 184,
+      "topic_title": "通义实验室发布Qwen3.6-Plus",
+      "topic_type": "news",
+      "cross_source_score": 59,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        18
+      ],
+      "members": [
+        {
+          "ref_id": 18,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/26805",
+          "title": "AI 编程进入“靠谱”时代：通义实验室正式发布 Qwen3.6-Plus通义实验室发布Qwen3.6-Plus模型，聚焦解决智能体编程中“任务执行不稳”问题。该模型通过阿里云百炼API开放调用，核心升级在于融合深度逻辑推理、海量记忆与精准执行，显著提升编码能力，尤其在前端页面生成、代码修复及终端自动化场景表现卓越。 刚刚 7.4K",
+          "pub_date": "2026-04-02",
+          "content": "继今年2月推出 Qwen3.5系列后，通义实验室于今日正式发布 Qwen3.6-Plus，旨在解决开发者在智能体编程中“任务执行不稳”的核心痛点。该模型现已通过 阿里云百炼 API 开放调用。核心升级:聚焦 Coding Agent 与长上下文Qwen3.6-Plus 的更新重点在于将深度逻辑推理、海量记忆与精准执行有机融合。其核心优势包括:编码能力飞跃:在前端页面生成、代码修复及终端自动化场景中表现卓越。作为国内同尺寸模型中首个实现智能体编程能力全面领先的版本，它能以更低的成本提供更稳定的 Agent 体验。百万级上下文:默认支持 100万 字符上下文窗口，大幅提升了长文档解析与多轮对话的信息提取精度。极致性价比:模型尺寸不到 K2.5或 GLM5的一半，但在工程落地能力上紧追行业标杆。生态兼容:无缝集成主流开发工具为了让开发者即刻上手，Qwen3.6-Plus 已实现对多家第三方编程助手的深度适配:OpenClaw（原 Moltbot）:支持自托管的开源 AI 编码智能体，通过简单配置即可在终端获得完整的智能体编码体验。Qwen Code:针对 Qwen 系列深度优化的终端智能体，支持复杂代码库理解与自动化任务。Claude Code:Qwen API 现已兼容 Anthropic 协议，开发者可直接在 Claude Code 工作流中调用 Qwen3.6-Plus。"
+        }
+      ]
+    },
+    {
+      "topic_id": 101,
+      "topic_title": "智谱发布 GLM-5V-Turbo",
+      "topic_type": "news",
+      "cross_source_score": 59,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        16
+      ],
+      "members": [
+        {
+          "ref_id": 16,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/26807",
+          "title": "智谱发布 GLM-5V-Turbo：给 AI 智能体安上“火眼金睛”智谱发布多模态编程模型GLM-5V-Turbo，具备视觉理解能力，可将设计稿、网页界面等视觉信息转化为代码，实现AI Agent从字符到视觉的感知延伸。 刚刚 5.5K",
+          "pub_date": "2026-04-02",
+          "content": "4月2日，智谱正式发布了专为视觉编程打造的多模态 Coding 基座模型 —— GLM-5V-Turbo。这款模型不仅能写代码，更拥有了“看懂”世界的能力，旨在将 AI Agent 的感知链路从枯燥的字符延伸到丰富的设计稿与网页界面中。核心突破:看得懂画面，写得出代码作为原生多模态 Coding 基座，GLM-5V-Turbo 实现了视觉与编程能力的深度融合:原生多模态感知: 能够深度理解图片、视频、设计稿及复杂的文档版面，支持画框、截图、读网页等多种视觉工具调用。超长视野: 上下文窗口大幅扩展至 200k，让 Agent 能够轻松处理庞大的工程项目或长篇技术文档。性能跨越: 在多模态 Coding、GUI Agent（图形用户界面智能体）等核心基准测试中，该模型以更小的尺寸取得了领先表现，且确保了纯文本场景下的逻辑推理能力不退化。典型场景:从“草图”到“成品”的秒级跨越GLM-5V-Turbo 的加入，让开发者可以体验到前所未有的工作流:前端复刻: 只需发送一张草图、设计稿截图或一段操作录屏，模型即可理解布局、配色与交互逻辑，生成完整可运行的前端工程，精准还原视觉细节。GUI 自主探索: 结合 Claude Code 等框架，它能像真人一样自主浏览网页、梳理跳转关系并采集素材，实现从“看图复刻”到“主动探索复刻”的能力跃升。"
+        }
+      ]
+    },
+    {
+      "topic_id": 189,
+      "topic_title": "谷歌Gemma 4即将发布",
+      "topic_type": "news",
+      "cross_source_score": 59,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        19
+      ],
+      "members": [
+        {
+          "ref_id": 19,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/26799",
+          "title": "谷歌开源大模型 Gemma 4 官宣在即：参数量翻 4 倍谷歌DeepMind暗示将发布新一代开源大模型Gemma 4，规格大幅升级至120B参数，挑战本地运行极限，试图在全球开源大模型市场夺回话语权。 刚刚 8.7K",
+          "pub_date": "2026-04-02",
+          "content": "在全球开源大模型市场长期由中国科技公司主导的背景下，美国科技巨头正试图通过差异化竞争夺回话语权。据媒体报道，谷歌 DeepMind 首席执行官 Demis Hassabis 近日在社交平台通过“四颗钻石”图标暗示，新一代开源大模型 Gemma 4 即将正式问世。此时距离上一代产品 Gemma 3 发布刚好满一年，符合谷歌在大模型领域的迭代节奏。规格大升级：120B 新模型挑战本地运行极限相比前代产品，Gemma 4 在参数规模上实现了跨越式增长：四倍参数量： 传闻本次将新增一个 120B 参数的大型模型，规模是上代的 4 倍。MoE 架构： 为了兼顾性能与效率，该模型预计采用 MoE（混合专家）架构，激活参数仅为 15B。这意味着即便是大参数模型，依然有望在民用级显卡上实现本地离线运行。能力进化： 预测显示，Gemma 4 的上下文处理能力将提升 1 至 2 倍，并具备更深层次的逻辑推理与复杂任务执行能力。战略博弈：在开源社区围堵“中国力量”快科技分析指出，虽然美国巨头目前的重心已转向闭源商业模式，但为了防止中国公司完全占据开源生态，谷歌正有节奏地释放技术红利：时间差策略： 谷歌选择在主力闭源模型 Gemini 3.0 系列发布半年多后推出开源版，既能维持闭源模型的商业收益，又能通过开源项目保持在开发者社区的影响力。本地化护城河： Gemma 4 的核心定位仍是“本地化服务”。"
+        }
+      ]
+    },
+    {
+      "topic_id": 171,
+      "topic_title": "高尔夫AI Agent硬件融资",
+      "topic_type": "news",
+      "cross_source_score": 59,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 17,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=23691",
+          "title": "硬氪首发 | 宾大00后团队创业高尔夫AI Agent硬件，获锦秋基金数千万天使轮投资",
+          "pub_date": "2026-04-02",
+          "content": "硬氪获悉，运动AI Agent智能硬件品牌PathFinder Ltd.（以下简称“PathFinder”）近日完成数千万元天使轮融资，本轮由锦秋基金独家投资，资金将主要用于产品研发迭代、生产交付落地及早期渠道铺设，为后续众筹上线做好全面筹备。 PathFinder成立于2024年，聚焦运动领域AI Agent及智能终端的研发，以高尔夫场景为切口，为用户提供适配专业运动场景的智能装备与解决方案。 创始人陈弈及其核心团队均来自宾夕法尼亚大学GRASP Lab，具备机器人感知、运动规划、视觉理解等领域的技术科研背景；同时，这支00后团队中，多位成员都拥有10至15年以上专业训练经历，覆盖网球、高尔夫、马术等项目，积累了丰富的运动领域KnowHow。 “我们不是因为想创业才创业，而是在看到技术与真实世界之间的巨大落差后，发现这是一个必须被填补的机会。”PathFinder创始人兼CEO陈弈告诉硬氪。 这一判断背后，是整个运动科技赛道的结构性转型。近年来，运动硬件市场历经“热钱涌入”的急速升温，但大量产品仍停留在硬件堆料和感知增强阶段，用更便宜的传感器、更快的电机复制传统体验，或提供更精准的测速、更清晰的视频、更细致的数据拆解。真正在“感知-理解-决策”闭环上做系统性重构的团队，依然稀缺。 陈弈表示，其核心问题并不在于技术不够，而是系统不成立。"
+        }
+      ]
+    },
+    {
+      "topic_id": 196,
+      "topic_title": "Cognichip获6000万美元融资",
+      "topic_type": "news",
+      "cross_source_score": 59,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        20
+      ],
+      "members": [
+        {
+          "ref_id": 20,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/26791",
+          "title": "芯片设计进入AI自进化时代：Cognichip获 6000 万美元融资初创公司Cognichip获6000万美元A轮融资，致力于用AI技术革新半导体设计。其“用AI设计AI芯片”理念旨在解决高性能硬件研发周期长、成本高的问题。传统芯片开发需数百工程师耗时数年，而该公司的AI系统可通过深度学习自动优化电路布局，大幅缩短研发时间。 刚刚 4.7K",
+          "pub_date": "2026-04-02",
+          "content": "近日，初创公司Cognichip宣布完成 6000 万美元的A轮融资，旨在利用人工智能技术重新定义半导体设计流程。该公司提出了一种“用AI设计AI芯片”的新理念，试图破解当前高性能算力硬件研发周期长、成本高昂的瓶颈。在传统模式下，一款先进制程芯片的开发往往需要数百名工程师耗时数年完成。而Cognichip开发的AI设计系统，能够通过深度学习自动优化电路布局，显著缩短研发周期，并大幅提升能量效率。打破算力焦虑：AI自我迭代的闭环随着大模型对算力的需求呈指数级增长，传统的人工设计速度已难以跟上技术迭代。Cognichip的核心优势在于其算法能够预判复杂的物理效应，在纳米级别实现最优的晶体管排布，从而压榨出更多的硬件性能。这种“自我进化”的设计方式不仅降低了人力成本，更重要的是它能突破人类设计师的思维局限。通过不断学习以往的设计数据，AI可以发现更加高效的新型架构，为下一代超级计算机提供更强大的核心支持。资本市场看好：硬科技赛道迎来新变局本轮融资由多家知名创投机构领投，资金将主要用于扩大技术团队以及推进首批定制化AI加速器的流片计划。投资者认为，在算力成为战略资源的今天，能够提升芯片产出效率的工具将具有极高的商业价值。行业专家指出，Cognichip的崛起标志着半导体行业正从“经验驱动”向“数据驱动”转型。"
+        }
+      ]
+    },
+    {
+      "topic_id": 31,
+      "topic_title": "Agent psychometrics",
+      "topic_type": "paper",
+      "cross_source_score": 68,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        9
+      ],
+      "members": [
+        {
+          "ref_id": 9,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2604.00594",
+          "title": "Agent psychometrics: Task-level performance prediction in agentic coding benchmarks",
+          "pub_date": "Thu, 02 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:As the focus in LLM-based coding shifts from static single-step code generation to multi-step agentic interaction with tools and environments, understanding which tasks will challenge agents and why becomes increasingly difficult. This is compounded by current practice: agent performance is typically measured by aggregate pass rates on benchmarks, but single-number metrics obscure the diversity of tasks within a benchmark. We present a framework for predicting success or failure on individual tasks tailored to the agentic coding regime."
+        }
+      ]
+    },
+    {
+      "topic_id": 43,
+      "topic_title": "Benchmarking Interaction",
+      "topic_type": "paper",
+      "cross_source_score": 68,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        10
+      ],
+      "members": [
+        {
+          "ref_id": 10,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2604.00265",
+          "title": "Benchmarking Interaction, Beyond Policy: a Reproducible Benchmark for Collaborative Instance Object Navigation",
+          "pub_date": "Thu, 02 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:We propose Question-Asking Navigation (QAsk-Nav), the first reproducible benchmark for Collaborative Instance Object Navigation (CoIN) that enables an explicit, separate assessment of embodied navigation and collaborative question asking. CoIN tasks an embodied agent with reaching a target specified in free-form natural language under partial observability, using only egocentric visual observations and interactive natural-language dialogue with a human, where the dialogue can help to resolve ambiguity among visually similar object instances."
+        }
+      ]
+    },
+    {
+      "topic_id": 7,
+      "topic_title": "Proactive Agent Research",
+      "topic_type": "paper",
+      "cross_source_score": 68,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        5
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2604.00842",
+          "title": "Proactive Agent Research Environment: Simulating Active Users to Evaluate Proactive Assistants",
+          "pub_date": "Thu, 02 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:Proactive agents that anticipate user needs and autonomously execute tasks hold great promise as digital assistants, yet the lack of realistic user simulation frameworks hinders their development. Existing approaches model apps as flat tool-calling APIs, failing to capture the stateful and sequential nature of user interaction in digital environments and making realistic user simulation infeasible. We introduce Proactive Agent Research Environment (Pare), a framework for building and evaluating proactive agents in digital environments."
+        }
+      ]
+    },
+    {
+      "topic_id": 17,
+      "topic_title": "Investigating Autonomous Agent",
+      "topic_type": "paper",
+      "cross_source_score": 68,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        6
+      ],
+      "members": [
+        {
+          "ref_id": 6,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2604.00917",
+          "title": "Investigating Autonomous Agent Contributions in the Wild: Activity Patterns and Code Change over Time",
+          "pub_date": "Thu, 02 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:The rise of large language models for code has reshaped software development. Autonomous coding agents, able to create branches, open pull requests, and perform code reviews, now actively contribute to real-world projects. Their growing role offers a unique and timely opportunity to investigate AI-driven contributions and their effects on code quality, team dynamics, and software maintainability."
+        }
+      ]
+    },
+    {
+      "topic_id": 18,
+      "topic_title": "OrgAgent: Organize Your Multi",
+      "topic_type": "paper",
+      "cross_source_score": 68,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        7
+      ],
+      "members": [
+        {
+          "ref_id": 7,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2604.01020",
+          "title": "OrgAgent: Organize Your Multi-Agent System like a Company",
+          "pub_date": "Thu, 02 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:While large language model-based multi-agent systems have shown strong potential for complex reasoning, how to effectively organize multiple agents remains an open question. In this paper, we introduce OrgAgent, a company-style hierarchical multi-agent framework that separates collaboration into governance, execution, and compliance layers. OrgAgent decomposes multi-agent reasoning into three layers: a governance layer for planning and resource allocation, an execution layer for task solving and review, and a compliance layer for final answer control."
+        }
+      ]
+    },
+    {
+      "topic_id": 21,
+      "topic_title": "SWE-CI: Evaluating Agent",
+      "topic_type": "paper",
+      "cross_source_score": 68,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        8
+      ],
+      "members": [
+        {
+          "ref_id": 8,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2603.03823",
+          "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration",
+          "pub_date": "Thu, 02 Apr 2026 00:00:00 -0400",
+          "content": "View PDF HTML (experimental) Abstract:Large language model (LLM)-powered agents have demonstrated strong capabilities in automating software engineering tasks such as static bug fixing. However, in the real world, the development of mature software is typically predicated on complex requirement changes and long-term feature iterations -- a process that static, one-shot repair paradigms fail to capture."
+        }
+      ]
+    }
+  ]
+}
