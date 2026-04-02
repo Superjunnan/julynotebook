@@ -310,7 +310,7 @@ const DIGEST_NEWS_RULES = Object.freeze({
   hotMax: 4,
   quickMin: 0,
   quickMax: 15,
-  totalMin: 3,
+  totalMin: 4,
   totalMax: 15,
   coreTechMin: 0,
   coreTechMax: 6,
@@ -1025,9 +1025,11 @@ export function dedupeCandidatesEarly(candidates) {
     if (!item || !item.link) continue;
     const canonical = normalizeCandidateUrl(item.link) || String(item.link).trim();
     const signature = buildCandidateSignature(item);
+    const paperKey = getPaperCanonicalKey({ link: item.link, title: item.title || "" });
     const linkedGroupKeys = [
       groupKeyByCanonical.get(canonical),
       signature ? groupKeyBySignature.get(signature) : null,
+      paperKey ? groupKeyByCanonical.get(`paper-key:${paperKey}`) : null,
     ].filter(Boolean);
     const primaryKey = linkedGroupKeys[0] || `${signature ? `sig:${signature}` : `url:${canonical}`}`;
 
@@ -1063,6 +1065,9 @@ export function dedupeCandidatesEarly(candidates) {
     }
     for (const value of finalGroup.signatures) {
       groupKeyBySignature.set(value, primaryKey);
+    }
+    if (paperKey) {
+      groupKeyByCanonical.set(`paper-key:${paperKey}`, primaryKey);
     }
   }
 
@@ -3070,17 +3075,27 @@ function compressEntryRefs(refs, idToItem, { minRefs = 1, maxRefs = 4 } = {}) {
     if (domain) domainSet.add(domain);
   }
 
+  const pickedUrls = new Set(picked.map((id) => normalizeCandidateUrl(idToItem[id]?.link || "") || idToItem[id]?.link || "").filter(Boolean));
+
   if (picked.length < minCount) {
     for (const row of ranked) {
       if (picked.length >= minCount || picked.length >= maxCount) break;
-      if (!picked.includes(row.id)) picked.push(row.id);
+      if (picked.includes(row.id)) continue;
+      const url = normalizeCandidateUrl(row.item?.link || "") || row.item?.link || "";
+      if (url && pickedUrls.has(url)) continue;
+      picked.push(row.id);
+      if (url) pickedUrls.add(url);
     }
   }
 
   if (picked.length < maxCount) {
     for (const row of ranked) {
       if (picked.length >= maxCount) break;
-      if (!picked.includes(row.id)) picked.push(row.id);
+      if (picked.includes(row.id)) continue;
+      const url = normalizeCandidateUrl(row.item?.link || "") || row.item?.link || "";
+      if (url && pickedUrls.has(url)) continue;
+      picked.push(row.id);
+      if (url) pickedUrls.add(url);
     }
   }
 
@@ -5965,9 +5980,9 @@ function qualifiesForQuickNewsEntry(entry, idToItem) {
 
   if (evidence.hasCompany && (evidence.crossVerifyScore >= 58 || evidence.hasSubstantiveBody)) return true;
   if (evidence.hasHighTrustNonCommunity && (evidence.crossVerifyScore >= 52 || evidence.hasSubstantiveBody)) return true;
-  if (evidence.onlyCommunityOrNewsletter && (evidence.crossVerifyScore >= 58 || evidence.hasSubstantiveBody)) return true;
+  if (evidence.onlyCommunityOrNewsletter && (evidence.crossVerifyScore >= 45 || evidence.hasSubstantiveBody)) return true;
   if (!evidence.onlyCommunityOrNewsletter && evidence.crossVerifyScore >= 50) return true;
-  if (scoreDailyNewsEntry(entry, idToItem) >= 58) return true;
+  if (scoreDailyNewsEntry(entry, idToItem) >= 52) return true;
 
   return false;
 }

@@ -67,7 +67,7 @@ test("digest news rules align with confirmed 3 to 15 total range", () => {
     hotMax: 4,
     quickMin: 0,
     quickMax: 15,
-    totalMin: 3,
+    totalMin: 4,
     totalMax: 15,
     coreTechMin: 0,
     coreTechMax: 6,
