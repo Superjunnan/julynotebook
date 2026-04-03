@@ -71,3 +71,181 @@ body.app-view-note-list .post-content .collection-year:after
   margin 0 !important
   background transparent !important
   position static !important
+
+// ── Resume tab: hidden by default, shown in pro mode ──
+.menu-item-resume
+  display none
+
+// ── Resume page styles ──
+.resume-page
+  max-width 760px
+  margin 0 auto
+  padding 16px 16px 48px
+
+.resume-header-card
+  background var(--card-bg, #fff)
+  border-radius 12px
+  padding 20px 20px 16px
+  margin-bottom 16px
+  box-shadow 0 1px 4px rgba(0,0,0,.06)
+
+.resume-name-row
+  display flex
+  align-items center
+  gap 12px
+  margin-bottom 10px
+
+.resume-name
+  font-size 22px
+  font-weight 700
+  margin 0
+  line-height 1
+
+.resume-tags
+  display flex
+  flex-wrap wrap
+  gap 6px
+
+.resume-tag
+  background #f0f4ff
+  color #4a6cf7
+  border-radius 6px
+  padding 2px 8px
+  font-size 12px
+  font-weight 500
+
+.resume-contact-row
+  display flex
+  flex-wrap wrap
+  gap 12px
+  font-size 13px
+  color #666
+  span
+    display flex
+    align-items center
+    gap 4px
+
+.resume-section
+  margin-bottom 20px
+
+.resume-section-title
+  font-size 15px
+  font-weight 700
+  color #333
+  margin 0 0 10px
+  display flex
+  align-items center
+  gap 6px
+  i
+    color #4a6cf7
+
+.resume-card
+  background var(--card-bg, #fff)
+  border-radius 10px
+  padding 14px 16px
+  box-shadow 0 1px 4px rgba(0,0,0,.06)
+  p
+    margin 0
+    font-size 14px
+    line-height 1.75
+    color #444
+
+.resume-list
+  margin 0
+  padding-left 18px
+  li
+    font-size 14px
+    line-height 1.75
+    color #444
+    margin-bottom 4px
+  ul
+    margin-top 4px
+    padding-left 16px
+
+.resume-job-card
+  background var(--card-bg, #fff)
+  border-radius 10px
+  padding 14px 16px
+  margin-bottom 10px
+  box-shadow 0 1px 4px rgba(0,0,0,.06)
+
+.resume-job-header
+  margin-bottom 10px
+
+.resume-job-meta
+  display flex
+  flex-wrap wrap
+  align-items center
+  gap 8px
+
+.resume-job-period
+  font-size 12px
+  color #999
+  font-variant-numeric tabular-nums
+
+.resume-job-company
+  font-size 14px
+  font-weight 700
+  color #333
+
+.resume-job-title
+  font-size 12px
+  background #f5f5f5
+  color #666
+  border-radius 4px
+  padding 1px 7px
+
+.resume-project-card
+  background var(--card-bg, #fff)
+  border-radius 10px
+  padding 14px 16px
+  margin-bottom 10px
+  box-shadow 0 1px 4px rgba(0,0,0,.06)
+
+.resume-project-header
+  display flex
+  align-items center
+  justify-content space-between
+  flex-wrap wrap
+  gap 6px
+  margin-bottom 4px
+
+.resume-project-name
+  font-size 15px
+  font-weight 700
+  margin 0
+  color #222
+
+.resume-project-badge
+  font-size 11px
+  background #eef2ff
+  color #4a6cf7
+  border-radius 4px
+  padding 2px 8px
+  white-space nowrap
+
+.resume-project-meta
+  font-size 12px
+  color #999
+  margin 0 0 10px
+
+.resume-project-block
+  margin-bottom 10px
+  &:last-child
+    margin-bottom 0
+
+.resume-block-label
+  font-size 12px
+  font-weight 600
+  color #4a6cf7
+  margin 0 0 4px
+  text-transform none
+
+@media (max-width: 600px)
+  .resume-job-meta
+    flex-direction column
+    align-items flex-start
+    gap 3px
+  .resume-project-header
+    flex-direction column
+    align-items flex-start
