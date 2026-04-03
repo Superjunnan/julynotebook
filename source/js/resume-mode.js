@@ -5,16 +5,17 @@
     const params = new URLSearchParams(window.location.search);
     if (params.has('pro')) {
       if (params.get('pro') === '1') {
-        localStorage.setItem(STORAGE_KEY, '1');
+        sessionStorage.setItem(STORAGE_KEY, '1');
       } else {
-        localStorage.removeItem(STORAGE_KEY);
+        sessionStorage.removeItem(STORAGE_KEY);
       }
     }
 
-    const isPro = localStorage.getItem(STORAGE_KEY) === '1';
-    const resumeItem = document.querySelector('.menu-item-resume');
-    if (resumeItem) {
-      resumeItem.style.display = isPro ? '' : 'none';
+    const isPro = sessionStorage.getItem(STORAGE_KEY) === '1';
+    if (isPro) {
+      document.body.classList.add('pro-mode');
+    } else {
+      document.body.classList.remove('pro-mode');
     }
   }
 

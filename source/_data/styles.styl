@@ -74,7 +74,10 @@ body.app-view-note-list .post-content .collection-year:after
 
 // ── Resume tab: hidden by default, shown in pro mode ──
 .menu-item-resume
-  display none
+  display none !important
+
+body.pro-mode .menu-item-resume
+  display list-item !important
 
 // ── Resume page styles ──
 .resume-page
