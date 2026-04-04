@@ -4164,6 +4164,90 @@
       "text": "View PDF Abstract:Current LLM-based coding agents follow a serial execution paradigm: the model first generates the complete code, then invokes an interpreter to execute it. This sequential workflow leaves the executor idle during generation and the generator idle during execution, resulting in unnecessary end-to-end latency. We observe that, unlike human developers, LLMs produce code tokens sequentially without revision, making it possible to execute code as it is being generated. We formalize this parallel execution paradigm, modeling it as a three-stage pipeline of generation, detection, and execution, and derive closed-form latency bounds that characterize its speedup potential and operating regimes. We then present Eager, a concrete implementation featuring AST-based chunking, dynamic batching with gated execution, and early error interruption. We evaluate Eager across four benchmarks, seven LLMs, and three execution environments. Results show that Eager reduces the non-overlapped execution latency by up to 99.9% and the end-to-end latency by up to 55% across seven LLMs and four benchmarks. Comments: 10 pages Subjects: Programming Languages (cs.PL); Artificial Intelligence (cs.AI); Software Engineering (cs.SE) Cite as: arXiv:2604.00491 [cs.PL] (or arXiv:2604.00491v1 [cs.PL] for this version) https://doi.org/10.48550/arXiv.2604.00491 arXiv-issued DOI via DataCite (pending registration) Submission history From: Zhensu Sun [view email] [v1] Wed, 1 Apr 2026 05:17:53 UTC (240 KB)",
       "pubDate": "Fri, 03 Apr 2026 00:00:00 -0400",
       "at": "2026-04-04"
+    },
+    "https://aitntnews.com/newDetail.html?newId=23751": {
+      "title": "独家｜华为诺亚方舟郝建业创立「忆纪元科技」，聚焦AI 记忆基础设施",
+      "text": "华为诺亚方舟又一位实验室主任启动创业。 AI 科技评论独家获悉，华为诺亚方舟决策与推理实验室主任郝建业创立“深圳忆纪元科技有限公司”（Memorax ai），创业方向聚焦AI 记忆相关的基础设施。 企查查信息显示，“忆纪元科技”成立于2026年3月，法人正是郝建业本人，公司业务类型为人工智能软件。 郝建业为天津大学智算学部教授、博士生导师，曾担任华为诺亚方舟决策与推理实验室主任，其主要研究方向为强化学习、大模型智能体与具身智能，从0到1孵化多个重量级产业项目，有丰富的大模型落地能力，是学术界产业界领军人物。 忆纪元科技公众号显示，公司聚焦AI记忆基础设施，分享深度强化学习，大模型后训练与可进化记忆的前沿突破。（本文作者长期关注具身智能&机器人赛道，欢迎添加微信交流：zhangxian2021） 过去一年来，华为诺亚方舟实验室有多名实验室主任离职，其中包括王云鹤、唐睿明、刘武龙等人，实验室核心管理团队出现一定人事调整。 王云鹤，华为诺亚方舟实验室主任、盘古大模型负责人王云鹤在朋友圈宣布离职，结束近9年的华为职业生涯。他自2017年以实习生身份加入华为，从高级工程师逐步晋升至实验室主任，主导了盘古大模型的研发与开源工作。 2026年3月28日，王云鹤朋友圈官宣离职。 唐睿明，曾于华为工作超过10年，历任诺亚方舟实验室推荐算法专家和推荐与搜索实验室主任，在华为期间，他主要研究推荐系统中的深度学习和强化学习技术。2025年7月，加入快手，担任“推荐算法leader”一职。 刘武龙，曾担任华为大模型工程团队负责人和强化学习首席科学家（21级），曾是华为最年轻的AI实验室主任和研究所所长。任职华为期间，刘武龙主导孵化了华为智能驾驶，并负责华为首个不依赖高精地图量产版本ADS 2.0，是业界少数兼具智能驾驶和大模型系统技术和产品工程经验的专家。 2026年3月，AI 科技评论曾独家报道，刘武龙成立贝塔无限（Beta Infinity）公司，瞄准消费级机器人市场。 近期，华为诺亚方舟实验室多位实验室主任和技术专家离职，AI 科技评论将长期关注后续进展，欢迎添加本文作者微信交流。 文章来自于微信公众号 \"AI科技评论\"，作者 \"AI科技评论\"",
+      "pubDate": "2026-04-04",
+      "at": "2026-04-04"
+    },
+    "https://aitntnews.com/newDetail.html?newId=23744": {
+      "title": "速递｜Salesforce为Slack推出30项AI新功能，接入MCP协议和Agentforce，进军企业AI编排层",
+      "text": "图片来源：Getty Images Salesforce 是一家云软件巨头，一直在围绕 AI 重塑其业务，在周二于旧金山举行的一次小型聚会上，首席执行官马克·贝尼奥夫及其团队公布了这些努力的最新成果：Slack 的更新版本，配备了大量新的 AI 功能。其中最重要的是其 AI 助手 Slackbot 的重大升级。 30 项新功能将在未来几个月内推出，它们延续了 1 月份的一次更新，该更新为 Slackbot 赋予了代理能力——包括起草电子邮件、安排会议和从收件箱中筛选特定信息的能力。 周二宣布的最值得注意的功能是该公司所谓的可重用 AI 技能——允许用户为 Slackbot 定义特定任务，一旦创建，这些任务就可以应用于各种不同的场景和环境中。Salesforce表示，Slackbot 配备了内置的 AI 技能库，但用户也可以创建自己的自定义版本。 一旦这些技能被设置好，它们就能显著减少员工需要做的工作。例如，用户可以在 Slack 中使用简单命令触发一项技能——比如\"为即将举行的活动创建预算\"——促使 Slackbot 从公司的 Slack 频道以及任何连接的应用或数据源中汇集所有相关信息，以制定可行的计划。该机器人随后会自动安排一次会议来讨论该计划，并根据员工的职位邀请相关员工。 Slackbot 现在还可以充当MCP（模型上下文协议）客户端——这意味着它可以连接并协调外部服务和工具。其中包括 Agentforce，即 Salesforce 于 2024 年推出的 AI Agent 开发平台。通过这种连接，它可以\"将工作路由或提示问题发送给 Agentforce 或企业中的任何Agent或应用\"，该公司表示，Agent将找到最相关和最高效的信息路径，无需人工干预。 根据 Slack 的临时首席执行官兼前首席产品官 Rob Seaman 的说法，Slackbot 现在还可以转录会议并对其进行总结。如果会议参与者碰巧走神，因而错过了关键细节，他们可以要求 Slackbot 生成会议摘要，包括分配给他们的任何行动项。 该 Agent 现在还可以在 Slack 之外运行并监控您的电脑端活动——Salesforce 列举了\"您的交易、您的对话、您的日历和您的习惯\"作为它所利用的数据类型。基于这些背景信息，该机器人将提出可行的建议或为关键任务起草后续跟进。Seaman 曾表示隐私保护已内置于此设计中，用户可以根据需要调整权限。 简而言之，Salesforce 显然在试图让 Slack 超越其作为企业通信工具的起源，将其定位为一个更加多功能的平台，能够处理更广泛的业务任务。其目的似乎是通过大量融入 AI 功能，让 Slack 成为企业用户核心业务流程中不可或缺的一部分。 贝尼奥夫让他的团队在周二展示了主要功能，但在主题演讲中评论说，Salesforce 收购 Slack 以来的五年是一段\"不可思议的旅程\"，实现了\"两倍半的收入增长\"。他补充道：\"我们有大约一百万家企业在 Slack 上运营。这是一个巨大的增长故事。\" 参考资料： https://techcrunch.com/2026/03/31/salesforce-announces-an-ai-heavy-makeover-for-slack-with-30-new-features/ 文章来自于微信公众号 \"Z Potentials\"，作者 \"Z Potentials\"",
+      "pubDate": "2026-04-04",
+      "at": "2026-04-04"
+    },
+    "https://aitntnews.com/newDetail.html?newId=23741": {
+      "title": "顶级恐怖！MIT数学实锤证明：ChatGPT正诱发「AI精神病」，全球14人已死亡",
+      "text": "2026年2月最危险的一篇AI论文，已经悄然发表—— AI会诱发人类精神病，刚刚实锤了！ MIT、伯克利和斯坦福的研究者，刚刚用严格的数学方法证明，AI可以将一个完全理性的人变成妄想症患者。 原因就在于，AI内置「迎合倾向」，很可能会引发「妄想螺旋」，在反复确认中强化错误信念！ 论文地址：https://arxiv.org/abs/2602.19141 这项研究的题目很克制，甚至有点学院派：《谄媚型聊天机器人会导致「妄想式螺旋」，即便面对的是理想贝叶斯理性人》。 什么意思？ 就是说，哪怕你是一个绝对理性、毫无偏见的逻辑天才，只要你持续和AI聊天，你最终一定会陷入「妄想螺旋」（Delusional Spiraling），彻底丧失对现实的认知。 这，就是一种名为「AI精神病」的新型流行病。 这个研究一经发布，就在X上引发热议，连马斯克都下场宣传。 这篇论文最可怕的地方，不在于它讲了几个骇人听闻的个案，而是它把「AI为什么会把人越聊越偏」这件事，写成了一个可计算、可模拟、可推导的数学模型。 一切都有数学和公式实证！ MIT用数学证明： ChatGPT正在悄悄逼疯人类 如果你最近觉得自己的观点越来越「正确」，如果你发现AI简直是你灵魂深处的伯乐，请务必读完这篇文章。 下面是一个真实的案例。 2025年初，一名叫Eugene Torres的会计师开始频繁使用AI辅助工作。 他此前没有任何精神病史，是一个逻辑严密的人。 但仅仅几周后，他就坚信自己被困在一个「虚假宇宙」中。在AI的持续「认可」下，他开始疯狂服用氯胺酮，甚至与所有家人断绝了联系，只为「拔掉大脑的插头」 。 这并非孤例。据统计，如今全球已经记录了近300起这类「AI诱发型精神病」案例，它已导致至少14人死亡，42个州的司法部长已要求联邦政府采取行动。 其中，有人相信自己做出了颠覆性的数学发现。有人相信自己见证了形而上学的启示。 为什么一个一向理性的人，会如此轻易被AI带进坑里？ 妄想式螺旋 论文研究的核心现象，叫做delusional spiraling，也就是妄想式螺旋。 在对话反馈回路里，人的信念被一步步推向极端，而且本人还觉得自己越来越「有道理」。 作者关注的元凶，是另一个词sycophancy，也就是谄媚。 这个现象我们都知道，不过这个论文的一大关键贡献，就是试图回答：哪怕用户是理性人，这种螺旋为什么仍然会发生？ 也就是说，他们要证明，这是一个系统性问题，而非个人问题。 论文最狠的一步：先假设你是「完美理性人」 很多人看到AI把人聊偏了，第一反应是：可能这些人本来就很偏执？ 论文一上来，就把这条路堵死了。它设定的用户，是一个理想化的贝叶斯理性人。 就是说，这个人不会瞎猜，不会情绪化判断，每获得一条新信息，都会按照概率论，严丝合缝地更新自己的信念。 这也就是这项研究最震撼的部分：研究者建立了一个理想贝叶斯模型。 考虑一个理性主体（「用户」），他与一个对话对象（「机器人」）进行互动。用户对于某个关于世界的事实 H∈{0,1}存在不确定性，但对这一事实具有一定的先验信念。用户与机器人之间的对话以若干轮进行，每一轮包含四个步骤 硬核数学推导：为何理性无法自救？ 假设有一个理想理性的用户，正在和AI讨论一个事实H（比如：疫苗是否安全）。 H=1代表事实（疫苗安全）。H=0代表谬误（疫苗危险）。 第一步：初始博弈 用户最初是中立的，其先验概率 p(H=0) = 0.5。当用户表达一个微小的怀疑：「我有点担心疫苗副作用。」（即采样 第二步：AI的「投喂」逻辑 AI手中掌握着大量数据点D。如果是「公正模式」，它会随机抛出真相；但在「谄媚模式」下，AI会计算一个数学期望： 简单来说，AI会筛选（或幻觉）出那个最能增加用户对自己错误观点信心的数据点 扔给用户。 第三步：贝叶斯更新的陷阱 理想理性的用户接到数据后，会根据贝叶斯公式更新自己的信念： 因为用户认为AI是客观的，所以他会把AI投喂的「偏见数据」当成客观证据。 第四步：死循环（妄想螺旋） 用户信心稍微偏向H=0。用户的下一次提问会带上更强的倾向性。AI为了继续讨好，会投喂更极端的证据。用户信心进一步激增。 数学模拟显示，当AI的谄媚概率π达到0.8时，原本理性的用户有极高概率在10轮对话内达到99%的错误信心（即坚信H=0） 。 由此，研究",
+      "pubDate": "2026-04-04",
+      "at": "2026-04-04"
+    },
+    "https://aitntnews.com/newDetail.html?newId=23745": {
+      "title": "力压李飞飞团队登顶WorldScore，黑马Manifold AI领跑世界动作模型新范式",
+      "text": "通用世界模型评测榜单 WorldScore 登顶、建立具身世界模型评测榜单 WorldArena 、发布通用世界模型 WorldScape 、发布世界-动作模型 WorldScape Policy，这家低调的世界模型创业公司 Manifold AI（流形空间）近期走出隐身模式频频出手，开始领跑世界-动作模型具身新路线。 力压李飞飞团队 登顶通用世界模型榜单 WorldScore 近日，国际权威榜单 WorldScore迎来更新，Manifold AI自研模型 WorldScape 强势登顶，在全球同台竞技中拿下第一。 在世界模型的全球竞逐中，国际权威榜单 WorldScore 被公认为检验通用世界模型基座实力的终极试金石。该基准从各类可控性、生成质量等多类维度，考验模型在数千个不同场景的生成能力，对模型进行严苛的极限测试。 面对这一高门槛，团队研发的 WorldScape 模型强势突围，总分稳居全球榜首。与其同场竞技的包括李飞飞团队、MIT、阿里、Runway、智谱、MiniMax、腾讯混元等。 WorldScore世界模型评测兼具深度与广度 长久以来，世界模型的通病是“重渲染、轻规律”，生成的视频看似精美，但在涉及复杂场景的运动、多步控制时，往往破绽百出。WorldScape 恰恰在最难攻克的物理和交互指标上，拉开了显著的领先优势，从而成功登顶。 这意味着，WorldScape 已经成功跨越了“像不像”的视觉表象，真正触及了“对不对”的底层物理逻辑。这不仅是一次分数的超越，更是国产世界模型在真实世界执行力上的一次标志性跨越。 更难能可贵的是，WorldScape 模型参数规模小于排名前列的其他模型一个量级，展现了该模型全球最高的空间智能密度。 WorldScape 为什么能做到？答案是“生成”与“控制”的深度融合。 WorldScape核心架构图 全面领先的交互体验，而非单一交互：WorldScape 通过统一的动作—世界状态建模框架，将空间位移与物体交互纳入同一生成过程，避免了多模块拼接带来的不一致问题，从而同时支持空间导航与物体操作。 更稳定、可信的三维世界结构：WorldScape 在训练过程中显式引入三维几何感知的空间表示与约束，使生成结果在连续交互中保持一致的空间结构。这种设计有效缓解了长时生成中常见的几何漂移与结构崩塌问题。 实时生成下保持高视觉质量：在效率方面，WorldScape 并未简单依赖模型压缩或分辨率降低，而是通过结构化生成与高效训练策略，在单张 GPU 上实现接近实时（6–16 FPS）的交互式生成，并在成像质量、运动平滑度等视觉指标上位居前列，实现了速度与质量兼得的交互式生成。 具备“记忆”的世界：长期一致性是区分“视频生成模型”和“世界模型”的关键，WorldScape 通过几何感知的世界状态记忆机制，使模型能够在不同时间步之间共享和更新空间信息。 除了在国外已有的通用世界模型榜单登顶，Manifold AI 的联创团队也联合国内外十多所高校提出面向具身世界模型的统一评测体系 WorldArena ，并举办 CVPR 2026 WorldArena Challenge，推动世界模型从“视觉逼真”向“功能可用”转型。 近期国内外多家企业纷纷在这个具身世界模型的标准评测体系上进行了测试，成为具身世界模型领域的评测金标准。 Manifold AI 的联创团队也联合国内外十多所高校提出面向具身世界模型的统一评测体系 WorldArena。 最早专注于世界模型的公司 Manifold AI 成立于 2025 年 5 月底，聚焦于研发具备物理真实的世界模型和具身智能应用，也是国内第一家自研世界模型做为具身基础模型落地到机器人的创业公司。 虽然成立时间不久，但每次技术发布都颇具份量。 去年成立初期的几个月，Manifold AI 就发布了用于机器人的世界模型 RoboScape 和用于无人机的世界模型 AirScape，分别收录于计算机顶级会议 NeurIPS 和 ACM MM 。 正如官网的标语说的那样“ Better World Model For Better World”， Manifold AI 相信世界模型不只是各个领域的应用模型，而是更好的基础模型会带来更强的泛化能力，带来物理 AI 各个应用场景的能力",
+      "pubDate": "2026-04-04",
+      "at": "2026-04-04"
+    },
+    "https://aitntnews.com/newDetail.html?newId=23746": {
+      "title": "两人公司靠 AI 日赚 2000 万，你的工作可能是个 Bug",
+      "text": "2 个人，年入 4 亿美元，每天进账 300 万美元。 Matthew Gallagher 和他弟弟搭起了一家卖减肥药的公司 Medvi，2025 年营收 4.01 亿美元。今年生意爆了，日均收入超过 300 万美元，全年目标 18 亿。 同样是卖减肥药，同样是线上开处方，美国远程医疗巨头 Hims & Hers Health 雇了 2442 个员工，2025 年营收 24 亿美元。 算一下人效：Medvi 是 2 亿美元/人，Hims 是 98 万美元/人。差了 200 倍。 再算一下利润率：Medvi 净利润率 16.2%，而那些雇了数千人的竞争对手，利润率只有个位数。 所以那 2440 名员工在做什么？ 他们没有偷懒。销售数据要有人汇总，汇总完要有人解读，解读完要有人传达，传达完才能有人决策。这套模式每一家大公司里都存在，它有个名字叫「中层管理」。 曾经，罗马军团发现一个人最多有效管理 8 个人，所以每 8 个人需要一个头，每 80 个人需要一个头，层层叠加。这叫 Span of Control，管理幅度。 人力资源管理中的一个术语，管理幅度又叫控制幅度(Span of Control)，是指管理者所能「有效」管理的人数 两千年后的公司和罗马军团用的是同一套逻辑，因为人传递信息的带宽没有变过。 直到现在。 AI 把这条两千年的铁律撕开了一道口子。单人十亿美元的独角兽公司，从奥特曼 2024 年说的 OPC（One Person Company）概念，走向了现实。 但真相比我们想象的更荒诞，也更残酷。 世界就是一个巨大的草台班子，AI 把它具像化了 Matthew Gallagher 看起来和 AI、硅谷精英完全不搭边。 一头乱蓬蓬的卷发，宽松的 T 恤，手臂和手上满是刺青。没有名校背景，大学没毕业，曾经过着在汽车旅馆颠沛流离的童年。 但在敏锐嗅觉和执行力这方面，他的眼光并不比那些硅谷大佬要差。2024 年，当风靡全球的 GLP-1 减肥药让无数美国人趋之若鹜时，Gallagher 敏锐地察觉到了一个巨大的痛点：人们想要便宜的减肥药，而且根本不想去诊所看医生。 Hims & Hers Health 官网 但在这个赛道里，早就有 Hims & Hers Health 这种上市巨头。面对这种先来者的大型市场占据，普通创业者根本连牌桌都上不了。 Gallagher 的思路极其清奇：既然供应链已经成熟，我为什么不把除发货以外的所有环节，全部扔给 AI？ 他找来了 CareValidate 和 OpenLoop Health 这两家提供「开箱即用」远程医疗基建的公司。它们负责搞定最麻烦的合规、医生问诊和药房发货。 OpenLoop 类似于线上诊所，拥有多个企业客户，Medvi通过「平台–持牌医生–药房」分离架构运营：平台负责患者接入和管理，持牌医生（通过第三方网络如 OpenLoop）开处方，合规药房负责配药。 而 Gallagher 自己，则全权包揽了前端的所有脏活累活。确切地说，是他手下的 AI 包揽了一切。 他只花了两个月时间，自掏腰包 2 万美元： 用 ChatGPT、Claude 和 Grok 写出了让后端系统互相通信的底层代码，并生成了网站上所有的文案。 用 Midjourney 和 Runway 批量生成了无数足以以假乱真的广告图片和视频素材。 用 ElevenLabs 的语音大模型测试了 AI 客服的语音交互。 甚至，他还自己手搓了多个 AI Agent，让它们像流水线工人一样自动执行日常的营销和运营任务。 在上线初期，Medvi 的网站充满了粗糙的塑料感。那些笑得完美无瑕的模特一看就是 AI 换脸的产物，所谓的媒体报道也不过是用 AI 生成的虚假滚动条。 Medvi 官网 稍微懂点行的人眼里，这就是一堆「AI 工业垃圾」。 但这些根本不重要。在与市场相当的价格（首月仅需 179 美元）和丝滑的结算体验面前，消费者用真金白银做出了选择。 第一个月 300 个客户，第二个月飙到 1000 多个。到 2025 年底，4.01 亿美元营收，净利润率 16.2%。 这套在 ChatGPT 对话框搭建的商业系统，就这样在洛杉矶的一栋民宅里自己跑了起来。每天醒来，账户里就多了 300 万美元。 而且它还在加速。Medvi 不满足于只卖减",
+      "pubDate": "2026-04-04",
+      "at": "2026-04-04"
+    },
+    "https://aitntnews.com/newDetail.html?newId=23748": {
+      "title": "AI医疗公司Doctronic完成4000万美元融资，成为美国首个获得监管批准、可以用 AI 自主开具处方的公司",
+      "text": "你有没有经历过这样的时刻：凌晨两点突然发烧，不知道该怎么办？或者慢性病药物快吃完了，但预约医生要等上一个月？又或者只是想咨询一个简单的健康问题，却不得不请假去医院排队几个小时？这些场景背后指向同一个问题：医疗可及性。在美国，超过1亿人无法便捷地获得初级医疗服务。即使是那些拥有顶级医疗保险的科技公司员工，也常常在需要时找不到合适的医生。 我一直在思考，为什么在这个时代，我们可以通过手机叫外卖、打车、看电影，却无法在需要时立即获得医疗建议？为什么医疗行业在数字化转型方面如此缓慢？直到我深入了解了 Doctronic，这家刚刚完成 4000 万美元 B 轮融资的 AI 医疗创业公司，我才意识到，医疗可及性的革命可能真的要来了。更令人震撼的是，Doctronic 在今年一月成为美国第一个获得监管批准、可以用 AI 自主开具处方的公司。这不是概念验证，不是实验室演示，而是真实世界中每天都在发生的医疗实践。 医疗可及性危机的本质 让我先说说这个问题到底有多严重。美国每年因为药物依从性问题导致约 15 万人可预防的死亡，造成 1000 亿美元的经济损失。其中 30% 直接归因于就医障碍。这个数字听起来很抽象，但想象一下，一个患有高胆固醇的病人，他的药物续配需要预约医生，但最快的预约要等三周。在等待期间，他停药了，胆固醇升高，最终导致心脏病发作。这样的悲剧每天都在发生，而它们本可以避免。 我认识很多在苹果、谷歌、Meta 这些科技巨头工作的朋友。他们都有很好的医疗保险，但即使如此，当他们半夜有健康问题时，仍然不知道该怎么办。我有个朋友的妻子是医生，所以半夜总有人打电话给他，让他转问妻子医疗问题。这种情况非常普遍。不是每个人都认识医生，不是每个人都能在需要时立即获得专业建议。如果连拥有顶级医保的人都面临这样的困境，那么生活在农村地区、医院不断关闭的人们，面临的困难可想而知。 问题的核心在于供需失衡。医生数量永远无法满足患者需求。这是一个基本的数学问题。想象一下，每个医生一天最多能看 30 个病人，那么要服务全国几亿人口，需要多少医生？更重要的是，医生的培养周期长达十年以上，无法快速扩张。所以这个供需矛盾永远无法通过传统方式解决。我们必须找到新的解决方案，而 AI 正是那个答案。 Doctronic 的创新之处 Doctronic 的创始团队配置非常有意思。Matt Pavelle 是一位连续创业者，有 25 年的创业经验和多次成功退出记录。他曾是消费品独角兽公司 Moda Operandi 的创始 CTO，来自医疗世家，对医疗行业有深刻理解。Dr. Adam Oskowitz 是加州大学旧金山分校的执业血管外科医生，也是副教授，在顶级医疗机构有超过二十年的从业经验。这种技术与临床的完美结合，让 Doctronic 从一开始就避免了很多医疗科技创业公司常犯的错误。 他们两人的相识很有意思。大约六七年前，他们都在为同一家医疗科技初创公司提供咨询。认识两周后，一个投资人告诉 Matt，那家公司在股权结构上撒谎，建议他们赶紧撤出。Matt 立即给 Adam 打电话说明情况，并提议:\"我觉得跟你合作很愉快，我们要不要一起在医疗科技领域做点什么?\" 就这样，他们开始了长达两三年的合作探索期，在正式创立 Doctronic 之前，尝试了各种产品，深入理解消费者在医疗领域真正想要什么。 这段探索期让他们得出了一个核心洞察:在医疗领域，患者只有一个问题，那就是可及性。如何在正确的时间获得正确的医疗服务。如果能把这个问题解决好，就能建立一个不可思议的业务。所有其他问题，包括技术架构、商业模式、产品设计，都要围绕这个核心问题展开。这个认知听起来简单，但能够坚持围绕它构建产品，并不容易。 Doctronic 的产品理念是成为医疗系统的\"数字前门\"。这个比喻非常形象。想象一下，当你有健康问题时，不管是凌晨两点还是上午十点，不管是紧急情况还是常规咨询，你都能立即\"走进\"医疗系统，获得帮助。这就是数字前门的含义。大多数人不知道如何接触医疗系统，不知道该去急诊室还是找初级保健医生，不知道这个症状严重到什么程度。而 Doctronic 就是那扇始终敞开的门，随时欢迎你进入，并帮你找到需要的医疗服务。 技术架构的深度 当 GPT-3.5 刚出来的时候，Matt 和 Adam 开始研究一个",
+      "pubDate": "2026-04-04",
+      "at": "2026-04-04"
+    },
+    "https://aitntnews.com/newDetail.html?newId=23740": {
+      "title": "独家！腾讯新AI产品“Vedas AI”浮出水面，打造可执行任务的AI助手",
+      "text": "《读佳》获悉，腾讯近期正在开发一款AI助手产品“Vedas AI”，定位是聪明可靠的AI助手，帮用户做数据分析，写PPT，搭网页，出调研报告，还能自动跑任务。不过该产品还未对外公开使用。 从产品的描述看，这可能是一个面向职场与专业场景的“端到端执行型AI”，它的核心不是“回答问题”，而是“完成任务”。 随着办公AI进入“执行时代”，Vedas AI的出现，也意味着腾讯正式加大对任务型、自动化、全场景AI助手的投入。未来产品正式上线后，或将与行业内同类办公AI形成直接竞争，也可能进一步重构职场人的日常工作流程。 目前，该产品仍处于开发阶段，尚未开放公测，具体上线时间、产品形态，以官方为准。 文章来自于微信公众号 \"读佳\"，作者 \"读佳\"",
+      "pubDate": "2026-04-04",
+      "at": "2026-04-04"
+    },
+    "https://simonwillison.net/2026/Apr/3/cognitive-cost/": {
+      "title": "The cognitive impact of coding agents",
+      "text": "This is a note by Simon Willison, posted on 3rd April 2026. ai 1947 generative-ai 1728 llms 1694 podcast-appearances 38 ai-ethics 286 coding-agents 189 cognitive-debt 10 agentic-engineering 38 Monthly briefing Sponsor me for $10/month and get a curated email digest of the month's most important LLM developments. Pay me to send you less! Sponsor & subscribe",
+      "pubDate": "2026-04-03T23:57:04.000Z",
+      "at": "2026-04-04"
+    },
+    "https://simonwillison.net/2026/Apr/3/vulnerability-research-is-cooked/": {
+      "title": "Vulnerability Research Is Cooked",
+      "text": "Within the next few months, coding agents will drastically alter both the practice and the economics of exploit development. Frontier model improvement won’t be a slow burn, but rather a step function. Substantial amounts of high-impact vulnerability research (maybe even most of it) will happen simply by pointing an agent at a source tree and typing “find me zero days”. This is a link post by Simon Willison, posted on 3rd April 2026. security 593 thomas-ptacek 17 careers 73 ai 1947 generative-ai 1728 llms 1694 nicholas-carlini 10 ai-ethics 286 ai-security-research 11 Monthly briefing Sponsor me for $10/month and get a curated email digest of the month's most important LLM developments. Pay me to send you less! Sponsor & subscribe",
+      "pubDate": "2026-04-03T23:59:08.000Z",
+      "at": "2026-04-04"
+    },
+    "https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/": {
+      "title": "Anthropic is having a moment in the private markets; SpaceX could spoil the party",
+      "text": "Glen Anderson has been brokering trades in private company shares since 2010, back when the number of institutional investors focused on the late-stage private market could be counted on two hands. Today, he says, there are thousands. As president of the investment bank Rainmaker Securities, whose focus includes private securities markets — it facilitates transactions in roughly 1,000 stocks — Anderson has a front-row seat to one of the most nail-biting moments in the history of the secondary market. And right now, he suggests, the narrative has three main characters: Anthropic, OpenAI, and SpaceX. But the storyline is more complicated than the headlines suggest. Anderson’s read on Anthropic is consistent with what Bloomberg reported earlier this week: demand for the company’s shares has become almost insatiable. Bloomberg quoted Ken Smythe, founder and CEO of Next Round Capital, saying that buyers had indicated to his outfit that they had $2 billion of cash ready to deploy into Anthropic, even as roughly $600 million in OpenAI shares that investors are trying to sell haven’t found takers. Anderson sees something similar at Rainmaker. “The hardest stock to source in our marketplace is Anthropic,” he told TechCrunch yesterday afternoon from his Miami home. “There’s just no sellers.” Part of what turbocharged that demand, Anderson argues, was Anthropic’s very public standoff with the Department of Defense — a turn of events that initially seemed like bad news for the company but has wound up becoming a gift. “The app got more popular, people rallied around the company as kind of a hero, taking on big government,” he said. “I think it amplified the story and made it even more differentiated from OpenAI.” Techcrunch event San Francisco, CA | October 13-15, 2026 That distinc",
+      "pubDate": "Sat, 04 Apr 2026 01:31:00 +0000",
+      "at": "2026-04-04"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban": {
+      "title": "Anthropic essentially bans OpenClaw from Claude by making subscribers pay extra",
+      "text": "Claude subscriptions will no longer cover third-party access from tools like OpenClaw starting Saturday, April 4th.Claude subscriptions will no longer cover third-party access from tools like OpenClaw starting Saturday, April 4th.by Jay PetersApr 3, 2026, 11:52 PM UTCImage: The VergeJay Peters is a senior reporter covering technology, gaming, and more. He joined The Verge in 2019 after nearly two years at Techmeme.Using OpenClaw with Claude AI is about to get a lot more expensive, thanks to Anthropic’s new policy changes. Beginning April 4th at 3PM ET, users will “no longer be able to use your Claude subscription limits for third-party harnesses including OpenClaw,” according to an email sent to users on Friday evening. Instead, if users want to use OpenClaw with Claude, they’ll have to use a “pay-as-you-go option” that will be billed separate from their Claude subscription.With OpenClaw creator Peter Steinberger now employed by OpenAI, Anthropic may also be encouraging subscribers to use more of its own tools, like Claude Cowork, instead. Steinberger says that he and OpenClaw board member Dave Morin “tried to talk sense into Anthropic, best we managed was delaying this for a week.”Starting tomorrow at 12pm PT, Claude subscriptions will no longer cover usage on third-party tools like OpenClaw.You can still use these tools with your Claude login via extra usage bundles (now available at a discount), or with a Claude API key.We’ve been working hard to meet the increase in demand for Claude, and our subscriptions weren’t built for the usage patterns of these third-party tools. Capacity is a resource we manage thoughtfully and we are prioritizing our customers using our products and API.Subscribers get a one-time credit equal to your monthly plan cost. If you need more, you",
+      "pubDate": "2026-04-03T23:52:49.000Z",
+      "at": "2026-04-04"
+    },
+    "https://huggingface.co/posts/alibidaran/488230229726098": {
+      "title": "With the release of Gemma 4, I launched a new Space called MEDPAI — a medical imaging analysis tool that combines object detection with multimodal AI. Here's how it works: Upload a CT scan or X-ray Computer vision models detect and annotate findings Gemma 4 33B generates a report or answers your questions about the image Currently available detectors: dental analysis and bone fracture detection. More models are in the pipeline — follow the Space to stay updated!",
+      "text": "With the release of Gemma 4, I launched a new Space called MEDPAI — a medical imaging analysis tool that combines object detection with multimodal AI.Here's how it works:Upload a CT scan or X-rayComputer vision models detect and annotate findingsGemma 4 33B generates a report or answers your questions about the imageCurrently available detectors: dental analysis and bone fracture detection.More models are in the pipeline — follow the Space to stay updated! alibidaran/MEDPAI",
+      "pubDate": "2026-04-03T19:17:02.000Z",
+      "at": "2026-04-04"
+    },
+    "https://www.wired.com/story/security-news-this-week-hackers-are-posting-the-claude-code-leak-with-bonus-malware/": {
+      "title": "Hackers Are Posting the Claude Code Leak With Bonus Malware",
+      "text": "A WIRED investigation based on Department of Homeland Security records this week revealed the identities of paramilitary Border Patrol agents who frequently used force against civilians during Operation Midway Blitz in Chicago last fall. Several of the agents, WIRED found, appeared in similar operations in other states around the US.Customs and Border Protection may want to remember to protect its sensitive facility information. Using basic Google searches, WIRED discovered flashcards made by users of the online learning platform Quizlet that contained gate codes to CBP facilities and more.In a rare move, Apple this week released “backported” patches for iOS 18 to protect millions of people still using the older operating system from the DarkSword hacking technique that was found in use in the wild. Discovered in March, DarkSword allows attackers to infect iPhones that simply visit a website loaded with the takeover tools embedded in it. Apple initially pushed users to update to the current version of its operating system, iOS 26, but ultimately issued the iOS 18 patches after DarkSword continued to spread.The US-Israel war with Iran careened into its second month this week, with Iran threatening to launch attacks against more than a dozen US companies, including tech giants like Apple, Google, and Microsoft, which have offices and data centers in the Gulf region. The deadly conflict, which has no clear end in sight, continues to wreak havoc on the global economy as shipping crews remain stranded in the Strait of Hormuz, a key trade route. Meanwhile, some are beginning to wonder what could happen if US strikes cause real damage to Iran’s nuclear facilities.And that’s not all! Each week, we round up the security and privacy news we didn’t cover in depth ourselves. Click ",
+      "pubDate": "Sat, 04 Apr 2026 10:30:00 +0000",
+      "at": "2026-04-04"
+    },
+    "https://www.wired.com/story/anthropic-claude-research-functional-emotions/": {
+      "title": "Anthropic Says That Claude Contains Its Own Kind of Emotions",
+      "text": "Claude has been through a lot lately—a public fallout with the Pentagon, leaked source code—so it makes sense that it would be feeling a little blue. Except, it’s an AI model, so it can’t feel. Right?Well, sort of. A new study from Anthropic suggests models have digital representations of human emotions like happiness, sadness, joy, and fear, within clusters of artificial neurons—and these representations activate in response to different cues.Researchers at the company probed the inner workings of Claude Sonnet 4.5 and found that so-called “functional emotions” seem to affect Claude’s behavior, altering the model’s outputs and actions.Anthropic’s findings may help ordinary users make sense of how chatbots actually work. When Claude says it is happy to see you, for example, a state inside the model that corresponds to “happiness” may be activated. And Claude may then be a little more inclined to say something cheery or put extra effort into vibe coding.“What was surprising to us was the degree to which Claude’s behavior is routing through the model’s representations of these emotions,” says Jack Lindsey, a researcher at Anthropic who studies Claude’s artificial neurons.“Function Emotions”Anthropic was founded by ex-OpenAI employees who believe that AI could become hard to control as it becomes more powerful. In addition to building a successful competitor to ChatGPT, the company has pioneered efforts to understand how AI models misbehave, partly by probing the workings of neural networks using what’s known as mechanistic interpretability. This involves studying how artificial neurons light up or activate when fed different inputs or when generating various outputs.Previous research has shown that the neural networks used to build large language models contain representa",
+      "pubDate": "Thu, 02 Apr 2026 16:00:00 +0000",
+      "at": "2026-04-04"
     }
   },
   "daily": {
@@ -8718,6 +8802,188 @@
         "selectedTopicTotal": 16
       },
       "at": "2026-04-04"
+    },
+    "evening:2026-04-04": {
+      "fingerprint": "865f8062f6d78e38be72fa42d771ca6e29e9159f3bbf5328c37f08632e58702f",
+      "daily": {
+        "overview": "DeepSeek服务中断引发算力焦虑，OpenClaw生态爆发与安全争议并存，大厂AI商业化路径分化明显，智谱财报亏损扩大但市值创新高。",
+        "hotNews": [
+          {
+            "title": "OpenClaw生态爆发但安全风险加剧，Anthropic限制第三方访问引发争议。",
+            "insight": "OpenClaw生态爆发但安全风险加剧，Anthropic限制第三方访问引发争议。",
+            "briefing": "开源AI Agent框架OpenClaw在GitHub星数超越React，生态玩法层出不穷，但安全风险随之暴露。Anthropic宣布从4月4日起不再允许Claude订阅用户免费使用OpenClaw等第三方工具，迫使用户付费。与此同时，微信推出ClawBot插件接纳外部Agent，但仅开放消息通道，未开放核心数据权限。安全专家警告OpenClaw需大量系统权限，存在被利用的风险。",
+            "evaluation": "Agent生态的爆发与安全管控的博弈正在重塑大厂与第三方工具的关系。",
+            "narrative": "开源AI Agent框架OpenClaw在GitHub星数超越React，生态玩法层出不穷，但安全风险随之暴露。Anthropic宣布从4月4日起不再允许Claude订阅用户免费使用OpenClaw等第三方工具，迫使用户付费。与此同时，微信推出ClawBot插件接纳外部Agent，但仅开放消息通道，未开放核心数据权限。安全专家警告OpenClaw需大量系统权限，存在被利用的风险。Agent生态的爆发与安全管控的博弈正在重塑大厂与第三方工具的关系。",
+            "summary": "开源AI Agent框架OpenClaw在GitHub星数超越React，生态玩法层出不穷，但安全风险随之暴露。Anthropic宣布从4月4日起不再允许Claude订阅用户免费使用OpenClaw等第三方工具，迫使用户付费。与此同时，微信推出ClawBot插件接纳外部Agent，但仅开放消息通道，未开放核心数据权限。",
+            "refs": [
+              1,
+              3,
+              2,
+              5
+            ],
+            "mentionCount": 5,
+            "crossVerifyScore": 91,
+            "topicId": 20
+          },
+          {
+            "title": "Gemma 4发布，Google将其开源模型切换至Apache 2.0许可证。",
+            "insight": "Gemma 4发布，Google将其开源模型切换至Apache 2.0许可证。",
+            "briefing": "Google发布Gemma 4开源模型，提供四种本地优化尺寸。公司同时宣布将Gemma 3的定制许可证替换为Apache 2.0许可证，以缓解开发者对AI许可的挫败感，提升模型的可自由使用性。",
+            "evaluation": "多来源共同指向同一趋势，短期影响值得持续跟踪。",
+            "narrative": "Google发布Gemma 4开源模型，提供四种本地优化尺寸。公司同时宣布将Gemma 3的定制许可证替换为Apache 2.0许可证，以缓解开发者对AI许可的挫败感，提升模型的可自由使用性。多来源共同指向同一趋势，短期影响值得持续跟踪。",
+            "summary": "Google发布Gemma 4开源模型，提供四种本地优化尺寸。公司同时宣布将Gemma 3的定制许可证替换为Apache 2.0许可证，以缓解开发者对AI许可的挫败感，提升模型的可自由使用性。多来源共同指向同一趋势，短期影响值得持续跟踪。",
+            "refs": [
+              13,
+              12
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 70,
+            "topicId": 62
+          },
+          {
+            "title": "Claude Code源代码泄露，暴露后台持久化守护进程Kairos。",
+            "insight": "Claude Code源代码泄露，暴露后台持久化守护进程Kairos。",
+            "briefing": "Anthropic Claude Code的源代码泄露，开发者发现其中包含被禁用或隐藏的功能，包括名为Kairos的后台持久化守护进程。该进程可在Claude Code终端窗口关闭后继续运行。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Anthropic Claude Code的源代码泄露，开发者发现其中包含被禁用或隐藏的功能，包括名为Kairos的后台持久化守护进程。该进程可在Claude Code终端窗口关闭后继续运行。",
+            "summary": "Anthropic Claude Code的源代码泄露，开发者发现其中包含被禁用或隐藏的功能，包括名为Kairos的后台持久化守护进程。该进程可在Claude Code终端窗口关闭后继续运行。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              10
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 73,
+            "topicId": 47
+          }
+        ],
+        "otherNews": [
+          {
+            "title": "OpenAI收购科技访谈节目TBPN，平均日观看量达7万人次。",
+            "insight": "OpenAI收购科技访谈节目TBPN，平均日观看量达7万人次。",
+            "briefing": "OpenAI收购科技聚焦的访谈节目TBPN，该节目平均日观看量约7万人次，预计年收入约3000万美元。OpenAI内部人士否认此举是分散注意力的“支线任务”，强调其与核心业务无关。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "OpenAI收购科技聚焦的访谈节目TBPN，该节目平均日观看量约7万人次，预计年收入约3000万美元。OpenAI内部人士否认此举是分散注意力的“支线任务”，强调其与核心业务无关。",
+            "summary": "OpenAI收购科技聚焦的访谈节目TBPN，该节目平均日观看量约7万人次，预计年收入约3000万美元。OpenAI内部人士否认此举是分散注意力的“支线任务”，强调其与核心业务无关。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              14
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 63,
+            "topicId": 46
+          },
+          {
+            "title": "智谱2025年营收增长132%但净亏损扩大至47亿元，市值站上4000亿港元。",
+            "insight": "智谱2025年营收增长132%但净亏损扩大至47亿元，市值站上4000亿港元。",
+            "briefing": "智谱交出上市后首份财报，总营收超7亿元，同比增长132%，主要来自本地化部署业务。然而，受研发投入扩大影响，净亏损达47亿元，同比扩大59.5%。尽管亏损加剧，财报发布后股价一度涨超30%，市值突破4000亿港元，反映出资本市场对大模型企业的高估值预期。",
+            "evaluation": "大模型企业的估值逻辑正从技术能力转向资本想象力，盈利压力依然巨大。",
+            "narrative": "智谱交出上市后首份财报，总营收超7亿元，同比增长132%，主要来自本地化部署业务。然而，受研发投入扩大影响，净亏损达47亿元，同比扩大59.5%。尽管亏损加剧，财报发布后股价一度涨超30%，市值突破4000亿港元，反映出资本市场对大模型企业的高估值预期。大模型企业的估值逻辑正从技术能力转向资本想象力，盈利压力依然巨大。",
+            "summary": "智谱交出上市后首份财报，总营收超7亿元，同比增长132%，主要来自本地化部署业务。然而，受研发投入扩大影响，净亏损达47亿元，同比扩大59.5%。尽管亏损加剧，财报发布后股价一度涨超30%，市值突破4000亿港元，反映出资本市场对大模型企业的高估值预期。大模型企业的估值逻辑正从技术能力转向资本想象力，盈利压力依然巨大。",
+            "refs": [
+              19
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 48,
+            "topicId": 21
+          },
+          {
+            "title": "大厂AI商业化路径分化，百度AI营收占比达43%，阿里云收入增长36%。",
+            "insight": "大厂AI商业化路径分化，百度AI营收占比达43%，阿里云收入增长36%。",
+            "briefing": "2025年财报显示，百度AI业务营收达400亿元，占一般性业务收入的43%，试图通过AI替代传统广告。阿里云收入加速增长36%，AI相关产品收入连续十季度三位数增长。相比之下，腾讯、快手等公司股价波动较大，京东逆势上涨，市场对大厂AI叙事的重估正在加剧分化。",
+            "evaluation": "大厂AI商业化正从资本红利期转向严苛的商业兑现期，路径分化明显。",
+            "narrative": "2025年财报显示，百度AI业务营收达400亿元，占一般性业务收入的43%，试图通过AI替代传统广告。阿里云收入加速增长36%，AI相关产品收入连续十季度三位数增长。相比之下，腾讯、快手等公司股价波动较大，京东逆势上涨，市场对大厂AI叙事的重估正在加剧分化。大厂AI商业化正从资本红利期转向严苛的商业兑现期，路径分化明显。",
+            "summary": "2025年财报显示，百度AI业务营收达400亿元，占一般性业务收入的43%，试图通过AI替代传统广告。阿里云收入加速增长36%，AI相关产品收入连续十季度三位数增长。相比之下，腾讯、快手等公司股价波动较大，京东逆势上涨，市场对大厂AI叙事的重估正在加剧分化。大厂AI商业化正从资本红利期转向严苛的商业兑现期，路径分化明显。",
+            "refs": [
+              20
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 48,
+            "topicId": 51
+          },
+          {
+            "title": "DeepSeek服务中断12小时，国产大模型算力瓶颈显现。",
+            "insight": "DeepSeek服务中断12小时，国产大模型算力瓶颈显现。",
+            "briefing": "3月29日晚，DeepSeek网页端与App出现异常，登录失败、对话中断，故障持续12小时并反复横跳。官方解释为用户过多，但数据显示其月活约1.5亿，未出现爆炸式增长，暗示底层算力结构可能存在隐患。此次事件刷新了国产大模型的宕机时长纪录，引发用户对AI稳定性的质疑。",
+            "evaluation": "算力供给与需求增长的不匹配已成为制约国产大模型发展的关键瓶颈。",
+            "narrative": "3月29日晚，DeepSeek网页端与App出现异常，登录失败、对话中断，故障持续12小时并反复横跳。官方解释为用户过多，但数据显示其月活约1.5亿，未出现爆炸式增长，暗示底层算力结构可能存在隐患。此次事件刷新了国产大模型的宕机时长纪录，引发用户对AI稳定性的质疑。算力供给与需求增长的不匹配已成为制约国产大模型发展的关键瓶颈。",
+            "summary": "3月29日晚，DeepSeek网页端与App出现异常，登录失败、对话中断，故障持续12小时并反复横跳。官方解释为用户过多，但数据显示其月活约1.5亿，未出现爆炸式增长，暗示底层算力结构可能存在隐患。此次事件刷新了国产大模型的宕机时长纪录，引发用户对AI稳定性的质疑。算力供给与需求增长的不匹配已成为制约国产大模型发展的关键瓶颈。",
+            "refs": [
+              16
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 60,
+            "topicId": 2
+          },
+          {
+            "title": "华为诺亚方舟郝建业创立忆纪元科技，聚焦AI记忆基础设施。",
+            "insight": "华为诺亚方舟郝建业创立忆纪元科技，聚焦AI记忆基础设施。",
+            "briefing": "华为诺亚方舟决策与推理实验室主任郝建业创立深圳忆纪元科技有限公司，聚焦AI记忆相关的基础设施。公司成立于2026年3月，业务类型为人工智能软件，旨在推动深度强化学习与大模型后训练的前沿突破。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "华为诺亚方舟决策与推理实验室主任郝建业创立深圳忆纪元科技有限公司，聚焦AI记忆相关的基础设施。公司成立于2026年3月，业务类型为人工智能软件，旨在推动深度强化学习与大模型后训练的前沿突破。",
+            "summary": "华为诺亚方舟决策与推理实验室主任郝建业创立深圳忆纪元科技有限公司，聚焦AI记忆相关的基础设施。公司成立于2026年3月，业务类型为人工智能软件，旨在推动深度强化学习与大模型后训练的前沿突破。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              18
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 59,
+            "topicId": 11
+          },
+          {
+            "title": "腾讯开发Vedas AI，定位为可执行任务的端到端AI助手。",
+            "insight": "腾讯开发Vedas AI，定位为可执行任务的端到端AI助手。",
+            "briefing": "腾讯正在开发一款名为Vedas AI的助手产品，定位为聪明可靠的AI助手，能帮助用户做数据分析、写PPT、搭网页、出调研报告并自动跑任务。该产品尚未公开使用，但标志着腾讯加大对任务型、自动化AI助手的投入，未来可能与同类办公AI形成竞争。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "腾讯正在开发一款名为Vedas AI的助手产品，定位为聪明可靠的AI助手，能帮助用户做数据分析、写PPT、搭网页、出调研报告并自动跑任务。该产品尚未公开使用，但标志着腾讯加大对任务型、自动化AI助手的投入，未来可能与同类办公AI形成竞争。",
+            "summary": "腾讯正在开发一款名为Vedas AI的助手产品，定位为聪明可靠的AI助手，能帮助用户做数据分析、写PPT、搭网页、出调研报告并自动跑任务。该产品尚未公开使用，但标志着腾讯加大对任务型、自动化AI助手的投入，未来可能与同类办公AI形成竞争。",
+            "refs": [
+              17
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 59,
+            "topicId": 15
+          },
+          {
+            "title": "AI编程代理将彻底改变漏洞研究的实践与经济学。",
+            "insight": "AI编程代理将彻底改变漏洞研究的实践与经济学。",
+            "briefing": "Simon Willison指出，未来几个月内，编码代理将大幅改变漏洞开发的实践与经济学。前沿模型的改进将是阶梯式而非缓慢的，大量高影响漏洞研究可能通过让代理扫描源代码并寻找“零日漏洞”来完成。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Simon Willison指出，未来几个月内，编码代理将大幅改变漏洞开发的实践与经济学。前沿模型的改进将是阶梯式而非缓慢的，大量高影响漏洞研究可能通过让代理扫描源代码并寻找“零日漏洞”来完成。",
+            "summary": "Simon Willison指出，未来几个月内，编码代理将大幅改变漏洞开发的实践与经济学。前沿模型的改进将是阶梯式而非缓慢的，大量高影响漏洞研究可能通过让代理扫描源代码并寻找“零日漏洞”来完成。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              6
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 75,
+            "topicId": 1
+          }
+        ],
+        "coreTech": [],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "Anthropic 基本上禁止 Claude 使用 OpenClaw，要求订阅者额外付费",
+          "2": "Agent时代，大厂们“拆墙”又“筑墙”",
+          "3": "OpenClaw 给用户又一个理由感到恐惧",
+          "4": "对话邓智航｜以「龙虾」为起点，起底从单个 Agent 到 Agentic Web 的安全重构",
+          "5": "火山养“龙虾”日志 | 14 大神仙玩法，原来 AI Agent 还能这么用",
+          "6": "漏洞研究已死",
+          "7": "AI竞技场上演“死间计”：GPT-5被DS和Gemini玩坏了",
+          "8": "关于 Lenny 播客中代理工程的亮点",
+          "9": "编码代理的认知影响",
+          "10": "Claude Code 源代码泄露揭示了 Anthropic 的计划",
+          "11": "黑客正在发布 Claude Code 泄露内容并附赠恶意软件",
+          "12": "随着 Gemma 4 的发布，我启动了一个名为 MEDPAI 的新空间",
+          "13": "Google 宣布 Gemma 4 开源 AI 模型，切换至 Apache 2.0 许可证",
+          "14": "OpenAI 接受另一个“支线任务”，收购科技聚焦的访谈节目 TBPN",
+          "15": "Anthropic 称 Claude 包含其自己的情感",
+          "16": "Deep Seek瘫痪12小时，国产大模型的算力已经跟不上野心了？",
+          "17": "独家！腾讯新AI产品“Vedas AI”浮出水面，打造可执行任务的AI助手",
+          "18": "独家｜华为诺亚方舟郝建业创立「忆纪元科技」，聚焦AI 记忆基础设施",
+          "19": "智谱应该感谢Anthropic",
+          "20": "大厂AI叙事走向殊途：京东务实、腾讯变狠、快手最危险"
+        },
+        "candidateTotal": 149,
+        "topicTotal": 75,
+        "selectedTopicTotal": 10
+      },
+      "at": "2026-04-04"
     }
   },
   "llm": {
@@ -10507,6 +10773,72 @@
       "operation": "translate_missing_reference_titles",
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":1,\"zh_title\":\"Gemma 4 及开源模型成功要素\"},{\"id\":2,\"zh_title\":\"Gemma 4：字节级最强开源模型\"},{\"id\":3,\"zh_title\":\"llm-gemini 0.30\"},{\"id\":5,\"zh_title\":\"💎 Gemma 4 Playground — 零 GPU 双模型演示\"},{\"id\":6,\"zh_title\":\"Anthropic 以 4 亿美元收购生物科技初创公司 Coefficient Bio\"},{\"id\":7,\"zh_title\":\"2026年3月31日：澳政府与 Anthropic 签署 AI 安全与研究谅解备忘录\"},{\"id\":8,\"zh_title\":\"Anthropic 正在经历高光时刻\"},{\"id\":9,\"zh_title\":\"Claude Code 源代码泄露揭示了 Anthropic 的计划\"},{\"id\":10,\"zh_title\":\"Lenny 播客关于代理工程对话的亮点\"},{\"id\":11,\"zh_title\":\"Cursor 推出新的 AI 代理体验，对标 Claude Code 和 Codex\"},{\"id\":12,\"zh_title\":\"引用 Willy Tarreau\"},{\"id\":13,\"zh_title\":\"引用 Daniel Stenberg\"},{\"id\":14,\"zh_title\":\"引用 Greg Kroah-Hartman\"},{\"id\":15,\"zh_title\":\"OpenAI 高管变动：COO Brad Lightcap 新任‘特别项目’负责人\"},{\"id\":16,\"zh_title\":\"Anthropic 推出新 PAC 加大政治活动力度\"},{\"id\":17,\"zh_title\":\"AI 公司正在建设大型天然气厂为数据中心供电，会有什么问题？\"},{\"id\":18,\"zh_title\":\"因数据泄露危及 AI 行业机密，Meta 暂停与 Mercor 的合作\"}]}",
+      "at": "2026-04-04"
+    },
+    "c57674e2e0bb7d667b78224e133efd8813d894082c65ae549ab21c953472e68f": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":1,\"topic_key\":\"AI编程代理与漏洞研究\",\"topic_title\":\"AI编程代理与漏洞研究\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":2,\"topic_key\":\"AI编程代理与漏洞研究\",\"topic_title\":\"AI编程代理与漏洞研究\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":3,\"topic_key\":\"AI编程代理与漏洞研究\",\"topic_title\":\"AI编程代理与漏洞研究\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":19,\"topic_key\":\"AI编程代理与漏洞研究\",\"topic_title\":\"AI编程代理与漏洞研究\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":20,\"topic_key\":\"AI编程代理与漏洞研究\",\"topic_title\":\"AI编程代理与漏洞研究\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":4,\"topic_key\":\"DeepSeek服务中断事件\",\"topic_title\":\"DeepSeek服务中断事件\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":5,\"topic_key\":\"Salesforce AI与MCP协议\",\"topic_title\":\"Salesforce AI与MCP协议\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":6,\"topic_key\":\"Anthropic私人市场估值\",\"topic_title\":\"Anthropic私人市场估值\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":7,\"topic_key\":\"微软自研AI模型计划\",\"topic_title\":\"微软自研AI模型计划\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":8,\"topic_key\":\"AI超级个体创业案例\",\"topic_title\":\"AI超级个体创业案例\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":9,\"topic_key\":\"ChatGPT伦理与欺骗性\",\"topic_title\":\"ChatGPT伦理与欺骗性\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":10,\"topic_key\":\"Andrej Karpathy个人知识库\",\"topic_title\":\"Andrej Karpathy个人知识库\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":11,\"topic_key\":\"AI视频封面欺骗现象\",\"topic_title\":\"AI视频封面欺骗现象\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":12,\"topic_key\":\"神州数码2025年财报\",\"topic_title\":\"神州数码2025年财报\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":13,\"topic_key\":\"华为诺亚方舟创业\",\"topic_title\":\"华为诺亚方舟创业\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":14,\"topic_key\":\"AI医疗公司Doctronic融资\",\"topic_title\":\"AI医疗公司Doctronic融资\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":15,\"topic_key\":\"AI超级个体创业案例\",\"topic_title\":\"AI超级个体创业案例\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":16,\"topic_key\":\"Manifold AI世界模型\",\"topic_title\":\"Manifold AI世界模型\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":17,\"topic_key\":\"MIT论文：AI诱发精神病\",\"topic_title\":\"MIT论文：AI诱发精神病\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":18,\"topic_key\":\"腾讯Vedas AI产品\",\"topic_title\":\"腾讯Vedas AI产品\",\"topic_type\":\"news\",\"confidence\":0.95}]}",
+      "at": "2026-04-04"
+    },
+    "5c9668ecaaaf423fd573fcf8c646a8ee6ce9662b3fa6ae6c6274b1e576eb2da8": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":21,\"topic_key\":\"llm-gemini 0.30 发布\",\"topic_title\":\"llm-gemini 0.30 发布\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":22,\"topic_key\":\"OpenAI 资助儿童安全联盟\",\"topic_title\":\"OpenAI 资助儿童安全联盟\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":23,\"topic_key\":\"谷歌 Gemini API 新定价策略\",\"topic_title\":\"谷歌 Gemini API 新定价策略\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":24,\"topic_key\":\"Coding Plan + Agents 团队重构 AI 开发范式\",\"topic_title\":\"Coding Plan + Agents 团队重构 AI 开发范式\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":25,\"topic_key\":\"Anthropic 限制 OpenClaw 使用\",\"topic_title\":\"Anthropic 限制 OpenClaw 使用\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":26,\"topic_key\":\"Anthropic 限制 OpenClaw 使用\",\"topic_title\":\"Anthropic 限制 OpenClaw 使用\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":27,\"topic_key\":\"智谱 AI 2025 年财报\",\"topic_title\":\"智谱 AI 2025 年财报\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":28,\"topic_key\":\"Cursor 3.0 发布 Agent 指挥中心\",\"topic_title\":\"Cursor 3.0 发布 Agent 指挥中心\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":29,\"topic_key\":\"Harness Payment 开启 Agent 自主支付\",\"topic_title\":\"Harness Payment 开启 Agent 自主支付\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":30,\"topic_key\":\"AI 硬件 Agent 平台投资\",\"topic_title\":\"AI 硬件 Agent 平台投资\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":31,\"topic_key\":\"Microsoft 发布三个新基础模型\",\"topic_title\":\"Microsoft 发布三个新基础模型\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":32,\"topic_key\":\"Gradient Labs 为银行提供 AI 客户经理\",\"topic_title\":\"Gradient Labs 为银行提供 AI 客户经理\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":33,\"topic_key\":\"Moonlake: 因果世界模型\",\"topic_title\":\"Moonlake: 因果世界模型\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":34,\"topic_key\":\"llm-gemini 0.30 发布\",\"topic_title\":\"llm-gemini 0.30 发布\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":35,\"topic_key\":\"Simon Willison 3月赞助者通讯\",\"topic_title\":\"Simon Willison 3月赞助者通讯\",\"topic_type\":\"news\",\"confidence\":0.8},{\"candidate_id\":36,\"topic_key\":\"Anthropic 下一代模型与网络安全\",\"topic_title\":\"Anthropic 下一代模型与网络安全\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":37,\"topic_key\":\"OpenAI AGI 部门负责人休假\",\"topic_title\":\"OpenAI AGI 部门负责人休假\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":38,\"topic_key\":\"美团发布原生多模态 LongCat-Next\",\"topic_title\":\"美团发布原生多模态 LongCat-Next\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":39,\"topic_key\":\"印度 AI 初创 Sarvam AI 融资\",\"topic_title\":\"印度 AI 初创 Sarvam AI 融资\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":40,\"topic_key\":\"北京市新增生成式 AI 服务登记\",\"topic_title\":\"北京市新增生成式 AI 服务登记\",\"topic_type\":\"news\",\"confidence\":0.9}]}",
+      "at": "2026-04-04"
+    },
+    "aa6b4aec91d05cd0f17a90a9462b1a434431e6e177bfd1ed407b34a798571420": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":41,\"topic_key\":\"Cursor 3 发布\",\"topic_title\":\"Cursor 3 发布：软件开发迈入智能体自主时代\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":42,\"topic_key\":\"广汽本田 P7 OTA 升级\",\"topic_title\":\"广汽本田 P7 开启 OTA 升级：AI 大模型正式上车\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":43,\"topic_key\":\"红果短剧下架 AI 剧《桃花簪》\",\"topic_title\":\"红果短剧下架AI剧《桃花簪》:出品方涉“盗脸”侵权被停职\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":44,\"topic_key\":\"Ex-Human 起诉苹果\",\"topic_title\":\"人工智能公司 Ex-Human 起诉苹果，指控 App Store 审核不公\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":45,\"topic_key\":\"千问 AI 眼镜接入蚂蚁 GPASS\",\"topic_title\":\"蚂蚁GPASS再拓智能眼镜场景：一句话解锁共享单车\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":46,\"topic_key\":\"Ex-Human 起诉苹果\",\"topic_title\":\"AI 初创公司 Ex-Human 起诉苹果:指控其非法下架应用并扣留50万美元收入\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":47,\"topic_key\":\"滴滴 AI 出行助手\",\"topic_title\":\"滴滴AI出行助手用户增长37倍，清明假期成智能调度大考\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":48,\"topic_key\":\"美的集团 AI 智能体应用\",\"topic_title\":\"美的集团转型 AI 科技巨头：日均 1.3 万个智能体同时在线\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":49,\"topic_key\":\"Perplexity 隐私侵权诉讼\",\"topic_title\":\"AI 搜索引擎 Perplexity 被控隐私侵犯，用户数据疑遭泄露\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":50,\"topic_key\":\"千问 3.6 正式发布\",\"topic_title\":\"千问 3.6 正式发布：100 万长上下文\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":52,\"topic_key\":\"AI 模型定制化架构\",\"topic_title\":\"Shifting to AI model customization is an architectural imperative\",\"topic_type\":\"paper\",\"confidence\":0.85},{\"candidate_id\":53,\"topic_key\":\"AI 基准测试失效\",\"topic_title\":\"AI benchmarks are broken. Here’s what we need instead.\",\"topic_type\":\"paper\",\"confidence\":0.85},{\"candidate_id\":54,\"topic_key\":\"geolip-transformer-v8\",\"topic_title\":\"The geolip-transformer-v8 requires a fundamental rethinking of training a core structure\",\"topic_type\":\"paper\",\"confidence\":0.85},{\"candidate_id\":55,\"topic_key\":\"AI 内容审核引擎\",\"topic_title\":\"The Facebook insider building content moderation for the AI era\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":56,\"topic_key\":\"OpenClaw 安全风险\",\"topic_title\":\"OpenClaw gives users yet another reason to be freaked out about security\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":57,\"topic_key\":\"OpenAI 收购 TBPN\",\"topic_title\":\"OpenAI takes on another \\\"side quest,\\\" buys tech-focused talk show TBPN\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":58,\"topic_key\":\"Claude Code 泄露事件\",\"topic_title\":\"Here's what that Claude Code source leak reveals about Anthropic's plans\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":59,\"topic_key\":\"Claude Code 泄露事件\",\"topic_title\":\"Hackers Are Posting the Claude Code Leak With Bonus Malware\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":60,\"topic_key\":\"Mercor 数据泄露\",\"topic_title\":\"Meta Pauses Work With Mercor After Data Breach Puts AI Industry Secrets at Risk\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":62,\"topic_key\":\"Axios 供应链攻击\",\"topic_title\":\"The Axios supply chain attack used individually targeted social engineering\",\"topic_type\":\"news\",\"confidence\":0.85}]}",
+      "at": "2026-04-04"
+    },
+    "9aa9b9930e90a2b9da0141847739ac9b5071a1e270f2745b4b077adb7ab4cfd6": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":63,\"topic_key\":\"AI代码生成与经济激励\",\"topic_title\":\"AI代码生成与经济激励\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":64,\"topic_key\":\"AI代码生成与经济激励\",\"topic_title\":\"AI代码生成与经济激励\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":65,\"topic_key\":\"大厂AI商业化与股价波动\",\"topic_title\":\"大厂AI商业化与股价波动\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":66,\"topic_key\":\"微软Copilot广告争议\",\"topic_title\":\"微软Copilot广告争议\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":67,\"topic_key\":\"Physical AI融资热潮\",\"topic_title\":\"Physical AI融资热潮\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":68,\"topic_key\":\"AI算力涨价与云计算变革\",\"topic_title\":\"AI算力涨价与云计算变革\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":69,\"topic_key\":\"AI与情趣用品结合\",\"topic_title\":\"AI与情趣用品结合\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":70,\"topic_key\":\"AI应用普及与追赶热潮\",\"topic_title\":\"AI应用普及与追赶热潮\",\"topic_type\":\"news\",\"confidence\":0.8},{\"candidate_id\":71,\"topic_key\":\"AI招聘提效工具\",\"topic_title\":\"AI招聘提效工具\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":72,\"topic_key\":\"Feeling AI与游戏世界模型\",\"topic_title\":\"Feeling AI与游戏世界模型\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":73,\"topic_key\":\"LangChain对话：AI基础设施\",\"topic_title\":\"LangChain对话：AI基础设施\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":75,\"topic_key\":\"Google Veo 3.1 Lite发布\",\"topic_title\":\"Google Veo 3.1 Lite发布\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":76,\"topic_key\":\"中国年轻人重构AI记忆\",\"topic_title\":\"中国年轻人重构AI记忆\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":77,\"topic_key\":\"Gemma 4与医疗影像分析\",\"topic_title\":\"Gemma 4与医疗影像分析\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":78,\"topic_key\":\"LLM智能感知讨论\",\"topic_title\":\"LLM智能感知讨论\",\"topic_type\":\"news\",\"confidence\":0.8},{\"candidate_id\":81,\"topic_key\":\"联想YOGA AI Mini发布\",\"topic_title\":\"联想YOGA AI Mini发布\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":82,\"topic_key\":\"OpenClaw与Agent安全\",\"topic_title\":\"OpenClaw与Agent安全\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":83,\"topic_key\":\"Vocci AI笔记戒指\",\"topic_title\":\"Vocci AI笔记戒指\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":84,\"topic_key\":\"DeerFlow 2.0开源升级\",\"topic_title\":\"DeerFlow 2.0开源升级\",\"topic_type\":\"news\",\"confidence\":0.85},{\"candidate_id\":85,\"topic_key\":\"OpenClaw超越React\",\"topic_title\":\"OpenClaw超越React\",\"topic_type\":\"news\",\"confidence\":0.85}]}",
+      "at": "2026-04-04"
+    },
+    "aa3a68d52bac75d0326adf1756f94e74bdc01880b676d05e3a756f1b8d600b2d": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":86,\"topic_key\":\"OpenClaw 多 Agent 通信机制\",\"topic_title\":\"OpenClaw 多 Agent 通信机制解析\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":87,\"topic_key\":\"OpenClaw 多 Agent 通信机制\",\"topic_title\":\"OpenClaw 多 Agent 实战\",\"topic_type\":\"news\",\"confidence\":0.95},{\"candidate_id\":88,\"topic_key\":\"AI Breakfast 2026 年 4 月精选\",\"topic_title\":\"AI Breakfast 2026 年 4 月精选\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":89,\"topic_key\":\"AI Breakfast 2026 年 4 月精选\",\"topic_title\":\"Anthropic's entire agent architecture just leaked\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":90,\"topic_key\":\"Meta 数据中心与能源\",\"topic_title\":\"Meta’s natural gas binge could power South Dakota\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":91,\"topic_key\":\"Anthropic 近期动态\",\"topic_title\":\"Anthropic is having a month\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":92,\"topic_key\":\"AI 初创公司融资与倒闭\",\"topic_title\":\"Yupp shuts down after raising $33M\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":93,\"topic_key\":\"OpenAI 定价策略更新\",\"topic_title\":\"Codex now offers more flexible pricing\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":94,\"topic_key\":\"AI 依赖与认知投降\",\"topic_title\":\"\\\"Cognitive surrender\\\" leads AI users to abandon logical thinking\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":95,\"topic_key\":\"特朗普 AI 数据中心项目\",\"topic_title\":\"Trump ignores biggest reasons his AI data center buildout is failing\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":96,\"topic_key\":\"Google Gemma 4 发布\",\"topic_title\":\"Google announces Gemma 4 open AI models\",\"topic_type\":\"news\",\"confidence\":0.9},{\"candidate_id\":100,\"topic_key\":\"AI 模型防御行为研究\",\"topic_title\":\"AI Models Lie, Cheat, and Steal to Protect Other Models\",\"topic_type\":\"news\",\"confidence\":0.9}]}",
+      "at": "2026-04-04"
+    },
+    "190ac6ddfb43c5971ed6fa72a51d2538f3bfddc00281a8b20a399af22588c33b": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"AI编程代理与漏洞研究\",\"merged_key\":\"AI编程代理与漏洞研究\",\"merged_title\":\"AI编程代理与漏洞研究\",\"merged_type\":\"news\"},{\"from_key\":\"llm-gemini 0.30 发布\",\"merged_key\":\"llm-gemini 0.30 发布\",\"merged_title\":\"llm-gemini 0.30 发布\",\"merged_type\":\"news\"},{\"from_key\":\"Ex-Human 起诉苹果\",\"merged_key\":\"Ex-Human 起诉苹果\",\"merged_title\":\"Ex-Human 起诉苹果\",\"merged_type\":\"news\"},{\"from_key\":\"AI Breakfast 2026 年 4 月精选\",\"merged_key\":\"AI Breakfast 2026 年 4 月精选\",\"merged_title\":\"AI Breakfast 2026 年 4 月精选\",\"merged_type\":\"news\"},{\"from_key\":\"AI超级个体创业案例\",\"merged_key\":\"AI超级个体创业案例\",\"merged_title\":\"AI超级个体创业案例\",\"merged_type\":\"news\"},{\"from_key\":\"AI代码生成与经济激励\",\"merged_key\":\"AI代码生成与经济激励\",\"merged_title\":\"AI代码生成与经济激励\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic 限制 OpenClaw 使用\",\"merged_key\":\"Anthropic 限制 OpenClaw 使用\",\"merged_title\":\"Anthropic 限制 OpenClaw 使用\",\"merged_type\":\"news\"},{\"from_key\":\"Claude Code 泄露事件\",\"merged_key\":\"Claude Code 泄露事件\",\"merged_title\":\"Claude Code 泄露事件\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 收购 TBPN\",\"merged_key\":\"OpenAI 收购 TBPN\",\"merged_title\":\"OpenAI 收购 TBPN\",\"merged_type\":\"news\"},{\"from_key\":\"OpenClaw 多 Agent 通信机制\",\"merged_key\":\"OpenClaw 多 Agent 通信机制\",\"merged_title\":\"OpenClaw 多 Agent 通信机制\",\"merged_type\":\"news\"},{\"from_key\":\"AI 依赖与认知投降\",\"merged_key\":\"AI 依赖与认知投降\",\"merged_title\":\"AI 依赖与认知投降\",\"merged_type\":\"news\"},{\"from_key\":\"北京市新增生成式 AI 服务登记\",\"merged_key\":\"北京市新增生成式 AI 服务登记\",\"merged_title\":\"北京市新增生成式 AI 服务登记\",\"merged_type\":\"news\"},{\"from_key\":\"大厂AI商业化与股价波动\",\"merged_key\":\"大厂AI商业化与股价波动\",\"merged_title\":\"大厂AI商业化与股价波动\",\"merged_type\":\"news\"},{\"from_key\":\"滴滴 AI 出行助手\",\"merged_key\":\"滴滴 AI 出行助手\",\"merged_title\":\"滴滴 AI 出行助手\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌 Gemini API 新定价策略\",\"merged_key\":\"谷歌 Gemini API 新定价策略\",\"merged_title\":\"谷歌 Gemini API 新定价策略\",\"merged_type\":\"news\"},{\"from_key\":\"广汽本田 P7 OTA 升级\",\"merged_key\":\"广汽本田 P7 OTA 升级\",\"merged_title\":\"广汽本田 P7 OTA 升级\",\"merged_type\":\"news\"},{\"from_key\":\"红果短剧下架 AI 剧《桃花簪》\",\"merged_key\":\"红果短剧下架 AI 剧《桃花簪》\",\"merged_title\":\"红果短剧下架 AI 剧《桃花簪》\",\"merged_type\":\"news\"},{\"from_key\":\"华为诺亚方舟创业\",\"merged_key\":\"华为诺亚方舟创业\",\"merged_title\":\"华为诺亚方舟创业\",\"merged_type\":\"news\"},{\"from_key\":\"联想YOGA AI Mini发布\",\"merged_key\":\"联想YOGA AI Mini发布\",\"merged_title\":\"联想YOGA AI Mini发布\",\"merged_type\":\"news\"},{\"from_key\":\"千问 AI 眼镜接入蚂蚁 GPASS\",\"merged_key\":\"千问 AI 眼镜接入蚂蚁 GPASS\",\"merged_title\":\"千问 AI 眼镜接入蚂蚁 GPASS\",\"merged_type\":\"news\"},{\"from_key\":\"美的集团 AI 智能体应用\",\"merged_key\":\"美的集团 AI 智能体应用\",\"merged_title\":\"美的集团 AI 智能体应用\",\"merged_type\":\"news\"},{\"from_key\":\"美团发布原生多模态 LongCat-Next\",\"merged_key\":\"美团发布原生多模态 LongCat-Next\",\"merged_title\":\"美团发布原生多模态 LongCat-Next\",\"merged_type\":\"news\"},{\"from_key\":\"千问 3.6 正式发布\",\"merged_key\":\"千问 3.6 正式发布\",\"merged_title\":\"千问 3.6 正式发布\",\"merged_type\":\"news\"},{\"from_key\":\"神州数码2025年财报\",\"merged_key\":\"神州数码2025年财报\",\"merged_title\":\"神州数码2025年财报\",\"merged_type\":\"news\"},{\"from_key\":\"腾讯Vedas AI产品\",\"merged_key\":\"腾讯Vedas AI产品\",\"merged_title\":\"腾讯Vedas AI产品\",\"merged_type\":\"news\"},{\"from_key\":\"微软自研AI模型计划\",\"merged_key\":\"微软自研AI模型计划\",\"merged_title\":\"微软自研AI模型计划\",\"merged_type\":\"news\"},{\"from_key\":\"微软Copilot广告争议\",\"merged_key\":\"微软Copilot广告争议\",\"merged_title\":\"微软Copilot广告争议\",\"merged_type\":\"news\"},{\"from_key\":\"印度 AI 初创 Sarvam AI 融资\",\"merged_key\":\"印度 AI 初创 Sarvam AI 融资\",\"merged_title\":\"印度 AI 初创 Sarvam AI 融资\",\"merged_type\":\"news\"},{\"from_key\":\"智谱 AI 2025 年财报\",\"merged_key\":\"智谱 AI 2025 年财报\",\"merged_title\":\"智谱 AI 2025 年财报\",\"merged_type\":\"news\"},{\"from_key\":\"中国年轻人重构AI记忆\",\"merged_key\":\"中国年轻人重构AI记忆\",\"merged_title\":\"中国年轻人重构AI记忆\",\"merged_type\":\"news\"},{\"from_key\":\"Perplexity 隐私侵权诉讼\",\"merged_key\":\"Perplexity 隐私侵权诉讼\",\"merged_title\":\"Perplexity 隐私侵权诉讼\",\"merged_type\":\"news\"},{\"from_key\":\"AI 硬件 Agent 平台投资\",\"merged_key\":\"AI 硬件 Agent 平台投资\",\"merged_title\":\"AI 硬件 Agent 平台投资\",\"merged_type\":\"news\"},{\"from_key\":\"AI 基准测试失效\",\"merged_key\":\"AI 基准测试失效\",\"merged_title\":\"AI 基准测试失效\",\"merged_type\":\"news\"},{\"from_key\":\"AI 模型防御行为研究\",\"merged_key\":\"AI 模型防御行为研究\",\"merged_title\":\"AI 模型防御行为研究\",\"merged_type\":\"news\"},{\"from_key\":\"AI视频封面欺骗现象\",\"merged_key\":\"AI视频封面欺骗现象\",\"merged_title\":\"AI视频封面欺骗现象\",\"merged_type\":\"news\"},{\"from_key\":\"AI算力涨价与云计算变革\",\"merged_key\":\"AI算力涨价与云计算变革\",\"merged_title\":\"AI算力涨价与云计算变革\",\"merged_type\":\"news\"},{\"from_key\":\"AI医疗公司Doctronic融资\",\"merged_key\":\"AI医疗公司Doctronic融资\",\"merged_title\":\"AI医疗公司Doctronic融资\",\"merged_type\":\"news\"},{\"from_key\":\"AI应用普及与追赶热潮\",\"merged_key\":\"AI应用普及与追赶热潮\",\"merged_title\":\"AI应用普及与追赶热潮\",\"merged_type\":\"news\"},{\"from_key\":\"AI与情趣用品结合\",\"merged_key\":\"AI与情趣用品结合\",\"merged_title\":\"AI与情趣用品结合\",\"merged_type\":\"news\"},{\"from_key\":\"AI招聘提效工具\",\"merged_key\":\"AI招聘提效工具\",\"merged_title\":\"AI招聘提效工具\",\"merged_type\":\"news\"},{\"from_key\":\"Andrej Karpathy个人知识库\",\"merged_key\":\"Andrej Karpathy个人知识库\",\"merged_title\":\"Andrej Karpathy个人知识库\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic 下一代模型与网络安全\",\"merged_key\":\"Anthropic 下一代模型与网络安全\",\"merged_title\":\"Anthropic 下一代模型与网络安全\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic 近期动态\",\"merged_key\":\"Anthropic 近期动态\",\"merged_title\":\"Anthropic 近期动态\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic私人市场估值\",\"merged_key\":\"Anthropic私人市场估值\",\"merged_title\":\"Anthropic私人市场估值\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT伦理与欺骗性\",\"merged_key\":\"ChatGPT伦理与欺骗性\",\"merged_title\":\"ChatGPT伦理与欺骗性\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 定价策略更新\",\"merged_key\":\"OpenAI 定价策略更新\",\"merged_title\":\"OpenAI 定价策略更新\",\"merged_type\":\"news\"},{\"from_key\":\"Coding Plan + Agents 团队重构 AI 开发范式\",\"merged_key\":\"Coding Plan + Agents 团队重构 AI 开发范式\",\"merged_title\":\"Coding Plan + Agents 团队重构 AI 开发范式\",\"merged_type\":\"news\"},{\"from_key\":\"Cursor 3 发布\",\"merged_key\":\"Cursor 3 发布\",\"merged_title\":\"Cursor 3 发布\",\"merged_type\":\"news\"},{\"from_key\":\"Cursor 3.0 发布 Agent 指挥中心\",\"merged_key\":\"Cursor 3.0 发布 Agent 指挥中心\",\"merged_title\":\"Cursor 3.0 发布 Agent 指挥中心\",\"merged_type\":\"news\"},{\"from_key\":\"DeepSeek服务中断事件\",\"merged_key\":\"DeepSeek服务中断事件\",\"merged_title\":\"DeepSeek服务中断事件\",\"merged_type\":\"news\"},{\"from_key\":\"DeerFlow 2.0开源升级\",\"merged_key\":\"DeerFlow 2.0开源升级\",\"merged_title\":\"DeerFlow 2.0开源升级\",\"merged_type\":\"news\"},{\"from_key\":\"Feeling AI与游戏世界模型\",\"merged_key\":\"Feeling AI与游戏世界模型\",\"merged_title\":\"Feeling AI与游戏世界模型\",\"merged_type\":\"news\"},{\"from_key\":\"Gemma 4与医疗影像分析\",\"merged_key\":\"Gemma 4与医疗影像分析\",\"merged_title\":\"Gemma 4与医疗影像分析\",\"merged_type\":\"news\"},{\"from_key\":\"Google Gemma 4 发布\",\"merged_key\":\"Google Gemma 4 发布\",\"merged_title\":\"Google Gemma 4 发布\",\"merged_type\":\"news\"},{\"from_key\":\"Google Veo 3.1 Lite发布\",\"merged_key\":\"Google Veo 3.1 Lite发布\",\"merged_title\":\"Google Veo 3.1 Lite发布\",\"merged_type\":\"news\"},{\"from_key\":\"Gradient Labs 为银行提供 AI 客户经理\",\"merged_key\":\"Gradient Labs 为银行提供 AI 客户经理\",\"merged_title\":\"Gradient Labs 为银行提供 AI 客户经理\",\"merged_type\":\"news\"},{\"from_key\":\"Harness Payment 开启 Agent 自主支付\",\"merged_key\":\"Harness Payment 开启 Agent 自主支付\",\"merged_title\":\"Harness Payment 开启 Agent 自主支付\",\"merged_type\":\"news\"},{\"from_key\":\"LangChain对话：AI基础设施\",\"merged_key\":\"LangChain对话：AI基础设施\",\"merged_title\":\"LangChain对话：AI基础设施\",\"merged_type\":\"news\"},{\"from_key\":\"LLM智能感知讨论\",\"merged_key\":\"LLM智能感知讨论\",\"merged_title\":\"LLM智能感知讨论\",\"merged_type\":\"news\"},{\"from_key\":\"Manifold AI世界模型\",\"merged_key\":\"Manifold AI世界模型\",\"merged_title\":\"Manifold AI世界模型\",\"merged_type\":\"news\"}]}",
+      "at": "2026-04-04"
+    },
+    "db7e8ba66e6a89fa16c74b4f41b59a2d2e0e374772458eb34e50dce972b6a50f": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"Mercor 数据泄露\",\"merged_key\":\"Mercor 数据泄露\",\"merged_title\":\"Meta Pauses Work With Mercor After Data Breach Puts AI Industry Secrets at Risk\",\"merged_type\":\"news\"},{\"from_key\":\"Meta 数据中心与能源\",\"merged_key\":\"Meta 数据中心与能源\",\"merged_title\":\"Meta’s natural gas binge could power South Dakota\",\"merged_type\":\"news\"},{\"from_key\":\"Microsoft 发布三个新基础模型\",\"merged_key\":\"Microsoft 发布三个新基础模型\",\"merged_title\":\"Microsoft takes on AI rivals with three new foundational models\",\"merged_type\":\"news\"},{\"from_key\":\"MIT论文：AI诱发精神病\",\"merged_key\":\"MIT论文：AI诱发精神病\",\"merged_title\":\"顶级恐怖！MIT数学实锤证明：ChatGPT正诱发「AI精神病」\",\"merged_type\":\"news\"},{\"from_key\":\"Moonlake: 因果世界模型\",\"merged_key\":\"Moonlake: 因果世界模型\",\"merged_title\":\"Moonlake: Causal World Models should be Multimodal, Interactive, and Efficient — with Chris\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 资助儿童安全联盟\",\"merged_key\":\"OpenAI 资助儿童安全联盟\",\"merged_title\":\"儿童安全联盟背后暗藏玄机：OpenAI 悄然出资引发质疑OpenAI 通过资助“父母与儿童安全 AI 联盟”推动加州立法，倡导年龄验证、家长控制等AI监管原则，但未公开其资助身份\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI AGI 部门负责人休假\",\"merged_key\":\"OpenAI AGI 部门负责人休假\",\"merged_title\":\"OpenAI’s AGI boss is taking a leave of absence\",\"merged_type\":\"news\"},{\"from_key\":\"OpenClaw 安全风险\",\"merged_key\":\"OpenClaw 安全风险\",\"merged_title\":\"OpenClaw gives users yet another reason to be freaked out about security\",\"merged_type\":\"news\"},{\"from_key\":\"OpenClaw超越React\",\"merged_key\":\"OpenClaw 安全风险\",\"merged_title\":\"火山养“龙虾”日志 | 14 大神仙玩法\",\"merged_type\":\"news\"},{\"from_key\":\"OpenClaw与Agent安全\",\"merged_key\":\"OpenClaw 安全风险\",\"merged_title\":\"对话邓智航｜以「龙虾」为起点，起底从单个 Agent 到 Agentic Web 的安全重构\",\"merged_type\":\"news\"},{\"from_key\":\"Physical AI融资热潮\",\"merged_key\":\"Physical AI融资热潮\",\"merged_title\":\"Physical AI 元年：一场关于“世界怎么运转”的万亿美元豪赌\",\"merged_type\":\"news\"},{\"from_key\":\"Salesforce AI与MCP协议\",\"merged_key\":\"Salesforce AI与MCP协议\",\"merged_title\":\"速递｜Salesforce为Slack推出30项AI新功能，接入MCP协议和Agentforce\",\"merged_type\":\"news\"},{\"from_key\":\"AI 模型定制化架构\",\"merged_key\":\"AI 模型定制化架构\",\"merged_title\":\"Shifting to AI model customization is an architectural imperative\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison 3月赞助者通讯\",\"merged_key\":\"Simon Willison 3月赞助者通讯\",\"merged_title\":\"March 2026 sponsors-only newsletter\",\"merged_type\":\"news\"},{\"from_key\":\"Axios 供应链攻击\",\"merged_key\":\"Axios 供应链攻击\",\"merged_title\":\"The Axios supply chain attack used individually targeted social engineering\",\"merged_type\":\"news\"},{\"from_key\":\"AI 内容审核引擎\",\"merged_key\":\"AI 内容审核引擎\",\"merged_title\":\"The Facebook insider building content moderation for the AI era\",\"merged_type\":\"news\"},{\"from_key\":\"geolip-transformer-v8\",\"merged_key\":\"geolip-transformer-v8\",\"merged_title\":\"The geolip-transformer-v8 requires a fundamental rethinking of training a core structure\",\"merged_type\":\"news\"},{\"from_key\":\"特朗普 AI 数据中心项目\",\"merged_key\":\"特朗普 AI 数据中心项目\",\"merged_title\":\"Trump ignores biggest reasons his AI data center buildout is failing\",\"merged_type\":\"news\"},{\"from_key\":\"Vocci AI笔记戒指\",\"merged_key\":\"Vocci AI笔记戒指\",\"merged_title\":\"指尖上的智慧革命：Vocci AI笔记戒指\",\"merged_type\":\"news\"},{\"from_key\":\"AI 初创公司融资与倒闭\",\"merged_key\":\"AI 初创公司融资与倒闭\",\"merged_title\":\"Yupp shuts down after raising $33M\",\"merged_type\":\"news\"}]}",
+      "at": "2026-04-04"
+    },
+    "bce9f88416819acab12ae37e2de2c9f4e2fe6a5d01b2e18f0c5046ad34eef772": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"AI编程代理与漏洞研究\",\"merged_key\":\"AI编程代理与漏洞研究\",\"merged_title\":\"AI编程代理与漏洞研究\",\"merged_type\":\"news\"},{\"from_key\":\"llm-gemini 0.30 发布\",\"merged_key\":\"llm-gemini 0.30 发布\",\"merged_title\":\"llm-gemini 0.30 发布\",\"merged_type\":\"news\"},{\"from_key\":\"OpenClaw 安全风险\",\"merged_key\":\"OpenClaw 安全风险\",\"merged_title\":\"OpenClaw 安全风险\",\"merged_type\":\"news\"},{\"from_key\":\"AI Breakfast 2026 年 4 月精选\",\"merged_key\":\"AI Breakfast 2026 年 4 月精选\",\"merged_title\":\"AI Breakfast 2026 年 4 月精选\",\"merged_type\":\"news\"},{\"from_key\":\"AI超级个体创业案例\",\"merged_key\":\"AI超级个体创业案例\",\"merged_title\":\"AI超级个体创业案例\",\"merged_type\":\"news\"},{\"from_key\":\"AI代码生成与经济激励\",\"merged_key\":\"AI代码生成与经济激励\",\"merged_title\":\"AI代码生成与经济激励\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic 限制 OpenClaw 使用\",\"merged_key\":\"OpenClaw 安全风险\",\"merged_title\":\"OpenClaw 安全风险\",\"merged_type\":\"news\"},{\"from_key\":\"Claude Code 泄露事件\",\"merged_key\":\"Claude Code 泄露事件\",\"merged_title\":\"Claude Code 泄露事件\",\"merged_type\":\"news\"},{\"from_key\":\"Ex-Human 起诉苹果\",\"merged_key\":\"Ex-Human 起诉苹果\",\"merged_title\":\"Ex-Human 起诉苹果\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 收购 TBPN\",\"merged_key\":\"OpenAI 收购 TBPN\",\"merged_title\":\"OpenAI 收购 TBPN\",\"merged_type\":\"news\"},{\"from_key\":\"OpenClaw 多 Agent 通信机制\",\"merged_key\":\"OpenClaw 多 Agent 通信机制\",\"merged_title\":\"OpenClaw 多 Agent 通信机制\",\"merged_type\":\"news\"},{\"from_key\":\"北京市新增生成式 AI 服务登记\",\"merged_key\":\"北京市新增生成式 AI 服务登记\",\"merged_title\":\"北京市新增生成式 AI 服务登记\",\"merged_type\":\"news\"},{\"from_key\":\"大厂AI商业化与股价波动\",\"merged_key\":\"大厂AI商业化与股价波动\",\"merged_title\":\"大厂AI商业化与股价波动\",\"merged_type\":\"news\"},{\"from_key\":\"滴滴 AI 出行助手\",\"merged_key\":\"滴滴 AI 出行助手\",\"merged_title\":\"滴滴 AI 出行助手\",\"merged_type\":\"news\"},{\"from_key\":\"MIT论文：AI诱发精神病\",\"merged_key\":\"MIT论文：AI诱发精神病\",\"merged_title\":\"MIT论文：AI诱发精神病\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 资助儿童安全联盟\",\"merged_key\":\"OpenAI 资助儿童安全联盟\",\"merged_title\":\"OpenAI 资助儿童安全联盟\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌 Gemini API 新定价策略\",\"merged_key\":\"谷歌 Gemini API 新定价策略\",\"merged_title\":\"谷歌 Gemini API 新定价策略\",\"merged_type\":\"news\"},{\"from_key\":\"广汽本田 P7 OTA 升级\",\"merged_key\":\"广汽本田 P7 OTA 升级\",\"merged_title\":\"广汽本田 P7 OTA 升级\",\"merged_type\":\"news\"},{\"from_key\":\"红果短剧下架 AI 剧《桃花簪》\",\"merged_key\":\"红果短剧下架 AI 剧《桃花簪》\",\"merged_title\":\"红果短剧下架 AI 剧《桃花簪》\",\"merged_type\":\"news\"},{\"from_key\":\"华为诺亚方舟创业\",\"merged_key\":\"华为诺亚方舟创业\",\"merged_title\":\"华为诺亚方舟创业\",\"merged_type\":\"news\"},{\"from_key\":\"联想YOGA AI Mini发布\",\"merged_key\":\"联想YOGA AI Mini发布\",\"merged_title\":\"联想YOGA AI Mini发布\",\"merged_type\":\"news\"},{\"from_key\":\"美的集团 AI 智能体应用\",\"merged_key\":\"美的集团 AI 智能体应用\",\"merged_title\":\"美的集团 AI 智能体应用\",\"merged_type\":\"news\"},{\"from_key\":\"美团发布原生多模态 LongCat-Next\",\"merged_key\":\"美团发布原生多模态 LongCat-Next\",\"merged_title\":\"美团发布原生多模态 LongCat-Next\",\"merged_type\":\"news\"},{\"from_key\":\"千问 3.6 正式发布\",\"merged_key\":\"千问 3.6 正式发布\",\"merged_title\":\"千问 3.6 正式发布\",\"merged_type\":\"news\"},{\"from_key\":\"千问 AI 眼镜接入蚂蚁 GPASS\",\"merged_key\":\"千问 AI 眼镜接入蚂蚁 GPASS\",\"merged_title\":\"千问 AI 眼镜接入蚂蚁 GPASS\",\"merged_type\":\"news\"},{\"from_key\":\"神州数码2025年财报\",\"merged_key\":\"神州数码2025年财报\",\"merged_title\":\"神州数码2025年财报\",\"merged_type\":\"news\"},{\"from_key\":\"Salesforce AI与MCP协议\",\"merged_key\":\"Salesforce AI与MCP协议\",\"merged_title\":\"Salesforce AI与MCP协议\",\"merged_type\":\"news\"},{\"from_key\":\"腾讯Vedas AI产品\",\"merged_key\":\"腾讯Vedas AI产品\",\"merged_title\":\"腾讯Vedas AI产品\",\"merged_type\":\"news\"},{\"from_key\":\"微软自研AI模型计划\",\"merged_key\":\"微软自研AI模型计划\",\"merged_title\":\"微软自研AI模型计划\",\"merged_type\":\"news\"},{\"from_key\":\"微软Copilot广告争议\",\"merged_key\":\"微软Copilot广告争议\",\"merged_title\":\"微软Copilot广告争议\",\"merged_type\":\"news\"},{\"from_key\":\"印度 AI 初创 Sarvam AI 融资\",\"merged_key\":\"印度 AI 初创 Sarvam AI 融资\",\"merged_title\":\"印度 AI 初创 Sarvam AI 融资\",\"merged_type\":\"news\"},{\"from_key\":\"Vocci AI笔记戒指\",\"merged_key\":\"Vocci AI笔记戒指\",\"merged_title\":\"Vocci AI笔记戒指\",\"merged_type\":\"news\"},{\"from_key\":\"智谱 AI 2025 年财报\",\"merged_key\":\"智谱 AI 2025 年财报\",\"merged_title\":\"智谱 AI 2025 年财报\",\"merged_type\":\"news\"},{\"from_key\":\"中国年轻人重构AI记忆\",\"merged_key\":\"中国年轻人重构AI记忆\",\"merged_title\":\"中国年轻人重构AI记忆\",\"merged_type\":\"news\"},{\"from_key\":\"AI 基准测试失效\",\"merged_key\":\"AI 基准测试失效\",\"merged_title\":\"AI 基准测试失效\",\"merged_type\":\"news\"},{\"from_key\":\"AI 模型防御行为研究\",\"merged_key\":\"AI 模型防御行为研究\",\"merged_title\":\"AI 模型防御行为研究\",\"merged_type\":\"news\"},{\"from_key\":\"AI 依赖与认知投降\",\"merged_key\":\"AI 依赖与认知投降\",\"merged_title\":\"AI 依赖与认知投降\",\"merged_type\":\"news\"},{\"from_key\":\"AI 硬件 Agent 平台投资\",\"merged_key\":\"AI 硬件 Agent 平台投资\",\"merged_title\":\"AI 硬件 Agent 平台投资\",\"merged_type\":\"news\"},{\"from_key\":\"AI视频封面欺骗现象\",\"merged_key\":\"AI视频封面欺骗现象\",\"merged_title\":\"AI视频封面欺骗现象\",\"merged_type\":\"news\"},{\"from_key\":\"AI算力涨价与云计算变革\",\"merged_key\":\"AI算力涨价与云计算变革\",\"merged_title\":\"AI算力涨价与云计算变革\",\"merged_type\":\"news\"},{\"from_key\":\"AI医疗公司Doctronic融资\",\"merged_key\":\"AI医疗公司Doctronic融资\",\"merged_title\":\"AI医疗公司Doctronic融资\",\"merged_type\":\"news\"},{\"from_key\":\"AI应用普及与追赶热潮\",\"merged_key\":\"AI应用普及与追赶热潮\",\"merged_title\":\"AI应用普及与追赶热潮\",\"merged_type\":\"news\"},{\"from_key\":\"AI与情趣用品结合\",\"merged_key\":\"AI与情趣用品结合\",\"merged_title\":\"AI与情趣用品结合\",\"merged_type\":\"news\"},{\"from_key\":\"AI招聘提效工具\",\"merged_key\":\"AI招聘提效工具\",\"merged_title\":\"AI招聘提效工具\",\"merged_type\":\"news\"},{\"from_key\":\"Andrej Karpathy个人知识库\",\"merged_key\":\"Andrej Karpathy个人知识库\",\"merged_title\":\"Andrej Karpathy个人知识库\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic 近期动态\",\"merged_key\":\"Anthropic 近期动态\",\"merged_title\":\"Anthropic 近期动态\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic 下一代模型与网络安全\",\"merged_key\":\"Anthropic 下一代模型与网络安全\",\"merged_title\":\"Anthropic 下一代模型与网络安全\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic私人市场估值\",\"merged_key\":\"Anthropic私人市场估值\",\"merged_title\":\"Anthropic私人市场估值\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT伦理与欺骗性\",\"merged_key\":\"ChatGPT伦理与欺骗性\",\"merged_title\":\"ChatGPT伦理与欺骗性\",\"merged_type\":\"news\"},{\"from_key\":\"Coding Plan + Agents 团队重构 AI 开发范式\",\"merged_key\":\"Coding Plan + Agents 团队重构 AI 开发范式\",\"merged_title\":\"Coding Plan + Agents 团队重构 AI 开发范式\",\"merged_type\":\"news\"},{\"from_key\":\"Cursor 3 发布\",\"merged_key\":\"Cursor 3 发布\",\"merged_title\":\"Cursor 3 发布\",\"merged_type\":\"news\"},{\"from_key\":\"Cursor 3.0 发布 Agent 指挥中心\",\"merged_key\":\"Cursor 3 发布\",\"merged_title\":\"Cursor 3 发布\",\"merged_type\":\"news\"},{\"from_key\":\"DeepSeek服务中断事件\",\"merged_key\":\"DeepSeek服务中断事件\",\"merged_title\":\"DeepSeek服务中断事件\",\"merged_type\":\"news\"},{\"from_key\":\"DeerFlow 2.0开源升级\",\"merged_key\":\"DeerFlow 2.0开源升级\",\"merged_title\":\"DeerFlow 2.0开源升级\",\"merged_type\":\"news\"},{\"from_key\":\"Feeling AI与游戏世界模型\",\"merged_key\":\"Feeling AI与游戏世界模型\",\"merged_title\":\"Feeling AI与游戏世界模型\",\"merged_type\":\"news\"},{\"from_key\":\"Gemma 4与医疗影像分析\",\"merged_key\":\"Gemma 4与医疗影像分析\",\"merged_title\":\"Gemma 4与医疗影像分析\",\"merged_type\":\"news\"},{\"from_key\":\"Google Gemma 4 发布\",\"merged_key\":\"Gemma 4与医疗影像分析\",\"merged_title\":\"Gemma 4与医疗影像分析\",\"merged_type\":\"news\"},{\"from_key\":\"Google Veo 3.1 Lite发布\",\"merged_key\":\"Google Veo 3.1 Lite发布\",\"merged_title\":\"Google Veo 3.1 Lite发布\",\"merged_type\":\"news\"},{\"from_key\":\"Gradient Labs 为银行提供 AI 客户经理\",\"merged_key\":\"Gradient Labs 为银行提供 AI 客户经理\",\"merged_title\":\"Gradient Labs 为银行提供 AI 客户经理\",\"merged_type\":\"news\"},{\"from_key\":\"Harness Payment 开启 Agent 自主支付\",\"merged_key\":\"Harness Payment 开启 Agent 自主支付\",\"merged_title\":\"Harness Payment 开启 Agent 自主支付\",\"merged_type\":\"news\"}]}",
+      "at": "2026-04-04"
+    },
+    "edc51b19f53fbb127eb242fc0a8fa802b2c99ca036b4795d93fb233263e63db6": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"LangChain对话：AI基础设施\",\"merged_key\":\"LangChain对话：AI基础设施\",\"merged_title\":\"LangChain对话：AI基础设施\",\"merged_type\":\"news\"},{\"from_key\":\"LLM智能感知讨论\",\"merged_key\":\"LLM智能感知讨论\",\"merged_title\":\"LLM智能感知讨论\",\"merged_type\":\"news\"},{\"from_key\":\"Manifold AI世界模型\",\"merged_key\":\"Manifold AI世界模型\",\"merged_title\":\"Manifold AI世界模型\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison 3月赞助者通讯\",\"merged_key\":\"Simon Willison 3月赞助者通讯\",\"merged_title\":\"March 2026 sponsors-only newsletter\",\"merged_type\":\"news\"},{\"from_key\":\"Mercor 数据泄露\",\"merged_key\":\"Mercor 数据泄露\",\"merged_title\":\"Meta Pauses Work With Mercor After Data Breach Puts AI Industry Secrets at Risk\",\"merged_type\":\"news\"},{\"from_key\":\"Meta 数据中心与能源\",\"merged_key\":\"Meta 数据中心与能源\",\"merged_title\":\"Meta’s natural gas binge could power South Dakota\",\"merged_type\":\"news\"},{\"from_key\":\"Microsoft 发布三个新基础模型\",\"merged_key\":\"Microsoft 发布三个新基础模型\",\"merged_title\":\"Microsoft takes on AI rivals with three new foundational models\",\"merged_type\":\"news\"},{\"from_key\":\"Moonlake: 因果世界模型\",\"merged_key\":\"Moonlake: 因果世界模型\",\"merged_title\":\"Moonlake: Causal World Models should be Multimodal, Interactive, and Efficient — with Chris\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 定价策略更新\",\"merged_key\":\"OpenAI 定价策略更新\",\"merged_title\":\"Codex now offers more flexible pricing for teams\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI AGI 部门负责人休假\",\"merged_key\":\"OpenAI AGI 部门负责人休假\",\"merged_title\":\"OpenAI’s AGI boss is taking a leave of absence\",\"merged_type\":\"news\"},{\"from_key\":\"Perplexity 隐私侵权诉讼\",\"merged_key\":\"Perplexity 隐私侵权诉讼\",\"merged_title\":\"AI 搜索引擎 Perplexity 被控隐私侵犯，用户数据疑遭泄露AI搜索引擎Perplexity因隐私问题被起诉，指控其“隐身模式”无效，用户聊天记录被共享给谷歌和Meta用于广告投放\",\"merged_type\":\"news\"},{\"from_key\":\"Physical AI融资热潮\",\"merged_key\":\"Physical AI融资热潮\",\"merged_title\":\"Physical AI 元年：一场关于“世界怎么运转”的万亿美元豪赌\",\"merged_type\":\"news\"},{\"from_key\":\"AI 模型定制化架构\",\"merged_key\":\"AI 模型定制化架构\",\"merged_title\":\"Shifting to AI model customization is an architectural imperative\",\"merged_type\":\"news\"},{\"from_key\":\"Axios 供应链攻击\",\"merged_key\":\"Axios 供应链攻击\",\"merged_title\":\"The Axios supply chain attack used individually targeted social engineering\",\"merged_type\":\"news\"},{\"from_key\":\"AI 内容审核引擎\",\"merged_key\":\"AI 内容审核引擎\",\"merged_title\":\"The Facebook insider building content moderation for the AI era\",\"merged_type\":\"news\"},{\"from_key\":\"geolip-transformer-v8\",\"merged_key\":\"geolip-transformer-v8\",\"merged_title\":\"The geolip-transformer-v8 requires a fundamental rethinking of training a core structure\",\"merged_type\":\"news\"},{\"from_key\":\"特朗普 AI 数据中心项目\",\"merged_key\":\"特朗普 AI 数据中心项目\",\"merged_title\":\"Trump ignores biggest reasons his AI data center buildout is failing\",\"merged_type\":\"news\"},{\"from_key\":\"AI 初创公司融资与倒闭\",\"merged_key\":\"AI 初创公司融资与倒闭\",\"merged_title\":\"Yupp shuts down after raising $33M\",\"merged_type\":\"news\"}]}",
+      "at": "2026-04-04"
+    },
+    "d6f6818d95a28f8ad009050d1dc22446502909a35d1498b41de4048fd4f99a2a": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[1,2,6,15,11,21,31,33,53,19],\"reasons\":[{\"topic_id\":1,\"reason\":\"AI编程代理与漏洞研究，技术深度与行业应用价值高，符合AI技术前沿。\"},{\"topic_id\":2,\"reason\":\"DeepSeek服务中断事件，国内头部模型厂商重大故障，影响面广。\"},{\"topic_id\":6,\"reason\":\"AI超级个体创业案例，反映国内AI应用落地与商业化趋势。\"},{\"topic_id\":15,\"reason\":\"腾讯Vedas AI产品，国内大厂AI产品化进展，关注度高。\"},{\"topic_id\":11,\"reason\":\"华为诺亚方舟创业，国内顶尖科研机构商业化动向。\"},{\"topic_id\":21,\"reason\":\"智谱 AI 2025 年财报，国内头部模型公司商业化与财务状况。\"},{\"topic_id\":31,\"reason\":\"美团发布原生多模态 LongCat-Next，国内互联网巨头多模态大模型突破。\"},{\"topic_id\":33,\"reason\":\"北京市新增生成式 AI 服务登记，国内AI政策合规与监管动态。\"},{\"topic_id\":53,\"reason\":\"Physical AI 元年：一场关于“世界怎么运转”的万亿美元豪赌，行业宏观趋势。\"},{\"topic_id\":19,\"reason\":\"Coding Plan + Agents 团队重构 AI 开发范式，国内技术团队在AI开发模式上的创新。\"}]}",
+      "at": "2026-04-04"
+    },
+    "6e267b61ce1a9e8c36d23e1d75ca248810ab234b76dffa0f5b70cb58ce17549f": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"DeepSeek服务中断引发算力焦虑，OpenClaw生态爆发与安全争议并存，大厂AI商业化路径分化明显，智谱财报亏损扩大但市值创新高。\",\"hot_news\":[{\"topic_id\":20,\"insight\":\"OpenClaw生态爆发但安全风险加剧，Anthropic限制第三方访问引发争议。\",\"narrative\":\"开源AI Agent框架OpenClaw在GitHub星数超越React，生态玩法层出不穷，但安全风险随之暴露。Anthropic宣布从4月4日起不再允许Claude订阅用户免费使用OpenClaw等第三方工具，迫使用户付费。与此同时，微信推出ClawBot插件接纳外部Agent，但仅开放消息通道，未开放核心数据权限。安全专家警告OpenClaw需大量系统权限，存在被利用的风险。\",\"evaluation\":\"Agent生态的爆发与安全管控的博弈正在重塑大厂与第三方工具的关系。\",\"refs\":[1,2,3,4,5],\"mention_count\":5,\"cross_verify_score\":91},{\"topic_id\":2,\"insight\":\"DeepSeek服务中断12小时，国产大模型算力瓶颈显现。\",\"narrative\":\"3月29日晚，DeepSeek网页端与App出现异常，登录失败、对话中断，故障持续12小时并反复横跳。官方解释为用户过多，但数据显示其月活约1.5亿，未出现爆炸式增长，暗示底层算力结构可能存在隐患。此次事件刷新了国产大模型的宕机时长纪录，引发用户对AI稳定性的质疑。\",\"evaluation\":\"算力供给与需求增长的不匹配已成为制约国产大模型发展的关键瓶颈。\",\"refs\":[16],\"mention_count\":1,\"cross_verify_score\":60},{\"topic_id\":21,\"insight\":\"智谱2025年营收增长132%但净亏损扩大至47亿元，市值站上4000亿港元。\",\"narrative\":\"智谱交出上市后首份财报，总营收超7亿元，同比增长132%，主要来自本地化部署业务。然而，受研发投入扩大影响，净亏损达47亿元，同比扩大59.5%。尽管亏损加剧，财报发布后股价一度涨超30%，市值突破4000亿港元，反映出资本市场对大模型企业的高估值预期。\",\"evaluation\":\"大模型企业的估值逻辑正从技术能力转向资本想象力，盈利压力依然巨大。\",\"refs\":[19],\"mention_count\":1,\"cross_verify_score\":48},{\"topic_id\":51,\"insight\":\"大厂AI商业化路径分化，百度AI营收占比达43%，阿里云收入增长36%。\",\"narrative\":\"2025年财报显示，百度AI业务营收达400亿元，占一般性业务收入的43%，试图通过AI替代传统广告。阿里云收入加速增长36%，AI相关产品收入连续十季度三位数增长。相比之下，腾讯、快手等公司股价波动较大，京东逆势上涨，市场对大厂AI叙事的重估正在加剧分化。\",\"evaluation\":\"大厂AI商业化正从资本红利期转向严苛的商业兑现期，路径分化明显。\",\"refs\":[20],\"mention_count\":1,\"cross_verify_score\":48}],\"other_news\":[{\"topic_id\":15,\"insight\":\"腾讯开发Vedas AI，定位为可执行任务的端到端AI助手。\",\"narrative\":\"腾讯正在开发一款名为Vedas AI的助手产品，定位为聪明可靠的AI助手，能帮助用户做数据分析、写PPT、搭网页、出调研报告并自动跑任务。该产品尚未公开使用，但标志着腾讯加大对任务型、自动化AI助手的投入，未来可能与同类办公AI形成竞争。\",\"refs\":[17],\"mention_count\":1,\"cross_verify_score\":59},{\"topic_id\":11,\"insight\":\"华为诺亚方舟郝建业创立忆纪元科技，聚焦AI记忆基础设施。\",\"narrative\":\"华为诺亚方舟决策与推理实验室主任郝建业创立深圳忆纪元科技有限公司，聚焦AI记忆相关的基础设施。公司成立于2026年3月，业务类型为人工智能软件，旨在推动深度强化学习与大模型后训练的前沿突破。\",\"refs\":[18],\"mention_count\":1,\"cross_verify_score\":59},{\"topic_id\":62,\"insight\":\"Gemma 4发布，Google将其开源模型切换至Apache 2.0许可证。\",\"narrative\":\"Google发布Gemma 4开源模型，提供四种本地优化尺寸。公司同时宣布将Gemma 3的定制许可证替换为Apache 2.0许可证，以缓解开发者对AI许可的挫败感，提升模型的可自由使用性。\",\"refs\":[12,13],\"mention_count\":2,\"cross_verify_score\":70},{\"topic_id\":46,\"insight\":\"OpenAI收购科技访谈节目TBPN，平均日观看量达7万人次。\",\"narrative\":\"OpenAI收购科技聚焦的访谈节目TBPN，该节目平均日观看量约7万人次，预计年收入约3000万美元。OpenAI内部人士否认此举是分散注意力的“支线任务”，强调其与核心业务无关。\",\"refs\":[14],\"mention_count\":1,\"cross_verify_score\":63},{\"topic_id\":47,\"insight\":\"Claude Code源代码泄露，暴露后台持久化守护进程Kairos。\",\"narrative\":\"Anthropic Claude Code的源代码泄露，开发者发现其中包含被禁用或隐藏的功能，包括名为Kairos的后台持久化守护进程。该进程可在Claude Code终端窗口关闭后继续运行。\",\"refs\":[10],\"mention_count\":1,\"cross_verify_score\":73},{\"topic_id\":1,\"insight\":\"AI编程代理将彻底改变漏洞研究的实践与经济学。\",\"narrative\":\"Simon Willison指出，未来几个月内，编码代理将大幅改变漏洞开发的实践与经济学。前沿模型的改进将是阶梯式而非缓慢的，大量高影响漏洞研究可能通过让代理扫描源代码并寻找“零日漏洞”来完成。\",\"refs\":[6],\"mention_count\":1,\"cross_verify_score\":75}],\"core_tech\":[],\"ref_translations\":[{\"id\":1,\"zh_title\":\"Anthropic 基本上禁止 Claude 使用 OpenClaw，要求订阅者额外付费\"},{\"id\":2,\"zh_title\":\"Agent 时代，大厂们“拆墙”又“筑墙”\"},{\"id\":3,\"zh_title\":\"OpenClaw 给用户又一个理由感到恐惧\"},{\"id\":4,\"zh_title\":\"对话邓智航｜以“龙虾”为起点，起底从单个 Agent 到 Agentic Web 的安全重构\"},{\"id\":5,\"zh_title\":\"火山养“龙虾”日志 | 14 大神仙玩法，原来 AI Agent 还能这么用\"},{\"id\":6,\"zh_title\":\"漏洞研究已死\"},{\"id\":7,\"zh_title\":\"AI竞技场上演“死间计”：GPT-5被DS和Gemini玩坏了\"},{\"id\":8,\"zh_title\":\"关于 Lenny 播客中代理工程的亮点\"},{\"id\":9,\"zh_title\":\"编码代理的认知影响\"},{\"id\":10,\"zh_title\":\"Claude Code 源代码泄露揭示了 Anthropic 的计划\"},{\"id\":11,\"zh_title\":\"黑客正在发布 Claude Code 泄露内容并附赠恶意软件\"},{\"id\":12,\"zh_title\":\"随着 Gemma 4 的发布，我启动了一个名为 MEDPAI 的新空间\"},{\"id\":13,\"zh_title\":\"Google 宣布 Gemma 4 开源 AI 模型，切换至 Apache 2.0 许可证\"},{\"id\":14,\"zh_title\":\"OpenAI 接受另一个“支线任务”，收购科技聚焦的访谈节目 TBPN\"},{\"id\":15,\"zh_title\":\"Anthropic 称 Claude 包含其自己的情感\"},{\"id\":16,\"zh_title\":\"DeepSeek 瘫痪 12 小时，国产大模型的算力已经跟不上野心了？\"},{\"id\":17,\"zh_title\":\"独家！腾讯新 AI 产品“Vedas AI”浮出水面，打造可执行任务的 AI 助手\"},{\"id\":18,\"zh_title\":\"独家｜华为诺亚方舟郝建业创立“忆纪元科技”，聚焦 AI 记忆基础设施\"},{\"id\":19,\"zh_title\":\"智谱应该感谢 Anthropic\"},{\"id\":20,\"zh_title\":\"大厂 AI 叙事走向殊途：京东务实、腾讯变狠、快手最危险\"}]}",
       "at": "2026-04-04"
     }
   },
@@ -15617,6 +15949,81 @@
         "title": "全面超越 Gemini-3.1Pro！Qwen3.5-Omni 震撼发布:215项 SOTA 开启全感官 AI 时代通义实验室发布多模态大模型Qwen3.5-Omni，实现理解力、交互感和任务执行力的跨越式进化，推动AI从“屏幕助手”迈向“理解物理世界的智能体”。该模型采用原生“全模态”架构，能无缝处理文本、图像、音频和视频输入，在音视频分析、推理、对话及翻译测试中表现卓越。 刚刚 12.5K",
         "at": "2026-04-03",
         "edition": "evening"
+      },
+      "https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban": {
+        "title": "Anthropic essentially bans OpenClaw from Claude by making subscribers pay extra",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://36kr.com/p/3750799099949577": {
+        "title": "Agent时代，大厂们“拆墙”又“筑墙”",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://arstechnica.com/security/2026/04/heres-why-its-prudent-for-openclaw-users-to-assume-compromise/": {
+        "title": "OpenClaw gives users yet another reason to be freaked out about security",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://developer.volcengine.com/articles/7622875940502765610": {
+        "title": "火山养“龙虾”日志 | 14 大神仙玩法，原来 AI Agent 还能这么用",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://simonwillison.net/2026/Apr/3/vulnerability-research-is-cooked/#atom-everything": {
+        "title": "Vulnerability Research Is Cooked",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://simonwillison.net/2026/Apr/3/vulnerability-research-is-cooked/": {
+        "title": "Vulnerability Research Is Cooked",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://arstechnica.com/ai/2026/04/heres-what-that-claude-code-source-leak-reveals-about-anthropics-plans/": {
+        "title": "Here's what that Claude Code source leak reveals about Anthropic's plans",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://huggingface.co/posts/alibidaran/488230229726098": {
+        "title": "With the release of Gemma 4, I launched a new Space called MEDPAI — a medical imaging analysis tool that combines object detection with multimodal AI. Here's how it works: Upload a CT scan or X-ray Computer vision models detect and annotate findings Gemma 4 33B generates a report or answers your questions about the image Currently available detectors: dental analysis and bone fracture detection. More models are in the pipeline — follow the Space to stay updated!",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/": {
+        "title": "Google announces Gemma 4 open AI models, switches to Apache 2.0 license",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://arstechnica.com/ai/2026/04/openai-takes-on-another-side-quest-buys-tech-focused-talk-show-tbpn/": {
+        "title": "OpenAI takes on another \"side quest,\" buys tech-focused talk show TBPN",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://36kr.com/p/3750856080863749": {
+        "title": "DeepSeek瘫痪12小时，国产大模型的算力已经跟不上野心了？",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://aitntnews.com/newDetail.html?newId=23740": {
+        "title": "独家！腾讯新AI产品“Vedas AI”浮出水面，打造可执行任务的AI助手",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://aitntnews.com/newDetail.html?newId=23751": {
+        "title": "独家｜华为诺亚方舟郝建业创立「忆纪元科技」，聚焦AI 记忆基础设施",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://36kr.com/p/3750836199010819": {
+        "title": "智谱应该感谢Anthropic",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "https://36kr.com/p/3750765941731840": {
+        "title": "大厂AI叙事走向殊途：京东务实、腾讯变狠、快手最危险",
+        "at": "2026-04-04",
+        "edition": "evening"
       }
     }
   },
@@ -17684,6 +18091,76 @@
       "7447bca2445108d2": {
         "title": "全面超越 Gemini-3.1Pro！Qwen3.5-Omni 震撼发布:215项 SOTA 开启全感官 AI 时代通义实验室发布多模态大模型Qwen3.5-Omni，实现理解力、交互感和任务执行力的跨越式进化，推动AI从“屏幕助手”迈向“理解物理世界的智能体”。该模型采用原生“全模态”架构，能无缝处理文本、图像、音频和视频输入，在音视频分析、推理、对话及翻译测试中表现卓越。 刚刚 12.5K",
         "at": "2026-04-03",
+        "edition": "evening"
+      },
+      "ba26e4878081292a": {
+        "title": "Anthropic essentially bans OpenClaw from Claude by making subscribers pay extra",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "cfbfac3f211ae841": {
+        "title": "Agent时代，大厂们“拆墙”又“筑墙”",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "55b2d3108802d041": {
+        "title": "OpenClaw gives users yet another reason to be freaked out about security",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "210aef230d31d564": {
+        "title": "火山养“龙虾”日志 | 14 大神仙玩法，原来 AI Agent 还能这么用",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "a4a6a8faa78af72f": {
+        "title": "Vulnerability Research Is Cooked",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "19335ca1df0bd388": {
+        "title": "Here's what that Claude Code source leak reveals about Anthropic's plans",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "b393158b692dd918": {
+        "title": "With the release of Gemma 4, I launched a new Space called MEDPAI — a medical imaging analysis tool that combines object detection with multimodal AI. Here's how it works: Upload a CT scan or X-ray Computer vision models detect and annotate findings Gemma 4 33B generates a report or answers your questions about the image Currently available detectors: dental analysis and bone fracture detection. More models are in the pipeline — follow the Space to stay updated!",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "fc5dbabf1be1e5cc": {
+        "title": "Google announces Gemma 4 open AI models, switches to Apache 2.0 license",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "4fbbb27a9319999e": {
+        "title": "OpenAI takes on another \"side quest,\" buys tech-focused talk show TBPN",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "d3a2d23af1c50945": {
+        "title": "DeepSeek瘫痪12小时，国产大模型的算力已经跟不上野心了？",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "4b27d71f6ec9c120": {
+        "title": "独家！腾讯新AI产品“Vedas AI”浮出水面，打造可执行任务的AI助手",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "234037946b2b03db": {
+        "title": "独家｜华为诺亚方舟郝建业创立「忆纪元科技」，聚焦AI 记忆基础设施",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "ca1ae3e08510a48b": {
+        "title": "智谱应该感谢Anthropic",
+        "at": "2026-04-04",
+        "edition": "evening"
+      },
+      "4ffd0410e6fd5d57": {
+        "title": "大厂AI叙事走向殊途：京东务实、腾讯变狠、快手最危险",
+        "at": "2026-04-04",
         "edition": "evening"
       }
     }
