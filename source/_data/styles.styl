@@ -73,11 +73,19 @@ body.app-view-note-list .post-content .collection-year:after
   position static !important
 
 // ── Resume tab: hidden by default, shown in pro mode ──
+// NexT main menu item
 .menu-item-resume
   display none !important
 
 body.pro-mode .menu-item-resume
   display list-item !important
+
+// app-shell drawer / desktop left-nav resume link
+.app-drawer-menu-item[data-path$="resume/"]
+  display none !important
+
+body.pro-mode .app-drawer-menu-item[data-path$="resume/"]
+  display flex !important
 
 // ── Resume page styles ──
 .resume-page
