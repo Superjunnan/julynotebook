@@ -89,9 +89,8 @@ body.pro-mode .app-drawer-menu-item[data-path$="resume/"]
 
 // ── Resume page styles ──
 .resume-page
-  max-width 760px
-  margin 0 auto
-  padding 16px 16px 48px
+  width 100%
+  padding 0 0 48px
   text-align left
 
 .resume-header-card
@@ -108,10 +107,11 @@ body.pro-mode .app-drawer-menu-item[data-path$="resume/"]
   margin-bottom 10px
 
 .resume-name
-  font-size 22px
+  font-size 20px
   font-weight 700
   margin 0
-  line-height 1
+  line-height 1.2
+  color #1a1a1a
 
 .resume-tags
   display flex
@@ -138,18 +138,18 @@ body.pro-mode .app-drawer-menu-item[data-path$="resume/"]
     gap 4px
 
 .resume-section
-  margin-bottom 20px
+  margin-bottom 16px
 
 .resume-section-title
-  font-size 15px
+  font-size 14px
   font-weight 700
-  color #333
-  margin 0 0 10px
+  color #444
+  margin 0 0 8px
   display flex
   align-items center
   gap 6px
   i
-    color #4a6cf7
+    color #888
 
 .resume-card
   background var(--card-bg, #fff)
@@ -183,7 +183,7 @@ body.pro-mode .app-drawer-menu-item[data-path$="resume/"]
   text-align left
 
 .resume-job-header
-  margin-bottom 10px
+  margin-bottom 8px
 
 .resume-job-meta
   display flex
@@ -219,40 +219,42 @@ body.pro-mode .app-drawer-menu-item[data-path$="resume/"]
 
 .resume-project-header
   display flex
-  align-items center
+  align-items flex-start
   justify-content space-between
   flex-wrap wrap
   gap 6px
   margin-bottom 4px
 
 .resume-project-name
-  font-size 15px
+  font-size 14px
   font-weight 700
   margin 0
   color #222
+  text-align left
 
 .resume-project-badge
   font-size 11px
-  background #eef2ff
-  color #4a6cf7
+  background #f0f0f0
+  color #666
   border-radius 4px
   padding 2px 8px
   white-space nowrap
+  flex-shrink 0
 
 .resume-project-meta
   font-size 12px
   color #999
-  margin 0 0 10px
+  margin 0 0 8px
 
 .resume-project-block
-  margin-bottom 10px
+  margin-bottom 8px
   &:last-child
     margin-bottom 0
 
 .resume-block-label
   font-size 12px
   font-weight 600
-  color #4a6cf7
+  color #888
   margin 0 0 4px
   text-transform none
 
