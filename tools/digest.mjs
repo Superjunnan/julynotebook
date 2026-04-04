@@ -3134,6 +3134,8 @@ function sanitizePaperTitle(text, fallback = "论文研究进展") {
       title
         .replace(/[A-Za-z0-9]+/g, "")
         .replace(/\(\s*\)/g, "")
+        .replace(/^[^\u3400-\u9fff]+/g, "")  // strip leading non-CJK residue (e.g. " , ?" from quoted English titles)
+        .replace(/[^\u3400-\u9fff]+$/g, "")  // strip trailing non-CJK residue
         .replace(/^[：:，、·\-\s]+/g, "")
         .replace(/[：:\-—]{2,}/g, "：")
         .replace(/[：:\-—]\s*$/g, "")
