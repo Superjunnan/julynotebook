@@ -86,7 +86,11 @@ jobs:
           else
             echo "Digest file not found for ${DIGEST_PATH}; skip file add."
           fi
-          git add data/digest-cache.json || true
+          if [ -f "data/digest-cache.json" ]; then
+            git add data/digest-cache.json
+          else
+            echo "::warning::digest-cache.json not found; skipping cache commit"
+          fi
 
           unexpected_deletes="$(git diff --cached --name-status | awk '$1=="D" && $2 ~ /^source\/_posts\// && $2 !~ /^source\/_posts\/(digest|evening-digest)-[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$/ {print $2}')"
           if [ -n "$unexpected_deletes" ]; then

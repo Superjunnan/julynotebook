@@ -20,7 +20,15 @@
       if (!href) return;
       if (href.startsWith('http') || href.startsWith('//') || href.startsWith('#')) return;
       if (href.includes('pro=')) return;
-      link.setAttribute('href', href + (href.includes('?') ? '&pro=1' : '?pro=1'));
+      // Split hash before appending query param to avoid invalid URLs like /path#hash?pro=1
+      const hashIdx = href.indexOf('#');
+      if (hashIdx !== -1) {
+        const path = href.slice(0, hashIdx);
+        const hash = href.slice(hashIdx);
+        link.setAttribute('href', path + (path.includes('?') ? '&pro=1' : '?pro=1') + hash);
+      } else {
+        link.setAttribute('href', href + (href.includes('?') ? '&pro=1' : '?pro=1'));
+      }
     });
   }
 

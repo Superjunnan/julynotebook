@@ -278,13 +278,19 @@ const LLM_MAX_CONCURRENCY = LLM_PACING_CONFIG.maxConcurrency;
 const LLM_INTERVAL_JITTER_MS = LLM_PACING_CONFIG.intervalJitterMs;
 const LLM_CACHE_RETENTION_DAYS = readPositiveIntEnv("DIGEST_LLM_CACHE_RETENTION_DAYS", 45);
 const LLM_FORCE_REFRESH = String(process.env.DIGEST_LLM_FORCE_REFRESH || "").trim() === "1";
-const LLM_RETRY_COOLDOWN_MAX_MS = Math.max(
-  readPositiveIntEnv("DIGEST_LLM_RETRY_COOLDOWN_MAX_MS", 300_000),
-  TIMEOUT_ZHIPU_MS
+const LLM_RETRY_COOLDOWN_MAX_MS = Math.min(
+  Math.max(
+    readPositiveIntEnv("DIGEST_LLM_RETRY_COOLDOWN_MAX_MS", 120_000),
+    TIMEOUT_ZHIPU_MS
+  ),
+  120_000  // hard cap: never wait more than 2 minutes between retries
 );
 
 // 缓存保留天数（避免 cache 无限制膨胀）
 const CACHE_RETENTION_DAYS = Number(process.env.DIGEST_CACHE_RETENTION_DAYS || 14);
+
+// cache 文件大小硬上限（超出后裁剪最旧的 fetched 条目）
+const CACHE_MAX_BYTES = readPositiveIntEnv("DIGEST_CACHE_MAX_MB", 6) * 1024 * 1024;
 
 // 日总结缓存保留天数（避免手动反复运行时重复调用）
 const DAILY_RETENTION_DAYS = Number(process.env.DIGEST_DAILY_RETENTION_DAYS || 120);
@@ -805,6 +811,34 @@ function normalizeCache(raw) {
   };
 }
 
+function pruneBySize(cache, maxBytes) {
+  // Estimate serialized size; if under limit do nothing
+  const json = JSON.stringify(cache);
+  const byteLen = Buffer.byteLength(json, "utf8");
+  if (byteLen <= maxBytes) {
+    console.log(`[cache] 当前大小 ${(byteLen / 1024 / 1024).toFixed(2)} MB，未超上限`);
+    return;
+  }
+  console.warn(`[cache] 大小 ${(byteLen / 1024 / 1024).toFixed(2)} MB 超过上限 ${(maxBytes / 1024 / 1024).toFixed(0)} MB，开始裁剪最旧 fetched 条目`);
+  // Sort fetched entries by `at` ascending, remove oldest until under limit
+  const entries = Object.entries(cache.fetched || {});
+  entries.sort((a, b) => {
+    const ta = a[1]?.at ? new Date(a[1].at).getTime() : 0;
+    const tb = b[1]?.at ? new Date(b[1].at).getTime() : 0;
+    return ta - tb;
+  });
+  let i = 0;
+  let current = byteLen;
+  while (current > maxBytes && i < entries.length) {
+    const key = entries[i][0];
+    const removed = JSON.stringify({ [key]: cache.fetched[key] }).length;
+    delete cache.fetched[key];
+    current -= removed;
+    i++;
+  }
+  console.log(`[cache] 裁剪完成，移除了 ${i} 条 fetched 条目，估算大小 ${(current / 1024 / 1024).toFixed(2)} MB`);
+}
+
 function persistDigestCache(cache, filePath = CACHE_PATH) {
   if (!cache || typeof cache !== "object") return;
   cache.fetched = pruneByAtDate(cache.fetched, CACHE_RETENTION_DAYS);
@@ -822,16 +856,8 @@ function persistDigestCache(cache, filePath = CACHE_PATH) {
       cache.publishedSignaturesByEdition[edition] = pruneByAtDate(records, DAILY_RETENTION_DAYS);
     }
   }
-  if (cache.publishedByEdition && typeof cache.publishedByEdition === "object") {
-    for (const [edition, records] of Object.entries(cache.publishedByEdition)) {
-      cache.publishedByEdition[edition] = pruneByAtDate(records, DAILY_RETENTION_DAYS);
-    }
-  }
-  if (cache.publishedSignaturesByEdition && typeof cache.publishedSignaturesByEdition === "object") {
-    for (const [edition, records] of Object.entries(cache.publishedSignaturesByEdition)) {
-      cache.publishedSignaturesByEdition[edition] = pruneByAtDate(records, DAILY_RETENTION_DAYS);
-    }
-  }
+  // Size-based hard cap: prune oldest fetched entries if serialized size exceeds limit
+  pruneBySize(cache, CACHE_MAX_BYTES);
   safeWriteJson(filePath, cache);
 }
 
