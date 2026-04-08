@@ -212,7 +212,7 @@
   function 确保页头操作区() {
     const 品牌容器 = document.querySelector('.site-brand-container');
     if (!品牌容器) return {};
-    const 定位容器 = 品牌容器.querySelector('.site-meta') || 品牌容器;
+    const 定位容器 = 品牌容器;
 
     let 左按钮 = 定位容器.querySelector('.app-header-action-left') || 品牌容器.querySelector('.app-header-action-left');
     if (!左按钮) {
@@ -412,8 +412,45 @@
     }
   }
 
+  function 同步侧边栏目录(view, 左侧抽屉) {
+    const 旧目录 = 左侧抽屉 && 左侧抽屉.querySelector('.app-sidebar-toc');
+    if (旧目录) 旧目录.remove();
+
+    if (!是桌面固定左栏模式() || !左侧抽屉) return;
+
+    const 目录容器 = document.querySelector('.post-toc-wrap');
+    const 目录主体 = 目录容器 && 目录容器.querySelector('.post-toc, .nav');
+    const 有目录 = Boolean(目录主体 && 目录主体.querySelector('a[href^="#"]'));
+    const 允许展示 = view === 'daily-post' || view === 'note-post' || view === 'post';
+
+    if (!有目录 || !允许展示) return;
+
+    const 侧边栏目录 = document.createElement('div');
+    侧边栏目录.className = 'app-sidebar-toc';
+    侧边栏目录.innerHTML = `
+      <div class="app-sidebar-toc-title">目录</div>
+      ${目录容器.querySelector('.post-toc')?.outerHTML || ''}
+    `;
+    左侧抽屉.appendChild(侧边栏目录);
+
+    侧边栏目录.addEventListener('click', event => {
+      const 链接 = event.target.closest('a[href^="#"]');
+      if (!链接) return;
+      event.preventDefault();
+      滚动到目录目标(链接.getAttribute('href') || '');
+    });
+  }
+
   function 同步右按钮(view, 右按钮, 目录抽屉, 遮罩层) {
     if (!右按钮) return;
+
+    if (是桌面固定左栏模式()) {
+      右按钮.hidden = true;
+      右按钮.onclick = null;
+      右按钮.setAttribute('aria-expanded', 'false');
+      目录抽屉.innerHTML = '';
+      return;
+    }
 
     const 目录容器 = document.querySelector('.post-toc-wrap');
     const 目录主体 = 目录容器 && 目录容器.querySelector('.post-toc, .nav');
@@ -512,6 +549,7 @@
     同步页头标题(读取页头标题(view, pageConfig));
     同步左侧按钮(view, 左按钮, 次按钮, root, 左侧抽屉, 遮罩层);
     同步右按钮(view, 右按钮, 目录抽屉, 遮罩层);
+    同步侧边栏目录(view, 左侧抽屉);
     同步菜单高亮(root);
     if (是桌面固定左栏模式()) {
       document.body.classList.remove('app-noscroll');

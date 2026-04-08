@@ -1243,7 +1243,11 @@ function loadConfig() {
 
 // Markdown 里避免换行/回车造成排版炸裂
 function escapeMd(s) {
-  return String(s || "").replace(/[\r\n]+/g, " ").trim();
+  return String(s || "")
+    .replace(/[\r\n]+/g, " ")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .trim();
 }
 
 function escapeRegExp(s) {

@@ -49,8 +49,12 @@ body.app-noscroll
   display flex !important
   align-items center
   justify-content center
+  width unquote('min(calc(100vw - 32px), 760px)')
+  max-width 760px
+  margin 0 auto
+  box-sizing border-box
   min-height 56px
-  padding 0 64px !important
+  padding 0 56px !important
 
 .site-meta .brand
   position fixed !important
@@ -104,6 +108,11 @@ body.app-noscroll
   margin 0 auto !important
   padding 4px 16px 36px !important
 
+body.app-view-daily-post .main-inner,
+body.app-view-note-post .main-inner,
+body.app-view-post .main-inner
+  padding 4px 16px 36px !important
+
 .main
   padding-top 0 !important
 
@@ -127,13 +136,16 @@ body.app-noscroll
   display none !important
 
 .app-header-action-left
-  left 12px
+  left 16px
+  justify-content flex-start
 
 .app-header-action-secondary
-  left 46px
+  left 50px
+  justify-content flex-start
 
 .app-header-action-right
-  right 12px
+  right 16px
+  justify-content flex-end
 
 .app-mask
   position fixed
@@ -508,9 +520,6 @@ body.app-view-note-list .collection-year:after
     margin 0 !important
     padding 0 !important
 
-  .app-header-action-right
-    right 16px !important
-
   .content-wrap
     width 100% !important
     max-width none !important
@@ -639,6 +648,68 @@ body.app-view-note-list .collection-year:after
 
   body.app-view-iteration-log .iteration-entry-card
     margin 0
+
+  .app-sidebar-toc
+    margin-top 12px
+    padding 12px 8px 8px
+    border-top 1px solid rgba(0, 0, 0, 0.07)
+
+  .app-sidebar-toc-title
+    padding 0 6px 10px
+    font-size 0.72rem
+    font-weight 700
+    color #c0c0c5
+    letter-spacing 0.06em
+    text-transform uppercase
+
+  .app-sidebar-toc .post-toc ol,
+  .app-sidebar-toc .post-toc ul
+    list-style none
+    margin 0
+    padding-left 0
+
+  .app-sidebar-toc .post-toc .nav-item
+    margin 0 0 2px
+
+  .app-sidebar-toc .post-toc .nav-link
+    display block
+    padding 5px 6px
+    border-radius 10px
+    background transparent !important
+    border 0 !important
+    border-bottom 0 !important
+    border-bottom-color transparent !important
+    box-shadow none !important
+    color #8f8f93
+    font-size 0.8rem
+    line-height 1.5
+    text-decoration none
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+    transition background-color .2s ease, color .2s ease
+
+  .app-sidebar-toc .post-toc .nav-link::before,
+  .app-sidebar-toc .post-toc .nav-link::after
+    display none !important
+    content none !important
+
+  .app-sidebar-toc .post-toc .nav-link:hover,
+  .app-sidebar-toc .post-toc .active > .nav-link,
+  .app-sidebar-toc .post-toc .active-current > .nav-link
+    background $app-drawer-active
+    color $app-primary-text
+
+  .app-sidebar-toc .post-toc .active > .nav-link,
+  .app-sidebar-toc .post-toc .active-current > .nav-link
+    border 0 !important
+    border-bottom 0 !important
+    border-bottom-color transparent !important
+    box-shadow none !important
+
+  .app-sidebar-toc .post-toc .nav-child
+    margin-top 2px
+    padding-left 12px
 
 .posts-collapse .post-content::before,
 .posts-collapse .post-content:before,

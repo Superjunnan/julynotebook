@@ -52,5 +52,7 @@
 {% endblock %}
 
 {% block sidebar %}
-  {{ sidebar_template.render(page.toc.enable) }}
+  {%- if page.sidebar !== false %}
+    {{ sidebar_template.render(page.toc.enable) }}
+  {%- endif %}
 {% endblock %}
