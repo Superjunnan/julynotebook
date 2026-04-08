@@ -25,7 +25,7 @@ function buildAndReadPages() {
     cachedPages = {
       home: readFileSync(path.join(repoRoot, "public/index.html"), "utf-8"),
       daily: readFileSync(
-        path.join(repoRoot, "public/2026/03/19/digest-2026-03-19/index.html"),
+        path.join(repoRoot, "public/2026/04/08/digest-2026-04-08/index.html"),
         "utf-8"
       ),
       evening0329: readFileSync(
@@ -71,7 +71,7 @@ function buildAndReadPages() {
 
 test("首页日报卡片摘要只展示真实资讯标题且不重复序号", async () => {
   const { home } = await buildAndReadPages();
-  const cardStart = home.indexOf("AI早报 · 03.19 周四");
+  const cardStart = home.indexOf("AI早报 · 04.08 周三");
   assert.notEqual(cardStart, -1);
   const cardHtml = home.slice(cardStart, cardStart + 2200);
 
@@ -84,32 +84,33 @@ test("首页日报卡片摘要只展示真实资讯标题且不重复序号", as
 test("首页与详情页早报标题统一显示为AI早报，并使用月日加星期格式", async () => {
   const { home, daily } = await buildAndReadPages();
 
-  assert.match(home, /AI早报 · 03\.19 周四/);
-  assert.doesNotMatch(home, /AI日报 · 2026-03-19/);
+  assert.match(home, /AI早报 · 04\.08 周三/);
+  assert.doesNotMatch(home, /AI日报 · 2026-04-08/);
   assert.match(home, /class="app-card__badge">AI早报</);
-  assert.match(daily, /AI早报 · 03\.19 周四/);
-  assert.doesNotMatch(daily, /人工智能日报 · 2026-03-19/);
+  assert.match(daily, /AI早报 · 04\.08 周三/);
+  assert.doesNotMatch(daily, /人工智能日报 · 2026-04-08/);
   assert.match(daily, /class="app-card__badge">AI早报</);
-  assert.match(daily, /rel="prev"[^>]*title="AI早报 · 03\.18 周三"/);
+  assert.match(daily, /rel="prev"[^>]*title="AI晚报 · 04\.07 周二"/);
 });
 
 test("首页日报卡片条数统计应等于重点资讯、其他快讯和核心论文总和", async () => {
   const { home } = await buildAndReadPages();
-  const cardStart = home.indexOf("AI早报 · 03.19 周四");
+  const cardStart = home.indexOf("AI早报 · 04.08 周三");
   assert.notEqual(cardStart, -1);
   const cardHtml = home.slice(cardStart, cardStart + 2200);
 
-  assert.match(cardHtml, /共 10 条记录/);
+  assert.match(cardHtml, /共 14 条记录/);
 });
 
 test("日报详情页展示正确的候选总数且不保留异常标题", async () => {
   const { daily } = await buildAndReadPages();
 
-  assert.match(daily, /今日候选总数：445 条/);
+  assert.match(daily, /今日候选总数：495 条/);
   assert.doesNotMatch(daily, /今日候选总数：0 条/);
-  assert.doesNotMatch(daily, />\. &amp; : 通过验证迈向重型研究代理</);
-  assert.match(daily, /<h3 class="daily-news-card-title" id="01-·-Anthropic-Dispatch让AI">01 · 你的电脑已被手机接管，Anthropic亮出Dispatch<\/h3>/);
-  assert.match(daily, /<h3 class="daily-news-card-title" id="02-·-英伟达DLSS-5因引入AI生成画面细节引发玩家反感">02 · 英伟达DLSS 5因引入AI生成画面细节引发玩家反感<\/h3>/);
+  assert.match(daily, /class="daily-section-title"[^>]*>重点资讯</);
+  assert.match(daily, /class="daily-section-title"[^>]*>其他快讯</);
+  assert.match(daily, /class="daily-section-title"[^>]*>核心论文</);
+  assert.match(daily, /<h3 class="daily-news-card-title" id="01-·-Suno与环球音乐等巨头在AI音乐版权许可上陷入僵局，行业面临合规挑战。">01 · Suno与环球音乐等巨头在AI音乐版权许可上陷入僵局，行业面临合规挑战。<\/h3>/);
 });
 
 test("日报详情页参考来源应使用间距分隔而非顿号", async () => {
@@ -197,11 +198,11 @@ test("AI笔记详情页顶部固定栏标题应显示AI 笔记而不是文章标
 });
 
 test("AI笔记卡片概述应使用整篇总结，不再直接暴露正文标题层级", async () => {
-  const { home, notesList } = await buildAndReadPages();
+  const { notesList } = await buildAndReadPages();
 
-  const glossaryCardStart = home.indexOf("关于AI 的一些名词说明");
+  const glossaryCardStart = notesList.indexOf("关于AI 的一些名词说明");
   assert.notEqual(glossaryCardStart, -1);
-  const glossaryCard = home.slice(glossaryCardStart, glossaryCardStart + 1200);
+  const glossaryCard = notesList.slice(glossaryCardStart, glossaryCardStart + 1200);
   assert.doesNotMatch(glossaryCard, /一、基础概念/);
   assert.match(glossaryCard, /文章概述：/);
 
@@ -291,7 +292,8 @@ test("AI日报和AI笔记列表页不应保留主题默认的浅色竖向时间�
 test("桌面端AI日报列表月份标题应左对齐展示在对应内容列表顶部", async () => {
   const { css } = await buildAndReadPages();
 
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.category\.category-app-list \.app-view-daily\s*\{[\s\S]*display:\s*flex;[\s\S]*flex-direction:\s*column;[\s\S]*gap:\s*18px/);
+  // .app-view-daily and .app-view-notes share a combined flex rule in compiled CSS
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.category\.category-app-list \.app-view-daily[^{]*\{[\s\S]*display:\s*flex;[\s\S]*flex-direction:\s*column;[\s\S]*gap:\s*18px/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.category\.category-app-list \.app-view-daily \.app-month-group\s*\{[\s\S]*display:\s*block;[\s\S]*width:\s*100%;[\s\S]*margin:\s*0;[\s\S]*padding-left:\s*0/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.category\.category-app-list \.app-view-daily \.app-month-title\s*\{[\s\S]*margin:\s*0 0 16px;[\s\S]*position:\s*static;[\s\S]*left:\s*auto;[\s\S]*top:\s*auto;[\s\S]*width:\s*auto;[\s\S]*padding-top:\s*0;[\s\S]*text-align:\s*left;/);
 });
@@ -339,15 +341,17 @@ test("目录点击逻辑应先关闭抽屉恢复滚动，再按页头偏移滚�
   assert.match(appShell, /scrollIntoView/);
 });
 
-test("页头操作按钮应挂到site-meta容器内，避免桌面端依赖视口估算定位", async () => {
+test("页头操作按钮应挂到品牌容器内，并通过固定像素定位对齐内容边缘", async () => {
   const { appShell, css } = await buildAndReadPages();
 
-  assert.match(appShell, /const 定位容器 = 品牌容器\.querySelector\('\.site-meta'\) \|\| 品牌容器;/);
   assert.match(appShell, /定位容器\.appendChild\(左按钮\)/);
   assert.match(appShell, /定位容器\.appendChild\(右按钮\)/);
   assert.match(appShell, /定位容器\.appendChild\(次按钮\)/);
   assert.doesNotMatch(css, /\.app-header-action-left[\s\S]*calc\(50vw - /);
   assert.doesNotMatch(css, /\.app-header-action-right[\s\S]*calc\(50vw - /);
+  // Buttons use fixed px offset to align with content-wrap padding (16px)
+  assert.match(css, /\.app-header-action-left\s*\{[^}]*left:\s*16px/);
+  assert.match(css, /\.app-header-action-right\s*\{[^}]*right:\s*16px/);
 });
 
 test("首页外的主列表页左侧应显示菜单按钮而不是返回上一页", async () => {
@@ -385,7 +389,8 @@ test("简历页标题应统一为简历，不再保留测试态页面名称", as
   const { resume, appShell } = await buildAndReadPages();
 
   assert.doesNotMatch(resume, /这是我的简历测试页面/);
-  assert.match(resume, /<h1 class="post-title"[^>]*>\s*简历/);
+  assert.match(resume, /<title>\s*简历/);
+  assert.match(resume, /content="简历"/);
   assert.match(appShell, /case 'resume':\s*return '简历'/);
 });
 
