@@ -566,12 +566,19 @@ body:has(.resume-page--ai-pm) .footer-inner
 
   .resume-hero-tagline
     font-size 1.08rem
+    line-height 1.7
+
+  .resume-contact-row
+    font-size .92rem
 
   .resume-hero
     display grid
     grid-template-columns minmax(0, 1.45fr) minmax(280px, 0.95fr)
     gap 28px
     align-items start
+
+  .resume-hero-main
+    max-width 680px
 
   .resume-hero-main,
   .resume-summary-panel,
@@ -595,18 +602,26 @@ body:has(.resume-page--ai-pm) .footer-inner
     background #faf7f3
     box-shadow inset 0 0 0 1px rgba(188, 160, 135, 0.12)
 
+  // Section heading: stronger visual separation
   .resume-section
-    margin-bottom 34px
+    margin-bottom 38px
 
   .resume-section-heading
-    margin-bottom 18px
+    margin-bottom 20px
+    padding-bottom 14px
+    border-bottom 2px solid #edf0f4
+
+  .resume-section-index
+    font-size .78rem
+    letter-spacing .12em
 
   .resume-section-heading h2
     font-size 1.72rem
 
+  // Experience entries
   .resume-entry
     padding-left 0
-    padding-top 20px
+    padding-top 22px
     margin-bottom 6px
     border-top 1px solid #edf0f4
 
@@ -617,13 +632,13 @@ body:has(.resume-page--ai-pm) .footer-inner
   .resume-entry-main
     padding-left 0
 
+  // Hide dot marker on desktop — border-top handles separation
   .resume-entry-marker
-    left -2px
-    top 9px
+    display none
 
   .resume-entry-head
     display grid
-    grid-template-columns 160px minmax(0, 1fr) auto
+    grid-template-columns 148px minmax(0, 1fr) auto
     column-gap 22px
     align-items baseline
 
@@ -631,8 +646,8 @@ body:has(.resume-page--ai-pm) .footer-inner
     display contents
 
   .resume-entry-company
-    font-size 1.38rem
-    line-height 1.35
+    font-size 1.28rem
+    line-height 1.4
 
   .resume-entry-role
     align-self start
@@ -641,46 +656,62 @@ body:has(.resume-page--ai-pm) .footer-inner
     border-radius 0
     background transparent
     color #141921
-    font-size 1.18rem
+    font-size 1.12rem
     font-weight 800
 
   .resume-entry-points li
     grid-template-columns 112px minmax(0, 1fr)
     font-size 1rem
 
+  // Impact block: stronger visual emphasis
   .resume-entry-impact
     margin-left 112px
-    padding-top 10px
+    margin-top 16px
+    padding 12px 16px
+    background #f6f8fe
+    border-left 3px solid rgba(81, 104, 199, 0.45)
+    border-radius 0 10px 10px 0
 
+  .resume-entry-impact-label
+    color #5168c7
+
+  .resume-entry-impact-list li
+    font-weight 700
+    color #1f2430
+
+  // Projects: 2-column grid, featured stays full-width
   .resume-project-grid
-    grid-template-columns 1fr
-    gap 26px
+    grid-template-columns repeat(2, minmax(0, 1fr))
+    gap 20px
 
   .resume-project-panel
-    padding 24px 0 0
-    background transparent
-    border-radius 0
+    padding 20px
+    background #f9fafb
+    border-radius 16px
     box-shadow none
-    border-top 1px solid #edf0f4
+    border-top 0
 
   .resume-project-panel--featured
-    padding-top 0
-    border-top 0
+    grid-column 1 / -1
+    padding 24px
+    background linear-gradient(160deg, #fff9f3 0%, #fafbff 100%)
+    border-radius 18px
+    box-shadow 0 8px 26px rgba(121, 113, 112, 0.07)
 
   .resume-project-topline
     align-items baseline
 
   .resume-project-name
-    font-size 1.3rem
+    font-size 1.18rem
 
   .resume-project-badge
     min-height auto
     padding 0
     border-radius 0
     background transparent
-    color #141921
-    font-size 1.12rem
-    font-weight 800
+    color #5168c7
+    font-size .88rem
+    font-weight 700
 
 @media (max-width: 767px)
   .main:has(.resume-page--ai-pm)
