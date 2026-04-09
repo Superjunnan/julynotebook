@@ -92,6 +92,35 @@
     应用筛选(默认值);
   }
 
+  function 初始化日报筛选() {
+    const 标签容器 = document.querySelector('.daily-top-tabs');
+    const 月份组列表 = Array.from(document.querySelectorAll('.app-view-daily .app-month-group[data-year]'));
+    if (!标签容器 || !月份组列表.length) return;
+
+    const 标签列表 = Array.from(标签容器.querySelectorAll('.daily-tab'));
+    const 可用年份 = new Set(标签列表.map(tab => tab.getAttribute('data-year')));
+
+    const 应用筛选 = value => {
+      const 当前值 = 可用年份.has(value) ? value : 'all';
+      切换标签激活状态(标签列表, 当前值, 'data-year');
+      月份组列表.forEach(group => {
+        const 命中 = 当前值 === 'all' || group.getAttribute('data-year') === 当前值;
+        group.classList.toggle('app-filter-hidden', !命中);
+      });
+    };
+
+    if (标签容器.dataset.bound !== 'true') {
+      标签容器.dataset.bound = 'true';
+      标签容器.addEventListener('click', event => {
+        const tab = event.target.closest('.daily-tab');
+        if (!tab) return;
+        应用筛选(tab.getAttribute('data-year'));
+      });
+    }
+
+    应用筛选('all');
+  }
+
   function 清理列表页主题残留类() {
     const 列表容器 = document.querySelector('.main-inner.category.category-app-list');
     if (!列表容器) return;
@@ -112,6 +141,7 @@
     清理列表页主题残留类();
     初始化首页筛选();
     初始化笔记筛选();
+    初始化日报筛选();
   }
 
   document.addEventListener('DOMContentLoaded', 初始化视图脚本);

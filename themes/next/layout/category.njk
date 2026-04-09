@@ -13,10 +13,18 @@
 
   {% if isDaily %}
     {%- set dailyGroups = site.daily_archive_view %}
+    {%- set dailyYears = site.daily_years_view %}
 
     <section class="app-list-shell app-view app-view-daily">
+      <div class="daily-top-tabs app-tab-strip" role="tablist" aria-label="日报年份筛选">
+        <button type="button" class="app-tab daily-tab is-active" data-year="all">全部</button>
+        {% for year in dailyYears %}
+          <button type="button" class="app-tab daily-tab" data-year="{{ year }}">{{ year }}</button>
+        {% endfor %}
+      </div>
+
       {% for group in dailyGroups %}
-        <section class="app-month-group">
+        <section class="app-month-group" data-year="{{ group.year }}">
           <h2 class="app-month-title">{{ group.month }}</h2>
 
           {% if group.is_expanded %}
