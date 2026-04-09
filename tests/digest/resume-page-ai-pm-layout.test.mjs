@@ -27,32 +27,34 @@ function readResumeArtifacts() {
   return cachedArtifacts;
 }
 
-test("简历页应切换为 AI 产品经理导向的双端结构", () => {
+test("简历页应为传统文档风格结构", () => {
   const { html } = readResumeArtifacts();
 
-  assert.match(html, /resume-hero/);
-  assert.match(html, /resume-position-callout/);
-  assert.match(html, /resume-strength-grid/);
-  assert.match(html, /resume-experience-timeline/);
-  assert.match(html, /resume-entry resume-entry--featured/);
-  assert.match(html, /resume-entry-impact/);
-  assert.match(html, /resume-project-grid/);
+  assert.match(html, /rv-header/);
+  assert.match(html, /rv-name/);
+  assert.match(html, /rv-section-title/);
+  assert.match(html, /rv-entry/);
+  assert.match(html, /rv-label/);
+  assert.match(html, /rv-project/);
   assert.match(html, /AI 产品经理/);
+  assert.match(html, /【工作职责】/);
+  assert.match(html, /【主要业绩】/);
   assert.doesNotMatch(html, /<pre><code>/);
   assert.doesNotMatch(html, /<aside class="sidebar">/);
 });
 
-test("简历页样式应为桌面文档化与移动端卡片化分别提供兼容策略", () => {
+test("简历页样式应为桌面文档化与移动端响应式提供策略", () => {
   const { css } = readResumeArtifacts();
 
+  assert.match(css, /\.rv-section-title/);
+  assert.match(css, /\.rv-entry-head/);
+  assert.match(css, /\.rv-header/);
   assert.match(
     css,
-    /@media \(min-width: 1024px\)\s*\{[\s\S]*\.resume-hero\s*\{[\s\S]*display:\s*grid;[\s\S]*grid-template-columns:\s*minmax\(0,\s*1\.45fr\) minmax\(280px,\s*0\.95fr\);/
+    /@media \(max-width: 767px\)\s*\{[\s\S]*\.rv-header\s*\{[\s\S]*flex-direction:\s*column;/
   );
   assert.match(
     css,
-    /@media \(max-width: 767px\)\s*\{[\s\S]*\.resume-entry-head\s*\{[\s\S]*flex-direction:\s*column;/
+    /@media \(min-width: 1024px\)\s*\{[\s\S]*\.resume-page--ai-pm\s*\{[\s\S]*background:\s*#fff;/
   );
-  assert.match(css, /\.resume-entry-impact\s*\{[\s\S]*border-left:/);
-  assert.match(css, /\.resume-strength-grid\s*\{[\s\S]*display:\s*grid;/);
 });
