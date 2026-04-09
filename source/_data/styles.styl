@@ -87,7 +87,7 @@ body.pro-mode .menu-item-resume
 body.pro-mode .app-drawer-menu-item[data-path$="resume/"]
   display flex !important
 
-// ── Resume page styles: AI PM refresh ──
+// ── Resume page styles: traditional document style ──
 .resume-page--ai-pm
   width 100%
   padding 0 0 64px
@@ -95,12 +95,12 @@ body.pro-mode .app-drawer-menu-item[data-path$="resume/"]
   text-align left
 
 .resume-page--ai-pm a
-  color #3d5bd4
+  color #1f2430
   border-bottom 0 !important
-  text-decoration none
+  text-decoration underline
 
 .resume-page--ai-pm a:hover
-  text-decoration underline
+  color #3d5bd4
 
 body:has(.resume-page--ai-pm) .sidebar-toggle,
 body:has(.resume-page--ai-pm) .sidebar-dimmer
@@ -113,7 +113,7 @@ body:has(.resume-page--ai-pm) .site-brand-container .site-meta
 .main:has(.resume-page--ai-pm)
   display block
   width calc(100% - 32px)
-  max-width 1180px
+  max-width 860px
   margin 0 auto 32px
 
 .main:has(.resume-page--ai-pm) .column
@@ -122,7 +122,7 @@ body:has(.resume-page--ai-pm) .site-brand-container .site-meta
 
 .main:has(.resume-page--ai-pm) .header
   width auto
-  max-width 1180px
+  max-width 860px
   margin 0 auto 18px
 
 .main:has(.resume-page--ai-pm) .main-inner
@@ -141,578 +141,202 @@ body:has(.resume-page--ai-pm) .site-brand-container .site-meta
 
 body:has(.resume-page--ai-pm) .footer-inner
   width calc(100% - 32px)
-  max-width 1180px
+  max-width 860px
   margin 0 auto
   padding-left 0
   padding-right 0
 
-.resume-hero
-  display flex
-  flex-direction column
-  gap 18px
-  margin-bottom 28px
+// ── rv-* Traditional document resume styles ──
 
-.resume-hero-main,
-.resume-summary-panel,
-.resume-entry,
-.resume-project-panel
-  background rgba(255, 255, 255, 0.86)
-  border-radius 24px
-  padding 22px 22px 24px
-  box-shadow 0 14px 34px rgba(121, 113, 112, 0.08)
-
-.resume-eyebrow
-  margin 0 0 10px
-  font-size .72rem
-  font-weight 700
-  letter-spacing .18em
-  color #8a8f9d
-
-.resume-hero-title-row
+.rv-header
   display flex
   justify-content space-between
-  align-items flex-start
+  align-items flex-end
+  padding-bottom 14px
+  border-bottom 2px solid #1f2430
+  margin-bottom 22px
   gap 16px
-  margin-bottom 14px
 
-.resume-hero-title-copy
-  min-width 0
+.rv-header-left
+  flex 0 0 auto
 
-.resume-name
+.rv-name
   margin 0
   font-size 2rem
   font-weight 800
-  line-height 1
-  color #11141a
+  line-height 1.1
+  color #1f2430
+  letter-spacing .02em
 
-.resume-hero-tagline
-  margin 10px 0 0
-  max-width 42rem
+.rv-title
+  margin 6px 0 0
   font-size 1rem
-  line-height 1.75
-  color #4d5565
+  font-weight 600
+  color #555
+  letter-spacing .05em
 
-.resume-position-callout
-  display inline-flex
+.rv-header-right
+  text-align right
+  display flex
   flex-direction column
   gap 6px
-  min-width 164px
-  padding 16px 18px
-  border-radius 18px
-  background linear-gradient(145deg, #fff3ea 0%, #fff8f3 100%)
-  box-shadow inset 0 0 0 1px rgba(225, 164, 117, 0.18)
 
-.resume-position-label
-  font-size .75rem
-  font-weight 700
-  letter-spacing .08em
-  color #b16f42
-  text-transform uppercase
-
-.resume-position-callout strong
-  font-size 1.22rem
-  line-height 1.3
-  color #1f2430
-
-.resume-key-facts
+.rv-contact
   display flex
-  flex-wrap wrap
-  gap 10px
-  margin-bottom 14px
+  flex-direction column
+  align-items flex-end
+  gap 3px
+  font-size .87rem
+  color #3f4755
 
-.resume-key-fact
+.rv-contact span
   display inline-flex
   align-items center
-  min-height 34px
-  padding 0 12px
-  border-radius 999px
-  background #f3f5fa
-  color #526076
-  font-size .84rem
-  font-weight 600
+  gap 5px
 
-.resume-contact-row
+.rv-basics
   display flex
-  flex-wrap wrap
-  gap 10px 18px
-  font-size .88rem
-  color #5b6270
-
-.resume-contact-row span
-  display inline-flex
-  align-items center
-  gap 6px
-
-.resume-strength-grid
-  display grid
-  grid-template-columns repeat(2, minmax(0, 1fr))
-  gap 12px
-
-.resume-strength-card
-  min-height 122px
-  padding 16px
-  border-radius 20px
-  background rgba(255, 255, 255, 0.86)
-  box-shadow 0 10px 24px rgba(121, 113, 112, 0.06)
-
-.resume-strength-label
-  display inline-flex
-  align-items center
-  margin-bottom 10px
-  padding 0 10px
-  min-height 28px
-  border-radius 999px
-  background #eef2ff
-  color #4a5fd0
-  font-size .74rem
-  font-weight 700
-
-.resume-strength-card p
-  margin 0
-  font-size .92rem
-  line-height 1.72
-  color #495161
-
-.resume-section
-  margin-bottom 28px
-
-.resume-section-heading
-  display flex
-  align-items center
-  gap 10px
-  margin-bottom 14px
-
-.resume-section-index
-  display inline-flex
-  align-items center
-  justify-content center
-  min-width 38px
-  height 26px
-  border-radius 999px
-  background #eef2f8
+  flex-direction column
+  align-items flex-end
+  gap 2px
+  font-size .82rem
   color #6b7384
-  font-size .76rem
+
+.rv-section
+  margin-bottom 24px
+
+.rv-section-title
+  display flex
+  align-items center
+  gap 0
+  margin 0 0 14px
+  font-size 1.05rem
   font-weight 700
-  letter-spacing .08em
+  color #1f2430
+  padding-bottom 7px
+  border-bottom 1.5px solid #1f2430
 
-.resume-section-heading h2
+.rv-section-title::before
+  content '‖'
+  font-weight 900
+  margin-right 7px
+  letter-spacing -.05em
+
+.rv-summary
   margin 0
-  font-size 1.24rem
-  font-weight 800
-  color #171b22
-
-.resume-summary-lead
-  margin 0 0 16px
-  font-size 1rem
-  line-height 1.9
+  font-size .95rem
+  line-height 1.88
   color #404855
 
-.resume-practice-grid
-  display grid
-  grid-template-columns repeat(3, minmax(0, 1fr))
-  gap 14px
+.rv-entry
+  margin-bottom 16px
 
-.resume-practice-card
-  padding 16px
-  border-radius 18px
-  background #f8fafc
-  box-shadow inset 0 0 0 1px rgba(118, 133, 168, 0.08)
-
-.resume-practice-card h3
-  margin 0 0 8px
-  font-size .98rem
-  font-weight 700
-  color #202632
-
-.resume-practice-card p
-  margin 0
-  font-size .92rem
-  line-height 1.8
-  color #505868
-
-.resume-experience-timeline
+.rv-entry-head
   display flex
-  flex-direction column
-  gap 14px
-
-.resume-entry
-  position relative
-  overflow hidden
-
-.resume-entry--featured
-  background linear-gradient(180deg, rgba(255, 251, 247, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%)
-  box-shadow 0 16px 38px rgba(146, 112, 79, 0.1)
-
-.resume-entry-marker
-  position absolute
-  top 24px
-  left 22px
-  width 14px
-  height 14px
-  border-radius 50%
-  background #11141a
-  box-shadow 0 0 0 6px #edf1f7
-
-.resume-entry-main
-  padding-left 34px
-
-.resume-entry-head
-  display flex
-  justify-content space-between
-  align-items flex-start
-  gap 14px
-  margin-bottom 10px
-
-.resume-entry-period
-  flex 0 0 auto
-  font-size .86rem
-  font-weight 700
-  color #7b8392
-  font-variant-numeric tabular-nums
-  white-space nowrap
-
-.resume-entry-headline
-  display flex
-  flex-wrap wrap
-  align-items center
-  justify-content space-between
-  gap 10px
-  flex 1
-  min-width 0
-
-.resume-entry-company
-  margin 0
-  font-size 1.05rem
-  font-weight 800
-  line-height 1.45
-  color #1a1f27
-
-.resume-entry-role
-  display inline-flex
-  align-items center
-  min-height 30px
-  padding 0 12px
-  border-radius 999px
-  background #f2f4f8
-  color #515968
-  font-size .78rem
-  font-weight 700
-  white-space nowrap
-
-.resume-entry-lead
-  margin 0 0 12px
-  font-size .97rem
-  line-height 1.86
-  color #495161
-
-.resume-entry-tags
-  display flex
-  flex-wrap wrap
+  align-items baseline
   gap 8px
-  margin-bottom 14px
+  margin-bottom 6px
 
-.resume-entry-tags span
-  display inline-flex
-  align-items center
-  min-height 26px
-  padding 0 10px
-  border-radius 999px
-  background #eef3ff
-  color #5168c7
-  font-size .72rem
-  font-weight 700
+.rv-entry-dot
+  color #1f2430
+  font-size 1rem
+  flex 0 0 auto
 
-.resume-entry-points
-  list-style none
+.rv-entry-company
   margin 0
-  padding 0
+  font-size 1rem
+  font-weight 700
+  color #1f2430
+  flex 0 0 auto
 
-.resume-entry-points li
-  display grid
-  grid-template-columns 96px minmax(0, 1fr)
-  gap 10px
-  padding 9px 0
-  font-size .94rem
+.rv-entry-role
+  font-size .9rem
+  font-weight 600
+  color #3f4755
+  flex 0 0 auto
+
+.rv-entry-period
+  font-size .84rem
+  color #7b8392
+  margin-left auto
+  white-space nowrap
+  font-variant-numeric tabular-nums
+
+.rv-entry-body
+  padding-left 1.2rem
+
+.rv-label
+  margin 10px 0 3px
+  font-size .9rem
+  font-weight 700
+  color #1f2430
+
+.rv-entry-body ul,
+.rv-project-body ul
+  margin 0 0 4px
+  padding-left 1.2rem
+
+.rv-entry-body li,
+.rv-project-body li
+  font-size .93rem
+  line-height 1.82
+  color #3f4755
+  margin-bottom 2px
+
+.rv-project
+  margin-bottom 20px
+
+.rv-project-head
+  display flex
+  align-items baseline
+  gap 8px
+  margin-bottom 6px
+
+.rv-project-name
+  margin 0
+  font-size 1rem
+  font-weight 700
+  color #1f2430
+  flex 0 0 auto
+
+.rv-project-meta
+  font-size .82rem
+  color #7b8392
+  margin-left auto
+  white-space nowrap
+
+.rv-project-body
+  padding-left 1.2rem
+
+.rv-text
+  margin 2px 0 4px
+  font-size .93rem
   line-height 1.82
   color #3f4755
 
-.resume-entry-points strong
-  display inline-block
-  color #161b22
-  font-weight 700
-
-.resume-entry-impact
-  margin-top 14px
-  padding 12px 0 0 14px
-  border-left 3px solid rgba(80, 103, 199, 0.22)
-
-.resume-entry-impact-label
-  display inline-block
-  margin-bottom 8px
-  font-size .74rem
-  font-weight 700
-  letter-spacing .08em
-  color #6a7385
-  text-transform uppercase
-
-.resume-entry-impact-list
-  margin 0
-  padding-left 1rem
-
-.resume-entry-impact-list li
-  margin 0
-  font-size .92rem
-  line-height 1.82
-  color #465061
-
-.resume-project-grid
-  display grid
-  grid-template-columns repeat(2, minmax(0, 1fr))
-  gap 14px
-
-.resume-project-panel
-  display flex
-  flex-direction column
-  gap 12px
-
-.resume-project-panel--featured
-  grid-column 1 / -1
-  background linear-gradient(180deg, rgba(255, 249, 242, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%)
-
-.resume-project-topline
-  display flex
-  justify-content space-between
-  align-items flex-start
-  gap 12px
-
-.resume-project-name
-  margin 0
-  font-size 1.02rem
-  font-weight 800
-  color #171b22
-
-.resume-project-meta
-  margin 5px 0 0
-  font-size .82rem
-  font-weight 600
-  color #7b8392
-
-.resume-project-badge
-  display inline-flex
-  align-items center
-  min-height 28px
-  padding 0 10px
-  border-radius 999px
-  background #f2f4f8
-  color #525b69
-  font-size .74rem
-  font-weight 700
-  white-space nowrap
-
-.resume-project-summary
-  margin 0
-  font-size .93rem
-  line-height 1.8
-  color #48505f
-
-.resume-project-block
-  margin 0
-
-.resume-block-label
-  margin 0 0 6px
-  font-size .76rem
-  font-weight 700
-  letter-spacing .08em
-  color #7a8291
-  text-transform uppercase
-
-.resume-project-list
-  margin 0
-  padding-left 1rem
-
-.resume-project-list li
-  margin 0
-  font-size .93rem
-  line-height 1.82
-  color #3f4754
-
-.resume-project-wins
-  display flex
-  flex-wrap wrap
-  gap 8px
-
-.resume-project-wins span
-  display inline-flex
-  align-items center
-  min-height 28px
-  padding 0 10px
-  border-radius 999px
-  background #fff3ea
-  color #9a6033
-  font-size .74rem
-  font-weight 700
-
+// ── PC layout ──
 @media (min-width: 1024px)
   .resume-page--ai-pm
-    max-width 1080px
+    max-width 860px
     margin 0 auto
-    padding 52px 56px 68px
-    background #fffefd
-    border-radius 28px
-    box-shadow 0 30px 74px rgba(121, 113, 112, 0.08)
+    padding 44px 52px 64px
+    background #fff
+    border-radius 4px
+    box-shadow 0 2px 24px rgba(0,0,0,0.06)
 
-  .resume-name
-    font-size 3rem
+  .rv-name
+    font-size 2.4rem
 
-  .resume-hero-tagline
-    font-size 1.08rem
-    line-height 1.7
+  .rv-contact
+    flex-direction row
+    align-items center
+    justify-content flex-end
 
-  .resume-contact-row
-    font-size .92rem
+  .rv-basics
+    flex-direction row
+    justify-content flex-end
 
-  .resume-hero
-    display grid
-    grid-template-columns minmax(0, 1.45fr) minmax(280px, 0.95fr)
-    gap 28px
-    align-items start
-
-  .resume-hero-main
-    max-width 680px
-
-  .resume-hero-main,
-  .resume-summary-panel,
-  .resume-entry,
-  .resume-project-panel
-    background transparent
-    border-radius 0
-    box-shadow none
-    padding 0
-
-  .resume-position-callout
-    min-width 220px
-    align-self flex-start
-
-  .resume-strength-grid
-    grid-template-columns 1fr
-    gap 12px
-
-  .resume-strength-card
-    min-height auto
-    background #faf7f3
-    box-shadow inset 0 0 0 1px rgba(188, 160, 135, 0.12)
-
-  // Section heading: stronger visual separation
-  .resume-section
-    margin-bottom 38px
-
-  .resume-section-heading
-    margin-bottom 20px
-    padding-bottom 14px
-    border-bottom 2px solid #edf0f4
-
-  .resume-section-index
-    font-size .78rem
-    letter-spacing .12em
-
-  .resume-section-heading h2
-    font-size 1.72rem
-
-  // Experience entries
-  .resume-entry
-    padding-left 0
-    padding-top 22px
-    margin-bottom 6px
-    border-top 1px solid #edf0f4
-
-  .resume-entry--featured
-    padding-top 0
-    border-top 0
-
-  .resume-entry-main
-    padding-left 0
-
-  // Hide dot marker on desktop — border-top handles separation
-  .resume-entry-marker
-    display none
-
-  .resume-entry-head
-    display grid
-    grid-template-columns 148px minmax(0, 1fr) auto
-    column-gap 22px
-    align-items baseline
-
-  .resume-entry-headline
-    display contents
-
-  .resume-entry-company
-    font-size 1.28rem
-    line-height 1.4
-
-  .resume-entry-role
-    align-self start
-    min-height auto
-    padding 0
-    border-radius 0
-    background transparent
-    color #141921
-    font-size 1.12rem
-    font-weight 800
-
-  .resume-entry-points li
-    grid-template-columns 112px minmax(0, 1fr)
-    font-size 1rem
-
-  // Impact block: stronger visual emphasis
-  .resume-entry-impact
-    margin-left 112px
-    margin-top 16px
-    padding 12px 16px
-    background #f6f8fe
-    border-left 3px solid rgba(81, 104, 199, 0.45)
-    border-radius 0 10px 10px 0
-
-  .resume-entry-impact-label
-    color #5168c7
-
-  .resume-entry-impact-list li
-    font-weight 700
-    color #1f2430
-
-  // Projects: 2-column grid, featured stays full-width
-  .resume-project-grid
-    grid-template-columns repeat(2, minmax(0, 1fr))
-    gap 20px
-
-  .resume-project-panel
-    padding 20px
-    background #f9fafb
-    border-radius 16px
-    box-shadow none
-    border-top 0
-
-  .resume-project-panel--featured
-    grid-column 1 / -1
-    padding 24px
-    background linear-gradient(160deg, #fff9f3 0%, #fafbff 100%)
-    border-radius 18px
-    box-shadow 0 8px 26px rgba(121, 113, 112, 0.07)
-
-  .resume-project-topline
-    align-items baseline
-
-  .resume-project-name
-    font-size 1.18rem
-
-  .resume-project-badge
-    min-height auto
-    padding 0
-    border-radius 0
-    background transparent
-    color #5168c7
-    font-size .88rem
-    font-weight 700
-
+// ── Mobile layout ──
 @media (max-width: 767px)
   .main:has(.resume-page--ai-pm)
     width auto
@@ -729,58 +353,31 @@ body:has(.resume-page--ai-pm) .footer-inner
   .resume-page--ai-pm
     padding-bottom 40px
 
-  .resume-hero
-    gap 18px
-
-  .resume-hero-title-row
-    flex-direction column
-
-  .resume-position-callout
-    width 100%
-    min-width 0
-
-  .resume-key-facts
-    display grid
-    grid-template-columns repeat(2, minmax(0, 1fr))
-    gap 8px
-
-  .resume-key-fact
-    min-height 40px
-    justify-content flex-start
-    padding 0 10px
-
-  .resume-contact-row
-    flex-direction column
-    gap 8px
-
-  .resume-strength-grid,
-  .resume-practice-grid,
-  .resume-project-grid
-    grid-template-columns 1fr
-    gap 12px
-
-  .resume-entry-head
+  .rv-header
     flex-direction column
     align-items flex-start
-    gap 10px
+    gap 14px
 
-  .resume-entry-headline
+  .rv-header-right
+    align-items flex-start
     width 100%
 
-  .resume-entry-period
-    font-size .8rem
-
-  .resume-entry-company
-    font-size 1rem
-
-  .resume-entry-points li
-    grid-template-columns 1fr
-    gap 4px
-
-  .resume-entry-impact
-    padding-left 12px
-
-  .resume-project-topline
-    flex-direction column
+  .rv-contact
     align-items flex-start
-    gap 8px
+
+  .rv-basics
+    align-items flex-start
+
+  .rv-entry-head
+    flex-wrap wrap
+
+  .rv-entry-period
+    margin-left 0
+    flex-basis 100%
+
+  .rv-project-head
+    flex-wrap wrap
+
+  .rv-project-meta
+    margin-left 0
+    flex-basis 100%

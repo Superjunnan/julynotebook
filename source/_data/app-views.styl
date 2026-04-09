@@ -93,7 +93,9 @@ $view-tab-text = #7c7c81
 .app-view-home
   gap 14px
 
-.home-top-tabs.app-tab-strip
+.home-top-tabs.app-tab-strip,
+.note-top-tabs.app-tab-strip,
+.daily-top-tabs.app-tab-strip
   padding 2px 0 2px
 
 .app-filter-hidden
@@ -159,10 +161,12 @@ $view-tab-text = #7c7c81
   .app-view
     gap 22px
 
-  body.app-view-note-list .app-list-shell
+  body.app-view-note-list .app-list-shell,
+  body.app-view-daily-list .app-list-shell
     gap 22px
 
-  body.app-view-note-list .main-inner
+  body.app-view-note-list .main-inner,
+  body.app-view-daily-list .main-inner
     margin 0 !important
     padding 0 !important
 
