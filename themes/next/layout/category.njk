@@ -17,9 +17,7 @@
     <section class="app-list-shell app-view app-view-daily">
       {% for group in dailyGroups %}
         <section class="app-month-group">
-          <div class="daily-month-strip app-tab-strip">
-            <h2 class="app-month-title">{{ group.month }}</h2>
-          </div>
+          <h2 class="app-month-title">{{ group.month }}</h2>
 
           {% if group.is_expanded %}
             <div class="app-feed">
