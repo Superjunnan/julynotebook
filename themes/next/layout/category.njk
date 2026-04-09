@@ -15,15 +15,11 @@
     {%- set dailyGroups = site.daily_archive_view %}
 
     <section class="app-list-shell app-view app-view-daily">
-      <div class="daily-top-tabs app-tab-strip">
-        {% for group in dailyGroups %}
-          <span class="app-tab app-tab--month">{{ group.month }}</span>
-        {% endfor %}
-      </div>
-
       {% for group in dailyGroups %}
         <section class="app-month-group">
-          <h2 class="app-month-title">{{ group.month }}</h2>
+          <div class="daily-month-strip app-tab-strip">
+            <h2 class="app-month-title">{{ group.month }}</h2>
+          </div>
 
           {% if group.is_expanded %}
             <div class="app-feed">
