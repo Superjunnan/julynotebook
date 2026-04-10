@@ -148,6 +148,14 @@ body:has(.resume-page--ai-pm) .footer-inner
 
 // ── rv-* Traditional document resume styles ──
 
+// Force-reset theme h2/h3 margins inside resume to prevent layout breaks
+.resume-page--ai-pm h2,
+.resume-page--ai-pm h3
+  margin 0 !important
+  font-size inherit
+  font-weight inherit
+  line-height inherit
+
 .rv-header
   display flex
   justify-content space-between
@@ -226,6 +234,24 @@ body:has(.resume-page--ai-pm) .footer-inner
   font-size .93rem
   line-height 1.9
   color #404855
+
+.rv-ai-list
+  margin 0
+  padding-left 1.2rem
+  list-style none
+
+.rv-ai-list li
+  font-size .93rem
+  line-height 1.9
+  color #404855
+  margin-bottom 3px
+  padding-left 0
+
+.rv-ai-list li::before
+  content '⊙'
+  margin-right 8px
+  color #1f2430
+  font-size .85rem
 
 .rv-entry
   margin-bottom 14px
@@ -376,3 +402,8 @@ body:has(.resume-page--ai-pm) .footer-inner
   .rv-project-meta
     margin-left 0
     flex-basis 100%
+
+// ── Fix: override nib-generated justify-content: center on flex heads ──
+.resume-page--ai-pm .rv-entry-head,
+.resume-page--ai-pm .rv-project-head
+  justify-content flex-start
