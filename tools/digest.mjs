@@ -311,6 +311,7 @@ const NEWS_LOOKBACK_DAYS_DEFAULT = readPositiveIntEnv("DIGEST_NEWS_LOOKBACK_DAYS
 const PAPER_LOOKBACK_DAYS_DEFAULT = readPositiveIntEnv("DIGEST_PAPER_LOOKBACK_DAYS", 2);
 const CLUSTER_INPUT_CAP_NEWS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_NEWS", 100);
 const CLUSTER_INPUT_CAP_PAPERS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_PAPERS", 160);
+const CLUSTER_NEWS_PER_SOURCE_CAP = readPositiveIntEnv("DIGEST_CLUSTER_NEWS_PER_SOURCE_CAP", 0);
 
 const DIGEST_NEWS_RULES = Object.freeze({
   hotMin: 3,
@@ -4546,7 +4547,21 @@ function buildCandidateCardsForClustering(candidates, options = {}) {
   const pools = splitCandidatesByPool(candidates);
   const newsCap = Math.max(0, Number(options?.newsCap || CLUSTER_INPUT_CAP_NEWS));
   const paperCap = Math.max(0, Number(options?.paperCap || CLUSTER_INPUT_CAP_PAPERS));
-  const sortedNews = [...pools.news]
+  const perSourceCap = Math.max(0, Number(options?.perSourceCap ?? CLUSTER_NEWS_PER_SOURCE_CAP));
+  const newsBySource = perSourceCap > 0
+    ? pools.news.reduce((acc, item) => {
+        const src = String(item?.source || "");
+        if (!acc.has(src)) acc.set(src, []);
+        acc.get(src).push(item);
+        return acc;
+      }, new Map())
+    : null;
+  const newsPool = newsBySource
+    ? [...newsBySource.values()].flatMap((items) =>
+        [...items].sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0)).slice(0, perSourceCap)
+      )
+    : pools.news;
+  const sortedNews = [...newsPool]
     .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0))
     .slice(0, newsCap);
   const sortedPapers = [...pools.papers]
@@ -4904,6 +4919,7 @@ function normalizeClusterAssignments(rows, cards) {
       topic_title: topicTitle,
       topic_type: inferredType === "news" ? "news" : modelType,
       confidence,
+      is_pr: Boolean(row?.is_pr),
       fallback: false,
     });
   }
@@ -4944,7 +4960,7 @@ async function requestClusterAssignmentsChunk(chunk, model, cache, retryOptions 
   }));
 
   const prompt = `
-请对以下候选条目做“话题聚类归并”。
+请对以下候选条目做”话题聚类归并”。
 
 要求：
 1) 每条 candidate_id 必须且只能分配到一个 topic_key
@@ -4952,10 +4968,11 @@ async function requestClusterAssignmentsChunk(chunk, model, cache, retryOptions 
 3) topic_type 只能是 news 或 paper
 4) 同一 topic_key 内条目应讲同一事件/同一论文主题
 5) 需要尽量归并：除明显孤立条目外，不要一条候选对应一个独立 topic_key
-6) 只输出合法 JSON：
+6) is_pr 判断：若话题主要由公关通稿驱动，标记 true。判断依据：多源措辞高度一致、以某公司/产品发布为唯一主语、缺乏独立分析或评论视角。注意：真实重大技术发布（如头部大模型新版本）即使多源报道也应标 false，因为有独立报道跟进
+7) 只输出合法 JSON：
 {
-  "assignments": [
-    { "candidate_id": 1, "topic_key": "xxx", "topic_title": "xxx", "topic_type": "news", "confidence": 0.82 }
+  “assignments”: [
+    { “candidate_id”: 1, “topic_key”: “xxx”, “topic_title”: “xxx”, “topic_type”: “news”, “confidence”: 0.82, “is_pr”: false }
   ]
 }
 
@@ -5373,6 +5390,7 @@ function buildTopicCards(assignments, cards, mergedKeyMapping) {
       ...card,
       topic_type: normalizeTopicType(assignment.topic_type, "news"),
       confidence: Number(assignment.confidence || 0.5),
+      is_pr: Boolean(assignment.is_pr),
       fallback_assignment: Boolean(assignment.fallback),
     });
   }
@@ -5390,6 +5408,7 @@ function buildTopicCards(assignments, cards, mergedKeyMapping) {
     let newestMs = null;
     let scoreSum = 0;
     let paperVotes = 0;
+    let prVotes = 0;
 
     for (const m of members) {
       if (m.domain) domains.add(m.domain);
@@ -5399,6 +5418,7 @@ function buildTopicCards(assignments, cards, mergedKeyMapping) {
       confidences.push(Number(m.confidence || 0.5));
       scoreSum += Number(m.score || 0);
       if (isPaperLikeMaterial(m._item) || m.topic_type === "paper") paperVotes += 1;
+      if (m.is_pr) prVotes += 1;
       const pubMs = parseDateMs(m.pub_date);
       if (pubMs && (!newestMs || pubMs > newestMs)) newestMs = pubMs;
     }
@@ -5423,12 +5443,14 @@ function buildTopicCards(assignments, cards, mergedKeyMapping) {
     ));
 
     const inferredType = paperVotes >= Math.ceil(members.length / 2) ? "paper" : "news";
+    const isPrTopic = members.length > 0 && prVotes >= Math.ceil(members.length / 2);
 
     const topicRow = {
       topic_id: topicId,
       topic_key: topic.merged_key,
       topic_title: clipHeadline(topic.merged_title, 40),
       topic_type: normalizeTopicType(topic.merged_type, inferredType),
+      is_pr: isPrTopic,
       member_candidate_ids: members.map((m) => m.candidate_id),
       mention_count: members.length,
       source_diversity: domains.size,
@@ -5855,6 +5877,7 @@ export function buildTopicScorecard(topic, options = {}) {
     topic?.topic_type === "news" && mention <= 1 && diversity <= 1 ? 18 : 0;
   const concentrationPenalty =
     topic?.topic_type === "news" && mention >= 3 && diversity <= 1 ? 8 : 0;
+  const prPenalty = topic?.is_pr === true && topic?.topic_type === "news" ? 15 : 0;
   const aiSignal = estimateAiTopicSignal(topic);
   const weakAiPenalty = topic?.topic_type === "news"
     ? (aiSignal <= 0 ? 18 : aiSignal === 1 ? 8 : 0)
@@ -5883,7 +5906,8 @@ export function buildTopicScorecard(topic, options = {}) {
     communityPenalty +
     singletonPenalty +
     concentrationPenalty +
-    weakAiPenalty;
+    weakAiPenalty +
+    prPenalty;
   const total =
     crossValidation +
     sourceCredibility +
@@ -5904,6 +5928,7 @@ export function buildTopicScorecard(topic, options = {}) {
     ai_relevance: aiRelevance,
     edition_bias: eveningDomesticAdjustment,
     penalties: -penalties,
+    pr_penalty: -prPenalty,
     signals: [
       ...headEntity.matches.map((match) => `entity:${match}`),
       ...industryValue.matches.map((match) => `value:${match}`),
