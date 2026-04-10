@@ -7160,8 +7160,9 @@ digest_region: ${digestRegion}
         : "";
       const materialTitle = cleanReferenceTitle(firstMaterial?.title || "", 120);
       const titleSeed = finalizeReadableText(h?.title || "");
+      const isFallbackTitle = !titleSeed || /^论文(进展|研究进展)/.test(titleSeed);
       const localizedTitle = toChineseLikeTitle(
-        (titleSeed && hasCjk(titleSeed) && titleSeed) ||
+        (!isFallbackTitle && hasCjk(titleSeed) && titleSeed) ||
         (translatedRefTitle && hasCjk(translatedRefTitle) && clipHeadline(translatedRefTitle, 28)) ||
         (materialTitle && hasCjk(materialTitle) && clipHeadline(materialTitle, 28)) ||
         "论文研究进展",
