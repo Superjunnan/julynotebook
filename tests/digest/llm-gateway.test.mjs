@@ -579,3 +579,44 @@ test("withRateLimitRetry honours maxRetries:0 and does not retry on first failur
 
   assert.equal(attempts, 1);
 });
+
+test("requestClusterAssignmentsChunkWithAdaptiveSplit degrades single offending card to fallback on 1301 content filter", async () => {
+  // chunk 含 3 条，id=2 触发 1301，期望 id=2 降级为 fallback，id=1/3 正常返回
+  const mockChunk = [
+    { candidate_id: 1, title: "Anthropic Claude Managed Agents", cluster_text: "Claude 发布新功能", source: "test", source_group: "foreign_media", bucket_hint: "", trust_tier: "high", pub_date: "2026-04-10", domain: "example.com" },
+    { candidate_id: 2, title: "AI干碎成人内容行业", cluster_text: "成人内容平台关停", source: "test", source_group: "domestic_media", bucket_hint: "", trust_tier: "high", pub_date: "2026-04-10", domain: "example.com" },
+    { candidate_id: 3, title: "OpenAI GPT-5 发布", cluster_text: "最新模型发布", source: "test", source_group: "foreign_media", bucket_hint: "", trust_tier: "high", pub_date: "2026-04-10", domain: "example.com" },
+  ];
+
+  const result = await requestClusterAssignmentsChunkWithAdaptiveSplit(mockChunk, {
+    minChunkSize: 1,
+    maxDepth: 3,
+    executeChunk: async (chunk) => {
+      if (chunk.some((c) => c.candidate_id === 2)) {
+        const err = new Error(
+          '智谱接口请求失败：HTTP 400 Bad Request\n{"contentFilter":[{"level":1,"role":"assistant"}],"error":{"code":"1301","message":"系统检测到输入或生成内容可能包含不安全或敏感内容"}}'
+        );
+        throw err;
+      }
+      return chunk.map((c) => ({
+        candidate_id: c.candidate_id,
+        topic_key: `topic_${c.candidate_id}`,
+        topic_title: c.title,
+        topic_type: "news",
+        confidence: 0.9,
+        is_pr: false,
+        fallback: false,
+      }));
+    },
+  });
+
+  assert.equal(result.length, 3, "所有条目均应有返回（含降级）");
+
+  const id2 = result.find((r) => r.candidate_id === 2);
+  assert.equal(id2?.fallback, true, "id=2 应降级为 fallback");
+
+  const id1 = result.find((r) => r.candidate_id === 1);
+  const id3 = result.find((r) => r.candidate_id === 3);
+  assert.equal(id1?.fallback, false, "id=1 不应是 fallback");
+  assert.equal(id3?.fallback, false, "id=3 不应是 fallback");
+});

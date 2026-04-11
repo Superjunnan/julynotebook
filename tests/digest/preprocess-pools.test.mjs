@@ -148,6 +148,83 @@ test("preprocessCandidatePools drops old trusted news when English month dates c
   assert.equal(result.stats.news_dropped_by_time, 1);
 });
 
+test("preprocessCandidatePools drops items matching NSFW keywords and increments dropped_by_nsfw_gate", () => {
+  const candidates = [
+    {
+      title: "麻豆传媒停运，AI干碎2000亿成人内容行业",
+      contentSnippet: "华语圈最大的成人内容制作平台正式停止运营。",
+      link: "https://example.com/nsfw-1",
+      source: "某媒体",
+      sourceGroup: "domestic_media",
+      trustTier: "high",
+      bucketHint: "hot_news",
+      pubDate: "2026-04-10T10:00:00.000Z",
+    },
+    {
+      title: "AI妓馆爆了，成人行业彻底变天",
+      contentSnippet: "全球首家赛博亲密体验空间在柏林开业。",
+      link: "https://example.com/nsfw-2",
+      source: "某媒体",
+      sourceGroup: "domestic_media",
+      trustTier: "high",
+      bucketHint: "hot_news",
+      pubDate: "2026-04-10T10:00:00.000Z",
+    },
+    {
+      title: "Anthropic Claude 发布 Managed Agents 功能",
+      contentSnippet: "Anthropic 推出新的 Agent 托管平台。",
+      link: "https://example.com/ok-1",
+      source: "TechCrunch",
+      sourceGroup: "foreign_media",
+      trustTier: "high",
+      bucketHint: "hot_news",
+      pubDate: "2026-04-10T10:00:00.000Z",
+    },
+  ];
+
+  const result = preprocessCandidatePools(candidates, {
+    runDate: "2026-04-11",
+    applyAiGate: false,
+  });
+
+  assert.equal(result.stats.dropped_by_nsfw_gate, 2);
+  assert.equal(result.news.length + result.papers.length, 1);
+  assert.equal(result.news[0]?.title, "Anthropic Claude 发布 Managed Agents 功能");
+});
+
+test("preprocessCandidatePools does not false-positive on '成人礼' or '成人教育'", () => {
+  const candidates = [
+    {
+      title: "2026年第一季度，AI Agent完成了它的成人礼",
+      contentSnippet: "OpenClaw 快速普及，Agent 进入主流。",
+      link: "https://example.com/ok-2",
+      source: "36Kr",
+      sourceGroup: "domestic_media",
+      trustTier: "high",
+      bucketHint: "hot_news",
+      pubDate: "2026-04-10T10:00:00.000Z",
+    },
+    {
+      title: "教育部推进AI成人教育改革",
+      contentSnippet: "终身学习体系建设。",
+      link: "https://example.com/ok-3",
+      source: "新华社",
+      sourceGroup: "domestic_media",
+      trustTier: "high",
+      bucketHint: "hot_news",
+      pubDate: "2026-04-10T10:00:00.000Z",
+    },
+  ];
+
+  const result = preprocessCandidatePools(candidates, {
+    runDate: "2026-04-11",
+    applyAiGate: false,
+  });
+
+  assert.equal(result.stats.dropped_by_nsfw_gate, 0);
+  assert.equal(result.news.length, 2);
+});
+
 test("buildPreclusterCandidateGroups does not treat non-paper core_tech cards as paper-only material", () => {
   const groups = buildPreclusterCandidateGroups([
     {

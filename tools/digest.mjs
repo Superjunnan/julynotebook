@@ -260,6 +260,14 @@ const TIMEOUT_ZHIPU_MS = LLM_EXECUTION_CONFIG.timeoutMs;
 
 // 抓网页正文的并发（只是抓网页，不是大模型并发）
 const FETCH_CONCURRENCY = 4;
+
+// 成人内容关键词列表（用于 NSFW 预过滤，避免触发智谱 1301 内容安全拦截）
+const NSFW_KEYWORDS = [
+  "成人影片", "成人内容", "成人平台", "成人行业", "成人网站", "成人APP", "成人app",
+  "女优", "男优", "AV女优", "AV男优",
+  "妓馆", "妓院", "性工作者",
+  "NSFW",
+];
 const DETAIL_ENRICH_FETCH_CONCURRENCY = readPositiveIntEnv(
   "DIGEST_DETAIL_ENRICH_FETCH_CONCURRENCY",
   FETCH_CONCURRENCY
@@ -2266,6 +2274,11 @@ export function isLikelyAiCandidate(item) {
   return hasAiSignalText(hay);
 }
 
+function isNsfwCandidate(item) {
+  const text = `${item?.title || ""} ${item?.contentSnippet || ""} ${item?.snippet || ""}`;
+  return NSFW_KEYWORDS.some((kw) => text.includes(kw));
+}
+
 function isTrustedNewsSource(item) {
   if (!item || isPaperLikeMaterial(item)) return false;
   const trustTier = String(item?.trustTier || "").toLowerCase();
@@ -2306,6 +2319,7 @@ export function preprocessCandidatePools(candidates, options = {}) {
     news_before: pools.news.length,
     papers_before: pools.papers.length,
     dropped_by_ai_gate: 0,
+    dropped_by_nsfw_gate: 0,
     news_retained_missing_date: 0,
     news_dropped_missing_date: 0,
     news_dropped_by_time: 0,
@@ -2322,7 +2336,16 @@ export function preprocessCandidatePools(candidates, options = {}) {
       return keep;
     })
     : [...(candidates || [])];
-  const filteredPools = splitCandidatesByPool(aiFiltered);
+
+  const nsfwFiltered = aiFiltered.filter((item) => {
+    const drop = isNsfwCandidate(item);
+    if (drop) {
+      stats.dropped_by_nsfw_gate += 1;
+      console.log(`[nsfw-gate] dropped: ${String(item?.title || "").slice(0, 60)}`);
+    }
+    return !drop;
+  });
+  const filteredPools = splitCandidatesByPool(nsfwFiltered);
 
   const news = [];
   for (const item of filteredPools.news) {
@@ -4127,6 +4150,12 @@ function isRateLimitError(e) {
   return msg.includes("HTTP 429") || msg.includes("1302") || msg.includes("速率限制");
 }
 
+// 判断是不是智谱 1301 内容安全拦截错误
+function isContentFilterError(e) {
+  const msg = String(e?.message || "");
+  return msg.includes("1301") || msg.includes("contentFilter");
+}
+
 function isTransientModelServerError(e) {
   const msg = String(e?.message || "");
   return (
@@ -5017,7 +5046,20 @@ export async function requestClusterAssignmentsChunkWithAdaptiveSplit(chunk, opt
       return await executeChunk(currentChunk, { depth });
     } catch (error) {
       const retryable = isRateLimitError(error) || isTransientModelServerError(error) || isTransientNetworkError(error);
-      const canSplit = retryable && currentChunk.length > minChunkSize && currentChunk.length > 1 && depth < maxDepth;
+      const contentFiltered = isContentFilterError(error);
+
+      // 1301 内容拦截：单条时直接降级为 fallback，不再向上抛
+      if (contentFiltered && currentChunk.length === 1) {
+        console.warn(
+          `[cluster-adaptive] skip single card due to content_filter_1301: id=${currentChunk[0]?.candidate_id} title="${String(currentChunk[0]?.title || "").slice(0, 60)}"`
+        );
+        return normalizeClusterAssignments([], currentChunk);
+      }
+
+      const canSplit = (retryable || contentFiltered)
+        && currentChunk.length > minChunkSize
+        && currentChunk.length > 1
+        && depth < maxDepth;
       if (!canSplit) throw error;
 
       const midpoint = Math.ceil(currentChunk.length / 2);
@@ -5027,7 +5069,9 @@ export async function requestClusterAssignmentsChunkWithAdaptiveSplit(chunk, opt
         ? "rate_limit"
         : isTransientNetworkError(error)
           ? "transient_network"
-          : "transient_model";
+          : contentFiltered
+            ? "content_filter_1301"
+            : "transient_model";
       console.warn(
         `[cluster-adaptive] split depth=${depth} size=${currentChunk.length} into=${leftChunk.length}+${rightChunk.length} reason=${reason}`
       );
