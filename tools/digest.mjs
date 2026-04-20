@@ -7935,18 +7935,20 @@ const IS_DIRECT_RUN =
   process.argv[1] && path.resolve(process.argv[1]) === path.resolve(ENTRY_FILE);
 
 if (IS_DIRECT_RUN) {
-  main().catch((e) => {
-    const dateISO = getRunDateISO();
-    bestEffortPersistDigestCache(activeDigestCache, "fatal-exit");
-    try {
-      const auditPath = writeRuntimeErrorReport(dateISO, e);
-      console.error(`❌ digest runtime error report：${auditPath}`);
-    } catch (auditError) {
-      console.error("❌ digest runtime error report 写入失败：", auditError);
-    }
-    console.error("❌ digest 生成失败：", e);
-    process.exit(1);
-  });
+  main()
+    .then(() => process.exit(0))
+    .catch((e) => {
+      const dateISO = getRunDateISO();
+      bestEffortPersistDigestCache(activeDigestCache, "fatal-exit");
+      try {
+        const auditPath = writeRuntimeErrorReport(dateISO, e);
+        console.error(`❌ digest runtime error report：${auditPath}`);
+      } catch (auditError) {
+        console.error("❌ digest runtime error report 写入失败：", auditError);
+      }
+      console.error("❌ digest 生成失败：", e);
+      process.exit(1);
+    });
 }
 
 export {

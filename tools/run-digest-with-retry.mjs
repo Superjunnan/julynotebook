@@ -149,8 +149,10 @@ const IS_DIRECT_RUN =
   process.argv[1] && path.resolve(process.argv[1]) === path.resolve(ENTRY_FILE);
 
 if (IS_DIRECT_RUN) {
-  main().catch((error) => {
-    console.error("[ci-retry] digest wrapper 执行失败：", error);
-    process.exit(1);
-  });
+  main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+      console.error("[ci-retry] digest wrapper 执行失败：", error);
+      process.exit(1);
+    });
 }

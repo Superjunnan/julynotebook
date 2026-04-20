@@ -197,7 +197,9 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error("笔记摘要生成失败：", error);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error("笔记摘要生成失败：", error);
+    process.exit(1);
+  });
