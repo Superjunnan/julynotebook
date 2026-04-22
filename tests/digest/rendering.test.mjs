@@ -260,6 +260,46 @@ test("material Chinese title should override stale existing translated title whe
   assert.doesNotMatch(markdown, /Dreamina Seedance 2\.0登陆CapCut｜36Kr AI/);
 });
 
+test("buildDigestMarkdown should replace generic hot news placeholders with translated reference titles", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-04-15",
+    {
+      hotNews: [
+        {
+          insight: "海外科技媒体动态 3",
+          narrative: "Google adds AI Skills to Chrome to help you save favorite workflows.",
+          refs: [1, 2],
+          mentionCount: 2,
+          crossVerifyScore: 78,
+        },
+      ],
+      otherNews: [],
+      coreTech: [],
+      aiRumor: [],
+      refTranslations: {
+        1: "谷歌在Chrome中添加AI技能以帮助保存常用工作流",
+      },
+    },
+    [
+      {
+        refId: 1,
+        title: "Google adds AI Skills to Chrome to help you save favorite workflows",
+        source: "TechCrunch AI",
+        link: "https://example.com/1",
+      },
+      {
+        refId: 2,
+        title: "Chrome now lets you turn AI prompts into reusable skills",
+        source: "The Verge AI",
+        link: "https://example.com/2",
+      },
+    ]
+  );
+
+  assert.match(markdown, /### 01 · 谷歌在Chrome中添加AI技能以帮助保存常用工作流/);
+  assert.doesNotMatch(markdown, /### 01 · 海外科技媒体动态 3/);
+});
+
 test("evening digest markdown uses dedicated title, metadata, and domestic tags", () => {
   const markdown = buildDigestMarkdown(
     "2026-03-20",

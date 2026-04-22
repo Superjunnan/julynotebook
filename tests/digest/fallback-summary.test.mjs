@@ -58,6 +58,63 @@ test("normalizeDailySummary can backfill hot news to at least three entries", ()
   assert.equal(daily.hotNews.some((item) => (item.refs || [])[0] === 3), true);
 });
 
+test("normalizeDailySummary should replace generic hot news placeholders with translated reference titles", () => {
+  const daily = normalizeDailySummary(
+    {
+      hot_news: [
+        {
+          topic_id: 1,
+          insight: "海外科技媒体动态 3",
+          narrative: "Google adds AI Skills to Chrome to help you save favorite workflows.",
+          refs: [1, 2],
+          mention_count: 2,
+          cross_verify_score: 78,
+        },
+      ],
+      other_news: [],
+      core_tech: [],
+      ref_translations: [
+        {
+          id: 1,
+          zh_title: "谷歌在Chrome中添加AI技能以帮助保存常用工作流",
+        },
+      ],
+    },
+    [
+      {
+        refId: 1,
+        title: "Google adds AI Skills to Chrome to help you save favorite workflows",
+        source: "TechCrunch AI",
+        link: "https://example.com/1",
+        bucketHint: "hot_news",
+      },
+      {
+        refId: 2,
+        title: "Chrome now lets you turn AI prompts into reusable skills",
+        source: "The Verge AI",
+        link: "https://example.com/2",
+        bucketHint: "hot_news",
+      },
+      {
+        refId: 3,
+        title: "Anthropic expands Claude enterprise agent access",
+        source: "Anthropic News",
+        link: "https://example.com/3",
+        bucketHint: "hot_news",
+      },
+      {
+        refId: 4,
+        title: "Google Gemini adds coding workflow support",
+        source: "Google AI Blog",
+        link: "https://example.com/4",
+        bucketHint: "hot_news",
+      },
+    ]
+  );
+
+  assert.equal(daily.hotNews[0]?.insight, "谷歌在Chrome中添加AI技能以帮助保存常用工作流");
+});
+
 test("normalizeDailySummary does not backfill low-value community entries into hot news", () => {
   const materials = [
     {

@@ -3808,6 +3808,36 @@ function buildChineseHotNarrativeFallback(entry, idToItem) {
   return `${base}${evidence}`;
 }
 
+function shouldFallbackDigestInsight(text) {
+  const value = finalizeReadableText(text || "");
+  if (!value) return true;
+  if (!hasCjk(value)) return true;
+  if (/^(?:当日(?:AI)?(?:关键)?动态|当日重点|当日快讯|快讯更新|来源快讯|社区来源快讯|论文进展)(?:\s*\d+)?$/u.test(value)) {
+    return true;
+  }
+  if (/^(?:海外科技媒体|国内人工智能媒体|社区来源|来源|媒体|论文)(?:动态|新动向|快讯|进展)(?:\s*\d+)?$/u.test(value)) {
+    return true;
+  }
+  return false;
+}
+
+function pickDigestInsightFromRefs(insightSeed, refs, idToItem, refTranslations, options = {}) {
+  const kind = options?.kind === "quick" ? "quick" : "hot";
+  const maxChars = Number.isFinite(options?.maxChars)
+    ? Math.max(12, Math.floor(options.maxChars))
+    : (kind === "quick" ? 56 : 42);
+  const firstRef = Array.isArray(refs) && refs.length > 0 ? refs[0] : null;
+  const firstMaterial = firstRef ? idToItem[firstRef] : null;
+  const sourceLabel = getChineseSourceLabel(firstMaterial);
+  const translatedRefTitle = firstRef ? finalizeReadableText(refTranslations?.[firstRef] || "") : "";
+  const firstTitle = firstRef ? finalizeReadableText(firstMaterial?.title || "") : "";
+  const fallback = translatedRefTitle && hasCjk(translatedRefTitle)
+    ? translatedRefTitle
+    : (hasCjk(firstTitle) ? firstTitle : `${sourceLabel}${kind === "quick" ? "新动向" : "重点更新"}`);
+  const picked = shouldFallbackDigestInsight(insightSeed) ? fallback : insightSeed;
+  return clipHeadline(finalizeReadableText(picked || fallback), maxChars);
+}
+
 function buildQuickNarrativeFromMaterial(material, anchorText, sourceLabel) {
   const bodyRaw = normalizeNarrativeBody(String(material?.text || "").slice(0, 320));
   const body = clipToSentence(
@@ -3892,11 +3922,15 @@ export function normalizeDailySummary(rawDaily, materials) {
       const rawRefs = normalizeNewsRefs(base.refs);
       const refs = compressEntryRefs(rawRefs, idToItem, { minRefs: 2, maxRefs: 4 });
       const fallbackNarrative = buildChineseHotNarrativeFallback({ ...base, refs }, idToItem);
+      const insightSeed = finalizeReadableText(base.insight || base.title || "当日重点");
       return {
         ...base,
         topicId: Number(item?.topic_id || 0),
         refs,
-        insight: clipHeadline(finalizeReadableText(base.insight || base.title || "当日重点"), 42),
+        insight: pickDigestInsightFromRefs(insightSeed, refs, idToItem, refTranslations, {
+          kind: "hot",
+          maxChars: 42,
+        }),
         narrative: ensureCompleteNarrative(
           clipToSentence(cleanTemplateNarrative(base.narrative || base.briefing || base.summary || ""), 280),
           fallbackNarrative
@@ -7114,7 +7148,16 @@ digest_region: ${digestRegion}
     md += `（暂无符合门槛的重点资讯）\n\n`;
   } else {
     hotNews.forEach((t, idx) => {
-      const insightRaw = clipHeadline(finalizeReadableText(t?.insight || t?.summary || t?.title || "当日关键动态"), 42);
+      const insightRaw = pickDigestInsightFromRefs(
+        finalizeReadableText(t?.insight || t?.summary || t?.title || "当日关键动态"),
+        Array.isArray(t?.refs) ? t.refs : [],
+        idToItem,
+        refTranslations,
+        {
+          kind: "hot",
+          maxChars: 42,
+        }
+      );
       const insight = escapeMd(insightRaw);
       const narrativeRaw = cleanTemplateNarrative(normalizeNarrativeBody(
         t?.narrative ||

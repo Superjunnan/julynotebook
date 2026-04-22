@@ -96,6 +96,20 @@ function 从引用提取标题(dataCite, options = {}) {
   return 标题主体;
 }
 
+function 是占位日报标题(text, 类型 = 'news') {
+  const 标题 = 去除标题序号(text)
+    .replace(/\s+/gu, ' ')
+    .trim();
+  if (!标题) return true;
+  if (类型 === 'paper') {
+    return /^(?:论文进展)(?:\s*\d+)?$/u.test(标题);
+  }
+  if (/^(?:当日(?:AI)?(?:关键)?动态|当日重点|当日快讯|快讯更新|来源快讯|社区来源快讯)(?:\s*\d+)?$/u.test(标题)) {
+    return true;
+  }
+  return /^(?:海外科技媒体|国内人工智能媒体|社区来源|来源|媒体)(?:动态|新动向|快讯|进展)(?:\s*\d+)?$/u.test(标题);
+}
+
 function 清洗日报标题(text, dataCite = '', options = {}) {
   const { 类型 = 'news' } = options;
   let 标题 = 去除标题序号(text)
@@ -110,7 +124,8 @@ function 清洗日报标题(text, dataCite = '', options = {}) {
     !标题
     || /让AI$/u.test(标题)
     || /^[.&,:：\-–—\s]+/u.test(text)
-    || (/[&]/u.test(标题) && !/AI/u.test(标题));
+    || (/[&]/u.test(标题) && !/AI/u.test(标题))
+    || 是占位日报标题(标题, 类型);
 
   if (标题异常) {
     if (类型 === 'paper' && 冒号后标题) {

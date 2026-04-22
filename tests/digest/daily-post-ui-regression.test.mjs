@@ -230,6 +230,18 @@ test("首页和日报列表卡片应统一使用今日主线口径而不是今�
   assert.doesNotMatch(dailyList, /今日重点：/);
 });
 
+test("首页日报卡片应优先显示引用里的中文标题而不是泛化占位标题", async () => {
+  const { home } = await buildAndReadPages();
+  const cardStart = home.indexOf("AI早报 · 04.15 周三");
+  assert.notEqual(cardStart, -1);
+  const cardHtml = home.slice(cardStart, cardStart + 2200);
+
+  assert.match(cardHtml, /谷歌在Chrome中添加AI技能以帮助保存常用工作流/);
+  assert.match(cardHtml, /Anthropic联合创始人证实公司曾向特朗普政府简报Mythos/);
+  assert.doesNotMatch(cardHtml, /海外科技媒体动态 3/);
+  assert.doesNotMatch(cardHtml, /海外科技媒体动态 1/);
+});
+
 test("首页与列表卡片底部阅读全文区域应收紧间距以提升屏幕效率", async () => {
   const { css } = await buildAndReadPages();
 
