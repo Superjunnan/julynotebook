@@ -102,6 +102,21 @@ $card-note-text = #908058
 .app-card__meta span:first-child
   margin-right auto
 
+.app-pro-view
+  display none !important
+  align-items center
+  gap 5px
+  color #9b9ba1
+
+body.pro-mode .app-pro-view
+  display inline-flex !important
+
+.app-pro-view[data-pro-view-state="loading"]
+  opacity .72
+
+.app-pro-view[data-pro-view-state="error"]
+  opacity .5
+
 .app-card__summary-label
   margin-bottom 8px
   font-size 0.95rem
@@ -200,6 +215,11 @@ $card-note-text = #908058
   text-overflow ellipsis
   font-size 1rem
   font-weight 600
+
+.app-compact-item__views
+  flex 0 0 auto
+  font-size .8rem
+  color $card-muted
 
 .app-compact-item__arrow
   color $card-muted

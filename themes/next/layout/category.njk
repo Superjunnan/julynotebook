@@ -37,6 +37,10 @@
                     {% if post.app_reading_time %}
                       <span><i class="far fa-clock"></i>{{ post.app_reading_time }} 分钟</span>
                     {% endif %}
+                    <span class="app-pro-view" data-pro-view-url="{{ url_for(post.path) }}">
+                      <i class="far fa-eye"></i>
+                      <span data-pro-view-value>--</span>
+                    </span>
                   </div>
 
                   <div class="app-card__summary-label">今日主线：</div>
@@ -55,6 +59,10 @@
                 <a href="{{ url_for(post.path) }}" class="app-compact-item post-title-link">
                   <span class="app-compact-item__date">{{ date(post.date, 'MM-DD') }}</span>
                   <span class="app-compact-item__title">{{ post.app_display_title or post.title }}</span>
+                  <span class="app-compact-item__views app-pro-view" data-pro-view-url="{{ url_for(post.path) }}">
+                    <i class="far fa-eye"></i>
+                    <span data-pro-view-value>--</span>
+                  </span>
                   <span class="app-compact-item__arrow"><i class="fa fa-angle-right"></i></span>
                 </a>
               {% endfor %}
@@ -91,6 +99,10 @@
               {% if post.app_reading_time %}
                 <span><i class="far fa-clock"></i>{{ post.app_reading_time }} 分钟</span>
               {% endif %}
+              <span class="app-pro-view" data-pro-view-url="{{ url_for(post.path) }}">
+                <i class="far fa-eye"></i>
+                <span data-pro-view-value>--</span>
+              </span>
             </div>
 
             <div class="app-card__summary-label">文章概述：</div>

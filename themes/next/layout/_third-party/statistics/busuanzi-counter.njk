@@ -1,4 +1,4 @@
-{%- if theme.busuanzi_count.enable %}
+{%- if theme.busuanzi_count.enable and not theme.busuanzi_count.custom_api %}
   {%- if theme.vendors.busuanzi %}
   <script{{ pjax }} async src="{{ theme.vendors.busuanzi }}"></script>
   {%- else %}

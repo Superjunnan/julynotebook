@@ -31,6 +31,10 @@
             {% if post.app_reading_time %}
               <span><i class="far fa-clock"></i>{{ post.app_reading_time }} 分钟</span>
             {% endif %}
+            <span class="app-pro-view" data-pro-view-url="{{ url_for(post.path) }}">
+              <i class="far fa-eye"></i>
+              <span data-pro-view-value>--</span>
+            </span>
           </div>
 
           <div class="app-card__summary-label">
