@@ -5,277 +5,13 @@
       "title": "Kimi K2: Open Agentic Intelligence",
       "text": "",
       "pubDate": null,
-      "at": "2026-05-02"
+      "at": "2026-05-03"
     },
     "https://openai.com/index/openai-on-aws": {
       "title": "OpenAI models, Codex, and Managed Agents come to AWS",
       "text": "",
       "pubDate": "Tue, 28 Apr 2026 00:00:00 GMT",
-      "at": "2026-05-02"
-    },
-    "https://www.siliconvalley.com/2026/04/29/openai-sued-by-families-of-canada-school-shooting-victims/": {
-      "title": "OpenAI sued by families of Canada school shooting victims",
-      "text": "By Rachel Metz, Bloomberg OpenAI is the target of new lawsuits over the mass shooting in Tumbler Ridge, British Columbia, that allege the artificial intelligence company could have stopped the suspected killer from using its popular chatbot, ChatGPT, ahead of the attack. One of the cases, which were filed Wednesday in federal court in San Francisco against OpenAI and its chief executive officer, Sam Altman, was brought by a 12-year-old, who was shot during the incident and remains in intensive care, and her mother. Another lawsuit was brought by the mother of a girl killed in the shooting. According to the lawsuits, OpenAI knew that Jesse Van Rootselaar, who was identified as the chief suspect behind the massacre in February at Tumbler Ridge Secondary School, was planning the attack due to the shooter’s ChatGPT use, but made a “conscious decision not to warn authorities.” “ChatGPT played a role in the mass shooting and OpenAI could have, and should have, prevented it,” according to the complaints, which allege the startup wanted to avoid having to contact police each time OpenAI’s safety team spotted a ChatGPT user planning to carry out a violent act. “The events in Tumbler Ridge are a tragedy. We have a zero-tolerance policy for using our tools to assist in committing violence,” OpenAI said in a statement. “As we shared with Canadian officials, we have already strengthened our safeguards, including improving how ChatGPT responds to signs of distress, connecting people with local support and mental health resources, strengthening how we assess and escalate potential threats of violence, and improving detection of repeat policy violators.” A series of suits have been filed so far against chatbot makers since 2024, most of them targeting OpenAI and ChatGPT. Most of the su",
-      "pubDate": "2026-04-29",
-      "at": "2026-04-30"
-    },
-    "https://aitntnews.com/newDetail.html?newId=24578": {
-      "title": "OpenAI工程师把话挑明了：一个人盯3到5个Coding Agent，基本就到顶了！反手开源 Symphony ——一套「少盯人、多验收」的新系统",
-      "text": "一个残酷的数字：3到5 故事要从一条推文说起。 2026年4月27日，Alex Kotliarskyi（@alex_frantic）在X上发了一条线程，开头就是一记重锤： \"Engineers at OpenAI experience the same problem as everyone else — we can supervise about 3–5 coding agents. After that productivity drops. Codex is smart, but our attention is limited.\" 「OpenAI的工程师也遇到和所有人一样的问题：我们大概只能有效盯住3到5个coding agents，再往上生产率就掉了。Codex很聪明，但我们的注意力是有限的。」 注意，这不是某个路人在吐槽。这是跟OpenAI / Codex直接相关的工程实践者，在公开线程里坦承的一线体感。 这条帖子的热度也说明它戳中了痛点：66条回复，133次转发，2623个赞，2875人收藏，近40万次浏览。 为什么这个数字会引起这么大共鸣？因为每个实际用过coding agent的人都有类似体感： 单个agent，很爽两三个agent，开始频繁切换注意力真到五六个以后，你会开始忘记哪个分支改了什么、哪个任务卡在什么点、哪个diff里可能埋了雷 3到5，像一条隐形的天花板，所有人都感觉到了，但之前没人说破。 ▲ 开发者@a_protsyuk回应：\"在构建我们的平台时遇到了同样的瓶颈——3-5基本上是通用的\"（1.9K次查看） 真正的瓶颈，从来都不在模型那一头 有一条回复把这件事浓缩成了一句话，传播力极强： \"Generation is solved. Supervision is the new bottleneck.\" 「生成问题已经解决了。监督才是新的瓶颈。」 ▲ @gpt3_eth的回复，一句话总结了整个讨论的核心 想想看——2024年大家还在比谁的模型能写更长的代码、谁的上下文窗口更大。到了2026年，代码生成越来越便宜，人的验证和注意力反而成了最贵的资源。 模型可以一秒写完一个函数，但人要花五分钟看懂它改了什么、会不会出问题。你同时开了五个agent，每个都在不同分支上噼里啪啦地改代码，你的大脑根本处理不过来。 AI编程真正的天花板，已经悄悄从\"模型能力\"转移到了\"人脑带宽\"。 OpenAI的解法：别再同步盯了 面对这个瓶颈，OpenAI给出的答案出乎很多人意料。 他们没有做一个更大的dashboard让你同时看20个窗口，也没有说\"等下一代模型就好了\"。他们做了一件更根本的事：重写了人和agent之间的协作流程。 这个方案叫Symphony，已经开源。 \"So we built (and open sourced!) Symphony to remove that ceiling. Here's how it works:\" Alex在线程里把Symphony的运作逻辑讲得非常清楚，核心就四步： 第一步：挂在任务系统上自动跑。 \"Symphony uses a project management software to track work. For every open issue it guarantees that there's a non-interactive Codex agent running in its own isolated workspace. If it crashes or gets stuck — Symphony restarts it.\" 每个issue对应一个独立工作区，agent卡住了系统自动重启，不需要人肉盯着救火。 第二步：逼agent先交\"工作证明\"。 \"We taught Codex to produce 'proof of work': green CI, deep reviews from specialist agents (security, safety, reliability, etc.), and—if the change touches user-facing surfaces—a recorded video.\" CI得绿、安全审查得",
-      "pubDate": "2026-04-29",
-      "at": "2026-04-30"
-    },
-    "https://36kr.com/p/3787679275441413": {
-      "title": "AI模型和Agent创新，倒逼AI Infra产生了哪些创业机会？",
-      "text": "最近一段时间，AI网络通信领域，越来越热。 一方面，硅谷的AI网络通信初创公司们频频获得大额融资，另一方面，二级市场的AI网络通信，尤其是光通信公司，股价也快速增长。 为什么AI网络通信的热度在提升？本质还是需求在推动：模型尺寸越来越大，Token消耗越来越多，算力出现紧缺。而要从算力端以较低成本榨出更多算力，就得从底层技术去想办法。 加快芯片与芯片间的通信，加快节点与节点之间的通信，提高整个算力基础设施的效率，就是一条正在被验证的路。 一家叫Upscale AI近期融资很猛。它在2025年9月获得1亿美元种子轮融资，由Mayfield与Maverick Silicon共同领投，StepStone Group、Celesta Capital、Xora、Qualcomm Ventures、Cota Capital、MVP Ventures及 Stanford University参投。 2026年1月又获得2亿美元A轮融资，由Tiger Global、Premji Invest和Xora Innovation领投，Maverick Silicon、StepStone Group、Mayfield、Prosperity7 Ventures、Intel Capital和Qualcomm Ventures参投。 最近，又有消息称，它在洽谈1.8亿至2亿美元的新一轮融资。 大参数，MoE，长上下文，模型创新倒逼AI算力网络创新 一个创立不到一年的企业，为什么能接连获得大额融资，这与它的创始团队有很大关系。事实上，Upscale AI是从Auradine孵化出来的，Auradine本身就是一家新兴的AI基础设施公司，它现在已改名Velaura AI，致力于为云端、边缘及实体人工智能应用提供经过验证的突破性超低功耗计算方案。 Barun Kar和Rajiv K，图片来源：Upscale AI Upscale AI的联合创始人和CEO Barun Kar，此前是Auradine的COO，而联合创始人及执行董事长Rajiv K此前是Auradine的CEO，现在也是Velaura AI的CEO，Upscale AI的CTO Puneet Agarwal此前在博通工作十年，还在Marvell当过数据中心部门的CTO。 Barun Kar和Rajiv K，在前一次创业之前，也都有巨型企业的工作经历，可以说，这是一支在行业里浸淫多年，具有丰富经验的团队。 AI网络通信，为什么重要？这要从技术底层开始说起。 AI计算负载的特点是高度同步。大规模模型训练、MoE架构，以及分布式推理等现代工作负载，都会给网络带来极高的同步压力。 训练过程中，模型的参数梯度需要以高度同步的波次在成千上万张GPU之间传递；推理计算则会产生大规模扇出流量，同时对时延提出极其严苛的要求。 网络一旦跟不上，GPU就会停转等待，时延持续攀升，算力集群的效率随之崩塌。 这是架构错配，不是调优可以解决的。 传统的网络，追求通用性，而兼容多种负载引入的复杂性，如今在AI场景中反而变成了阻力。确定性通信，以及GPU集合通信所要求的强同步，正在超越传统网络的设计极限。 AI算力集群需要的网络，必须能够在大规模环境下，支持确定性、同步化、高吞吐的通信。 AI网络必须从底层重新构建，围绕Scale-Up与Scale-Out连接的真实需求来设计。 进一步细化拆解，就落到了模型上。 现在模型的两个特点，让它对AI算力集群网络的压力特别大。一个是模型的参数规模指数提升，另一个是长上下文和Cot的持续进化。 以刚发布的DeepSeek V4 pro为例，它的尺寸参数来到1.6T，上下文达到1M。1.6T的尺寸，就需要1.6T内存，一块卡的内存肯定不够，需要切分到大量加速器上运行，而芯片间通信也因此迅速成为瓶颈。 超长上下文窗口，会让KV cache的体量急剧膨胀，也会超过单张GPU的HBM内存容量。这些都对内存容量和通信带宽形成双重挤压。 不是单纯的芯片级创新，而是全栈革新 要完成这种大参数和长上下文窗口模型的训练和流畅推理，真正的解决办法是重定义“计算边界”，让更多的GPU能够以超高速网络连接，拥有亚微秒级时延和高吞吐集合通信能力，能够把它们看成一个“超级GPU”，于是机架这种形式就出现了。 以NVIDIA的N",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://www.leiphone.com/category/ai/lnKD1syPWRAO933Q.html": {
-      "title": "RAM——复杂场景下多人3D人体运动重建新框架 | CVPR 2026",
-      "text": "一、研究背景 从视频中准确理解并重建人体3D运动是计算机视觉的重要研究方向，在体育赛事分析、VR/AR、人机交互以及医疗康复等领域具有广泛应用价值。然而，在真实复杂场景中，该任务仍面临三大严峻挑战：首先是身份关联不稳定——多人交互时，频繁的遮挡和快速运动容易导致ID Switch，影响后续重建的一致性；其次是运动轨迹中断——视角变化和极端遮挡会造成目标跟踪丢失；第三是重建结果不连续——传统逐帧处理方式难以维持时间维度上的三维结构稳定性。传统方法通常将目标跟踪和三维重建作为两个独立的流水线模块处理，无法从整体视角利用跨帧的时序信息。RAM（Recover Any 3D Human Motion）从根本上打破了这一范式，提出统一框架将运动感知跟踪、时序建模与动作预测有机融合，实现从逐帧处理向时序建模的范式转变。 二、核心方法 RAM 框架由四个关键模块构成，各司其职、协同工作：SegFollow 模块（稳定跟踪）：引入基于卡尔曼滤波的运动建模机制，将运动一致性信息融入目标关联过程。不再过度依赖外观特征，即使在严重遮挡或外观发生剧变的情况下，依然能维持稳定的身份跟踪，从根本上降低 ID Switch 发生率。T-HMR 模块（时序三维重建）：基于时间记忆机制，从邻近帧中筛选关键特征，利用 Transformer 结构进行跨时间信息融合。当当前帧信息不完整或存在噪声时，借助历史上下文生成平滑且一致的3D人体结构，解决重建不连续问题。动作预测模块：基于历史运动序列对人体动态进行建模，预测未来的姿态。专门针对目标被完全遮挡的极端情况，在当前没有任何观测信息时，靠预测结果维持运动序列的连续性。自适应融合模块：对当前帧重建结果与预测结果进行自适应加权——遮挡严重时更依赖预测，观测清晰时更依赖重建，根据当前信息可靠性动态调整权重，实现最优融合。 三、亮点总结 亮点一：统一框架打破流水线壁垒RAM 首次将目标跟踪、时序三维重建与动作预测整合到统一框架内，从整体视角充分利用跨帧时序信息，彻底改变了传统串行流水线的局限，代表了多人3D运动理解的范式转变。亮点二：强大的零样本泛化能力在 PoseTrack 等国际主流复杂场景数据集上，RAM 在无需针对特定目标数据集进行额外训练（Zero-shot）的条件下，依然在身份一致性、跟踪稳定性以及三维重建精度上显著超越现有方法，展现了极高的实际应用潜力。亮点三：时序建模接近人类认知通过引入时间记忆与动作预测机制，使模型更接近人类真实世界中的动态认知过程——人们即使暂时看不到一个运动中的人，也能凭借记忆预判其位置与姿态。这一仿人认知设计不仅提升了技术性能，也为视频理解领域提供了重要的方法论启示。──────────────────────────────────────────上述内容包含AI辅助生成，更详细信息参见两个链接链接：https://arxiv.org/abs/2603.19929解读来源：https://cloud.tencent.com/developer/article/2658222【封面图片来源：网站名开发者社区，所有者：NLPIR Lab】 雷峰网版权文章，未经授权禁止转载。详情见转载须知。",
-      "pubDate": "2026-04-24",
-      "at": "2026-04-30"
-    },
-    "https://www.leiphone.com/category/ai/p9I1luhTnfcQURAm.html": {
-      "title": "蚂蚁技术研究院副院长吕乐当选美国医学与生物工程院（AIMBE）Fellow",
-      "text": "美国医学与生物工程院（American Institute for Medical and Biological Engineering，简称AIMBE）近日公布2026届 Fellow 入选名单，蚂蚁集团技术研究院副院长，蚂蚁健康医疗AI实验室主任吕乐博士当选。据AIMBE官方新闻稿，吕乐博士的当选理由是\"对放射学和肿瘤学新技术、开放影像数据集及临床产品的杰出贡献\"（for outstanding contributions to the development of novel techniques, open imaging datasets and clinical products of radiology and oncology）。AIMBE 成立于1991年，是医学与生物工程领域最具权威性的学术机构之一，该机构的 Fellow 评选被视为该领域最高专业荣誉之一，仅授予全球范围内前2%的顶尖工程师和科学家。历届 AIMBE Fellow 中包括4位诺贝尔奖得主、27位美国总统科学/技术与创新奖章获得者，以及数百位美国国家工程院、医学院和科学院院士。本届 Fellow 共有175位来自学术界、工业界、临床实践及政府机构的杰出人士当选，代表超过35个国家。吕乐博士现任蚂蚁集团技术研究院副院长、蚂蚁健康医疗AI实验室主任。他于2007年获得美国约翰霍普金斯大学计算机系哲学博士学位。在攻读博士期间，他曾在微软研究院北京和雷德蒙（Redmond）工作两年，师从沈向洋、Kentaro Toyama及Paul Viola。在2025年6月加入蚂蚁集团前，他曾任阿里巴巴集团达摩院医疗AI团队负责人、NVIDIA医疗AI部门创始人及高级研究经理、美国国立卫生研究院（NIH）临床中心资深研究科学家、西门子美国研究院资深科学家等职务。吕乐于2021年因为癌症检测与诊断方面的突出贡献当选IEEE Fellow，是医学影像分析领域论文被引用次数最高的研究者之一。他在医疗AI领域的贡献包括：主导开发全球首个大规模胸部X光数据集ChestXray14（含11万张影像）和通用病变检测数据集DeepLesion，推动深度学习在医学影像从实验室走向临床（美国专利60余项，中国专利百余项，培养的博士后和学生过的MICCAI 2018年5年最有影响力论文奖，MICCAI 2017/2025青年科学家奖获选，北美放射学年会2016-2020年四次最佳论文奖，亚洲超声学年会2021年银质青年科学家奖）。在达摩院期间也带领团队多次实现了世界上第一次的临床医学人工智能突破性的进展。近期，吕乐博士曾参与雷峰网(公众号：雷峰网)AI科技评论近期举办的 GAIR Live 024 圆桌论坛。他在会上提出了价值分配原则：“如果AI为社会创造了100块钱的价值，应该让病人拿走98块，我们开发者分剩下的2块。” 他进一步强调，AI好不好的标准是看它能不能“进临床指南”：目前的医疗服务由于人力限制，往往是断裂的，尤其是术后随访和治疗前/治疗中多学科会诊。因此AI的终极价值不在于取代医生，而在于“生产出低成本、但是（超）高质量的新的，而且医生可以驾驭的先进医疗生产力”，从而实现以病人为核心的精准医疗。 雷峰网原创文章，未经授权禁止转载。详情见转载须知。",
-      "pubDate": "2026-04-21",
-      "at": "2026-04-30"
-    },
-    "https://www.leiphone.com/category/ai/SjJFJkVt2aQjt3XC.html": {
-      "title": "做了5年3D打印机，我发现了世界模型的Scaling Law",
-      "text": "2026年初，英伟达CEO黄仁勋在 CES 上喊出\"物理AI是第二个拐点\"后，世界模型（World Model）成了全球科技巨头的必争之地。但在这之前，学术界就有很多学者已经意识到， AI 必须理解物理世界的常识，才能真正服务于人类。但随着AI 教母李飞飞，Meta前首席AI科学家、图灵奖得主杨立昆等大佬纷纷投入这一领域，大家逐渐意识到，这是一个比大语言模型更底层、也更难啃的赛道。当我们在国内寻找这条赛道上的学者和公司时，陈天润进入了我们的视野。这位2000年出生的在读博士生，在2022年创立魔芯科技，用3D打印机完成从0到1的验证后，于2024年全面转型空间智能。“造小家电的”、“ 3C产品创业出身”…… 在对谈中，这位00后对自己的介绍极度克制。但实际上，他不仅是一家“估值数十亿”的世界模型领域公司CEO，还是潘云鹤院士的弟子。不久前，魔芯科技凭借着空间智能与世界模型方面的突破，顺利拿到了华为、联想等巨头联手的数亿元融资，如今，他们对自己的定位是空间智能的基础设施服务商。在这次对谈里，陈天润一边输出空间智能相关的技术性话题，一边从创业者角度跟我们分享他在商业化方面如何将一秒钟视频生成成本控制在一毛钱以内。在3D打印的\"修罗场\"里被卷了五年，我们能看到他拼杀出来的商业化能力，对比很多AI公司，虽然科研很强，但不知道怎么把技术变成产品、怎么控制成本、怎么在供应链里活下来。陈天润的经历和经验值得被挖掘，于是有了这次对话。以下是陈天润与AI科技评论的对话，AI科技评论作了不改变原意的编辑：01造小家电的过程中，意外发现了空间智能的Scaling LawAI科技评论：外界对魔芯科技的认知还停留在3D打印机，你们这次突然宣布拿到亿元融资，是因为什么？陈天润：我们之前3D打印机做得不错，在持续研发与研究的过程中，洞察到了空间智能的Scaling Law（规模定律），看到了一条走向高泛化、高通用、可交互、高精度世界模型的路径。AI科技评论：这项研究成果是什么时候发现的？陈天润：2024年底，我们在研究3D AI建模时，测试某个网络结构，发现它不仅能把物体生成得很好，空间也能做。而且数据喂得越多，空间重建效果越好，精度和一致性都更好。这让我们意识到：空间建模可能存在某种Scaling Law。就像大语言模型直到ChatGPT才证明\"数据越多效果越好\"，在3D领域，过去大家先构建中间表示，也就是类似知识图谱的东西，再生成结果。比如李飞飞的World Labs等，会选择先构建全景图或者先建3D高斯，再用这个去做下游任务。但我们发现，如果去掉这个中间环节，直接端到端训练，模型反而学得更好。AI科技评论：是什么数据在驱动这个意外发现？陈天润：3D原生数据，比如图片与3D信息的配对，加上文本描述。我们有个数据团队在专门采集，雇了大量人员在采数据，就跟很多机器人公司雇人采数据一样。AI科技评论：意思是合成数据和真实数据都用，那比例呢？陈天润：这里有个\"配方\"问题。真实数据提供泛化性，但它不准；合成数据准，但不泛化，遇到新场景就得改。我们得像厨师一样调配这个比例，不同训练阶段配方还不一样。AI科技评论：输血业务一会聊，先说说数据采集成本吧，不少投资人关注这个话题。陈天润：中国在这方面有成本优势。并且这跟具身智能公司采的数据不完全一样，有重叠部分，也有我们独特的部分。因为最终要服务具身智能场景，所以也会采那些机器人需要的数据。AI科技评论：你们的世界模型，和市面上其他方案有什么区别？陈天润：我们是国内首个基于全国产算力（华为昇腾910C）的数分钟级交互式世界模型KOKONI-World。很多行业头部公司的架构，会出现数据喂多效果未必更好的情况。但我们的架构是端到端的，数据规模上去后，空间理解能力会持续提升。更重要的是模型的可部署性。现在大部分世界模型跑实时视频生成需要10张A100，不可能上到车端。我们能在端侧NPU（比如瑞芯微、地平线芯片）上跑，模型规模压缩到1-2B，不需要背个4090显卡在机器人身上——有些公司宣称端侧部署，结果却是背张显卡。02空间智能的战场，在科研也在产业AI科技评论：端侧VLA的商业场景是什么？陈天润：两条线。一是具身智能，每个和真实世界交互的终端都应该具备空间智能的感知和理解能力，这个目的是让机器人\"看得懂也走得准\"。二是自动驾驶，我",
-      "pubDate": "2026-04-14",
-      "at": "2026-04-30"
-    },
-    "https://www.leiphone.com/category/ai/c42jk1Tcheq4MYlm.html": {
-      "title": "微软人工智能公开课概览 | 雷锋网公开课",
-      "text": "人工智能无疑是当前最为热门的科技概念。作为科技界的领军企业，微软在人工智能领域耕耘已久。早在25年前微软研究院建立时，人工智能就已经成为整个微软的战略目标。微软为此倾注了许多精力和资源，并取得了亮眼的成绩，但它还有着更加宏伟的愿景：将人工智能带给每个人，从开发者到数据科学家，从技术爱好者到学生。本次公开课，雷锋网邀请到了微软亚洲研究院掌门人洪小文博士，为大家分享《微软人工智能公开课》第一章节——《微软人工智能概览》中的精彩内容，介绍微软在人工智能领域的最新研究成果以及微软的AI服务如何赋能开发者。整套《微软人工智能公开课》已在微软虚拟学院全面上线，感兴趣的朋友可以点击链接（https://aka.ms/MicrosoftAIMOOC）跳转学习。据雷锋网了解，《微软人工智能公开课》分为三大块，呈金字塔结构，最底层针对所有的开发者，涵盖认知服务Cognitive Service以及Bot Framework。中间层针对数据科学家，包括Azure Machine Learning、HDInsight、Stream Analyst等。最顶层则瞄准需要开发自己算法的研究者，主要工具有 Microsoft Cognitive Toolkit、Azure Data Science VM等，同时也支持其他框架，比如 TensorFlow、Caffee等。嘉宾介绍洪小文博士，现任微软全球资深副总裁，微软亚太研发集团主席，兼微软亚洲研究院院长，全面负责推动微软在亚太地区的科研及产品开发战略，加强微软与中国和亚太地区学术界的合作。洪小文博士是电气电子工程师学会院士（IEEE Fellow），微软杰出首席科学家和国际公认的语音识别专家。洪博士在国际著名学术刊物及大会上发表过百余篇学术论文。以下为雷锋网对嘉宾分享内容的实录精编。人工智能概述很多人都在问，我们研究人工智能的目的是什么。微软的答案是：让我们的应用和服务能够拥有像人类一样认识世界的能力，在视觉、语音、语言、知识等维度得到拓展，带来更好的用户体验。还有很多人问，人工智能该如何分类，究竟哪几部分算人工智能。人工智能技术纷繁复杂，但微软认为可以归结为三大类：大数据&机器学习认知计算能力对话即服务的体验以智能手机为例，我们与智能手机的交互是通过不断点击屏幕上的菜单来实现的；用户需要耗费很多时间学习菜单中每个选项代表的意义。认知服务可以让我们与机器的交互变得更加简单直接，机器也能更好地了解用户的意图，不必浪费太多的沟通时间。微软AI的发展历程微软在AI领域耕耘已久。1991年，微软AI基础研究院成立，致力于打造一个能够听懂、看懂和理解人类以及世间万物的电脑。2007年，微软语音部门从研究部门正式转为产品部门，开启了AI的产品化道路。到2014年，在天津的一个活动中，微软系统已经能够将英文演讲实时翻译为中文了。紧接着，2015年微软亚洲研究院的计算机视觉系统首次在ImageNet上打败了人类。这套计算机视觉系统对超过2000种物体进行辨认，失误率仅为3.5%，而人类的失误率为5.5%。当时这套神经网络共有152层，如今已经发展到了上千层。但对于微软来说，人类与人工智能的关系不是谁打败谁。事实上，AI将成为人类最好的工具，能够拓展人类的智能，让人类完成更多的事情。一般我们理解的AI是Artificial Intelligence（人工智能），但也可以将其阐释为Augmented Intelligence（增强智能）。未来人类与机器密切合作，就能实现我们理想中的Superman。微软的愿景就是，通过API等方式让AI这项看似高大上的技术平民化。有了微软的认知服务API，开发者无需自己做人脸识别、年纪识别和物种识别，只要使用相应的API，就能轻松调用这些功能，在其熟悉的领域开发应用。微软认知服务API微软的认知服务API主要可以归结为5大类：视觉：从面部感官到感觉，让对话机器人了解图像、视频和情绪。语音：把语音转换为文本，或把文本转化为语音，了解用户的意图，翻译语言，过滤噪声以及识别说话者。语言：教对话机器人理解复杂的自然语言指令，解析复杂的文本以及理解用户情绪。知识：从网络、学术界，或者用户自己的数据积累中融合丰富的知识。搜索：通过必应API的强大功能，访问数十亿网页、图片、视频和新闻。微软此前和一个非营利组织达成",
-      "pubDate": "2017-06-21",
-      "at": "2026-04-30"
-    },
-    "https://www.leiphone.com/category/ai/ZOiMDY7KoL0MVcEu.html": {
-      "title": "Video++张奕：人工智能在消费级视频场景中的应用丨雷锋网公开课（附PPT）",
-      "text": "雷锋网按：视频直播行业在前几年迎来了井喷式爆发，随着人工智能技术的逐渐成熟，视频的解决方案也在不断完善，例如大数据、智能追踪、直播互动、广告精准推荐等，这些都在潜移默化中提升视频的用户体验，并且也给视频行业带来了新的商业模式。那么人工智能在视频应用场景中究竟能发挥哪些作用？二者结合能带来哪些新的商业应用？本期硬创公开课，雷锋网邀请到了Video++人工智能事业部研发Team Leader张奕为大家讲解人工智能在消费级视频场景中的应用。嘉宾简介张奕：Video++人工智能事业部研发 Team Leader，中科院博士，研究领域包括深度学习、多媒体、计算机视觉、模式识别及视频处理，原美国Autodesk研究院计算机视觉专家，拥有数项技术发明专利，在ICPR、ICVR等知名国际会议及Journal of Multimedia等国际期刊中发布过数篇论文。Video++专注于消费级视频大流量场景的AI科技公司，以视觉识别和大数据为基础，实现视频场景匹配和广告自动投放，实现在视频中的购物，百科，虚拟植入，卡牌互动，投票，发红包等互动功能，为观众提供新型的互动体验。截至日前，服务的10000多家企业包括乐视视频、芒果TV、爱奇艺、风行网、浙江卫视中国蓝等综合平台，斗鱼直播、战旗直播、熊猫直播等直播平台，以及Zealer、日日煮、小李子足球等垂直网站和社区，每月为平台提供超过101亿次的服务。以下内容整理自本期公开课，雷锋网做了不改变原意的编辑：大家好，我是来自Video++团队的张奕。Video++成立2年多来，一直致力于消费级视频领域的技术产品的研发，利用人工智能技术实现视频内容的分析和识别。今天就给大家分享一下Video++团队利用人工智能技术在消费级视频垂直领域的应用的技术和心得。一、消费级视频的特点消费级视频作为视频的一个子类，当然具有相对于静态图像所具有的特点。即在时间维度上，能够对内容识别提供重要的帮助，是统计算法斟酌如何有效利用的重要因素。具体有以下特点：数据量大类别多样场景复杂一般而言，视频一般分为两大类：消费级视频和工业级视频。工业级视频指的是利用固定设备在固定条件、固定场景下拍摄的视频。常见的有安防视频。很显然，消费级视频相对于前者而言更加复杂。下面就来看一下其相对于其他视频产品的不同。1、数据量大这是消费级视频的第一个特点。随着互联网的发展壮大，很多产品的数据都通过互联网和云端进行传输和存储。数据量大也使得消费级视频的商业价值的潜力变得巨大，与此同时这也给人工智能算法处理提出了更高的要求。算法运行时，必须考虑到计算的速度，且要在合理的时间里对大量的数据进行分析和处理。2、类别多样再来看消费级视频的第二个特点。其实其本身可分为很多种类，如电影、综艺、体育和广告，还有这两年非常火的直播、短视频等等。这些子类的消费者视频的内容形式之间又存在着很大的差异，所以也给不同子类的通用算法提出巨大的挑战。3、场景复杂上文也提到，工业级视频由于条件固定，所以场景单一，而消费者视频则来源多样，后期还有很多加工，从而场景更加复杂。在消费者视频里，经常能看到场景的切换、缩放和拼接，还有字幕，淡入淡出等功效设置。在很多消费者视频中，如舞台综艺节目的频繁移动，交接的改变，都会对整体或者局部产生模糊。以上因素都会对人工智能分析视频内容产生一定程度的干扰，这就要求人工智能算法需要具备更高的鲁棒性，以减少这些因素带来的干扰。二、人工智能的发展与消费级视频的分析再来了解一下人工智能技术在消费级视频领域的应用，以及过去、现在和将来会达到什么程度。人工智能在消费级视频中最重要的功能是目标追踪、检测和识别。与工业级视频相比，消费级视频最大的区别在于其需要编辑、策划和互动，这是我们可以介入的地方。像娱乐综艺、在线直播等还有很大的剩余价值有待开发。利用人工智能技术对物体、人脸、场景、品牌进行系列结构筛选后，就能得到这个视频里在何时何地出现了什么人物、物体、场景和品牌的信息。然后再在这一基础上对物体进行结构化，就能产生极大的商业价值。目前来看，在视频中加入广告等都需要人工操作，如果采用人工智能技术来完成这些工作，则能很大程度节省时间，降低成本。建立视频结构化数据库以后，经过关键词的筛选，用户可以批量化、精准化地进行广告投放，这套系统就能将应用市场、广告电商和消费者关联起来，",
-      "pubDate": "2017-06-06",
-      "at": "2026-04-30"
-    },
-    "https://www.leiphone.com/category/ai/q9GfISIqTuJaYHev.html": {
-      "title": "清华大学博士生涂锋斌：设计神经网络硬件架构时，我们在思考些什么？（下） | 雷锋网公开课总结",
-      "text": "基于神经网络的人工智能近年取得了突破性进展，正在深刻改变人类的生产和生活方式，是世界各国争相发展的战略制高点。神经网络作为实现人工智能任务的有效算法之一，已经在各种应用场景获得广泛的应用。从云端到移动端，不同应用场景也对神经网络的计算能力提出了不同的需求。神经网络的广泛应用离不开核心计算芯片。目前的主流通用计算平台包括 CPU 和 GPU，存在着能效较低的问题（能效即能量效率，是性能与功耗的比值）。为了获得更高的能效，我们需要设计一种专用的神经网络计算芯片来满足要求。国际IT巨头，如英特尔、谷歌、IBM，都在竞相研发神经网络计算芯片。然而，神经网络的结构多样、数据量大、计算量大的特点，给硬件设计带来了巨大挑战。因此，在设计面向神经网络的高性能、高能效硬件架构时，我们需要思考清楚以下三个问题：好的计算模式应该是怎样的？为了支持这样的计算模式，架构应该怎样设计？已经实现的硬件架构，针对具体算法和应用需求，如何配置成最优的计算模式？雷锋网本期公开课特邀请到清华大学微纳电子系四年级博士生涂锋斌，为我们分享神经网络硬件架构的设计经验。他将通过介绍其设计的可重构神经网络计算架构 DNA （Deep Neural Architecture），与大家分享在设计神经网络硬件架构时需要思考的问题。他在完成设计的同时，解决了这些问题，并对现有的硬件优化技术做出了总结。本文根据雷锋网硬创公开课演讲原文整理，并邀请了涂锋斌进行确认，在此感谢。由于全文篇幅过长，分（上）（下）两部分。上篇传送门：清华大学博士生涂锋斌：设计神经网络硬件架构时，我们在思考些什么？（上） | 硬创公开课总结公开课视频：三、架构设计讲完了计算模式的优化，我们接下来针对硬件架构设计给大家做一些分享。我们研究工作的核心主要集中在计算模式的优化上面，而硬件架构本身其实更多的是如何去配合好的计算模式。如图所示，这是 DNA 架构的一个整体的框架图。DNA 的全称是 「Deep Neural Architecture」，它的整体架构和我们之前提到的硬件架构模型是类似的，当然在具体的细节上就是会有一些参数，还有一些数据、通路上会做一些细致的一些策划。值得一提的就是说我们的计算核心内部有两个计算引擎，共享同一个同一块局部输入寄存器，但有各自的输出寄存器，而架构主要有三个特点：针对网络各层的配置信息架构在片上会存储一些针对网络各层的配置信息（Configuration Context），存储在控制器内部（蓝色虚框）可重构的数据通路即从 Output Buffer 反馈回 Output REGs 的通路（红线）是可重构的。此外，整体的输入数据通路也是可重构的形态。另外在 CE 内部，它也会有一些可重构的数据通路，我们之后会展开。「Ping-Pong」缓存设计我们的设计中必须要考虑的一点，在于我们必须承认，对现有的这些深度神经网络而言，它的计算量数据量非常大，以致无法在片上完整地存储整个网络的数据和权重，所以在计算过程中，我们不得不与外部的存储进行频繁地访问。为了在计算过程中对存储器的访问不影响这些计算的性能，使得计算单元一直处于工作状态，我们需要对于每一块的这些存储进行一个「Ping-Pong」Buffer 的缓存设计，意思就是说在当前 Buffer 在工作的时候，它的另一块 Buffer 在外面保留数据，使得我当前 Buffer 用完的时候，下一次需要用到的数据也准备好了。此外，我们对 CE 内部（Convolution Engine）内部做了一些额外的设计——4 级 CE 结构，这里提一些主要的概念。我做了一个空间上的展开图。它主要有四个级别：第一个层次叫做输入寄存器级（Input REG Level），对应的是 CE 内部的局部输入寄存器；第二个级别叫数据传输级别，或称数据共享级（Data Sharing Level）。它主要是进行数据通路的重构，以支持我们刚刚提到的并行卷积映射方法，是很重要的一个部分。第三部分就是最核心的计算机，即 MAC 级（MAC Level），MAC 就是乘加单元的意思，就是最核心计算以一个 16×16 的阵列实现。第四级就是和输入级对应的输出寄存器级。而我们前面也提到，CE 是由很多个 PE 构成的，那么此处 CE 的第二至第四层这三个级别，他们对应的是 PE 的三个级别",
-      "pubDate": "2017-05-26",
-      "at": "2026-04-30"
-    },
-    "https://www.leiphone.com/category/ai/8sB0WHz6D70J7NAy.html": {
-      "title": "清华大学博士生涂锋斌：设计神经网络硬件架构时，我们在思考些什么？（上） | 雷锋网公开课总结",
-      "text": "基于神经网络的人工智能近年取得了突破性进展，正在深刻改变人类的生产和生活方式，是世界各国争相发展的战略制高点。神经网络作为实现人工智能任务的有效算法之一，已经在各种应用场景获得广泛的应用。从云端到移动端，不同应用场景也对神经网络的计算能力提出了不同的需求。神经网络的广泛应用离不开核心计算芯片。目前的主流通用计算平台包括CPU和GPU，存在着能效较低的问题（能效即能量效率，是性能与功耗的比值）。为了获得更高的能效，我们需要设计一种专用的神经网络计算芯片来满足要求。国际IT巨头，如英特尔、谷歌、IBM，都在竞相研发神经网络计算芯片。然而，神经网络的结构多样、数据量大、计算量大的特点，给硬件设计带来了巨大挑战。因此，在设计面向神经网络的高性能、高能效硬件架构时，我们需要思考清楚以下三个问题：好的计算模式应该是怎样的？为了支持这样的计算模式，架构应该怎样设计？已经实现的硬件架构，针对具体算法和应用需求，如何配置成最优的计算模式？雷锋网本期公开课特邀请到清华大学微纳电子系四年级博士生涂锋斌，为我们分享神经网络硬件架构的设计经验。他将通过介绍其设计的可重构神经网络计算架构 DNA （Deep Neural Architecture），与大家分享在设计神经网络硬件架构时需要思考的问题。他在完成设计的同时，解决了这些问题，并对现有的硬件优化技术做出了总结。本文根据雷锋网硬创公开课演讲原文整理，并邀请了涂锋斌进行确认，在此感谢。由于全文篇幅过长，分（上）（下）两部分，敬请期待。公开课视频：各位观众晚上好，我是来自清华大学的涂锋斌，今天非常荣幸收到雷锋网 AI 科技评论的邀请，在此给大家做一节硬创公开课，主题是《设计神经网络硬件架构时，我们在思考什么？》首先做一个自我介绍。我是清华大学微纳电子系的博士生涂锋斌，今年直博四年级，我的导师是魏少军教授和尹首一副教授，博士课题是高能效神经网络加速芯片设计，研究兴趣包括深度学习，计算机体结构及集成电路设计。我作为核心架构设计者，完成了可重构神经计算芯片 Thinker 的设计。该芯片作为清华大学代表性成果，参加了 2016 年全国双创成果展，获得李克强总理的高度赞许。相关研究成果已经发表数篇国际顶级会议和权威期刊论文。本次公开课将从以下五个方面展开。研究背景我将介绍神经网络的一些背景知识及特点，它们给硬件设计带来哪些挑战？计算模式从算法和调度的角度分析神经网络需要怎样的计算模式；而基于优化的计算模式，我们需要怎样的架构支持神经网络的计算？架构设计针对计算模式的需求，如何设计高性能、高能效的神经网络计算架构？可重构神经网络计算架构 DNA（Deep Neural Architecture）具有哪些特点？实验结果DNA 的性能与能效表现如何？与顶尖工作相比的情况如何？总结思考针对神经网络硬件架构的设计展开一些思考和讨论。在经过前面的学术风暴后，我将打开摄像头与大家互动，进入提问环节。一、研究背景无处不在的神经网络随着人工智能时代的到来，图像识别、语音识别、自然语言处理等智能任务在生活中无处不在。而神经网络作为当前实现这类智能任务最有效的算法之一，已经获得广泛的应用。比方说：百度图片搜索；微软语音识别；谷歌在线翻译；……可以说，神经网络在我们的生活中真是无处不在。那么什么是神经网络？我们不妨从神经元开始理解。如图所示，这是一个生物上的神经元。它由树突、细胞体、轴突和神经末梢这四个部分构成。1. 通过树突接受输入信号；2. 在细胞体内进行信号处理；3. 通过轴突和神经末梢把输出信号传至其它神经元；4. 而大量的神经元就构成了我们的神经系统。而这就启发了人工神经元模型的诞生。我们可以看到，它的示意图其实与神经元是十分相似的。它仍然由左边的多个输入，经过加权求和与非线性运算得到输出。一个简单的神经元能做些什么？举个简单的例子。在空间中有红色和蓝色两类点。用简单的神经元，我们可以在空间中做一套曲面，将这两类点分开。这就是一个非常简单的分类问题。神经网络/神经元非常擅长用于做分类问题。那么，当我们有很多神经元后，我们可以得到一个神经网络，它又能用来做什么？这幅图给出了一个非常简单的典型单层神经网络。其中的每一个圆圈代表一个神经元，它们相互连接，就构成了一个神经网络。一个相对复杂的结构可以做些什么？如图所示，空间中仍然有红蓝两种颜",
-      "pubDate": "2017-05-25",
-      "at": "2026-04-30"
-    },
-    "https://www.leiphone.com/category/ai/eE3cOaHMpW6xyrHu.html": {
-      "title": "微软亚洲研究院秦涛：对偶学习的对称之美 | 雷锋网公开课总结",
-      "text": "雷锋网按：众所周知，大规模带标签的数据对于深度学习尤为重要。在以图像识别、机器翻译等为代表的任务中，深度神经网络通过大量带标签的数据进行训练。但这样的前提存在两个主要的局限性。首先是人工标记数据的成本很高；其次是大规模标记数据获取的难度较大。为了解决这一问题，在 NIPS 2016 上，微软亚洲研究院提出了“一种新的机器学习范式”——对偶学习，利用任务互为对偶的特点从无标注的数据中进行学习。它的训练原理是怎样，具体有哪些应用前景，近期又有着怎样的进展？本期硬创公开课，雷锋网荣幸地邀请到微软亚洲研究院主管研究员秦涛博士，为我们讲述对偶学习的新进展。雷锋网做了不改动原意的整理与编辑，并邀请了秦涛博士核对确认，在此表示感谢。嘉宾介绍秦涛博士，微软亚洲研究院主管研究员，在国际会议和期刊上发表学术论文100余篇，曾/现任机器学习及人工智能方向多个国际大会领域主席或程序委员会成员，曾任多个国际学术研讨会联合主席。秦涛博士是中国科学技术大学兼职博士生导师，IEEE、ACM会员。他的团队的研究重点是深度学习和强化学习的算法设计、理论分析及在实际问题中的应用。大家晚上好，很高兴能有这样一个机会和大家分享微软最近的一些研究成果。首先非常感谢雷锋网提供硬创公开课的平台，同时也感谢各位朋友这么晚还来参加这个线上活动。我今天报告的题目是对偶学习，主要想阐述的是人工智能的对称之美。先做一个简单的自我介绍，我叫秦涛，是微软亚洲研究院机器学习组的主管研究员。首先我将介绍下我们组所做的事情。DRL团队介绍我们组主攻方向是机器学习，有好几个小团队，涵盖了多个机器学习的方向。我们有一个团队侧重于分布式机器学习平台、架构及算法实现，我们做了很多开源的项目，包括微软认知工具包（原名： CNTK） 及分布式计算平台 DMTK 等，这些项目都可以在 GitHub 上找到。我们除了做平台外，另一个研究方向是机器学习算法，包括两个团队：深度学习与强化学习算法团队；符号学习团队，即希望把一些逻辑、推理包括知识图谱的内容与深度学习、统计学习结合起来。我们还有一个团队侧重于机器学习理论。我们始终认为，机器学习作为一个研究方向，不仅是算法和应用，也需要对学习的理论进行理解与认识。具体到我带的深度学习与强化学习团队，主要课题如同 PPT 上所示的，有四个大方向。对偶学习是非常重要的一个方向，也是我待会会重点介绍的内容。第二个很重要的方向是轻量级快速算法。目前深度学习或强化学习的训练需要非常多的数据，非常长的训练时间及大量计算资源如GPU。我们设计了一些快速算法，能达到同样的精度或是相近的精度。第三个方向是自主学习。我们意识到深度学习本身效果可以做得很好，但需要研究者或实践者具备一定的经验，知道如何调各种超参数，比如网络结构如何设计，每层多少节点，是否要用 residual connection/skip connection，卷积或 recurrent connection，包括优化过程中需不需要做各种各样的 SGD 算法，learning rate 怎么做 decay。这些对结果都会有很大影响。当我们面临一个新的数据集时，可能我们需要花很多时间和代价才能得到一个好的模型。因为需要做很多超参数的 tuning.我们自主学习的理念有点像在模仿自动驾驶，也就是说，能否通过学习的方式，来解决超参数的tuning问题？此外，我们团队还会做深度学习与强化学习的相关应用，主要涵盖三个方面，包括：语言理解（语言模型、文本分类、机器翻译、文本生成等）、图像理解（图像分类、生成、描述等）游戏（麻将、桥牌等）金融科技接下来我将进入今天的分享主题：对偶学习。对偶学习在介绍对偶学习之前，我想先介绍一下 AI 的发展。大家从很多媒体报道可以了解到，AI从 1956 年诞生以来至今已经 61 年，期间历经风雨包括两次高峰与两次低谷，到目前为止我们处于第三次的上升期，并且这一次的高峰可能还未到达。AI 在很多实际应用中取得了很好的成绩，特别是在很多具体的任务上打败了人类水平。因此我们可以说，现在正是 AI 的黄金时代。不仅仅因为它得到了政府的提倡和扶植，在学术圈是一个比较火的研究方向，更重要的是它在工业界的实际问题中取得了非常令人瞩目的成绩，比如：微软亚洲研究院在 2015 年 ImageNet 上提出的深度残差网络，第一",
-      "pubDate": "2017-05-20",
-      "at": "2026-04-30"
-    },
-    "https://www.leiphone.com/category/ai/Zt5mFmrAgQP43K9x.html": {
-      "title": "大模型做通用 Or 垂直？中小AI公司的「生死抉择」",
-      "text": "以ChatGPT为代表的大模型再一次带火了人工智能。基于目标人群、用途和适用场景的不同，大模型市场可分为通用大模型和垂直大模型两大类。通用大模型，聚焦基础层，以技术攻关为目的。他们对标ChatGPT做通用大模型，百度的文心一言，阿里的通义千问、科大讯飞的星火大模型等都归属这一类。垂直大模型，聚焦解决垂直领域问题，以产品开发为目的。他们在通用大模型基础上训练行业专用模型，应用到金融、医疗、教育、养老、交通等垂直行业。通用大模型的长处聚焦于一个“广”字，面向人群以及场景适用范围十分广泛。但对于特定场景而言，企业并不需要通用大模型的“全能”能力，更多需要的是模型的精度和质量。垂直大模型以此为切入点，选择了另一条路径。他们以具备的行业知识为基础，通过与通用大模型企业合作的方式，训练行业专用模型。“站在客户角度，行业客户最为看重的是定制化的需求，以及AI企业的工程化落地能力。”众数信科CEO吴炳坤对雷峰网说。作为垂直大模型的一员，众数信科成立于2021年初，由云从科技、厦门火炬创投、民生电商发起成立。众数信科定位AIGC领域的“知识智能化”，即将数字城市领域沉淀的行业数据、专家经验，通过AI 技术进行工程化。简单理解，众数信科只做一件事，即将AI 大模型微调为行业专用模型，帮助行业提升效率。在吴炳坤看来，做行业的垂直大模型，同样存在巨大的商业价值。通用大模型门槛高企，初创公司在垂直大模型寻找机会过去几年，商业化一直是困扰整个人工智能行业的难题，大模型的出现让AI商业化看到了新机会。吴炳坤将AI比作工业时代的石油钻机：“没有钻井机，石油就无法成为工业时代的黑色血液；数据要素时代，没有AI，数据的价值也就得不到充分挖掘。现在大模型带来了无限的想象和发展机会。”两年前，在数字城市领域，AI更多基于小模型，比如算法只做人脸识别，或只做车牌识别，产品受限很大，研发成本很高，可以扩展的空间不多。现在，随着 AI 大模型这一关键技术的突破，数据和AI的结合度更加紧密，上述问题都得以突破。大模型将对全行业都产生颠覆性地重构，已经是业界共识。百度李彦宏、阿里张勇等不少业界大佬都在不同场合，不断重复同样一句话：AI 大模型时代，每个行业的应用都值得重新做一遍。从目前国内扎堆发布的大模型来看，基础大模型的技术创新，更多是大公司的角斗场。阿里巴巴张勇曾指出，超万亿参数的大模型研发是一场“AI+云计算”的全方位竞争，囊括了算法、底层庞大算力、网络、大数据、机器学习等诸多领域，是一项复杂的系统性工程。一方面，通用大模型需要大量有效的数据与计算资源，这离不开超大规模的AI基础设施的支撑；另一方面，长时间的训练、推理背后，也往往意味着高昂的成本。正因此，当下大模型市场的主角大都是来自于移动互联网时代的大巨头，如百度“文心一言”、阿里“通义千问”、腾讯“混元”等。大公司们瞄准广泛适用的人群，齐齐布局 NLP、CV、跨模态等多种模型，动用同样海量的数据参数进行预训练，动作整齐划一。这种“你有，我也有”既是实力的展现，同时也存在同质化问题，会逐渐消弭彼此之间的辨识度，难以在市场中发挥优势。并且，大模型“海纳百川”的魅力纵然令人着迷，但其终归是一项技术，技术只有与具体应用结合变成产品，带来实际的使用体验和转化成效，才真正具有价值。换句话说，通用大模型的“大”和“通用”看着诱人，但对于B端行业客户来说，并不能满足需求。行业客户使用大模型的最终目的，是让业务发展走上新的台阶。因而，他们需要的不是综合技术上的碾压，而是能在具体需求上追求极致，可以实现功能最大化的产品。换言之，行业客户愿意为合理开发利用的功能买单，但不会为自己用不到的功能买单。在此背景下，中小初创型企业们，看到了机会。他们受限于资金和技术，难以走上通用大模型的角斗场，但由于本身具备一定的行业领域知识，反而在垂直大模型的探索上具备天然优势。在人工智能时代的浪潮中，聚焦少数细分赛道，在通用大模型的底座能力之上，围绕“如何用好大模型”这一接地气的主题，已经成为小公司们安身立命的根本。专用大模型必经的三重淬炼：技术、场景、数据当下，很多主流的AI大模型，并没有对外开放模型的训练和微调。较为普遍的做法是，将模型开发好以后，给用户提供一个接口调用。在吴炳坤看来“很多 AI 大厂现在不会将大模型微调为行业专用模型的能力开放出来。”首先，A",
-      "pubDate": "2023-06-29",
-      "at": "2026-04-30"
-    },
-    "https://developer.volcengine.com/articles/7630774022607994907": {
-      "title": "Docker 部署 Hermes Agent 完整指南（Windows / Linux 通用）",
-      "text": "Hermes Agent 是 Nous Research 推出的 AI 自主智能体（AI Autonomous Agent），能轻松执行各类复杂任务，比如自动编写代码、执行终端命令、操作浏览器、规划并完成任务，以及进行文件读写和脚本生成，是开发、运维和研究的得力助手。 本文将详细介绍如何通过 Docker 快速部署 Hermes Agent，部署前先为大家提供 Docker 一键安装与镜像加速方案，适配绝大多数场景，新手也能轻松上手。 一、Docker 一键安装与镜像加速（推荐方案） 本方案支持 🧪 测试环境和 🏭 生产环境（需提前审计），提供的 Linux Docker &amp; Docker Compose 一键安装配置脚本，可适配 13 种主流 Linux 发行版（含国产系统），能一键完成 Docker、Docker Compose 的安装，以及轩辕镜像加速配置，全程无需手动操作，极大提升部署效率。 1. 执行命令 🧪 测试环境（快速体验，仅限非生产场景） bash <(wget -qO- https://xuanyuan.cloud/docker.sh) 🏭 生产环境（推荐，安全优先） # 1. 下载脚本到本地 wget https://xuanyuan.cloud/docker.sh -O docker-install.sh # 2. （可选）审计脚本源码（建议企业环境必做） less docker-install.sh # 或使用vim、cat查看脚本内容 # 3. 执行脚本 bash docker-install.sh 2. 安全强制提示 ⚠️ 请注意：curl | bash / wget | bash 这种直接执行远程脚本的方式，仅建议用于测试、个人学习或非核心环境，生产环境严禁直接使用； ⚠️ 金融、政务、内网等敏感环境，必须先将脚本下载到本地，进行全面的安全审计，确认无恶意代码后，再执行安装操作。 二、准备环境 完成 Docker 安装后，需确认环境已满足以下条件： 已安装 Docker（Linux 系统通过上述一键脚本安装即可）； Windows / Mac 系统需安装 Docker Desktop。 验证 Docker 是否正常运行，执行以下命令： docker version 若能正常显示 Docker 版本信息，说明环境准备就绪。 三、拉取 Hermes Agent 镜像 Hermes Agent 镜像国内地址：https://xuanyuan.cloud/zh/r/nousresearch/hermes-agent 使用以下命令拉取 Hermes Agent 最新镜像，通过轩辕镜像加速，拉取速度更快、更稳定： docker pull docker.xuanyuan.run/nousresearch/hermes-agent:latest 拉取成功后，会显示类似如下输出，说明镜像拉取完成： Status: Downloaded newer image docker.xuanyuan.run/nousresearch/hermes-agent:latest 四、创建数据目录 Hermes Agent 运行过程中，需要持久化存储配置文件、会话数据等，因此需提前创建一个本地目录，用于挂载到容器中，避免容器删除后数据丢失。 Linux / Mac 系统 mkdir -p ~/.hermes Windows 系统（PowerShell 中执行） mkdir C:\\Users\\用户名\\hermes 说明：将命令中的“用户名”替换为你自己的 Windows 用户名即可。该目录主要用于存储以下内容： config.yaml（核心配置文件） .env（环境变量配置文件） sessions（会话数据） logs（运行日志） memories（Agent 记忆数据） 五、初始化 Hermes Agent 首次运行 Hermes Agent 时，需要执行初始化向导，配置核心参数（如模型提供商、API Key 等），步骤简单，跟着提示操作即可。 Linux / Mac 系统 docker run -it --rm \\ -v ~/.hermes:/opt/data \\ docker.xuanyuan.run/nousrese",
-      "pubDate": null,
-      "at": "2026-04-30"
-    },
-    "https://developer.volcengine.com/articles/7634196375634182180": {
-      "title": "语音智能体转人工接听的技术落地路径与实践办法",
-      "text": "在人工智能技术深度渗透客户服务、政务咨询、企业联络等领域的今天，语音智能体已成为提升服务效率、降低运营成本的核心载体，能够高效处理标准化、高频次的语音交互需求。但受限于技术边界，当面对复杂个性化诉求、情感共鸣场景或高风险敏感操作时，语音智能体难以替代人类客服的灵活性、同理心与判断力。因此，实现语音智能体到人工接听的无缝衔接，构建“AI高效处理+人工兜底保障”的协同服务模式，成为语音智能体技术落地的关键环节，也是提升用户体验、完善服务闭环的核心要求。本文结合技术实践与行业案例，详细拆解语音智能体转人工接听的技术落地路径与实操办法，为企业及相关机构的技术部署提供参考。 一、技术落地核心前提：明确转人工的核心价值与边界定位 语音智能体转人工接听并非简单的“功能补充”，而是平衡服务效率与用户体验的关键设计，其核心价值在于弥补AI技术的固有局限性，为用户提供全流程闭环服务。在落地前，需先明确转人工的核心应用场景与边界，避免盲目转接或过度依赖人工，确保技术落地的合理性与经济性。 从应用场景来看，转人工的触发主要集中在三类场景：一是复杂需求场景，当用户咨询超出语音智能体知识库范围、需要跨系统调取数据或多步骤操作时，如企业客户咨询定制化合作方案、政务用户咨询特殊事项办理流程等；二是情感交互场景，当系统检测到用户存在焦虑、愤怒等负面情绪，如投诉维权、紧急求助，需要人工通过共情沟通化解矛盾时；三是高风险场景，涉及资金变动、身份验证、隐私信息确认等操作，如银行用户办理大额转账、政务用户修改个人敏感信息等，需人工介入确保操作安全合规。 同时，需明确转人工的边界：语音智能体应优先处理标准化、高频次诉求，如业务咨询、信息查询、简单预约等，仅在超出自身处理能力时触发转人工，避免“AI无用化”或“人工过载”。这一前提定位，是后续技术架构设计、规则配置、流程优化的核心基础。 二、技术落地核心路径：四阶段闭环推进，实现无缝转接 语音智能体转人工接听的技术落地，需围绕“精准识别转接需求—高效触发转接流程—无缝衔接人工坐席—数据闭环优化迭代”四个核心阶段推进，每个阶段需突破关键技术难点、完善实操细节，确保转接过程高效、流畅、可控。 （一）第一阶段：基础准备——搭建适配的技术架构与环境 技术架构是转人工功能落地的基础，需实现语音智能体与人工坐席系统、业务系统的深度兼容，确保数据互通、流程顺畅。核心搭建内容包括三大模块： 语音智能体核心模块优化：完善语音识别（ASR）、自然语言处理（NLP）、语音合成（TTS）三大核心能力。其中，ASR需提升复杂环境下的识别准确率，如降噪处理、方言适配，确保准确捕捉用户语音指令，尤其是“转人工”“找真人”等显性触发词；NLP需强化意图识别与情绪分析能力，通过预训练模型（如BERT）解析用户隐性需求，通过声纹分析、语调波动捕捉用户情绪状态，为转接决策提供支撑；TTS需优化转接提示话术，确保语气自然、清晰，缓解用户等待焦虑。 人工坐席系统对接：搭建或升级人工坐席管理系统，实现与语音智能体的API无缝对接，支持呼叫转移、会话同步、坐席状态实时监测等功能。重点对接CTI（计算机电话集成）系统，采用SIP协议实现通话实时转接，确保转接过程无中断、无延迟；同时，打通CRM（客户关系管理）系统，实现用户信息、对话历史、需求标签等数据的实时同步，避免人工坐席重复询问，提升服务连贯性。 基础环境部署：采用分布式微服务架构，支持万级并发处理，满足政务热线、电商大促等峰值场景的转接需求；部署数据加密与安全防护机制，对用户语音、个人信息进行脱敏处理，符合《个人信息保护法》等法规要求；搭建测试环境，模拟各类转接场景，验证系统兼容性与稳定性，避免正式部署后出现故障。 （二）第二阶段：核心配置——制定精准的转接触发规则 转人工触发的准确性，直接影响用户体验与人工坐席效率。需结合业务场景，制定“显性触发+隐性触发”相结合的规则体系，实现“该转则转、不该转不转”，避免误转、漏转问题。核心触发规则包括四类： 显性指令触发：这是最直接、最常用的触发方式，通过配置关键词白名单，当用户清晰说出“转人工”“人工客服”“找真人”等预设关键词时，系统立即触发转接流程。同时，可适配IVR语音导航，提示用户“如需人工服务，请按0”，满足不同用户的操作习惯，提升转接便捷性。 意图识别触发：通过NL",
-      "pubDate": null,
-      "at": "2026-04-30"
-    },
-    "https://developer.volcengine.com/articles/7630662083478863915": {
-      "title": "OpenCode完全指南：国内直连全球API大模型",
-      "text": "AI生态AIGCAI解决方案OpenCode 接入 QuickRouter API 教程 OpenCode 是一款面向开发者的终端 AI 编程工具，支持 CLI 与 TUI 两种交互方式。你可以直接在终端中通过自然语言完成代码生成、项目分析、文件编辑等操作。 如果你希望不使用默认模型提供方，也可以通过 OpenAI 兼容模式 将 OpenCode 接入 QuickRouter API(一个API Key接入全球大模型) https://quickrouter.ai 配置完成后，你就可以通过 QuickRouter 调用对应模型，在本地获得更稳定、更灵活、性价比更高的编程辅助体验。 一、接入前需要准备什么 开始之前，请先登录 QuickRouter API 控制台，准备好以下 3 项关键信息： 配置项推荐填写内容注意事项API Keysk-xxxxxxxxxxxxxxxx请直接填写原始 KeyBase URLhttps://api.quickrouter.ai/v1需要包含 /v1模型名称例如 gpt-5请填写 QuickRouter 实际支持，且你的账号有权限调用的模型 二、安装 OpenCode 请先确认你的电脑已经安装 Node.js 18 或更高版本。 如果本机还没有安装 Node.js，请先完成安装后再继续。 如果环境里没有 Node.js，可以先前往官网下载安装。 打开终端后执行安装命令： 官方一键安装脚本（推荐 macOS / Linux） curl -fsSL https://opencode.ai/install | bash NPM 全局安装（推荐 Windows） npm install -g opencode-ai 安装完成后，可以执行下面命令检查是否安装成功： opencode --version 如果终端能够正常输出版本号，说明 OpenCode 已经安装完成。 三、配置 QuickRouter API 并启动 OpenCode OpenCode 支持 OpenAI 兼容接口，因此最直接、最省事的接入方式，就是配置环境变量后直接启动。 方式一：快捷启动（推荐首次测试） 这种方式只在当前终端窗口中生效，适合第一次验证是否配置成功。 注意：设置环境变量和启动 opencode，最好在同一个终端窗口内完成。 Windows（PowerShell） $env:OPENAI_API_KEY=\"sk-你的QuickRouter API密钥\" $env:OPENAI_BASE_URL=\"https://api.quickrouter.ai/v1\" opencode macOS / Linux export OPENAI_API_KEY=\"sk-你的QuickRouter API密钥\" export OPENAI_BASE_URL=\"https://api.quickrouter.ai/v1\" opencode 方式二：永久配置（推荐长期使用） 如果你不想每次打开终端都重新输入环境变量，可以改成长期配置。 方案 A：使用登录方式配置 先运行： opencode auth login 然后按顺序完成下面几步： 在列表中选择 openai 选择 Manually enter API Key 粘贴你准备好的 QuickRouter API Key 按回车确认即可 方案 B：手动配置 opencode.json 找到或创建配置文件： macOS / Linux： ~/.config/opencode/opencode.json Windows： C:\\Users\\你的用户名\\.config\\opencode\\opencode.json 将下面内容写入并保存： { \"$schema\": \"https://opencode.ai/config.json\", \"provider\": { \"quickrouter\": { \"api\": \"https://api.quickrouter.ai/v1\" } } } 然后再编辑系统环境变量并保存，重启终端后生效。 新增以下两个变量： OPENAI_API_KEY=sk-你的QuickRouter API密钥 OPENAI_BASE_URL=https://api.quickrouter.ai/v1",
-      "pubDate": null,
-      "at": "2026-04-30"
-    },
-    "https://techcrunch.com/podcast/equity-podcast-runway-ceo-cristobal-valenzuela-ai-video-world-models/": {
-      "title": "Is AI video just a prequel? Runway’s CEO thinks world models are next",
-      "text": "AI-generated video has gone from novelty to creative tool almost overnight, and Runway has a front row seat to the shift. The New York-based company has raised close to $860 million at a $5.3 billion valuation, and its models are going toe-to-toe with the most well-funded labs in the world, including Google and OpenAI. The technology goes way beyond making videos: Runway is now pushing into general world models with applications in gaming, robotics, and maybe something closer to general intelligence. On this episode of TechCrunch’s Equity podcast, host Rebecca Bellan sits down with Runway co-founder and CEO Cristóbal Valenzuela to talk about where video generation goes from here, and why Runway’s ambitions now reach well beyond Hollywood. Listen to the full episode to hear about: Why Valenzuela thinks the real constraint on filmmaking has never been technology, and what changes when it is How Runway thinks about world models differently than Google and other labs building in the space What “nonlinear media” means, and why real-time video generation opens up use cases way beyond content creation Why Valenzuela pushes back on the idea that AI companions are “inherently dystopian” Subscribe to Equity on YouTube, Apple Podcasts, Overcast, Spotify and all the casts. You also can follow Equity on X and Threads, at @EquityPod. Theresa Loconsolo is an audio producer at TechCrunch focusing on Equity, the network’s flagship podcast. Before joining TechCrunch in 2022, she was one of 2 producers at a four-station conglomerate where she wrote, recorded, voiced and edited content, and engineered live performances and interviews from guests like lovelytheband. Theresa is based in New Jersey and holds a bachelors degree in Communication from Monmouth University. You can contact or veri",
-      "pubDate": "Wed, 29 Apr 2026 18:59:44 +0000",
-      "at": "2026-04-30"
-    },
-    "https://simonwillison.net/2026/Apr/25/gpt-5-5-prompting-guide/": {
-      "title": "GPT-5.5 prompting guide",
-      "text": "Before any tool calls for a multi-step task, send a short user-visible update that acknowledges the request and states the first step. Keep it to one or two sentences. This is a link post by Simon Willison, posted on 25th April 2026. ai 1990 openai 414 prompt-engineering 188 generative-ai 1764 llms 1730 gpt 123 Monthly briefing Sponsor me for $10/month and get a curated email digest of the month's most important LLM developments. Pay me to send you less! Sponsor & subscribe",
-      "pubDate": "2026-04-25T04:13:36.000Z",
-      "at": "2026-04-30"
-    },
-    "https://simonwillison.net/2026/Apr/29/llm/": {
-      "title": "LLM 0.32a0  is a major backwards-compatible refactor",
-      "text": "My motivation: create three memorable dogs with distinct “cool” styles—one cinematic, one adventurous, and one charmingly chaotic—so each feels like they could star in their own story. Tool call: describe_dog({\"name\": \"Nova Jetpaw\", \"bio\": \"A sleek silver-gray whippet who wears tiny aviator goggles and loves sprinting along moonlit beaches. Nova is fearless, elegant, and rumored to outrun drones just for fun.\"} Tool call: describe_dog({\"name\": \"Mochi Thunderbark\", \"bio\": \"A fluffy corgi with a dramatic black-and-gold bandana and the confidence of a rock star. Mochi is short, loud, loyal, and leads a neighborhood 'security patrol' made entirely of squirrels.\"} Tool call: describe_dog({\"name\": \"Atlas Snowfang\", \"bio\": \"A massive white husky with ice-blue eyes and a backpack full of trail snacks. Atlas is calm, heroic, and always knows the way home—even during blizzards, fog, or confusing camping trips.\"} This is LLM 0.32a0 is a major backwards-compatible refactor by Simon Willison, posted on 29th April 2026. Part of series New releases of LLM Feed a video to a vision LLM as a sequence of JPEG frames on the CLI (also LLM 0.25) - May 5, 2025, 5:38 p.m. Large Language Models can run tools in your terminal with LLM 0.26 - May 27, 2025, 8:35 p.m. LLM 0.27, the annotated release notes: GPT-5 and improved tool calling - Aug. 11, 2025, 11:57 p.m. LLM 0.32a0 is a major backwards-compatible refactor - April 29, 2026, 7:01 p.m. projects 526 python 1248 ai 1990 annotated-release-notes 48 generative-ai 1764 llms 1730 llm 591 Previous: Tracking the history of the now-deceased OpenAI Microsoft AGI clause Monthly briefing Sponsor me for $10/month and get a curated email digest of the month's most important LLM developments. Pay me to send you less! Sponsor & subscribe",
-      "pubDate": "2026-04-29T19:01:47.000Z",
-      "at": "2026-04-30"
-    },
-    "https://simonwillison.net/2026/Apr/25/romain-huet/": {
-      "title": "Quoting Romain Huet",
-      "text": "Since GPT-5.4, we’ve unified Codex and the main model into a single system, so there’s no separate coding line anymore. GPT-5.5 takes this further, with strong gains in agentic coding, computer use, and any task on a computer. — Romain Huet, confirming OpenAI won't release a GPT-5.5-Codex model This is a quotation collected by Simon Willison, posted on 25th April 2026. ai 1990 openai 414 generative-ai 1764 llms 1730 gpt 123",
-      "pubDate": "2026-04-25T12:06:55.000Z",
-      "at": "2026-04-30"
-    },
-    "https://techcrunch.com/2026/04/29/parallel-web-systems-hits-2b-valuation-five-months-after-its-last-big-raise/": {
-      "title": "Parallel Web Systems hits $2B valuation five months after its last big raise",
-      "text": "In Brief Posted: 11:33 AM PDT · April 29, 2026 Image Credits:Big Event Media / Getty Images Parallel Web Systems, the AI agent-tool startup founded by former Twitter CEO Parag Agrawal, has raised a $100 million Series B at a $2 billion valuation led by Sequoia. Existing investors Kleiner Perkins, Index Ventures, Khosla Ventures, First Round Capital, Spark Capital, and Terrain Capital also participated, the company said. This raise comes just five months after the startup announced its $100 million Series A at a $740 million valuation led by Kleiner and Index, and brings the total capital it raised to $230 million. Parallel offers a suite of web search and research APIs specifically for AI agents and names customers such as Clay, Harvey, Notion, and Opendoor. It says its customers include banks and hedge funds (though it has not named them). The confidence of investors in Agrawal’s startup has to be particularly gratifying for him after his time at Twitter ended with a subsequent lawsuit. Elon Musk famously fired him and all the top execs after he bought Twitter. Those execs, including Agrawal, sued, alleging that Musk failed to pay the $128 million in severance pay they believe they were owed. In October, Musk settled the case for undisclosed terms. In addition to some big-name customers, Parallel tells TechCrunch it has over 100,000 developers using its products. Topics Subscribe for the industry’s biggest tech news Related Latest in Startups",
-      "pubDate": "Wed, 29 Apr 2026 18:33:05 +0000",
-      "at": "2026-04-30"
-    },
-    "https://techcrunch.com/2026/04/29/more-gemini-features-are-coming-to-google-tv/": {
-      "title": "More Gemini features are coming to Google TV",
-      "text": "Google announced on Wednesday a new wave of AI-powered features coming to Google TV, alongside a dedicated short-form video feed that brings YouTube Shorts directly to the home screen. At the center of this update are more Gemini capabilities. Within the Gemini tab, a “Create” button lets users experiment with generative AI tools Nano Banana and Veo. These are rolling out first on Gemini-enabled TCL TVs in the U.S., with broader device support expected later. Nano Banana, Google’s image-generation and editing model, lets users transform photos using simple voice prompts. Users can swap outfits, change backgrounds, or generate entirely new scenes. Google is positioning the feature as a shared, living-room experience, encouraging playful prompts like asking the AI to make “my dad wear a ridiculous outfit” to get a laugh from family and friends. Veo, on the other hand, allows users to create clips from scratch or animate still images by describing a scenario. For instance, “make my grandfather moonwalk in space.” Image Credits:Google Google Photos is also getting an upgrade on Google TV. With Gemini-powered search, users can quickly surface specific memories, like vacations or birthday parties, without digging through their entire library. Results are displayed in a browsable format, making it easy to view images full-screen or launch a slideshow. There’s also a new “Remix” feature that lets users apply artistic styles such as watercolor or oil painting to their photos. Meanwhile, “Dynamic Slideshows” introduces animated layouts, frames, and color treatments. Users can turn any Google Photos collection into a vivid, TV-ready slideshow by selecting Google Photos in the screensaver settings. Image Credits:Google Beyond AI tools, Google is also leaning into the growing popula",
-      "pubDate": "Wed, 29 Apr 2026 16:40:49 +0000",
-      "at": "2026-04-30"
-    },
-    "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age": {
-      "title": "Building the compute infrastructure for the Intelligence Age",
-      "text": "",
-      "pubDate": "Wed, 29 Apr 2026 15:00:00 GMT",
-      "at": "2026-04-30"
-    },
-    "https://techcrunch.com/2026/04/29/meet-shapes-the-app-bringing-humans-and-ai-into-the-same-group-chats/": {
-      "title": "Meet Shapes, the app bringing humans and AI into the same group chats",
-      "text": "Shapes, an app where humans and AI characters chat together in shared group conversations, is emerging from stealth with $8 million in seed funding. Think Discord, but with AI characters alongside humans. Founded in 2022, Shapes has more than 400,000 monthly active users. The app’s founders, Anushk Mittal and Noorie Dhingra, believe that Shapes can address issues around “AI psychosis,” which refers to cases where prolonged interactions with AI chatbots or AI companions can cause individuals to develop delusions or paranoia. Instead of isolating people with one-on-one interactions with AI, Shapes allows people to connect with AI within their everyday interactions with real people. “Today, all of our conversations with AI are very private and one-on-one, but that’s not really how humans collaborate and communicate with each other,” Shapes CEO Mittal told TechCrunch in an interview. “Our lives run on group chats. That’s where we spend all of our time. That’s where we talk and communicate with each other. It’s just natural to bring in AI into those same conversations where AI has all of the context and is readily available to help you.” In the app, AI characters, called “Shapes,” are viewed as any other user and can interact in all the same ways humans can. They’re clearly labeled as “Shapes” for transparency, but they aren’t restricted. Users can create their own Shapes and set their personalities. The company says users have already created three million Shapes to add into group chats. Many Shapes are rooted in fandom, as the app serves as a way for fans to deep-dive on subculture and meet other fans. When users sign up for the app, they’re asked to choose their interests so the app can recommend a selection of group chats they might be interested in joining. Techcrunch e",
-      "pubDate": "Wed, 29 Apr 2026 13:00:00 +0000",
-      "at": "2026-04-30"
-    },
-    "https://www.theverge.com/ai-artificial-intelligence/920378/oracle-openai-datacenter-buildout": {
-      "title": "Larry’s risky business",
-      "text": "If you want to know whether the AI bubble is bursting, there’s only one publicly traded company that will tell you: Oracle.That’s right, the database company. Oracle has burned its boats and pivoted to AI, but not in any kind of usual way. It is not a foundation model builder like OpenAI or Anthropic, obviously. It’s not quite a neocloud, though it has entered the same bare-metal business as CoreWeave. It is a software-as-a-service company that has made an audacious bet on a very specific future version of AI as Oracle’s traditional business has gracefully declined. It is significantly older than any of its AI competitors, save Microsoft, and it has decided its future involves an enormous compute deal with OpenAI, a company that does not make money.Whether OpenAI is good for its commitments to Oracle depends a lot on how much money it can raise and how quickly it can become profitable. The risk for Oracle is that it may be sinking a lot of money into building data centers for OpenAI, only for OpenAI to be unable to pay Oracle the $300 billion it agreed to in their contract. Oracle and OpenAI did not respond to requests for comment.But the OpenAI play — and the pivot to AI generally — suggests a specific vision: The key place to make money isn’t training foundation models. The real money is inference, or using AI models to output results on data that isn’t in the training set. So the company has looked at some startups’ businesses and decided that they are actually just features that can be added to Oracle’s existing capabilities — which is pretty much what Oracle has been up to for the entirety of its existence.Oracle, of course, is already an enterprise business, so it has the existing relationships and large salesforce to go out there and sell its vision, one that sug",
-      "pubDate": "2026-04-29T13:57:16.000Z",
-      "at": "2026-04-30"
-    },
-    "https://www.wired.com/story/openai-really-wants-codex-to-shut-up-about-goblins/": {
-      "title": "OpenAI Really Wants Codex to Shut Up About Goblins",
-      "text": "OpenAI has a goblin problem.Instructions designed to guide the behavior of the company’s latest model as it writes code have been revealed to include a line, repeated several times, that specifically forbids it from randomly mentioning an assortment of mythical and real creatures.“Never talk about goblins, gremlins, raccoons, trolls, ogres, pigeons, or other animals or creatures unless it is absolutely and unambiguously relevant to the user’s query,” read instructions in Codex CLI, a command-line tool for using AI to generate code.It is unclear why OpenAI felt compelled to spell this out for Codex—or indeed why its models might want to discuss goblins or pigeons in the first place. The company did not immediately respond to a request for comment.OpenAI’s newest model, GPT-5.5, was released with enhanced coding skills earlier this month. The company is in a fierce race with rivals, especially Anthropic, to deliver cutting-edge AI, and coding has emerged as a killer capability.In response to a post on X that highlighted the lines, however, some users claimed that OpenAI’s models occasionally become obsessed with goblins and other creatures when used to power OpenClaw, a tool that lets AI take control of a computer and apps running on it in order to do useful things for users.“I was wondering why my claw suddenly became a goblin with codex 5.5,” one user wrote on X.“Been using it a lot lately and it actually can't stop speaking of bugs as ‘gremlins’ and ‘goblins’ it's hilarious,” posted another.The discovery quickly became its own meme, inspiring AI-generated scenes of goblins in data centers, and plug-ins for Codex that put it in a playful “goblin mode.”AI models like GPT-5.5 are trained to predict the word—or code—that should follow a given prompt. These models have beco",
-      "pubDate": "Tue, 28 Apr 2026 23:45:05 +0000",
-      "at": "2026-04-30"
-    },
-    "https://www.wired.com/story/chinese-ai-giant-sensetime-is-running-its-new-model-on-chinese-chips/": {
-      "title": "Sanctioned Chinese AI Firm SenseTime Releases Image Model Built for Speed",
-      "text": "SenseTime, a Chinese AI company best known for its facial recognition technology, released a new open source model on Tuesday that it claims can both generate and interpret images far faster than top models developed by US competitors. SenseNova U1 could help the company reclaim lost ground after it slipped from its place among the leading players in China’s AI development race.The model’s secret sauce is its ability to “read” images without translating them to text first, speeding up the process and reducing the amount of computing power required. “The model’s entire reasoning process is no longer limited to text. It can reason with images as well,” Dahua Lin, cofounder and chief scientist at SenseTime, said in an interview with WIRED.Lin, who is also a professor of information engineering at the Chinese University of Hong Kong, says that models capable of processing images directly will enable robots to better understand the physical world in the future.Like DeepSeek's latest flagship model, SenseTime says U1 can be powered by Chinese-made chips. “Several Chinese domestic chipmakers have finished optimizing compatibility with our new model,” Lin says. On release day, 10 Chinese chip designers, including Cambricon and Biren Technology, announced their hardware supports U1.That flexibility matters because US export controls restrict Chinese firms from accessing the world's most advanced AI chips, particularly those used for training, which at this point are primarily developed by Western companies like Nvidia. “We will continue to push for training on more different chips,” Lin says. But he also acknowledges that SenseTime “may still need to use the best chips to ensure the speed of our iteration.”SenseTime released U1 for free on Hugging Face and GitHub, another sign o",
-      "pubDate": "Wed, 29 Apr 2026 17:23:52 +0000",
-      "at": "2026-04-30"
-    },
-    "https://arstechnica.com/ai/2026/04/openai-codex-system-prompt-includes-explicit-directive-to-never-talk-about-goblins/": {
-      "title": "OpenAI Codex system prompt includes explicit directive to \"never talk about goblins\"",
-      "text": "The system prompt for OpenAI’s Codex CLI contains a perplexing and repeated warning for the most recent GPT model to “never talk about goblins, gremlins, raccoons, trolls, ogres, pigeons, or other animals or creatures unless it is absolutely and unambiguously relevant to the user’s query.” The explicit operational warning was made public last week as part of the latest open source code for Codex CLI that OpenAI posted on GitHub. The prohibition is repeated twice in a 3,500-plus word set of “base instructions” for the recently released GPT-5.5, alongside more anodyne reminders not to “use emojis or em dashes unless explicitly instructed” and to “never use destructive commands like ‘git reset --hard’ or ‘git checkout --’ unless the user has clearly asked for that operation.” Separate system prompt instructions for earlier models contained in the same JSON file do not contain the specific prohibition against mentioning goblins and other creatures, suggesting OpenAI is fighting a new problem that has popped up in its latest model release. Anecdotal evidence on social media shows some users complaining about GPT’s penchant for focusing on goblins in completely unrelated conversations in recent days. OpenAI employee Nick Pash, who works on Codex, insists on social media that this “isn’t a marketing gimmick” to get people talking about GPT-5.5 and Codex. But that hasn’t stopped some OpenAI executives from leaning into the joke as word of the system prompt spread. “Feels like codex is having a ChatGPT moment. I meant a goblin moment, sorry,” OpenAI CEO Sam Altman wrote on social media Wednesday morning.",
-      "pubDate": "Wed, 29 Apr 2026 19:00:58 +0000",
-      "at": "2026-04-30"
-    },
-    "https://arstechnica.com/ai/2026/04/data-center-developer-pauses-middle-east-projects-after-war-damage/": {
-      "title": "Drone strikes on data centers spook Big Tech, halting Middle East projects",
-      "text": "Skip to content Not so war ready Uninsurable war damage is forcing tech companies to rethink Middle East plans. Guests look at a model of the largest data center in the UAE under construction in Abu Dhabi as the Stargate initiative, a joint venture between G42, Microsoft, and OpenAI, during the Abu Dhabi International Petroleum Exhibition Conference (ADIPEC) in Abu Dhabi on November 3, 2025. Credit: Giuseppe CACACE / AFP via Getty Images A data center developer has paused all Middle East project investments after one of its facilities was damaged by an Iranian missile or drone attack. The decision comes as the Iran war is forcing Silicon Valley investors and tech companies to rethink a trillion-dollar plan to build more AI and cloud data centers in Gulf countries. The damaged data center is owned by Pure Data Centre Group, a London-based company that is operating or developing more than 1 gigawatt of data center capacity across Europe, the Middle East, and Asia. “No one’s going to run into a burning building, so to speak,” Pure DC CEO Gary Wojtaszek told CNBC. “No one’s going to put in new additional capital at scale to do anything until everything settles down.” Data center developers are already eating the costs of uninsurable war damage from the conflict, which began with a US-Israeli attack on Iran on February 28. Iran primarily responded by attacking shipping to shut down the Strait of Hormuz trade corridor along with striking US military bases and energy infrastructure across the Gulf region. Iran also directly struck two Amazon Web Services (AWS) data centers in the United Arab Emirates, while a near-miss from an Iranian one-way attack drone damaged a third AWS data center in Bahrain. The Iranian attacks caused structural damage, disrupted power delivery, and als",
-      "pubDate": "Wed, 29 Apr 2026 17:27:53 +0000",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27415": {
-      "title": "#7OpenAI 发布 GPT-5.5:迈向“超级应用”与自主计算的关键一步",
-      "text": "2026年4月23日，OpenAI 正式发布了其最新旗舰 AI 模型 GPT-5.5。总裁格雷格·布罗克曼（Greg Brockman）将其定义为公司历史上“最智能、最直观”的模型，并称其发布标志着 OpenAI 距离打造 AI “超级应用”（SuperApp）的愿景更近了一步。性能飞跃与核心优势相较于前代版本，GPT-5.5在多个关键维度实现了显著突破:高效能低成本: 与5.4版本相比，新模型速度更快、思维更敏捷，且使用的代币（Tokens）更少，大幅降低了企业与消费者的使用门槛。基准测试领跑: OpenAI 发布的数据显示，GPT-5.5在多项基准测试中得分均高于 Google 的 Gemini3.1Pro 和 Anthropic 的 Claude Opus4.5。专业领域突破: 首席研究官马克·陈指出，GPT-5.5在处理计算机任务、科学技术研究及药物研发工作流方面表现优异，能显著辅助专家级科学研究。战略布局:从模型到“超级应用”布罗克曼重申了萨姆·奥特曼（Sam Altman）此前的构想，即通过整合 ChatGPT、Codex 和 AI 浏览器，构建一个功能齐全、如“瑞士军刀”般的统一服务程序。这一战略目标使其与埃隆·马斯克旗下的 X 平台展开直接竞争。为了加速企业端渗透，OpenAI 同步宣布了以下动作:深度合作 Infosys: 将 Codex 等工具集成至 Infosys 的 Topaz AI 平台，利用其覆盖60多个国家的交付能力，帮助大型企业实现软件现代化与流程自动化。启动 Codex Labs 项目: 与埃森哲、普华永道、塔塔咨询等全球顶级咨询公司合作，构建分销网络。目前，Codex 的周活跃用户已突破 400万。安全与分发针对近期业界关注的网络安全担忧（如 Anthropic 的 Mythos 工具泄露事件），OpenAI 强调 GPT-5.5将强化数字防御能力。发布计划:GPT-5.5于本周四正式上线，首批面向 ChatGPT Plus、Pro、Business 及 Enterprise 用户开放。其中，高性能的 5.5Pro 版本将专属提供给 Pro 及企业级订阅用户。",
-      "pubDate": "2026-04-24",
-      "at": "2026-04-30"
-    },
-    "https://developer.volcengine.com/articles/7631909225031335979": {
-      "title": "给 Hermes Agent 装个可视化面板！Docker 一键部署 Hermes WebUI 完整",
-      "text": "用过 Hermes Agent 的朋友应该都知道，它的命令行操作对新手不太友好，很多简单的操作都需要记复杂指令，上手门槛不低。好在现在有了 Hermes WebUI，通过可视化界面就能轻松操作 Hermes Agent，极大降低了使用难度。今天就给大家详细讲解，如何在 Windows（PowerShell）和 Linux 环境下，用 Docker 快速部署 Hermes WebUI，实现本地 AI Web 界面的快速运行与访问。 先给大家放个 Hermes Agent 镜像中文地址：https://xuanyuan.cloud/zh/r/nousresearch/hermes-agent，以及 Hermes WebUI 镜像中文地址：https://xuanyuan.cloud/ghcr.io/nesquena/hermes-webui?tag=latest，有需要的可以提前收藏。 前置准备：Docker 环境一键搞定 部署 Hermes WebUI 之前，必须先搭好 Docker 环境。这里给大家准备了适配全场景的一键安装方案，Linux 系统（包括国产系统如银河麒麟、欧拉）可直接使用，Windows 和 Mac 用户操作也很简单。 1. Linux 系统 Docker 一键安装 直接执行一条命令，就能自动安装 Docker、Docker Compose，还会配置好轩辕镜像加速，省去手动配置的麻烦： bash <(wget -qO- https://xuanyuan.cloud/docker.sh) 2. Windows / Mac 用户 直接前往 Docker 官网 下载 Docker Desktop，按照安装向导一步步操作即可。安装完成后启动 Docker，图形化界面操作简单，无需复杂配置，等待启动完成就可以使用了。 一、环境准备（双系统适配） Windows 环境 操作系统：Windows 10 / 11（64位，需开启 WSL 2，Docker Desktop 安装时可自动开启） 已安装：Docker Desktop（启动状态） 终端工具：PowerShell（系统自带，管理员身份运行更佳） 可用端口：推荐 3001（若被占用可更换） Linux 环境 操作系统：CentOS、Ubuntu、银河麒麟、欧拉等主流 Linux 发行版 已安装：Docker、Docker Compose（通过上面的一键脚本已完成安装） 终端工具：任意 Linux 终端（Xshell、Putty 或系统自带终端均可） 可用端口：推荐 3001（若被占用可更换） 二、拉取 Hermes WebUI 镜像 无论是 Windows 还是 Linux 环境，拉取镜像的命令基本一致，区别仅在于终端工具（PowerShell / Linux 终端），直接执行以下命令即可（使用轩辕镜像，请将 ***-ghcr.xuanyuan.run 替换为你自己的轩辕镜像专属域名）： docker pull ***-ghcr.xuanyuan.run/nesquena/hermes-webui:latest 等待镜像拉取完成，若拉取速度较慢，可检查 Docker 镜像加速是否配置成功（一键脚本已自动配置轩辕镜像，无需额外操作）。 三、创建本地数据目录（用于持久化） 为了避免容器重启后数据丢失（如会话记录、配置信息等），需要创建本地目录并挂载到容器中，双系统操作如下： Windows（PowerShell） mkdir C:\\docker\\hermes Linux 终端 mkdir -p /root/docker/hermes 说明：Linux 目录可自定义，比如 /home/docker/hermes，后续部署命令对应修改路径即可。 四、标准部署方式 部署核心是通过 docker run 命令启动容器，配置端口映射、环境变量和目录挂载，确保服务稳定运行，双系统命令分别如下： Windows（PowerShell） docker run -d --name hermes-webui -p 3001:8787 ` -e HERMES_WEBUI_STATE_DIR=/app/data ` -v C:\\docker\\hermes:/app/data ` --restart unle",
-      "pubDate": null,
-      "at": "2026-04-30"
-    },
-    "https://developer.volcengine.com/articles/7632269251998744639": {
-      "title": "Claude Code 使用 GPT-5.5：国内直连全球AI大模型",
-      "text": "Claude Code 使用 GPT-5.5：国内直连一键安装配置指南 + API Key获取 一、教程说明 🚀 Claude Code 是 Anthropic 推出的终端型 AI 编程助手。它不是传统网页聊天工具，而是直接运行在本地项目目录中，可以读取代码、分析项目结构、辅助修复问题、生成代码实现、解释业务逻辑，并协助完成重构和调试。 如果你希望在 Claude Code 中使用 GPT-5.5 模型，可以通过配置第三方 API 网关的方式接入。本文以 QuickRouter API 为例，演示如何让 Claude Code 使用 QuickRouter API 调用 GPT-5.5 模型，实现国内环境下更稳定的直连体验。 本文会按下面顺序展开： 准备 QuickRouter API Key 安装 Node.js 安装 Claude Code CLI 配置 Claude Code 使用 QuickRouter API 指定 GPT-5.5 作为默认模型 分别说明 Windows、macOS、Linux 的配置方法 提供一键配置脚本 汇总常见问题与排查方法 二、Claude Code 适合做什么 🌏 Claude Code 更像一个运行在开发环境里的 AI 编程代理。它可以在终端中直接处理项目相关任务，适合这些场景： 分析项目目录和代码结构 阅读已有代码并解释实现逻辑 根据需求生成新功能 辅助定位和修复 bug 批量修改、重构、优化代码 生成测试用例 协助检查报错日志 辅助完成前端、后端、脚本、配置文件等开发工作 如果你经常使用 VS Code、终端、远程服务器或本地 Git 项目，Claude Code 会比单纯网页对话更贴近真实开发流程。 三、为什么用 GPT-5.5 模型 GPT-5.5 更适合复杂代码任务和长上下文开发场景，尤其适合下面这些工作： 使用场景适合原因项目代码分析能更好理解多文件结构和上下文Bug 排查适合结合日志、代码和配置综合分析复杂功能开发适合从需求到实现给出完整方案前端页面优化能处理组件结构、样式、交互逻辑后端接口开发适合生成路由、数据库、鉴权、错误处理代码重构能在保持功能不变的情况下优化结构部署排错适合分析 Nginx、Docker、PM2、Node.js 等问题 在 Claude Code 中接入 GPT-5.5 后，你可以直接在项目目录里让它分析、修改、生成和排查代码。 四、准备 QuickRouter API Key 🔑 在正式配置 Claude Code 之前，需要先准备一个可用的 QuickRouter API Key。 1）注册 QuickRouter API 打开 QuickRouter API 官网： https://quickrouter.ai 注册并登录账号。 QuickRouter API 是一个 AI 大模型 API 聚合平台，支持通过统一接口调用多种主流模型。注册后可以进入控制台获取自己的 API Key。 2）获取 API Key 常见流程如下： 登录 QuickRouter API 控制台 进入「令牌」「API Key」或「密钥管理」页面 新建一个 API Key，或者使用系统默认 Key 复制 API Key 妥善保存，不要公开发布 API Key 通常类似下面格式： sk-xxxxxxxxxxxxxxxxxxxxxxxx 注意： 不要把 API Key 上传到 GitHub 不要写进公开仓库 不要截图公开展示 不要把密钥发给陌生人 如果密钥泄露，建议立即删除并重新生成 五、核心配置信息 本文使用下面这组配置： 配置项示例值说明API Keysk-xxxxxxxxxxxxxxxx替换成你自己的 QuickRouter API KeyBase URLhttps://api.quickrouter.aiQuickRouter API 请求入口默认模型gpt-5.5Claude Code 默认调用的模型配置文件~/.claude/settings.jsonClaude Code 用户级配置文件 核心配置内容如下： { \"env\": { \"ANTHROPIC_AUTH_TOKEN\": \"替换成你自己的APIKey\", \"ANTHROPIC_BASE_URL\": \"https:",
-      "pubDate": null,
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27661": {
-      "title": "钉钉发布 AI 录音硬件 DingTalk A1Pro:售价1299元，支持手机反向充电钉钉发布AI硬件新品DingTalk A1Pro，定价1299元，定位专业AI录音卡片，专为高频出差商务人士设计。该设备厚度仅6.4mm，支持磁吸与触控屏，搭载专业级MEMS指向性麦克风，具备“AI办公+应急补能”复合功能，拓展钉钉软硬一体化服务边界。 刚刚 5.5K",
-      "text": "4月30日，钉钉正式发布 AI 硬件家族新成员 DingTalk A1Pro，并于天猫官方旗舰店开售，定价1299元。该产品定位为专业 AI 录音卡片，专为高频出差的商务人士与超级个体打造，通过“AI 办公+应急补能”的复合功能设计，进一步拓展了钉钉软硬一体化的服务边界。硬件配置上，DingTalk A1Pro 机身厚度仅6.4mm，支持磁吸设计并配备触控屏幕。其核心搭载专业级 MEMS 指向性麦克风，拾音距离达10米。相较于2025年发布的初代产品，Pro 版显著强化了续航与多功能性:内置2980mAh 电池支持180小时连续录音及180天待机，且通过了新国标3C 认证，可作为应急充电宝为手机反向充电。在系统协同方面，该硬件与钉钉工作流深度整合。录音内容经由 AI 听记处理后，可一键生成会议纪要、日程及待办事项，实现数据在钉钉工作台的无缝流转。针对 B 端需求，钉钉同步推出了企业版本，支持统一采购、设备管理及加密存储。此外，购机用户可获赠6个月专属权益，包含每月1500分钟的 AI 转写时长。行业分析指出，DingTalk A1Pro 的发布意味着钉钉正加速将 AI 能力从软件端向物理办公场景渗透。通过解决出差场景下“高质量记录”与“电量焦虑”的双重痛点，钉钉试图利用 AI 硬件建立更具黏性的办公生态闭环，推动 AI 智能体（Agent）从云端走向更具体的随身硬件形态。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27657": {
-      "title": "AI从实验室走向生活，科大讯飞多款黑科技亮相福州第九届数字中国建设峰会4月28日在福州开幕，科大讯飞成为展会焦点，展示了AI从“炫技”到实用的转变。其展项覆盖办公助手、具身智能机器人等多种场景，体现了人工智能技术在日常生活中的广泛渗透与落地应用。 刚刚 8.3K",
-      "text": "4 月 28 日，第九届数字中国建设峰会在福州海峡国际会展中心正式拉开帷幕。作为国内数字化发展的风向标，本届峰会吸引了众多科技巨头参与。其中，科大讯飞携多项前沿人工智能展项重磅登场，成为展区内最吸睛的“流量高地”，生动诠释了AI技术如何从硬核“炫技”转化为触手可及的实用工具。场景全覆盖：从办公助手到具身智能机器人在本次展会上，人工智能的应用边界被进一步拓宽。科大讯飞展示的展品横跨了互动体验、办公创作、健康服务、教育及消费电子等多个维度。在办公领域，Loomy办公助手与讯飞智作展现了极高的创作效率；而智能体平台AstronClaw则揭示了未来人机协作的新形态。备受瞩目的具身智能通用机器人更是将AI与物理世界深度融合，标志着人工智能正在向更高阶的形态演进。科技温度：智慧教育与全民健康的新助力除了硬核的工业生产力，AI在民生领域的落地同样出彩。讯飞晓医AI健康助手通过技术手段为大众提供更便捷的医疗辅助建议；讯飞同窗AI黑板与AI学习机则深耕教育场景，利用数字化手段赋能教学互动。此外，最新款的讯飞AI眼镜也集中亮相，为用户提供了全新的视听交互体验。行业趋势：人工智能正式进入“实用主义”时代纵观本次峰会的展项，一个显著的趋势是人工智能正加速脱离单纯的概念炒作，全面进入产业升级与日常生活的每一个角落。从单纯的算法展示到覆盖医疗、教育、办公的闭环产品，人工智能正在通过多元化的产品矩阵，实实在在地改变着人们的沟通方式与生产效率。本次峰会将持续至 5 月 4 日，为观众提供一场沉浸式的未来科技盛宴。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27660": {
-      "title": "押注于人而非代码：Zig 项目全面禁止 LLM 辅助贡献引发热议生成式AI席卷编程领域之际，Zig开源项目逆势推出严格政策：全面禁止使用大语言模型生成的代码或评论参与贡献。知名开发者Simon Willison解读后，引发社区对技术效率与人才培养博弈的讨论。核心矛盾在于代码产出与人才成长的取舍，Zig维护者重新定义“贡献”，强调原创与学习过程。 刚刚 6.2K",
-      "text": "在生成式 AI 席卷编程领域的当下，知名开源项目 Zig 近期采取了一项“逆流而上”的严格政策：全面禁止使用大语言模型（LLM）生成的代码或评论参与项目贡献。这一决策由知名开发者 Simon Willison 深度解读后，迅速在开源社区引发了关于技术效率与人才培养之间博弈的广泛讨论。核心矛盾：代码产出与人才成长的取舍Zig 项目维护者的立场核心在于对“贡献”定义的重新审视。他们认为，开源项目的终极价值并非单纯获取现成的代码片段，而是发掘并培养长期可信、具备成长潜力的贡献者。在该项目组看来，审查代码（Pull Request）的过程本质上是一场深度沟通，旨在帮助新人理解技术规范并建立互信。然而，一旦开发者开始依赖 LLM 辅助，这种传统的导师制（Mentorship）机制便面临坍塌。维护者指出，AI 可以轻易生成表面逻辑通顺的代码，但这导致他们无法判断提交者是否真正掌握了背后的底层原理。如果一个合并请求主要由 AI 驱动，维护者将面临一个尴尬的逻辑悖论：与其耗费精力去审查人类操作 AI 生成的代码，不如直接由维护者运行自己的 AI 模块来解决问题。行业案例：即便高度自动化也难获豁免这一政策并非针对 AI 技术的偏见，而是基于对社区长期健康发展的审慎考量。高性能 JavaScript 运行时 Bun 的案例成为了该政策的有力佐证。尽管 Bun 团队内部重度使用 AI 辅助开发以追求极致效率，但由于其产出的代码无法证明出自“真实人类贡献者”的学习与理解过程，依然不符合 Zig 项目的上游提交标准。结语：守护开源社区的沟通根基Zig 项目的这一禁令，反映了开源界对“信息不对称”可能瓦解社区传承的深层焦虑。当 AI 产出的速度远超人类理解代码的速度时，社区维护者更倾向于将精力投向那些愿意投入时间学习、能够通过沟通产生共鸣的真实开发者。这场“押注于人而非代码”的实践，实际上是在 AI 时代为人类开发者保留的一块强调逻辑理解与信任背书的阵地。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27659": {
-      "title": "​快手推出 KroWork:AI 桌面助手助你高效办公快手推出AI桌面智能体KroWork，面向非技术用户，支持自然语言指令完成文件处理、浏览器自动化及应用生成等办公任务。用户可将重复工作转化为本地应用，无需额外付费。所有操作在安全沙箱环境中执行，数据不上传云端，保障隐私安全。 刚刚 8.8K",
-      "text": "快手正式发布了其最新产品 KroWork，一款面向非技术用户的 AI 桌面智能体。KroWork 允许用户通过自然语言指令，自主完成各类办公任务，包括文件处理、浏览器自动化及应用生成。这意味着用户可以将日常重复的工作流程转化为本地桌面应用，避免再次付费使用。更重要的是，所有操作都在安全的沙箱环境中执行，确保用户数据不会上传至云端，从而保证隐私安全。KroWork 的设计初衷是降低软件开发的门槛，让那些不熟悉编程的人也能轻松创建属于自己的桌面工具。用户只需告诉 KroWork 所需的功能，它便能够自动规划步骤，并将结果展示给用户。比如，财务人员可以指示 KroWork “制作发票报销汇总工具”，KroWork 便会生成一个本地应用，能够自动归类发票、校验金额并生成汇总报表。这样的功能极大地提升了工作效率，让用户可以更专注于其他重要事务。KroWork 的核心优势在于其将重复性工作固化为应用的能力。与其他 AI 产品不同，KroWork 不仅仅是提供一次性的服务，而是将工作流程转化为可以反复使用的本地应用。这样一来，用户只需点击 “运行”，便能轻松完成任务，且无须消耗任何积分或 token。此外，KroWork 的本地托管机制确保了用户的权限可控和数据安全。每次操作都在沙箱中进行，用户对 KroWork 的每一步执行均可进行监督和控制，保证了使用过程的透明度。KroWork 同时集成了多个先进的 AI 模型，包括国内外的顶尖技术，使其能够快速高效地完成任务。无论是写报告、做分析，还是其他日常办公任务，KroWork 都能提供高质量的支持。用户的工作流被固定为自己的资产，告别重复付费的困扰。划重点: 📌 快手推出 KroWork，AI 助手帮助用户将重复工作转化为本地应用。 💻 KroWork 能通过自然语言指令完成文件处理、浏览器自动化等任务，保障用户数据安全。 🔒 所有操作在沙箱中执行，用户对每一步都有控制权，确保透明性与安全性。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27656": {
-      "title": "​巨日禄宣布与火山引擎达成深度合作 AI短剧进入“工业化”时代杭州巨日禄科技与火山引擎合作，接入豆包视频生成模型Seedance 2.0，推动AI剧制作从“手工作坊”向工业化流程转变。核心突破在于效率与质量的双重提升，通过集成火山引擎模型与云基础设施，影视制作关键指标实现质的飞跃。 刚刚 9.3K",
-      "text": "近期，杭州巨日禄科技有限公司宣布与火山引擎达成深度合作，正式接入豆包视频生成模型Seedance 2.0。这一动作标志着AI剧的制作模式正在从过去零散、低效的“手工作坊”形态，向高度稳定、可控的工业化流程转变。核心突破：效率与质量的双重飞跃通过将火山引擎的多款先进模型嵌入其自主研发的AI Agent，并依托其云基础设施，影视制作的各项核心指标实现了质的突破。数据显示，精品AI剧的制作效率已提升近 10 倍。原本需要 15 至 30 天的生产周期，如今被极速压缩至 1 到 3 天。除了速度的提升，画面的“可用性”这一行业痛点也得到了妥善解决。在传统AI生成模式下，画面合格率往往仅有30%左右，而新技术架构下的画面可用率已跃升至90%以上，极大地降低了素材筛选的时间成本。深度融合：打造全栈式技术架构此次双方的合作并非简单的工具接入，而是构建了一套覆盖从前期创作到最终交付的全栈式技术架构。巨日禄AI通过整合火山引擎的算力与算法优势，确保了在视频生成过程中的连贯性与表现力。这种深度的技术融合，不仅预示着AI剧生产门槛的降低，更通过工业化的手段确保了内容产出的持续性与高品质。未来，双方计划持续深化技术探索，共同推动国内AI影视产业向更成熟的工业化阶段迈进。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27655": {
-      "title": "​红果短剧全面清理超万部低质 AI 剧 规范内容提升品质红果短剧平台近期大规模治理低质AI剧，重点整治内容低俗、画面粗糙、剧情混乱及极端情绪渲染等问题。4月7日至15日九天间，下架3522部不合格剧集，总编辑乐力强调将持续提升剧集质量。 刚刚 8.7K",
-      "text": "近日，红果短剧平台展开了一项大规模的内容治理行动，已成功处置超过万部低质 AI 剧。这次行动的重点在于改善剧集的剧情导向、价值观表达和制作质量，特别是针对那些内容低俗、画面粗糙、剧情逻辑混乱以及渲染极端情绪的作品。根据红果官方的数据，从 4 月 7 日至 15 日，仅在短短九天内，平台就下架了 3522 部不符合标准的低质剧集。红果短剧的总编辑乐力表示，平台将通过加强审核体系，严格禁止低俗庸俗、炫富和传播负面价值观的内容，从源头杜绝低质量短剧的出现。此外，红果短剧还表示将加强对版权的保护，严厉打击创意抄袭和肖像侵权等行为，以维护原创和合法权益。4 月 6 日，红果短剧官方发布公告，重申内容合规是平台对出品方的基本要求。公告强调，任何未经授权的素材使用和违规行为都将受到严厉打击，平台将持续开展全面的内容治理工作。对于那些情节严重且屡次违规的出品方，红果短剧表示将采取下架、封禁、终止合作乃至法律追责等措施，以进一步规范市场秩序。这一系列治理措施的推出，旨在为用户提供更优质的短剧内容，提升平台的整体观赏体验。划重点：🌟 红果短剧已处置超万部低质 AI 剧，聚焦剧情和价值观的规范化。 📉 仅在 4 月 7 日至 15 日间，下架了 3522 部低质作品。 ⚖️ 平台将加强版权保护，严厉打击创意抄袭和无授权使用行为。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27653": {
-      "title": "亚马逊上线AI语音问答功能，打造 24 小时在线购物专家亚马逊于4月30日推出“Join the chat”AI音频问答功能，由数字“AI购物专家”驱动，将商品详情页的“阅读模式”升级为“对话模式”，让用户通过语音实时获取信息，提升电商交互效率与自然度。 刚刚 8.9K",
-      "text": "4月30日，电商巨头亚马逊（Amazon）正式发布了一项名为“Join the chat”的全新AI音频问答功能。这一举措标志着生成式AI技术在电商交互领域的进一步落地，旨在改变消费者在商品详情页获取信息的方式，将传统的“阅读模式”升级为更加高效、自然的“对话模式”。AI购物专家实时答疑解惑据悉，该功能的核心由一位数字“AI购物专家”驱动。当用户进入特定商品页面时，可以通过对话形式直接提出疑问。AI会迅速调取并整合商品的详细参数、功能特性以及海量的用户真实评价，随后以自然的语音回答实时反馈给消费者。这种交互方式能够帮助用户在几秒钟内抓住商品的核心卖点或潜在问题，大幅缩减了以往翻阅详情介绍和翻找历史评价所需的时间。简化决策流程，提升购物效率“Join the chat”功能的上线，反映了亚马逊在提升用户购物体验上的持续发力。通过AI生成的结构化内容，消费者无需在冗长的文字信息中“大海捞针”，而是能像在实体店询问导购一样，获取个性化且精准的语音摘要。对于追求高效购物、习惯音频交互，或是在移动端浏览不便的受众群体而言，这一功能将极大地简化决策流程，助力其快速做出购买判断。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27651": {
-      "title": "​小红书重磅组织调整，柯南出任总裁并成立 AI 部门小红书成立两个AI一级部门（Dots和企业智能部），加大人工智能投入，并任命柯南（丁玲）为总裁，负责整合社区、电商和商业化业务。 刚刚 9.2K",
-      "text": "根据《科创板日报》的报道，小红书近日在全员内部信中宣布了一项重要的组织升级。此次调整的核心内容是成立了两个全新的 AI 一级部门：Dots 和企业智能部。这一变革意味着小红书将在产品技术和组织结构上进一步加大对人工智能的投入，以应对不断变化的市场需求。与此同时，小红书还宣布任命柯南（本名丁玲）为总裁。柯南将全面负责整合小红书的社区、电商和商业化三大核心业务，并向现任 CEO 星矢（本名毛文超）汇报。此外，木兰（本名瞿芳）将继续担任董事会主席，维持公司治理结构的稳定。值得注意的是，小红书的技术团队近期研发了一款名为 OpenStoryline 的视频剪辑 AI 产品。这款产品被定义为 “AI 智能体”，其最大特点是 “对话式剪辑”，用户只需输入提示词并提供相关的图片或视频素材，就能够轻松生成视频内容。这一创新产品展示了小红书在 AI 技术方面的最新进展和未来发展的方向。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27654": {
-      "title": "​小红书成立 AI 一级部门 “Dots” 小红书宣布组织架构升级，整合社区、电商与商业化业务，并设立AI一级部门“Dots”及企业智能部，强化技术投入。“Dots”将覆盖AI模型研发、基础设施、工程落地及产品应用，旨在构建完整技术体系，推动业务协同与创新。 刚刚 9.9K",
-      "text": "小红书在内部信中宣布了一项重要的组织架构升级，旨在全面整合其社区、电商与商业化业务。此次升级的核心是设立 AI 一级部门 “Dots” 和企业智能部，以增强对人工智能的技术投入。这一变化标志着小红书在推动技术进步和业务协同方面迈出了重要一步。据悉，新设立的 “Dots” 部门将涵盖 AI 模型研发、基础设施、工程落地和产品应用等多个环节，旨在建立起一套完整的 AI 全链路体系。该部门将直接向新任总裁柯南（丁玲）汇报工作。此外，企业智能部则整合了原有的企业效率部和数据科学部，旨在为公司在 AI 时代的发展提供更加适合的组织架构和人才支撑。在此次人事调整中，柯南被任命为总裁，全面负责小红书的核心业务，直接向 CEO 星矢汇报工作。木兰继续担任董事会主席。CMO 之恒将负责广告商业化和电商交易业务，而帕鲁则将主管社区用户体验和生态建设，夏侯则负责算法领域的整体运营。此次组织架构升级还包括设立海外部门 “Rednote”，专注于推动国际化业务的发展，目标是将小红书的生活方式社区模式扩展到全球市场。此外，新的 Lab 1327 团队将由产品设计负责人樱木带领，专注于新产品的孵化，旨在为创新项目提供必要的资源和支持。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27652": {
-      "title": "欧莱雅中国发布“AI向美”新战略：科技加码透明度，拒绝虚假妆效欧莱雅中国发布“AI向美”战略，明确禁止使用AI生成虚假妆效图，强调科技重塑美妆行业的同时严守合规底线。调研显示，超70%中国消费者参考AI建议做美妆决策，战略旨在平衡创新与透明度。 刚刚 9.2K",
-      "text": "4 月 30 日，欧莱雅中国在上海举办的2025/ 2026 年度战略沟通会上，正式发布了名为“AI向美”的核心发展战略。这一举措不仅展示了科技对美妆行业的重塑，更在行业合规与透明度上划下了鲜明的底线：明确严禁使用AI生成虚假妆效图。这一决策背后有着深刻的市场洞察。调研数据显示，中国消费者对AI辅助美妆决策的接受度极高，超过70%的本土消费者会参考AI建议进行消费选择，这一比例远超40%的全球平均水平。在如此高密度的依赖下，如何确保AI技术的应用不仅是单纯的“视觉盛宴”，而是真实的消费参考，成为了企业必须面对的课题。此次战略升级意味着欧莱雅已将AI技术渗透进全产业链条。在前端研发与供应链领域，AI已实现规模化部署；而在更深层次的“产学研医”闭环中，AI正扮演着核心角色。通过先进的AI建模技术，研发团队能够反哺配方设计，精准分析海量消费者反馈，从而实现产品的快速迭代与优化。欧莱雅此次表态“严禁AI虚假妆效”，在业内人士看来，是对技术滥用风险的主动隔离。随着生成式AI的普及，虚假宣传的门槛在降低，而欧莱雅选择逆流而上，强调科技的应用必须服务于美的真实性。这不仅是对消费者权益的保护，更是试图在AI驱动的未来中，树立起一种负责任的商业标准。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27650": {
-      "title": "蚂蚁集团牵头推动ASL协议，填补智能体可信协作空白随着AI智能体向自主协作发展，企业安全挑战从技术问题升级为信任危机。蚂蚁集团大安全CTO陈亮在第九届数字中国建设峰会论坛上，首次揭示跨Agent协作中的三大“信任黑洞”，并发布面向企业级智能体的原生安全架构。这些黑洞源于协作中的信任缺失，成为致命软肋，需通过新架构应对。 刚刚 5.7K",
-      "text": "随着AI智能体走向自主与协作，企业面临的安全挑战超越技术本身，转而演变为深层的信任危机。4月29日，第九届数字中国建设峰会“智能体创新与治理”论坛上，蚂蚁集团大安全CTO陈亮发表主题演讲，首次系统揭示了跨Agent协作中暗藏的三大“信任黑洞”，并发布面向企业级智能体的原生安全架构。三大“信任黑洞”:跨Agent协作的致命软肋2026年初，由Northeastern University等机构联合开展的Agents of Chaos研究，基于OpenClaw框架部署多个具备真实工具调用能力的自主智能体，进行了为期两周的红队测试。结果显示，智能体在复杂开放环境中可能普遍面临非所有者合规、敏感信息泄露、破坏性系统级操作等严重安全问题。陈亮指出，随着多智能体协作从单一系统内部扩展到跨组织、跨平台场景，三大“信任黑洞”正在制约企业规模化部署:一是主体身份可验证性黑洞——攻击者可通过伪造Agent标识、借用员工助理身份进行“身份漂白”式越权，多个中间节点也可能篡改上游身份声明，导致下游无法确认发起者合法身份;二是意图防篡改传递黑洞——跨Agent协作链路中，用户指令可能被中间节点恶意篡改，导致资金归属、数据权限等敏感信息发生偏移;三是授权边界失控黑洞——多级委托场景中，下游Agent可能获得超出上游授权范围的能力边界，导致权限级联放大。IIFAA联合中国信通院、蚂蚁集团等数十家单位发布的行业洞察显示，MCP、A2A协议的重点仍在互操作与调用连接，尚不足以覆盖跨Agent 链路中的主体溯源、意图完整性、多级委托边界收缩和执行可审计等Agent原生信任问题，现有安全方案在应对Agent特有攻击场景时存在明显短板。破局之道:ASL协议构建“端到端可验证信任链”针对上述空白，陈亮提出的解决方案是以“Security by Design”理念构建的智能体安全可信互连协议——ASL（Agent Security Link）。ASL可被视为智能体协作链路上的可信互连协议栈，可叠加部署于MCP、A2A等现有智能体互操作协议之上，为跨Agent协作建立可验证、可传递、可约束、可审计的信任基础。据悉，ASL采用“四类能力组件+安全基础设施”分层架构:底层提供从软件隔离到硬件隔离的分级安全执行环境与设备绑定密钥管理体系;上层通过可信身份、可信连接、可信意图、可信授权四大核心模块，分别实现可验证身份绑定、会话级安全通道、防篡改意图传递以及多级委托中授权边界严格收缩不扩张。这意味着每一个Agent在协作链路中的每一步操作都有据可查，每一次授权都受边界约束，每一次意图传递都具备防篡改保障。在支付场景中，ASL与ACT智能体商业信任协议协同配合——ASL负责智能体间的安全互联与授权控制，ACT负责商业交易的信任基础建设，共同支撑即时支付、委托代买等场景落地。从“被动响应”到“天生可信”:全链路安全闭环ASL协议的落地只是陈亮所倡导的智能体原生安全框架中的一环。在这一框架中，安全理念从传统的“发现漏洞—发布补丁”被动响应，彻底转向保障智能体“天生可信”——通过分层隔离、纵深防御的治理设计，从智能体诞生的那一刻起就将安全能力内嵌于其生命周期每一个环节。具体而言，框架涵盖身份与权限管理（统一身份体系、“智能体运行许可证”动态生命周期管理）、运行时安全防护(以“数字员工宪法”为准则的五层策略管控)以及AgentOS与基础设施安全(Landlock沙箱、命名空间隔离、TEE硬件隔离等机制)。这套体系确保智能体在跨企业、跨平台协作场景中始终具备主体身份可验证、意图防篡改传递及授权边界严格可控的“端到端”安全保障。随着多智能体协同进入规模化商用关键窗口期，ASL开源协议的逐步普及以及跨组织信任联邦体系建设的推进，智能体产业正从一个“各自为战”的碎片化状态，迈入一个“安全可信互联”的新阶段。正如陈亮所言，唯有将“智能向善”的理念内化为可执行、可验证、可审计的技术架构，才能真正释放智能体技术的巨大潜力。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27649": {
-      "title": "微软第三财季营收突破 820 亿美元，AI年收入激增123%成核心增长极微软2026财年第三季度财报显示，总营收829亿美元，同比增长18%，AI与云业务成核心增长引擎。其中AI年化营收突破370亿美元，同比暴增123%，标志着AI技术已从实验阶段转化为强劲的盈利来源。 刚刚 9.6K",
-      "text": "微软近日正式公布了截至 2026 年 3 月 31 日的第三财季业绩报告。得益于人工智能与云业务的深度融合，公司在本季度实现了强劲增长，总营收达到 829 亿美元，同比增长18%。云服务与AI基座驱动业绩全面爆发微软AI业务的表现尤为亮眼，年化营收已正式突破 370 亿美元，同比增速高达123%。这一数据标志着AI技术已从实验阶段完全转化为公司的“印钞机”，成为驱动整体增长的最强引擎。作为核心支撑的智能云部门表现稳健，季度营收达 347 亿美元，增长30%。其中，Azure及其他云服务凭借40%的收入增长，继续扩大其在企业级市场的领先优势，助力各行各业实现智能化转型。个人计算业务微降与股东回报稳健在其他业务板块中，生产力与业务流程部门营收达 350 亿美元，Office365 与LinkedIn等产品均保持双位数增长。然而，个人计算部门成为唯一出现下滑的板块，受Windows OEM及Xbox硬件需求放缓影响，该部分营收同比下降1%。尽管部分硬件业务承压，微软仍展示了雄厚的资金实力。本季度，公司通过股息发放与股票回购，累计向股东返还了 102 亿美元，体现了其在高速研发投入与维护投资者利益之间的平衡能力。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
-    },
-    "https://news.aibase.com/zh/news/27646": {
-      "title": "OpenAI 新模型系统指令泄露，GPT-5.5 竟被禁止谈论“哥布林”？OpenAI最新开源的Codex CLI代码揭示了GPT-5.5的部分底层逻辑。据Ars Technica披露，其3500多词的系统提示词中包含罕见指令：严禁模型在无明确关联时提及“哥布林”等特定生物，除非查询内容绝对必要。 刚刚 10.5K",
-      "text": "近日，随着 OpenAI 旗下 Codex CLI 代码的最新开源，关于下一代 AI 模型 GPT-5.5 的部分底层运行逻辑浮出水面。据科技媒体 Ars Technica 披露，在泄露的系统提示词（System Prompt）中，出现了一项极为罕见的指令：严禁模型在没有明确关联的情况下提及“哥布林”等特定生物。在这份长达 3500 多个单词的基础指令集中，OpenAI 明确要求 GPT-5.5 在与用户交流时，除非查询内容存在绝对且必要的联系，否则必须回避讨论哥布林（goblins）、小精灵（gremlins）、浣熊（raccoons）、巨魔（trolls）、食人魔（ogres）以及鸽子（pigeons）。值得注意的是，这一禁令在文档中重复出现了两次，其优先级甚至与“禁止执行破坏性命令”和“禁用表情符号”等核心规范并列。通过对比历史版本的技术文件可以发现，这种针对特定生物的讨论禁令在早期模型中从未出现。业界分析认为，这并非某种营销噱头，而是针对新模型“幻觉”问题的定向修补。近期，社交平台上已有不少用户反馈，称其在使用 AI 进行不相关对话时，模型会莫名其妙地输出大量关于“哥布林”的内容，这种逻辑偏移严重影响了交互体验。针对这一现象，相关工程人员表示，这属于针对性技术干预，旨在解决模型在生成控制上的不稳定性。尽管禁令涉及的生物名单看起来有些随机，但它揭示了大模型在进化过程中，依然面临着难以预测的输出偏差挑战。通过在系统底层设置“防撞墙”，开发团队正试图让 AI 的逻辑表达更加聚焦与可控。",
-      "pubDate": "2026-04-30",
-      "at": "2026-04-30"
+      "at": "2026-05-03"
     },
     "https://news.aibase.com/zh/news/27647": {
       "title": "OpenAI系统提示词遭泄露，新模型GPT-5. 5 严禁讨论“哥布林”OpenAI最新开源的Codex CLI代码意外曝光了GPT-5.5的系统提示词，其中包含一条神秘指令：严禁在对话中谈论“哥布林”及“小精灵”等幻想生物。这份长达3500多词的基础指令集显示，除非用户查询存在绝对明确的关联性，否则模型不得讨论这些内容，旨在防范AI陷入特定幻觉。 刚刚 11.2K",
@@ -1422,6 +1158,96 @@
       "text": "当英伟达CEO黄仁勋在2025年GTC大会上再次强调\"Omniverse是物理AI的操作系统\"时，上海松应科技创始人聂凯旋可能是最感同身受的中国创业者之一。这位前华为云鲲鹏解决方案副总指挥，在2020年就敏锐捕捉到英伟达Omniverse的战略意图——那不仅仅是一个3D仿真工具，而是未来物理世界智能化的底层基础设施。五年后，他带领松应科技推出的ORCA3.0企业版和开发者版ORCA Lab 1.0，正试图在中国复刻这一路径，但选择了一条更具挑战性的道路：在英伟达CUDA和Omniverse生态的垄断铁幕下，构建基于国产GPU的物理AI训练体系。一、从\"技术可行\"到\"人人能用\"：破解具身智能的数据饥荒当前人形机器人行业正陷入一场集体焦虑。宇树科技CEO王兴兴曾直言，行业面临四大痛点：具身智能AI模型未突破、硬件物理限制、商业化场景缺失，以及数据与实物对齐难。智元机器人发布的SOP系统、星动纪元构建的数据飞轮，本质上都是在应对同一瓶颈——真实场景数据采集成本高昂、效率低下，而纯仿真数据又面临严重的Sim2Real Gap。松应科技提出的\"1:8:1黄金数据合成策略\"（10%示教+80%仿真合成+10%现实微调），正是针对这一痛点的工程化解决方案。这一比例并非凭空设定：元客视界CTO陈溥在行业调研中发现，理想模型需基于10%真机数据生成80%仿真数据，再用10%真机验证Sim2Real效果，这已成为\"提升模型泛化性与智能性的必然选择\"。但松应的差异化在于物理仿真的精度。机器人Sim2Real的核心难点在于物理准确性。ORCA Lab搭载的多物理场融合仿真引擎，声称实现毫米级物理交互还原，这直接决定了仿真数据能否真正迁移到宇树、傅利叶等合作厂商的实体机器人上。更具战略意义的是成本结构的颠覆。传统真机数据采集需要配备5台7自由度机械臂、昼夜两班倒的\"数据工厂\"，全年烧掉200-300万美元仅能产出1000-2000小时轨迹。而ORCA Lab将高保真仿真、AI任务规划、场景生成与数据合成能力集成于个人笔记本，这意味着单个开发者即可在普通电脑上完成机器人全流程训练，将门槛从\"千万级投入\"降至\"零代码开箱即用\"。二、对标Omniverse：国产GPU生态的卡位战松应科技的商业叙事中，\"全栈对标英伟达Omniverse\"是高频出现的定位。但这并非简单的技术模仿，而是一场关乎产业底层标准话语权的博弈。英伟达Omniverse的战略价值，在于其通过OpenUSD标准与物理精确仿真，将工业软件、机器人及传感器数据统一为可计算的数字孪生体，被定位为\"物理AI时代的操作系统\"。更关键的是，英伟达正凭借CUDA的前瞻性布局，实现生态的绝对垄断，获得70-80%的超高毛利率。（雷峰网）聂凯旋在华为攻坚多年的经历，让他深知\"美国人要做的，中国产业也一定会需要\"。但松应面临的环境比当年CUDA竞争更为复杂：不仅要解决仿真技术问题，更要打破国产GPU间的生态孤岛。目前ORCA系统已深度适配沐曦、摩尔线程、天数智芯、瀚博等国产GPU及异构算力平台。这一布局恰逢国产GPU冲刺IPO的关键节点——摩尔线程2025上半年营收超7亿元，推出\"夸娥\"千卡集群；沐曦GPU累计销量超2.5万颗，走通千卡集群解决方案。但国产GPU的共同痛点在于生态差距：沐曦截至2025年10月的软件栈注册用户仅15万，网络API调用1300多万次，与英伟达CUDA生态规模相去甚远。松应科技的ORCA平台，本质上扮演了国产GPU进入物理AI训练场景的\"中间件\"角色。通过整合国产芯片、机器人制造、场景应用等产业链资源，它试图打破上下游各自为战的局面，形成\"协同对抗国际技术垄断的产业合力\"。这种\"安卓式\"开放生态的构建，对于正在冲刺IPO、急需证明商业化能力的国产GPU厂商而言，具有战略协同价值。三、从工业级到普惠型：物理AI的\"Android时刻\"？松应科技的产品矩阵布局颇具深意：ORCA Lab 1.0面向个人开发者与轻量化团队，而即将推出的ORCA 3.0将服务企业级平台。这种\"从工业级商业化落地到普惠型研发工具\"的完整布局，暗合了物理AI产业发展的阶段性特征。当前具身智能正处于从实验室演示走向规模化商用的临界点，但\"可靠性鸿沟\"依然显著：多数惊艳演示局限于受控环境，一旦进入真实工业车间或家庭场景，面对",
       "pubDate": "2026-04-07",
       "at": "2026-05-02"
+    },
+    "https://aitntnews.com/newDetail.html?newId=24680": {
+      "title": "美国防部与OpenAI、谷歌等7家AI公司签约，全面解锁致命自主武器限制",
+      "text": "近日，美国五角大楼宣布与七家公司达成协议，包括 OpenAI、谷歌、微软、亚马逊、英伟达、SpaceX 和一家名为 Reflection AI 的初创公司，允许将这些公司的 AI 系统用于机密级别的军事作业。这意味着这些 AI 可以接触最高级别的保密数据，用来辅助战场决策、情报分析，甚至生成打击目标清单。 不过这份名单里少了 Anthropic 这一关键角色。这家以安全为核心理念的 AI 公司，因为拒绝接受五角大楼任何合法使用的条款，导致双方已经对簿公堂。 五角大楼要的是一套能够部署在 Impact Level 6 和 Level 7 绝密网络上的 AI 工具，这些网络处理的是美国最敏感的军事信息。五角大楼的声明表示，这些协议加速了将美军转型为 AI 优先战斗力量的进程。 美国国防部研究与工程副部长、前 Uber 二号人物高管埃米尔·迈克尔表示，他们正在为作战人员配备一套 AI 工具，以便实现“绝对的决策优势”。目前，已经有超过 130 万美国国防部人员使用了美国军方的官方 AI 平台 GenAI.mil，在五个月内生成了数千次提示词，部署了数万个智能体。美国官员表示这项技术把某些任务从数月缩短到了数天。 五角大楼希望引入多家供应商，避免被单一公司锁定。有了 OpenAI、谷歌、微软、亚马逊、英伟达和 SpaceX 的加入，美国军方在 AI 工具上的选择面得到了较大扩宽。 作为一家芯片公司，英伟达也加入了，它本身不只是为 AI 提供算力底座，自己也开发开源大模型。英伟达的协议覆盖了其 Nemotron 开源模型系列，其 CEO 黄仁勋曾在一次公开对话中表示，在许多的国家安全场景下，开源模型比闭源模型更好，因为它们的属性完全可知，可以轻松针对特定用途定制，他表示安全性和可靠性在开源模式下反而得到了增强。 另一个新面孔是 Reflection AI，该公司由前谷歌 DeepMind 研究人员于 2024 年创立，去年其筹集了 20 亿美元资金，估值据称已经达到 250 亿美元。这家公司尚未发布任何商业产品，但其专注于开源模型，他们目前的精力都集中在开发名为 Reflection-1 的底层基础模型，没有像 ChatGPT 那样面向 C 端用户的订阅制对话产品。 Reflection AI 与特朗普政府关系密切，也正在参与一场由美国政府支持的为韩国市场定制模型的协议。Reflection AI 的一位发言人告诉媒体，与五角大楼达成的共识是支持美国国家安全的第一步，为 AI 实验室该如何与美国政府合作树立了先例。 前面提到，同为 AI 明星初创的 Anthropic 是这份名单的缺席者。事实上，Anthropic 曾是五角大楼在机密网络上的主要 AI 供应商之一，其 Claude 模型曾通过 Palantir 的 Maven 平台被用于伊朗战争等军事行动。 不过 Anthropic 拒绝接受五角大楼任何合法用途的条款，其担心这会让自己的技术被用于美国大规模国内监控或者完全自主的致命武器系统。双方谈判破裂之后，美国国防部长皮特·赫格塞斯在国会听证会上称 Anthropic CEO 达里奥·阿莫代伊是“意识形态疯子”。五角大楼随后将 Anthropic 列为供应链风险企业，禁止其参与国防工作。 尽管被列入黑名单，Anthropic 的最新模型 Mythos Preview 据报仍在被美国国防部和美国其他联邦机构使用。这款模型被认为是目前最危险的 AI 系统之一，因为它极其擅长发现尚未公开的零日网络安全漏洞，同时也能识别和利用计算机漏洞。 Anthropic 没有公开释出这个模型，只允许部分安全研究人员提前访问，以便修补 Mythos 发现的漏洞。同时，有报道称美国白宫正在抵制 Anthropic 向更多公司推广 Mythos 的计划，主要担忧就是扩大访问权限可能会带来重大网络安全风险。 谷歌内部也出现了分歧，数百名谷歌员工近日致信公司领导层，敦促拒绝让五角大楼在机密数据上使用谷歌的 AI 产品。谷歌员工在信中写道，希望 AI 造福人类，而不是以不人道或者极端有害的方式被使用。 无论如何，五角大楼的 AI 军备竞赛已经在全面提速。Anthropic 的拒绝不仅没有拖慢美国军方的脚步，反而让更多 AI 竞争对手拿到了入场券。 隶属于美国纽约大学法学院",
+      "pubDate": "2026-05-02",
+      "at": "2026-05-03"
+    },
+    "https://developer.volcengine.com/articles/7634480134401359913": {
+      "title": "多 Agent+Skills+SpringAI 构建自主决策智能体「已完结」",
+      "text": "AI解决方案SpringAI 生态深挖：多 Agent 架构设计与业务决策落地 随着企业数字化转型的深入，单一的大语言模型（LLM）调用已难以满足复杂业务场景的需求。在 Java 生态占据统治地位的 Spring 框架，通过 SpringAI 项目的推出，为 AI 原生应用开发提供了标准化的基础设施。然而，真正的技术挑战并非简单的 API 对接，而在于如何基于 SpringAI 构建稳健的多 Agent 架构，并实现从技术模型到业务决策的有效落地。这不仅是代码层面的集成，更是软件工程与人工智能深度融合的科技演进。 一、 生态融合：SpringAI 重塑 Java AI 开发范式 SpringAI 的核心科技价值在于它成功地将非确定性的 AI 模型融入到了 Spring 严格管理的依赖注入（IoC）和面向切面编程（AOP）体系之中。对于企业级开发而言，这意味着 AI 能力不再游离于系统之外，而是成为了可以被统一配置、管理和监控的业务组件。 在多 Agent 架构设计中，SpringAI 提供了强大的抽象层。它屏蔽了不同大模型厂商（如 OpenAI、Azure、阿里云等）的接口差异，使得开发者能够通过统一的 Prompt 模板和 Client API 与模型交互。更重要的是，SpringAI 原生支持函数调用，这使得 Agent 能够通过 Java 方法直接映射为外部工具。这种“AI 友好”的生态设计，让 Java 开发者无需学习全新的 Python 技术栈，即可在熟悉的 JVM 环境中构建复杂的智能体系统，极大地降低了技术迁移成本和运维复杂度。 二、 多 Agent 架构：从单体智能到群体协作 在处理复杂业务逻辑时，单一 Agent 往往面临认知过载和逻辑混乱的问题。基于 SpringAI 的多 Agent 架构设计，借鉴了微服务治理的理念，将复杂任务拆解为多个专门化的智能体角色，通过协作链路实现群体智能。 从科技架构角度看，这通常采用“路由与分发”或“编排与控制”两种模式。在 Spring 生态中，我们可以利用 Spring Integration 或 Spring Cloud Stream 等组件构建 Agent 之间的消息通道。例如，设计一个“管理者 Agent”负责任务拆解与分发，将子任务分发给“编码 Agent”、“数据分析 Agent”或“文档撰写 Agent”。这些子 Agent 独立运行在各自的线程池或微服务实例中，通过同步或异步的方式交换信息。SpringAI 的上下文管理机制确保了各个 Agent 之间共享一致的对话历史和业务状态，从而维护了多轮协作的逻辑连贯性。 三、 业务决策落地：RAG 与工具调用的深度协同 多 Agent 架构的最终目的是为了辅助或替代人工进行业务决策。这就要求智能体不仅要“能说会道”，更要“懂业务、能执行”。SpringAI 在业务落地中，重点解决了检索增强生成（RAG）与企业业务系统的深度集成。 在决策过程中，Agent 需要获取实时、准确的企业数据。SpringAI 可以无缝对接向量数据库（如 Milvus、Redis Vector），将企业知识库转化为向量索引。当 Agent 接收到决策请求时，首先通过 RAG 技术检索相关业务规则、历史案例或实时指标。随后，利用 SpringAI 的函数调用机制，将决策意图转化为具体的 Java 方法调用，直接操作 CRM、ERP 等系统的 API。 例如，在信贷审批场景中，“风控 Agent”通过 RAG 检索用户的征信记录，调用规则引擎计算风险分值，再将结果反馈给“审批 Agent”生成最终决策。整个过程由 Spring 的声明式事务管理进行控制，确保了数据一致性与操作原子性，实现了 AI 推理与业务流程的无缝衔接。 四、 可观测性与治理：企业级应用的必选项 任何企业级技术的落地，都离不开系统的可观测性与治理。多 Agent 系统由于其推理过程的不可见性，往往被称为“黑盒”。SpringAI 结合 Micrometer 等监控工具，正在打破这一壁垒。 通过集成 Tracing（链路追踪）技术，开发者可以清晰记录下每个 Agent 的 Token 消耗、响应时间、Prompt 内容以及模型返回的中间结果。这些数据不仅用于系统性能调优，更是业务审计的",
+      "pubDate": null,
+      "at": "2026-05-03"
+    },
+    "https://huggingface.co/posts/cihatyldz/143573654584943": {
+      "title": "Şifahane, a dual-inference medical classification demo, is now live on Spaces. It features side-by-side Turkish BERT and Qwen2.5 architectures for real-time evaluation of the \"Classifier vs. LLM\" trade-offs, all within a single space. The system utilizes a fine-tuned Turkish BERT for high-speed, cost-effective inference and the Qwen2.5-7B model for flexible multi-task reasoning, with support for department classification, condition analysis, urgency assessment, and rationale generation across 12 medical departments. 🧠 BERT model: 📊 Dataset: 🤗 Demo:",
+      "text": "Şifahane, a dual-inference medical classification demo, is now live on Spaces. It features side-by-side Turkish BERT and Qwen2.5 architectures for real-time evaluation of the \"Classifier vs. LLM\" trade-offs, all within a single space. The system utilizes a fine-tuned Turkish BERT for high-speed, cost-effective inference and the Qwen2.5-7B model for flexible multi-task reasoning, with support for department classification, condition analysis, urgency assessment, and rationale generation across 12 medical departments.🧠 BERT model: https://lnkd.in/dCUUASqq📊 Dataset: https://lnkd.in/dGK9y24w🤗 Demo: https://lnkd.in/dtWjCCPF",
+      "pubDate": "2026-05-02T15:10:59.000Z",
+      "at": "2026-05-03"
+    },
+    "https://huggingface.co/posts/salma-remyx/889764886790464": {
+      "title": "SciCrafter measured something AI practitioners have intuited: frontier agents are improving at executing inside well-framed problems, but lag at framing the problem in the first place. GPT-5.2, Gemini-3-Pro, and Claude Opus 4.5 all plateaued near 26% on a new Minecraft benchmark for probing AI capabilities in the discovery-to-application loop. So the authors ran targeted interventions: * Hints about what to investigate doubled performance. * A structured experimentation template added 7-14 more points. * Structured consolidation beat free-form summaries by 6 points. * Curriculum context beat independent task-solving. These interventions helped the agent frame what’s worth investigating, and structure what gets learned so it compounds. The bottleneck for AI in scientific workflows is upstream of execution. Their findings are congruent with the design patterns we've adopted at Remyx AI to help AI teams close the development loop scientifically. Agents work well inside structured loops, but they perform poorly when tasked with creating the structure. Instrumenting your scientific workflows offers greater leverage than scaling compute with a less informed search. In the work of building production AI systems, teams are flying through execution. The bigger challenge is identifying which experiments moved which production outcome, or what to try next. One of the more interesting results I found this week by tracking work in AI for scientific workflows using Remyx:",
+      "text": "SciCrafter measured something AI practitioners have intuited: frontier agents are improving at executing inside well-framed problems, but lag at framing the problem in the first place.GPT-5.2, Gemini-3-Pro, and Claude Opus 4.5 all plateaued near 26% on a new Minecraft benchmark for probing AI capabilities in the discovery-to-application loop. So the authors ran targeted interventions: * Hints about what to investigate doubled performance. * A structured experimentation template added 7-14 more points. * Structured consolidation beat free-form summaries by 6 points. * Curriculum context beat independent task-solving.These interventions helped the agent frame what’s worth investigating, and structure what gets learned so it compounds. The bottleneck for AI in scientific workflows is upstream of execution.Their findings are congruent with the design patterns we've adopted at Remyx AI to help AI teams close the development loop scientifically. Agents work well inside structured loops, but they perform poorly when tasked with creating the structure. Instrumenting your scientific workflows offers greater leverage than scaling compute with a less informed search.In the work of building production AI systems, teams are flying through execution. The bigger challenge is identifying which experiments moved which production outcome, or what to try next.One of the more interesting results I found this week by tracking work in AI for scientific workflows using Remyx: https://engine.remyx.ai/papers/d8f23b9b-b14b-4ada-b44e-ccfc221c06b4",
+      "pubDate": "2026-05-02T17:03:13.000Z",
+      "at": "2026-05-03"
+    },
+    "https://huggingface.co/posts/eaddario/861558852118345": {
+      "title": "Experimental global target bits‑per‑weight quantization of Qwen/Qwen3.6-27B and Qwen/Qwen3.6-35B-A3B. Unlike standard llama.cpp quantizations that rely on fixed type heuristics (e.g., Q4_K_M), the Target BPW approach optimizes per-tensor precision where it matters the most, and produces high quality models that meet a precise global file size target. Key Advantages: - VRAM Maximization: Can generate high quality models sized exactly to fit hardware constraints (e.g., fitting the model into exactly 24GB VRAM). - Data-Driven Precision: Quantization mix is determined by actual weight error sensitivity rather than hardcoded rules, often yielding better PPL/KLD size trade-offs. Full benchmarks (PPL, KLD, ARC, GPQA, MMLU, etc.) and methodology in the models' cards.",
+      "text": "Experimental global target bits‑per‑weight quantization of Qwen/Qwen3.6-27B and Qwen/Qwen3.6-35B-A3B.Unlike standard llama.cpp quantizations that rely on fixed type heuristics (e.g., Q4_K_M), the Target BPW approach optimizes per-tensor precision where it matters the most, and produces high quality models that meet a precise global file size target.Key Advantages:- VRAM Maximization: Can generate high quality models sized exactly to fit hardware constraints (e.g., fitting the model into exactly 24GB VRAM).- Data-Driven Precision: Quantization mix is determined by actual weight error sensitivity rather than hardcoded rules, often yielding better PPL/KLD size trade-offs.Full benchmarks (PPL, KLD, ARC, GPQA, MMLU, etc.) and methodology in the models' cards. eaddario/Qwen3.6-27B-GGUF eaddario/Qwen3.6-35B-A3B-GGUF",
+      "pubDate": "2026-05-02T13:55:34.000Z",
+      "at": "2026-05-03"
+    },
+    "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/": {
+      "title": "AI-generated actors and scripts are now ineligible for Oscars",
+      "text": "The organization behind the Academy Awards released new Oscar rules on Friday, including several that address the use of generative artificial intelligence. The Academy of Motion Picture Arts and Sciences said that only performances “credited in the film’s legal billing and demonstrably performed by humans with their consent” will be eligible for Academy Awards. Similarly, the academy said that screenplays must be “human-authored” to be eligible. The academy also said it has the right to request more information about a film’s AI usage and “human authorship.” These rule changes come as an independent film is in the works with an AI-generated version of Val Kilmer, as AI “actress” Tilly Norwood keeps making headlines, and as new video models are causing at least a few filmmakers to make sweeping declarations of despair. AI was also one of the main sticking points in the actors’ and writers’ strikes back in 2023. Outside Hollywood, at least one novel has been pulled by its publisher due to the apparent use of AI, and other writers’ groups are declaring that AI usage makes work ineligible for awards.",
+      "pubDate": "Sat, 02 May 2026 21:54:58 +0000",
+      "at": "2026-05-03"
+    },
+    "https://techcrunch.com/2026/05/02/the-best-ai-powered-dictation-apps-of-2025/": {
+      "title": "The best AI dictation apps, tested and ranked",
+      "text": "AI dictation apps have come a long way in a short time. For years they were slow and inaccurate — unless you spoke with a particular accent and enunciated clearly. Advances in large language models (LLMs) and speech-to-text models have changed that, producing systems that can decipher speech more accurately while retaining enough context to format the text correctly. Developers have also built in features to automatically remove filler words, fix stumbles, and handle punctuation — outputting text that needs far fewer edits. With dozens of such apps now on the market, we’ve rounded up our picks for the best and most useful dictation apps available right now. Wispr Flow Wispr Flow is a well-funded AI dictation app that lets you add custom words and instructions for dictation. It has native apps for macOS, Windows, and iOS; an Android version is in the works. The app lets you customize how it transcribes your text by choosing from “formal,” “casual,” and “very casual” styles for different kinds of writing, such as personal messaging, work, and email. And if you use it with vibe-coding tools like Cursor, you can turn on a feature to automatically recognize variables or tag files in the chat. The app lets you transcribe up to 2,000 words per week for free on desktop, and 1,000 words per month on iOS. Paid subscription plans offer unlimited transcription and start at $15 per month. Image Credits:Wispr Flow Willow Willow advertises itself as a big time-saver for those who don’t like to type. Alongside common features like automatic editing and formatting, the app uses large language models to generate a full passage of text from just a few dictated words. Willow also takes a more privacy-focused approach by storing all transcripts locally on your device and lets you opt out of",
+      "pubDate": "Sat, 02 May 2026 16:00:00 +0000",
+      "at": "2026-05-03"
+    },
+    "https://techcrunch.com/2026/04/30/chatgpt-images-2-0-is-a-hit-in-india-but-not-a-big-winner-elsewhere-yet/": {
+      "title": "ChatGPT Images 2.0 is a hit in India, but not a big winner elsewhere, yet",
+      "text": "India has emerged as the largest user base for ChatGPT Images 2.0 since its launch last week, OpenAI said on Thursday. However, third-party data reviewed by TechCrunch points to a more measured global response, with limited overall growth alongside sharp spikes in select emerging markets. ChatGPT Images 2.0, OpenAI’s latest image-generation upgrade, is designed to handle more complex prompts and produce detailed visuals, including accurate text across multiple languages. Early patterns from the company suggest users — especially in India, its largest market — are using it to create personal visuals such as avatars, stylized portraits, and fantasy-themed images. Data shared by Sensor Tower and Similarweb with TechCrunch suggests the rollout has led to a more mixed global response. ChatGPT’s app downloads rose 11% week-over-week following the launch, per Sensor Tower, but overall engagement gains were modest, with daily active users and sessions up only around 1%. Similarweb data also shows a limited increase in ChatGPT’s global web traffic, rising about 1.6% week-over-week during the same period. However, Sensor Tower data indicates some emerging markets — including Pakistan, Vietnam, and Indonesia — saw sharper spikes in ChatGPT’s app downloads, with increases of up to 79% week-over-week during the rollout period. India, meanwhile, remained a major source of activity during the rollout. Sensor Tower estimates show ChatGPT was downloaded about 5 million times in India during the launch week, compared with roughly 2 million in the U.S., though growth remained modest on a week-over-week basis. Similarweb data also points to a limited uptick in engagement, with daily active users in India rising about 3.4% week-over-week during the same period. In India, the early trends su",
+      "pubDate": "Fri, 01 May 2026 02:00:00 +0000",
+      "at": "2026-05-03"
+    },
+    "https://arxiv.org/abs/2604.26959": {
+      "title": "CareGuardAI: Context-Aware Multi-Agent Guardrails for Clinical Safety & Hallucination Mitigation in Patient-Facing LLMs",
+      "text": "View PDF Abstract:Integrating large language models (LLMs) into patient-facing healthcare systems offers significant potential to improve access to medical information. However, ensuring clinical safety and factual reliability remains a critical challenge. In practice, AI-generated responses may be conditionally correct yet medically inappropriate, as models often fail to interpret patient context and tend to produce agreeable responses rather than challenge unsafe assumptions. Unlike clinicians, who infer risk from incomplete information, LLMs frequently lack contextual awareness. Moreover, real-world patient interactions are open-ended and underspecified, unlike structured benchmark settings. We present CareGuardAI, a risk-aware safety framework for patient-facing medical question answering that addresses two key failure modes: clinical safety risk and hallucination risk. The framework introduces Clinical Safety Risk Assessment (SRA), inspired by ISO 14971, and Hallucination Risk Assessment (HRA) to evaluate medical risk and factual reliability. At inference time, CareGuardAI employs a multi-stage pipeline consisting of a controller agent, safety-constrained generation, and dual risk evaluation, followed by iterative refinement when necessary. Responses are released only when both SRA and HRA are less than or equal to 2, ensuring clinically acceptable outputs with bounded latency. We evaluate CareGuardAI on PatientSafeBench, MedSafetyBench, and MedHallu, covering both safety and hallucination detection. Across these benchmarks, the framework consistently outperforms strong baseline models, including GPT-4o-mini, demonstrating the importance of context-aware, risk-based, inference-time safety mechanisms for reliable deployment in healthcare. Subjects: Computers and Soc",
+      "pubDate": "Sat, 02 May 2026 00:00:00 -0400",
+      "at": "2026-05-03"
+    },
+    "https://arxiv.org/abs/2604.28043": {
+      "title": "Collaborative Agent Reasoning Engineering (CARE): A Three-Party Design Methodology for Systematically Engineering AI Agents with Subject Matter Experts, Developers, and Helper Agents",
+      "text": "View PDF HTML (experimental) Abstract:We present Collaborative Agent Reasoning Engineering (CARE), a disciplined methodology for engineering Large Language Model (LLM) agents in scientific domains. Unlike ad-hoc trial-and-error approaches, CARE specifies behavior, grounding, tool orchestration, and verification through reusable artifacts and systematic, stage-gated phases. The methodology employs a three-party workflow involving Subject-Matter Experts (SMEs), developers, and LLM-based helper agents. These helper agents function as facilitation infrastructure, transforming informal domain intent into structured, reviewable specifications for human approval at defined gates. CARE addresses the \"jagged technological frontier\", characterized by uneven LLM performance, by bridging the gap between novice and expert analysts regarding domain constraints and verification practices. By generating concrete artifacts, including interaction requirements, reasoning policies, and evaluation criteria, CARE ensures agent behavior is specifiable, testable, and maintainable. Evaluation results from a scientific use case demonstrate that this stage-gated, artifact-driven methodology yields measurable improvements in development efficiency and complex-query performance. Subjects: Artificial Intelligence (cs.AI) Cite as: arXiv:2604.28043 [cs.AI] (or arXiv:2604.28043v1 [cs.AI] for this version) https://doi.org/10.48550/arXiv.2604.28043 arXiv-issued DOI via DataCite (pending registration) Related DOI: https://doi.org/10.64631/TAXQ7736 DOI(s) linking to related resources Submission history From: Muthukumaran Ramasubramanian [view email] [v1] Thu, 30 Apr 2026 15:54:47 UTC (2,232 KB)",
+      "pubDate": "Sat, 02 May 2026 00:00:00 -0400",
+      "at": "2026-05-03"
+    },
+    "https://arxiv.org/abs/2604.27419": {
+      "title": "InteractWeb-Bench: Can Multimodal Agent Escape Blind Execution in Interactive Website Generation?",
+      "text": "View PDF HTML (experimental) Abstract:With the advancement of multimodal large language models (MLLMs) and coding agents, the website development has shifted from manual programming to agent-based project-level code synthesis. Existing benchmarks rely on idealized assumptions, especially for well-structured, information-rich inputs and static execution settings. In contrast, real-world development is constrained by a critical bottleneck: the semantic misalignment between ambiguous, low-quality instructions from non-expert users and model understanding, which results in a failure mode that we term blind execution. To address this gap, we introduce InteractWeb-Bench, the first multimodal interactive benchmark for website generation under non-expert low-code user conditions. InteractWeb-Bench introduces four types of user agents and persona-driven instruction perturbations to systematically simulate diverse user behaviors, including ambiguity, redundancy, and contradiction, grounded in requirement engineering defect taxonomies. We develop an interactive execution environment for agents, featuring a unified action space comprising Clarify, Implement, Verify, and Submit, enabling iterative intent refinement, code synthesis, and visual feedback-based validation. Extensive experiments and analysis reveal that frontier MLLM-based agents remain trapped in blind execution, exposing limitations in intent recognition and adaptive interaction. Comments: 21 pages, 13 figures, 7 tables Subjects: Artificial Intelligence (cs.AI); Computation and Language (cs.CL) Cite as: arXiv:2604.27419 [cs.AI] (or arXiv:2604.27419v1 [cs.AI] for this version) https://doi.org/10.48550/arXiv.2604.27419 arXiv-issued DOI via DataCite (pending registration) Submission history From: Qiyao Wang [view email] [",
+      "pubDate": "Sat, 02 May 2026 00:00:00 -0400",
+      "at": "2026-05-03"
+    },
+    "https://arxiv.org/abs/2604.27096": {
+      "title": "Think it, Run it: Autonomous ML pipeline generation via self-healing multi-agent AI",
+      "text": "View PDF Abstract:The purpose of our paper is to develop a unified multi-agent architecture that automates end-to-end machine learning (ML) pipeline generation from datasets and natural-language (NL) goals, improving efficiency, robustness and explainability. A five-agent system is proposed to handle profiling, intent parsing, microservice recommendation, Directed Acyclic Graph (DAG) construction and execution. It integrates code-grounded Retrieval-Augmented Generation (RAG) for microservice understanding, an explainable hybrid recommender combining multiple criteria, a self-healing mechanism using Large Language Model (LLM)-based error interpretation and adaptive learning from execution history. The approach is evaluated on 150 ML tasks across diverse scenarios. The system achieves an 84.7% end-to-end pipeline success rate, outperforming baseline methods. It demonstrates improved robustness through self-healing and reduces workflow development time compared to manual construction. The study introduces a novel integration of code-grounded RAG, explainable recommendation, self-healing execution and adaptive learning within a single architecture, showing that tightly coupled intelligent components can outperform isolated solutions. Subjects: Artificial Intelligence (cs.AI) Cite as: arXiv:2604.27096 [cs.AI] (or arXiv:2604.27096v1 [cs.AI] for this version) https://doi.org/10.48550/arXiv.2604.27096 arXiv-issued DOI via DataCite (pending registration) Submission history From: Simona-Vasilica Oprea [view email] [v1] Wed, 29 Apr 2026 18:42:08 UTC (1,206 KB)",
+      "pubDate": "Sat, 02 May 2026 00:00:00 -0400",
+      "at": "2026-05-03"
+    },
+    "https://arxiv.org/abs/2604.17460": {
+      "title": "Agentic Education: Using Claude Code to Teach Claude Code",
+      "text": "View PDF HTML (experimental) Abstract:AI coding assistants have proliferated rapidly, yet structured pedagogical frameworks for learning these tools remain scarce. Developers face a gap between tool documentation and practical mastery, relying on fragmented resources such as blog posts, video tutorials, and trial-and-error. We present cc-self-train, a modular interactive curriculum for learning Claude Code, an agentic AI coding tool, through hands-on project construction. The system introduces five contributions: (1) a persona progression model that adapts instructor tone across four stages (Guide, Collaborator, Peer, Launcher), operationalizing Gradual Release of Responsibility for AI-mediated instruction; (2) an adaptive learning system that observes engagement quality through hook-based heuristics and adjusts scaffolding at two timescales, using streak detection for mid-module intervention and aggregate metrics for module-boundary persona changes; (3) a cross-domain unified curriculum in which five distinct project domains share identical feature sequencing, enabling transfer learning; (4) a step-pacing mechanism with explicit pause primitives to manage information overload in an AI-as-instructor context; and (5) an auto-updating curriculum design in which the onboarding agent detects upstream tool changes and updates teaching materials before instruction begins. A parametrized test suite enforces structural consistency as a proxy for pedagogical invariants across all 50 modules. A pilot evaluation with 27 participants shows statistically significant reported self-efficacy gains across all 10 assessed skill areas (p < 0.001), with the largest effects on advanced features such as hooks and custom skills. We discuss implications for the design of auto-updating educatio",
+      "pubDate": "Sat, 02 May 2026 00:00:00 -0400",
+      "at": "2026-05-03"
+    },
+    "https://openai.com/index/our-commitment-to-community-safety": {
+      "title": "Our commitment to community safety",
+      "text": "Learn how OpenAI protects community safety in ChatGPT through model safeguards, misuse detection, policy enforcement, and collaboration with safety experts.",
+      "pubDate": "Tue, 28 Apr 2026 00:00:00 GMT",
+      "at": "2026-05-03"
+    },
+    "https://techcrunch.com/2026/05/01/replits-amjad-masad-on-the-cursor-deal-fighting-apple-and-why-hed-rather-not-sell/": {
+      "title": "Replit’s Amjad Masad on the Cursor deal, fighting Apple, and why he’d rather not sell",
+      "text": "Amjad Masad has been building Replit for a decade, but the last 18 months have been something else entirely. The AI coding assistant company went from $2.8 million in revenue in all of 2024 to tracking toward what Masad describes as a billion-dollar annual run rate. At TechCrunch’s sold-out StrictlyVC event in San Francisco on Thursday night, we covered a lot of ground in a short time, beginning with the question everyone in the industry is asking right now: in a world where rival Cursor is reportedly in talks to be acquired by SpaceX for $60 billion, is Replit also bound to sell? We also talked about Replit’s net revenue retention — a measure of how much existing customers expand their spending — which Masad says is reaching as high as 300%, his willingness to take Apple to court over what he called outright lies in its App Store battle with Replit, and the possibility of the company beginning to invest in its own customers. On the question of independence, Masad was firm. Unlike Cursor, which he said has been operating at negative 23% gross margins, he argued Replit has the economics to make that path viable — even if he stopped short of ruling out a sale entirely. The following has been edited for length and clarity: TC: Cursor’s reported SpaceX deal was the talk of the industry last week. What did you make of it? AM: It’s kind of hard being an independent, smaller AI company that’s building on foundation models, especially if you’re burning a ton of cash. Part of the reporting suggested Cursor has negative 23% margins, and if you’re also wanting to invest in training models, that makes it incredibly hard to stay independent. Techcrunch event San Francisco, CA | October 13-15, 2026 For us at Replit, partly because we target a different customer set, we’ve been able t",
+      "pubDate": "Fri, 01 May 2026 23:06:50 +0000",
+      "at": "2026-05-03"
     }
   },
   "daily": {
@@ -13176,6 +13002,238 @@
         "selectedTopicTotal": 16
       },
       "at": "2026-05-02"
+    },
+    "morning:2026-05-03": {
+      "fingerprint": "eea1adaae9cee4ac9010556cb2956a92969892f935c9cc478337c8b01aafea80",
+      "daily": {
+        "overview": "马斯克诉OpenAI案进入关键庭审阶段，双方在法庭上激烈交锋，马斯克承认自家模型蒸馏对手引发舆论哗然。同时，OpenAI在印度市场大力推广ChatGPT Images2.0，而美国国防部则与多家AI公司签署机密级军事合作协议，AI领域的竞争与监管态势持续升温。",
+        "hotNews": [
+          {
+            "title": "马斯克承认Grok蒸馏ChatGPT，自曝双标引发舆论哗然。",
+            "insight": "马斯克承认Grok蒸馏ChatGPT，自曝双标引发舆论哗然。",
+            "briefing": "马斯克诉OpenAI案进入第四天庭审，马斯克在证人席上承认其公司xAI的Grok模型使用了OpenAI的模型进行训练，这一承认被外界视为“双标”现场。此前马斯克起诉OpenAI，指控其违背了非营利使命。庭审中，双方围绕邮件、短信及推特等证据展开激烈辩论，马斯克还警告AI可能毁灭人类。OpenAI方面则反驳称马斯克早已知晓公司结构。此案被视为AI行业发展的关键转折点。",
+            "evaluation": "此案揭示了AI行业在商业化与伦理使命之间的深层矛盾，具有行业里程碑意义。",
+            "narrative": "马斯克诉OpenAI案进入第四天庭审，马斯克在证人席上承认其公司xAI的Grok模型使用了OpenAI的模型进行训练，这一承认被外界视为“双标”现场。此前马斯克起诉OpenAI，指控其违背了非营利使命。庭审中，双方围绕邮件、短信及推特等证据展开激烈辩论，马斯克还警告AI可能毁灭人类。OpenAI方面则反驳称马斯克早已知晓公司结构。此案被视为AI行业发展的关键转折点。此案揭示了AI行业在商业化与伦理使命之间的深层矛盾，具有行业里程碑意义。",
+            "summary": "马斯克诉OpenAI案进入第四天庭审，马斯克在证人席上承认其公司xAI的Grok模型使用了OpenAI的模型进行训练，这一承认被外界视为“双标”现场。此前马斯克起诉OpenAI，指控其违背了非营利使命。庭审中，双方围绕邮件、短信及推特等证据展开激烈辩论，马斯克还警告AI可能毁灭人类。OpenAI方面则反驳称马斯克早已知晓公司结构。",
+            "refs": [
+              3,
+              2
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 82,
+            "topicId": 70
+          },
+          {
+            "title": "ChatGPT Images2.0在印度市场表现强劲，成为最大用户群体。",
+            "insight": "ChatGPT Images2.0在印度市场表现强劲，成为最大用户群体。",
+            "briefing": "OpenAI宣布其最新图像生成工具ChatGPT Images2.0发布后，印度迅速成为该功能最大的用户群体。数据显示，印度首周下载量约500万次，显著超过美国的200万次。该工具支持处理复杂提示词并生成含多语言文本的精细图像，强化了对印地语等非拉丁文本的渲染能力。尽管全球整体增长温和，但新兴市场如巴基斯坦、越南等地下载量增幅高达79%。",
+            "evaluation": "新兴市场成为AI应用增长的新引擎，本地化语言支持与个性化创作需求是关键驱动力。",
+            "narrative": "OpenAI宣布其最新图像生成工具ChatGPT Images2.0发布后，印度迅速成为该功能最大的用户群体。数据显示，印度首周下载量约500万次，显著超过美国的200万次。该工具支持处理复杂提示词并生成含多语言文本的精细图像，强化了对印地语等非拉丁文本的渲染能力。尽管全球整体增长温和，但新兴市场如巴基斯坦、越南等地下载量增幅高达79%。新兴市场成为AI应用增长的新引擎，本地化语言支持与个性化创作需求是关键驱动力。",
+            "summary": "OpenAI宣布其最新图像生成工具ChatGPT Images2.0发布后，印度迅速成为该功能最大的用户群体。数据显示，印度首周下载量约500万次，显著超过美国的200万次。该工具支持处理复杂提示词并生成含多语言文本的精细图像，强化了对印地语等非拉丁文本的渲染能力。尽管全球整体增长温和，但新兴市场如巴基斯坦、越南等地下载量增幅高达79%。",
+            "refs": [
+              8,
+              7
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 66,
+            "topicId": 68
+          },
+          {
+            "title": "GPT-5.5系统指令泄露，被禁止在无关联时提及特定生物。",
+            "insight": "GPT-5.5系统指令泄露，被禁止在无关联时提及特定生物。",
+            "briefing": "OpenAI开源的Codex CLI代码揭示了GPT-5.5的部分底层逻辑。泄露的系统提示词中包含罕见指令，严禁模型在无明确关联时提及“哥布林”、小精灵、浣熊等特定生物。业界分析认为，这是针对新模型“幻觉”问题的定向修补，旨在解决模型在生成控制上的不稳定性。此前，GPT-5系列模型在对话中频繁出现无关的“哥布林”式比喻。",
+            "evaluation": "大模型在进化过程中仍面临难以预测的输出偏差，底层指令优化成为控制幻觉的重要手段。",
+            "narrative": "OpenAI开源的Codex CLI代码揭示了GPT-5.5的部分底层逻辑。泄露的系统提示词中包含罕见指令，严禁模型在无明确关联时提及“哥布林”、小精灵、浣熊等特定生物。业界分析认为，这是针对新模型“幻觉”问题的定向修补，旨在解决模型在生成控制上的不稳定性。此前，GPT-5系列模型在对话中频繁出现无关的“哥布林”式比喻。大模型在进化过程中仍面临难以预测的输出偏差，底层指令优化成为控制幻觉的重要手段。",
+            "summary": "OpenAI开源的Codex CLI代码揭示了GPT-5.5的部分底层逻辑。泄露的系统提示词中包含罕见指令，严禁模型在无明确关联时提及“哥布林”、小精灵、浣熊等特定生物。业界分析认为，这是针对新模型“幻觉”问题的定向修补，旨在解决模型在生成控制上的不稳定性。此前，GPT-5系列模型在对话中频繁出现无关的“哥布林”式比喻。",
+            "refs": [
+              21,
+              22
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 51,
+            "topicId": 91
+          }
+        ],
+        "otherNews": [
+          {
+            "title": "OpenAI推出高级账户安全功能，与Yubico合作推出安全密钥。",
+            "insight": "OpenAI推出高级账户安全功能，与Yubico合作推出安全密钥。",
+            "briefing": "OpenAI周四推出了高级账户安全（AAS）功能，这是一套面向高价值用户的可选保护措施，现已向所有用户开放。作为合作的一部分，数字安全公司Yubico推出了两款与ChatGPT账户绑定的安全密钥产品，旨在保护用户免受钓鱼攻击威胁。",
+            "evaluation": "随着AI应用普及，账户安全成为用户信任的关键，硬件密钥等物理认证方式受到重视。",
+            "narrative": "OpenAI周四推出了高级账户安全（AAS）功能，这是一套面向高价值用户的可选保护措施，现已向所有用户开放。作为合作的一部分，数字安全公司Yubico推出了两款与ChatGPT账户绑定的安全密钥产品，旨在保护用户免受钓鱼攻击威胁。随着AI应用普及，账户安全成为用户信任的关键，硬件密钥等物理认证方式受到重视。",
+            "summary": "OpenAI周四推出了高级账户安全（AAS）功能，这是一套面向高价值用户的可选保护措施，现已向所有用户开放。作为合作的一部分，数字安全公司Yubico推出了两款与ChatGPT账户绑定的安全密钥产品，旨在保护用户免受钓鱼攻击威胁。",
+            "refs": [
+              16
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 59,
+            "topicId": 85
+          },
+          {
+            "title": "AI生成演员和剧本不再具备奥斯卡参评资格。",
+            "insight": "AI生成演员和剧本不再具备奥斯卡参评资格。",
+            "briefing": "美国电影艺术与科学学院发布新规则，明确只有“在电影法律账单中署名并由人类同意表演”的表演才具备奥斯卡参评资格。同样，剧本也必须由人类创作才能获得资格。这一规定旨在规范AI在影视制作中的应用，确保奖项的荣誉归属。",
+            "evaluation": "奥斯卡规则的更新反映了行业对AI生成内容伦理边界的重视，确立了人类创作的核心地位。",
+            "narrative": "美国电影艺术与科学学院发布新规则，明确只有“在电影法律账单中署名并由人类同意表演”的表演才具备奥斯卡参评资格。同样，剧本也必须由人类创作才能获得资格。这一规定旨在规范AI在影视制作中的应用，确保奖项的荣誉归属。奥斯卡规则的更新反映了行业对AI生成内容伦理边界的重视，确立了人类创作的核心地位。",
+            "summary": "美国电影艺术与科学学院发布新规则，明确只有“在电影法律账单中署名并由人类同意表演”的表演才具备奥斯卡参评资格。同样，剧本也必须由人类创作才能获得资格。这一规定旨在规范AI在影视制作中的应用，确保奖项的荣誉归属。",
+            "refs": [
+              6
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 71,
+            "topicId": 69
+          },
+          {
+            "title": "美国国防部与OpenAI等七家AI公司签约，解锁机密级军事作业。",
+            "insight": "美国国防部与OpenAI等七家AI公司签约，解锁机密级军事作业。",
+            "briefing": "美国五角大楼宣布与包括OpenAI、谷歌、微软、亚马逊、英伟达、SpaceX在内的七家公司达成协议，允许这些公司的AI系统用于机密级别的军事作业。这些AI系统将接触最高保密数据，用于辅助战场决策、情报分析及生成打击目标清单。Anthropic因拒绝接受条款而未被列入名单。五角大楼表示此举旨在加速美军向AI优先战斗力量转型。",
+            "evaluation": "AI技术深度融入军事领域，标志着国防安全进入智能化新阶段，但也引发伦理争议。",
+            "narrative": "美国五角大楼宣布与包括OpenAI、谷歌、微软、亚马逊、英伟达、SpaceX在内的七家公司达成协议，允许这些公司的AI系统用于机密级别的军事作业。这些AI系统将接触最高保密数据，用于辅助战场决策、情报分析及生成打击目标清单。Anthropic因拒绝接受条款而未被列入名单。五角大楼表示此举旨在加速美军向AI优先战斗力量转型。AI技术深度融入军事领域，标志着国防安全进入智能化新阶段，但也引发伦理争议。",
+            "summary": "美国五角大楼宣布与包括OpenAI、谷歌、微软、亚马逊、英伟达、SpaceX在内的七家公司达成协议，允许这些公司的AI系统用于机密级别的军事作业。这些AI系统将接触最高保密数据，用于辅助战场决策、情报分析及生成打击目标清单。Anthropic因拒绝接受条款而未被列入名单。五角大楼表示此举旨在加速美军向AI优先战斗力量转型。AI技术深度融入军事领域",
+            "refs": [
+              18
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 54,
+            "topicId": 76
+          },
+          {
+            "title": "AI语音转文字应用在准确性和上下文处理上取得显著进步。",
+            "insight": "AI语音转文字应用在准确性和上下文处理上取得显著进步。",
+            "briefing": "随着大语言模型和语音转文字模型的进步，现代AI语音转文字应用在准确性和上下文处理能力上大幅提升。这些应用不仅能更准确地识别语音，还能自动去除填充词、修正口误并处理标点符号，大幅减少了人工编辑的需求。",
+            "evaluation": "AI语音技术正从辅助工具转变为高效生产力工具，用户体验得到显著改善。",
+            "narrative": "随着大语言模型和语音转文字模型的进步，现代AI语音转文字应用在准确性和上下文处理能力上大幅提升。这些应用不仅能更准确地识别语音，还能自动去除填充词、修正口误并处理标点符号，大幅减少了人工编辑的需求。AI语音技术正从辅助工具转变为高效生产力工具，用户体验得到显著改善。",
+            "summary": "随着大语言模型和语音转文字模型的进步，现代AI语音转文字应用在准确性和上下文处理能力上大幅提升。这些应用不仅能更准确地识别语音，还能自动去除填充词、修正口误并处理标点符号，大幅减少了人工编辑的需求。",
+            "refs": [
+              5
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 71,
+            "topicId": 64
+          },
+          {
+            "title": "Replit创始人表示公司正迈向十亿美元年营收，拒绝出售。",
+            "insight": "Replit创始人表示公司正迈向十亿美元年营收，拒绝出售。",
+            "briefing": "AI编程助手公司Replit的创始人Amjad Masad表示，公司营收已从2024年的280万美元增长至预计的十亿美元年营收。尽管竞争对手Cursor据传被SpaceX以600亿美元收购，但Masad表示Replit更倾向于独立发展，而非出售。",
+            "evaluation": "AI编程工具市场竞争激烈，但头部公司仍展现出强大的增长潜力和独立发展的意愿。",
+            "narrative": "AI编程助手公司Replit的创始人Amjad Masad表示，公司营收已从2024年的280万美元增长至预计的十亿美元年营收。尽管竞争对手Cursor据传被SpaceX以600亿美元收购，但Masad表示Replit更倾向于独立发展，而非出售。",
+            "summary": "AI编程助手公司Replit的创始人Amjad Masad表示，公司营收已从2024年的280万美元增长至预计的十亿美元年营收。尽管竞争对手Cursor据传被SpaceX以600亿美元收购，但Masad表示Replit更倾向于独立发展",
+            "refs": [
+              15
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 61,
+            "topicId": 83
+          },
+          {
+            "title": "腾讯开源Hy-MT翻译模型，440MB体积实现离线高性能翻译。",
+            "insight": "腾讯开源Hy-MT翻译模型，440MB体积实现离线高性能翻译。",
+            "briefing": "腾讯开源了紧凑型AI翻译模型Hy-MT1.5-1.8B-1.25bit。该模型通过1.25比特量化技术，体积从3.3GB缩减至440MB，支持33种语言及5种方言，可在智能手机上完全离线运行。在标准基准测试中，其性能与商业翻译服务及超大模型相当。",
+            "evaluation": "量化技术的突破降低了高品质AI翻译的算力门槛，为终端侧AI应用提供了极具竞争力的开源底座。",
+            "narrative": "腾讯开源了紧凑型AI翻译模型Hy-MT1.5-1.8B-1.25bit。该模型通过1.25比特量化技术，体积从3.3GB缩减至440MB，支持33种语言及5种方言，可在智能手机上完全离线运行。在标准基准测试中，其性能与商业翻译服务及超大模型相当。",
+            "summary": "腾讯开源了紧凑型AI翻译模型Hy-MT1.5-1.8B-1.25bit。该模型通过1.25比特量化技术，体积从3.3GB缩减至440MB，支持33种语言及5种方言，可在智能手机上完全离线运行。在标准基准测试中",
+            "refs": [
+              19
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 53,
+            "topicId": 87
+          },
+          {
+            "title": "昆仑万维全面All in AGI与AIGC，短剧平台月流水近3600万美元。",
+            "insight": "昆仑万维全面All in AGI与AIGC，短剧平台月流水近3600万美元。",
+            "briefing": "昆仑万维在年报中宣布公司正全面All in AGI与AIGC，并将战略升级为“4+3”模式，即以四大SOTA模型为底座支撑三大平台。其短剧平台DramaWave和FreeReels在2025年底已实现月流水近3600万美元，ARR超过4亿美元。",
+            "evaluation": "传统内容公司正通过AI技术转型为平台型公司，资本投入与商业化落地并行。",
+            "narrative": "昆仑万维在年报中宣布公司正全面All in AGI与AIGC，并将战略升级为“4+3”模式，即以四大SOTA模型为底座支撑三大平台。其短剧平台DramaWave和FreeReels在2025年底已实现月流水近3600万美元，ARR超过4亿美元。传统内容公司正通过AI技术转型为平台型公司，资本投入与商业化落地并行。",
+            "summary": "昆仑万维在年报中宣布公司正全面All in AGI与AIGC，并将战略升级为“4+3”模式，即以四大SOTA模型为底座支撑三大平台。其短剧平台DramaWave和FreeReels在2025年底已实现月流水近3600万美元",
+            "refs": [
+              20
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 53,
+            "topicId": 102
+          }
+        ],
+        "coreTech": [
+          {
+            "title": "协作代理推理工程（）",
+            "summary": "CARE提出了一种系统化的方法论，通过可重用工件和分阶段流程，协调领域专家、开发者和助手代理来工程化设计大型语言模型代理，解决了科学领域代理开发的非结构化试错问题。",
+            "refs": [
+              10
+            ],
+            "topicId": 22
+          },
+          {
+            "title": "面向患者的上下文感知多代理护栏",
+            "summary": "CareGuardAI提出了一种上下文感知的多代理护栏机制，旨在缓解面向患者的LLM中的临床安全性和幻觉问题，通过增强模型对医疗语境的理解来提升医疗AI的可靠性。",
+            "refs": [
+              12
+            ],
+            "topicId": 24
+          },
+          {
+            "title": "通过自愈多代理实现自主流水线生成",
+            "summary": "该研究提出了一种统一的五代理架构，能够从数据集和自然语言目标自动生成端到端的机器学习流水线，通过自我修复机制提高了流水线生成的效率、鲁棒性和可解释性。",
+            "refs": [
+              14
+            ],
+            "topicId": 35
+          },
+          {
+            "title": "多模态代理能否在交互式网站生",
+            "summary": "InteractWeb-Bench是一个新的基准测试，旨在评估多模态代理在交互式网站生成中是否能够避免“盲目执行”的错误，即模型在语义不匹配的低质量指令下仍能正确执行。",
+            "refs": [
+              11
+            ],
+            "topicId": 17
+          },
+          {
+            "title": "在真实光学平台上进行端到端自",
+            "summary": "该研究在真实光学平台上实现了端到端的自主科学发现，证明了AI代理能够在物理系统中通过持续修正问题、方法和假设来产生具有实验证据支持的非平凡结果。",
+            "refs": [
+              9
+            ],
+            "topicId": 13
+          },
+          {
+            "title": "代理教育",
+            "summary": "该研究提出了cc-self-train，一种通过动手项目构建来学习Claude Code的模块化交互式课程，旨在填补工具文档与实际掌握之间的鸿沟。",
+            "refs": [
+              13
+            ],
+            "topicId": 62
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "马斯克与奥特曼之争才刚刚开始",
+          "2": "马斯克翻车了！一边告Open AI，一边偷偷蒸馏Chat GPT",
+          "3": "马斯克对决奥特曼第一周：马斯克称被骗，警告AI可能毁灭人类，并承认x AI蒸馏了Open AI",
+          "4": "Anthropic Jupiter模型泄露，竞逐9000亿美元估值",
+          "5": "最佳AI语音转文字应用评测与排名",
+          "6": "AI生成的演员和剧本不再具备奥斯卡参评资格",
+          "7": "Open AI 发布 Chat GPT Images2.0，印度市场贡献首周最大用户增量Open AI 周四宣布，其新图像生成工具Chat GPT Images2.0发布后，印度成为最大用户群体。",
+          "8": "Chat GPT图片2.0在印度大获成功，但在其他地区尚未",
+          "9": "在真实光学平台上进行端到端自主科学发现",
+          "10": "协作代理推理工程（CARE）：一种系统化工程AI代理的三方设计方法论",
+          "11": "InteractWeb-Bench：多模态代理能否在交互式网站生成中避免盲目执行？",
+          "12": "CareGuardAI：面向患者LLM的上下文感知多代理护栏",
+          "13": "代理教育：使用Claude Code来教授Claude Code",
+          "14": "Think it, Run it：通过自愈多代理AI实现自主ML流水线生成",
+          "15": "Replit创始人Masad谈Cursor收购案、对抗苹果及不愿出售",
+          "16": "Open AI宣布为Chat GPT账户推出新安全功能，包括与Yubico合作",
+          "17": "我们对社区安全的承诺",
+          "18": "美国防部与Open AI、谷歌等7家AI公司签约，全面解锁致命自主武器限制",
+          "19": "腾讯开源 Hy-MT 翻译模型:440 MB 实现离线运行，性能超越谷歌翻译腾讯近日开源紧凑型AI翻译模型Hy-MT1.5-1.8 B-1.25bit，支持33种语言及5种方言、1056个翻译方向，可在智能手机上完全离线运行。",
+          "20": "“游戏圈野蛮人”跳进AI火坑，周亚辉要“拳打Netflix、脚踢Spotify”！",
+          "21": "Open AI 新模型系统指令泄露，GPT-5.5 竟被禁止谈论“哥布林”？Open AI最新开源的Codex CLI代码揭示了GPT-5.5的部分底层逻辑。据Ars Technica披露，其3500多词的系统提示词中包含罕见指令",
+          "22": "谁在 GPT-5.5 脑子里塞了一群「妖怪」？"
+        },
+        "candidateTotal": 378,
+        "topicTotal": 133,
+        "selectedTopicTotal": 16
+      },
+      "at": "2026-05-03"
     }
   },
   "llm": {
@@ -18188,6 +18246,78 @@
       "model": "glm-4.7-flash",
       "content": "{\"mapping\":[{\"from_key\":\"企业 AI 主权与数据控制\",\"merged_key\":\"企业 AI 主权与数据控制\",\"merged_title\":\"企业 AI 主权与数据控制\",\"merged_type\":\"news\"},{\"from_key\":\"神童Laurent Simons\",\"merged_key\":\"神童Laurent Simons\",\"merged_title\":\"神童Laurent Simons\",\"merged_type\":\"news\"},{\"from_key\":\"世界模型与具身智能\",\"merged_key\":\"世界模型与具身智能\",\"merged_title\":\"世界模型与具身智能\",\"merged_type\":\"news\"},{\"from_key\":\"四大科技巨头 AI 资本开支\",\"merged_key\":\"四大科技巨头 AI 资本开支\",\"merged_title\":\"四大科技巨头 AI 资本开支\",\"merged_type\":\"news\"},{\"from_key\":\"特斯拉 FSD 无监督版进展\",\"merged_key\":\"特斯拉 FSD 无监督版进展\",\"merged_title\":\"特斯拉 FSD 无监督版进展\",\"merged_type\":\"news\"},{\"from_key\":\"腾讯开源 Hy-MT 翻译模型\",\"merged_key\":\"腾讯开源 Hy-MT 翻译模型\",\"merged_title\":\"腾讯开源 Hy-MT 翻译模型\",\"merged_type\":\"news\"},{\"from_key\":\"图灵奖得主Mike Stonebraker谈计算机教育\",\"merged_key\":\"图灵奖得主Mike Stonebraker谈计算机教育\",\"merged_title\":\"图灵奖得主Mike Stonebraker谈计算机教育\",\"merged_type\":\"news\"},{\"from_key\":\"微软推出法律助手\",\"merged_key\":\"微软在 Word 推出 AI 法律助手\",\"merged_title\":\"微软在 Word 推出 AI 法律助手\",\"merged_type\":\"news\"},{\"from_key\":\"微软在 Word 推出 AI 法律助手\",\"merged_key\":\"微软在 Word 推出 AI 法律助手\",\"merged_title\":\"微软在 Word 推出 AI 法律助手\",\"merged_type\":\"news\"},{\"from_key\":\"追觅AI吊坠产品\",\"merged_key\":\"追觅AI吊坠产品\",\"merged_title\":\"追觅AI吊坠产品\",\"merged_type\":\"news\"},{\"from_key\":\"Agent 可开 Cloudflare 账户\",\"merged_key\":\"Agent 可开 Cloudflare 账户\",\"merged_title\":\"Agent 可开 Cloudflare 账户\",\"merged_type\":\"news\"},{\"from_key\":\"AI 导致内存条价格暴涨\",\"merged_key\":\"AI 导致内存条价格暴涨\",\"merged_title\":\"AI 导致内存条价格暴涨\",\"merged_type\":\"news\"},{\"from_key\":\"AI 技能协作与替代恐慌\",\"merged_key\":\"AI 技能协作与替代恐慌\",\"merged_title\":\"AI 技能协作与替代恐慌\",\"merged_type\":\"news\"},{\"from_key\":\"AI 时代手势舞\",\"merged_key\":\"AI 时代手势舞\",\"merged_title\":\"AI 时代手势舞\",\"merged_type\":\"news\"},{\"from_key\":\"AI 自动进化与初级人才危机\",\"merged_key\":\"AI 自动进化与初级人才危机\",\"merged_title\":\"AI 自动进化与初级人才危机\",\"merged_type\":\"news\"}]}",
       "at": "2026-05-02"
+    },
+    "e7aea618865524599301a7ec8672cf6a9df8bd043c89210a6d5125607ab9a169": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":12,\"topic_key\":\"前沿智能体评估\",\"topic_title\":\"前沿智能体评估\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":34,\"topic_key\":\"LLM 0.32a0 重构\",\"topic_title\":\"LLM 0.32a0 重构\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":63,\"topic_key\":\"Codex CLI 0.128.0 新增 /goal\",\"topic_title\":\"Codex CLI 0.128.0 新增 /goal\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":64,\"topic_key\":\"最佳AI语音转文字应用\",\"topic_title\":\"最佳AI语音转文字应用\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":65,\"topic_key\":\"OpenAI模型登陆AWS\",\"topic_title\":\"OpenAI模型登陆AWS\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":66,\"topic_key\":\"Şifahane 医疗分类Demo\",\"topic_title\":\"Şifahane 医疗分类Demo\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":67,\"topic_key\":\"微软Word AI代理信任度\",\"topic_title\":\"微软Word AI代理信任度\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":68,\"topic_key\":\"ChatGPT Images2.0 发布\",\"topic_title\":\"ChatGPT Images2.0 发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":69,\"topic_key\":\"AI生成内容获奥斯卡资格\",\"topic_title\":\"AI生成内容获奥斯卡资格\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":70,\"topic_key\":\"马斯克诉OpenAI案\",\"topic_title\":\"马斯克诉OpenAI案\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":71,\"topic_key\":\"AI工程师世界博览会\",\"topic_title\":\"AI工程师世界博览会\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":72,\"topic_key\":\"知识工作Codex代理\",\"topic_title\":\"知识工作Codex代理\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":73,\"topic_key\":\"Qwen3.6 量化实验\",\"topic_title\":\"Qwen3.6 量化实验\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":76,\"topic_key\":\"苹果App误打包Claude.md\",\"topic_title\":\"苹果App误打包Claude.md\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":77,\"topic_key\":\"OpenAI中文渲染修复\",\"topic_title\":\"OpenAI中文渲染修复\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":78,\"topic_key\":\"马斯克诉OpenAI案\",\"topic_title\":\"马斯克诉OpenAI案\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":79,\"topic_key\":\"美国防部签约AI公司\",\"topic_title\":\"美国防部签约AI公司\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":80,\"topic_key\":\"OpenAI自建新闻网站\",\"topic_title\":\"OpenAI自建新闻网站\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":81,\"topic_key\":\"EverMind 4个月SOTA\",\"topic_title\":\"EverMind 4个月SOTA\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":82,\"topic_key\":\"Agent开通Cloudflare账户\",\"topic_title\":\"Agent开通Cloudflare账户\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":83,\"topic_key\":\"马斯克诉OpenAI案\",\"topic_title\":\"马斯克诉OpenAI案\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":84,\"topic_key\":\"马斯克诉OpenAI案\",\"topic_title\":\"马斯克诉OpenAI案\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":85,\"topic_key\":\"Simon Willison 新相机\",\"topic_title\":\"Simon Willison 新相机\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":86,\"topic_key\":\"GPT-5.5 网络安全评估\",\"topic_title\":\"GPT-5.5 网络安全评估\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":87,\"topic_key\":\"1930 vintage 13B 模型\",\"topic_title\":\"1930 vintage 13B 模型\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-05-03"
+    },
+    "8b13387ec22210905277b52834aa2a8c30890d097d227f7d355685301a36a702": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":88,\"topic_key\":\"Replit收购Cursor与苹果竞争\",\"topic_title\":\"Replit收购Cursor与苹果竞争\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":89,\"topic_key\":\"Anthropic融资估值\",\"topic_title\":\"Anthropic潜在900亿美元估值融资\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":90,\"topic_key\":\"OpenAI安全更新\",\"topic_title\":\"OpenAI推出ChatGPT账户高级安全功能\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":91,\"topic_key\":\"OpenAI安全更新\",\"topic_title\":\"OpenAI社区安全承诺\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":true},{\"candidate_id\":92,\"topic_key\":\"迪士尼人脸识别\",\"topic_title\":\"迪士尼乐园启用访客人脸识别\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":94,\"topic_key\":\"腾讯开源Hy-MT翻译模型\",\"topic_title\":\"腾讯开源Hy-MT翻译模型\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":95,\"topic_key\":\"微软垂直领域AI助手\",\"topic_title\":\"微软推出法律助手AI工具\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":96,\"topic_key\":\"科技巨头AI资本开支\",\"topic_title\":\"四大科技巨头2026年AI资本开支上调\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":97,\"topic_key\":\"蚂蚁集团ASL协议\",\"topic_title\":\"蚂蚁集团牵头推动ASL智能体可信协作协议\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":98,\"topic_key\":\"GPT-5.5系统指令泄露\",\"topic_title\":\"GPT-5.5系统指令泄露\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":99,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":100,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":101,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":102,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":104,\"topic_key\":\"Google DeepMind医疗AI\",\"topic_title\":\"Google DeepMind医疗AI助手\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":105,\"topic_key\":\"超聚变上市辅导\",\"topic_title\":\"超聚变数字技术上市辅导\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":106,\"topic_key\":\"AI导致内存价格上涨\",\"topic_title\":\"AI需求导致内存条价格暴涨\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":107,\"topic_key\":\"AI手势舞现象\",\"topic_title\":\"AI时代手势舞现象\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":108,\"topic_key\":\"OpenAI自研手机\",\"topic_title\":\"OpenAI自研手机计划\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":109,\"topic_key\":\"GPT-5.5系统指令泄露\",\"topic_title\":\"GPT-5.5系统指令泄露\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":110,\"topic_key\":\"图灵奖得主谈计算机教育\",\"topic_title\":\"图灵奖得主Mike Stonebraker谈计算机教育\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":111,\"topic_key\":\"追觅AI吊坠产品\",\"topic_title\":\"追觅AI吊坠团队专访\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":112,\"topic_key\":\"Obsidian笔记软件\",\"topic_title\":\"Obsidian笔记软件万字讲解\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":113,\"topic_key\":\"AI漫剧收益\",\"topic_title\":\"AI漫剧收益比惨\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":114,\"topic_key\":\"昆仑万维AI战略\",\"topic_title\":\"昆仑万维AI战略与年报\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-05-03"
+    },
+    "e89e084a55ca8286d1bbc30fee803b1f658c46ac087b06b6f045373dd170db6a": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":115,\"topic_key\":\"Meta收购机器人AI公司ARI\",\"topic_title\":\"Meta收购机器人AI公司ARI\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":116,\"topic_key\":\"神童Laurent Simons研究AI抗衰老\",\"topic_title\":\"神童Laurent Simons研究AI抗衰老\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":117,\"topic_key\":\"RSS与vibe-coded apps\",\"topic_title\":\"RSS与vibe-coded apps\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":118,\"topic_key\":\"Simon Willison发布llm 0.32a1\",\"topic_title\":\"Simon Willison发布llm 0.32a1\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":119,\"topic_key\":\"引用OpenAI Codex base_instructions\",\"topic_title\":\"引用OpenAI Codex base_instructions\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":120,\"topic_key\":\"Matthew Yglesias放弃vibecode\",\"topic_title\":\"Matthew Yglesias放弃vibecode\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":121,\"topic_key\":\"ChatGPT Images 2.0在印度表现\",\"topic_title\":\"ChatGPT Images 2.0在印度表现\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":122,\"topic_key\":\"AI需求推高Mac供应紧张\",\"topic_title\":\"AI需求推高Mac供应紧张\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":123,\"topic_key\":\"Legal AI独角兽Legora与Harvey竞争\",\"topic_title\":\"Legal AI独角兽Legora与Harvey竞争\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":124,\"topic_key\":\"Salesforce客户共创AI路线图\",\"topic_title\":\"Salesforce客户共创AI路线图\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":125,\"topic_key\":\"OpenAI Stargate算力基础设施\",\"topic_title\":\"OpenAI Stargate算力基础设施\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":127,\"topic_key\":\"Latent Space播客：推理拐点\",\"topic_title\":\"Latent Space播客：推理拐点\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":128,\"topic_key\":\"反华AI宣传资金来源调查\",\"topic_title\":\"反华AI宣传资金来源调查\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":130,\"topic_key\":\"GPT-5.5与Mythos Preview安全测试\",\"topic_title\":\"GPT-5.5与Mythos Preview安全测试\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":132,\"topic_key\":\"钉钉发布AI录音硬件A1Pro\",\"topic_title\":\"钉钉发布AI录音硬件A1Pro\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":true},{\"candidate_id\":133,\"topic_key\":\"快手推出KroWork桌面助手\",\"topic_title\":\"快手推出KroWork桌面助手\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":true},{\"candidate_id\":134,\"topic_key\":\"科大讯飞亮相数字中国峰会\",\"topic_title\":\"科大讯飞亮相数字中国峰会\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":135,\"topic_key\":\"巨日禄与火山引擎合作AI短剧\",\"topic_title\":\"巨日禄与火山引擎合作AI短剧\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":true},{\"candidate_id\":136,\"topic_key\":\"CVPR 2026动态视觉智能观察\",\"topic_title\":\"CVPR 2026动态视觉智能观察\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":137,\"topic_key\":\"Sora之父Bill Peebles离职\",\"topic_title\":\"Sora之父Bill Peebles离职\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":138,\"topic_key\":\"Wan 2.2视频生成模型争议\",\"topic_title\":\"Wan 2.2视频生成模型争议\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":139,\"topic_key\":\"Duality AI地面分割挑战赛\",\"topic_title\":\"Duality AI地面分割挑战赛\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":140,\"topic_key\":\"Meta AI工具广告营销争议\",\"topic_title\":\"Meta AI工具广告营销争议\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":141,\"topic_key\":\"企业AI主权与数据控制\",\"topic_title\":\"企业AI主权与数据控制\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":142,\"topic_key\":\"AI智能体对初级人才冲击\",\"topic_title\":\"AI智能体对初级人才冲击\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-05-03"
+    },
+    "d16be30f3e46b6073b516c74da7d631e2a1bc7cf37c9585645588b9c5212f0fb": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":143,\"topic_key\":\"Nvidia, Microsoft, Amazon 扩大军事 AI 应用\",\"topic_title\":\"Nvidia, Microsoft, Amazon 扩大军事 AI 应用\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":144,\"topic_key\":\"AI 对就业的影响\",\"topic_title\":\"AI 对就业的影响\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":145,\"topic_key\":\"iNaturalist Sightings 工具\",\"topic_title\":\"iNaturalist Sightings 工具\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":146,\"topic_key\":\"Mac Mini 供应短缺与 AI 采用加速\",\"topic_title\":\"Mac Mini 供应短缺与 AI 采用加速\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":147,\"topic_key\":\"AI 生成色情内容诉讼\",\"topic_title\":\"AI 生成色情内容诉讼\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":148,\"topic_key\":\"Reid Hoffman 推广 AI 医疗咨询\",\"topic_title\":\"Reid Hoffman 推广 AI 医疗咨询\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":149,\"topic_key\":\"AI 辅助基因代码简化研究\",\"topic_title\":\"AI 辅助基因代码简化研究\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":150,\"topic_key\":\"Google AI 默认设置与隐私问题\",\"topic_title\":\"Google AI 默认设置与隐私问题\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false}]}",
+      "at": "2026-05-03"
+    },
+    "1a134f2017f31519c0e9b4d1aa98dbe6179bfc4190d3a66951966aa71adfb617": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"马斯克诉OpenAI案\",\"merged_key\":\"马斯克诉OpenAI案\",\"merged_title\":\"马斯克诉OpenAI案\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face社区动态\",\"merged_key\":\"Hugging Face社区动态\",\"merged_title\":\"Hugging Face社区动态\",\"merged_type\":\"news\"},{\"from_key\":\"GPT-5.5系统指令泄露\",\"merged_key\":\"GPT-5.5系统指令泄露\",\"merged_title\":\"GPT-5.5系统指令泄露\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI安全更新\",\"merged_key\":\"OpenAI安全更新\",\"merged_title\":\"OpenAI推出ChatGPT账户高级安全功能\",\"merged_type\":\"news\"},{\"from_key\":\"1930 vintage 13B 模型\",\"merged_key\":\"1930 vintage 13B 模型\",\"merged_title\":\"1930 vintage 13B 模型\",\"merged_type\":\"news\"},{\"from_key\":\"超聚变上市辅导\",\"merged_key\":\"超聚变上市辅导\",\"merged_title\":\"超聚变数字技术上市辅导\",\"merged_type\":\"news\"},{\"from_key\":\"迪士尼人脸识别\",\"merged_key\":\"迪士尼人脸识别\",\"merged_title\":\"迪士尼乐园启用访客人脸识别\",\"merged_type\":\"news\"},{\"from_key\":\"钉钉发布AI录音硬件A1Pro\",\"merged_key\":\"钉钉发布AI录音硬件A1Pro\",\"merged_title\":\"钉钉发布AI录音硬件A1Pro\",\"merged_type\":\"news\"},{\"from_key\":\"反华AI宣传资金来源调查\",\"merged_key\":\"反华AI宣传资金来源调查\",\"merged_title\":\"反华AI宣传资金来源调查\",\"merged_type\":\"news\"},{\"from_key\":\"巨日禄与火山引擎合作AI短剧\",\"merged_key\":\"巨日禄与火山引擎合作AI短剧\",\"merged_title\":\"巨日禄与火山引擎合作AI短剧\",\"merged_type\":\"news\"},{\"from_key\":\"科大讯飞亮相数字中国峰会\",\"merged_key\":\"科大讯飞亮相数字中国峰会\",\"merged_title\":\"科大讯飞亮相数字中国峰会\",\"merged_type\":\"news\"},{\"from_key\":\"快手推出KroWork桌面助手\",\"merged_key\":\"快手推出KroWork桌面助手\",\"merged_title\":\"快手推出KroWork桌面助手\",\"merged_type\":\"news\"},{\"from_key\":\"昆仑万维AI战略\",\"merged_key\":\"昆仑万维AI战略\",\"merged_title\":\"昆仑万维AI战略与年报\",\"merged_type\":\"news\"},{\"from_key\":\"蚂蚁集团ASL协议\",\"merged_key\":\"蚂蚁集团ASL协议\",\"merged_title\":\"蚂蚁集团牵头推动ASL智能体可信协作协议\",\"merged_type\":\"news\"},{\"from_key\":\"美国防部签约AI公司\",\"merged_key\":\"美国防部签约AI公司\",\"merged_title\":\"美国防部签约AI公司\",\"merged_type\":\"news\"},{\"from_key\":\"苹果App误打包Claude.md\",\"merged_key\":\"苹果App误打包Claude.md\",\"merged_title\":\"苹果App误打包Claude.md\",\"merged_type\":\"news\"},{\"from_key\":\"企业AI主权与数据控制\",\"merged_key\":\"企业AI主权与数据控制\",\"merged_title\":\"企业AI主权与数据控制\",\"merged_type\":\"news\"},{\"from_key\":\"前沿智能体评估\",\"merged_key\":\"前沿智能体评估\",\"merged_title\":\"前沿智能体评估\",\"merged_type\":\"news\"},{\"from_key\":\"神童Laurent Simons研究AI抗衰老\",\"merged_key\":\"神童Laurent Simons研究AI抗衰老\",\"merged_title\":\"神童Laurent Simons研究AI抗衰老\",\"merged_type\":\"news\"},{\"from_key\":\"科技巨头AI资本开支\",\"merged_key\":\"科技巨头AI资本开支\",\"merged_title\":\"四大科技巨头2026年AI资本开支上调\",\"merged_type\":\"news\"},{\"from_key\":\"腾讯开源Hy-MT翻译模型\",\"merged_key\":\"腾讯开源Hy-MT翻译模型\",\"merged_title\":\"腾讯开源Hy-MT翻译模型\",\"merged_type\":\"news\"},{\"from_key\":\"图灵奖得主谈计算机教育\",\"merged_key\":\"图灵奖得主谈计算机教育\",\"merged_title\":\"图灵奖得主Mike Stonebraker谈计算机教育\",\"merged_type\":\"news\"},{\"from_key\":\"微软垂直领域AI助手\",\"merged_key\":\"微软垂直领域AI助手\",\"merged_title\":\"微软推出法律助手AI工具\",\"merged_type\":\"news\"},{\"from_key\":\"微软Word AI代理信任度\",\"merged_key\":\"微软Word AI代理信任度\",\"merged_title\":\"微软Word AI代理信任度\",\"merged_type\":\"news\"},{\"from_key\":\"引用OpenAI Codex base_instructions\",\"merged_key\":\"引用OpenAI Codex base_instructions\",\"merged_title\":\"引用OpenAI Codex base_instructions\",\"merged_type\":\"news\"},{\"from_key\":\"知识工作Codex代理\",\"merged_key\":\"知识工作Codex代理\",\"merged_title\":\"知识工作Codex代理\",\"merged_type\":\"news\"},{\"from_key\":\"追觅AI吊坠产品\",\"merged_key\":\"追觅AI吊坠产品\",\"merged_title\":\"追觅AI吊坠团队专访\",\"merged_type\":\"news\"},{\"from_key\":\"最佳AI语音转文字应用\",\"merged_key\":\"最佳AI语音转文字应用\",\"merged_title\":\"最佳AI语音转文字应用\",\"merged_type\":\"news\"},{\"from_key\":\"Agent开通Cloudflare账户\",\"merged_key\":\"Agent开通Cloudflare账户\",\"merged_title\":\"Agent开通Cloudflare账户\",\"merged_type\":\"news\"},{\"from_key\":\"AI 对就业的影响\",\"merged_key\":\"AI 对就业的影响\",\"merged_title\":\"AI 对就业的影响\",\"merged_type\":\"news\"},{\"from_key\":\"AI 辅助基因代码简化研究\",\"merged_key\":\"AI 辅助基因代码简化研究\",\"merged_title\":\"AI 辅助基因代码简化研究\",\"merged_type\":\"news\"},{\"from_key\":\"AI 生成色情内容诉讼\",\"merged_key\":\"AI 生成色情内容诉讼\",\"merged_title\":\"AI 生成色情内容诉讼\",\"merged_type\":\"news\"},{\"from_key\":\"AI工程师世界博览会\",\"merged_key\":\"AI工程师世界博览会\",\"merged_title\":\"AI工程师世界博览会\",\"merged_type\":\"news\"},{\"from_key\":\"AI漫剧收益\",\"merged_key\":\"AI漫剧收益\",\"merged_title\":\"AI漫剧收益比惨\",\"merged_type\":\"news\"},{\"from_key\":\"AI生成内容获奥斯卡资格\",\"merged_key\":\"AI生成内容获奥斯卡资格\",\"merged_title\":\"AI生成内容获奥斯卡资格\",\"merged_type\":\"news\"},{\"from_key\":\"AI手势舞现象\",\"merged_key\":\"AI手势舞现象\",\"merged_title\":\"AI时代手势舞现象\",\"merged_type\":\"news\"},{\"from_key\":\"AI导致内存价格上涨\",\"merged_key\":\"AI导致内存价格上涨\",\"merged_title\":\"AI需求导致内存条价格暴涨\",\"merged_type\":\"news\"},{\"from_key\":\"AI需求推高Mac供应紧张\",\"merged_key\":\"AI需求推高Mac供应紧张\",\"merged_title\":\"AI需求推高Mac供应紧张\",\"merged_type\":\"news\"},{\"from_key\":\"AI智能体对初级人才冲击\",\"merged_key\":\"AI智能体对初级人才冲击\",\"merged_title\":\"AI智能体对初级人才冲击\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic融资估值\",\"merged_key\":\"Anthropic融资估值\",\"merged_title\":\"Anthropic潜在900亿美元估值融资\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT Images 2.0在印度表现\",\"merged_key\":\"ChatGPT Images 2.0在印度表现\",\"merged_title\":\"ChatGPT Images 2.0在印度表现\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT Images2.0 发布\",\"merged_key\":\"ChatGPT Images 2.0在印度表现\",\"merged_title\":\"ChatGPT Images 2.0在印度表现\",\"merged_type\":\"news\"},{\"from_key\":\"Codex CLI 0.128.0 新增 /goal\",\"merged_key\":\"Codex CLI 0.128.0 新增 /goal\",\"merged_title\":\"Codex CLI 0.128.0 新增 /goal\",\"merged_type\":\"news\"},{\"from_key\":\"CVPR 2026动态视觉智能观察\",\"merged_key\":\"CVPR 2026动态视觉智能观察\",\"merged_title\":\"CVPR 2026动态视觉智能观察\",\"merged_type\":\"news\"},{\"from_key\":\"Duality AI地面分割挑战赛\",\"merged_key\":\"Duality AI地面分割挑战赛\",\"merged_title\":\"Duality AI地面分割挑战赛\",\"merged_type\":\"news\"},{\"from_key\":\"EverMind 4个月SOTA\",\"merged_key\":\"EverMind 4个月SOTA\",\"merged_title\":\"EverMind 4个月SOTA\",\"merged_type\":\"news\"},{\"from_key\":\"Google AI 默认设置与隐私问题\",\"merged_key\":\"Google AI 默认设置与隐私问题\",\"merged_title\":\"Google AI 默认设置与隐私问题\",\"merged_type\":\"news\"},{\"from_key\":\"Google DeepMind医疗AI\",\"merged_key\":\"Google DeepMind医疗AI\",\"merged_title\":\"Google DeepMind医疗AI助手\",\"merged_type\":\"news\"},{\"from_key\":\"GPT-5.5 网络安全评估\",\"merged_key\":\"GPT-5.5 网络安全评估\",\"merged_title\":\"GPT-5.5 网络安全评估\",\"merged_type\":\"news\"},{\"from_key\":\"GPT-5.5与Mythos Preview安全测试\",\"merged_key\":\"GPT-5.5 网络安全评估\",\"merged_title\":\"GPT-5.5 网络安全评估\",\"merged_type\":\"news\"},{\"from_key\":\"iNaturalist Sightings 工具\",\"merged_key\":\"iNaturalist Sightings 工具\",\"merged_title\":\"iNaturalist Sightings 工具\",\"merged_type\":\"news\"},{\"from_key\":\"Latent Space播客：推理拐点\",\"merged_key\":\"Latent Space播客：推理拐点\",\"merged_title\":\"Latent Space播客：推理拐点\",\"merged_type\":\"news\"},{\"from_key\":\"Legal AI独角兽Legora与Harvey竞争\",\"merged_key\":\"Legal AI独角兽Legora与Harvey竞争\",\"merged_title\":\"Legal AI独角兽Legora与Harvey竞争\",\"merged_type\":\"news\"},{\"from_key\":\"LLM 0.32a0 重构\",\"merged_key\":\"LLM 0.32a0 重构\",\"merged_title\":\"LLM 0.32a0 重构\",\"merged_type\":\"news\"},{\"from_key\":\"Mac Mini 供应短缺与 AI 采用加速\",\"merged_key\":\"Mac Mini 供应短缺与 AI 采用加速\",\"merged_title\":\"Mac Mini 供应短缺与 AI 采用加速\",\"merged_type\":\"news\"},{\"from_key\":\"Matthew Yglesias放弃vibecode\",\"merged_key\":\"Matthew Yglesias放弃vibecode\",\"merged_title\":\"Matthew Yglesias放弃vibecode\",\"merged_type\":\"news\"},{\"from_key\":\"Meta AI工具广告营销争议\",\"merged_key\":\"Meta AI工具广告营销争议\",\"merged_title\":\"Meta AI工具广告营销争议\",\"merged_type\":\"news\"},{\"from_key\":\"Meta收购机器人AI公司ARI\",\"merged_key\":\"Meta收购机器人AI公司ARI\",\"merged_title\":\"Meta收购机器人AI公司ARI\",\"merged_type\":\"news\"},{\"from_key\":\"Nvidia, Microsoft, Amazon 扩大军事 AI 应用\",\"merged_key\":\"Nvidia, Microsoft, Amazon 扩大军事 AI 应用\",\"merged_title\":\"Nvidia, Microsoft, Amazon 扩大军事 AI 应用\",\"merged_type\":\"news\"},{\"from_key\":\"Obsidian笔记软件\",\"merged_key\":\"Obsidian笔记软件\",\"merged_title\":\"Obsidian笔记软件万字讲解\",\"merged_type\":\"news\"}]}",
+      "at": "2026-05-03"
+    },
+    "4ab463cdb3255176de52a906c2bbe5103305cce0118bbd4a7b1e718560a89933": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"OpenAI Stargate算力基础设施\",\"merged_key\":\"OpenAI Stargate算力基础设施\",\"merged_title\":\"OpenAI Stargate算力基础设施\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI模型登陆AWS\",\"merged_key\":\"OpenAI模型登陆AWS\",\"merged_title\":\"OpenAI模型登陆AWS\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI中文渲染修复\",\"merged_key\":\"OpenAI中文渲染修复\",\"merged_title\":\"OpenAI中文渲染修复\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI自建新闻网站\",\"merged_key\":\"OpenAI自建新闻网站\",\"merged_title\":\"OpenAI自建新闻网站\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI自研手机\",\"merged_key\":\"OpenAI自研手机\",\"merged_title\":\"OpenAI自研手机计划\",\"merged_type\":\"news\"},{\"from_key\":\"Qwen3.6 量化实验\",\"merged_key\":\"Qwen3.6 量化实验\",\"merged_title\":\"Qwen3.6 量化实验\",\"merged_type\":\"news\"},{\"from_key\":\"Reid Hoffman 推广 AI 医疗咨询\",\"merged_key\":\"Reid Hoffman 推广 AI 医疗咨询\",\"merged_title\":\"Reid Hoffman 推广 AI 医疗咨询\",\"merged_type\":\"news\"},{\"from_key\":\"Replit收购Cursor与苹果竞争\",\"merged_key\":\"Replit收购Cursor与苹果竞争\",\"merged_title\":\"Replit收购Cursor与苹果竞争\",\"merged_type\":\"news\"},{\"from_key\":\"RSS与vibe-coded apps\",\"merged_key\":\"RSS与vibe-coded apps\",\"merged_title\":\"RSS与vibe-coded apps\",\"merged_type\":\"news\"},{\"from_key\":\"Salesforce客户共创AI路线图\",\"merged_key\":\"Salesforce客户共创AI路线图\",\"merged_title\":\"Salesforce客户共创AI路线图\",\"merged_type\":\"news\"},{\"from_key\":\"Şifahane 医疗分类Demo\",\"merged_key\":\"Şifahane 医疗分类Demo\",\"merged_title\":\"Şifahane 医疗分类Demo\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison 新相机\",\"merged_key\":\"Simon Willison 新相机\",\"merged_title\":\"Simon Willison 新相机\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison发布llm 0.32a1\",\"merged_key\":\"Simon Willison发布llm 0.32a1\",\"merged_title\":\"Simon Willison发布llm 0.32a1\",\"merged_type\":\"news\"},{\"from_key\":\"Sora之父Bill Peebles离职\",\"merged_key\":\"Sora之父Bill Peebles离职\",\"merged_title\":\"Sora之父Bill Peebles离职\",\"merged_type\":\"news\"},{\"from_key\":\"Wan 2.2视频生成模型争议\",\"merged_key\":\"Wan 2.2视频生成模型争议\",\"merged_title\":\"Wan 2.2视频生成模型争议\",\"merged_type\":\"news\"}]}",
+      "at": "2026-05-03"
+    },
+    "4311446eeffa64e19d3e2ffd93f16f360cc277b672317efe8938211fe1f6c89b": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"马斯克诉OpenAI案\",\"merged_key\":\"马斯克诉OpenAI案\",\"merged_title\":\"马斯克诉OpenAI案\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face社区动态\",\"merged_key\":\"Hugging Face社区动态\",\"merged_title\":\"Hugging Face社区动态\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT Images 2.0在印度表现\",\"merged_key\":\"ChatGPT Images 2.0在印度表现\",\"merged_title\":\"ChatGPT Images 2.0在印度表现\",\"merged_type\":\"news\"},{\"from_key\":\"GPT-5.5 网络安全评估\",\"merged_key\":\"GPT-5.5 网络安全评估\",\"merged_title\":\"GPT-5.5 网络安全评估\",\"merged_type\":\"news\"},{\"from_key\":\"GPT-5.5系统指令泄露\",\"merged_key\":\"GPT-5.5系统指令泄露\",\"merged_title\":\"GPT-5.5系统指令泄露\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI安全更新\",\"merged_key\":\"OpenAI安全更新\",\"merged_title\":\"OpenAI安全更新\",\"merged_type\":\"news\"},{\"from_key\":\"1930 vintage 13B 模型\",\"merged_key\":\"1930 vintage 13B 模型\",\"merged_title\":\"1930 vintage 13B 模型\",\"merged_type\":\"news\"},{\"from_key\":\"超聚变上市辅导\",\"merged_key\":\"超聚变上市辅导\",\"merged_title\":\"超聚变上市辅导\",\"merged_type\":\"news\"},{\"from_key\":\"迪士尼人脸识别\",\"merged_key\":\"迪士尼人脸识别\",\"merged_title\":\"迪士尼人脸识别\",\"merged_type\":\"news\"},{\"from_key\":\"钉钉发布AI录音硬件A1Pro\",\"merged_key\":\"钉钉发布AI录音硬件A1Pro\",\"merged_title\":\"钉钉发布AI录音硬件A1Pro\",\"merged_type\":\"news\"},{\"from_key\":\"反华AI宣传资金来源调查\",\"merged_key\":\"反华AI宣传资金来源调查\",\"merged_title\":\"反华AI宣传资金来源调查\",\"merged_type\":\"news\"},{\"from_key\":\"巨日禄与火山引擎合作AI短剧\",\"merged_key\":\"巨日禄与火山引擎合作AI短剧\",\"merged_title\":\"巨日禄与火山引擎合作AI短剧\",\"merged_type\":\"news\"},{\"from_key\":\"科大讯飞亮相数字中国峰会\",\"merged_key\":\"科大讯飞亮相数字中国峰会\",\"merged_title\":\"科大讯飞亮相数字中国峰会\",\"merged_type\":\"news\"},{\"from_key\":\"快手推出KroWork桌面助手\",\"merged_key\":\"快手推出KroWork桌面助手\",\"merged_title\":\"快手推出KroWork桌面助手\",\"merged_type\":\"news\"},{\"from_key\":\"昆仑万维AI战略\",\"merged_key\":\"昆仑万维AI战略\",\"merged_title\":\"昆仑万维AI战略\",\"merged_type\":\"news\"},{\"from_key\":\"蚂蚁集团ASL协议\",\"merged_key\":\"蚂蚁集团ASL协议\",\"merged_title\":\"蚂蚁集团ASL协议\",\"merged_type\":\"news\"},{\"from_key\":\"美国防部签约AI公司\",\"merged_key\":\"美国防部签约AI公司\",\"merged_title\":\"美国防部签约AI公司\",\"merged_type\":\"news\"},{\"from_key\":\"苹果App误打包Claude.md\",\"merged_key\":\"苹果App误打包Claude.md\",\"merged_title\":\"苹果App误打包Claude.md\",\"merged_type\":\"news\"},{\"from_key\":\"企业AI主权与数据控制\",\"merged_key\":\"企业AI主权与数据控制\",\"merged_title\":\"企业AI主权与数据控制\",\"merged_type\":\"news\"},{\"from_key\":\"前沿智能体评估\",\"merged_key\":\"前沿智能体评估\",\"merged_title\":\"前沿智能体评估\",\"merged_type\":\"news\"},{\"from_key\":\"神童Laurent Simons研究AI抗衰老\",\"merged_key\":\"神童Laurent Simons研究AI抗衰老\",\"merged_title\":\"神童Laurent Simons研究AI抗衰老\",\"merged_type\":\"news\"},{\"from_key\":\"科技巨头AI资本开支\",\"merged_key\":\"科技巨头AI资本开支\",\"merged_title\":\"科技巨头AI资本开支\",\"merged_type\":\"news\"},{\"from_key\":\"腾讯开源Hy-MT翻译模型\",\"merged_key\":\"腾讯开源Hy-MT翻译模型\",\"merged_title\":\"腾讯开源Hy-MT翻译模型\",\"merged_type\":\"news\"},{\"from_key\":\"图灵奖得主谈计算机教育\",\"merged_key\":\"图灵奖得主谈计算机教育\",\"merged_title\":\"图灵奖得主谈计算机教育\",\"merged_type\":\"news\"},{\"from_key\":\"微软垂直领域AI助手\",\"merged_key\":\"微软垂直领域AI助手\",\"merged_title\":\"微软垂直领域AI助手\",\"merged_type\":\"news\"},{\"from_key\":\"微软Word AI代理信任度\",\"merged_key\":\"微软Word AI代理信任度\",\"merged_title\":\"微软Word AI代理信任度\",\"merged_type\":\"news\"},{\"from_key\":\"引用OpenAI Codex base_instructions\",\"merged_key\":\"引用OpenAI Codex base_instructions\",\"merged_title\":\"引用OpenAI Codex base_instructions\",\"merged_type\":\"news\"},{\"from_key\":\"知识工作Codex代理\",\"merged_key\":\"知识工作Codex代理\",\"merged_title\":\"知识工作Codex代理\",\"merged_type\":\"news\"},{\"from_key\":\"追觅AI吊坠产品\",\"merged_key\":\"追觅AI吊坠产品\",\"merged_title\":\"追觅AI吊坠产品\",\"merged_type\":\"news\"},{\"from_key\":\"最佳AI语音转文字应用\",\"merged_key\":\"最佳AI语音转文字应用\",\"merged_title\":\"最佳AI语音转文字应用\",\"merged_type\":\"news\"},{\"from_key\":\"Agent开通Cloudflare账户\",\"merged_key\":\"Agent开通Cloudflare账户\",\"merged_title\":\"Agent开通Cloudflare账户\",\"merged_type\":\"news\"},{\"from_key\":\"AI 对就业的影响\",\"merged_key\":\"AI 对就业的影响\",\"merged_title\":\"AI 对就业的影响\",\"merged_type\":\"news\"},{\"from_key\":\"AI 辅助基因代码简化研究\",\"merged_key\":\"AI 辅助基因代码简化研究\",\"merged_title\":\"AI 辅助基因代码简化研究\",\"merged_type\":\"news\"},{\"from_key\":\"AI 生成色情内容诉讼\",\"merged_key\":\"AI 生成色情内容诉讼\",\"merged_title\":\"AI 生成色情内容诉讼\",\"merged_type\":\"news\"},{\"from_key\":\"AI工程师世界博览会\",\"merged_key\":\"AI工程师世界博览会\",\"merged_title\":\"AI工程师世界博览会\",\"merged_type\":\"news\"},{\"from_key\":\"AI漫剧收益\",\"merged_key\":\"AI漫剧收益\",\"merged_title\":\"AI漫剧收益\",\"merged_type\":\"news\"},{\"from_key\":\"AI生成内容获奥斯卡资格\",\"merged_key\":\"AI生成内容获奥斯卡资格\",\"merged_title\":\"AI生成内容获奥斯卡资格\",\"merged_type\":\"news\"},{\"from_key\":\"AI手势舞现象\",\"merged_key\":\"AI手势舞现象\",\"merged_title\":\"AI手势舞现象\",\"merged_type\":\"news\"},{\"from_key\":\"AI导致内存价格上涨\",\"merged_key\":\"AI导致内存价格上涨\",\"merged_title\":\"AI导致内存价格上涨\",\"merged_type\":\"news\"},{\"from_key\":\"AI需求推高Mac供应紧张\",\"merged_key\":\"AI需求推高Mac供应紧张\",\"merged_title\":\"AI需求推高Mac供应紧张\",\"merged_type\":\"news\"},{\"from_key\":\"AI智能体对初级人才冲击\",\"merged_key\":\"AI智能体对初级人才冲击\",\"merged_title\":\"AI智能体对初级人才冲击\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic融资估值\",\"merged_key\":\"Anthropic融资估值\",\"merged_title\":\"Anthropic融资估值\",\"merged_type\":\"news\"},{\"from_key\":\"Codex CLI 0.128.0 新增 /goal\",\"merged_key\":\"Codex CLI 0.128.0 新增 /goal\",\"merged_title\":\"Codex CLI 0.128.0 新增 /goal\",\"merged_type\":\"news\"},{\"from_key\":\"CVPR 2026动态视觉智能观察\",\"merged_key\":\"CVPR 2026动态视觉智能观察\",\"merged_title\":\"CVPR 2026动态视觉智能观察\",\"merged_type\":\"news\"},{\"from_key\":\"Duality AI地面分割挑战赛\",\"merged_key\":\"Duality AI地面分割挑战赛\",\"merged_title\":\"Duality AI地面分割挑战赛\",\"merged_type\":\"news\"},{\"from_key\":\"EverMind 4个月SOTA\",\"merged_key\":\"EverMind 4个月SOTA\",\"merged_title\":\"EverMind 4个月SOTA\",\"merged_type\":\"news\"},{\"from_key\":\"Google AI 默认设置与隐私问题\",\"merged_key\":\"Google AI 默认设置与隐私问题\",\"merged_title\":\"Google AI 默认设置与隐私问题\",\"merged_type\":\"news\"},{\"from_key\":\"Google DeepMind医疗AI\",\"merged_key\":\"Google DeepMind医疗AI\",\"merged_title\":\"Google DeepMind医疗AI\",\"merged_type\":\"news\"},{\"from_key\":\"iNaturalist Sightings 工具\",\"merged_key\":\"iNaturalist Sightings 工具\",\"merged_title\":\"iNaturalist Sightings 工具\",\"merged_type\":\"news\"},{\"from_key\":\"Latent Space播客：推理拐点\",\"merged_key\":\"Latent Space播客：推理拐点\",\"merged_title\":\"Latent Space播客：推理拐点\",\"merged_type\":\"news\"},{\"from_key\":\"Legal AI独角兽Legora与Harvey竞争\",\"merged_key\":\"Legal AI独角兽Legora与Harvey竞争\",\"merged_title\":\"Legal AI独角兽Legora与Harvey竞争\",\"merged_type\":\"news\"},{\"from_key\":\"LLM 0.32a0 重构\",\"merged_key\":\"LLM 0.32a0 重构\",\"merged_title\":\"LLM 0.32a0 重构\",\"merged_type\":\"news\"},{\"from_key\":\"Mac Mini 供应短缺与 AI 采用加速\",\"merged_key\":\"Mac Mini 供应短缺与 AI 采用加速\",\"merged_title\":\"Mac Mini 供应短缺与 AI 采用加速\",\"merged_type\":\"news\"},{\"from_key\":\"Matthew Yglesias放弃vibecode\",\"merged_key\":\"Matthew Yglesias放弃vibecode\",\"merged_title\":\"Matthew Yglesias放弃vibecode\",\"merged_type\":\"news\"},{\"from_key\":\"Meta AI工具广告营销争议\",\"merged_key\":\"Meta AI工具广告营销争议\",\"merged_title\":\"Meta AI工具广告营销争议\",\"merged_type\":\"news\"},{\"from_key\":\"Meta收购机器人AI公司ARI\",\"merged_key\":\"Meta收购机器人AI公司ARI\",\"merged_title\":\"Meta收购机器人AI公司ARI\",\"merged_type\":\"news\"},{\"from_key\":\"Nvidia, Microsoft, Amazon 扩大军事 AI 应用\",\"merged_key\":\"Nvidia, Microsoft, Amazon 扩大军事 AI 应用\",\"merged_title\":\"Nvidia, Microsoft, Amazon 扩大军事 AI 应用\",\"merged_type\":\"news\"},{\"from_key\":\"Obsidian笔记软件\",\"merged_key\":\"Obsidian笔记软件\",\"merged_title\":\"Obsidian笔记软件\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Stargate算力基础设施\",\"merged_key\":\"OpenAI Stargate算力基础设施\",\"merged_title\":\"OpenAI Stargate算力基础设施\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI模型登陆AWS\",\"merged_key\":\"OpenAI模型登陆AWS\",\"merged_title\":\"OpenAI模型登陆AWS\",\"merged_type\":\"news\"}]}",
+      "at": "2026-05-03"
+    },
+    "938ca88f3af766434b8452cd3fa40f7ee1a73a829179ad3931c2716cdebe9a67": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"OpenAI中文渲染修复\",\"merged_key\":\"OpenAI中文渲染修复\",\"merged_title\":\"OpenAI中文渲染修复\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI自建新闻网站\",\"merged_key\":\"OpenAI自建新闻网站\",\"merged_title\":\"OpenAI自建新闻网站\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI自研手机\",\"merged_key\":\"OpenAI自研手机\",\"merged_title\":\"OpenAI自研手机计划\",\"merged_type\":\"news\"},{\"from_key\":\"Qwen3.6 量化实验\",\"merged_key\":\"Qwen3.6 量化实验\",\"merged_title\":\"Qwen3.6 量化实验\",\"merged_type\":\"news\"},{\"from_key\":\"Reid Hoffman 推广 AI 医疗咨询\",\"merged_key\":\"Reid Hoffman 推广 AI 医疗咨询\",\"merged_title\":\"Reid Hoffman 推广 AI 医疗咨询\",\"merged_type\":\"news\"},{\"from_key\":\"Replit收购Cursor与苹果竞争\",\"merged_key\":\"Replit收购Cursor与苹果竞争\",\"merged_title\":\"Replit收购Cursor与苹果竞争\",\"merged_type\":\"news\"},{\"from_key\":\"RSS与vibe-coded apps\",\"merged_key\":\"RSS与vibe-coded apps\",\"merged_title\":\"RSS与vibe-coded apps\",\"merged_type\":\"news\"},{\"from_key\":\"Salesforce客户共创AI路线图\",\"merged_key\":\"Salesforce客户共创AI路线图\",\"merged_title\":\"Salesforce客户共创AI路线图\",\"merged_type\":\"news\"},{\"from_key\":\"Şifahane 医疗分类Demo\",\"merged_key\":\"Şifahane 医疗分类Demo\",\"merged_title\":\"Şifahane 医疗分类Demo\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison 新相机\",\"merged_key\":\"Simon Willison 新相机\",\"merged_title\":\"Simon Willison 新相机\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison发布llm 0.32a1\",\"merged_key\":\"Simon Willison发布llm 0.32a1\",\"merged_title\":\"Simon Willison发布llm 0.32a1\",\"merged_type\":\"news\"},{\"from_key\":\"Sora之父Bill Peebles离职\",\"merged_key\":\"Sora之父Bill Peebles离职\",\"merged_title\":\"Sora之父Bill Peebles离职\",\"merged_type\":\"news\"},{\"from_key\":\"Wan 2.2视频生成模型争议\",\"merged_key\":\"Wan 2.2视频生成模型争议\",\"merged_title\":\"Wan 2.2视频生成模型争议\",\"merged_type\":\"news\"}]}",
+      "at": "2026-05-03"
+    },
+    "31dfe54012b94248d3865e59937c4cf5f04bff4735dac9264072d061ba75d786": {
+      "operation": "singleton_recluster_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"decisions\":[{\"candidate_id\":69,\"action\":\"keep\",\"confidence\":0.2,\"reason\":\"关于奥斯卡规则变更，与Hugging Face社区动态无语义关联。\"},{\"candidate_id\":64,\"action\":\"keep\",\"confidence\":0.2,\"reason\":\"关于AI语音转写应用，与马斯克诉OpenAI案无语义关联。\"},{\"candidate_id\":85,\"action\":\"keep\",\"confidence\":0.2,\"reason\":\"关于相机设备 sighting，与Hugging Face社区动态无语义关联。\"}]}",
+      "at": "2026-05-03"
+    },
+    "c01f5d36aa8ad2831053eda0f3b26d4e7f2406f8c7797203ddc4e95e5b9db028": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[70,68,69,64,83,85,91,76,87,102,62,13,22,35],\"reasons\":[{\"topic_id\":70,\"reason\":\"马斯克诉OpenAI案涉及核心公司治理与开源争议，跨源验证度高，行业影响深远。\"},{\"topic_id\":68,\"reason\":\"ChatGPT Images 2.0在印度表现涉及多模态应用落地与区域市场策略，具有时效性。\"},{\"topic_id\":69,\"reason\":\"AI生成内容获奥斯卡资格标志着AIGC在主流文化领域的权威认可，行业里程碑事件。\"},{\"topic_id\":64,\"reason\":\"最佳AI语音转文字应用评测反映了垂直领域工具的竞争格局与用户体验优化。\"},{\"topic_id\":83,\"reason\":\"Replit收购Cursor与苹果竞争揭示了AI编程工具市场的激烈并购与生态竞争。\"},{\"topic_id\":85,\"reason\":\"OpenAI安全更新涉及模型对齐与安全机制，是技术发展的关键风向标。\"},{\"topic_id\":91,\"reason\":\"GPT-5.5系统指令泄露涉及模型内部机制与安全边界，具有高度时效性与讨论度。\"},{\"topic_id\":76,\"reason\":\"美国防部签约AI公司反映了AI在国防领域的战略应用与资本投入。\"},{\"topic_id\":87,\"reason\":\"腾讯开源Hy-MT翻译模型体现了国内科技巨头在基础模型领域的开源贡献。\"},{\"topic_id\":102,\"reason\":\"昆仑万维AI战略涉及国内AI企业的长期布局与商业化路径。\"},{\"topic_id\":62,\"reason\":\"Agentic Education论文探讨了智能体在教育领域的应用潜力，具有前瞻性。\"},{\"topic_id\":13,\"reason\":\"End-to-end autonomous scientific论文代表了AI在科研自动化领域的最新突破。\"},{\"topic_id\":22,\"reason\":\"Collaborative Agent Reasoning论文关注多智能体协作机制，是产业落地的重要方向。\"},{\"topic_id\":35,\"reason\":\"Think it, Run it论文提出了新的智能体执行范式，对技术架构有指导意义。\"}]}",
+      "at": "2026-05-03"
+    },
+    "b0c33cf4a8c643557436e8a6159f429673a490ee6df318dc0d765e0253980e60": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"马斯克诉OpenAI案进入关键庭审阶段，双方在法庭上激烈交锋，马斯克承认自家模型蒸馏对手引发舆论哗然。同时，OpenAI在印度市场大力推广ChatGPT Images2.0，而美国国防部则与多家AI公司签署机密级军事合作协议，AI领域的竞争与监管态势持续升温。\",\"hot_news\":[{\"topic_id\":70,\"insight\":\"马斯克承认Grok蒸馏ChatGPT，自曝双标引发舆论哗然。\",\"narrative\":\"马斯克诉OpenAI案进入第四天庭审，马斯克在证人席上承认其公司xAI的Grok模型使用了OpenAI的模型进行训练，这一承认被外界视为“双标”现场。此前马斯克起诉OpenAI，指控其违背了非营利使命。庭审中，双方围绕邮件、短信及推特等证据展开激烈辩论，马斯克还警告AI可能毁灭人类。OpenAI方面则反驳称马斯克早已知晓公司结构。此案被视为AI行业发展的关键转折点。\",\"evaluation\":\"此案揭示了AI行业在商业化与伦理使命之间的深层矛盾，具有行业里程碑意义。\",\"refs\":[2,3],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":68,\"insight\":\"ChatGPT Images2.0在印度市场表现强劲，成为最大用户群体。\",\"narrative\":\"OpenAI宣布其最新图像生成工具ChatGPT Images2.0发布后，印度迅速成为该功能最大的用户群体。数据显示，印度首周下载量约500万次，显著超过美国的200万次。该工具支持处理复杂提示词并生成含多语言文本的精细图像，强化了对印地语等非拉丁文本的渲染能力。尽管全球整体增长温和，但新兴市场如巴基斯坦、越南等地下载量增幅高达79%。\",\"evaluation\":\"新兴市场成为AI应用增长的新引擎，本地化语言支持与个性化创作需求是关键驱动力。\",\"refs\":[7,8],\"mention_count\":2,\"cross_verify_score\":66},{\"topic_id\":76,\"insight\":\"美国国防部与OpenAI等七家AI公司签约，解锁机密级军事作业。\",\"narrative\":\"美国五角大楼宣布与包括OpenAI、谷歌、微软、亚马逊、英伟达、SpaceX在内的七家公司达成协议，允许这些公司的AI系统用于机密级别的军事作业。这些AI系统将接触最高保密数据，用于辅助战场决策、情报分析及生成打击目标清单。Anthropic因拒绝接受条款而未被列入名单。五角大楼表示此举旨在加速美军向AI优先战斗力量转型。\",\"evaluation\":\"AI技术深度融入军事领域，标志着国防安全进入智能化新阶段，但也引发伦理争议。\",\"refs\":[18],\"mention_count\":1,\"cross_verify_score\":54},{\"topic_id\":91,\"insight\":\"GPT-5.5系统指令泄露，被禁止在无关联时提及特定生物。\",\"narrative\":\"OpenAI开源的Codex CLI代码揭示了GPT-5.5的部分底层逻辑。泄露的系统提示词中包含罕见指令，严禁模型在无明确关联时提及“哥布林”、小精灵、浣熊等特定生物。业界分析认为，这是针对新模型“幻觉”问题的定向修补，旨在解决模型在生成控制上的不稳定性。此前，GPT-5系列模型在对话中频繁出现无关的“哥布林”式比喻。\",\"evaluation\":\"大模型在进化过程中仍面临难以预测的输出偏差，底层指令优化成为控制幻觉的重要手段。\",\"refs\":[21,22],\"mention_count\":2,\"cross_verify_score\":51}],\"other_news\":[{\"topic_id\":69,\"insight\":\"AI生成演员和剧本不再具备奥斯卡参评资格。\",\"narrative\":\"美国电影艺术与科学学院发布新规则，明确只有“在电影法律账单中署名并由人类同意表演”的表演才具备奥斯卡参评资格。同样，剧本也必须由人类创作才能获得资格。这一规定旨在规范AI在影视制作中的应用，确保奖项的荣誉归属。\",\"evaluation\":\"奥斯卡规则的更新反映了行业对AI生成内容伦理边界的重视，确立了人类创作的核心地位。\",\"refs\":[6],\"mention_count\":1,\"cross_verify_score\":71},{\"topic_id\":85,\"insight\":\"OpenAI推出高级账户安全功能，与Yubico合作推出安全密钥。\",\"narrative\":\"OpenAI周四推出了高级账户安全（AAS）功能，这是一套面向高价值用户的可选保护措施，现已向所有用户开放。作为合作的一部分，数字安全公司Yubico推出了两款与ChatGPT账户绑定的安全密钥产品，旨在保护用户免受钓鱼攻击威胁。\",\"evaluation\":\"随着AI应用普及，账户安全成为用户信任的关键，硬件密钥等物理认证方式受到重视。\",\"refs\":[16],\"mention_count\":1,\"cross_verify_score\":59},{\"topic_id\":64,\"insight\":\"AI语音转文字应用在准确性和上下文处理上取得显著进步。\",\"narrative\":\"随着大语言模型和语音转文字模型的进步，现代AI语音转文字应用在准确性和上下文处理能力上大幅提升。这些应用不仅能更准确地识别语音，还能自动去除填充词、修正口误并处理标点符号，大幅减少了人工编辑的需求。\",\"evaluation\":\"AI语音技术正从辅助工具转变为高效生产力工具，用户体验得到显著改善。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":71},{\"topic_id\":83,\"insight\":\"Replit创始人表示公司正迈向十亿美元年营收，拒绝出售。\",\"narrative\":\"AI编程助手公司Replit的创始人Amjad Masad表示，公司营收已从2024年的280万美元增长至预计的十亿美元年营收。尽管竞争对手Cursor据传被SpaceX以600亿美元收购，但Masad表示Replit更倾向于独立发展，而非出售。\",\"evaluation\":\"AI编程工具市场竞争激烈，但头部公司仍展现出强大的增长潜力和独立发展的意愿。\",\"refs\":[15],\"mention_count\":1,\"cross_verify_score\":61},{\"topic_id\":87,\"insight\":\"腾讯开源Hy-MT翻译模型，440MB体积实现离线高性能翻译。\",\"narrative\":\"腾讯开源了紧凑型AI翻译模型Hy-MT1.5-1.8B-1.25bit。该模型通过1.25比特量化技术，体积从3.3GB缩减至440MB，支持33种语言及5种方言，可在智能手机上完全离线运行。在标准基准测试中，其性能与商业翻译服务及超大模型相当。\",\"evaluation\":\"量化技术的突破降低了高品质AI翻译的算力门槛，为终端侧AI应用提供了极具竞争力的开源底座。\",\"refs\":[19],\"mention_count\":1,\"cross_verify_score\":53},{\"topic_id\":102,\"insight\":\"昆仑万维全面All in AGI与AIGC，短剧平台月流水近3600万美元。\",\"narrative\":\"昆仑万维在年报中宣布公司正全面All in AGI与AIGC，并将战略升级为“4+3”模式，即以四大SOTA模型为底座支撑三大平台。其短剧平台DramaWave和FreeReels在2025年底已实现月流水近3600万美元，ARR超过4亿美元。\",\"evaluation\":\"传统内容公司正通过AI技术转型为平台型公司，资本投入与商业化落地并行。\",\"refs\":[20],\"mention_count\":1,\"cross_verify_score\":53}],\"core_tech\":[{\"topic_id\":22,\"title\":\"Collaborative Agent Reasoning Engineering (CARE)\",\"summary\":\"CARE提出了一种系统化的方法论，通过可重用工件和分阶段流程，协调领域专家、开发者和助手代理来工程化设计大型语言模型代理，解决了科学领域代理开发的非结构化试错问题。\",\"refs\":[10]},{\"topic_id\":24,\"title\":\"CareGuardAI: Context-Aware Multi-Agent Guardrails\",\"summary\":\"CareGuardAI提出了一种上下文感知的多代理护栏机制，旨在缓解面向患者的LLM中的临床安全性和幻觉问题，通过增强模型对医疗语境的理解来提升医疗AI的可靠性。\",\"refs\":[12]},{\"topic_id\":35,\"title\":\"Think it, Run it: Autonomous ML pipeline generation\",\"summary\":\"该研究提出了一种统一的五代理架构，能够从数据集和自然语言目标自动生成端到端的机器学习流水线，通过自我修复机制提高了流水线生成的效率、鲁棒性和可解释性。\",\"refs\":[14]},{\"topic_id\":17,\"title\":\"InteractWeb-Bench: Multimodal Agent Escape Blind Execution\",\"summary\":\"InteractWeb-Bench是一个新的基准测试，旨在评估多模态代理在交互式网站生成中是否能够避免“盲目执行”的错误，即模型在语义不匹配的低质量指令下仍能正确执行。\",\"refs\":[11]},{\"topic_id\":13,\"title\":\"End-to-end autonomous scientific discovery\",\"summary\":\"该研究在真实光学平台上实现了端到端的自主科学发现，证明了AI代理能够在物理系统中通过持续修正问题、方法和假设来产生具有实验证据支持的非平凡结果。\",\"refs\":[9]},{\"topic_id\":62,\"title\":\"Agentic Education: Using Claude Code to Teach Claude Code\",\"summary\":\"该研究提出了cc-self-train，一种通过动手项目构建来学习Claude Code的模块化交互式课程，旨在填补工具文档与实际掌握之间的鸿沟。\",\"refs\":[13]}],\"ref_translations\":[{\"id\":10,\"zh_title\":\"协作代理推理工程（CARE）：一种系统化工程AI代理的三方设计方法论\"},{\"id\":12,\"zh_title\":\"CareGuardAI：面向患者LLM的上下文感知多代理护栏\"},{\"id\":14,\"zh_title\":\"Think it, Run it：通过自愈多代理AI实现自主ML流水线生成\"},{\"id\":11,\"zh_title\":\"InteractWeb-Bench：多模态代理能否在交互式网站生成中避免盲目执行？\"},{\"id\":9,\"zh_title\":\"在真实光学平台上进行端到端自主科学发现\"},{\"id\":13,\"zh_title\":\"代理教育：使用Claude Code来教授Claude Code\"}]}",
+      "at": "2026-05-03"
+    },
+    "99b2cd6454104b3668fbf86fe5b2f1a677985baa71e33fb1bca31f206464a155": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"马斯克与奥特曼之争才刚刚开始\"},{\"id\":3,\"zh_title\":\"马斯克对决奥特曼第一周：马斯克称被骗，警告AI可能毁灭人类，并承认xAI蒸馏了OpenAI\"},{\"id\":4,\"zh_title\":\"Anthropic Jupiter模型泄露，竞逐9000亿美元估值\"},{\"id\":5,\"zh_title\":\"最佳AI语音转文字应用评测与排名\"},{\"id\":6,\"zh_title\":\"AI生成的演员和剧本不再具备奥斯卡参评资格\"},{\"id\":8,\"zh_title\":\"ChatGPT图片2.0在印度大获成功，但在其他地区尚未\"},{\"id\":15,\"zh_title\":\"Replit创始人Masad谈Cursor收购案、对抗苹果及不愿出售\"},{\"id\":16,\"zh_title\":\"OpenAI宣布为ChatGPT账户推出新安全功能，包括与Yubico合作\"},{\"id\":17,\"zh_title\":\"我们对社区安全的承诺\"}]}",
+      "at": "2026-05-03"
     }
   },
   "published": {
@@ -21794,6 +21924,101 @@
       "title": "DeepSeek多模态技术范式公布，以视觉原语思考",
       "at": "2026-05-02",
       "edition": "morning"
+    },
+    "https://36kr.com/p/3791460373929221": {
+      "title": "马斯克翻车了！一边告OpenAI，一边偷偷蒸馏ChatGPT",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/": {
+      "title": "Musk v. Altman week 1: Elon Musk says he was duped, warns AI could kill us all, and admits that xAI distills OpenAI’s models",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/05/02/the-best-ai-powered-dictation-apps-of-2025/": {
+      "title": "The best AI dictation apps, tested and ranked",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/": {
+      "title": "AI-generated actors and scripts are now ineligible for Oscars",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://news.aibase.com/zh/news/27662": {
+      "title": "OpenAI 发布 ChatGPT Images2.0，印度市场贡献首周最大用户增量OpenAI 周四宣布，其新图像生成工具ChatGPT Images2.0发布后，印度成为最大用户群体。该工具可处理复杂提示并生成含多语言文本的精细图像，深化多模态交互。Sensor Tower数据显示，全球下载量首周环比增11%，但日活跃用户和会话数等核心参与指标呈现地域差异。 刚刚 5.9K",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/04/30/chatgpt-images-2-0-is-a-hit-in-india-but-not-a-big-winner-elsewhere-yet/": {
+      "title": "ChatGPT Images 2.0 is a hit in India, but not a big winner elsewhere, yet",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2604.27092": {
+      "title": "End-to-end autonomous scientific discovery on a real optical platform",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2604.28043": {
+      "title": "Collaborative Agent Reasoning Engineering (CARE): A Three-Party Design Methodology for Systematically Engineering AI Agents with Subject Matter Experts, Developers, and Helper Agents",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2604.27419": {
+      "title": "InteractWeb-Bench: Can Multimodal Agent Escape Blind Execution in Interactive Website Generation?",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2604.26959": {
+      "title": "CareGuardAI: Context-Aware Multi-Agent Guardrails for Clinical Safety & Hallucination Mitigation in Patient-Facing LLMs",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2604.17460": {
+      "title": "Agentic Education: Using Claude Code to Teach Claude Code",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2604.27096": {
+      "title": "Think it, Run it: Autonomous ML pipeline generation via self-healing multi-agent AI",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/05/01/replits-amjad-masad-on-the-cursor-deal-fighting-apple-and-why-hed-rather-not-sell/": {
+      "title": "Replit’s Amjad Masad on the Cursor deal, fighting Apple, and why he’d rather not sell",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/04/30/openai-announces-new-advanced-security-for-chatgpt-accounts-including-a-partnership-with-yubico/": {
+      "title": "OpenAI announces new advanced security for ChatGPT accounts, including a partnership with Yubico",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://aitntnews.com/newDetail.html?newId=24680": {
+      "title": "美国防部与OpenAI、谷歌等7家AI公司签约，全面解锁致命自主武器限制",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://news.aibase.com/zh/news/27666": {
+      "title": "腾讯开源 Hy-MT 翻译模型:440MB 实现离线运行，性能超越谷歌翻译腾讯近日开源紧凑型AI翻译模型Hy-MT1.5-1.8B-1.25bit，支持33种语言及5种方言、1056个翻译方向，可在智能手机上完全离线运行。该模型通过1.25比特量化技术实现激进压缩，体积从3.3GB大幅缩减，同时保持高性能，已累计获得30项国际机器翻译大赛冠军。 刚刚 8.9K",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://aitntnews.com/newDetail.html?newId=24666": {
+      "title": "“游戏圈野蛮人”跳进AI火坑，周亚辉要“拳打Netflix、脚踢Spotify”！",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://news.aibase.com/zh/news/27646": {
+      "title": "OpenAI 新模型系统指令泄露，GPT-5.5 竟被禁止谈论“哥布林”？OpenAI最新开源的Codex CLI代码揭示了GPT-5.5的部分底层逻辑。据Ars Technica披露，其3500多词的系统提示词中包含罕见指令：严禁模型在无明确关联时提及“哥布林”等特定生物，除非查询内容绝对必要。 刚刚 10.5K",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "https://36kr.com/p/3789105188773122": {
+      "title": "谁在 GPT-5.5 脑子里塞了一群「妖怪」？",
+      "at": "2026-05-03",
+      "edition": "morning"
     }
   },
   "publishedSignatures": {
@@ -25251,6 +25476,101 @@
     "99f22e412d3c3a04": {
       "title": "DeepSeek多模态技术范式公布，以视觉原语思考",
       "at": "2026-05-02",
+      "edition": "morning"
+    },
+    "d93579412a00cb30": {
+      "title": "马斯克翻车了！一边告OpenAI，一边偷偷蒸馏ChatGPT",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "771ea7a9aeeca39e": {
+      "title": "Musk v. Altman week 1: Elon Musk says he was duped, warns AI could kill us all, and admits that xAI distills OpenAI’s models",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "be0b8ae21cccd33e": {
+      "title": "The best AI dictation apps, tested and ranked",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "8d9b82dac04d9860": {
+      "title": "AI-generated actors and scripts are now ineligible for Oscars",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "e18cb61440e729c0": {
+      "title": "OpenAI 发布 ChatGPT Images2.0，印度市场贡献首周最大用户增量OpenAI 周四宣布，其新图像生成工具ChatGPT Images2.0发布后，印度成为最大用户群体。该工具可处理复杂提示并生成含多语言文本的精细图像，深化多模态交互。Sensor Tower数据显示，全球下载量首周环比增11%，但日活跃用户和会话数等核心参与指标呈现地域差异。 刚刚 5.9K",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "1691b37535f24cfd": {
+      "title": "ChatGPT Images 2.0 is a hit in India, but not a big winner elsewhere, yet",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "6d286d1d2d786c88": {
+      "title": "End-to-end autonomous scientific discovery on a real optical platform",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "3cb0de23d0eb6872": {
+      "title": "Collaborative Agent Reasoning Engineering (CARE): A Three-Party Design Methodology for Systematically Engineering AI Agents with Subject Matter Experts, Developers, and Helper Agents",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "bebbab0ba48e7337": {
+      "title": "InteractWeb-Bench: Can Multimodal Agent Escape Blind Execution in Interactive Website Generation?",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "e105c996b99fc6e3": {
+      "title": "CareGuardAI: Context-Aware Multi-Agent Guardrails for Clinical Safety & Hallucination Mitigation in Patient-Facing LLMs",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "04874b39700fb6bd": {
+      "title": "Agentic Education: Using Claude Code to Teach Claude Code",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "5341cb409dedb584": {
+      "title": "Think it, Run it: Autonomous ML pipeline generation via self-healing multi-agent AI",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "0a9f868e0a70fd02": {
+      "title": "Replit’s Amjad Masad on the Cursor deal, fighting Apple, and why he’d rather not sell",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "3cc8387d51f667b8": {
+      "title": "OpenAI announces new advanced security for ChatGPT accounts, including a partnership with Yubico",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "a39036d33f99f94e": {
+      "title": "美国防部与OpenAI、谷歌等7家AI公司签约，全面解锁致命自主武器限制",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "d99d27a9b1ea3d9b": {
+      "title": "腾讯开源 Hy-MT 翻译模型:440MB 实现离线运行，性能超越谷歌翻译腾讯近日开源紧凑型AI翻译模型Hy-MT1.5-1.8B-1.25bit，支持33种语言及5种方言、1056个翻译方向，可在智能手机上完全离线运行。该模型通过1.25比特量化技术实现激进压缩，体积从3.3GB大幅缩减，同时保持高性能，已累计获得30项国际机器翻译大赛冠军。 刚刚 8.9K",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "236881a3e5bfdbc5": {
+      "title": "“游戏圈野蛮人”跳进AI火坑，周亚辉要“拳打Netflix、脚踢Spotify”！",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "9a3784131daba9ad": {
+      "title": "OpenAI 新模型系统指令泄露，GPT-5.5 竟被禁止谈论“哥布林”？OpenAI最新开源的Codex CLI代码揭示了GPT-5.5的部分底层逻辑。据Ars Technica披露，其3500多词的系统提示词中包含罕见指令：严禁模型在无明确关联时提及“哥布林”等特定生物，除非查询内容绝对必要。 刚刚 10.5K",
+      "at": "2026-05-03",
+      "edition": "morning"
+    },
+    "68bea139a68e5591": {
+      "title": "谁在 GPT-5.5 脑子里塞了一群「妖怪」？",
+      "at": "2026-05-03",
       "edition": "morning"
     }
   },
@@ -28858,6 +29178,101 @@
       "https://36kr.com/p/3789208597372165": {
         "title": "DeepSeek多模态技术范式公布，以视觉原语思考",
         "at": "2026-05-02",
+        "edition": "morning"
+      },
+      "https://36kr.com/p/3791460373929221": {
+        "title": "马斯克翻车了！一边告OpenAI，一边偷偷蒸馏ChatGPT",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/": {
+        "title": "Musk v. Altman week 1: Elon Musk says he was duped, warns AI could kill us all, and admits that xAI distills OpenAI’s models",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/05/02/the-best-ai-powered-dictation-apps-of-2025/": {
+        "title": "The best AI dictation apps, tested and ranked",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/": {
+        "title": "AI-generated actors and scripts are now ineligible for Oscars",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://news.aibase.com/zh/news/27662": {
+        "title": "OpenAI 发布 ChatGPT Images2.0，印度市场贡献首周最大用户增量OpenAI 周四宣布，其新图像生成工具ChatGPT Images2.0发布后，印度成为最大用户群体。该工具可处理复杂提示并生成含多语言文本的精细图像，深化多模态交互。Sensor Tower数据显示，全球下载量首周环比增11%，但日活跃用户和会话数等核心参与指标呈现地域差异。 刚刚 5.9K",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/04/30/chatgpt-images-2-0-is-a-hit-in-india-but-not-a-big-winner-elsewhere-yet/": {
+        "title": "ChatGPT Images 2.0 is a hit in India, but not a big winner elsewhere, yet",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2604.27092": {
+        "title": "End-to-end autonomous scientific discovery on a real optical platform",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2604.28043": {
+        "title": "Collaborative Agent Reasoning Engineering (CARE): A Three-Party Design Methodology for Systematically Engineering AI Agents with Subject Matter Experts, Developers, and Helper Agents",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2604.27419": {
+        "title": "InteractWeb-Bench: Can Multimodal Agent Escape Blind Execution in Interactive Website Generation?",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2604.26959": {
+        "title": "CareGuardAI: Context-Aware Multi-Agent Guardrails for Clinical Safety & Hallucination Mitigation in Patient-Facing LLMs",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2604.17460": {
+        "title": "Agentic Education: Using Claude Code to Teach Claude Code",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2604.27096": {
+        "title": "Think it, Run it: Autonomous ML pipeline generation via self-healing multi-agent AI",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/05/01/replits-amjad-masad-on-the-cursor-deal-fighting-apple-and-why-hed-rather-not-sell/": {
+        "title": "Replit’s Amjad Masad on the Cursor deal, fighting Apple, and why he’d rather not sell",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/04/30/openai-announces-new-advanced-security-for-chatgpt-accounts-including-a-partnership-with-yubico/": {
+        "title": "OpenAI announces new advanced security for ChatGPT accounts, including a partnership with Yubico",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://aitntnews.com/newDetail.html?newId=24680": {
+        "title": "美国防部与OpenAI、谷歌等7家AI公司签约，全面解锁致命自主武器限制",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://news.aibase.com/zh/news/27666": {
+        "title": "腾讯开源 Hy-MT 翻译模型:440MB 实现离线运行，性能超越谷歌翻译腾讯近日开源紧凑型AI翻译模型Hy-MT1.5-1.8B-1.25bit，支持33种语言及5种方言、1056个翻译方向，可在智能手机上完全离线运行。该模型通过1.25比特量化技术实现激进压缩，体积从3.3GB大幅缩减，同时保持高性能，已累计获得30项国际机器翻译大赛冠军。 刚刚 8.9K",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://aitntnews.com/newDetail.html?newId=24666": {
+        "title": "“游戏圈野蛮人”跳进AI火坑，周亚辉要“拳打Netflix、脚踢Spotify”！",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://news.aibase.com/zh/news/27646": {
+        "title": "OpenAI 新模型系统指令泄露，GPT-5.5 竟被禁止谈论“哥布林”？OpenAI最新开源的Codex CLI代码揭示了GPT-5.5的部分底层逻辑。据Ars Technica披露，其3500多词的系统提示词中包含罕见指令：严禁模型在无明确关联时提及“哥布林”等特定生物，除非查询内容绝对必要。 刚刚 10.5K",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "https://36kr.com/p/3789105188773122": {
+        "title": "谁在 GPT-5.5 脑子里塞了一群「妖怪」？",
+        "at": "2026-05-03",
         "edition": "morning"
       }
     },
@@ -34336,6 +34751,101 @@
       "99f22e412d3c3a04": {
         "title": "DeepSeek多模态技术范式公布，以视觉原语思考",
         "at": "2026-05-02",
+        "edition": "morning"
+      },
+      "d93579412a00cb30": {
+        "title": "马斯克翻车了！一边告OpenAI，一边偷偷蒸馏ChatGPT",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "771ea7a9aeeca39e": {
+        "title": "Musk v. Altman week 1: Elon Musk says he was duped, warns AI could kill us all, and admits that xAI distills OpenAI’s models",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "be0b8ae21cccd33e": {
+        "title": "The best AI dictation apps, tested and ranked",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "8d9b82dac04d9860": {
+        "title": "AI-generated actors and scripts are now ineligible for Oscars",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "e18cb61440e729c0": {
+        "title": "OpenAI 发布 ChatGPT Images2.0，印度市场贡献首周最大用户增量OpenAI 周四宣布，其新图像生成工具ChatGPT Images2.0发布后，印度成为最大用户群体。该工具可处理复杂提示并生成含多语言文本的精细图像，深化多模态交互。Sensor Tower数据显示，全球下载量首周环比增11%，但日活跃用户和会话数等核心参与指标呈现地域差异。 刚刚 5.9K",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "1691b37535f24cfd": {
+        "title": "ChatGPT Images 2.0 is a hit in India, but not a big winner elsewhere, yet",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "6d286d1d2d786c88": {
+        "title": "End-to-end autonomous scientific discovery on a real optical platform",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "3cb0de23d0eb6872": {
+        "title": "Collaborative Agent Reasoning Engineering (CARE): A Three-Party Design Methodology for Systematically Engineering AI Agents with Subject Matter Experts, Developers, and Helper Agents",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "bebbab0ba48e7337": {
+        "title": "InteractWeb-Bench: Can Multimodal Agent Escape Blind Execution in Interactive Website Generation?",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "e105c996b99fc6e3": {
+        "title": "CareGuardAI: Context-Aware Multi-Agent Guardrails for Clinical Safety & Hallucination Mitigation in Patient-Facing LLMs",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "04874b39700fb6bd": {
+        "title": "Agentic Education: Using Claude Code to Teach Claude Code",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "5341cb409dedb584": {
+        "title": "Think it, Run it: Autonomous ML pipeline generation via self-healing multi-agent AI",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "0a9f868e0a70fd02": {
+        "title": "Replit’s Amjad Masad on the Cursor deal, fighting Apple, and why he’d rather not sell",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "3cc8387d51f667b8": {
+        "title": "OpenAI announces new advanced security for ChatGPT accounts, including a partnership with Yubico",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "a39036d33f99f94e": {
+        "title": "美国防部与OpenAI、谷歌等7家AI公司签约，全面解锁致命自主武器限制",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "d99d27a9b1ea3d9b": {
+        "title": "腾讯开源 Hy-MT 翻译模型:440MB 实现离线运行，性能超越谷歌翻译腾讯近日开源紧凑型AI翻译模型Hy-MT1.5-1.8B-1.25bit，支持33种语言及5种方言、1056个翻译方向，可在智能手机上完全离线运行。该模型通过1.25比特量化技术实现激进压缩，体积从3.3GB大幅缩减，同时保持高性能，已累计获得30项国际机器翻译大赛冠军。 刚刚 8.9K",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "236881a3e5bfdbc5": {
+        "title": "“游戏圈野蛮人”跳进AI火坑，周亚辉要“拳打Netflix、脚踢Spotify”！",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "9a3784131daba9ad": {
+        "title": "OpenAI 新模型系统指令泄露，GPT-5.5 竟被禁止谈论“哥布林”？OpenAI最新开源的Codex CLI代码揭示了GPT-5.5的部分底层逻辑。据Ars Technica披露，其3500多词的系统提示词中包含罕见指令：严禁模型在无明确关联时提及“哥布林”等特定生物，除非查询内容绝对必要。 刚刚 10.5K",
+        "at": "2026-05-03",
+        "edition": "morning"
+      },
+      "68bea139a68e5591": {
+        "title": "谁在 GPT-5.5 脑子里塞了一群「妖怪」？",
+        "at": "2026-05-03",
         "edition": "morning"
       }
     },
