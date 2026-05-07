@@ -404,6 +404,57 @@ test("buildDigestMarkdown should replace generic hot news key update placeholder
   assert.doesNotMatch(markdown, /### 01 · 海外科技媒体重点更新/);
 });
 
+test("buildDigestMarkdown should replace community-discussion narrative placeholders with core summaries", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-05-07",
+    {
+      hotNews: [
+        {
+          insight: "DeepSeek首轮融资或达450亿美元估值",
+          narrative: "该条社区讨论提到“In Brief Posted: 10:20 AM PDT · May 6, 2026 Image Credits:CN-STR/AFP / Getty Images”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+          refs: [7],
+          mentionCount: 1,
+          crossVerifyScore: 78,
+        },
+      ],
+      otherNews: [
+        {
+          insight: "Anthropic的Claude托管智能体现在可以“做梦”了",
+          narrative: "该条社区讨论提到“SAN FRANCISCO—At its Code with Claude developers’ conference, Anthropic has introduced”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。",
+          refs: [2],
+        },
+      ],
+      coreTech: [],
+      aiRumor: [],
+      refTranslations: {
+        7: "DeepSeek首轮融资或达450亿美元估值",
+        2: "Anthropic的Claude托管智能体现在可以“做梦”了",
+      },
+    },
+    [
+      {
+        refId: 7,
+        title: "DeepSeek could hit $45B valuation from its first investment round",
+        source: "TechCrunch AI",
+        link: "https://example.com/deepseek",
+        text: "In Brief Posted: 10:20 AM PDT · May 6, 2026 Image Credits:CN-STR/AFP / Getty Images",
+      },
+      {
+        refId: 2,
+        title: "Anthropic's Claude can now dream, sort of",
+        source: "Ars Technica AI",
+        link: "https://example.com/claude-dream",
+        text: "SAN FRANCISCO—At its Code with Claude developers’ conference, Anthropic has introduced a new feature.",
+      },
+    ]
+  );
+
+  assert.doesNotMatch(markdown, /该条社区讨论提到/);
+  assert.doesNotMatch(markdown, /核心信号更偏观点与风险提示/);
+  assert.match(markdown, /据TechCrunch AI报道，DeepSeek首轮融资或达450亿美元估值。核心看点在于资本市场正在重新定价/);
+  assert.match(markdown, /据Ars Technica AI报道，Anthropic的Claude托管智能体现在可以“做梦”了。核心看点在于新能力已经从概念进入产品或开发者场景/);
+});
+
 test("evening digest markdown uses dedicated title, metadata, and domestic tags", () => {
   const markdown = buildDigestMarkdown(
     "2026-03-20",

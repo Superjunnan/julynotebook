@@ -2986,7 +2986,7 @@ function clipHeadline(text, maxChars = 56) {
 }
 
 function cleanTemplateNarrative(text) {
-  return finalizeReadableText(text)
+  const cleaned = finalizeReadableText(text)
     .replace(/当前信号具备参考价值，但仍需更多来源持续验证。?/g, "")
     .replace(/信息已纳入当日快讯，建议持续跟踪后续数据与落地反馈。?/g, "")
     .replace(/内容已纳入当日快讯，建议结合参考来源持续跟进关键进展。?/g, "")
@@ -2995,6 +2995,16 @@ function cleanTemplateNarrative(text) {
     .replace(/社区来源快讯更新/g, "")
     .replace(/[。！？]\s*[A-Za-z][A-Za-z0-9-]{1,8}$/g, "。")
     .trim();
+  return isLowValueDigestNarrative(cleaned) ? "" : cleaned;
+}
+
+function isLowValueDigestNarrative(text) {
+  const value = finalizeReadableText(text || "");
+  if (!value) return true;
+  if (/该条社区讨论提到[“"].{0,160}[”"].*核心信号更偏观点与风险提示/u.test(value)) return true;
+  if (/核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响/u.test(value)) return true;
+  if (/^该快讯围绕“[^”]+”展开，建议结合参考来源持续跟进/u.test(value)) return true;
+  return false;
 }
 
 function ensureCompleteNarrative(text, fallback = "") {
@@ -3033,7 +3043,9 @@ function cleanReferenceTitle(text, maxChars = 120) {
     .replace(/\bOpen AI\b/g, "OpenAI")
     .replace(/\bChat GPT\b/g, "ChatGPT")
     .replace(/\bSpace X\b/g, "SpaceX")
-    .replace(/\bDeep Mind\b/g, "DeepMind");
+    .replace(/\bDeep Mind\b/g, "DeepMind")
+    .replace(/\bDeep Seek\b/g, "DeepSeek")
+    .replace(/\bi Phone\b/g, "iPhone");
 
   title = title.replace(/\b([A-Za-z]+\s+\d+(?:\.\d+)?)\s+\1\b/gi, "$1");
   const clauseBreak = title.search(/\b(delivers|provides|announces|launches|unveils)\b/i);
@@ -3247,7 +3259,6 @@ function getChineseSourceLabel(item) {
   if (source && hasCjk(source) && !hasAsciiLetters(source)) {
     return source;
   }
-
   switch (String(item?.sourceGroup || "").trim()) {
     case "foreign_media":
       return "海外科技媒体";
@@ -3868,21 +3879,54 @@ function pickDigestInsightFromRefs(insightSeed, refs, idToItem, refTranslations,
   return clipHeadline(finalizeReadableText(picked || fallback), maxChars);
 }
 
+function buildDigestNarrativeFromTitle(anchorText, material, sourceLabel, options = {}) {
+  const maxChars = Number.isFinite(options?.maxChars) ? Math.max(120, Math.floor(options.maxChars)) : 170;
+  const title = cleanReferenceTitle(
+    finalizeReadableText(anchorText || material?.title || material?.contentSnippet || ""),
+    96
+  );
+  const anchor = title || "该项AI动态";
+  const sourceName = String(material?.source || "").trim();
+  const source = (sourceLabel && sourceLabel !== "资讯来源")
+    ? sourceLabel
+    : (sourceName || sourceLabel || getChineseSourceLabel(material));
+  const seed = `${anchor} ${String(material?.text || material?.contentSnippet || "").slice(0, 220)}`;
+
+  let suffix = "核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。";
+  if (/融资|估值|投资|募资|valuation|investment|funding/i.test(seed)) {
+    suffix = "核心看点在于资本市场正在重新定价相关AI公司的技术路线与商业潜力，后续应关注融资落地、股东结构和算力投入节奏。";
+  } else if (/诉讼|法庭|法院|起诉|和解|trial|lawsuit|settle/i.test(seed)) {
+    suffix = "核心看点在于AI公司面临的法律责任和治理边界正在被进一步检验，后续应关注判决、和解条件及对产品发布节奏的影响。";
+  } else if (/发布|推出|上线|引入|开放|模型|agent|agents|launch|introduc|release|unveil/i.test(seed)) {
+    suffix = "核心看点在于新能力已经从概念进入产品或开发者场景，后续应关注可用性、成本和生态采用情况。";
+  } else if (/合作|签署|协议|联手|partners?|deal|agreement/i.test(seed)) {
+    suffix = "核心看点在于算力、平台或生态合作正在影响AI公司的资源配置，后续应关注合作规模、排他性和落地进展。";
+  } else if (/关闭|关停|下线|停止|shut down|shelv/i.test(seed)) {
+    suffix = "核心看点在于相关项目进入收缩或重组阶段，后续应关注资源是否转向更高优先级的AI产品线。";
+  } else if (/芯片|算力|GPU|能源|电力|chip|compute|power|energy/i.test(seed)) {
+    suffix = "核心看点在于AI基础设施需求继续外溢到算力、芯片和能源供给，后续应关注成本约束与供应链响应。";
+  }
+
+  return clipToSentence(`据${source}报道，${anchor}。${suffix}`, maxChars);
+}
+
 function buildQuickNarrativeFromMaterial(material, anchorText, sourceLabel) {
   const bodyRaw = normalizeNarrativeBody(String(material?.text || "").slice(0, 320));
   const body = clipToSentence(
     bodyRaw,
     165
   );
-  if (hasCjk(body) && body.length >= 26) return body;
+  if (hasCjk(body) && body.length >= 26 && !isLowValueDigestNarrative(body)) return body;
 
   if (bodyRaw && bodyRaw.length >= 40) {
-    const quote = clipToChars(bodyRaw, 88);
-    return `该条社区讨论提到“${quote}”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。`;
+    return buildDigestNarrativeFromTitle(anchorText || material?.title, material, sourceLabel, {
+      maxChars: 170,
+    });
   }
 
-  const anchor = clipToChars(finalizeReadableText(anchorText || material?.title || "当日动态"), 30);
-  return `${sourceLabel}围绕“${anchor}”给出新线索，短期可作为趋势观察输入，建议持续补充多源证据。`;
+  return buildDigestNarrativeFromTitle(anchorText || material?.title, material, sourceLabel, {
+    maxChars: 170,
+  });
 }
 
 function buildQuickNewsEntryFromLLM(item, allowedRefIds) {
@@ -7178,9 +7222,10 @@ digest_region: ${digestRegion}
     md += `（暂无符合门槛的重点资讯）\n\n`;
   } else {
     hotNews.forEach((t, idx) => {
+      const refs = Array.isArray(t?.refs) ? t.refs : [];
       const insightRaw = pickDigestInsightFromRefs(
         finalizeReadableText(t?.insight || t?.summary || t?.title || "当日关键动态"),
-        Array.isArray(t?.refs) ? t.refs : [],
+        refs,
         idToItem,
         refTranslations,
         {
@@ -7199,10 +7244,17 @@ digest_region: ${digestRegion}
       const narrativePlain = narrativeRaw
         .replace(new RegExp(`^${escapeRegExp(insightRaw)}[：:，,\\s]*`), "")
         .trim();
-      const narrative = escapeMd(
-        ensureCompleteNarrative(clipToSentence(narrativePlain || narrativeRaw, 300), t?.briefing || t?.summary || t?.insight || "")
+      const firstMaterial = refs.length ? idToItem[refs[0]] : null;
+      const fallbackNarrative = buildDigestNarrativeFromTitle(
+        insightRaw || refTranslations?.[refs[0]] || firstMaterial?.title,
+        firstMaterial,
+        getChineseSourceLabel(firstMaterial),
+        { maxChars: 260 }
       );
-      const refsLine = renderRefsList(t?.refs, idToItem, refTranslations);
+      const narrative = escapeMd(
+        ensureCompleteNarrative(clipToSentence(narrativePlain || narrativeRaw, 300), fallbackNarrative)
+      );
+      const refsLine = renderRefsList(refs, idToItem, refTranslations);
 
       const order = String(idx + 1).padStart(2, "0");
       md += `### ${order} · ${insight}\n\n`;

@@ -22,7 +22,7 @@ DeepSeek 正在洽谈首轮风险投资，市场消息显示其估值可能达�
 
 ### 02 · Genesis AI展示全栈机器人基础模型GENE-26.5
 
-该条社区讨论提到“Genesis AI, a startup that raised a $105 million seed round to build foundational AI”，核心信号更偏观点与风险提示，需结合后续实证数据判断真实影响。
+Genesis AI 在获得 1.05 亿美元种子轮融资后，展示了面向机器人的全栈基础模型 GENE-26.5。核心看点是公司试图把模型、仿真、数据和机器人控制整合到统一技术栈中，后续需要关注演示能力能否稳定迁移到真实机器人场景。
 
 参考：<a class="cite" href="https://techcrunch.com/2026/05/06/khosla-backed-robotics-startup-genesis-ai-has-gone-full-stack-demo-shows/" target="_blank" rel="noopener noreferrer" data-cite="2. Genesis AI展示全栈机器人基础模型GENE-26.5｜TechCrunch AI">2</a>
 
