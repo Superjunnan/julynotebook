@@ -3326,7 +3326,7 @@ function buildFallbackEntryTitle(material, indexByBucket) {
 
 function buildFallbackEntrySummary(material) {
   if (isPaperLikeMaterial(material)) {
-    return "该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。";
+    return buildFallbackPaperSummary(material);
   }
   if (material?.bucketHint === "ai_rumor") {
     return "该线索已纳入观察，建议结合更多来源交叉验证。";
@@ -3593,19 +3593,69 @@ function pickMaterialEvidenceSnippet(material) {
   if (!material) return "";
 
   const fromText = splitIntoSentences(String(material?.text || ""));
-  for (const sentence of fromText) {
+  const fromSnippet = splitIntoSentences(
+    String(material?.contentSnippet || material?.summary || material?.description || "")
+  );
+  const sentences = [...fromText, ...fromSnippet];
+
+  for (const sentence of sentences) {
     if (sentence.length < 18) continue;
     if (/\d+(?:\.\d+)?\s*(?:%|％|亿美元|万人|万|亿|million|billion|x)/i.test(sentence)) {
       return clipToSentence(sentence, 88);
     }
   }
 
+  for (const sentence of sentences) {
+    if (sentence.length >= 18 && hasCjk(sentence)) {
+      return clipToSentence(sentence, 88);
+    }
+  }
+
+  if (fromSnippet.length > 0) return clipToSentence(fromSnippet[0], 84);
+  if (fromText.length > 0) return clipToSentence(fromText[0], 84);
+
   const title = finalizeReadableText(material?.title || "");
   if (title && hasCjk(title)) return clipToSentence(title, 84);
-  if (fromText.length > 0) return clipToSentence(fromText[0], 84);
 
   const sourceLabel = getChineseSourceLabel(material);
   return `${sourceLabel}披露了可跟踪的新进展。`;
+}
+
+function isGenericPaperSummary(text) {
+  const value = finalizeReadableText(text || "");
+  if (!value) return true;
+  return (
+    /该论文条目已纳入跟踪/u.test(value) ||
+    /该论文提出了新的方法(?:或|与)评测路径/u.test(value) ||
+    /建议通过引用原文核对方法与结论/u.test(value) ||
+    /披露了可跟踪的新进展/u.test(value)
+  );
+}
+
+function buildFallbackPaperSummary(material, titleSeed = "") {
+  const existing = finalizeReadableText(material?.summary || "");
+  if (existing && hasCjk(existing) && !isGenericPaperSummary(existing)) {
+    return clipToSentence(existing, 180);
+  }
+
+  const snippet = finalizeReadableText(pickMaterialEvidenceSnippet(material));
+  if (snippet && hasCjk(snippet) && !isGenericPaperSummary(snippet)) {
+    return clipToSentence(snippet, 180);
+  }
+
+  const title = cleanReferenceTitle(
+    titleSeed || material?.titleZh || material?.title || material?.contentSnippet || "",
+    96
+  );
+  const readableTitle = extractTitleTailAfterColon(title) || title;
+  if (readableTitle && hasCjk(readableTitle)) {
+    return clipToSentence(
+      `论文聚焦${readableTitle}，可重点关注其方法设计、评测设置与适用边界。`,
+      180
+    );
+  }
+
+  return "该论文围绕新方法与评测问题展开，可重点核对实验设置、数据范围与适用边界。";
 }
 
 function injectRefEvidenceIntoNarrative(narrative, refs, idToItem) {
@@ -4059,8 +4109,10 @@ export function normalizeDailySummary(rawDaily, materials) {
         translatedRefTitle || finalizeReadableText(t?.title || firstMaterial?.title || `论文进展 ${idx + 1}`),
         `论文进展 ${idx + 1}`
       );
-      const summaryRaw = finalizeReadableText(t?.summary || pickMaterialEvidenceSnippet(firstMaterial) || "");
-      const summary = clipToSentence(summaryRaw || "该论文提出了新的方法与评测路径，建议结合原文核对实验设置与适用边界。", 180);
+      const summary = buildFallbackPaperSummary(
+        { ...firstMaterial, summary: t?.summary || "" },
+        translatedRefTitle || firstMaterial?.title || title
+      );
       return { title, summary, refs, topicId: Number(t?.topic_id || 0) };
     })
     .filter(Boolean);
@@ -4144,7 +4196,7 @@ export function normalizeDailySummary(rawDaily, materials) {
       if (coreTech.length >= DIGEST_NEWS_RULES.coreTechMin) break;
       coreTech.push({
         title: sanitizePaperTitle(finalizeReadableText(refTranslations[paper.refId] || paper.title || ""), "论文进展"),
-        summary: clipToSentence(pickMaterialEvidenceSnippet(paper), 180),
+        summary: buildFallbackPaperSummary(paper, refTranslations[paper.refId] || paper.title || ""),
         refs: [paper.refId],
         topicId: Number(paper.topicId || 0),
       });
@@ -4226,13 +4278,13 @@ export function buildFallbackDailySummary(materials) {
 
   let coreTech = papers.slice(0, 6).map((paper, idx) => ({
     title: sanitizePaperTitle(finalizeReadableText(paper?.title || ""), `论文进展 ${idx + 1}`),
-    summary: buildFallbackEntrySummary({ ...paper, bucketHint: "core_tech" }),
+    summary: buildFallbackPaperSummary(paper),
     refs: [paper.refId],
   }));
   if (coreTech.length < 3) {
     coreTech = papers.slice(0, Math.min(3, papers.length)).map((paper, idx) => ({
       title: sanitizePaperTitle(finalizeReadableText(paper?.title || ""), `论文进展 ${idx + 1}`),
-      summary: buildFallbackEntrySummary({ ...paper, bucketHint: "core_tech" }),
+      summary: buildFallbackPaperSummary(paper),
       refs: [paper.refId],
     }));
   }
@@ -7351,9 +7403,9 @@ digest_region: ${digestRegion}
       const t = escapeMd(sanitizePaperTitle(localizedTitle, "论文研究进展"));
 
       const summarySeed = finalizeReadableText(h?.summary || "");
-      const localizedSummary = hasCjk(summarySeed)
+      const localizedSummary = summarySeed && hasCjk(summarySeed) && !isGenericPaperSummary(summarySeed)
         ? summarySeed
-        : "该论文提出了新的方法或评测路径，建议结合原文核对实验设置、数据范围与适用边界。";
+        : buildFallbackPaperSummary(firstMaterial, preferredPaperTitle || localizedTitle || titleSeed);
       const s = escapeMd(clipToSentence(localizedSummary, 180));
       md += `- **${t}**：${s}${renderRefs(h.refs, idToItem, refTranslations)}\n`;
     }

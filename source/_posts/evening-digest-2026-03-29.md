@@ -48,19 +48,19 @@ OpenAI 迎来青年危机，给中国大模型敲响三记警钟，后续需关�
 
 ## 核心论文
 
-- **论文进展 1**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2603.26648" target="_blank" rel="noopener noreferrer" data-cite="1. 论文平台重点更新｜arXiv cs.AI">1</a>
-- **论文进展 2**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2603.25768" target="_blank" rel="noopener noreferrer" data-cite="2. 论文平台重点更新｜arXiv cs.AI">2</a>
-- **论文进展 3**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2603.25841" target="_blank" rel="noopener noreferrer" data-cite="4. 论文平台重点更新｜arXiv cs.AI">4</a>
-- **论文进展 4**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2603.15636" target="_blank" rel="noopener noreferrer" data-cite="5. 论文平台重点更新｜arXiv cs.AI">5</a>
-- **论文进展 5**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2603.26330" target="_blank" rel="noopener noreferrer" data-cite="3. 论文平台重点更新｜arXiv cs.AI">3</a>
+- **arXiv 2603.26648 论文进展**：该条保留了可追溯的 arXiv 编号，建议围绕论文原文核对研究问题、实验设置和结论边界。 <a class="cite" href="https://arxiv.org/abs/2603.26648" target="_blank" rel="noopener noreferrer" data-cite="1. arXiv 2603.26648 论文进展｜arXiv cs.AI">1</a>
+- **arXiv 2603.25768 论文进展**：该条保留了可追溯的 arXiv 编号，建议结合原文摘要和实验部分确认方法贡献与适用场景。 <a class="cite" href="https://arxiv.org/abs/2603.25768" target="_blank" rel="noopener noreferrer" data-cite="2. arXiv 2603.25768 论文进展｜arXiv cs.AI">2</a>
+- **arXiv 2603.25841 论文进展**：该条保留了可追溯的 arXiv 编号，后续可重点核对其任务定义、评测指标和与同类工作的差异。 <a class="cite" href="https://arxiv.org/abs/2603.25841" target="_blank" rel="noopener noreferrer" data-cite="4. arXiv 2603.25841 论文进展｜arXiv cs.AI">4</a>
+- **arXiv 2603.15636 论文进展**：该条保留了可追溯的 arXiv 编号，可从方法设计、数据来源和消融实验三个维度复核其可靠性。 <a class="cite" href="https://arxiv.org/abs/2603.15636" target="_blank" rel="noopener noreferrer" data-cite="5. arXiv 2603.15636 论文进展｜arXiv cs.AI">5</a>
+- **arXiv 2603.26330 论文进展**：该条保留了可追溯的 arXiv 编号，建议重点关注论文是否给出可复现实验和清晰的失败案例分析。 <a class="cite" href="https://arxiv.org/abs/2603.26330" target="_blank" rel="noopener noreferrer" data-cite="3. arXiv 2603.26330 论文进展｜arXiv cs.AI">3</a>
 
 ## 参考来源
 
-- <span id="ref-1">1.</span> <a href="https://arxiv.org/abs/2603.26648" target="_blank" rel="noopener noreferrer">论文平台重点更新｜arXiv cs.AI</a>
-- <span id="ref-2">2.</span> <a href="https://arxiv.org/abs/2603.25768" target="_blank" rel="noopener noreferrer">论文平台重点更新｜arXiv cs.AI</a>
-- <span id="ref-3">3.</span> <a href="https://arxiv.org/abs/2603.26330" target="_blank" rel="noopener noreferrer">论文平台重点更新｜arXiv cs.AI</a>
-- <span id="ref-4">4.</span> <a href="https://arxiv.org/abs/2603.25841" target="_blank" rel="noopener noreferrer">论文平台重点更新｜arXiv cs.AI</a>
-- <span id="ref-5">5.</span> <a href="https://arxiv.org/abs/2603.15636" target="_blank" rel="noopener noreferrer">论文平台重点更新｜arXiv cs.AI</a>
+- <span id="ref-1">1.</span> <a href="https://arxiv.org/abs/2603.26648" target="_blank" rel="noopener noreferrer">arXiv 2603.26648 论文进展｜arXiv cs.AI</a>
+- <span id="ref-2">2.</span> <a href="https://arxiv.org/abs/2603.25768" target="_blank" rel="noopener noreferrer">arXiv 2603.25768 论文进展｜arXiv cs.AI</a>
+- <span id="ref-3">3.</span> <a href="https://arxiv.org/abs/2603.26330" target="_blank" rel="noopener noreferrer">arXiv 2603.26330 论文进展｜arXiv cs.AI</a>
+- <span id="ref-4">4.</span> <a href="https://arxiv.org/abs/2603.25841" target="_blank" rel="noopener noreferrer">arXiv 2603.25841 论文进展｜arXiv cs.AI</a>
+- <span id="ref-5">5.</span> <a href="https://arxiv.org/abs/2603.15636" target="_blank" rel="noopener noreferrer">arXiv 2603.15636 论文进展｜arXiv cs.AI</a>
 - <span id="ref-6">6.</span> <a href="https://news.aibase.com/zh/news/26658" target="_blank" rel="noopener noreferrer">企业微信 CLI 正式开源:开放七大核心能力，支持主流 AI Agent 直接调…｜AIBase</a>
 - <span id="ref-7">7.</span> <a href="https://36kr.com/p/3745097939071746" target="_blank" rel="noopener noreferrer">对话AI务实派周亚辉：Open AI弃掉的赛道，刚好成了中国公司的天下｜36Kr AI</a>
 - <span id="ref-8">8.</span> <a href="https://36kr.com/p/3745190625374723" target="_blank" rel="noopener noreferrer">Open AI 迎来青年危机，给中国大模型敲响三记警钟｜36Kr AI</a>

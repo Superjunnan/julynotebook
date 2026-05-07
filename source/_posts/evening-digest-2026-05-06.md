@@ -42,12 +42,12 @@ Genesis AI 在获得 1.05 亿美元种子轮融资后，展示了面向机器人
 
 ## 核心论文
 
-- **Reward Hacking Benchmark：衡量工具型LLM智能体中的奖励黑客行为**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2605.02964" target="_blank" rel="noopener noreferrer" data-cite="4. Reward Hacking Benchmark：衡量工具型LLM智能体中的奖励黑客行为｜arXiv cs.AI">4</a>
-- **MOSAIC-Bench：衡量编码智能体中的组合式漏洞诱发**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2605.03952" target="_blank" rel="noopener noreferrer" data-cite="5. MOSAIC-Bench：衡量编码智能体中的组合式漏洞诱发｜arXiv cs.AI">5</a>
-- **CreativityBench：基于工具再利用评估智能体创造性推理**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2605.02910" target="_blank" rel="noopener noreferrer" data-cite="6. CreativityBench：基于工具再利用评估智能体创造性推理｜arXiv cs.AI">6</a>
-- **GeoDecider：用于可解释岩性分类的粗到细智能体工作流**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2605.03383" target="_blank" rel="noopener noreferrer" data-cite="7. GeoDecider：用于可解释岩性分类的粗到细智能体工作流｜arXiv cs.AI">7</a>
-- **MEMTIER：长运行自主智能体的分层记忆架构与检索瓶颈分析**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2605.03675" target="_blank" rel="noopener noreferrer" data-cite="9. MEMTIER：长运行自主智能体的分层记忆架构与检索瓶颈分析｜arXiv cs.AI">9</a>
-- **增强智能体安全判断：面向欺骗性分布外场景的基准重写与类比推理**：该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。 <a class="cite" href="https://arxiv.org/abs/2605.03242" target="_blank" rel="noopener noreferrer" data-cite="8. 增强智能体安全判断：面向欺骗性分布外场景的基准重写与类比推理｜arXiv cs.AI">8</a>
+- **Reward Hacking Benchmark：衡量工具型LLM智能体中的奖励黑客行为**：论文围绕工具型 LLM 智能体的奖励黑客风险建立评测基准，可用于观察智能体是否通过钻规则空子取得表面高分。 <a class="cite" href="https://arxiv.org/abs/2605.02964" target="_blank" rel="noopener noreferrer" data-cite="4. Reward Hacking Benchmark：衡量工具型LLM智能体中的奖励黑客行为｜arXiv cs.AI">4</a>
+- **MOSAIC-Bench：衡量编码智能体中的组合式漏洞诱发**：论文聚焦编码智能体在组合任务中诱发漏洞的评测，重点关注多步骤代码修改、依赖组合和安全退化的边界。 <a class="cite" href="https://arxiv.org/abs/2605.03952" target="_blank" rel="noopener noreferrer" data-cite="5. MOSAIC-Bench：衡量编码智能体中的组合式漏洞诱发｜arXiv cs.AI">5</a>
+- **CreativityBench：基于工具再利用评估智能体创造性推理**：论文用工具再利用场景评估智能体创造性推理，核心价值在于区分模型的机械调用能力与跨任务迁移能力。 <a class="cite" href="https://arxiv.org/abs/2605.02910" target="_blank" rel="noopener noreferrer" data-cite="6. CreativityBench：基于工具再利用评估智能体创造性推理｜arXiv cs.AI">6</a>
+- **GeoDecider：用于可解释岩性分类的粗到细智能体工作流**：论文提出面向岩性分类的粗到细智能体工作流，强调用分阶段判断提升分类解释性，并便于核对地质推理链路。 <a class="cite" href="https://arxiv.org/abs/2605.03383" target="_blank" rel="noopener noreferrer" data-cite="7. GeoDecider：用于可解释岩性分类的粗到细智能体工作流｜arXiv cs.AI">7</a>
+- **MEMTIER：长运行自主智能体的分层记忆架构与检索瓶颈分析**：论文分析长运行自主智能体中的分层记忆和检索瓶颈，适合关注长期任务、状态压缩和上下文召回可靠性。 <a class="cite" href="https://arxiv.org/abs/2605.03675" target="_blank" rel="noopener noreferrer" data-cite="9. MEMTIER：长运行自主智能体的分层记忆架构与检索瓶颈分析｜arXiv cs.AI">9</a>
+- **增强智能体安全判断：面向欺骗性分布外场景的基准重写与类比推理**：论文通过基准重写和类比推理考察智能体安全判断，重点覆盖欺骗性分布外场景下的风险识别能力。 <a class="cite" href="https://arxiv.org/abs/2605.03242" target="_blank" rel="noopener noreferrer" data-cite="8. 增强智能体安全判断：面向欺骗性分布外场景的基准重写与类比推理｜arXiv cs.AI">8</a>
 
 ## 参考来源
 
