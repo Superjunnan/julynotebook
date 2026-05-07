@@ -42,13 +42,13 @@ digest_region: domestic
 
 - **通过以验证为中心的设计解锁高**：该论文提出了一种以验证为中心的框架，旨在解决深度研究代理在长时任务中因缺乏显式验证机制而导致的性能瓶颈问题。 <a class="cite" href="https://arxiv.org/abs/2603.28376" target="_blank" rel="noopener noreferrer" data-cite="1. Marco Deep Research：通过以验证为中心的设计解锁高效深度研究代…｜arXiv cs.AI">1</a><a class="cite" href="https://huggingface.co/papers/2603.28376" target="_blank" rel="noopener noreferrer" data-cite="2. Marco Deep Research：通过以验证为中心的设计解锁高效深度研究代…｜Hugging Face 论文">2</a>
 - **能成为教学伙伴吗？评估**：该论文通过对比ChatGPT、Gemini和DeepSeek三种教学策略，评估了主流大模型作为教学伙伴的实证能力。 <a class="cite" href="https://arxiv.org/abs/2603.26673" target="_blank" rel="noopener noreferrer" data-cite="4. AI能成为教学伙伴吗？评估Chat GPT、Gemini和Deep Seek在三…｜arXiv cs.AI">4</a>
-- **论文进展**：该论文提出了新的方法或评测路径，建议结合原文核对实验设置、数据范围与适用边界。 <a class="cite" href="https://arxiv.org/abs/2603.27745" target="_blank" rel="noopener noreferrer" data-cite="3. 论文平台重点更新｜arXiv cs.AI">3</a>
+- **arXiv 2603.27745 论文进展**：该条保留了可追溯的 arXiv 编号，建议结合原文摘要、实验设置和结论部分核对其方法贡献与适用边界。 <a class="cite" href="https://arxiv.org/abs/2603.27745" target="_blank" rel="noopener noreferrer" data-cite="3. arXiv 2603.27745 论文进展｜arXiv cs.AI">3</a>
 
 ## 参考来源
 
 - <span id="ref-1">1.</span> <a href="https://arxiv.org/abs/2603.28376" target="_blank" rel="noopener noreferrer">Marco Deep Research：通过以验证为中心的设计解锁高效深度研究代…｜arXiv cs.AI</a>
 - <span id="ref-2">2.</span> <a href="https://huggingface.co/papers/2603.28376" target="_blank" rel="noopener noreferrer">Marco Deep Research：通过以验证为中心的设计解锁高效深度研究代…｜Hugging Face 论文</a>
-- <span id="ref-3">3.</span> <a href="https://arxiv.org/abs/2603.27745" target="_blank" rel="noopener noreferrer">论文平台重点更新｜arXiv cs.AI</a>
+- <span id="ref-3">3.</span> <a href="https://arxiv.org/abs/2603.27745" target="_blank" rel="noopener noreferrer">arXiv 2603.27745 论文进展｜arXiv cs.AI</a>
 - <span id="ref-4">4.</span> <a href="https://arxiv.org/abs/2603.26673" target="_blank" rel="noopener noreferrer">AI能成为教学伙伴吗？评估Chat GPT、Gemini和Deep Seek在三…｜arXiv cs.AI</a>
 - <span id="ref-5">5.</span> <a href="https://36kr.com/p/3746785722958599" target="_blank" rel="noopener noreferrer">Sora跌倒，字节吃饱：国内大厂接管AI视频下半场？｜36Kr AI</a>
 - <span id="ref-6">6.</span> <a href="https://news.aibase.com/zh/news/26712" target="_blank" rel="noopener noreferrer">全球第五！小米 Mi Mo-V2-Pro 霸榜 Text Arena，雷军：这次…｜AIBase</a>

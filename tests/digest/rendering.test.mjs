@@ -133,7 +133,63 @@ test("fallback markdown avoids untranslated placeholders and raw English titles"
   assert.doesNotMatch(markdown, /海外科技媒体原文|论文平台原文/);
 });
 
-test("references render as Chinese title plus source and allow up to 40 chars before truncation", () => {
+test("fallback core paper summaries use material evidence instead of generic tracking copy", () => {
+  const materials = [
+    {
+      refId: 1,
+      title: "智能体工作流基准揭示规范生成中的可靠性边界",
+      source: "arXiv cs.AI",
+      sourceGroup: "paper",
+      bucketHint: "core_tech",
+      trustTier: "high",
+      link: "https://example.com/paper",
+      contentSnippet: "论文构建了面向规范生成任务的智能体工作流基准，并比较不同执行路径在准确率、成本与稳定性上的差异。",
+    },
+  ];
+
+  const markdown = buildDigestMarkdown(
+    "2026-05-07",
+    buildFallbackDailySummary(materials),
+    materials
+  );
+
+  assert.match(markdown, /论文构建了面向规范生成任务的智能体工作流基准/);
+  assert.doesNotMatch(markdown, /该论文条目已纳入跟踪/);
+});
+
+test("core paper rendering replaces legacy generic summaries with title-based specifics", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-05-07",
+    {
+      hotNews: [],
+      otherNews: [],
+      coreTech: [
+        {
+          title: "论文进展",
+          summary: "该论文条目已纳入跟踪，建议通过引用原文核对方法与结论。",
+          refs: [1],
+        },
+      ],
+      aiRumor: [],
+      refTranslations: {
+        1: "Live FMBench：揭示规范生成中智能工作流的力量与局限",
+      },
+    },
+    [
+      {
+        refId: 1,
+        title: "Live FMBench: Revealing the Power and Limits of Agentic Workflows in Specification Generation",
+        source: "arXiv cs.AI",
+        link: "https://example.com/paper",
+      },
+    ]
+  );
+
+  assert.match(markdown, /论文聚焦揭示规范生成中智能工作流的力量与局限/);
+  assert.doesNotMatch(markdown, /该论文条目已纳入跟踪/);
+});
+
+test("references render as Chinese title plus source and keep longer titles in data-cite labels", () => {
   const markdown = buildDigestMarkdown(
     "2026-03-03",
     {
@@ -163,6 +219,70 @@ test("references render as Chinese title plus source and allow up to 40 chars be
 
   assert.match(markdown, /这是一个非常非常长的中文标题用于验证截断逻辑是否生效｜TechCrunch/);
   assert.doesNotMatch(markdown, /Long English headline for verification<\/a>/);
+});
+
+test("quick news should prefer fuller translated reference title when generated insight is only a truncated prefix", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-04-22",
+    {
+      hotNews: [],
+      otherNews: [
+        {
+          insight: "OpenAI最强对手",
+          narrative: "Anthropic 获得亚马逊追加投资。",
+          refs: [1],
+        },
+      ],
+      coreTech: [],
+      aiRumor: [],
+      refTranslations: {
+        1: "OpenAI最强对手，被亚马逊追投2249亿",
+      },
+    },
+    [
+      {
+        refId: 1,
+        title: "OpenAI rival gets another Amazon investment",
+        source: "36Kr AI",
+        link: "https://example.com/anthropic",
+      },
+    ]
+  );
+
+  assert.match(markdown, /\*\*01 · OpenAI最强对手，被亚马逊追投2249亿\*\*/);
+  assert.doesNotMatch(markdown, /\*\*01 · OpenAI最强对手\*\*/);
+});
+
+test("core paper block should keep full translated paper titles instead of clipping to a short prefix", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-04-22",
+    {
+      hotNews: [],
+      otherNews: [],
+      coreTech: [
+        {
+          title: "面向程序化超声理解的视",
+          summary: "该论文条目已纳入跟踪。",
+          refs: [1],
+        },
+      ],
+      aiRumor: [],
+      refTranslations: {
+        1: "Re XSono VQA：面向程序化超声理解的视频问答基准",
+      },
+    },
+    [
+      {
+        refId: 1,
+        title: "Re XSono VQA: Video question answering benchmark for programmatic ultrasound understanding",
+        source: "arXiv cs.AI",
+        link: "https://example.com/paper",
+      },
+    ]
+  );
+
+  assert.match(markdown, /面向程序化超声理解的视频问答基准/);
+  assert.doesNotMatch(markdown, /\*\*面向程序化超声理解的视\*\*/);
 });
 
 test("core paper block prefers translated Chinese title over original English title", () => {
