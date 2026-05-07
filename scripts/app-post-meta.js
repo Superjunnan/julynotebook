@@ -96,6 +96,29 @@ function 从引用提取标题(dataCite, options = {}) {
   return 标题主体;
 }
 
+function 归一化日报标题用于比对(text) {
+  return String(text || '')
+    .replace(/…/gu, '')
+    .replace(/[“”"'`‘’]/gu, '')
+    .replace(/[（）()【】\[\]·•,，。:：;；!?！？\-–—_/\\\s]/gu, '')
+    .toLowerCase();
+}
+
+function 是否日报标题前缀残缺(标题, 候选标题) {
+  const 当前 = 归一化日报标题用于比对(标题);
+  const 候选 = 归一化日报标题用于比对(候选标题);
+  if (!当前 || !候选 || 当前 === 候选) return false;
+  return 候选.startsWith(当前) && 候选.length >= 当前.length + 4;
+}
+
+function 选取更完整日报引用标题(标题, 完整引用标题, 冒号前标题, 冒号后标题, 类型 = 'news') {
+  const 候选列表 = 类型 === 'paper'
+    ? [冒号后标题, 完整引用标题, 冒号前标题]
+    : [完整引用标题, 冒号前标题, 冒号后标题];
+
+  return 候选列表.find(候选 => 是否日报标题前缀残缺(标题, 候选)) || '';
+}
+
 function 是占位日报标题(text, 类型 = 'news') {
   const 标题 = 去除标题序号(text)
     .replace(/\s+/gu, ' ')
@@ -107,7 +130,7 @@ function 是占位日报标题(text, 类型 = 'news') {
   if (/^(?:当日(?:AI)?(?:关键)?动态|当日重点|当日快讯|快讯更新|来源快讯|社区来源快讯)(?:\s*\d+)?$/u.test(标题)) {
     return true;
   }
-  return /^(?:海外科技媒体|国内人工智能媒体|社区来源|来源|媒体)(?:动态|新动向|快讯|进展)(?:\s*\d+)?$/u.test(标题);
+  return /^(?:海外科技媒体|国内人工智能媒体|社区来源|来源|媒体)(?:动态|新动向|快讯|进展|重点更新)(?:\s*\d+)?$/u.test(标题);
 }
 
 function 清洗日报标题(text, dataCite = '', options = {}) {
@@ -126,6 +149,7 @@ function 清洗日报标题(text, dataCite = '', options = {}) {
     || /^[.&,:：\-–—\s]+/u.test(text)
     || (/[&]/u.test(标题) && !/AI/u.test(标题))
     || 是占位日报标题(标题, 类型);
+  const 更完整引用标题 = 选取更完整日报引用标题(标题, 完整引用标题, 冒号前标题, 冒号后标题, 类型);
 
   if (标题异常) {
     if (类型 === 'paper' && 冒号后标题) {
@@ -137,6 +161,10 @@ function 清洗日报标题(text, dataCite = '', options = {}) {
     if (完整引用标题) {
       return 完整引用标题;
     }
+  }
+
+  if (更完整引用标题) {
+    return 更完整引用标题;
   }
 
   return 标题;
