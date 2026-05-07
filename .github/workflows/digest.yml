@@ -67,7 +67,22 @@ jobs:
           echo "reports_dir=data/digest-reports/${DIGEST_DATE}" >> "$GITHUB_OUTPUT"
 
       - name: Run digest
+        env:
+          DIGEST_DATE: ${{ steps.digest_meta.outputs.date }}
+          DIGEST_PROFILE: morning
+          DIGEST_EDITION: morning
         run: npm run digest:ci
+
+      - name: Verify digest output
+        run: |
+          DIGEST_PATH="${{ steps.digest_meta.outputs.path }}"
+          if [ ! -s "$DIGEST_PATH" ]; then
+            echo "::error::Digest output missing or empty: ${DIGEST_PATH}"
+            echo "Current post files for resolved date:"
+            find source/_posts -maxdepth 1 -type f -name "*digest-${{ steps.digest_meta.outputs.date }}.md" -print | sort
+            git status --short
+            exit 1
+          fi
 
       - name: Upload digest diagnostics on failure
         if: failure()

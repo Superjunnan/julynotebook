@@ -133,7 +133,7 @@ test("fallback markdown avoids untranslated placeholders and raw English titles"
   assert.doesNotMatch(markdown, /海外科技媒体原文|论文平台原文/);
 });
 
-test("references render as Chinese title plus source and allow up to 40 chars before truncation", () => {
+test("references render as Chinese title plus source and keep longer titles in data-cite labels", () => {
   const markdown = buildDigestMarkdown(
     "2026-03-03",
     {
@@ -163,6 +163,70 @@ test("references render as Chinese title plus source and allow up to 40 chars be
 
   assert.match(markdown, /这是一个非常非常长的中文标题用于验证截断逻辑是否生效｜TechCrunch/);
   assert.doesNotMatch(markdown, /Long English headline for verification<\/a>/);
+});
+
+test("quick news should prefer fuller translated reference title when generated insight is only a truncated prefix", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-04-22",
+    {
+      hotNews: [],
+      otherNews: [
+        {
+          insight: "OpenAI最强对手",
+          narrative: "Anthropic 获得亚马逊追加投资。",
+          refs: [1],
+        },
+      ],
+      coreTech: [],
+      aiRumor: [],
+      refTranslations: {
+        1: "OpenAI最强对手，被亚马逊追投2249亿",
+      },
+    },
+    [
+      {
+        refId: 1,
+        title: "OpenAI rival gets another Amazon investment",
+        source: "36Kr AI",
+        link: "https://example.com/anthropic",
+      },
+    ]
+  );
+
+  assert.match(markdown, /\*\*01 · OpenAI最强对手，被亚马逊追投2249亿\*\*/);
+  assert.doesNotMatch(markdown, /\*\*01 · OpenAI最强对手\*\*/);
+});
+
+test("core paper block should keep full translated paper titles instead of clipping to a short prefix", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-04-22",
+    {
+      hotNews: [],
+      otherNews: [],
+      coreTech: [
+        {
+          title: "面向程序化超声理解的视",
+          summary: "该论文条目已纳入跟踪。",
+          refs: [1],
+        },
+      ],
+      aiRumor: [],
+      refTranslations: {
+        1: "Re XSono VQA：面向程序化超声理解的视频问答基准",
+      },
+    },
+    [
+      {
+        refId: 1,
+        title: "Re XSono VQA: Video question answering benchmark for programmatic ultrasound understanding",
+        source: "arXiv cs.AI",
+        link: "https://example.com/paper",
+      },
+    ]
+  );
+
+  assert.match(markdown, /面向程序化超声理解的视频问答基准/);
+  assert.doesNotMatch(markdown, /\*\*面向程序化超声理解的视\*\*/);
 });
 
 test("core paper block prefers translated Chinese title over original English title", () => {
@@ -298,6 +362,46 @@ test("buildDigestMarkdown should replace generic hot news placeholders with tran
 
   assert.match(markdown, /### 01 · 谷歌在Chrome中添加AI技能以帮助保存常用工作流/);
   assert.doesNotMatch(markdown, /### 01 · 海外科技媒体动态 3/);
+});
+
+test("buildDigestMarkdown should replace generic hot news key update placeholders", () => {
+  const markdown = buildDigestMarkdown(
+    "2026-05-07",
+    {
+      hotNews: [
+        {
+          insight: "海外科技媒体重点更新",
+          narrative: "Apple to pay $250M to settle lawsuit over Siri's delayed AI features.",
+          refs: [15, 16],
+          mentionCount: 2,
+          crossVerifyScore: 82,
+        },
+      ],
+      otherNews: [],
+      coreTech: [],
+      aiRumor: [],
+      refTranslations: {
+        15: "苹果将支付2.5亿美元和解Siri延迟AI功能的诉讼",
+      },
+    },
+    [
+      {
+        refId: 15,
+        title: "Apple to pay $250M to settle lawsuit over Siri's delayed AI features",
+        source: "TechCrunch AI",
+        link: "https://example.com/apple-siri",
+      },
+      {
+        refId: 16,
+        title: "Apple pay iPhone buyers $250 million lawsuit AI",
+        source: "SiliconValley.com",
+        link: "https://example.com/apple-lawsuit",
+      },
+    ]
+  );
+
+  assert.match(markdown, /### 01 · 苹果将支付2\.5亿美元和解Siri延迟AI功能的诉讼/);
+  assert.doesNotMatch(markdown, /### 01 · 海外科技媒体重点更新/);
 });
 
 test("evening digest markdown uses dedicated title, metadata, and domestic tags", () => {

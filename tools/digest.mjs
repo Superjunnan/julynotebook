@@ -3029,6 +3029,12 @@ function cleanReferenceTitle(text, maxChars = 120) {
     .replace(/\s+/g, " ")
     .trim();
 
+  title = title
+    .replace(/\bOpen AI\b/g, "OpenAI")
+    .replace(/\bChat GPT\b/g, "ChatGPT")
+    .replace(/\bSpace X\b/g, "SpaceX")
+    .replace(/\bDeep Mind\b/g, "DeepMind");
+
   title = title.replace(/\b([A-Za-z]+\s+\d+(?:\.\d+)?)\s+\1\b/gi, "$1");
   const clauseBreak = title.search(/\b(delivers|provides|announces|launches|unveils)\b/i);
   if (clauseBreak >= 24) {
@@ -3065,6 +3071,30 @@ function truncateWithEllipsis(text, maxChars = 20) {
   const limit = Number.isFinite(maxChars) ? Math.max(8, Math.floor(maxChars)) : 20;
   if (plain.length <= limit) return plain;
   return `${plain.slice(0, limit)}…`;
+}
+
+function normalizeTitleForMatch(text) {
+  return String(text || "")
+    .replace(/…/gu, "")
+    .replace(/[“”"'`‘’]/gu, "")
+    .replace(/[（）()【】\[\]·•,，。:：;；!?！？\-–—_/\\\s]/gu, "")
+    .toLowerCase();
+}
+
+function isTruncatedTitlePrefix(title, candidate) {
+  const current = normalizeTitleForMatch(title);
+  const full = normalizeTitleForMatch(candidate);
+  if (!current || !full || current === full) return false;
+  return full.startsWith(current) && full.length >= current.length + 4;
+}
+
+function extractTitleTailAfterColon(text) {
+  const parts = String(text || "")
+    .split(/[:：]/u)
+    .map((part) => finalizeReadableText(part))
+    .filter(Boolean);
+  if (parts.length <= 1) return finalizeReadableText(text);
+  return parts[parts.length - 1];
 }
 
 function getReferenceSourceName(item, maxChars = 18) {
@@ -3815,7 +3845,7 @@ function shouldFallbackDigestInsight(text) {
   if (/^(?:当日(?:AI)?(?:关键)?动态|当日重点|当日快讯|快讯更新|来源快讯|社区来源快讯|论文进展)(?:\s*\d+)?$/u.test(value)) {
     return true;
   }
-  if (/^(?:海外科技媒体|国内人工智能媒体|社区来源|来源|媒体|论文)(?:动态|新动向|快讯|进展)(?:\s*\d+)?$/u.test(value)) {
+  if (/^(?:海外科技媒体|国内人工智能媒体|社区来源|来源|媒体|论文)(?:动态|新动向|快讯|进展|重点更新)(?:\s*\d+)?$/u.test(value)) {
     return true;
   }
   return false;
@@ -7037,7 +7067,7 @@ function buildReferenceLabel(item, translatedTitle) {
   if (!titlePart) {
     titlePart = `${getChineseSourceLabel(item)}重点更新`;
   }
-  const shortTitle = truncateWithEllipsis(titlePart, 40);
+  const shortTitle = truncateWithEllipsis(titlePart, 80);
   const sourceName = getReferenceSourceName(item, 18);
   return `${escapeMd(shortTitle)}｜${escapeMd(sourceName)}`;
 }
@@ -7198,14 +7228,15 @@ digest_region: ${digestRegion}
       const shouldFallbackInsight =
         !hasCjk(insightSeed) ||
         (hasAsciiLetters(insightSeed) && /等进展$/.test(insightSeed)) ||
-        (hasAsciiLetters(insightSeed) && !/[，。！？、]/.test(insightSeed) && insightSeed.length >= 36);
+        (hasAsciiLetters(insightSeed) && !/[，。！？、]/.test(insightSeed) && insightSeed.length >= 36) ||
+        (translatedRefTitle && hasCjk(translatedRefTitle) && isTruncatedTitlePrefix(insightSeed, translatedRefTitle));
       const insightText = shouldFallbackInsight
         ? (translatedRefTitle && hasCjk(translatedRefTitle)
             ? translatedRefTitle
             : `${sourceLabel}新动向`)
         : insightSeed;
       const insight = escapeMd(
-        clipHeadline(insightText, 56)
+        cleanReferenceTitle(insightText, 72) || finalizeReadableText(insightText)
       );
 
       let narrativeSeed = cleanTemplateNarrative(t?.narrative || t?.briefing || t?.summary || "");
@@ -7246,12 +7277,22 @@ digest_region: ${digestRegion}
         ? finalizeReadableText(refTranslations[refs[0]] || "")
         : "";
       const materialTitle = cleanReferenceTitle(firstMaterial?.title || "", 120);
+      const translatedPaperTitle = extractTitleTailAfterColon(translatedRefTitle);
+      const materialPaperTitle = extractTitleTailAfterColon(materialTitle);
       const titleSeed = finalizeReadableText(h?.title || "");
       const isFallbackTitle = !titleSeed || /^论文(进展|研究进展)/.test(titleSeed);
+      const preferredPaperTitle =
+        (translatedPaperTitle && hasCjk(translatedPaperTitle) && cleanReferenceTitle(translatedPaperTitle, 72)) ||
+        (materialPaperTitle && hasCjk(materialPaperTitle) && cleanReferenceTitle(materialPaperTitle, 72)) ||
+        (translatedRefTitle && hasCjk(translatedRefTitle) && cleanReferenceTitle(translatedRefTitle, 72)) ||
+        (materialTitle && hasCjk(materialTitle) && cleanReferenceTitle(materialTitle, 72)) ||
+        "";
+      const paperTitleSeed = isTruncatedTitlePrefix(titleSeed, preferredPaperTitle)
+        ? preferredPaperTitle
+        : titleSeed;
       const localizedTitle = toChineseLikeTitle(
-        (!isFallbackTitle && hasCjk(titleSeed) && titleSeed) ||
-        (translatedRefTitle && hasCjk(translatedRefTitle) && clipHeadline(translatedRefTitle, 28)) ||
-        (materialTitle && hasCjk(materialTitle) && clipHeadline(materialTitle, 28)) ||
+        (!isFallbackTitle && hasCjk(paperTitleSeed) && paperTitleSeed) ||
+        preferredPaperTitle ||
         "论文研究进展",
         "论文研究进展"
       );

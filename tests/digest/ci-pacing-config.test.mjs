@@ -42,3 +42,13 @@ test("digest workflows pin serialized LLM pacing with a conservative interval", 
     );
   }
 });
+
+test("digest workflows bind resolved date to generation and fail when post output is missing", () => {
+  for (const file of ["digest.yml", "evening-digest.yml"]) {
+    const workflow = readWorkflow(file);
+    assert.match(workflow, /DIGEST_DATE:\s*\$\{\{\s*steps\.digest_meta\.outputs\.date\s*\}\}/);
+    assert.match(workflow, /name:\s*Verify digest output/);
+    assert.match(workflow, /Digest output missing or empty/);
+    assert.match(workflow, /exit 1/);
+  }
+});
