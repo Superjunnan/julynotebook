@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import {
   buildPreclusterCandidateGroups,
   preprocessCandidatePools,
+  selectDigestCandidatePool,
   splitCandidatesByPool,
 } from "../../tools/digest.mjs";
 
@@ -32,6 +33,38 @@ test("splitCandidatesByPool separates news and papers before clustering", () => 
   const pools = splitCandidatesByPool(candidates);
   assert.equal(pools.news.length, 1);
   assert.equal(pools.papers.length, 1);
+});
+
+test("selectDigestCandidatePool caps the formal pool while keeping news and paper balance", () => {
+  const news = Array.from({ length: 260 }, (_, idx) => ({
+    title: `News ${idx}`,
+    link: `https://source${idx % 40}.example.com/news/${idx}`,
+    source: `Source ${idx % 40}`,
+    sourceGroup: "foreign_media",
+    trustTier: "high",
+    score: 400 - idx,
+  }));
+  const papers = Array.from({ length: 90 }, (_, idx) => ({
+    title: `Paper ${idx}`,
+    link: `https://arxiv.org/abs/2605.${String(idx).padStart(5, "0")}`,
+    source: "arXiv cs.AI",
+    sourceGroup: "paper",
+    trustTier: "high",
+    score: 300 - idx,
+  }));
+
+  const selected = selectDigestCandidatePool([...news, ...papers], {
+    limit: 250,
+    newsCap: 200,
+    paperCap: 50,
+    newsPerSourceCap: 8,
+  });
+  const pools = splitCandidatesByPool(selected);
+
+  assert.equal(selected.length, 250);
+  assert.equal(pools.news.length, 200);
+  assert.equal(pools.papers.length, 50);
+  assert.equal(Math.max(...selected.map((item) => item.score)), 400);
 });
 
 test("preprocessCandidatePools retains high-trust news with missing dates for later enrichment", () => {

@@ -89,6 +89,18 @@ function readPositiveIntFromSource(envSource, name, fallback) {
   return Math.floor(n);
 }
 
+function readPositiveIntListFromSource(envSource, name, fallback) {
+  const raw = String(envSource?.[name] || "").trim();
+  if (!raw) return fallback;
+
+  const values = raw
+    .split(/[,，\s]+/)
+    .map((part) => Number(part.trim()))
+    .filter((value) => Number.isFinite(value) && value > 0)
+    .map((value) => Math.floor(value));
+  return values.length ? values : fallback;
+}
+
 const LLM_SAFE_MIN_INTERVAL_MS = 35_000;
 
 export function resolveLlmPacingConfig(envSource = process.env) {
@@ -209,7 +221,11 @@ const TOPIC_SHORTLIST_PRE_CAP = readPositiveIntEnv("DIGEST_TOPIC_SHORTLIST_PRE_C
 const CLUSTER_BATCH_SIZE = readPositiveIntEnv("DIGEST_CLUSTER_BATCH_SIZE", 20);
 const CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE = readPositiveIntEnv("DIGEST_CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE", 5);
 const CLUSTER_ADAPTIVE_MAX_DEPTH = readPositiveIntEnv("DIGEST_CLUSTER_ADAPTIVE_MAX_DEPTH", 3);
-const CLUSTER_INPUT_CAP = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP", 260);
+const CANDIDATE_POOL_CAP = readPositiveIntEnv("DIGEST_CANDIDATE_POOL_CAP", 250);
+const CANDIDATE_POOL_NEWS_CAP = readPositiveIntEnv("DIGEST_CANDIDATE_POOL_NEWS_CAP", 200);
+const CANDIDATE_POOL_PAPERS_CAP = readPositiveIntEnv("DIGEST_CANDIDATE_POOL_PAPERS_CAP", 50);
+const CANDIDATE_POOL_NEWS_PER_SOURCE_CAP = readPositiveIntEnv("DIGEST_CANDIDATE_POOL_NEWS_PER_SOURCE_CAP", 8);
+const CLUSTER_INPUT_CAP = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP", 100);
 const CLUSTER_TEXT_MAX_CHARS = readPositiveIntEnv("DIGEST_CLUSTER_TEXT_MAX_CHARS", 380);
 const TOPIC_MERGE_BATCH_SIZE = readPositiveIntEnv("DIGEST_TOPIC_MERGE_BATCH_SIZE", 15);
 const TOPIC_MERGE_MAX_ROUNDS = readPositiveIntEnv("DIGEST_TOPIC_MERGE_MAX_ROUNDS", 2);
@@ -276,8 +292,13 @@ const DETAIL_ENRICH_FETCH_CONCURRENCY = readPositiveIntEnv(
 // 一次性把内容丢给大模型会很长，所以每条正文只保留前面这么多字符（控制 token）
 const PER_ARTICLE_MAX_CHARS = 1800;
 
-// 429（Too Many Requests 限流）重试次数：默认收紧到 3，避免单次逻辑调用被重试放大。
+// 非限流瞬时错误重试次数；429/1305 限流使用单独的 15min/30min 冷却窗口。
 const LLM_MAX_RETRIES = LLM_EXECUTION_CONFIG.maxRetries;
+const LLM_RATE_LIMIT_RETRY_DELAYS_MS = readPositiveIntListFromSource(
+  process.env,
+  "DIGEST_LLM_RATE_LIMIT_RETRY_DELAYS_MS",
+  [15 * 60_000, 30 * 60_000]
+);
 
 // 免费接口使用保守节流：强制串行，且上一请求完成后至少等待 35s。
 const LLM_PACING_CONFIG = resolveLlmPacingConfig(process.env);
@@ -317,8 +338,8 @@ const DIGEST_MORNING_POST_TIME_RAW = String(process.env.DIGEST_MORNING_POST_TIME
 const DIGEST_EVENING_POST_TIME_RAW = String(process.env.DIGEST_EVENING_POST_TIME || "").trim();
 const NEWS_LOOKBACK_DAYS_DEFAULT = readPositiveIntEnv("DIGEST_NEWS_LOOKBACK_DAYS", 5);
 const PAPER_LOOKBACK_DAYS_DEFAULT = readPositiveIntEnv("DIGEST_PAPER_LOOKBACK_DAYS", 2);
-const CLUSTER_INPUT_CAP_NEWS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_NEWS", 100);
-const CLUSTER_INPUT_CAP_PAPERS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_PAPERS", 160);
+const CLUSTER_INPUT_CAP_NEWS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_NEWS", 70);
+const CLUSTER_INPUT_CAP_PAPERS = readPositiveIntEnv("DIGEST_CLUSTER_INPUT_CAP_PAPERS", 30);
 const CLUSTER_NEWS_PER_SOURCE_CAP = readPositiveIntEnv("DIGEST_CLUSTER_NEWS_PER_SOURCE_CAP", 0);
 
 const DIGEST_NEWS_RULES = Object.freeze({
@@ -922,8 +943,13 @@ function buildRuntimeEnvAuditSnapshot() {
     llm_min_interval_ms: LLM_MIN_INTERVAL_MS,
     llm_interval_jitter_ms: LLM_INTERVAL_JITTER_MS,
     llm_max_retries: LLM_MAX_RETRIES,
+    llm_rate_limit_retry_delays_ms: LLM_RATE_LIMIT_RETRY_DELAYS_MS,
     llm_cache_retention_days: LLM_CACHE_RETENTION_DAYS,
     llm_retry_cooldown_max_ms: LLM_RETRY_COOLDOWN_MAX_MS,
+    candidate_pool_cap: CANDIDATE_POOL_CAP,
+    candidate_pool_news_cap: CANDIDATE_POOL_NEWS_CAP,
+    candidate_pool_papers_cap: CANDIDATE_POOL_PAPERS_CAP,
+    candidate_pool_news_per_source_cap: CANDIDATE_POOL_NEWS_PER_SOURCE_CAP,
     cluster_adaptive_min_chunk_size: CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE,
     cluster_adaptive_max_depth: CLUSTER_ADAPTIVE_MAX_DEPTH,
     topic_merge_batch_size: TOPIC_MERGE_BATCH_SIZE,
@@ -2303,6 +2329,55 @@ export function splitCandidatesByPool(candidates) {
   }
 
   return out;
+}
+
+function capItemsBySource(items, perSourceCap) {
+  const cap = Math.max(0, Number(perSourceCap || 0));
+  if (cap <= 0) return items;
+
+  const counts = new Map();
+  const out = [];
+  for (const item of items || []) {
+    const sourceKey = [
+      String(item?.source || "").trim(),
+      getDomainFromUrl(item?.link || ""),
+    ].filter(Boolean).join("|") || "unknown";
+    const count = Number(counts.get(sourceKey) || 0);
+    if (count >= cap) continue;
+    counts.set(sourceKey, count + 1);
+    out.push(item);
+  }
+  return out;
+}
+
+export function selectDigestCandidatePool(candidates, options = {}) {
+  const limit = Math.max(1, Number(options?.limit || CANDIDATE_POOL_CAP));
+  const newsCap = Math.max(0, Number(options?.newsCap || CANDIDATE_POOL_NEWS_CAP));
+  const paperCap = Math.max(0, Number(options?.paperCap || CANDIDATE_POOL_PAPERS_CAP));
+  const newsPerSourceCap = Math.max(0, Number(options?.newsPerSourceCap ?? CANDIDATE_POOL_NEWS_PER_SOURCE_CAP));
+  const sortByScore = (a, b) =>
+    Number(b?.score || 0) - Number(a?.score || 0) ||
+    String(b?.pubDate || "").localeCompare(String(a?.pubDate || "")) ||
+    String(a?.title || "").localeCompare(String(b?.title || ""), "zh-Hans-CN");
+  const pools = splitCandidatesByPool(candidates || []);
+
+  const news = capItemsBySource([...pools.news].sort(sortByScore), newsPerSourceCap)
+    .slice(0, Math.min(limit, newsCap || limit));
+  const papers = [...pools.papers]
+    .sort(sortByScore)
+    .slice(0, Math.min(limit, paperCap || limit));
+  const selected = [...news, ...papers].sort(sortByScore).slice(0, limit);
+
+  if (selected.length < limit) {
+    const selectedSet = new Set(selected);
+    const fill = [...(candidates || [])]
+      .filter((item) => !selectedSet.has(item))
+      .sort(sortByScore)
+      .slice(0, limit - selected.length);
+    selected.push(...fill);
+  }
+
+  return selected.sort(sortByScore).slice(0, limit);
 }
 
 export function preprocessCandidatePools(candidates, options = {}) {
@@ -4307,7 +4382,17 @@ export function buildFallbackDailySummary(materials) {
 // 判断是不是 429 限流错误
 function isRateLimitError(e) {
   const msg = String(e?.message || "");
-  return msg.includes("HTTP 429") || msg.includes("1302") || msg.includes("速率限制");
+  const lower = msg.toLowerCase();
+  return (
+    msg.includes("HTTP 429") ||
+    lower.includes("too many requests") ||
+    lower.includes("rate limit") ||
+    msg.includes("1302") ||
+    msg.includes("1305") ||
+    msg.includes("速率限制") ||
+    msg.includes("限流") ||
+    msg.includes("访问量过大")
+  );
 }
 
 // 判断是不是智谱 1301 内容安全拦截错误
@@ -4376,7 +4461,8 @@ function extendLlmCooldown(waitMs, context = {}) {
   llmFailureStreak += 1;
   const previousNextAllowedAt = llmNextAllowedAt;
   const multiplier = Math.min(4, llmFailureStreak);
-  const cooldown = Math.min(LLM_RETRY_COOLDOWN_MAX_MS, Math.max(waitMs, LLM_MIN_INTERVAL_MS) * multiplier);
+  const adaptiveCooldown = Math.min(LLM_RETRY_COOLDOWN_MAX_MS, Math.max(waitMs, LLM_MIN_INTERVAL_MS) * multiplier);
+  const cooldown = Math.max(waitMs, adaptiveCooldown);
   llmNextAllowedAt = Math.max(llmNextAllowedAt, Date.now() + cooldown);
   writeSharedLlmPacingState(llmNextAllowedAt);
   logLlmPacing("retry_cooldown_extended", {
@@ -4393,6 +4479,14 @@ export function computeLlmRetryDelayMs(error, options = {}) {
   const attempt = Math.max(1, Number(options?.attempt || 1));
   const minIntervalMs = Number.isFinite(options?.minIntervalMs) ? Number(options.minIntervalMs) : LLM_MIN_INTERVAL_MS;
   const timeoutMs = Number.isFinite(options?.timeoutMs) ? Number(options.timeoutMs) : TIMEOUT_ZHIPU_MS;
+  const rateLimitRetryDelaysMs = Array.isArray(options?.rateLimitRetryDelaysMs)
+    ? options.rateLimitRetryDelaysMs
+      .map((value) => Number(value))
+      .filter((value) => Number.isFinite(value) && value > 0)
+    : LLM_RATE_LIMIT_RETRY_DELAYS_MS;
+  if (isRateLimitError(error) && rateLimitRetryDelaysMs.length > 0) {
+    return Math.floor(rateLimitRetryDelaysMs[Math.min(attempt - 1, rateLimitRetryDelaysMs.length - 1)]);
+  }
   const maxWaitMs = Number.isFinite(options?.maxWaitMs)
     ? Number(options.maxWaitMs)
     : Math.max(LLM_RETRY_COOLDOWN_MAX_MS, minIntervalMs * 4);
@@ -4553,6 +4647,14 @@ async function withRateLimitRetry(fn, options = {}) {
     : Math.max(LLM_RETRY_COOLDOWN_MAX_MS, minIntervalMs * 4);
   const onRetry = typeof options?.onRetry === "function" ? options.onRetry : null;
   const effectiveMaxRetries = Number.isFinite(options?.maxRetries) ? Math.max(0, Number(options.maxRetries)) : LLM_MAX_RETRIES;
+  const rateLimitRetryDelaysMs = Array.isArray(options?.rateLimitRetryDelaysMs)
+    ? options.rateLimitRetryDelaysMs
+      .map((value) => Number(value))
+      .filter((value) => Number.isFinite(value) && value > 0)
+    : LLM_RATE_LIMIT_RETRY_DELAYS_MS;
+  const rateLimitMaxRetries = Number.isFinite(options?.rateLimitMaxRetries)
+    ? Math.max(0, Number(options.rateLimitMaxRetries))
+    : rateLimitRetryDelaysMs.length;
   let attempt = 0;
   while (true) {
     try {
@@ -4561,16 +4663,21 @@ async function withRateLimitRetry(fn, options = {}) {
       return out;
     } catch (e) {
       attempt += 1;
-      const retryable = isRateLimitError(e) || isTransientModelServerError(e) || isTransientNetworkError(e);
-      if (!retryable || attempt > effectiveMaxRetries) throw e;
+      const rateLimited = isRateLimitError(e);
+      const retryable = rateLimited || isTransientModelServerError(e) || isTransientNetworkError(e);
+      const allowedRetries = rateLimited
+        ? rateLimitMaxRetries
+        : effectiveMaxRetries;
+      if (!retryable || attempt > allowedRetries) throw e;
 
       const wait = computeLlmRetryDelayMs(e, {
         attempt,
         minIntervalMs,
         maxWaitMs,
         timeoutMs: TIMEOUT_ZHIPU_MS,
+        rateLimitRetryDelaysMs,
       });
-      const reason = isRateLimitError(e)
+      const reason = rateLimited
         ? "rate_limit"
         : isTransientNetworkError(e)
           ? "transient_network"
@@ -4586,7 +4693,7 @@ async function withRateLimitRetry(fn, options = {}) {
       });
       if (onRetry) onRetry({ attempt, error: e, waitMs: wait });
 
-      const retryReason = isRateLimitError(e)
+      const retryReason = rateLimited
         ? "429 限流"
         : isTransientNetworkError(e)
           ? "网络/超时瞬时错误"
@@ -5190,6 +5297,7 @@ ${JSON.stringify(payload)}
 
 export async function requestClusterAssignmentsChunkWithAdaptiveSplit(chunk, options = {}) {
   const innerMaxRetries = Number.isFinite(options?.innerMaxRetries) ? Math.max(0, Number(options.innerMaxRetries)) : 0;
+  const fallbackOnExhaustedRetryable = options?.fallbackOnExhaustedRetryable === true;
   const executeChunk = typeof options?.executeChunk === "function"
     ? options.executeChunk
     : (currentChunk) => requestClusterAssignmentsChunk(
@@ -5220,7 +5328,20 @@ export async function requestClusterAssignmentsChunkWithAdaptiveSplit(chunk, opt
         && currentChunk.length > minChunkSize
         && currentChunk.length > 1
         && depth < maxDepth;
-      if (!canSplit) throw error;
+      if (!canSplit) {
+        if (retryable && fallbackOnExhaustedRetryable) {
+          const reason = isRateLimitError(error)
+            ? "rate_limit"
+            : isTransientNetworkError(error)
+              ? "transient_network"
+              : "transient_model";
+          console.warn(
+            `[cluster-adaptive] fallback depth=${depth} size=${currentChunk.length} reason=${reason}: ${String(error?.message || error).split("\n")[0].slice(0, 160)}`
+          );
+          return normalizeClusterAssignments([], currentChunk);
+        }
+        throw error;
+      }
 
       const midpoint = Math.ceil(currentChunk.length / 2);
       const leftChunk = currentChunk.slice(0, midpoint);
@@ -5269,6 +5390,7 @@ async function clusterCandidateCardsWithLLM(cards, cache) {
       let normalized = await requestClusterAssignmentsChunkWithAdaptiveSplit(chunk, {
         model,
         cache,
+        fallbackOnExhaustedRetryable: true,
       });
 
       const fallbackIds = normalized.filter((x) => x.fallback).map((x) => Number(x.candidate_id));
@@ -5284,8 +5406,16 @@ async function clusterCandidateCardsWithLLM(cards, cache) {
         const recovered = [];
         for (const smallChunk of recoveryChunks) {
           console.log(`[cluster-recovery] chunk=${i + 1}/${chunks.length} size=${smallChunk.length}`);
-          const partial = await requestClusterAssignmentsChunk(smallChunk, model, cache);
-          recovered.push(...partial.filter((x) => !x.fallback));
+          try {
+            const partial = await requestClusterAssignmentsChunk(smallChunk, model, cache);
+            recovered.push(...partial.filter((x) => !x.fallback));
+          } catch (error) {
+            const retryable = isRateLimitError(error) || isTransientModelServerError(error) || isTransientNetworkError(error);
+            if (!retryable) throw error;
+            console.warn(
+              `[cluster-recovery] skip recovery due to retryable error: ${String(error?.message || error).split("\n")[0].slice(0, 160)}`
+            );
+          }
         }
         if (recovered.length > 0) {
           const recoveredById = new Map(recovered.map((x) => [x.candidate_id, x]));
@@ -5418,11 +5548,22 @@ export async function mergeTopicRowsWithLLMAdaptiveSplit(rows, options = {}) {
   const model = options?.model || process.env.ZHIPU_MODEL || "glm-4.7-flash";
   const cache = options?.cache || null;
   const innerMaxRetries = Number.isFinite(options?.innerMaxRetries) ? Number(options.innerMaxRetries) : 0;
+  const fallbackOnExhaustedRetryable = options?.fallbackOnExhaustedRetryable === true;
   const executeChunk = typeof options?.executeChunk === "function"
     ? options.executeChunk
     : (currentChunk) => mergeTopicRowsWithLLM(currentChunk, model, cache, { maxRetries: innerMaxRetries });
   const minChunkSize = Math.max(1, Number(options?.minChunkSize || TOPIC_MERGE_ADAPTIVE_MIN_CHUNK_SIZE));
   const maxDepth = Math.max(0, Number(options?.maxDepth || TOPIC_MERGE_ADAPTIVE_MAX_DEPTH));
+  const identityMapping = (currentChunk) => Object.fromEntries(
+    (currentChunk || []).map((row) => [
+      row.topic_key,
+      {
+        merged_key: row.topic_key,
+        merged_title: row.topic_title || row.topic_key,
+        merged_type: normalizeTopicType(row.topic_type, "news"),
+      },
+    ])
+  );
 
   async function run(currentChunk, depth = 0) {
     try {
@@ -5430,7 +5571,20 @@ export async function mergeTopicRowsWithLLMAdaptiveSplit(rows, options = {}) {
     } catch (error) {
       const retryable = isRateLimitError(error) || isTransientModelServerError(error) || isTransientNetworkError(error);
       const canSplit = retryable && currentChunk.length > minChunkSize && currentChunk.length > 1 && depth < maxDepth;
-      if (!canSplit) throw error;
+      if (!canSplit) {
+        if (retryable && fallbackOnExhaustedRetryable) {
+          const reason = isRateLimitError(error)
+            ? "rate_limit"
+            : isTransientNetworkError(error)
+              ? "transient_network"
+              : "transient_model";
+          console.warn(
+            `[merge-adaptive] fallback depth=${depth} size=${currentChunk.length} reason=${reason}: ${String(error?.message || error).split("\n")[0].slice(0, 160)}`
+          );
+          return identityMapping(currentChunk);
+        }
+        throw error;
+      }
 
       const midpoint = Math.ceil(currentChunk.length / 2);
       const leftChunk = currentChunk.slice(0, midpoint);
@@ -5498,7 +5652,11 @@ async function mergeTopicKeysWithLLM(topicBuckets, cache) {
 
     for (const chunk of chunks) {
       console.log(`[topic-merge] round=${round} chunk_size=${chunk.length}`);
-      const chunkMap = await mergeTopicRowsWithLLMAdaptiveSplit(chunk, { model, cache });
+      const chunkMap = await mergeTopicRowsWithLLMAdaptiveSplit(chunk, {
+        model,
+        cache,
+        fallbackOnExhaustedRetryable: true,
+      });
       for (const row of chunk) {
         const key = row.topic_key;
         const mapped = chunkMap[key];
@@ -5878,7 +6036,17 @@ async function reclusterSingletonNewsTopics(assignments, topicCards, candidateCa
   }
 
   const model = process.env.ZHIPU_MODEL || "glm-4.7-flash";
-  const decisionsRaw = await requestSingletonReclusterChunk(singletons, anchors, model, cache);
+  let decisionsRaw = [];
+  try {
+    decisionsRaw = await requestSingletonReclusterChunk(singletons, anchors, model, cache);
+  } catch (error) {
+    const retryable = isRateLimitError(error) || isTransientModelServerError(error) || isTransientNetworkError(error);
+    if (!retryable) throw error;
+    console.warn(
+      `[singleton-recluster] fallback keep due to retryable error: ${String(error?.message || error).split("\n")[0].slice(0, 160)}`
+    );
+    return { assignments, changed: false, audit: { ...audit, note: "llm_retryable_error_fallback_keep" } };
+  }
   const allowedCandidates = new Set(singletons.map((x) => x.candidate_id));
   const anchorById = new Map(anchors.map((x) => [x.topic_id, x]));
   const nextAssignments = assignments.map((a) => ({ ...a }));
@@ -6358,20 +6526,20 @@ ${edition === "evening" ? "7" : "6"}) 输出合法 JSON：
 ${JSON.stringify(payload)}
 `.trim();
 
-  const { content } = await requestDigestLlmJson({
-    cache,
-    operation: "shortlist_topics",
-    model,
-    messages: [
-      { role: "system", content: system },
-      { role: "user", content: prompt },
-    ],
-  });
   let parsed = null;
   try {
+    const { content } = await requestDigestLlmJson({
+      cache,
+      operation: "shortlist_topics",
+      model,
+      messages: [
+        { role: "system", content: system },
+        { role: "user", content: prompt },
+      ],
+    });
     parsed = safeParseJsonObject(content);
   } catch (error) {
-    console.warn(`[warn] shortlist parse failed, fallback to deterministic ranking: ${error?.message || error}`);
+    console.warn(`[warn] shortlist failed, fallback to deterministic ranking: ${error?.message || error}`);
   }
   const allowed = new Set(topicCards.map((t) => t.topic_id));
   let ids = Array.isArray(parsed?.selected_topic_ids)
@@ -6877,6 +7045,31 @@ export async function requestDigestLlmJson(options = {}) {
       operation,
       model,
     },
+  };
+}
+
+function buildDeterministicTopicSelection(candidateCards, note = "LLM 聚类不可用，使用确定性单条 topic 兜底。") {
+  const fallbackAssignments = (candidateCards || []).map((card) => ({
+    candidate_id: card.candidate_id,
+    topic_key: `single-${card.candidate_id}`,
+    topic_title: clipHeadline(card.title || "当日话题", 30),
+    topic_type: isPaperLikeMaterial(card?._item) ? "paper" : "news",
+    confidence: 0.2,
+    fallback: true,
+  }));
+  const topicCards = buildTopicCards(fallbackAssignments, candidateCards || [], null);
+  const fallbackTopicById = new Map(topicCards.map((t) => [t.topic_id, t]));
+  const selectedTopicIds = prioritizeTopicIdsForEdition(
+    topicCards.map((t) => t.topic_id),
+    fallbackTopicById,
+    DIGEST_EDITION
+  ).slice(0, Math.max(8, TOPIC_SHORTLIST_N));
+
+  return {
+    note,
+    assignments: fallbackAssignments,
+    topicCards,
+    selectedTopicIds,
   };
 }
 
@@ -7525,8 +7718,8 @@ async function main() {
   console.log(`=== Digest 生成开始：${dateISO} ===`);
   console.log(`edition=${DIGEST_EDITION_CONFIG.edition}, region=${DIGEST_EDITION_CONFIG.region}, label=${DIGEST_EDITION_CONFIG.label}`);
   console.log(`tz=${RUN_TZ}, post_time=${DIGEST_POST_TIME}`);
-  console.log(`news_lookback_days=${newsLookbackDays}, paper_lookback_days=${paperLookbackDays}, top_n=${TOP_N}, deep_read_n=${DEEP_READ_N}, extra_candidates=${Number.isFinite(EXTRA_CANDIDATES) ? EXTRA_CANDIDATES : 0}`);
-  console.log(`cluster_batch_size=${CLUSTER_BATCH_SIZE}, cluster_adaptive_min_chunk_size=${CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE}, cluster_adaptive_max_depth=${CLUSTER_ADAPTIVE_MAX_DEPTH}, topic_merge_batch_size=${TOPIC_MERGE_BATCH_SIZE}, timeout_zhipu_ms=${TIMEOUT_ZHIPU_MS}, llm_max_retries=${LLM_MAX_RETRIES}`);
+  console.log(`news_lookback_days=${newsLookbackDays}, paper_lookback_days=${paperLookbackDays}, top_n=${TOP_N}, deep_read_n=${DEEP_READ_N}, extra_candidates=${Number.isFinite(EXTRA_CANDIDATES) ? EXTRA_CANDIDATES : 0}, candidate_pool_cap=${CANDIDATE_POOL_CAP}`);
+  console.log(`cluster_batch_size=${CLUSTER_BATCH_SIZE}, cluster_adaptive_min_chunk_size=${CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE}, cluster_adaptive_max_depth=${CLUSTER_ADAPTIVE_MAX_DEPTH}, topic_merge_batch_size=${TOPIC_MERGE_BATCH_SIZE}, timeout_zhipu_ms=${TIMEOUT_ZHIPU_MS}, llm_max_retries=${LLM_MAX_RETRIES}, llm_rate_limit_retry_delays_ms=${LLM_RATE_LIMIT_RETRY_DELAYS_MS.join(",")}`);
   console.log(`cache_retention_days=${CACHE_RETENTION_DAYS}, daily_retention_days=${DAILY_RETENTION_DAYS}`);
   console.log(`llm_pacing: max_concurrency=${LLM_MAX_CONCURRENCY}, min_interval_ms=${LLM_MIN_INTERVAL_MS}, jitter_ms=${LLM_INTERVAL_JITTER_MS}`);
   console.log(`sources=${sources.length}, edition_sources=${editionSources.length}, runnable_sources=${runnableSources.length}${dryRun ? " (dry-run)" : ""}`);
@@ -7683,7 +7876,19 @@ async function main() {
   });
   candidates = [...postEnrichmentPools.news, ...postEnrichmentPools.papers];
 
-  console.log(`\n[candidates] after filter+dedupe = ${candidates.length}`);
+  const candidatePoolBeforeCap = candidates.length;
+  let scoredCandidates = candidates
+    .map((it) => ({ ...it, score: scoreItem(it, it.weight, boostKeywords) }))
+    .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
+  scoredCandidates = selectDigestCandidatePool(scoredCandidates, {
+    limit: CANDIDATE_POOL_CAP,
+    newsCap: CANDIDATE_POOL_NEWS_CAP,
+    paperCap: CANDIDATE_POOL_PAPERS_CAP,
+    newsPerSourceCap: CANDIDATE_POOL_NEWS_PER_SOURCE_CAP,
+  });
+  candidates = scoredCandidates;
+
+  console.log(`\n[candidates] after filter+dedupe = ${candidates.length}${candidatePoolBeforeCap > candidates.length ? ` (capped_from=${candidatePoolBeforeCap})` : ""}`);
   const candidateTotal = candidates.length;
 
   writeAuditReport(dateISO, "01-fetch-stats", {
@@ -7706,7 +7911,12 @@ async function main() {
     after_dedupe: afterDedupeCount,
     after_history_filter: afterHistoryCount,
     detail_enrichment: detailEnrichment.stats,
-    after_detail_enrichment_time_filter: candidates.length,
+    after_detail_enrichment_time_filter: candidatePoolBeforeCap,
+    candidate_pool_cap: CANDIDATE_POOL_CAP,
+    candidate_pool_news_cap: CANDIDATE_POOL_NEWS_CAP,
+    candidate_pool_papers_cap: CANDIDATE_POOL_PAPERS_CAP,
+    candidate_pool_news_per_source_cap: CANDIDATE_POOL_NEWS_PER_SOURCE_CAP,
+    after_candidate_pool_cap: candidates.length,
     post_enrichment_pool_stats: postEnrichmentPools.stats,
     news_cutoff: newsCutoff.toISOString(),
     paper_cutoff: paperCutoff.toISOString(),
@@ -7717,9 +7927,6 @@ async function main() {
     console.warn("[warn] 当前以 skipLLM 模式运行：将使用本地回退选题与总结结果生成文章。");
   }
 
-  const scoredCandidates = candidates
-    .map((it) => ({ ...it, score: scoreItem(it, it.weight, boostKeywords) }))
-    .sort((a, b) => Number(b?.score || 0) - Number(a?.score || 0));
   let candidateCards = buildCandidateCardsForClustering(scoredCandidates, {
     newsCap: CLUSTER_INPUT_CAP_NEWS,
     paperCap: CLUSTER_INPUT_CAP_PAPERS,
@@ -7798,85 +8005,102 @@ async function main() {
   let shortlistReasons = [];
 
   if (effectiveClusterCards.length > 0 && !(dryRun && !dryRunLLM) && !skipLLM) {
-    clusterResult = await clusterCandidateCardsWithLLM(effectiveClusterCards, cache);
-    let workingAssignments = [...clusterResult.assignments];
-    let topicBuckets = buildTopicBucketsFromAssignments(workingAssignments, candidateCards);
-    let mergedKeyMapping = await buildMergedKeyMapping(topicBuckets, cache);
-    topicCards = buildTopicCards(workingAssignments, candidateCards, mergedKeyMapping);
-
-    let singletonReclusterAudit = {
-      enabled: SINGLETON_RECLUSTER_ENABLED,
-      note: "not_run",
-    };
-    console.log(`[singleton-recluster] start topics=${topicCards.length}`);
-    const singletonRecluster = await reclusterSingletonNewsTopics(workingAssignments, topicCards, candidateCards, cache);
-    singletonReclusterAudit = singletonRecluster.audit || singletonReclusterAudit;
-    if (singletonRecluster.changed) {
-      workingAssignments = singletonRecluster.assignments;
-      topicBuckets = buildTopicBucketsFromAssignments(workingAssignments, candidateCards);
-      mergedKeyMapping = await buildMergedKeyMapping(topicBuckets, cache);
+    try {
+      clusterResult = await clusterCandidateCardsWithLLM(effectiveClusterCards, cache);
+      let workingAssignments = [...clusterResult.assignments];
+      let topicBuckets = buildTopicBucketsFromAssignments(workingAssignments, candidateCards);
+      let mergedKeyMapping = await buildMergedKeyMapping(topicBuckets, cache);
       topicCards = buildTopicCards(workingAssignments, candidateCards, mergedKeyMapping);
+
+      let singletonReclusterAudit = {
+        enabled: SINGLETON_RECLUSTER_ENABLED,
+        note: "not_run",
+      };
+      console.log(`[singleton-recluster] start topics=${topicCards.length}`);
+      const singletonRecluster = await reclusterSingletonNewsTopics(workingAssignments, topicCards, candidateCards, cache);
+      singletonReclusterAudit = singletonRecluster.audit || singletonReclusterAudit;
+      if (singletonRecluster.changed) {
+        workingAssignments = singletonRecluster.assignments;
+        topicBuckets = buildTopicBucketsFromAssignments(workingAssignments, candidateCards);
+        mergedKeyMapping = await buildMergedKeyMapping(topicBuckets, cache);
+        topicCards = buildTopicCards(workingAssignments, candidateCards, mergedKeyMapping);
+      }
+      clusterResult.assignments = workingAssignments;
+      console.log(`[singleton-recluster] done changed=${singletonRecluster.changed ? 1 : 0} singleton_topics=${Number(singletonReclusterAudit.singleton_news_topics || 0)}`);
+      writeAuditReport(dateISO, "04a-singleton-recluster", {
+        run_date: dateISO,
+        ...singletonReclusterAudit,
+      });
+
+      const shortlist = await shortlistTopicsWithLLM(topicCards, cache);
+      selectedTopicIds = shortlist.selected_topic_ids || [];
+      shortlistReasons = shortlist.reasons || [];
+
+      writeAuditReport(dateISO, "04-llm-clusters", {
+        run_date: dateISO,
+        cluster_chunks: clusterResult.chunks,
+        mode_breakdown: clusterResult.mode_breakdown || {},
+        assignments_count: clusterResult.assignments.length,
+        fallback_assignments: clusterResult.assignments.filter((x) => x.fallback).length,
+        singleton_recluster: singletonReclusterAudit,
+        topic_cards: topicCards,
+      });
+      writeAuditReport(dateISO, "05-topic-shortlist", {
+        run_date: dateISO,
+        topic_shortlist_n: TOPIC_SHORTLIST_N,
+        selected_topic_ids: selectedTopicIds,
+        reasons: shortlistReasons,
+        selected_topics: topicCards
+          .filter((t) => selectedTopicIds.includes(t.topic_id))
+          .map((t) => ({
+            topic_id: t.topic_id,
+            topic_type: t.topic_type,
+            topic_title: t.topic_title,
+            mention_count: t.mention_count,
+            source_diversity: t.source_diversity,
+            cross_source_score: t.cross_source_score,
+            top_source_groups: t.top_source_groups,
+            top_sources: t.top_sources,
+            scorecard: buildTopicScorecard(t, { edition: DIGEST_EDITION }),
+          })),
+      });
+    } catch (error) {
+      console.warn(`[warn] LLM 聚类链路失败，改用确定性 topic 兜底：${error?.message || error}`);
+      const fallback = buildDeterministicTopicSelection(candidateCards, "LLM 聚类链路失败：使用确定性单条 topic 兜底。");
+      clusterResult = { assignments: fallback.assignments, chunks: [], mode_breakdown: { deterministic_fallback: true } };
+      topicCards = fallback.topicCards;
+      selectedTopicIds = fallback.selectedTopicIds;
+      shortlistReasons = [];
+      writeAuditReport(dateISO, "04-llm-clusters", {
+        run_date: dateISO,
+        note: fallback.note,
+        error: serializeError(error),
+        assignments_count: fallback.assignments.length,
+        fallback_assignments: fallback.assignments.length,
+        topic_cards: topicCards,
+      });
+      writeAuditReport(dateISO, "04a-singleton-recluster", {
+        run_date: dateISO,
+        enabled: SINGLETON_RECLUSTER_ENABLED,
+        note: "LLM 聚类链路失败，跳过二次重聚类。",
+      });
+      writeAuditReport(dateISO, "05-topic-shortlist", {
+        run_date: dateISO,
+        note: "LLM 聚类链路失败，使用确定性排序 shortlist。",
+        selected_topic_ids: selectedTopicIds,
+        reasons: [],
+      });
     }
-    clusterResult.assignments = workingAssignments;
-    console.log(`[singleton-recluster] done changed=${singletonRecluster.changed ? 1 : 0} singleton_topics=${Number(singletonReclusterAudit.singleton_news_topics || 0)}`);
-    writeAuditReport(dateISO, "04a-singleton-recluster", {
-      run_date: dateISO,
-      ...singletonReclusterAudit,
-    });
-
-    const shortlist = await shortlistTopicsWithLLM(topicCards, cache);
-    selectedTopicIds = shortlist.selected_topic_ids || [];
-    shortlistReasons = shortlist.reasons || [];
-
-    writeAuditReport(dateISO, "04-llm-clusters", {
-      run_date: dateISO,
-      cluster_chunks: clusterResult.chunks,
-      mode_breakdown: clusterResult.mode_breakdown || {},
-      assignments_count: clusterResult.assignments.length,
-      fallback_assignments: clusterResult.assignments.filter((x) => x.fallback).length,
-      singleton_recluster: singletonReclusterAudit,
-      topic_cards: topicCards,
-    });
-    writeAuditReport(dateISO, "05-topic-shortlist", {
-      run_date: dateISO,
-      topic_shortlist_n: TOPIC_SHORTLIST_N,
-      selected_topic_ids: selectedTopicIds,
-      reasons: shortlistReasons,
-      selected_topics: topicCards
-        .filter((t) => selectedTopicIds.includes(t.topic_id))
-        .map((t) => ({
-          topic_id: t.topic_id,
-          topic_type: t.topic_type,
-          topic_title: t.topic_title,
-          mention_count: t.mention_count,
-          source_diversity: t.source_diversity,
-          cross_source_score: t.cross_source_score,
-          top_source_groups: t.top_source_groups,
-          top_sources: t.top_sources,
-          scorecard: buildTopicScorecard(t, { edition: DIGEST_EDITION }),
-        })),
-    });
   } else {
-    const fallbackAssignments = candidateCards.map((card) => ({
-      candidate_id: card.candidate_id,
-      topic_key: `single-${card.candidate_id}`,
-      topic_title: clipHeadline(card.title || "当日话题", 30),
-      topic_type: isPaperLikeMaterial(card?._item) ? "paper" : "news",
-      confidence: 0.2,
-      fallback: true,
-    }));
-    topicCards = buildTopicCards(fallbackAssignments, candidateCards, null);
-    const fallbackTopicById = new Map(topicCards.map((t) => [t.topic_id, t]));
-    const fallbackTopicIds = prioritizeTopicIdsForEdition(
-      topicCards.map((t) => t.topic_id),
-      fallbackTopicById,
-      DIGEST_EDITION
-    );
-    selectedTopicIds = fallbackTopicIds.slice(0, Math.max(8, TOPIC_SHORTLIST_N));
+    const fallback = buildDeterministicTopicSelection(candidateCards, "dry-run/skip-llm 模式：使用单条目占位 topic，不用于正式发布。");
+    clusterResult = { assignments: fallback.assignments, chunks: [], mode_breakdown: { deterministic_fallback: true } };
+    topicCards = fallback.topicCards;
+    selectedTopicIds = fallback.selectedTopicIds;
     writeAuditReport(dateISO, "04-llm-clusters", {
       run_date: dateISO,
-      note: "dry-run/skip-llm 模式：使用单条目占位 topic，不用于正式发布。",
-      assignments_count: fallbackAssignments.length,
+      note: fallback.note,
+      assignments_count: fallback.assignments.length,
+      fallback_assignments: fallback.assignments.length,
       topic_cards: topicCards,
     });
     writeAuditReport(dateISO, "04a-singleton-recluster", {

@@ -48,19 +48,19 @@ OpenAI 迎来青年危机，给中国大模型敲响三记警钟，后续需关�
 
 ## 核心论文
 
-- **arXiv 2603.26648 论文进展**：该条保留了可追溯的 arXiv 编号，建议围绕论文原文核对研究问题、实验设置和结论边界。 <a class="cite" href="https://arxiv.org/abs/2603.26648" target="_blank" rel="noopener noreferrer" data-cite="1. arXiv 2603.26648 论文进展｜arXiv cs.AI">1</a>
-- **arXiv 2603.25768 论文进展**：该条保留了可追溯的 arXiv 编号，建议结合原文摘要和实验部分确认方法贡献与适用场景。 <a class="cite" href="https://arxiv.org/abs/2603.25768" target="_blank" rel="noopener noreferrer" data-cite="2. arXiv 2603.25768 论文进展｜arXiv cs.AI">2</a>
-- **arXiv 2603.25841 论文进展**：该条保留了可追溯的 arXiv 编号，后续可重点核对其任务定义、评测指标和与同类工作的差异。 <a class="cite" href="https://arxiv.org/abs/2603.25841" target="_blank" rel="noopener noreferrer" data-cite="4. arXiv 2603.25841 论文进展｜arXiv cs.AI">4</a>
-- **arXiv 2603.15636 论文进展**：该条保留了可追溯的 arXiv 编号，可从方法设计、数据来源和消融实验三个维度复核其可靠性。 <a class="cite" href="https://arxiv.org/abs/2603.15636" target="_blank" rel="noopener noreferrer" data-cite="5. arXiv 2603.15636 论文进展｜arXiv cs.AI">5</a>
-- **arXiv 2603.26330 论文进展**：该条保留了可追溯的 arXiv 编号，建议重点关注论文是否给出可复现实验和清晰的失败案例分析。 <a class="cite" href="https://arxiv.org/abs/2603.26330" target="_blank" rel="noopener noreferrer" data-cite="3. arXiv 2603.26330 论文进展｜arXiv cs.AI">3</a>
+- **Vision2Web：面向视觉网站开发的分层基准与智能体验证**：论文提出用于视觉网站开发任务的分层基准，重点检验智能体从页面视觉信息还原网页结构与交互实现的能力，并引入验证机制衡量生成结果是否符合目标页面。 <a class="cite" href="https://arxiv.org/abs/2603.26648" target="_blank" rel="noopener noreferrer" data-cite="1. Vision2Web：面向视觉网站开发的分层基准与智能体验证｜arXiv cs.AI">1</a>
+- **UCAgent：面向块级功能验证的端到端智能体**：论文聚焦硬件块级功能验证场景，提出端到端智能体流程，用于串联需求理解、验证计划、用例生成与结果检查。 <a class="cite" href="https://arxiv.org/abs/2603.25768" target="_blank" rel="noopener noreferrer" data-cite="2. UCAgent：面向块级功能验证的端到端智能体｜arXiv cs.AI">2</a>
+- **GazeQwen：面向流媒体视频理解的轻量级注视条件调制**：论文在 Qwen 系列模型上引入轻量级注视条件调制，让模型在流媒体视频理解中更好利用人类视线或注意力线索。 <a class="cite" href="https://arxiv.org/abs/2603.25841" target="_blank" rel="noopener noreferrer" data-cite="4. GazeQwen：面向流媒体视频理解的轻量级注视条件调制｜arXiv cs.AI">4</a>
+- **AIDABench：面向 AI 数据分析能力的评测基准**：论文提出数据分析评测基准，用于观察模型在数据理解、分析规划、执行与结论表达中的端到端能力边界。 <a class="cite" href="https://arxiv.org/abs/2603.15636" target="_blank" rel="noopener noreferrer" data-cite="5. AIDABench：面向 AI 数据分析能力的评测基准｜arXiv cs.AI">5</a>
+- **通过输入自适应深度聚合缓解视觉语言微调中的推理税**：论文研究视觉语言模型微调后推理能力下降的问题，提出输入自适应深度聚合方法，以在任务适配和通用推理能力之间取得更稳妥的平衡。 <a class="cite" href="https://arxiv.org/abs/2603.26330" target="_blank" rel="noopener noreferrer" data-cite="3. 通过输入自适应深度聚合缓解视觉语言微调中的推理税｜arXiv cs.AI">3</a>
 
 ## 参考来源
 
-- <span id="ref-1">1.</span> <a href="https://arxiv.org/abs/2603.26648" target="_blank" rel="noopener noreferrer">arXiv 2603.26648 论文进展｜arXiv cs.AI</a>
-- <span id="ref-2">2.</span> <a href="https://arxiv.org/abs/2603.25768" target="_blank" rel="noopener noreferrer">arXiv 2603.25768 论文进展｜arXiv cs.AI</a>
-- <span id="ref-3">3.</span> <a href="https://arxiv.org/abs/2603.26330" target="_blank" rel="noopener noreferrer">arXiv 2603.26330 论文进展｜arXiv cs.AI</a>
-- <span id="ref-4">4.</span> <a href="https://arxiv.org/abs/2603.25841" target="_blank" rel="noopener noreferrer">arXiv 2603.25841 论文进展｜arXiv cs.AI</a>
-- <span id="ref-5">5.</span> <a href="https://arxiv.org/abs/2603.15636" target="_blank" rel="noopener noreferrer">arXiv 2603.15636 论文进展｜arXiv cs.AI</a>
+- <span id="ref-1">1.</span> <a href="https://arxiv.org/abs/2603.26648" target="_blank" rel="noopener noreferrer">Vision2Web：面向视觉网站开发的分层基准与智能体验证｜arXiv cs.AI</a>
+- <span id="ref-2">2.</span> <a href="https://arxiv.org/abs/2603.25768" target="_blank" rel="noopener noreferrer">UCAgent：面向块级功能验证的端到端智能体｜arXiv cs.AI</a>
+- <span id="ref-3">3.</span> <a href="https://arxiv.org/abs/2603.26330" target="_blank" rel="noopener noreferrer">通过输入自适应深度聚合缓解视觉语言微调中的推理税｜arXiv cs.AI</a>
+- <span id="ref-4">4.</span> <a href="https://arxiv.org/abs/2603.25841" target="_blank" rel="noopener noreferrer">GazeQwen：面向流媒体视频理解的轻量级注视条件调制｜arXiv cs.AI</a>
+- <span id="ref-5">5.</span> <a href="https://arxiv.org/abs/2603.15636" target="_blank" rel="noopener noreferrer">AIDABench：面向 AI 数据分析能力的评测基准｜arXiv cs.AI</a>
 - <span id="ref-6">6.</span> <a href="https://news.aibase.com/zh/news/26658" target="_blank" rel="noopener noreferrer">企业微信 CLI 正式开源:开放七大核心能力，支持主流 AI Agent 直接调…｜AIBase</a>
 - <span id="ref-7">7.</span> <a href="https://36kr.com/p/3745097939071746" target="_blank" rel="noopener noreferrer">对话AI务实派周亚辉：Open AI弃掉的赛道，刚好成了中国公司的天下｜36Kr AI</a>
 - <span id="ref-8">8.</span> <a href="https://36kr.com/p/3745190625374723" target="_blank" rel="noopener noreferrer">Open AI 迎来青年危机，给中国大模型敲响三记警钟｜36Kr AI</a>

@@ -134,6 +134,66 @@ test("requestDigestLlmJson retries transient failures and eventually succeeds", 
   assert.equal(attempts, 2);
 });
 
+test("requestDigestLlmJson treats Zhipu 1305 busy responses as rate-limit retryable", async () => {
+  const cache = { llm: {} };
+  let attempts = 0;
+
+  const result = await requestDigestLlmJson({
+    cache,
+    operation: "cluster_assignments_chunk",
+    model: "glm-4.7-flash",
+    messages: [{ role: "user", content: "cluster" }],
+    retryOptions: {
+      sleepFn: async () => {},
+      minIntervalMs: 1,
+      maxWaitMs: 1,
+      maxRetries: 1,
+      rateLimitRetryDelaysMs: [1],
+    },
+    execute: async () => {
+      attempts += 1;
+      if (attempts === 1) {
+        throw new Error('智谱接口请求失败：HTTP 429 Too Many Requests\n{"error":{"code":"1305","message":"该模型当前访问量过大，请您稍后再试"}}');
+      }
+      return "{\"assignments\":[]}";
+    },
+  });
+
+  assert.equal(result.content, "{\"assignments\":[]}");
+  assert.equal(attempts, 2);
+});
+
+test("requestDigestLlmJson waits through 15m and 30m rate-limit retry windows even when generic retries are disabled", async () => {
+  const cache = { llm: {} };
+  const waits = [];
+  let attempts = 0;
+
+  const result = await requestDigestLlmJson({
+    cache,
+    operation: "cluster_assignments_chunk",
+    model: "glm-4.7-flash",
+    messages: [{ role: "user", content: "cluster" }],
+    retryOptions: {
+      sleepFn: async (waitMs) => {
+        waits.push(waitMs);
+      },
+      maxRetries: 0,
+      rateLimitRetryDelaysMs: [15 * 60_000, 30 * 60_000],
+    },
+    execute: async () => {
+      attempts += 1;
+      if (attempts <= 2) {
+        throw new Error('智谱接口请求失败：HTTP 429 Too Many Requests\n{"error":{"code":"1305","message":"该模型当前访问量过大，请您稍后再试"}}');
+      }
+      return "{\"assignments\":[]}";
+    },
+  });
+
+  assert.equal(result.content, "{\"assignments\":[]}");
+  assert.equal(attempts, 3);
+  assert.deepEqual(waits, [15 * 60_000, 30 * 60_000]);
+});
+
 test("resolveLlmPacingConfig keeps free-tier calls serialized and enforces a conservative minimum interval", () => {
   const config = resolveLlmPacingConfig({
     DIGEST_LLM_MAX_CONCURRENCY: "2",
@@ -176,11 +236,12 @@ test("computeLlmRetryDelayMs gives timeout aborts a materially longer cooldown t
       minIntervalMs: 35000,
       maxWaitMs: 300000,
       timeoutMs: 240000,
+      rateLimitRetryDelaysMs: [15 * 60_000, 30 * 60_000],
     }
   );
 
   assert.ok(timeoutWait >= 120000, `expected timeout wait >= 120000ms, got ${timeoutWait}`);
-  assert.ok(timeoutWait > rateLimitWait, `expected timeout wait > rate-limit wait, got timeout=${timeoutWait} rate=${rateLimitWait}`);
+  assert.equal(rateLimitWait, 15 * 60_000);
 });
 
 test("requestClusterAssignmentsChunkWithAdaptiveSplit splits only the failed oversized chunk and preserves assignments", async () => {
@@ -281,6 +342,34 @@ test("requestClusterAssignmentsChunkWithAdaptiveSplit can split an odd-sized chu
     ]
   );
   assert.equal(assignments.length, 17);
+});
+
+test("requestClusterAssignmentsChunkWithAdaptiveSplit can fallback instead of aborting after exhausted rate limits", async () => {
+  const chunk = Array.from({ length: 6 }, (_, idx) => ({
+    candidate_id: idx + 1,
+    title: `Candidate ${idx + 1}`,
+    cluster_text: `Candidate ${idx + 1} cluster text`,
+    snippet: `Candidate ${idx + 1} snippet`,
+    source: "Test Source",
+    source_group: "media",
+    bucket_hint: "news",
+    trust_tier: 2,
+    pub_date: "2026-05-07",
+    domain: "example.com",
+  }));
+
+  const assignments = await requestClusterAssignmentsChunkWithAdaptiveSplit(chunk, {
+    minChunkSize: 2,
+    maxDepth: 1,
+    fallbackOnExhaustedRetryable: true,
+    executeChunk: async () => {
+      throw new Error('智谱接口请求失败：HTTP 429 Too Many Requests\n{"error":{"code":"1305","message":"该模型当前访问量过大，请您稍后再试"}}');
+    },
+  });
+
+  assert.equal(assignments.length, 6);
+  assert.deepEqual(assignments.map((item) => item.candidate_id), [1, 2, 3, 4, 5, 6]);
+  assert.ok(assignments.every((item) => item.fallback === true));
 });
 
 test("buildLlmPacingLogLine exposes retry cooldown diagnostics for CI debugging", () => {
