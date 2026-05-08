@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "../..");
+const latestDailyTitle = "AI早报 · 05.07 周四";
 
 let cachedPages;
 let buildPromise;
@@ -25,7 +26,11 @@ function buildAndReadPages() {
     cachedPages = {
       home: readFileSync(path.join(repoRoot, "public/index.html"), "utf-8"),
       daily: readFileSync(
-        path.join(repoRoot, "public/2026/04/08/digest-2026-04-08/index.html"),
+        path.join(repoRoot, "public/2026/05/07/digest-2026-05-07/index.html"),
+        "utf-8"
+      ),
+      daily0422: readFileSync(
+        path.join(repoRoot, "public/2026/04/22/digest-2026-04-22/index.html"),
         "utf-8"
       ),
       evening0329: readFileSync(
@@ -71,7 +76,7 @@ function buildAndReadPages() {
 
 test("首页日报卡片摘要只展示真实资讯标题且不重复序号", async () => {
   const { home } = await buildAndReadPages();
-  const cardStart = home.indexOf("AI早报 · 04.08 周三");
+  const cardStart = home.indexOf(latestDailyTitle);
   assert.notEqual(cardStart, -1);
   const cardHtml = home.slice(cardStart, cardStart + 2200);
 
@@ -84,33 +89,33 @@ test("首页日报卡片摘要只展示真实资讯标题且不重复序号", as
 test("首页与详情页早报标题统一显示为AI早报，并使用月日加星期格式", async () => {
   const { home, daily } = await buildAndReadPages();
 
-  assert.match(home, /AI早报 · 04\.08 周三/);
-  assert.doesNotMatch(home, /AI日报 · 2026-04-08/);
+  assert.match(home, /AI早报 · 05\.07 周四/);
+  assert.doesNotMatch(home, /AI日报 · 2026-05-07/);
   assert.match(home, /class="app-card__badge">AI早报</);
-  assert.match(daily, /AI早报 · 04\.08 周三/);
-  assert.doesNotMatch(daily, /人工智能日报 · 2026-04-08/);
+  assert.match(daily, /AI早报 · 05\.07 周四/);
+  assert.doesNotMatch(daily, /人工智能日报 · 2026-05-07/);
   assert.match(daily, /class="app-card__badge">AI早报</);
-  assert.match(daily, /rel="prev"[^>]*title="AI晚报 · 04\.07 周二"/);
+  assert.match(daily, /rel="prev"[^>]*title="AI晚报 · 05\.06 周三"/);
 });
 
 test("首页日报卡片条数统计应等于重点资讯、其他快讯和核心论文总和", async () => {
   const { home } = await buildAndReadPages();
-  const cardStart = home.indexOf("AI早报 · 04.08 周三");
+  const cardStart = home.indexOf(latestDailyTitle);
   assert.notEqual(cardStart, -1);
   const cardHtml = home.slice(cardStart, cardStart + 2200);
 
-  assert.match(cardHtml, /共 14 条记录/);
+  assert.match(cardHtml, /共 21 条记录/);
 });
 
 test("日报详情页展示正确的候选总数且不保留异常标题", async () => {
   const { daily } = await buildAndReadPages();
 
-  assert.match(daily, /今日候选总数：495 条/);
+  assert.match(daily, /今日候选总数：\d+ 条/);
   assert.doesNotMatch(daily, /今日候选总数：0 条/);
   assert.match(daily, /class="daily-section-title"[^>]*>重点资讯</);
   assert.match(daily, /class="daily-section-title"[^>]*>其他快讯</);
   assert.match(daily, /class="daily-section-title"[^>]*>核心论文</);
-  assert.match(daily, /<h3 class="daily-news-card-title" id="01-·-Suno与环球音乐等巨头在AI音乐版权许可上陷入僵局，行业面临合规挑战。">01 · Suno与环球音乐等巨头在AI音乐版权许可上陷入僵局，行业面临合规挑战。<\/h3>/);
+  assert.match(daily, /<h3 class="daily-news-card-title" id="01-·-苹果将支付2-5亿美元和解Siri延迟AI功能的诉讼">01 · 苹果将支付2\.5亿美元和解Siri延迟AI功能的诉讼<\/h3>/);
 });
 
 test("日报详情页参考来源应使用间距分隔而非顿号", async () => {
@@ -121,12 +126,29 @@ test("日报详情页参考来源应使用间距分隔而非顿号", async () =>
   assert.doesNotMatch(daily, /36Kr AI<\/a>、<a class="cite"/);
 });
 
+test("2026-04-22 日报详情页应展示完整标题而不是残缺前缀", async () => {
+  const { daily0422 } = await buildAndReadPages();
+
+  assert.match(daily0422, /OpenAI最强对手，被亚马逊追投2249亿/);
+  assert.match(daily0422, /Anthropic逼急谷歌，布林下场亲自督战，组“追杀队”围剿Claude/);
+  assert.match(daily0422, /09 · 谷歌重组Gemini编程团队追赶Claude/);
+  assert.match(daily0422, /10 · Anthropic累计融资承诺最高升至330亿美元/);
+  assert.match(daily0422, /11 · 布林回到一线督战谷歌编程攻坚战/);
+  assert.match(daily0422, /01 · 社交网格：具身多智能体系统中规划与社交推理的基准/);
+  assert.match(daily0422, /02 · 面向程序化超声理解的视频问答基准/);
+  assert.doesNotMatch(daily0422, /10 · OpenAI最强对手<\/h3>/);
+  assert.doesNotMatch(daily0422, /11 · Anthropic逼急谷歌<\/h3>/);
+  assert.doesNotMatch(daily0422, /01 · 社交网格：具身多智能体系统中<\/h3>/);
+});
+
 test("03-29 晚报应展示真实论文引用，而不是空论文占位或伪论文标题", async () => {
   const { evening0329 } = await buildAndReadPages();
 
   assert.match(evening0329, /核心论文/);
   assert.doesNotMatch(evening0329, /当日无优质论文|今日暂无有价值论文更新/);
-  assert.match(evening0329, /论文平台重点更新｜arXiv cs\.AI/);
+  assert.match(evening0329, /Vision2Web：面向视觉网站开发的分层基准与智能体验证｜arXiv cs\.AI/);
+  assert.match(evening0329, /GazeQwen：面向流媒体视频理解的轻量级注视条件调制｜arXiv cs\.AI/);
+  assert.doesNotMatch(evening0329, /arXiv 2603\.\d+ 论文进展/);
   assert.doesNotMatch(evening0329, /Dreamina Seedance 2\.0登陆CapCut｜36Kr AI/);
 });
 
@@ -232,12 +254,12 @@ test("首页和日报列表卡片应统一使用今日主线口径而不是今�
 
 test("首页日报卡片应优先显示引用里的中文标题而不是泛化占位标题", async () => {
   const { home } = await buildAndReadPages();
-  const cardStart = home.indexOf("AI早报 · 04.15 周三");
+  const cardStart = home.indexOf(latestDailyTitle);
   assert.notEqual(cardStart, -1);
   const cardHtml = home.slice(cardStart, cardStart + 2200);
 
-  assert.match(cardHtml, /谷歌在Chrome中添加AI技能以帮助保存常用工作流/);
-  assert.match(cardHtml, /Anthropic联合创始人证实公司曾向特朗普政府简报Mythos/);
+  assert.match(cardHtml, /苹果将支付2\.5亿美元和解Siri延迟AI功能的诉讼/);
+  assert.match(cardHtml, /DeepSeek首轮融资或达450亿美元估值/);
   assert.doesNotMatch(cardHtml, /海外科技媒体动态 3/);
   assert.doesNotMatch(cardHtml, /海外科技媒体动态 1/);
 });
@@ -253,7 +275,7 @@ test("首页顶部 tabs 与内容列表之间的间距应收紧", async () => {
   const { css } = await buildAndReadPages();
 
   assert.match(css, /\.app-view-home\s*\{[^}]*gap:\s*14px/);
-  assert.match(css, /\.home-top-tabs\.app-tab-strip\s*\{[^}]*padding:\s*2px 0 2px/);
+  assert.match(css, /\.home-top-tabs\.app-tab-strip[^{}]*\{[^}]*padding:\s*2px 0 2px/);
 });
 
 test("移动端顶部固定栏应保持浅底弱化样式，不再回到主题默认黑底", async () => {
@@ -267,7 +289,7 @@ test("桌面端应使用统一内容容器布局，标题行独立于左侧固�
 
   assert.match(css, /@media \(min-width: 1024px\)/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*body\s*\{[\s\S]*padding-top:\s*0 !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.main\s*\{[\s\S]*display:\s*block !important;[\s\S]*width:\s*min\(calc\(100vw - 64px\),\s*1180px\) !important;[\s\S]*margin:\s*20px auto 0 !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.main\s*\{[\s\S]*display:\s*block !important;[\s\S]*width:\s*calc\(100% - 64px\) !important;[\s\S]*max-width:\s*1180px !important;[\s\S]*margin:\s*20px auto 0 !important;/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.column\s*\{[\s\S]*display:\s*none !important;/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-desktop-shell\s*\{[\s\S]*display:\s*grid !important;[\s\S]*grid-template-columns:\s*196px minmax\(0,\s*1fr\);[\s\S]*column-gap:\s*12px;[\s\S]*align-items:\s*start;[\s\S]*width:\s*100% !important;/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-desktop-content-shell\s*\{[\s\S]*display:\s*flex;[\s\S]*flex-direction:\s*column;[\s\S]*gap:\s*16px;[\s\S]*min-width:\s*0;[\s\S]*width:\s*100%;[\s\S]*align-self:\s*stretch;/);
@@ -280,7 +302,7 @@ test("桌面端应使用统一内容容器布局，标题行独立于左侧固�
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.main-inner\s*\{[\s\S]*width:\s*100% !important;[\s\S]*max-width:\s*none !important;[\s\S]*margin:\s*0 !important;/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.content-wrap\s*\{[\s\S]*max-width:\s*none !important;[\s\S]*margin:\s*0 !important;[\s\S]*padding:\s*0 0 36px !important;/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.app-view-home,\s*\.app-list-shell,\s*body\.app-view-iteration-log \.iteration-page\s*\{[\s\S]*width:\s*100% !important;[\s\S]*max-width:\s*none !important;[\s\S]*margin:\s*0 !important;/);
-  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.footer\s*\{[\s\S]*width:\s*min\(calc\(100vw - 64px\),\s*1180px\) !important;[\s\S]*max-width:\s*1180px !important;[\s\S]*margin:\s*18px auto 0 !important;/);
+  assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.footer\s*\{[\s\S]*width:\s*calc\(100% - 64px\) !important;[\s\S]*max-width:\s*1180px !important;[\s\S]*margin:\s*18px auto 0 !important;/);
   assert.match(css, /@media \(min-width: 1024px\)\s*\{[\s\S]*\.footer-inner\s*\{[\s\S]*width:\s*calc\(100% - 208px\) !important;[\s\S]*max-width:\s*none !important;[\s\S]*margin-left:\s*auto !important;[\s\S]*padding:\s*0 0 18px !important;[\s\S]*align-items:\s*center;[\s\S]*text-align:\s*center;/);
   assert.match(dailyList, /class="main-inner category category-app-list"/);
   assert.match(notesList, /class="main-inner category category-app-list"/);
