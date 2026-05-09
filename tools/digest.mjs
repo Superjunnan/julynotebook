@@ -829,8 +829,14 @@ function normalizeCache(raw) {
         morning: publishedSignatures,
         evening: {},
       };
+  const publishedTopicsByEdition = x.publishedTopicsByEdition && typeof x.publishedTopicsByEdition === "object"
+    ? x.publishedTopicsByEdition
+    : {
+        morning: {},
+        evening: {},
+      };
   return {
-    version: 6,
+    version: 7,
     fetched,
     daily,
     llm,
@@ -838,6 +844,7 @@ function normalizeCache(raw) {
     publishedSignatures,
     publishedByEdition,
     publishedSignaturesByEdition,
+    publishedTopicsByEdition,
   };
 }
 
@@ -884,6 +891,11 @@ function persistDigestCache(cache, filePath = CACHE_PATH) {
   if (cache.publishedSignaturesByEdition && typeof cache.publishedSignaturesByEdition === "object") {
     for (const [edition, records] of Object.entries(cache.publishedSignaturesByEdition)) {
       cache.publishedSignaturesByEdition[edition] = pruneByAtDate(records, DAILY_RETENTION_DAYS);
+    }
+  }
+  if (cache.publishedTopicsByEdition && typeof cache.publishedTopicsByEdition === "object") {
+    for (const [edition, records] of Object.entries(cache.publishedTopicsByEdition)) {
+      cache.publishedTopicsByEdition[edition] = pruneByAtDate(records, DAILY_RETENTION_DAYS);
     }
   }
   // Size-based hard cap: prune oldest fetched entries if serialized size exceeds limit
@@ -1046,6 +1058,156 @@ export function buildCandidateSignature(item) {
   return sha256Hex(base).slice(0, 16);
 }
 
+function buildPublishedTopicText(entry) {
+  return [
+    entry?.title,
+    entry?.insight,
+    entry?.briefing,
+    entry?.narrative,
+    entry?.summary,
+    entry?.text,
+    entry?.evaluation,
+  ]
+    .map((value) => String(value || "").trim())
+    .filter(Boolean)
+    .join(" ");
+}
+
+function buildPublishedTopicRecord(entry, dateISO, edition) {
+  const text = buildPublishedTopicText(entry);
+  if (!text) return null;
+  const title = String(entry?.insight || entry?.title || "").trim() || clipToChars(text, 60);
+  return {
+    title,
+    text: clipToChars(text, 480),
+    at: String(dateISO || "").trim(),
+    edition: normalizeDigestEdition(edition),
+  };
+}
+
+function collectDailyCacheTopicRecords(cache) {
+  const daily = cache?.daily && typeof cache.daily === "object" ? cache.daily : {};
+  const out = [];
+
+  for (const [key, value] of Object.entries(daily)) {
+    const match = String(key || "").match(/^(morning|evening):(\d{4}-\d{2}-\d{2})$/);
+    const edition = match?.[1] || "morning";
+    const dateISO = match?.[2] || String(value?.at || key || "").slice(0, 10);
+    const summary = value?.daily && typeof value.daily === "object" ? value.daily : value;
+    const entries = [
+      ...(Array.isArray(summary?.hotNews) ? summary.hotNews : []),
+      ...(Array.isArray(summary?.otherNews) ? summary.otherNews : []),
+    ];
+
+    for (const entry of entries) {
+      const record = buildPublishedTopicRecord(entry, dateISO, edition);
+      if (record) out.push(record);
+    }
+  }
+
+  return out;
+}
+
+function collectPublishedTopicRecords(cache, edition) {
+  const targetEdition = normalizeDigestEdition(edition);
+  const byEdition = cache?.publishedTopicsByEdition && typeof cache.publishedTopicsByEdition === "object"
+    ? cache.publishedTopicsByEdition
+    : {};
+  const out = [];
+
+  for (const [recordEdition, records] of Object.entries(byEdition)) {
+    if (!records || typeof records !== "object") continue;
+    for (const record of Object.values(records)) {
+      const normalized = buildPublishedTopicRecord(
+        record,
+        record?.at,
+        record?.edition || recordEdition
+      );
+      if (normalized) out.push(normalized);
+    }
+  }
+
+  for (const record of collectDailyCacheTopicRecords(cache)) {
+    out.push(record);
+  }
+
+  return out.filter((record) => record.edition !== targetEdition);
+}
+
+function extractModelOrProductTokens(text) {
+  const lower = String(text || "").toLowerCase();
+  const out = new Set();
+  const patterns = [
+    /\bgpt[-\s]?[a-z0-9.]+(?:[-\s]?[a-z0-9.]+)?\b/g,
+    /\bclaude[-\s]?[a-z0-9.]+(?:[-\s]?[a-z0-9.]+)?\b/g,
+    /\bgemini[-\s]?[a-z0-9.]+(?:[-\s]?[a-z0-9.]+)?\b/g,
+    /\bqwen[-\s]?[a-z0-9.]+(?:[-\s]?[a-z0-9.]+)?\b/g,
+    /\bdeepseek[-\s]?[a-z0-9.]+(?:[-\s]?[a-z0-9.]+)?\b/g,
+    /\bcodex[-\s]?[a-z0-9.]+(?:[-\s]?[a-z0-9.]+)?\b/g,
+  ];
+  for (const pattern of patterns) {
+    for (const match of lower.matchAll(pattern)) {
+      const token = String(match[0] || "").replace(/\s+/g, "-").trim();
+      if (token.length >= 4) out.add(token);
+    }
+  }
+  return out;
+}
+
+function setOverlapCount(aSet, bSet) {
+  if (!aSet?.size || !bSet?.size) return 0;
+  let count = 0;
+  for (const value of aSet) {
+    if (bSet.has(value)) count += 1;
+  }
+  return count;
+}
+
+function isSamePublishedTopic(item, record) {
+  const itemText = [
+    item?.title,
+    item?.contentSnippet,
+    item?.snippet,
+    String(item?.text || "").slice(0, 360),
+  ].join(" ");
+  const recordText = `${record?.title || ""} ${record?.text || ""}`;
+  if (!itemText.trim() || !recordText.trim()) return false;
+
+  const lexical = lexicalSimilarity(itemText, recordText);
+  const entityOverlap = setOverlapCount(extractEntityHits(itemText), extractEntityHits(recordText));
+  const productOverlap = setOverlapCount(extractModelOrProductTokens(itemText), extractModelOrProductTokens(recordText));
+
+  if (productOverlap > 0 && (entityOverlap > 0 || lexical >= 0.12)) return true;
+  if (entityOverlap > 0 && lexical >= 0.42) return true;
+  return lexical >= 0.72;
+}
+
+function findPublishedTopicMatch(item, records) {
+  for (const record of records || []) {
+    if (isSamePublishedTopic(item, record)) return record;
+  }
+  return null;
+}
+
+function storePublishedTopicRecords(cache, daily, dateISO, edition) {
+  if (!cache || !daily) return;
+  const normalizedEdition = normalizeDigestEdition(edition);
+  cache.publishedTopicsByEdition = cache.publishedTopicsByEdition || {};
+  cache.publishedTopicsByEdition[normalizedEdition] = cache.publishedTopicsByEdition[normalizedEdition] || {};
+
+  const entries = [
+    ...(Array.isArray(daily?.hotNews) ? daily.hotNews : []),
+    ...(Array.isArray(daily?.otherNews) ? daily.otherNews : []),
+  ];
+
+  for (const entry of entries) {
+    const record = buildPublishedTopicRecord(entry, dateISO, normalizedEdition);
+    if (!record) continue;
+    const key = sha256Hex(`${normalizedEdition}|${dateISO}|${record.title}|${record.text}`).slice(0, 20);
+    cache.publishedTopicsByEdition[normalizedEdition][key] = record;
+  }
+}
+
 export function dedupeCandidatesEarly(candidates) {
   const list = Array.isArray(candidates) ? candidates : [];
   const groups = new Map();
@@ -1185,12 +1347,16 @@ export function filterPreviouslyPublished(items, cache, options = {}) {
   }
   const runDate = String(options?.runDate || "").trim();
   const keepFollowUpEvidence = options?.keepFollowUpEvidence === true;
+  const otherPublishedTopicRecords = collectPublishedTopicRecords(cache, edition);
 
   const shouldKeepFollowUpEvidence = (item, publishedInfo = null) => {
     if (!keepFollowUpEvidence || !item || isPaperLikeMaterial(item)) return false;
-    if (item?.followUpSignals?.newDevelopment || item?.followUpSignals?.newSource) return true;
+    const hasExplicitFollowUp = item?.followUpSignals?.newDevelopment || item?.followUpSignals?.newSource;
+    if (hasExplicitFollowUp) return true;
 
     const publishedAt = String(publishedInfo?.at || "").trim();
+    if (runDate && publishedAt === runDate) return false;
+
     if (publishedAt) {
       const publishedMs = getRunDateAnchorMs(publishedAt);
       const effectiveMs = getEffectivePubDateMs(item);
@@ -1205,6 +1371,11 @@ export function filterPreviouslyPublished(items, cache, options = {}) {
   return (items || []).filter((item) => {
     const link = String(item?.link || "").trim();
     if (!link) return false;
+
+    const matchedPublishedTopic = findPublishedTopicMatch(item, otherPublishedTopicRecords);
+    if (matchedPublishedTopic && !shouldKeepFollowUpEvidence(item, matchedPublishedTopic)) {
+      return false;
+    }
 
     const signature = buildCandidateSignature(item);
     if (signature && publishedSignatures[signature]) {
@@ -8311,6 +8482,7 @@ async function main() {
   cache.publishedSignaturesByEdition = cache.publishedSignaturesByEdition || {};
   cache.publishedByEdition[DIGEST_EDITION] = cache.publishedByEdition[DIGEST_EDITION] || {};
   cache.publishedSignaturesByEdition[DIGEST_EDITION] = cache.publishedSignaturesByEdition[DIGEST_EDITION] || {};
+  storePublishedTopicRecords(cache, daily, dateISO, DIGEST_EDITION);
   for (const material of renderMaterials) {
     const key = String(material.link || "").trim();
     if (!key) continue;

@@ -47,6 +47,28 @@
 
 ## 版本记录
 
+### 2026-05-09：早晚报同日话题重复过滤
+
+背景：
+
+- “OpenAI 发布 GPT-Realtime-2 语音模型”已进入 2026-05-08 早报，但同一事件在晚报侧可能因中文转述、不同来源链接和多来源证据被再次放行。
+- 旧历史过滤主要依赖链接与标题签名；当早晚报引用不同媒体、标题从英文 API 更新变成中文模型名时，签名无法稳定命中。
+- `keepFollowUpEvidence` 会把多来源证据视为可保留跟进，导致同日跨 edition 的重复事件风险偏高。
+
+改动点与思路：
+
+- 在 `tools/digest.mjs` 中新增成稿话题级历史记录 `publishedTopicsByEdition`，保存早报/晚报最终输出的重点资讯与其他快讯摘要。
+- 历史过滤现在会从缓存中的 `daily` 总结和 `publishedTopicsByEdition` 读取跨 edition 话题，基于实体、模型/产品 token 和文本相似度识别“不同链接但同一事件”。
+- 同一天跨早晚报命中的历史内容，不再因为 `evidenceCount > 1` 或多来源证据自动放行；只有显式 `followUpSignals` 才按真正跟进处理。
+- 新增回归测试覆盖 GPT-Realtime-2 这类同日跨 edition、不同链接、标题变体重复的过滤场景。
+
+验证记录：
+
+- `node --test tests/digest/stale-filter.test.mjs tests/digest/candidate-dedupe.test.mjs tests/digest/history-evidence.test.mjs` 通过。
+- `npm run test:digest` 通过（157 通过，1 跳过 live LLM smoke）。
+- `npm run build` 通过。
+- 本地 `hexo server` 请求首页、日报列表、2026-05-08 早报详情均返回 200。
+
 ### 2026-05-08：日报稳定性与候选池治理
 
 背景：

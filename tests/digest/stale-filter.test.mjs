@@ -59,3 +59,66 @@ test("filterPreviouslyPublished removes same-day items already published by anot
 
   assert.deepEqual(filtered, []);
 });
+
+test("filterPreviouslyPublished removes same-day cross-edition repeat even with corroborating evidence", () => {
+  const filtered = filterPreviouslyPublished(
+    [
+      {
+        title: "OpenAI launches new voice intelligence features in its API",
+        link: "https://example.com/voice",
+        pubDate: "2026-05-08",
+        evidenceCount: 2,
+        evidenceSources: ["TechCrunch AI", "The Verge AI"],
+      },
+    ],
+    {
+      publishedByEdition: {
+        morning: {
+          "https://example.com/voice": { at: "2026-05-08", edition: "morning" },
+        },
+        evening: {},
+      },
+      publishedSignaturesByEdition: {
+        morning: {},
+        evening: {},
+      },
+    },
+    { runDate: "2026-05-08", edition: "evening", keepFollowUpEvidence: true }
+  );
+
+  assert.deepEqual(filtered, []);
+});
+
+test("filterPreviouslyPublished removes same-day cross-edition topic repeat from daily cache", () => {
+  const filtered = filterPreviouslyPublished(
+    [
+      {
+        title: "OpenAI 推出 GPT-Realtime-2 语音模型",
+        link: "https://news.example.com/openai-gpt-realtime-2",
+        pubDate: "2026-05-08",
+        contentSnippet: "OpenAI 在 API 中新增语音智能功能，发布 GPT-Realtime-2。",
+      },
+    ],
+    {
+      daily: {
+        "morning:2026-05-08": {
+          at: "2026-05-08",
+          daily: {
+            hotNews: [
+              {
+                insight: "OpenAI发布GPT-Realtime-2语音模型",
+                narrative: "OpenAI周四宣布API将新增语音智能功能，并推出GPT-Realtime-2模型。",
+              },
+            ],
+            otherNews: [],
+          },
+        },
+      },
+      publishedByEdition: { morning: {}, evening: {} },
+      publishedSignaturesByEdition: { morning: {}, evening: {} },
+    },
+    { runDate: "2026-05-08", edition: "evening", keepFollowUpEvidence: true }
+  );
+
+  assert.deepEqual(filtered, []);
+});
