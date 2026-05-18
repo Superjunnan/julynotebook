@@ -45,6 +45,17 @@ a.cite:hover
   box-shadow 0 12px 26px rgba(121, 113, 112, 0.06)
   visibility visible !important
   opacity 1 !important
+  width 100%
+  max-width 100%
+  min-width 0
+  box-sizing border-box
+
+.detail-page .post-content,
+.detail-page .post-body
+  width 100%
+  max-width 100%
+  min-width 0
+  box-sizing border-box
 
 .detail-page .post-header
   margin-bottom 12px
@@ -80,7 +91,7 @@ a.cite:hover
   text-overflow ellipsis
 
 .app-detail-meta
-  flex-wrap nowrap
+  flex-wrap wrap
   align-items center
   justify-content space-between
   gap 12px
@@ -90,11 +101,14 @@ a.cite:hover
 
 .app-detail-meta-left
   display flex
+  min-width 0
   gap 6px
 
 .app-detail-meta-right
   flex 0 0 auto
+  margin-left auto
   color #999
+  white-space nowrap
 
 .app-detail-meta--note
   flex-wrap wrap
@@ -135,6 +149,8 @@ body.pro-mode #busuanzi_container_page_pv.pro-view-counter
   color #95959b
   visibility visible !important
   opacity 1 !important
+  overflow-wrap anywhere
+  word-break break-word
 
 .detail-page .post-body h2
   margin-top 1.5em
@@ -215,6 +231,10 @@ body.pro-mode #busuanzi_container_page_pv.pro-view-counter
   border-radius 18px
   background rgba(255, 255, 255, 0.72)
   box-shadow 0 8px 18px rgba(121, 113, 112, 0.04)
+  width 100%
+  max-width 100%
+  min-width 0
+  box-sizing border-box
 
 .daily-section-block + .daily-section-block
   margin-top 16px
@@ -225,6 +245,8 @@ body.pro-mode #busuanzi_container_page_pv.pro-view-counter
   border-radius 0
   background transparent
   box-shadow none
+  max-width 100%
+  min-width 0
 
 .daily-news-card-title
   margin-top 0 !important
@@ -241,6 +263,10 @@ body.pro-mode #busuanzi_container_page_pv.pro-view-counter
   font-size 0.95rem
   line-height 1.85
   color #8c8c92
+  max-width 100%
+  min-width 0
+  overflow-wrap anywhere
+  word-break break-word
 
 .daily-news-card-body:last-child
   margin-bottom 0 !important
@@ -335,6 +361,12 @@ body.pro-mode #busuanzi_container_page_pv.pro-view-counter
   padding-left 14px
 
 @media (min-width: 1024px)
+  body.app-view-daily-post .app-desktop-content-shell,
+  body.app-view-note-post .app-desktop-content-shell,
+  body.app-view-post .app-desktop-content-shell
+    max-width 920px
+    justify-self stretch
+
   .detail-page .post-block
     padding 28px 28px
 

@@ -37,6 +37,12 @@ function 归一化标题用于比对(text) {
     .toLowerCase();
 }
 
+function 规范英文空格(text) {
+  return String(text || '')
+    .replace(/\b([A-Za-z][A-Za-z0-9.-]*(?:-[A-Za-z0-9]+)*\d)\s+([A-Z])\b(?=\s+[A-Z][A-Za-z])/gu, '$1$2')
+    .replace(/\b(Gemma-\d+-[A-Z]\d)\s+([A-Z])\b/gu, '$1$2');
+}
+
 function 是否标题前缀残缺(标题, 候选标题) {
   const 当前 = 归一化标题用于比对(标题);
   const 候选 = 归一化标题用于比对(候选标题);
@@ -86,21 +92,21 @@ function 清洗标题(text, dataCite = '', options = {}) {
 
   if (标题异常) {
     if (类型 === 'paper' && 引用尾段标题) {
-      return 引用尾段标题;
+      return 规范英文空格(引用尾段标题);
     }
     if (类型 !== 'paper' && 引用前段标题 && 引用前段标题.length >= 8) {
-      return 引用前段标题;
+      return 规范英文空格(引用前段标题);
     }
     if (引用完整标题) {
-      return 引用完整标题;
+      return 规范英文空格(引用完整标题);
     }
   }
 
   if (更完整引用标题) {
-    return 更完整引用标题;
+    return 规范英文空格(更完整引用标题);
   }
 
-  return 标题;
+  return 规范英文空格(标题);
 }
 
 function 收集后续同级节点(h2) {
@@ -184,12 +190,12 @@ function 提取区块空态文本(节点列表) {
 }
 
 function 清理正文HTML(html) {
-  return String(html || '')
+  return 规范英文空格(String(html || '')
     .trim()
     .replace(/（参考[:：][^）]*）/gu, '')
     .replace(/\(参考[:：][^)]*\)/gu, '')
     .replace(/^[：:\s]+/u, '')
-    .trim();
+    .trim());
 }
 
 function 编号文本(index) {
@@ -290,35 +296,48 @@ function 构建列表区块(h2, options = {}) {
   h2.parentNode.exchangeChild(h2, parse(`<section class="daily-section-block">${构建二级标题节点(h2)}${卡片列表.join('')}${空态HTML}</section>`).firstChild);
 }
 
-hexo.extend.filter.register('after_post_render', function(data) {
-  if (data.layout !== 'post' || !是否日报(data)) return data;
+function 注册日报详情格式化器(hexoInstance) {
+  hexoInstance.extend.filter.register('after_post_render', function(data) {
+    if (data.layout !== 'post' || !是否日报(data)) return data;
 
-  try {
-    const root = parse(data.content || '');
+    try {
+      const root = parse(data.content || '');
 
-    移除导语块并提取候选数(root, data);
-    规范化引用文本(root);
-    移除参考来源章节(root);
+      移除导语块并提取候选数(root, data);
+      规范化引用文本(root);
+      移除参考来源章节(root);
 
-    root.querySelectorAll('h2').forEach(h2 => {
-      const text = (h2.text || '').trim();
-      if (text === '重点资讯') {
-        构建重点资讯区块(h2);
-        return;
-      }
-      if (text === '其他快讯') {
-        构建列表区块(h2, { 类型: 'news', 前缀: 'daily-news' });
-        return;
-      }
-      if (text === '核心论文') {
-        构建列表区块(h2, { 类型: 'paper', 前缀: 'core-paper' });
-      }
-    });
+      root.querySelectorAll('h2').forEach(h2 => {
+        const text = (h2.text || '').trim();
+        if (text === '重点资讯') {
+          构建重点资讯区块(h2);
+          return;
+        }
+        if (text === '其他快讯') {
+          构建列表区块(h2, { 类型: 'news', 前缀: 'daily-news' });
+          return;
+        }
+        if (text === '核心论文') {
+          构建列表区块(h2, { 类型: 'paper', 前缀: 'core-paper' });
+        }
+      });
 
-    data.content = root.toString();
-  } catch (error) {
-    console.error('daily-detail-formatter error:', error);
-  }
+      data.content = root.toString();
+    } catch (error) {
+      console.error('daily-detail-formatter error:', error);
+    }
 
-  return data;
-}, 20);
+    return data;
+  }, 20);
+}
+
+if (typeof hexo !== 'undefined' && hexo.extend && hexo.extend.filter) {
+  注册日报详情格式化器(hexo);
+}
+
+module.exports = {
+  规范英文空格,
+  清洗标题,
+  清理正文HTML,
+  注册日报详情格式化器,
+};
