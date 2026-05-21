@@ -1,16 +1,45 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { execSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "../..");
-const latestDailyTitle = "AI早报 · 05.07 周四";
+const latestDaily = resolveLatestDailyFixture();
+const latestDailyTitle = latestDaily.title;
 
 let cachedPages;
 let buildPromise;
+
+function escapeRegExp(text) {
+  return String(text || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function resolveLatestDailyFixture() {
+  const postsDir = path.join(repoRoot, "source/_posts");
+  const fileName = readdirSync(postsDir)
+    .filter((name) => /^digest-\d{4}-\d{2}-\d{2}\.md$/.test(name))
+    .sort()
+    .at(-1);
+
+  assert.ok(fileName, "expected at least one generated morning digest post");
+  const match = fileName.match(/^digest-(\d{4})-(\d{2})-(\d{2})\.md$/);
+  assert.ok(match, `unexpected daily digest file name: ${fileName}`);
+
+  const [, year, month, day] = match;
+  const dateISO = `${year}-${month}-${day}`;
+  const markdown = readFileSync(path.join(postsDir, fileName), "utf-8");
+  const titleMatch = markdown.match(/^title:\s*["']?(.+?)["']?\s*$/m);
+  assert.ok(titleMatch?.[1], `missing title in ${fileName}`);
+
+  return {
+    dateISO,
+    title: titleMatch[1],
+    publicPath: path.join(repoRoot, "public", year, month, day, `digest-${dateISO}`, "index.html"),
+  };
+}
 
 function buildAndReadPages() {
   if (cachedPages) return Promise.resolve(cachedPages);
@@ -25,10 +54,7 @@ function buildAndReadPages() {
 
     cachedPages = {
       home: readFileSync(path.join(repoRoot, "public/index.html"), "utf-8"),
-      daily: readFileSync(
-        path.join(repoRoot, "public/2026/05/07/digest-2026-05-07/index.html"),
-        "utf-8"
-      ),
+      daily: readFileSync(latestDaily.publicPath, "utf-8"),
       daily0422: readFileSync(
         path.join(repoRoot, "public/2026/04/22/digest-2026-04-22/index.html"),
         "utf-8"
@@ -88,23 +114,27 @@ test("首页日报卡片摘要只展示真实资讯标题且不重复序号", as
 
 test("首页与详情页早报标题统一显示为AI早报，并使用月日加星期格式", async () => {
   const { home, daily } = await buildAndReadPages();
+  const latestTitlePattern = new RegExp(escapeRegExp(latestDailyTitle));
 
-  assert.match(home, /AI早报 · 05\.07 周四/);
-  assert.doesNotMatch(home, /AI日报 · 2026-05-07/);
+  assert.match(home, latestTitlePattern);
+  assert.doesNotMatch(home, /AI日报 · \d{4}-\d{2}-\d{2}/);
   assert.match(home, /class="app-card__badge">AI早报</);
-  assert.match(daily, /AI早报 · 05\.07 周四/);
-  assert.doesNotMatch(daily, /人工智能日报 · 2026-05-07/);
+  assert.match(daily, latestTitlePattern);
+  assert.doesNotMatch(daily, /人工智能日报 · \d{4}-\d{2}-\d{2}/);
   assert.match(daily, /class="app-card__badge">AI早报</);
-  assert.match(daily, /rel="prev"[^>]*title="AI晚报 · 05\.06 周三"/);
+  assert.match(daily, /rel="prev"[^>]*title="AI(?:早|晚)报 · \d{2}\.\d{2} 周[一二三四五六日天]"/);
 });
 
 test("首页日报卡片条数统计应等于重点资讯、其他快讯和核心论文总和", async () => {
-  const { home } = await buildAndReadPages();
+  const { home, daily } = await buildAndReadPages();
   const cardStart = home.indexOf(latestDailyTitle);
   assert.notEqual(cardStart, -1);
   const cardHtml = home.slice(cardStart, cardStart + 2200);
 
-  assert.match(cardHtml, /共 21 条记录/);
+  const countMatch = cardHtml.match(/共\s*(\d+)\s*条记录/);
+  assert.ok(countMatch, "expected daily card to render record count");
+  const detailItemCount = (daily.match(/class="daily-news-card-title"/g) || []).length;
+  assert.equal(Number(countMatch[1]), detailItemCount);
 });
 
 test("日报详情页展示正确的候选总数且不保留异常标题", async () => {
@@ -115,7 +145,7 @@ test("日报详情页展示正确的候选总数且不保留异常标题", async
   assert.match(daily, /class="daily-section-title"[^>]*>重点资讯</);
   assert.match(daily, /class="daily-section-title"[^>]*>其他快讯</);
   assert.match(daily, /class="daily-section-title"[^>]*>核心论文</);
-  assert.match(daily, /<h3 class="daily-news-card-title" id="01-·-苹果将支付2-5亿美元和解Siri延迟AI功能的诉讼">01 · 苹果将支付2\.5亿美元和解Siri延迟AI功能的诉讼<\/h3>/);
+  assert.match(daily, /<h3 class="daily-news-card-title" id="01-[^"]+">01 · [^<]{4,}<\/h3>/);
 });
 
 test("日报详情页参考来源应使用间距分隔而非顿号", async () => {
@@ -258,10 +288,11 @@ test("首页日报卡片应优先显示引用里的中文标题而不是泛化�
   assert.notEqual(cardStart, -1);
   const cardHtml = home.slice(cardStart, cardStart + 2200);
 
-  assert.match(cardHtml, /苹果将支付2\.5亿美元和解Siri延迟AI功能的诉讼/);
-  assert.match(cardHtml, /DeepSeek首轮融资或达450亿美元估值/);
+  assert.match(cardHtml, /<ol class="daily-highlights-list">[\s\S]*<li>[^<]{4,}<\/li>/);
   assert.doesNotMatch(cardHtml, /海外科技媒体动态 3/);
   assert.doesNotMatch(cardHtml, /海外科技媒体动态 1/);
+  assert.doesNotMatch(cardHtml, /国内人工智能媒体动态 \d+/);
+  assert.doesNotMatch(cardHtml, /资讯来源动态 \d+/);
 });
 
 test("首页与列表卡片底部阅读全文区域应收紧间距以提升屏幕效率", async () => {
