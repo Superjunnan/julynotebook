@@ -1,7 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { normalizeDailySummary } from "../../tools/digest.mjs";
+import {
+  buildDossierFallbackDailySummary,
+  buildFallbackDailySummary,
+  normalizeDailySummary,
+} from "../../tools/digest.mjs";
 
 test("normalizeDailySummary can backfill hot news to at least three entries", () => {
   const materials = [
@@ -247,4 +251,129 @@ test("normalizeDailySummary can backfill multi-source hot news when similar dome
   assert.equal(daily.hotNews.length >= 1, true);
   assert.equal((daily.hotNews[0].refs || []).length >= 2, true);
   assert.equal((daily.hotNews[0].crossVerifyScore || 0) >= 82, true);
+});
+
+test("buildFallbackDailySummary removes repeated generic fallback evaluations", () => {
+  const daily = buildFallbackDailySummary([
+    {
+      refId: 1,
+      title: "OpenAI 发布企业级代理治理控制项",
+      source: "OpenAI News",
+      sourceGroup: "company",
+      trustTier: "high",
+      link: "https://openai.com/news/agent-controls",
+      domain: "openai.com",
+      text: "OpenAI 官方披露企业级代理治理控制项，覆盖审计、权限和上线边界。",
+      bucketHint: "hot_news",
+      score: 24,
+      pubDate: "2026-05-21T01:00:00.000Z",
+    },
+  ]);
+
+  const text = daily.hotNews.map((item) => item.narrative || "").join(" ");
+  assert.equal(text.includes("多来源可信度较高，具备持续跟踪价值"), false);
+  assert.equal(text.includes("信息有参考价值，但仍需持续交叉验证"), false);
+});
+
+test("buildDossierFallbackDailySummary uses selected topic refs and positively preserves domestic AI topics", () => {
+  const materials = [
+    {
+      refId: 1,
+      title: "OpenAI expands enterprise agent controls",
+      source: "OpenAI News",
+      sourceGroup: "company",
+      trustTier: "high",
+      link: "https://openai.com/news/agent-controls",
+      domain: "openai.com",
+      text: "OpenAI details enterprise agent controls for auditing and permissions.",
+      bucketHint: "hot_news",
+      score: 28,
+      pubDate: "2026-05-21T01:00:00.000Z",
+    },
+    {
+      refId: 2,
+      title: "Anthropic updates Claude enterprise policy",
+      source: "Anthropic News",
+      sourceGroup: "company",
+      trustTier: "high",
+      link: "https://anthropic.com/news/claude-enterprise",
+      domain: "anthropic.com",
+      text: "Anthropic updates enterprise Claude policy.",
+      bucketHint: "hot_news",
+      score: 27,
+      pubDate: "2026-05-21T01:10:00.000Z",
+    },
+    {
+      refId: 3,
+      title: "阿里通义千问发布 Qwen3 企业版能力更新",
+      source: "AIBase",
+      sourceGroup: "domestic_media",
+      trustTier: "medium",
+      link: "https://news.aibase.com/qwen3-enterprise",
+      domain: "news.aibase.com",
+      text: "阿里通义千问发布 Qwen3 企业版能力更新，重点覆盖企业知识库、推理成本和私有化部署。",
+      bucketHint: "hot_news",
+      score: 22,
+      pubDate: "2026-05-21T01:20:00.000Z",
+    },
+    {
+      refId: 4,
+      title: "36氪：通义千问企业版强化知识库与推理部署",
+      source: "36Kr AI",
+      sourceGroup: "domestic_media",
+      trustTier: "medium",
+      link: "https://36kr.com/p/qwen3-enterprise",
+      domain: "36kr.com",
+      text: "36氪跟进称，通义千问企业版强化知识库、推理部署和企业服务能力。",
+      bucketHint: "hot_news",
+      score: 21,
+      pubDate: "2026-05-21T01:25:00.000Z",
+    },
+  ];
+
+  const daily = buildDossierFallbackDailySummary(
+    [
+      {
+        topic_id: 10,
+        topic_title: "OpenAI 企业代理治理更新",
+        topic_type: "news",
+        cross_source_score: 90,
+        mention_count: 1,
+        source_count: 1,
+        refs: [1],
+      },
+      {
+        topic_id: 11,
+        topic_title: "Anthropic Claude 企业政策更新",
+        topic_type: "news",
+        cross_source_score: 88,
+        mention_count: 1,
+        source_count: 1,
+        refs: [2],
+      },
+      {
+        topic_id: 12,
+        topic_title: "阿里通义千问 Qwen3 企业版能力更新",
+        topic_type: "news",
+        cross_source_score: 60,
+        mention_count: 2,
+        source_count: 2,
+        refs: [3, 4],
+      },
+    ],
+    materials,
+    { edition: "morning", preferDomestic: true }
+  );
+
+  const domesticEntry = [...daily.hotNews, ...daily.otherNews].find((item) =>
+    (item.refs || []).includes(3) || (item.refs || []).includes(4)
+  );
+
+  assert.ok(domesticEntry, "domestic Qwen topic should be retained");
+  assert.deepEqual(domesticEntry.refs, [3, 4]);
+  assert.equal(
+    (domesticEntry.narrative || "").includes("多来源可信度较高，具备持续跟踪价值"),
+    false
+  );
+  assert.equal(domesticEntry.refs.some((ref) => ref === 1 || ref === 2), false);
 });

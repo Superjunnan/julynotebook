@@ -3234,6 +3234,9 @@ function clipHeadline(text, maxChars = 56) {
 function cleanTemplateNarrative(text) {
   const cleaned = finalizeReadableText(text)
     .replace(/当前信号具备参考价值，但仍需更多来源持续验证。?/g, "")
+    .replace(/多来源可信度较高，具备持续跟踪价值。?/g, "")
+    .replace(/信息有参考价值，但仍需持续交叉验证。?/g, "")
+    .replace(/多来源共同指向同一趋势，短期影响值得持续跟踪。?/g, "")
     .replace(/信息已纳入当日快讯，建议持续跟踪后续数据与落地反馈。?/g, "")
     .replace(/内容已纳入当日快讯，建议结合参考来源持续跟进关键进展。?/g, "")
     .replace(/已纳入当日快讯，建议结合原文核对关键细节。?/g, "")
@@ -3619,7 +3622,29 @@ function normalizeNarrativeBody(text) {
     ? `${normalizedNoTailPunct}，后续需关注落地节奏、资源投入与行业外溢影响。`
     : normalized;
 
-  return clipToChars(briefing, 220);
+  return clipToChars(dedupeRepeatedSentences(briefing), 220);
+}
+
+function dedupeRepeatedSentences(text) {
+  const value = finalizeReadableText(text || "");
+  if (!value) return "";
+
+  const sentences = value.match(/[^。！？!?]+[。！？!?]?/g) || [value];
+  const seen = new Set();
+  const out = [];
+  for (const raw of sentences) {
+    const sentence = finalizeReadableText(raw || "");
+    if (!sentence) continue;
+    const key = sentence
+      .replace(/[。！？!?]+$/g, "")
+      .replace(/\s+/g, "")
+      .toLowerCase();
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(/[。！？!?]$/.test(sentence) ? sentence : `${sentence}。`);
+  }
+
+  return out.join("");
 }
 
 function buildFallbackHotEvaluation(material) {
@@ -3645,7 +3670,7 @@ function mergeNarrativeAndEvaluation(narrative, evaluation) {
   const lowerN = plainNarrative.toLowerCase();
   const lowerE = plainEvaluation.toLowerCase();
   if (lowerN && lowerE && lowerN.includes(lowerE)) return `${plainNarrative}。`;
-  return `${plainNarrative}。${plainEvaluation.replace(/[。！!？?]+$/g, "")}。`;
+  return dedupeRepeatedSentences(`${plainNarrative}。${plainEvaluation.replace(/[。！!？?]+$/g, "")}。`);
 }
 
 function buildFallbackHotNewsEntry(material, insightSeed = "") {
@@ -4290,7 +4315,10 @@ export function normalizeDailySummary(rawDaily, materials) {
     .map((item) => {
       const base = buildHotNewsEntryFromLLM(item, allowed);
       const rawRefs = normalizeNewsRefs(base.refs);
-      const refs = compressEntryRefs(rawRefs, idToItem, { minRefs: 2, maxRefs: 4 });
+      const strictRefs = item?.strict_refs === true || item?.strictRefs === true;
+      const refs = strictRefs
+        ? rawRefs.slice(0, 4)
+        : compressEntryRefs(rawRefs, idToItem, { minRefs: 2, maxRefs: 4 });
       const fallbackNarrative = buildChineseHotNarrativeFallback({ ...base, refs }, idToItem);
       const insightSeed = finalizeReadableText(base.insight || base.title || "当日重点");
       return {
@@ -4312,7 +4340,11 @@ export function normalizeDailySummary(rawDaily, materials) {
   const otherNews = otherNewsIn
     .map((item) => {
       const base = buildQuickNewsEntryFromLLM(item, allowed);
-      const refs = compressEntryRefs(normalizeNewsRefs(base.refs), idToItem, { minRefs: 1, maxRefs: 3 });
+      const rawRefs = normalizeNewsRefs(base.refs);
+      const strictRefs = item?.strict_refs === true || item?.strictRefs === true;
+      const refs = strictRefs
+        ? rawRefs.slice(0, 3)
+        : compressEntryRefs(rawRefs, idToItem, { minRefs: 1, maxRefs: 3 });
       const firstRef = refs[0];
       const firstMaterial = firstRef ? idToItem[firstRef] : null;
       const sourceLabel = getChineseSourceLabel(firstMaterial);
@@ -4543,6 +4575,237 @@ export function buildFallbackDailySummary(materials) {
     core_tech: coreTech,
     aiRumor: [],
     ref_translations: [],
+  }, materials);
+}
+
+function getDossierRefIds(dossier, allowedRefIds, idToItem) {
+  const seen = new Set();
+  const out = [];
+  const push = (value) => {
+    const id = Number(value);
+    if (!Number.isInteger(id) || seen.has(id) || !allowedRefIds.has(id) || !idToItem[id]) return;
+    seen.add(id);
+    out.push(id);
+  };
+
+  for (const ref of Array.isArray(dossier?.refs) ? dossier.refs : []) push(ref);
+  for (const member of Array.isArray(dossier?.members) ? dossier.members : []) {
+    push(member?.ref_id ?? member?.refId ?? member?.id);
+  }
+
+  return out;
+}
+
+function buildDossierFallbackSignalSeed(dossier, refs, idToItem) {
+  const memberText = (Array.isArray(dossier?.members) ? dossier.members : [])
+    .map((member) => `${member?.title || ""} ${member?.source || ""}`)
+    .join(" ");
+  const materialText = (refs || [])
+    .map((refId) => {
+      const item = idToItem?.[refId];
+      return `${item?.title || ""} ${item?.contentSnippet || ""} ${String(item?.text || "").slice(0, 180)} ${item?.source || ""}`;
+    })
+    .join(" ");
+  return [
+    String(dossier?.topic_title || ""),
+    String(dossier?.topic_type || ""),
+    memberText,
+    materialText,
+  ].join(" ");
+}
+
+function estimateDomesticAiDossierSignal(dossier, refs, idToItem) {
+  const seed = buildDossierFallbackSignalSeed(dossier, refs, idToItem);
+  return estimateDomesticAiTopicSignal({
+    topic_title: seed,
+    sample_titles: [seed],
+    top_sources: (refs || []).map((refId) => String(idToItem?.[refId]?.source || "")),
+  });
+}
+
+function selectDossierRefs(refs, idToItem, options = {}) {
+  const paperOnly = options.paperOnly === true;
+  const filtered = (refs || []).filter((refId) => {
+    const item = idToItem?.[refId];
+    if (!item) return false;
+    return paperOnly ? isPaperLikeMaterial(item) : !isPaperLikeMaterial(item);
+  });
+  if (!filtered.length) return [];
+
+  const maxRefs = Number.isFinite(options.maxRefs) ? Math.max(1, Math.floor(options.maxRefs)) : 4;
+  const minRefs = Math.min(
+    filtered.length,
+    Number.isFinite(options.minRefs) ? Math.max(1, Math.floor(options.minRefs)) : 1
+  );
+  return compressEntryRefs(filtered, idToItem, { minRefs, maxRefs });
+}
+
+function buildDossierFallbackNarrative(dossier, refs, idToItem) {
+  const firstRef = refs?.[0];
+  const firstMaterial = firstRef ? idToItem[firstRef] : null;
+  const sourceLabel = getChineseSourceLabel(firstMaterial);
+  let anchor = cleanReferenceTitle(finalizeReadableText(dossier?.topic_title || firstMaterial?.title || ""), 84);
+  if (!anchor || !hasCjk(anchor)) {
+    anchor = cleanReferenceTitle(finalizeReadableText(firstMaterial?.title || ""), 84) || `${sourceLabel}披露的AI动态`;
+  }
+
+  const snippets = [];
+  for (const refId of (refs || []).slice(0, 3)) {
+    const material = idToItem?.[refId];
+    if (!material) continue;
+    const snippet = pickMaterialEvidenceSnippet(material);
+    if (!snippet || !hasCjk(snippet) || isGenericPaperSummary(snippet)) continue;
+    snippets.push(snippet.replace(/[。！？!?]+$/g, ""));
+  }
+
+  if (snippets.length > 0) {
+    const detail = snippets.slice(0, 2).join("；");
+    return ensureCompleteNarrative(
+      clipToSentence(`围绕${anchor}，${detail}。后续可重点观察产品落地、资源投入与产业链反馈。`, 260),
+      buildDigestNarrativeFromTitle(anchor, firstMaterial, sourceLabel, { maxChars: 260 })
+    );
+  }
+
+  return buildDigestNarrativeFromTitle(anchor, firstMaterial, sourceLabel, { maxChars: 260 });
+}
+
+function buildDossierFallbackNewsEntry(dossier, refs, idToItem, options = {}) {
+  const selectedRefs = selectDossierRefs(refs, idToItem, {
+    minRefs: refs.length >= 2 ? 2 : 1,
+    maxRefs: 4,
+  });
+  if (!selectedRefs.length) return null;
+
+  const firstMaterial = idToItem[selectedRefs[0]];
+  const topicTitle = cleanReferenceTitle(finalizeReadableText(dossier?.topic_title || firstMaterial?.title || ""), 72);
+  const sourceLabel = getChineseSourceLabel(firstMaterial);
+  const insightSeed = topicTitle && hasCjk(topicTitle) ? topicTitle : `${sourceLabel}重点更新`;
+  const mentionCount = Math.max(1, Number(dossier?.mention_count || dossier?.member_count || selectedRefs.length || 1));
+  const domainCount = Math.max(1, Number(dossier?.source_count || countDistinctDomainsByRefs(selectedRefs, idToItem) || 1));
+  const domesticSignal = estimateDomesticAiDossierSignal(dossier, selectedRefs, idToItem);
+  const preferDomestic = options.preferDomestic === true ||
+    normalizeDigestEdition(options.edition || DIGEST_EDITION) === "evening";
+  const domesticBoost = preferDomestic && domesticSignal > 0
+    ? Math.min(12, 4 + domesticSignal * 4)
+    : 0;
+  const baseCross = Number(dossier?.cross_source_score || 0);
+  const crossVerifyScore = Math.max(
+    selectedRefs.length >= 2 ? 72 : 56,
+    Math.min(96, Math.round(baseCross + mentionCount * 4 + domainCount * 5 + domesticBoost))
+  );
+
+  return {
+    topic_id: Number(dossier?.topic_id || firstMaterial?.topicId || 0),
+    insight: clipHeadline(insightSeed, 56),
+    narrative: buildDossierFallbackNarrative(dossier, selectedRefs, idToItem),
+    refs: selectedRefs,
+    mention_count: mentionCount,
+    cross_verify_score: crossVerifyScore,
+    strict_refs: true,
+  };
+}
+
+function scoreDossierFallbackEntry(entry, dossier, idToItem, options = {}) {
+  const refs = Array.isArray(entry?.refs) ? entry.refs : [];
+  const seed = buildDossierFallbackSignalSeed(dossier, refs, idToItem);
+  const headEntity = estimateHeadEntityPriority(seed);
+  const industryValue = estimateAiIndustryValue(seed);
+  const materialScore = refs.reduce((sum, refId) => sum + Number(idToItem?.[refId]?.score || 0), 0);
+  const preferDomestic = options.preferDomestic === true ||
+    normalizeDigestEdition(options.edition || DIGEST_EDITION) === "evening";
+  const domesticSignal = estimateDomesticAiDossierSignal(dossier, refs, idToItem);
+  const domesticBoost = preferDomestic && domesticSignal > 0
+    ? 28 + Math.min(18, domesticSignal * 6)
+    : 0;
+
+  return (
+    scoreDailyNewsEntry(entry, idToItem) +
+    materialScore * 0.5 +
+    Math.min(18, headEntity.score) +
+    Math.min(16, industryValue.score) +
+    domesticBoost
+  );
+}
+
+function buildDossierFallbackPaperEntry(dossier, refs, idToItem) {
+  const selectedRefs = selectDossierRefs(refs, idToItem, {
+    paperOnly: true,
+    minRefs: 1,
+    maxRefs: 2,
+  });
+  if (!selectedRefs.length) return null;
+
+  const firstMaterial = idToItem[selectedRefs[0]];
+  const titleSeed = finalizeReadableText(dossier?.topic_title || firstMaterial?.title || "");
+  return {
+    topic_id: Number(dossier?.topic_id || firstMaterial?.topicId || 0),
+    title: sanitizePaperTitle(titleSeed, "论文进展"),
+    summary: buildFallbackPaperSummary(firstMaterial, titleSeed),
+    refs: selectedRefs,
+  };
+}
+
+export function buildDossierFallbackDailySummary(topicDossiers, materials, options = {}) {
+  const allowed = new Set((materials || []).map((m) => m.refId));
+  const idToItem = {};
+  for (const material of materials || []) {
+    if (material?.refId) idToItem[material.refId] = material;
+  }
+
+  const newsRows = [];
+  const paperRows = [];
+  for (const dossier of topicDossiers || []) {
+    const refs = getDossierRefIds(dossier, allowed, idToItem);
+    if (!refs.length) continue;
+
+    const paperRefs = refs.filter((refId) => isPaperLikeMaterial(idToItem[refId]));
+    const newsRefs = refs.filter((refId) => !isPaperLikeMaterial(idToItem[refId]));
+    const topicType = String(dossier?.topic_type || "").trim().toLowerCase();
+    if (paperRefs.length > 0 && (topicType === "paper" || paperRefs.length >= newsRefs.length)) {
+      const paperEntry = buildDossierFallbackPaperEntry(dossier, paperRefs, idToItem);
+      if (paperEntry) paperRows.push({ entry: paperEntry, dossier });
+      continue;
+    }
+
+    const newsEntry = buildDossierFallbackNewsEntry(dossier, newsRefs, idToItem, options);
+    if (newsEntry) {
+      newsRows.push({
+        entry: newsEntry,
+        dossier,
+        score: scoreDossierFallbackEntry(newsEntry, dossier, idToItem, options),
+      });
+    }
+  }
+
+  if (!newsRows.length && (materials || []).length > 0) {
+    return buildFallbackDailySummary(materials);
+  }
+
+  const rankedNews = newsRows
+    .sort((a, b) =>
+      Number(b.score || 0) - Number(a.score || 0) ||
+      Number(b.entry?.cross_verify_score || 0) - Number(a.entry?.cross_verify_score || 0)
+    )
+    .map((row) => row.entry);
+  const hotCount = Math.min(HOT_NEWS_MAX, Math.max(HOT_NEWS_MIN, Math.min(rankedNews.length, DIGEST_NEWS_RULES.hotMax)));
+  const hotNews = rankedNews.slice(0, hotCount);
+  const otherNews = rankedNews.slice(hotCount, Math.min(rankedNews.length, DIGEST_NEWS_RULES.totalMax));
+  const coreTech = paperRows
+    .sort((a, b) =>
+      Number(b.dossier?.cross_source_score || 0) - Number(a.dossier?.cross_source_score || 0)
+    )
+    .map((row) => row.entry)
+    .slice(0, DIGEST_NEWS_RULES.coreTechMax);
+
+  const refTranslations = Object.entries(buildReferenceTranslationSeed(materials, {}))
+    .map(([id, zhTitle]) => ({ id: Number(id), zh_title: zhTitle }));
+
+  return normalizeDailySummary({
+    overview: "当日摘要由已入选话题和深读材料确定性生成；重点关注多源重复提及、模型能力演进、产品落地与产业资源配置变化。",
+    hot_news: hotNews,
+    other_news: otherNews,
+    core_tech: coreTech,
+    ref_translations: refTranslations,
   }, materials);
 }
 
@@ -6430,6 +6693,9 @@ export function buildTopicScorecard(topic, options = {}) {
     ? Math.min(24, Math.max(0, (mention - 1) * 4 + (diversity - 1) * 6))
     : 0;
   const domesticAiSignal = estimateDomesticAiTopicSignal(topic);
+  const domesticSignalBonus = domesticAiSignal > 0
+    ? Math.min(14, domesticAiSignal * 4)
+    : 0;
   const eveningDomesticAdjustment = edition === "evening"
     ? (domesticAiSignal > 0
       ? 42 + Math.min(18, domesticAiSignal * 6)
@@ -6458,6 +6724,7 @@ export function buildTopicScorecard(topic, options = {}) {
     entityPriority +
     industryValueScore +
     aiRelevance +
+    domesticSignalBonus +
     eveningDomesticAdjustment -
     penalties;
 
@@ -6469,13 +6736,15 @@ export function buildTopicScorecard(topic, options = {}) {
     entity_priority: entityPriority,
     industry_value: industryValueScore,
     ai_relevance: aiRelevance,
+    domestic_signal_bonus: domesticSignalBonus,
     edition_bias: eveningDomesticAdjustment,
     penalties: -penalties,
     pr_penalty: -prPenalty,
     signals: [
       ...headEntity.matches.map((match) => `entity:${match}`),
       ...industryValue.matches.map((match) => `value:${match}`),
-      ...(domesticAiSignal > 0 ? ["edition:domestic-evening"] : []),
+      ...(domesticSignalBonus > 0 ? ["domestic-ai-signal"] : []),
+      ...(edition === "evening" && domesticAiSignal > 0 ? ["edition:domestic-evening"] : []),
     ],
   };
 }
@@ -6538,6 +6807,11 @@ export function scoreDailyNewsEntry(entry, idToItem) {
   const signalSeed = buildEntrySignalSeed(entry, idToItem);
   const headEntity = estimateHeadEntityPriority(signalSeed);
   const industryValue = estimateAiIndustryValue(signalSeed);
+  const domesticAiSignal = estimateDomesticAiTopicSignal({
+    topic_title: signalSeed,
+    sample_titles: [signalSeed],
+    top_sources: evidence.materials.map((material) => String(material?.source || "")),
+  });
 
   if (evidence.refs.length >= 2) score += 14;
   if (evidence.domains.size >= 2) score += 14;
@@ -6548,6 +6822,7 @@ export function scoreDailyNewsEntry(entry, idToItem) {
   score += evidence.highTrustCount * 5;
   score += Math.min(20, headEntity.score);
   score += Math.min(16, industryValue.score);
+  if (domesticAiSignal > 0) score += Math.min(10, domesticAiSignal * 3);
   if (evidence.singleton && !evidence.hasCompany) score -= 6;
   if (evidence.onlyCommunity) score -= 4;
   if (isLowValueCommunityEntry(entry, idToItem)) score -= 32;
@@ -8381,7 +8656,10 @@ async function main() {
         aiRumor: [],
         refTranslations: {},
       }
-      : buildFallbackDailySummary(materials);
+      : buildDossierFallbackDailySummary(topicDossiers, materials, {
+        edition: DIGEST_EDITION,
+        preferDomestic: true,
+      });
   } else {
     const fingerprint = sha256Hex(
       JSON.stringify({
@@ -8404,7 +8682,10 @@ async function main() {
         bestEffortPersistDigestCache(cache, "daily-summary");
       } catch (e) {
         console.warn(`[warn] daily summary failed: ${e?.message || e}`);
-        daily = buildFallbackDailySummary(materials);
+        daily = buildDossierFallbackDailySummary(topicDossiers, materials, {
+          edition: DIGEST_EDITION,
+          preferDomestic: true,
+        });
       }
     }
   }
