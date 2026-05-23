@@ -18459,6 +18459,240 @@
         "selectedTopicTotal": 16
       },
       "at": "2026-05-23"
+    },
+    "evening:2026-05-23": {
+      "fingerprint": "d0c211e936844807a9810d37fc012c2a0000c0c07fc2643b48a5daf240cbf5ce",
+      "daily": {
+        "overview": "本周AI行业呈现“速度竞赛”与“生态重构”并行的态势。智谱与谷歌分别以GLM-5.1高速版和Gemini 3.5 Flash刷新性能极限，同时字节跳动开源Lance 3B挑战多模态架构范式。行业焦点从单纯模型堆叠转向Agent生态、算力效率优化及搜索体验革新。",
+        "hotNews": [
+          {
+            "title": "谷歌I/O 2026发布Gemini 3.5 Flash，以4倍速度和更低成本推动Agent规模化落地。",
+            "insight": "谷歌I/O 2026发布Gemini 3.5 Flash",
+            "briefing": "谷歌在I/O 2026上发布了Gemini 3.5 Flash模型，旨在帮助用户执行复杂的Agent工作流。该模型输出速度达到同级别前沿模型的4倍，价格却不到一半。谷歌CEO皮查伊指出，若将80%的负载从其他前沿模型迁至3.5 Flash，一家头部企业一年可节省超过10亿美元。谷歌的目标是将AI Agent能力融入搜索、Gmail、YouTube等所有核心服务，推动前沿能力规模化交付给更广泛的用户。",
+            "evaluation": "Gemini 3.5 Flash通过性能与成本的显著优化，为Agent技术在企业级场景的普及提供了经济可行的路径。",
+            "narrative": "谷歌在I/O 2026上发布了Gemini 3.5 Flash模型，旨在帮助用户执行复杂的Agent工作流。该模型输出速度达到同级别前沿模型的4倍，价格却不到一半。谷歌CEO皮查伊指出，若将80%的负载从其他前沿模型迁至3.5 Flash，一家头部企业一年可节省超过10亿美元。谷歌的目标是将AI Agent能力融入搜索、Gmail、YouTube等所有核心服务，推动前沿能力规模化交付给更广泛的用户。Gemini 3.5 Flash通过性能与成本的显著优化，为Agent技术在企业级场景的普及提供了经济可行的路径。",
+            "summary": "谷歌在I/O 2026上发布了Gemini 3.5 Flash模型，旨在帮助用户执行复杂的Agent工作流。该模型输出速度达到同级别前沿模型的4倍，价格却不到一半。谷歌CEO皮查伊指出，若将80%的负载从其他前沿模型迁至3.5 Flash，一家头部企业一年可节省超过10亿美元。谷歌的目标是将AI",
+            "refs": [
+              3,
+              5
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 84,
+            "topicId": 66
+          },
+          {
+            "title": "谷歌搜索全面转向Agent模式，通过智能体编排重塑信息获取体验。",
+            "insight": "谷歌搜索全面转向Agent模式，通过智能体编排重塑信息获取体验。",
+            "briefing": "谷歌在I/O 2026上宣布对搜索引擎进行25年来首次重大更新，全面转向Agent模式。用户可以通过自然语言指令让搜索智能体规划行程、生成UI界面并整合日历数据。尽管早期演示展示了代码生成过程，但谷歌计划在夏季全面上线时隐藏技术细节，以提供更简洁的用户体验。这一变革标志着搜索从关键词匹配向任务执行的范式转移。",
+            "evaluation": "Agent搜索模式通过任务编排提升了信息获取效率，但需解决复杂指令下的准确性与稳定性问题。",
+            "narrative": "谷歌在I/O 2026上宣布对搜索引擎进行25年来首次重大更新，全面转向Agent模式。用户可以通过自然语言指令让搜索智能体规划行程、生成UI界面并整合日历数据。尽管早期演示展示了代码生成过程，但谷歌计划在夏季全面上线时隐藏技术细节，以提供更简洁的用户体验。这一变革标志着搜索从关键词匹配向任务执行的范式转移。Agent搜索模式通过任务编排提升了信息获取效率，但需解决复杂指令下的准确性与稳定性问题。",
+            "summary": "谷歌在I/O 2026上宣布对搜索引擎进行25年来首次重大更新，全面转向Agent模式。用户可以通过自然语言指令让搜索智能体规划行程、生成UI界面并整合日历数据。尽管早期演示展示了代码生成过程，但谷歌计划在夏季全面上线时隐藏技术细节，以提供更简洁的用户体验。这一变革标志着搜索从关键词匹配向任务执行的范式转移。Agent搜索模式通过任务编排提升了信息获取效率",
+            "refs": [
+              13,
+              14
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 63,
+            "topicId": 109
+          },
+          {
+            "title": "智谱GLM-5.1高速版以400 tokens/s刷新API速度纪录，实现旗舰能力与极致低延迟并存。",
+            "insight": "智谱GLM-5.1高速版以400 tokens/s刷新API速度纪录",
+            "briefing": "5月22日，智谱正式上线GLM-5.1高速版API，实测输出速度达400 tokens/s，刷新全球大模型API速度上限。该模型在保留旗舰级全尺寸能力的同时，支持200K超长上下文窗口，最大单次输出达128K标记。智谱通过GLM团队与TileRT团队深度联合，重构了系统级推理生态，实现了“旗舰级全尺寸能力”与“极致低延迟”的完美并存。这一突破对Coding和Agent协作等长链路、高频交互任务具有“降维打击”意义",
+            "evaluation": "智谱通过架构创新打破了行业默认的“快意味着模型小”的惯例，为速度敏感型场景提供了革命性解决方案。",
+            "narrative": "5月22日，智谱正式上线GLM-5.1高速版API，实测输出速度达400 tokens/s，刷新全球大模型API速度上限。该模型在保留旗舰级全尺寸能力的同时，支持200K超长上下文窗口，最大单次输出达128K标记。智谱通过GLM团队与TileRT团队深度联合，重构了系统级推理生态，实现了“旗舰级全尺寸能力”与“极致低延迟”的完美并存。这一突破对Coding和Agent协作等长链路、高频交互任务具有“降维打击”意义。智谱通过架构创新打破了行业默认的“快意味着模型小”的惯例，为速度敏感型场景提供了革命性解决方案。",
+            "summary": "5月22日，智谱正式上线GLM-5.1高速版API，实测输出速度达400 tokens/s，刷新全球大模型API速度上限。该模型在保留旗舰级全尺寸能力的同时，支持200K超长上下文窗口，最大单次输出达128K标记。智谱通过GLM团队与TileRT团队深度联合，重构了系统级推理生态，实现了“旗舰级全尺寸能力”与“极致低延迟”的完美并存。",
+            "refs": [
+              24
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 82,
+            "topicId": 89
+          }
+        ],
+        "otherNews": [
+          {
+            "title": "Hugging Face社区关注真实世界模拟与透明度检测技术。",
+            "insight": "Hugging Face社区关注真实世界模拟与透明度检测技术。",
+            "briefing": "Hugging Face社区讨论了构建“真实SAO-like”世界所需的持久化与受限代理机制，强调通过账本和重放机制确保世界可信度。同时，社区展示了基于Qwen-2.5-7B的轻量级透明度检测器，能在单次前向传播中达到0.866 AUC，支持生产级审计。",
+            "evaluation": "多来源共同指向同一趋势，短期影响值得持续跟踪。",
+            "narrative": "Hugging Face社区讨论了构建“真实SAO-like”世界所需的持久化与受限代理机制，强调通过账本和重放机制确保世界可信度。同时，社区展示了基于Qwen-2.5-7B的轻量级透明度检测器，能在单次前向传播中达到0.866 AUC，支持生产级审计。",
+            "summary": "Hugging Face社区讨论了构建“真实SAO-like”世界所需的持久化与受限代理机制，强调通过账本和重放机制确保世界可信度。同时，社区展示了基于Qwen-2.5-7B的轻量级透明度检测器，能在单次前向传播中达到0.866 AUC",
+            "refs": [
+              15,
+              16
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 60,
+            "topicId": 93
+          },
+          {
+            "title": "Simon Willison发布datasette-agent工具，增强数据分析与可视化能力。",
+            "insight": "Simon Willison发布datasette-agent工具，增强数据分析与可视化能力。",
+            "briefing": "Simon Willison推出了datasette-agent系列工具，包括图表渲染和SQL查询功能。这些工具通过交互式图表和权限检查，增强了数据探索的灵活性与安全性，为开发者提供了更强大的数据分析Agent支持。",
+            "evaluation": "多来源共同指向同一趋势，短期影响值得持续跟踪。",
+            "narrative": "Simon Willison推出了datasette-agent系列工具，包括图表渲染和SQL查询功能。这些工具通过交互式图表和权限检查，增强了数据探索的灵活性与安全性，为开发者提供了更强大的数据分析Agent支持。",
+            "summary": "Simon Willison推出了datasette-agent系列工具，包括图表渲染和SQL查询功能。这些工具通过交互式图表和权限检查，增强了数据探索的灵活性与安全性，为开发者提供了更强大的数据分析Agent支持。多来源共同指向同一趋势",
+            "refs": [
+              18,
+              19,
+              20
+            ],
+            "mentionCount": 3,
+            "crossVerifyScore": 60,
+            "topicId": 94
+          },
+          {
+            "title": "行业趋势转向Agent Labs，模型团队纷纷构建智能体产品。",
+            "insight": "行业趋势转向Agent Labs，模型团队纷纷构建智能体产品。",
+            "briefing": "行业观察显示，OpenAI Labs等模型团队正从模型研发转向Agent产品构建。AI21的模型团队已关闭，转而专注于智能体开发。DeepSeek也首次组建了“Harness团队”以支持智能体系统。这一转变验证了“系统优于模型”的理念，即通过智能体编排实现更复杂的应用场景。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "行业观察显示，OpenAI Labs等模型团队正从模型研发转向Agent产品构建。AI21的模型团队已关闭，转而专注于智能体开发。DeepSeek也首次组建了“Harness团队”以支持智能体系统。这一转变验证了“系统优于模型”的理念，即通过智能体编排实现更复杂的应用场景。",
+            "summary": "行业观察显示，OpenAI Labs等模型团队正从模型研发转向Agent产品构建。AI21的模型团队已关闭，转而专注于智能体开发。DeepSeek也首次组建了“Harness团队”以支持智能体系统。这一转变验证了“系统优于模型”的理念",
+            "refs": [
+              12
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 65,
+            "topicId": 70
+          },
+          {
+            "title": "DeepMind CEO Demis Hassabis反思谷歌落后原因，强调LLM潜力被低估。",
+            "insight": "DeepMind CEO Demis Hassabis反思谷歌落后原因，强调LLM潜力被低估。",
+            "briefing": "DeepMind CEO Demis Hassabis在访谈中承认，谷歌曾低估了LLM的潜力。他认为机器必须像人类一样从经验中学习，但LLM在规模扩大后叠加RLHF展现出惊人泛化能力。Hassabis指出，用户并不在乎模型是否完美，这成为谷歌在生成式AI竞争中落后于OpenAI的关键因素之一。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "DeepMind CEO Demis Hassabis在访谈中承认，谷歌曾低估了LLM的潜力。他认为机器必须像人类一样从经验中学习，但LLM在规模扩大后叠加RLHF展现出惊人泛化能力。Hassabis指出，用户并不在乎模型是否完美，这成为谷歌在生成式AI竞争中落后于OpenAI的关键因素之一。",
+            "summary": "DeepMind CEO Demis Hassabis在访谈中承认，谷歌曾低估了LLM的潜力。他认为机器必须像人类一样从经验中学习，但LLM在规模扩大后叠加RLHF展现出惊人泛化能力。Hassabis指出，用户并不在乎模型是否完美",
+            "refs": [
+              21
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 58,
+            "topicId": 63
+          },
+          {
+            "title": "智谱ZCube架构通过组网优化提升推理效率，无需增加硬件即可提升15%吞吐。",
+            "insight": "智谱ZCube架构通过组网优化提升推理效率，无需增加硬件即可提升15%吞吐。",
+            "briefing": "智谱公开了在生产集群中验证过的ZCube组网架构创新。该架构通过优化GPU互联网络，在不增加GPU、不更换服务器、不修改代码的情况下，使集群推理吞吐提升15%，首Token响应时间P99尾延迟下降40.6%。同时，ZCube架构所需的交换机和光模块数量减少三分之一，显著降低了长期运营成本。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "智谱公开了在生产集群中验证过的ZCube组网架构创新。该架构通过优化GPU互联网络，在不增加GPU、不更换服务器、不修改代码的情况下，使集群推理吞吐提升15%，首Token响应时间P99尾延迟下降40.6%。同时，ZCube架构所需的交换机和光模块数量减少三分之一，显著降低了长期运营成本。",
+            "summary": "智谱公开了在生产集群中验证过的ZCube组网架构创新。该架构通过优化GPU互联网络，在不增加GPU、不更换服务器、不修改代码的情况下，使集群推理吞吐提升15%，首Token响应时间P99尾延迟下降40.6%。同时",
+            "refs": [
+              23
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 57,
+            "topicId": 77
+          },
+          {
+            "title": "字节跳动开源Lance 3B，以3B参数实现原生统一多模态理解与生成。",
+            "insight": "字节跳动开源Lance 3B，以3B参数实现原生统一多模态理解与生成。",
+            "briefing": "字节跳动开源了原生统一多模态大模型Lance，仅3B激活参数即可实现图像/视频的理解、生成与跨模态编辑。Lance采用“共享上下文+能力解耦并行”设计，通过双流专家架构解决理解与生成的矛盾。该模型采用Apache2.0协议，权重已上线Hugging Face，为开发者提供了轻量化多模态解决方案。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "字节跳动开源了原生统一多模态大模型Lance，仅3B激活参数即可实现图像/视频的理解、生成与跨模态编辑。Lance采用“共享上下文+能力解耦并行”设计，通过双流专家架构解决理解与生成的矛盾。该模型采用Apache2.0协议，权重已上线Hugging Face，为开发者提供了轻量化多模态解决方案。",
+            "summary": "字节跳动开源了原生统一多模态大模型Lance，仅3B激活参数即可实现图像/视频的理解、生成与跨模态编辑。Lance采用“共享上下文+能力解耦并行”设计，通过双流专家架构解决理解与生成的矛盾。该模型采用Apache2.0协议",
+            "refs": [
+              25
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 48,
+            "topicId": 90
+          },
+          {
+            "title": "CV与AI Agent结合推动行业落地，大华股份构建视觉与行业模型。",
+            "insight": "CV与AI Agent结合推动行业落地，大华股份构建视觉与行业模型。",
+            "briefing": "在2026AI Partner大会上，大华股份展示了CV与AI Agent结合的行业实践。其V系列视觉大模型让系统“看得懂”物理世界，L系列行业模型打通业务逻辑。未来“基模+行业Know-how”将成为新范式，AI的终局是让每个行业和个体都不掉队。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "在2026AI Partner大会上，大华股份展示了CV与AI Agent结合的行业实践。其V系列视觉大模型让系统“看得懂”物理世界，L系列行业模型打通业务逻辑。未来“基模+行业Know-how”将成为新范式，AI的终局是让每个行业和个体都不掉队。",
+            "summary": "在2026AI Partner大会上，大华股份展示了CV与AI Agent结合的行业实践。其V系列视觉大模型让系统“看得懂”物理世界，L系列行业模型打通业务逻辑。未来“基模+行业Know-how”将成为新范式",
+            "refs": [
+              22
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 58,
+            "topicId": 67
+          }
+        ],
+        "coreTech": [
+          {
+            "title": "编译轨迹用于长上下文训练",
+            "summary": "该论文提出ACC方法，通过编译Agent在多轮交互中产生的轨迹来训练LLM的长上下文推理能力，解决证据分散问题。",
+            "refs": [
+              6
+            ],
+            "topicId": 6
+          },
+          {
+            "title": "多智能体系统中的安全共享",
+            "summary": "LCGuard通过Transformer KV缓存实现隐式通信，并引入安全机制防止敏感信息在多智能体间无序传播。",
+            "refs": [
+              7
+            ],
+            "topicId": 18
+          },
+          {
+            "title": "自主系统的源级自演化",
+            "summary": "MOSS允许Agent在部署后通过源级重写实现自我演化，解决静态部署后无法从交互中学习的问题。",
+            "refs": [
+              8
+            ],
+            "topicId": 19
+          },
+          {
+            "title": "验证门控完成作为多智能体运行",
+            "summary": "该研究将验证门控完成作为多智能体运行时的准入控制模式，通过只读验证器确保任务提交的安全性。",
+            "refs": [
+              9
+            ],
+            "topicId": 26
+          },
+          {
+            "title": "基于博弈的能源交易",
+            "summary": "论文将Nash讨价还价解集成多智能体强化学习，实现电动汽车间的去中心化能源交易与公平性保障。",
+            "refs": [
+              10
+            ],
+            "topicId": 42
+          },
+          {
+            "title": "偏好引导的拓扑优化",
+            "summary": "TO-Agents框架通过多智能体系统将自然语言设计意图转化为拓扑优化设置，实现自动化设计。",
+            "refs": [
+              11
+            ],
+            "topicId": 59
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "谷歌搜索智能体大升级，AI却直接「罢工」了？",
+          "2": "Google I/O 2026 全部发布：Gemini、搜索与智能眼镜",
+          "3": "Gemini 3.5：具备行动能力的前沿智能",
+          "4": "Google I/O 2026 对话环节回顾",
+          "5": "谷歌掀桌，一口气甩出16个AI王炸",
+          "6": "ACC: 编译Agent轨迹用于长上下文训练",
+          "7": "LCGuard: 多智能体系统中的安全KV共享",
+          "8": "MOSS: 自主Agent系统的源级自演化",
+          "9": "验证门控完成作为多智能体运行时准入控制",
+          "10": "基于Nash博弈的V2V能源交易",
+          "11": "TO-Agents: 偏好引导的拓扑优化",
+          "12": "[AI新闻] 所有模型实验室现已转型为智能体实验室",
+          "13": "即使你讨厌 AI，你也得用 Google AI 搜索",
+          "14": "系好安全带：Google 将在 2026 年利用智能体 AI 重塑搜索",
+          "15": "冻结的 Qwen-2.5-7 B 模型单次前向传播结合轻量级分类器达到 0.866",
+          "16": "文章亮点：*真实比例世界模拟游戏* (art-60-157, v0.1)",
+          "17": "Centauri ADE：轻量级智能体开发环境",
+          "21": "谷歌为何被OpenAI抢先？DeepMind CEO：我曾经低估了LLM！不赞同Le Cun对AI风险的态度！AGI下一站是后稀缺世界",
+          "22": "让智能体看见世界：CV × AI Agent 的行业场景新实践| 2026 AI Partner·北京亦庄AI+产业大会",
+          "23": "不加一块GPU，多榨出15%算力：大模型圈对网络“动刀”",
+          "24": "智谱发布GLM-5. 1 高速版：400 tokens/s飙出全球API新极限5月22日，智谱港股盘中一度飙升超22%，市值站稳4500亿港元，同时正式上线GLM-5.1高速版API，输出速度达400tokens/s",
+          "25": "字节跳动开源Lance 3 B：用一个“脑子”同时搞定图视理解与生成字节跳动开源Lance，一款仅3 B激活参数的原生统一多模态大模型，打破“理解模型（VLM）”与“生成模型（Di T/Diffusion）”的技术壁垒。"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 115,
+        "selectedTopicTotal": 16
+      },
+      "at": "2026-05-23"
     }
   },
   "llm": {
@@ -23764,6 +23998,54 @@
       "operation": "translate_missing_reference_titles",
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":1,\"zh_title\":\"你已无法在谷歌搜索‘disregard’一词\"},{\"id\":2,\"zh_title\":\"AI 正被用于复活已故飞行员的语音\"},{\"id\":3,\"zh_title\":\"谷歌 AI 搜索已损坏，会无视你的搜索内容\"},{\"id\":4,\"zh_title\":\"美国正紧急阻止网民复刻已故飞行员的语音\"},{\"id\":6,\"zh_title\":\"Anthropic 预计将迎来首个盈利季度\"},{\"id\":7,\"zh_title\":\"埃隆，别再试图让 Grok 成真了\"},{\"id\":8,\"zh_title\":\"风投和创始人如何利用虚高的 ARR 冠军 AI 初创公司\"},{\"id\":9,\"zh_title\":\"特朗普因顶级 AI 公司 CEO 拒绝出席而突然取消签署行政令活动\"},{\"id\":10,\"zh_title\":\"内存短缺导致消费电子产品重新定价\"},{\"id\":13,\"zh_title\":\"Gartner 将 OpenAI 评为企业编码代理领域的领导者\"},{\"id\":14,\"zh_title\":\"OpenAI 与戴尔合作将 Codex 引入混合及本地企业环境\"},{\"id\":15,\"zh_title\":\"Datasette Agent\"},{\"id\":16,\"zh_title\":\"Advent Health 利用 OpenAI 推进全人照护\"},{\"id\":17,\"zh_title\":\"datasette-agent 0.1a3\"}]}",
+      "at": "2026-05-23"
+    },
+    "f452a321ba4fc01ca026df73c012f4a2ad7421fc98d18a9d083c9f5e93eb06fc": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":5,\"topic_key\":\"LLM回顾与综述\",\"topic_title\":\"LLM回顾与综述\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":63,\"topic_key\":\"Anthropic公司分析\",\"topic_title\":\"Anthropic公司分析\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":64,\"topic_key\":\"DeepMind CEO访谈\",\"topic_title\":\"DeepMind CEO访谈\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":65,\"topic_key\":\"宁德时代布局AI\",\"topic_title\":\"宁德时代布局AI\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":66,\"topic_key\":\"AI Agent硬件实践\",\"topic_title\":\"AI Agent硬件实践\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":67,\"topic_key\":\"谷歌I/O 2026搜索升级\",\"topic_title\":\"谷歌I/O 2026搜索升级\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":68,\"topic_key\":\"AI Agent行业应用\",\"topic_title\":\"AI Agent行业应用\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":69,\"topic_key\":\"AI Agent产品与硬件\",\"topic_title\":\"AI Agent产品与硬件\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":70,\"topic_key\":\"AI Agent能力演进\",\"topic_title\":\"AI Agent能力演进\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":71,\"topic_key\":\"Model Labs转型Agent\",\"topic_title\":\"Model Labs转型Agent\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":72,\"topic_key\":\"宝马集团Agentic AI\",\"topic_title\":\"宝马集团Agentic AI\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":73,\"topic_key\":\"AI唤醒灯硬件\",\"topic_title\":\"AI唤醒灯硬件\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":74,\"topic_key\":\"论文AIGC检测\",\"topic_title\":\"论文AIGC检测\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":75,\"topic_key\":\"DeepMind AI在EVE Online\",\"topic_title\":\"DeepMind AI在EVE Online\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":76,\"topic_key\":\"Roblox实时生成场景\",\"topic_title\":\"Roblox实时生成场景\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":77,\"topic_key\":\"Transformer作者Cohere发布\",\"topic_title\":\"Transformer作者Cohere发布\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":78,\"topic_key\":\"智谱AI算力架构创新\",\"topic_title\":\"智谱AI算力架构创新\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":79,\"topic_key\":\"王小川All in医疗大模型\",\"topic_title\":\"王小川All in医疗大模型\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":80,\"topic_key\":\"物理AI产业大会\",\"topic_title\":\"物理AI产业大会\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":81,\"topic_key\":\"Anthropic前沿AI对话\",\"topic_title\":\"Anthropic前沿AI对话\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":82,\"topic_key\":\"谷歌I/O 2026发布会\",\"topic_title\":\"谷歌I/O 2026发布会\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":83,\"topic_key\":\"Hark融资与AI接口\",\"topic_title\":\"Hark融资与AI接口\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":84,\"topic_key\":\"The Path心理健康AI\",\"topic_title\":\"The Path心理健康AI\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":85,\"topic_key\":\"英伟达AI Agent CPU市场\",\"topic_title\":\"英伟达AI Agent CPU市场\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":86,\"topic_key\":\"谷歌AI眼镜原型\",\"topic_title\":\"谷歌AI眼镜原型\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false}]}",
+      "at": "2026-05-23"
+    },
+    "5f5421315dec16693e9d2a6c61ed7d5c723717586f753ab36c37b3e438e9c09e": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":87,\"topic_key\":\"特朗普取消AI监管令\",\"topic_title\":\"特朗普取消AI监管令\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":88,\"topic_key\":\"Spotify发布Studio桌面应用\",\"topic_title\":\"Spotify发布Studio桌面应用\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":89,\"topic_key\":\"GPT-4.5通过图灵测试\",\"topic_title\":\"GPT-4.5通过图灵测试\",\"topic_type\":\"paper\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":90,\"topic_key\":\"渣打集团战略裁员\",\"topic_title\":\"渣打集团战略裁员\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":91,\"topic_key\":\"智谱发布GLM-5.1高速版\",\"topic_title\":\"智谱发布GLM-5.1高速版\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":92,\"topic_key\":\"字节跳动开源Lance模型\",\"topic_title\":\"字节跳动开源Lance模型\",\"topic_type\":\"paper\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":93,\"topic_key\":\"B站Q1财报扭亏为盈\",\"topic_title\":\"B站Q1财报扭亏为盈\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":95,\"topic_key\":\"Anthropic Code with Claude活动\",\"topic_title\":\"Anthropic Code with Claude活动\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":96,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":97,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":98,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":99,\"topic_key\":\"Simon Willison发布datasette-agent\",\"topic_title\":\"Simon Willison发布datasette-agent\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":100,\"topic_key\":\"Simon Willison发布datasette-agent\",\"topic_title\":\"Simon Willison发布datasette-agent\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":101,\"topic_key\":\"Simon Willison发布datasette-agent\",\"topic_title\":\"Simon Willison发布datasette-agent\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":102,\"topic_key\":\"Simon Willison发布llm-gemini\",\"topic_title\":\"Simon Willison发布llm-gemini\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":103,\"topic_key\":\"KPMG集成Claude\",\"topic_title\":\"KPMG集成Claude\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":104,\"topic_key\":\"AI对文学界的影响\",\"topic_title\":\"AI对文学界的影响\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":105,\"topic_key\":\"Spotify AI混音工具\",\"topic_title\":\"Spotify AI混音工具\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":107,\"topic_key\":\"Google I/O 2026回顾\",\"topic_title\":\"Google I/O 2026回顾\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":108,\"topic_key\":\"AI理解世界能力探讨\",\"topic_title\":\"AI理解世界能力探讨\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":109,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":110,\"topic_key\":\"Google I/O 2026发布\",\"topic_title\":\"Google I/O 2026发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":111,\"topic_key\":\"CVPR 2026多模态研究\",\"topic_title\":\"CVPR 2026多模态研究\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":112,\"topic_key\":\"CVPR 2026自动驾驶研究\",\"topic_title\":\"CVPR 2026自动驾驶研究\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":113,\"topic_key\":\"CVPR 2026工程智能\",\"topic_title\":\"CVPR 2026工程智能\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-05-23"
+    },
+    "3d0f8e2c38533195e867085c31b1d88b86f2aae7bd442dc2a77672d819463e29": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":114,\"topic_key\":\"智象未来发布HiDream-O1-Image-Pro图像大模型\",\"topic_title\":\"智象未来发布HiDream-O1-Image-Pro图像大模型\",\"topic_type\":\"news\",\"confidence\":0.95,\"is_pr\":false},{\"candidate_id\":116,\"topic_key\":\"OpenAI发布金融追踪功能\",\"topic_title\":\"OpenAI发布金融追踪功能\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":117,\"topic_key\":\"FTC对Cox Media Group等公司罚款\",\"topic_title\":\"FTC对Cox Media Group等公司罚款\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":118,\"topic_key\":\"SpaceX S-1 SEC文件引用\",\"topic_title\":\"SpaceX S-1 SEC文件引用\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":119,\"topic_key\":\"10 tokens per second速度测试\",\"topic_title\":\"10 tokens per second速度测试\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":120,\"topic_key\":\"OpenAI GPT-next解决平面单位距离问题\",\"topic_title\":\"OpenAI GPT-next解决平面单位距离问题\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":121,\"topic_key\":\"Gemini AI Avatar克隆功能\",\"topic_title\":\"Gemini AI Avatar克隆功能\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":122,\"topic_key\":\"Google AI搜索功能普及\",\"topic_title\":\"Google AI搜索功能普及\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":123,\"topic_key\":\"OpenAI公关危机与Chris Lehane\",\"topic_title\":\"OpenAI公关危机与Chris Lehane\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":125,\"topic_key\":\"Spotify推出AI播客问答功能\",\"topic_title\":\"Spotify推出AI播客问答功能\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":126,\"topic_key\":\"Spotify推出ElevenLabs有声书工具\",\"topic_title\":\"Spotify推出ElevenLabs有声书工具\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":127,\"topic_key\":\"AI助力铝回收初创企业\",\"topic_title\":\"AI助力铝回收初创企业\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":128,\"topic_key\":\"Google 2026年AI搜索重塑\",\"topic_title\":\"Google 2026年AI搜索重塑\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":129,\"topic_key\":\"书籍中AI合成引语争议\",\"topic_title\":\"书籍中AI合成引语争议\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":130,\"topic_key\":\"OpenAI新加坡合作伙伴关系\",\"topic_title\":\"OpenAI新加坡合作伙伴关系\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-05-23"
+    },
+    "3358b58ea25a1458ecf941effb6afa3a9f6e3d9d17fcb0d32f1982496365b33c": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"Hugging Face社区动态\",\"merged_key\":\"Hugging Face社区动态\",\"merged_title\":\"Hugging Face社区动态\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison发布datasette-agent\",\"merged_key\":\"Simon Willison发布datasette-agent\",\"merged_title\":\"Simon Willison发布datasette-agent\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison发布llm-gemini\",\"merged_key\":\"Simon Willison发布datasette-agent\",\"merged_title\":\"Simon Willison发布datasette-agent\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌I/O 2026发布会\",\"merged_key\":\"谷歌I/O 2026发布会\",\"merged_title\":\"谷歌I/O 2026发布会\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌I/O 2026搜索升级\",\"merged_key\":\"谷歌I/O 2026发布会\",\"merged_title\":\"谷歌I/O 2026发布会\",\"merged_type\":\"news\"},{\"from_key\":\"Google I/O 2026发布\",\"merged_key\":\"谷歌I/O 2026发布会\",\"merged_title\":\"谷歌I/O 2026发布会\",\"merged_type\":\"news\"},{\"from_key\":\"Google I/O 2026回顾\",\"merged_key\":\"谷歌I/O 2026发布会\",\"merged_title\":\"谷歌I/O 2026发布会\",\"merged_type\":\"news\"},{\"from_key\":\"10 tokens per second速度测试\",\"merged_key\":\"10 tokens per second速度测试\",\"merged_title\":\"10 tokens per second速度测试\",\"merged_type\":\"news\"},{\"from_key\":\"宝马集团Agentic AI\",\"merged_key\":\"宝马集团Agentic AI\",\"merged_title\":\"宝马集团Agentic AI\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌AI眼镜原型\",\"merged_key\":\"谷歌AI眼镜原型\",\"merged_title\":\"谷歌AI眼镜原型\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌搜索智能体大升级，AI却直接「罢工」了？\",\"merged_key\":\"谷歌I/O 2026发布会\",\"merged_title\":\"谷歌I/O 2026发布会\",\"merged_type\":\"news\"},{\"from_key\":\"论文AIGC检测\",\"merged_key\":\"论文AIGC检测\",\"merged_title\":\"论文AIGC检测\",\"merged_type\":\"news\"},{\"from_key\":\"宁德时代布局AI\",\"merged_key\":\"宁德时代布局AI\",\"merged_title\":\"宁德时代布局AI\",\"merged_type\":\"news\"},{\"from_key\":\"书籍中AI合成引语争议\",\"merged_key\":\"书籍中AI合成引语争议\",\"merged_title\":\"书籍中AI合成引语争议\",\"merged_type\":\"news\"},{\"from_key\":\"特朗普取消AI监管令\",\"merged_key\":\"特朗普取消AI监管令\",\"merged_title\":\"特朗普取消AI监管令\",\"merged_type\":\"news\"},{\"from_key\":\"王小川All in医疗大模型\",\"merged_key\":\"王小川All in医疗大模型\",\"merged_title\":\"王小川All in医疗大模型\",\"merged_type\":\"news\"},{\"from_key\":\"物理AI产业大会\",\"merged_key\":\"物理AI产业大会\",\"merged_title\":\"物理AI产业大会\",\"merged_type\":\"news\"},{\"from_key\":\"英伟达AI Agent CPU市场\",\"merged_key\":\"英伟达AI Agent CPU市场\",\"merged_title\":\"英伟达AI Agent CPU市场\",\"merged_type\":\"news\"},{\"from_key\":\"渣打集团战略裁员\",\"merged_key\":\"渣打集团战略裁员\",\"merged_title\":\"渣打集团战略裁员\",\"merged_type\":\"news\"},{\"from_key\":\"智谱发布GLM-5.1高速版\",\"merged_key\":\"智谱发布GLM-5.1高速版\",\"merged_title\":\"智谱发布GLM-5.1高速版\",\"merged_type\":\"news\"},{\"from_key\":\"智谱AI算力架构创新\",\"merged_key\":\"智谱AI算力架构创新\",\"merged_title\":\"智谱AI算力架构创新\",\"merged_type\":\"news\"},{\"from_key\":\"智象未来发布HiDream-O1-Image-Pro图像大模型\",\"merged_key\":\"智象未来发布HiDream-O1-Image-Pro图像大模型\",\"merged_title\":\"智象未来发布HiDream-O1-Image-Pro图像大模型\",\"merged_type\":\"news\"},{\"from_key\":\"字节跳动开源Lance模型\",\"merged_key\":\"字节跳动开源Lance模型\",\"merged_title\":\"字节跳动开源Lance模型\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent产品与硬件\",\"merged_key\":\"AI Agent产品与硬件\",\"merged_title\":\"AI Agent产品与硬件\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent能力演进\",\"merged_key\":\"AI Agent能力演进\",\"merged_title\":\"AI Agent能力演进\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent行业应用\",\"merged_key\":\"AI Agent行业应用\",\"merged_title\":\"AI Agent行业应用\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent硬件实践\",\"merged_key\":\"AI Agent硬件实践\",\"merged_title\":\"AI Agent硬件实践\",\"merged_type\":\"news\"},{\"from_key\":\"AI对文学界的影响\",\"merged_key\":\"AI对文学界的影响\",\"merged_title\":\"AI对文学界的影响\",\"merged_type\":\"news\"},{\"from_key\":\"AI唤醒灯硬件\",\"merged_key\":\"AI唤醒灯硬件\",\"merged_title\":\"AI唤醒灯硬件\",\"merged_type\":\"news\"},{\"from_key\":\"AI理解世界能力探讨\",\"merged_key\":\"AI理解世界能力探讨\",\"merged_title\":\"AI理解世界能力探讨\",\"merged_type\":\"news\"},{\"from_key\":\"AI助力铝回收初创企业\",\"merged_key\":\"AI助力铝回收初创企业\",\"merged_title\":\"AI助力铝回收初创企业\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Code with Claude活动\",\"merged_key\":\"Anthropic Code with Claude活动\",\"merged_title\":\"Anthropic Code with Claude活动\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic公司分析\",\"merged_key\":\"Anthropic公司分析\",\"merged_title\":\"Anthropic公司分析\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic前沿AI对话\",\"merged_key\":\"Anthropic前沿AI对话\",\"merged_title\":\"Anthropic前沿AI对话\",\"merged_type\":\"news\"},{\"from_key\":\"B站Q1财报扭亏为盈\",\"merged_key\":\"B站Q1财报扭亏为盈\",\"merged_title\":\"B站Q1财报扭亏为盈\",\"merged_type\":\"news\"},{\"from_key\":\"CVPR 2026多模态研究\",\"merged_key\":\"CVPR 2026多模态研究\",\"merged_title\":\"CVPR 2026多模态研究\",\"merged_type\":\"news\"},{\"from_key\":\"CVPR 2026工程智能\",\"merged_key\":\"CVPR 2026工程智能\",\"merged_title\":\"CVPR 2026工程智能\",\"merged_type\":\"news\"},{\"from_key\":\"CVPR 2026自动驾驶研究\",\"merged_key\":\"CVPR 2026自动驾驶研究\",\"merged_title\":\"CVPR 2026自动驾驶研究\",\"merged_type\":\"news\"},{\"from_key\":\"DeepMind AI在EVE Online\",\"merged_key\":\"DeepMind AI在EVE Online\",\"merged_title\":\"DeepMind AI在EVE Online\",\"merged_type\":\"news\"},{\"from_key\":\"DeepMind CEO访谈\",\"merged_key\":\"DeepMind CEO访谈\",\"merged_title\":\"DeepMind CEO访谈\",\"merged_type\":\"news\"},{\"from_key\":\"FTC对Cox Media Group等公司罚款\",\"merged_key\":\"FTC对Cox Media Group等公司罚款\",\"merged_title\":\"FTC对Cox Media Group等公司罚款\",\"merged_type\":\"news\"},{\"from_key\":\"Gemini AI Avatar克隆功能\",\"merged_key\":\"Gemini AI Avatar克隆功能\",\"merged_title\":\"Gemini AI Avatar克隆功能\",\"merged_type\":\"news\"},{\"from_key\":\"Google 2026年AI搜索重塑\",\"merged_key\":\"Google 2026年AI搜索重塑\",\"merged_title\":\"Google 2026年AI搜索重塑\",\"merged_type\":\"news\"},{\"from_key\":\"Google AI搜索功能普及\",\"merged_key\":\"Google 2026年AI搜索重塑\",\"merged_title\":\"Google 2026年AI搜索重塑\",\"merged_type\":\"news\"},{\"from_key\":\"GPT-4.5通过图灵测试\",\"merged_key\":\"GPT-4.5通过图灵测试\",\"merged_title\":\"GPT-4.5通过图灵测试\",\"merged_type\":\"news\"},{\"from_key\":\"Hark融资与AI接口\",\"merged_key\":\"Hark融资与AI接口\",\"merged_title\":\"Hark融资与AI接口\",\"merged_type\":\"news\"},{\"from_key\":\"KPMG集成Claude\",\"merged_key\":\"KPMG集成Claude\",\"merged_title\":\"KPMG集成Claude\",\"merged_type\":\"news\"},{\"from_key\":\"LLM回顾与综述\",\"merged_key\":\"LLM回顾与综述\",\"merged_title\":\"LLM回顾与综述\",\"merged_type\":\"news\"},{\"from_key\":\"Model Labs转型Agent\",\"merged_key\":\"Model Labs转型Agent\",\"merged_title\":\"Model Labs转型Agent\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI GPT-next解决平面单位距离问题\",\"merged_key\":\"OpenAI GPT-next解决平面单位距离问题\",\"merged_title\":\"OpenAI GPT-next解决平面单位距离问题\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI发布金融追踪功能\",\"merged_key\":\"OpenAI发布金融追踪功能\",\"merged_title\":\"OpenAI发布金融追踪功能\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI公关危机与Chris Lehane\",\"merged_key\":\"OpenAI公关危机与Chris Lehane\",\"merged_title\":\"OpenAI公关危机与Chris Lehane\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI新加坡合作伙伴关系\",\"merged_key\":\"OpenAI新加坡合作伙伴关系\",\"merged_title\":\"OpenAI新加坡合作伙伴关系\",\"merged_type\":\"news\"},{\"from_key\":\"Roblox实时生成场景\",\"merged_key\":\"Roblox实时生成场景\",\"merged_title\":\"Roblox实时生成场景\",\"merged_type\":\"news\"},{\"from_key\":\"SpaceX S-1 SEC文件引用\",\"merged_key\":\"SpaceX S-1 SEC文件引用\",\"merged_title\":\"SpaceX S-1 SEC文件引用\",\"merged_type\":\"news\"},{\"from_key\":\"Spotify AI混音工具\",\"merged_key\":\"Spotify AI混音工具\",\"merged_title\":\"Spotify AI混音工具\",\"merged_type\":\"news\"},{\"from_key\":\"Spotify发布Studio桌面应用\",\"merged_key\":\"Spotify发布Studio桌面应用\",\"merged_title\":\"Spotify发布Studio桌面应用\",\"merged_type\":\"news\"},{\"from_key\":\"Spotify推出AI播客问答功能\",\"merged_key\":\"Spotify推出AI播客问答功能\",\"merged_title\":\"Spotify推出AI播客问答功能\",\"merged_type\":\"news\"},{\"from_key\":\"Spotify推出ElevenLabs有声书工具\",\"merged_key\":\"Spotify推出ElevenLabs有声书工具\",\"merged_title\":\"Spotify推出ElevenLabs有声书工具\",\"merged_type\":\"news\"},{\"from_key\":\"The Path心理健康AI\",\"merged_key\":\"The Path心理健康AI\",\"merged_title\":\"The Path心理健康AI\",\"merged_type\":\"news\"},{\"from_key\":\"Transformer作者Cohere发布\",\"merged_key\":\"Transformer作者Cohere发布\",\"merged_title\":\"Transformer作者Cohere发布\",\"merged_type\":\"news\"}]}",
+      "at": "2026-05-23"
+    },
+    "7c5ea8b3e3c4ad44c21a162f03f6d9a99b378ca1d3560247ee4131476ee33072": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"谷歌I/O 2026发布会\",\"merged_key\":\"谷歌I/O 2026发布会\",\"merged_title\":\"谷歌I/O 2026发布会\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face社区动态\",\"merged_key\":\"Hugging Face社区动态\",\"merged_title\":\"Hugging Face社区动态\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison发布datasette-agent\",\"merged_key\":\"Simon Willison发布datasette-agent\",\"merged_title\":\"Simon Willison发布datasette-agent\",\"merged_type\":\"news\"},{\"from_key\":\"Google 2026年AI搜索重塑\",\"merged_key\":\"Google 2026年AI搜索重塑\",\"merged_title\":\"Google 2026年AI搜索重塑\",\"merged_type\":\"news\"},{\"from_key\":\"10 tokens per second速度测试\",\"merged_key\":\"10 tokens per second速度测试\",\"merged_title\":\"10 tokens per second速度测试\",\"merged_type\":\"news\"},{\"from_key\":\"宝马集团Agentic AI\",\"merged_key\":\"宝马集团Agentic AI\",\"merged_title\":\"宝马集团Agentic AI\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌AI眼镜原型\",\"merged_key\":\"谷歌AI眼镜原型\",\"merged_title\":\"谷歌AI眼镜原型\",\"merged_type\":\"news\"},{\"from_key\":\"论文AIGC检测\",\"merged_key\":\"论文AIGC检测\",\"merged_title\":\"论文AIGC检测\",\"merged_type\":\"news\"},{\"from_key\":\"宁德时代布局AI\",\"merged_key\":\"宁德时代布局AI\",\"merged_title\":\"宁德时代布局AI\",\"merged_type\":\"news\"},{\"from_key\":\"书籍中AI合成引语争议\",\"merged_key\":\"书籍中AI合成引语争议\",\"merged_title\":\"书籍中AI合成引语争议\",\"merged_type\":\"news\"},{\"from_key\":\"特朗普取消AI监管令\",\"merged_key\":\"特朗普取消AI监管令\",\"merged_title\":\"特朗普取消AI监管令\",\"merged_type\":\"news\"},{\"from_key\":\"王小川All in医疗大模型\",\"merged_key\":\"王小川All in医疗大模型\",\"merged_title\":\"王小川All in医疗大模型\",\"merged_type\":\"news\"},{\"from_key\":\"物理AI产业大会\",\"merged_key\":\"物理AI产业大会\",\"merged_title\":\"物理AI产业大会\",\"merged_type\":\"news\"},{\"from_key\":\"英伟达AI Agent CPU市场\",\"merged_key\":\"英伟达AI Agent CPU市场\",\"merged_title\":\"英伟达AI Agent CPU市场\",\"merged_type\":\"news\"},{\"from_key\":\"渣打集团战略裁员\",\"merged_key\":\"渣打集团战略裁员\",\"merged_title\":\"渣打集团战略裁员\",\"merged_type\":\"news\"},{\"from_key\":\"智谱发布GLM-5.1高速版\",\"merged_key\":\"智谱发布GLM-5.1高速版\",\"merged_title\":\"智谱发布GLM-5.1高速版\",\"merged_type\":\"news\"},{\"from_key\":\"智谱AI算力架构创新\",\"merged_key\":\"智谱AI算力架构创新\",\"merged_title\":\"智谱AI算力架构创新\",\"merged_type\":\"news\"},{\"from_key\":\"智象未来发布HiDream-O1-Image-Pro图像大模型\",\"merged_key\":\"智象未来发布HiDream-O1-Image-Pro图像大模型\",\"merged_title\":\"智象未来发布HiDream-O1-Image-Pro图像大模型\",\"merged_type\":\"news\"},{\"from_key\":\"字节跳动开源Lance模型\",\"merged_key\":\"字节跳动开源Lance模型\",\"merged_title\":\"字节跳动开源Lance模型\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent产品与硬件\",\"merged_key\":\"AI Agent产品与硬件\",\"merged_title\":\"AI Agent产品与硬件\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent能力演进\",\"merged_key\":\"AI Agent能力演进\",\"merged_title\":\"AI Agent能力演进\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent行业应用\",\"merged_key\":\"AI Agent行业应用\",\"merged_title\":\"AI Agent行业应用\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent硬件实践\",\"merged_key\":\"AI Agent硬件实践\",\"merged_title\":\"AI Agent硬件实践\",\"merged_type\":\"news\"},{\"from_key\":\"AI对文学界的影响\",\"merged_key\":\"AI对文学界的影响\",\"merged_title\":\"AI对文学界的影响\",\"merged_type\":\"news\"},{\"from_key\":\"AI唤醒灯硬件\",\"merged_key\":\"AI唤醒灯硬件\",\"merged_title\":\"AI唤醒灯硬件\",\"merged_type\":\"news\"},{\"from_key\":\"AI理解世界能力探讨\",\"merged_key\":\"AI理解世界能力探讨\",\"merged_title\":\"AI理解世界能力探讨\",\"merged_type\":\"news\"},{\"from_key\":\"AI助力铝回收初创企业\",\"merged_key\":\"AI助力铝回收初创企业\",\"merged_title\":\"AI助力铝回收初创企业\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Code with Claude活动\",\"merged_key\":\"Anthropic Code with Claude活动\",\"merged_title\":\"Anthropic Code with Claude活动\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic公司分析\",\"merged_key\":\"Anthropic公司分析\",\"merged_title\":\"Anthropic公司分析\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic前沿AI对话\",\"merged_key\":\"Anthropic前沿AI对话\",\"merged_title\":\"Anthropic前沿AI对话\",\"merged_type\":\"news\"},{\"from_key\":\"B站Q1财报扭亏为盈\",\"merged_key\":\"B站Q1财报扭亏为盈\",\"merged_title\":\"B站Q1财报扭亏为盈\",\"merged_type\":\"news\"},{\"from_key\":\"CVPR 2026多模态研究\",\"merged_key\":\"CVPR 2026多模态研究\",\"merged_title\":\"CVPR 2026多模态研究\",\"merged_type\":\"news\"},{\"from_key\":\"CVPR 2026工程智能\",\"merged_key\":\"CVPR 2026工程智能\",\"merged_title\":\"CVPR 2026工程智能\",\"merged_type\":\"news\"},{\"from_key\":\"CVPR 2026自动驾驶研究\",\"merged_key\":\"CVPR 2026自动驾驶研究\",\"merged_title\":\"CVPR 2026自动驾驶研究\",\"merged_type\":\"news\"},{\"from_key\":\"DeepMind AI在EVE Online\",\"merged_key\":\"DeepMind AI在EVE Online\",\"merged_title\":\"DeepMind AI在EVE Online\",\"merged_type\":\"news\"},{\"from_key\":\"DeepMind CEO访谈\",\"merged_key\":\"DeepMind CEO访谈\",\"merged_title\":\"DeepMind CEO访谈\",\"merged_type\":\"news\"},{\"from_key\":\"FTC对Cox Media Group等公司罚款\",\"merged_key\":\"FTC对Cox Media Group等公司罚款\",\"merged_title\":\"FTC对Cox Media Group等公司罚款\",\"merged_type\":\"news\"},{\"from_key\":\"Gemini AI Avatar克隆功能\",\"merged_key\":\"Gemini AI Avatar克隆功能\",\"merged_title\":\"Gemini AI Avatar克隆功能\",\"merged_type\":\"news\"},{\"from_key\":\"GPT-4.5通过图灵测试\",\"merged_key\":\"GPT-4.5通过图灵测试\",\"merged_title\":\"GPT-4.5通过图灵测试\",\"merged_type\":\"news\"},{\"from_key\":\"Hark融资与AI接口\",\"merged_key\":\"Hark融资与AI接口\",\"merged_title\":\"Hark融资与AI接口\",\"merged_type\":\"news\"},{\"from_key\":\"KPMG集成Claude\",\"merged_key\":\"KPMG集成Claude\",\"merged_title\":\"KPMG集成Claude\",\"merged_type\":\"news\"},{\"from_key\":\"LLM回顾与综述\",\"merged_key\":\"LLM回顾与综述\",\"merged_title\":\"LLM回顾与综述\",\"merged_type\":\"news\"},{\"from_key\":\"Model Labs转型Agent\",\"merged_key\":\"Model Labs转型Agent\",\"merged_title\":\"Model Labs转型Agent\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI GPT-next解决平面单位距离问题\",\"merged_key\":\"OpenAI GPT-next解决平面单位距离问题\",\"merged_title\":\"OpenAI GPT-next解决平面单位距离问题\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI发布金融追踪功能\",\"merged_key\":\"OpenAI发布金融追踪功能\",\"merged_title\":\"OpenAI发布金融追踪功能\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI公关危机与Chris Lehane\",\"merged_key\":\"OpenAI公关危机与Chris Lehane\",\"merged_title\":\"OpenAI公关危机与Chris Lehane\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI新加坡合作伙伴关系\",\"merged_key\":\"OpenAI新加坡合作伙伴关系\",\"merged_title\":\"OpenAI新加坡合作伙伴关系\",\"merged_type\":\"news\"},{\"from_key\":\"Roblox实时生成场景\",\"merged_key\":\"Roblox实时生成场景\",\"merged_title\":\"Roblox实时生成场景\",\"merged_type\":\"news\"},{\"from_key\":\"SpaceX S-1 SEC文件引用\",\"merged_key\":\"SpaceX S-1 SEC文件引用\",\"merged_title\":\"SpaceX S-1 SEC文件引用\",\"merged_type\":\"news\"},{\"from_key\":\"Spotify AI混音工具\",\"merged_key\":\"Spotify AI混音工具\",\"merged_title\":\"Spotify AI混音工具\",\"merged_type\":\"news\"},{\"from_key\":\"Spotify发布Studio桌面应用\",\"merged_key\":\"Spotify发布Studio桌面应用\",\"merged_title\":\"Spotify发布Studio桌面应用\",\"merged_type\":\"news\"},{\"from_key\":\"Spotify推出AI播客问答功能\",\"merged_key\":\"Spotify推出AI播客问答功能\",\"merged_title\":\"Spotify推出AI播客问答功能\",\"merged_type\":\"news\"},{\"from_key\":\"Spotify推出ElevenLabs有声书工具\",\"merged_key\":\"Spotify推出ElevenLabs有声书工具\",\"merged_title\":\"Spotify推出ElevenLabs有声书工具\",\"merged_type\":\"news\"},{\"from_key\":\"The Path心理健康AI\",\"merged_key\":\"The Path心理健康AI\",\"merged_title\":\"The Path心理健康AI\",\"merged_type\":\"news\"},{\"from_key\":\"Transformer作者Cohere发布\",\"merged_key\":\"Transformer作者Cohere发布\",\"merged_title\":\"Transformer作者Cohere发布\",\"merged_type\":\"news\"}]}",
+      "at": "2026-05-23"
+    },
+    "f75228f2cb666d2a3d70d87dab173146ed3eaf863cabf0a58bac331b2323c19b": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[66,93,109,70,63,67,65,68,69,64,62,77,74,73,76,72,75,78,79,84,96,97,98,104,110,114,5,92,95,83,107,108,115,81,111,82,113,112,106,105,89,90,87,86,91,85,99,88,71,102,100,101,103],\"reasons\":[{\"topic_id\":66,\"reason\":\"谷歌I/O 2026发布会，全球科技界年度盛会，AI动态风向标。\"},{\"topic_id\":93,\"reason\":\"Hugging Face社区动态，开源生态核心枢纽，反映技术趋势。\"},{\"topic_id\":109,\"reason\":\"Google 2026年AI搜索重塑，搜索体验变革，巨头战略重心。\"},{\"topic_id\":70,\"reason\":\"Model Labs转型Agent，行业趋势预测，技术路线前瞻。\"},{\"topic_id\":63,\"reason\":\"DeepMind CEO访谈，顶尖实验室战略与愿景。\"},{\"topic_id\":67,\"reason\":\"AI Agent行业应用，商业化落地与垂直场景探索。\"},{\"topic_id\":65,\"reason\":\"AI Agent硬件实践，终端侧智能与交互创新。\"},{\"topic_id\":68,\"reason\":\"AI Agent产品与硬件，软硬件结合的生态构建。\"},{\"topic_id\":69,\"reason\":\"AI Agent能力演进，技术边界与性能突破。\"},{\"topic_id\":64,\"reason\":\"宁德时代布局AI，传统巨头跨界融合，产业协同。\"},{\"topic_id\":62,\"reason\":\"Anthropic公司分析，头部竞对动态与战略解读。\"},{\"topic_id\":77,\"reason\":\"智谱AI算力架构创新，国产大模型基础设施突破。\"},{\"topic_id\":74,\"reason\":\"DeepMind AI在EVE Online，AI在复杂环境中的表现。\"},{\"topic_id\":73,\"reason\":\"论文AIGC检测，技术伦理与安全挑战。\"},{\"topic_id\":76,\"reason\":\"Transformer作者Cohere发布，学术源头创新。\"},{\"topic_id\":72,\"reason\":\"AI唤醒灯硬件，消费级AI硬件新形态。\"},{\"topic_id\":75,\"reason\":\"Roblox实时生成场景，AIGC在游戏领域的应用。\"},{\"topic_id\":78,\"reason\":\"王小川All in医疗大模型，国内大模型商业化落地。\"},{\"topic_id\":79,\"reason\":\"物理AI产业大会，具身智能与实体世界结合。\"},{\"topic_id\":84,\"reason\":\"谷歌AI眼镜原型，AR/VR与AI融合的硬件尝试。\"},{\"topic_id\":96,\"reason\":\"AI对文学界的影响，AIGC在内容创作领域的争议。\"},{\"topic_id\":97,\"reason\":\"Spotify AI混音工具，AI在音乐产业的应用。\"},{\"topic_id\":98,\"reason\":\"AI理解世界能力探讨，多模态与认知智能前沿。\"},{\"topic_id\":104,\"reason\":\"FTC对Cox Media Group等公司罚款，AI监管与合规。\"},{\"topic_id\":110,\"reason\":\"OpenAI公关危机与Chris Lehane，企业治理与公关策略。\"},{\"topic_id\":114,\"reason\":\"书籍中AI合成引语争议，知识产权与学术诚信。\"},{\"topic_id\":5,\"reason\":\"LLM回顾与综述，技术发展脉络梳理。\"},{\"topic_id\":92,\"reason\":\"Anthropic Code with Claude活动，开发者生态建设。\"},{\"topic_id\":95,\"reason\":\"KPMG集成Claude，企业级AI应用落地案例。\"},{\"topic_id\":83,\"reason\":\"英伟达AI Agent CPU市场，硬件生态与竞争格局。\"},{\"topic_id\":107,\"reason\":\"OpenAI GPT-next解决平面单位距离问题，数学推理突破。\"},{\"topic_id\":108,\"reason\":\"Gemini AI Avatar克隆功能，个性化AI服务。\"},{\"topic_id\":115,\"reason\":\"OpenAI新加坡合作伙伴关系，全球市场拓展。\"},{\"topic_id\":81,\"reason\":\"Hark融资与AI接口，初创企业融资动态。\"},{\"topic_id\":111,\"reason\":\"Spotify推出AI播客问答功能，内容创作工具创新。\"},{\"topic_id\":82,\"reason\":\"The Path心理健康AI，AI在垂直医疗领域的应用。\"},{\"topic_id\":113,\"reason\":\"AI助力铝回收初创企业，AI在环保与工业领域的应用。\"},{\"topic_id\":112,\"reason\":\"Spotify推出ElevenLabs有声书工具，音频内容生成。\"},{\"topic_id\":106,\"reason\":\"10 tokens per second速度测试，推理性能基准测试。\"},{\"topic_id\":105,\"reason\":\"SpaceX S-1 SEC文件引用，AI在非AI领域的应用。\"},{\"topic_id\":89,\"reason\":\"智谱发布GLM-5.1高速版，国产大模型性能提升。\"},{\"topic_id\":90,\"reason\":\"字节跳动开源Lance模型，向量数据库技术开源。\"},{\"topic_id\":87,\"reason\":\"GPT-4.5通过图灵测试，通用人工智能里程碑。\"},{\"topic_id\":86,\"reason\":\"Spotify发布Studio桌面应用，AI辅助创作工具。\"},{\"topic_id\":91,\"reason\":\"B站Q1财报扭亏为盈，AI驱动的商业化成果。\"},{\"topic_id\":85,\"reason\":\"特朗普取消AI监管令，政策风向变化。\"},{\"topic_id\":99,\"reason\":\"CVPR 2026多模态研究，计算机视觉前沿。\"},{\"topic_id\":88,\"reason\":\"渣打集团战略裁员，AI对传统金融业的影响。\"},{\"topic_id\":71,\"reason\":\"宝马集团Agentic AI，汽车行业的智能化转型。\"},{\"topic_id\":102,\"reason\":\"智象未来发布HiDream-O1-Image-Pro图像大模型，国产视觉模型进展。\"},{\"topic_id\":100,\"reason\":\"CVPR 2026自动驾驶研究，智能驾驶技术前沿。\"},{\"topic_id\":101,\"reason\":\"CVPR 2026工程智能，AI在工程领域的应用。\"},{\"topic_id\":103,\"reason\":\"OpenAI发布金融追踪功能，AI在金融分析中的应用。\"}]}",
+      "at": "2026-05-23"
+    },
+    "42e5066537084fed76663a981db53d6a3837166f24e69f747a6b1dfa24468c05": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"本周AI行业呈现“速度竞赛”与“生态重构”并行的态势。智谱与谷歌分别以GLM-5.1高速版和Gemini 3.5 Flash刷新性能极限，同时字节跳动开源Lance 3B挑战多模态架构范式。行业焦点从单纯模型堆叠转向Agent生态、算力效率优化及搜索体验革新。\",\"hot_news\":[{\"topic_id\":89,\"insight\":\"智谱GLM-5.1高速版以400 tokens/s刷新API速度纪录，实现旗舰能力与极致低延迟并存。\",\"narrative\":\"5月22日，智谱正式上线GLM-5.1高速版API，实测输出速度达400 tokens/s，刷新全球大模型API速度上限。该模型在保留旗舰级全尺寸能力的同时，支持200K超长上下文窗口，最大单次输出达128K标记。智谱通过GLM团队与TileRT团队深度联合，重构了系统级推理生态，实现了“旗舰级全尺寸能力”与“极致低延迟”的完美并存。这一突破对Coding和Agent协作等长链路、高频交互任务具有“降维打击”意义，标志着大模型从“工具”向“实时伙伴”的演进。\",\"evaluation\":\"智谱通过架构创新打破了行业默认的“快意味着模型小”的惯例，为速度敏感型场景提供了革命性解决方案。\",\"refs\":[24],\"mention_count\":1,\"cross_verify_score\":82},{\"topic_id\":66,\"insight\":\"谷歌I/O 2026发布Gemini 3.5 Flash，以4倍速度和更低成本推动Agent规模化落地。\",\"narrative\":\"谷歌在I/O 2026上发布了Gemini 3.5 Flash模型，旨在帮助用户执行复杂的Agent工作流。该模型输出速度达到同级别前沿模型的4倍，价格却不到一半。谷歌CEO皮查伊指出，若将80%的负载从其他前沿模型迁至3.5 Flash，一家头部企业一年可节省超过10亿美元。谷歌的目标是将AI Agent能力融入搜索、Gmail、YouTube等所有核心服务，推动前沿能力规模化交付给更广泛的用户。\",\"evaluation\":\"Gemini 3.5 Flash通过性能与成本的显著优化，为Agent技术在企业级场景的普及提供了经济可行的路径。\",\"refs\":[3,5],\"mention_count\":2,\"cross_verify_score\":84},{\"topic_id\":109,\"insight\":\"谷歌搜索全面转向Agent模式，通过智能体编排重塑信息获取体验。\",\"narrative\":\"谷歌在I/O 2026上宣布对搜索引擎进行25年来首次重大更新，全面转向Agent模式。用户可以通过自然语言指令让搜索智能体规划行程、生成UI界面并整合日历数据。尽管早期演示展示了代码生成过程，但谷歌计划在夏季全面上线时隐藏技术细节，以提供更简洁的用户体验。这一变革标志着搜索从关键词匹配向任务执行的范式转移。\",\"evaluation\":\"Agent搜索模式通过任务编排提升了信息获取效率，但需解决复杂指令下的准确性与稳定性问题。\",\"refs\":[13,14],\"mention_count\":2,\"cross_verify_score\":63}],\"other_news\":[{\"topic_id\":90,\"insight\":\"字节跳动开源Lance 3B，以3B参数实现原生统一多模态理解与生成。\",\"narrative\":\"字节跳动开源了原生统一多模态大模型Lance，仅3B激活参数即可实现图像/视频的理解、生成与跨模态编辑。Lance采用“共享上下文+能力解耦并行”设计，通过双流专家架构解决理解与生成的矛盾。该模型采用Apache2.0协议，权重已上线Hugging Face，为开发者提供了轻量化多模态解决方案。\",\"refs\":[25],\"mention_count\":1,\"cross_verify_score\":48},{\"topic_id\":77,\"insight\":\"智谱ZCube架构通过组网优化提升推理效率，无需增加硬件即可提升15%吞吐。\",\"narrative\":\"智谱公开了在生产集群中验证过的ZCube组网架构创新。该架构通过优化GPU互联网络，在不增加GPU、不更换服务器、不修改代码的情况下，使集群推理吞吐提升15%，首Token响应时间P99尾延迟下降40.6%。同时，ZCube架构所需的交换机和光模块数量减少三分之一，显著降低了长期运营成本。\",\"refs\":[23],\"mention_count\":1,\"cross_verify_score\":57},{\"topic_id\":63,\"insight\":\"DeepMind CEO Demis Hassabis反思谷歌落后原因，强调LLM潜力被低估。\",\"narrative\":\"DeepMind CEO Demis Hassabis在访谈中承认，谷歌曾低估了LLM的潜力。他认为机器必须像人类一样从经验中学习，但LLM在规模扩大后叠加RLHF展现出惊人泛化能力。Hassabis指出，用户并不在乎模型是否完美，这成为谷歌在生成式AI竞争中落后于OpenAI的关键因素之一。\",\"refs\":[21],\"mention_count\":1,\"cross_verify_score\":58},{\"topic_id\":70,\"insight\":\"行业趋势转向Agent Labs，模型团队纷纷构建智能体产品。\",\"narrative\":\"行业观察显示，OpenAI Labs等模型团队正从模型研发转向Agent产品构建。AI21的模型团队已关闭，转而专注于智能体开发。DeepSeek也首次组建了“Harness团队”以支持智能体系统。这一转变验证了“系统优于模型”的理念，即通过智能体编排实现更复杂的应用场景。\",\"refs\":[12],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":67,\"insight\":\"CV与AI Agent结合推动行业落地，大华股份构建视觉与行业模型。\",\"narrative\":\"在2026AI Partner大会上，大华股份展示了CV与AI Agent结合的行业实践。其V系列视觉大模型让系统“看得懂”物理世界，L系列行业模型打通业务逻辑。未来“基模+行业Know-how”将成为新范式，AI的终局是让每个行业和个体都不掉队。\",\"refs\":[22],\"mention_count\":1,\"cross_verify_score\":58},{\"topic_id\":93,\"insight\":\"Hugging Face社区关注真实世界模拟与透明度检测技术。\",\"narrative\":\"Hugging Face社区讨论了构建“真实SAO-like”世界所需的持久化与受限代理机制，强调通过账本和重放机制确保世界可信度。同时，社区展示了基于Qwen-2.5-7B的轻量级透明度检测器，能在单次前向传播中达到0.866 AUC，支持生产级审计。\",\"refs\":[15,16],\"mention_count\":2,\"cross_verify_score\":60},{\"topic_id\":94,\"insight\":\"Simon Willison发布datasette-agent工具，增强数据分析与可视化能力。\",\"narrative\":\"Simon Willison推出了datasette-agent系列工具，包括图表渲染和SQL查询功能。这些工具通过交互式图表和权限检查，增强了数据探索的灵活性与安全性，为开发者提供了更强大的数据分析Agent支持。\",\"refs\":[18,19,20],\"mention_count\":3,\"cross_verify_score\":60}],\"core_tech\":[{\"topic_id\":6,\"title\":\"ACC: 编译Agent轨迹用于长上下文训练\",\"summary\":\"该论文提出ACC方法，通过编译Agent在多轮交互中产生的轨迹来训练LLM的长上下文推理能力，解决证据分散问题。\",\"refs\":[6]},{\"topic_id\":18,\"title\":\"LCGuard: 多智能体系统中的安全KV共享\",\"summary\":\"LCGuard通过Transformer KV缓存实现隐式通信，并引入安全机制防止敏感信息在多智能体间无序传播。\",\"refs\":[7]},{\"topic_id\":19,\"title\":\"MOSS: 自主Agent系统的源级自演化\",\"summary\":\"MOSS允许Agent在部署后通过源级重写实现自我演化，解决静态部署后无法从交互中学习的问题。\",\"refs\":[8]},{\"topic_id\":26,\"title\":\"验证门控完成作为多智能体运行时准入控制\",\"summary\":\"该研究将验证门控完成作为多智能体运行时的准入控制模式，通过只读验证器确保任务提交的安全性。\",\"refs\":[9]},{\"topic_id\":42,\"title\":\"基于Nash博弈的V2V能源交易\",\"summary\":\"论文将Nash讨价还价解集成多智能体强化学习，实现电动汽车间的去中心化能源交易与公平性保障。\",\"refs\":[10]},{\"topic_id\":59,\"title\":\"TO-Agents: 偏好引导的拓扑优化\",\"summary\":\"TO-Agents框架通过多智能体系统将自然语言设计意图转化为拓扑优化设置，实现自动化设计。\",\"refs\":[11]}],\"ref_translations\":[{\"id\":6,\"zh_title\":\"ACC: 编译Agent轨迹用于长上下文训练\"},{\"id\":7,\"zh_title\":\"LCGuard: 多智能体系统中的安全KV共享\"},{\"id\":8,\"zh_title\":\"MOSS: 自主Agent系统的源级自演化\"},{\"id\":9,\"zh_title\":\"验证门控完成作为多智能体运行时准入控制\"},{\"id\":10,\"zh_title\":\"基于Nash博弈的V2V能源交易\"},{\"id\":11,\"zh_title\":\"TO-Agents: 偏好引导的拓扑优化\"}]}",
+      "at": "2026-05-23"
+    },
+    "b1a89b9bb31b0cd00fe7f47a15042fd54180570e7786bd22a18a4d5d14c4a354": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":2,\"zh_title\":\"Google I/O 2026 全部发布：Gemini、搜索与智能眼镜\"},{\"id\":3,\"zh_title\":\"Gemini 3.5：具备行动能力的前沿智能\"},{\"id\":4,\"zh_title\":\"Google I/O 2026 对话环节回顾\"},{\"id\":12,\"zh_title\":\"[AI新闻] 所有模型实验室现已转型为智能体实验室\"},{\"id\":13,\"zh_title\":\"即使你讨厌 AI，你也得用 Google AI 搜索\"},{\"id\":14,\"zh_title\":\"系好安全带：Google 将在 2026 年利用智能体 AI 重塑搜索\"},{\"id\":15,\"zh_title\":\"冻结的 Qwen-2.5-7B 模型单次前向传播结合轻量级分类器达到 0.866\"},{\"id\":16,\"zh_title\":\"文章亮点：*真实比例世界模拟游戏* (art-60-157, v0.1)\"},{\"id\":17,\"zh_title\":\"Centauri ADE：轻量级智能体开发环境\"},{\"id\":18,\"zh_title\":\"datasette-agent-sprites 0.1a0\"},{\"id\":19,\"zh_title\":\"datasette-agent-charts 0.1a2\"},{\"id\":20,\"zh_title\":\"datasette-agent-charts 0.1a1\"}]}",
       "at": "2026-05-23"
     }
   },
@@ -43259,6 +43541,126 @@
         "title": "Anthropic 花 3 亿美金买下 API「修路工」，打响连接层暗战",
         "at": "2026-05-22",
         "edition": "evening"
+      },
+      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/": {
+        "title": "Gemini 3.5: frontier intelligence with action",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://www.leiphone.com/category/ai/k2qs0VRU74Ub6CCw.html": {
+        "title": "谷歌掀桌，一口气甩出16个AI王炸",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2605.21850": {
+        "title": "ACC: Compiling Agent Trajectories for Long-Context Training",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2605.22786": {
+        "title": "LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2605.22794": {
+        "title": "MOSS: Self-Evolution through Source-Level Rewriting in Autonomous Agent Systems",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2605.17998": {
+        "title": "Verify-Gated Completion as Admission Control in a Governed Multi-Agent Runtime: A Bounded Architecture Case Study",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2605.22363": {
+        "title": "Incentive-Aligned Vehicle-to-Vehicle Energy Trading via Nash-Integrated Multi-Agent Reinforcement Learning",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2605.21622": {
+        "title": "TO-Agents: A Multi-Agent AI Pipeline for Preference-Guided Topology Optimization",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://www.latent.space/p/ainews-all-model-labs-are-now-agent": {
+        "title": "[AINews] All Model Labs are now Agent Labs",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://www.wired.com/story/even-if-you-hate-ai-you-will-use-google-ai-search/": {
+        "title": "Even If You Hate AI, You Will Use Google AI Search",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://arstechnica.com/google/2026/05/buckle-up-google-is-set-to-remake-search-with-agentic-ai-in-2026/": {
+        "title": "Buckle up: Google is set to remake search with agentic AI in 2026",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://huggingface.co/posts/RiverRider/315274388358886": {
+        "title": "A single forward pass of the frozen Qwen-2.5-7B model plus a lightweight classifier reaches 0.866 plus or minus 0.011 AUC on the full TruthfulQA-MC2 benchmark. No adapters. No fine-tuning. No extra parameters on the backbone. This is the strongest hidden-state truthfulness detector reported on the benchmark to date. The same latent features that the SRT-NLA-AV-v1 demo reads out as coherent natural-language verbalizations turn out to be rich enough to support production-grade auditing for honesty versus hallucination. The internal semiotic infrastructure we have been exploring in public is already information-dense enough to solve hard downstream problems with almost trivial overhead. You can watch the underlying latent geometry in action right here: Full code, artifacts, and reproduction steps are in the repository: Try the Glass Box",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://huggingface.co/posts/kanaria007/141831597390747": {
+        "title": "✅ Article highlight: *Real-Scale World Simulation Game* (art-60-157, v0.1) TL;DR: This article asks what it would take to build a “real SAO-like” world without hand-wavy magic. The answer is not unlimited freedom. It is a *persistent world with bounded agency*: NPCs can act, form societies, trade, govern, and shape history—but only through pinned profiles, CAS state, ledgers, receipts, and replayable world history. In other words: a living world is believable only if it is governable. Read: Why it matters: • shows how to move from “match fairness” to “world-history fairness” • treats NPC societies as bounded agents rather than decorative scripts • makes laws, markets, factions, and institutions explicit state layers instead of lore vibes • explains why “living world” claims need receipts, replay, and anti-abuse monitoring What’s inside: • layered world state as CAS: *physics, economy, society, institution, narrative* • NPCs as receipted bounded agents with observation, action, and resource limits • institution ledgers for law, market rules, faction control, and world governance • world replay as *history reproduction*, not just match replay • adversary monitoring for griefing, market rigging, propaganda, and governance capture • unique-entity / ownership / transfer receipts for “only one in the world” style claims Key idea: Do not say: *“the world feels alive.”* Say: *“this world evolved through a receipted, bounded-agency closed loop: state, NPC decisions, player actions, institutional transitions, replay, monitoring, and publication rules.”* That is how a persistent world becomes believable without becoming ungovernable.",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://simonwillison.net/2026/May/21/datasette-agent-sprites/#atom-everything": {
+        "title": "datasette-agent-sprites 0.1a0",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://simonwillison.net/2026/May/21/datasette-agent-sprites/": {
+        "title": "datasette-agent-sprites 0.1a0",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://simonwillison.net/2026/May/21/datasette-agent-charts/#atom-everything": {
+        "title": "datasette-agent-charts 0.1a2",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://simonwillison.net/2026/May/21/datasette-agent-charts/": {
+        "title": "datasette-agent-charts 0.1a2",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://simonwillison.net/2026/May/20/datasette-agent-charts/#atom-everything": {
+        "title": "datasette-agent-charts 0.1a1",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://simonwillison.net/2026/May/20/datasette-agent-charts/": {
+        "title": "datasette-agent-charts 0.1a1",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://aitntnews.com/newDetail.html?newId=25398": {
+        "title": "谷歌为何被OpenAI抢先？DeepMind CEO：我曾经低估了LLM！不赞同LeCun对AI风险的态度！AGI下一站是后稀缺世界",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://36kr.com/p/3820220616495492": {
+        "title": "让智能体看见世界：CV × AI Agent 的行业场景新实践| 2026AI Partner·北京亦庄AI+产业大会",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://36kr.com/p/3820132079505792": {
+        "title": "不加一块GPU，多榨出15%算力：大模型圈对网络“动刀”",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://news.aibase.com/zh/news/28254": {
+        "title": "智谱发布GLM-5. 1 高速版：400 tokens/s飙出全球API新极限5月22日，智谱港股盘中一度飙升超22%，市值站稳4500亿港元，同时正式上线GLM-5.1高速版API，输出速度达400tokens/s，刷新全球大模型API速度纪录。 21 小时前 15.7K",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "https://news.aibase.com/zh/news/28251": {
+        "title": "字节跳动开源Lance 3B：用一个“脑子”同时搞定图视理解与生成字节跳动开源Lance，一款仅3B激活参数的原生统一多模态大模型，打破“理解模型（VLM）”与“生成模型（DiT/Diffusion）”的技术壁垒。它以极致轻量化实现全功能覆盖，挑战当前AI行业堆砌参数或“拼积木”组装模型的风气，成为技术创新的重要突破。 22 小时前 14.7K",
+        "at": "2026-05-23",
+        "edition": "evening"
       }
     }
   },
@@ -51717,6 +52119,111 @@
         "title": "Anthropic 花 3 亿美金买下 API「修路工」，打响连接层暗战",
         "at": "2026-05-22",
         "edition": "evening"
+      },
+      "ebe860e5f1df7116": {
+        "title": "Gemini 3.5: frontier intelligence with action",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "f4c818e6143caa5b": {
+        "title": "谷歌掀桌，一口气甩出16个AI王炸",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "8e96f24d26a5cf05": {
+        "title": "ACC: Compiling Agent Trajectories for Long-Context Training",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "baa785815338e5ea": {
+        "title": "LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "e3421e8806cb5318": {
+        "title": "MOSS: Self-Evolution through Source-Level Rewriting in Autonomous Agent Systems",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "ad3dce23d7707a51": {
+        "title": "Verify-Gated Completion as Admission Control in a Governed Multi-Agent Runtime: A Bounded Architecture Case Study",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "d234a9c4ba58577f": {
+        "title": "Incentive-Aligned Vehicle-to-Vehicle Energy Trading via Nash-Integrated Multi-Agent Reinforcement Learning",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "ec20c48325d5878a": {
+        "title": "TO-Agents: A Multi-Agent AI Pipeline for Preference-Guided Topology Optimization",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "e15644705a53ce98": {
+        "title": "[AINews] All Model Labs are now Agent Labs",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "e6b76aeff82baa40": {
+        "title": "Even If You Hate AI, You Will Use Google AI Search",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "ccc5c5ccd1900f77": {
+        "title": "Buckle up: Google is set to remake search with agentic AI in 2026",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "201e40237becca68": {
+        "title": "A single forward pass of the frozen Qwen-2.5-7B model plus a lightweight classifier reaches 0.866 plus or minus 0.011 AUC on the full TruthfulQA-MC2 benchmark. No adapters. No fine-tuning. No extra parameters on the backbone. This is the strongest hidden-state truthfulness detector reported on the benchmark to date. The same latent features that the SRT-NLA-AV-v1 demo reads out as coherent natural-language verbalizations turn out to be rich enough to support production-grade auditing for honesty versus hallucination. The internal semiotic infrastructure we have been exploring in public is already information-dense enough to solve hard downstream problems with almost trivial overhead. You can watch the underlying latent geometry in action right here: Full code, artifacts, and reproduction steps are in the repository: Try the Glass Box",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "3645a49bd81234d3": {
+        "title": "✅ Article highlight: *Real-Scale World Simulation Game* (art-60-157, v0.1) TL;DR: This article asks what it would take to build a “real SAO-like” world without hand-wavy magic. The answer is not unlimited freedom. It is a *persistent world with bounded agency*: NPCs can act, form societies, trade, govern, and shape history—but only through pinned profiles, CAS state, ledgers, receipts, and replayable world history. In other words: a living world is believable only if it is governable. Read: Why it matters: • shows how to move from “match fairness” to “world-history fairness” • treats NPC societies as bounded agents rather than decorative scripts • makes laws, markets, factions, and institutions explicit state layers instead of lore vibes • explains why “living world” claims need receipts, replay, and anti-abuse monitoring What’s inside: • layered world state as CAS: *physics, economy, society, institution, narrative* • NPCs as receipted bounded agents with observation, action, and resource limits • institution ledgers for law, market rules, faction control, and world governance • world replay as *history reproduction*, not just match replay • adversary monitoring for griefing, market rigging, propaganda, and governance capture • unique-entity / ownership / transfer receipts for “only one in the world” style claims Key idea: Do not say: *“the world feels alive.”* Say: *“this world evolved through a receipted, bounded-agency closed loop: state, NPC decisions, player actions, institutional transitions, replay, monitoring, and publication rules.”* That is how a persistent world becomes believable without becoming ungovernable.",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "3d94342e32a28bf6": {
+        "title": "datasette-agent-sprites 0.1a0",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "73f7fa99434c3e2d": {
+        "title": "datasette-agent-charts 0.1a2",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "7f918ccb85b65cf7": {
+        "title": "datasette-agent-charts 0.1a1",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "96a7885177684fe4": {
+        "title": "谷歌为何被OpenAI抢先？DeepMind CEO：我曾经低估了LLM！不赞同LeCun对AI风险的态度！AGI下一站是后稀缺世界",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "649516e86c512683": {
+        "title": "让智能体看见世界：CV × AI Agent 的行业场景新实践| 2026AI Partner·北京亦庄AI+产业大会",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "51856eb9c1c2e3cf": {
+        "title": "不加一块GPU，多榨出15%算力：大模型圈对网络“动刀”",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "8d106478a4407463": {
+        "title": "智谱发布GLM-5. 1 高速版：400 tokens/s飙出全球API新极限5月22日，智谱港股盘中一度飙升超22%，市值站稳4500亿港元，同时正式上线GLM-5.1高速版API，输出速度达400tokens/s，刷新全球大模型API速度纪录。 21 小时前 15.7K",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "e50270320e6c0592": {
+        "title": "字节跳动开源Lance 3B：用一个“脑子”同时搞定图视理解与生成字节跳动开源Lance，一款仅3B激活参数的原生统一多模态大模型，打破“理解模型（VLM）”与“生成模型（DiT/Diffusion）”的技术壁垒。它以极致轻量化实现全功能覆盖，挑战当前AI行业堆砌参数或“拼积木”组装模型的风气，成为技术创新的重要突破。 22 小时前 14.7K",
+        "at": "2026-05-23",
+        "edition": "evening"
       }
     }
   },
@@ -53174,6 +53681,66 @@
         "title": "阿里云Agent与通义千问集成，云产品组件化改造。",
         "text": "阿里云Agent与通义千问集成，云产品组件化改造。 阿里云Agent与通义千问集成，云产品组件化改造。 阿里云建立了独立产品站，专为Agent设计，逻辑是当用户是AI时，不需要Banner，需要的是可执行指令。阿里云对云产品进行了Skill组件化、MCP标准化和CLI指令化改造，让每一个云产品都变成标准化能力模块，智能体可像调用程序函数一样直接启用。与此同时，谷歌也在I/O大会发布了Antigravity 2.0平台，中美两大AI全栈企业再度在同一赛道同向布局。 阿里云建立了独立产品站，专为Agent设计，逻辑是当用户是AI时，不需要Banner，需要的是可执行指令。阿里云对云产品进行了Skill组件化、MCP标准化和CLI指令化改造，让每一个云产品都变成标准化能力模块，智能体可像调用程序函数一样直接启用。 阿里云建立了独立产品站，专为Agent设计，逻辑是当用户是AI时，不需要Banner，需要的是可执行指令。阿里云对云产品进行了Skill组件化、MCP标准化和CLI指令化改造，让每一个云产品都变成标准化能力模块 当前信号具备参考价值",
         "at": "2026-05-22",
+        "edition": "evening"
+      },
+      "ae52c43cc200df123f5a": {
+        "title": "谷歌I/O 2026发布Gemini 3.5 Flash",
+        "text": "谷歌I/O 2026发布Gemini 3.5 Flash，以4倍速度和更低成本推动Agent规模化落地。 谷歌I/O 2026发布Gemini 3.5 Flash 谷歌在I/O 2026上发布了Gemini 3.5 Flash模型，旨在帮助用户执行复杂的Agent工作流。该模型输出速度达到同级别前沿模型的4倍，价格却不到一半。谷歌CEO皮查伊指出，若将80%的负载从其他前沿模型迁至3.5 Flash，一家头部企业一年可节省超过10亿美元。谷歌的目标是将AI Agent能力融入搜索、Gmail、YouTube等所有核心服务，推动前沿能力规模化交付给更广泛的用户。 谷歌在I/O 2026上发布了Gemini 3.5 Flash模型，旨在帮助用户执行复杂的Agent工作流。该模型输出速度达到同级别前沿模型的4倍，价格却不到一半。谷歌CEO皮查伊指出，若将80%的负载从其他前沿模型迁至3.5 Flash，一家头部企业一年可节省超过10亿美元。谷歌的目标是将AI Agent能力融入搜索、Gmail、YouTube等所有核心服务",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "5e26aac18d958e3b8fe7": {
+        "title": "谷歌搜索全面转向Agent模式，通过智能体编排重塑信息获取体验。",
+        "text": "谷歌搜索全面转向Agent模式，通过智能体编排重塑信息获取体验。 谷歌搜索全面转向Agent模式，通过智能体编排重塑信息获取体验。 谷歌在I/O 2026上宣布对搜索引擎进行25年来首次重大更新，全面转向Agent模式。用户可以通过自然语言指令让搜索智能体规划行程、生成UI界面并整合日历数据。尽管早期演示展示了代码生成过程，但谷歌计划在夏季全面上线时隐藏技术细节，以提供更简洁的用户体验。这一变革标志着搜索从关键词匹配向任务执行的范式转移。 谷歌在I/O 2026上宣布对搜索引擎进行25年来首次重大更新，全面转向Agent模式。用户可以通过自然语言指令让搜索智能体规划行程、生成UI界面并整合日历数据。尽管早期演示展示了代码生成过程，但谷歌计划在夏季全面上线时隐藏技术细节，以提供更简洁的用户体验。这一变革标志着搜索从关键词匹配向任务执行的范式转移。Agent搜索模式通过任务编排提升了信息获取效率，但需解决复杂指令下的准确性与稳定性问题。 谷歌在I/O 2026上宣布对搜索引擎进行25年来首次重大更新，全面转向Agent模式。",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "34744d49964b105ad254": {
+        "title": "智谱GLM-5.1高速版以400 tokens/s刷新API速度纪录",
+        "text": "智谱GLM-5.1高速版以400 tokens/s刷新API速度纪录，实现旗舰能力与极致低延迟并存。 智谱GLM-5.1高速版以400 tokens/s刷新API速度纪录 5月22日，智谱正式上线GLM-5.1高速版API，实测输出速度达400 tokens/s，刷新全球大模型API速度上限。该模型在保留旗舰级全尺寸能力的同时，支持200K超长上下文窗口，最大单次输出达128K标记。智谱通过GLM团队与TileRT团队深度联合，重构了系统级推理生态，实现了“旗舰级全尺寸能力”与“极致低延迟”的完美并存。这一突破对Coding和Agent协作等长链路、高频交互任务具有“降维打击”意义 5月22日，智谱正式上线GLM-5.1高速版API，实测输出速度达400 tokens/s，刷新全球大模型API速度上限。该模型在保留旗舰级全尺寸能力的同时，支持200K超长上下文窗口，最大单次输出达128K标记。智谱通过GLM团队与TileRT团队深度联合，重构了系统级推理生态，实现了“旗舰级全尺寸能力”与“极致低延迟”的完美并存。",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "769c932492fafa63dc00": {
+        "title": "Hugging Face社区关注真实世界模拟与透明度检测技术。",
+        "text": "Hugging Face社区关注真实世界模拟与透明度检测技术。 Hugging Face社区关注真实世界模拟与透明度检测技术。 Hugging Face社区讨论了构建“真实SAO-like”世界所需的持久化与受限代理机制，强调通过账本和重放机制确保世界可信度。同时，社区展示了基于Qwen-2.5-7B的轻量级透明度检测器，能在单次前向传播中达到0.866 AUC，支持生产级审计。 Hugging Face社区讨论了构建“真实SAO-like”世界所需的持久化与受限代理机制，强调通过账本和重放机制确保世界可信度。同时，社区展示了基于Qwen-2.5-7B的轻量级透明度检测器，能在单次前向传播中达到0.866 AUC，支持生产级审计。 Hugging Face社区讨论了构建“真实SAO-like”世界所需的持久化与受限代理机制，强调通过账本和重放机制确保世界可信度。同时，社区展示了基于Qwen-2.5-7B的轻量级透明度检测器，能在单次前向传播中达到0.866 AUC 多来源共同指向同一趋势，短期影响值得持续跟踪。",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "92043c298cd34db9a8b4": {
+        "title": "Simon Willison发布datasette-agent工具，增强数据分析与可视化能力。",
+        "text": "Simon Willison发布datasette-agent工具，增强数据分析与可视化能力。 Simon Willison发布datasette-agent工具，增强数据分析与可视化能力。 Simon Willison推出了datasette-agent系列工具，包括图表渲染和SQL查询功能。这些工具通过交互式图表和权限检查，增强了数据探索的灵活性与安全性，为开发者提供了更强大的数据分析Agent支持。 Simon Willison推出了datasette-agent系列工具，包括图表渲染和SQL查询功能。这些工具通过交互式图表和权限检查，增强了数据探索的灵活性与安全性，为开发者提供了更强大的数据分析Agent支持。 Simon Willison推出了datasette-agent系列工具，包括图表渲染和SQL查询功能。这些工具通过交互式图表和权限检查，增强了数据探索的灵活性与安全性，为开发者提供了更强大的数据分析Agent支持。多来源共同指向同一趋势 多来源共同指向同一趋势，短期影响值得持续跟踪。",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "cf5a5fdd8ded98b59ef6": {
+        "title": "行业趋势转向Agent Labs，模型团队纷纷构建智能体产品。",
+        "text": "行业趋势转向Agent Labs，模型团队纷纷构建智能体产品。 行业趋势转向Agent Labs，模型团队纷纷构建智能体产品。 行业观察显示，OpenAI Labs等模型团队正从模型研发转向Agent产品构建。AI21的模型团队已关闭，转而专注于智能体开发。DeepSeek也首次组建了“Harness团队”以支持智能体系统。这一转变验证了“系统优于模型”的理念，即通过智能体编排实现更复杂的应用场景。 行业观察显示，OpenAI Labs等模型团队正从模型研发转向Agent产品构建。AI21的模型团队已关闭，转而专注于智能体开发。DeepSeek也首次组建了“Harness团队”以支持智能体系统。这一转变验证了“系统优于模型”的理念，即通过智能体编排实现更复杂的应用场景。 行业观察显示，OpenAI Labs等模型团队正从模型研发转向Agent产品构建。AI21的模型团队已关闭，转而专注于智能体开发。DeepSeek也首次组建了“Harness团队”以支持智能体系统。这一转变验证了“系统优于模型”的理念 当前信号具备参考价值",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "722d7f5329dc461e3f16": {
+        "title": "DeepMind CEO Demis Hassabis反思谷歌落后原因，强调LLM潜力被低估。",
+        "text": "DeepMind CEO Demis Hassabis反思谷歌落后原因，强调LLM潜力被低估。 DeepMind CEO Demis Hassabis反思谷歌落后原因，强调LLM潜力被低估。 DeepMind CEO Demis Hassabis在访谈中承认，谷歌曾低估了LLM的潜力。他认为机器必须像人类一样从经验中学习，但LLM在规模扩大后叠加RLHF展现出惊人泛化能力。Hassabis指出，用户并不在乎模型是否完美，这成为谷歌在生成式AI竞争中落后于OpenAI的关键因素之一。 DeepMind CEO Demis Hassabis在访谈中承认，谷歌曾低估了LLM的潜力。他认为机器必须像人类一样从经验中学习，但LLM在规模扩大后叠加RLHF展现出惊人泛化能力。Hassabis指出，用户并不在乎模型是否完美，这成为谷歌在生成式AI竞争中落后于OpenAI的关键因素之一。 DeepMind CEO Demis Hassabis在访谈中承认，谷歌曾低估了LLM的潜力。他认为机器必须像人类一样从经验中学习",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "dfb438046e543502b37a": {
+        "title": "智谱ZCube架构通过组网优化提升推理效率，无需增加硬件即可提升15%吞吐。",
+        "text": "智谱ZCube架构通过组网优化提升推理效率，无需增加硬件即可提升15%吞吐。 智谱ZCube架构通过组网优化提升推理效率，无需增加硬件即可提升15%吞吐。 智谱公开了在生产集群中验证过的ZCube组网架构创新。该架构通过优化GPU互联网络，在不增加GPU、不更换服务器、不修改代码的情况下，使集群推理吞吐提升15%，首Token响应时间P99尾延迟下降40.6%。同时，ZCube架构所需的交换机和光模块数量减少三分之一，显著降低了长期运营成本。 智谱公开了在生产集群中验证过的ZCube组网架构创新。该架构通过优化GPU互联网络，在不增加GPU、不更换服务器、不修改代码的情况下，使集群推理吞吐提升15%，首Token响应时间P99尾延迟下降40.6%。同时，ZCube架构所需的交换机和光模块数量减少三分之一，显著降低了长期运营成本。 智谱公开了在生产集群中验证过的ZCube组网架构创新。该架构通过优化GPU互联网络，在不增加GPU、不更换服务器、不修改代码的情况下，使集群推理吞吐提升15%，首Token响应时间P99尾延迟下降40.6%。同时",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "677cecaa7efb8ebaf1b0": {
+        "title": "字节跳动开源Lance 3B，以3B参数实现原生统一多模态理解与生成。",
+        "text": "字节跳动开源Lance 3B，以3B参数实现原生统一多模态理解与生成。 字节跳动开源Lance 3B，以3B参数实现原生统一多模态理解与生成。 字节跳动开源了原生统一多模态大模型Lance，仅3B激活参数即可实现图像/视频的理解、生成与跨模态编辑。Lance采用“共享上下文+能力解耦并行”设计，通过双流专家架构解决理解与生成的矛盾。该模型采用Apache2.0协议，权重已上线Hugging Face，为开发者提供了轻量化多模态解决方案。 字节跳动开源了原生统一多模态大模型Lance，仅3B激活参数即可实现图像/视频的理解、生成与跨模态编辑。Lance采用“共享上下文+能力解耦并行”设计，通过双流专家架构解决理解与生成的矛盾。该模型采用Apache2.0协议，权重已上线Hugging Face，为开发者提供了轻量化多模态解决方案。 字节跳动开源了原生统一多模态大模型Lance，仅3B激活参数即可实现图像/视频的理解、生成与跨模态编辑。Lance采用“共享上下文+能力解耦并行”设计，通过双流专家架构解决理解与生成的矛盾。",
+        "at": "2026-05-23",
+        "edition": "evening"
+      },
+      "ffdc420d281b3d40a1e5": {
+        "title": "CV与AI Agent结合推动行业落地，大华股份构建视觉与行业模型。",
+        "text": "CV与AI Agent结合推动行业落地，大华股份构建视觉与行业模型。 CV与AI Agent结合推动行业落地，大华股份构建视觉与行业模型。 在2026AI Partner大会上，大华股份展示了CV与AI Agent结合的行业实践。其V系列视觉大模型让系统“看得懂”物理世界，L系列行业模型打通业务逻辑。未来“基模+行业Know-how”将成为新范式，AI的终局是让每个行业和个体都不掉队。 在2026AI Partner大会上，大华股份展示了CV与AI Agent结合的行业实践。其V系列视觉大模型让系统“看得懂”物理世界，L系列行业模型打通业务逻辑。未来“基模+行业Know-how”将成为新范式，AI的终局是让每个行业和个体都不掉队。 在2026AI Partner大会上，大华股份展示了CV与AI Agent结合的行业实践。其V系列视觉大模型让系统“看得懂”物理世界，L系列行业模型打通业务逻辑。未来“基模+行业Know-how”将成为新范式 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-05-23",
         "edition": "evening"
       }
     }
