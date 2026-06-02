@@ -508,6 +508,7 @@ function formatTimeInTimeZone(date, timeZone = RUN_TZ) {
   const tz = normalizeTimeZone(timeZone);
   const parts = new Intl.DateTimeFormat("en-US", {
     timeZone: tz,
+    hourCycle: "h23",
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
@@ -519,6 +520,106 @@ function formatTimeInTimeZone(date, timeZone = RUN_TZ) {
   const ss = parts.find((p) => p.type === "second")?.value;
   if (!hh || !mm || !ss) return "00:00:00";
   return `${hh}:${mm}:${ss}`;
+}
+
+function parseDateISOParts(dateISO) {
+  const match = String(dateISO || "").trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return null;
+  return {
+    year: Number(match[1]),
+    month: Number(match[2]),
+    day: Number(match[3]),
+  };
+}
+
+function addDaysToISO(dateISO, days) {
+  const parts = parseDateISOParts(dateISO);
+  if (!parts) return String(dateISO || "").trim();
+  const d = new Date(Date.UTC(parts.year, parts.month - 1, parts.day + Number(days || 0)));
+  return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`;
+}
+
+function parseTimeOfDayParts(raw) {
+  const match = normalizeTimeOfDay(raw).match(/^(\d{2}):(\d{2}):(\d{2})$/);
+  if (!match) return { hour: 0, minute: 0, second: 0 };
+  return {
+    hour: Number(match[1]),
+    minute: Number(match[2]),
+    second: Number(match[3]),
+  };
+}
+
+function getTimeZoneOffsetMs(date, timeZone = RUN_TZ) {
+  const tz = normalizeTimeZone(timeZone);
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: tz,
+    hourCycle: "h23",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  }).formatToParts(date);
+
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  const asUtc = Date.UTC(
+    Number(values.year),
+    Number(values.month) - 1,
+    Number(values.day),
+    Number(values.hour || 0),
+    Number(values.minute || 0),
+    Number(values.second || 0)
+  );
+  return asUtc - date.getTime();
+}
+
+function zonedDateTimeToUtcMs(dateISO, timeOfDay, timeZone = RUN_TZ) {
+  const dateParts = parseDateISOParts(dateISO);
+  if (!dateParts) return null;
+  const timeParts = parseTimeOfDayParts(timeOfDay);
+  const localAsUtc = Date.UTC(
+    dateParts.year,
+    dateParts.month - 1,
+    dateParts.day,
+    timeParts.hour,
+    timeParts.minute,
+    timeParts.second
+  );
+  const firstPass = localAsUtc - getTimeZoneOffsetMs(new Date(localAsUtc), timeZone);
+  return localAsUtc - getTimeZoneOffsetMs(new Date(firstPass), timeZone);
+}
+
+export function buildDigestTimeWindow(dateISO, edition = DIGEST_EDITION, options = {}) {
+  const normalizedEdition = normalizeDigestEdition(edition);
+  const timeZone = normalizeTimeZone(options?.timeZone || RUN_TZ);
+  const morningTime = normalizeTimeOfDay(options?.morningTime || resolveConfiguredDigestPostTime("morning"));
+  const eveningTime = normalizeTimeOfDay(options?.eveningTime || resolveConfiguredDigestPostTime("evening"));
+
+  const startDate = normalizedEdition === "evening" ? dateISO : addDaysToISO(dateISO, -1);
+  const endDate = dateISO;
+  const startTime = normalizedEdition === "evening" ? morningTime : eveningTime;
+  const endTime = normalizedEdition === "evening" ? eveningTime : morningTime;
+  const startMs = zonedDateTimeToUtcMs(startDate, startTime, timeZone);
+  let endMs = zonedDateTimeToUtcMs(endDate, endTime, timeZone);
+
+  if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) return null;
+  if (endMs <= startMs) {
+    endMs = zonedDateTimeToUtcMs(addDaysToISO(endDate, 1), endTime, timeZone);
+  }
+
+  return {
+    edition: normalizedEdition,
+    timeZone,
+    startDate,
+    startTime,
+    endDate,
+    endTime,
+    startMs,
+    endMs,
+    start: new Date(startMs).toISOString(),
+    end: new Date(endMs).toISOString(),
+  };
 }
 
 function formatDigestDisplayDate(dateISO, timeZone = RUN_TZ) {
@@ -691,6 +792,45 @@ function getEffectivePubDateMs(item) {
     return directPubMs;
   }
   return directPubMs || inferredMs || null;
+}
+
+function hasExplicitTimePrecision(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return false;
+  return /(?:T|\s)\d{1,2}:\d{2}(?::\d{2})?/u.test(raw) || /\b\d{1,2}:\d{2}(?::\d{2})?\b/u.test(raw);
+}
+
+function getCandidateCalendarDate(item, timeZone = RUN_TZ) {
+  const pubDate = String(item?.pubDate || "").trim();
+  if (pubDate) {
+    const parsed = parseDateMs(pubDate);
+    if (parsed) return formatDateISOInTimeZone(new Date(parsed), timeZone);
+    const inferredFromPubDate = inferPubDateFromUrlAndTitle(pubDate, item?.title || "");
+    if (inferredFromPubDate) return inferredFromPubDate;
+  }
+  return inferPubDateFromUrlAndTitle(item?.link || "", item?.title || "");
+}
+
+function calendarDateOverlapsWindow(dateISO, window, timeZone = RUN_TZ) {
+  if (!dateISO || !window) return true;
+  const dayStartMs = zonedDateTimeToUtcMs(dateISO, "00:00:00", timeZone);
+  const dayEndMs = zonedDateTimeToUtcMs(dateISO, "23:59:59", timeZone);
+  if (!Number.isFinite(dayStartMs) || !Number.isFinite(dayEndMs)) return true;
+  return dayEndMs >= window.startMs && dayStartMs <= window.endMs;
+}
+
+function isCandidateInsideTimeWindow(item, window, options = {}) {
+  if (!window || !Number.isFinite(window.startMs) || !Number.isFinite(window.endMs)) return true;
+  const timeZone = normalizeTimeZone(options?.timeZone || window.timeZone || RUN_TZ);
+  const effectiveMs = getEffectivePubDateMs(item);
+  if (!effectiveMs) return true;
+
+  if (hasExplicitTimePrecision(item?.pubDate)) {
+    return effectiveMs >= window.startMs && effectiveMs <= window.endMs;
+  }
+
+  const dateISO = getCandidateCalendarDate(item, timeZone);
+  return calendarDateOverlapsWindow(dateISO, window, timeZone);
 }
 
 function getRunDateAnchorMs(runDate) {
@@ -1725,7 +1865,13 @@ export function normalizeHuggingFaceApiItems(source, payload) {
       const paperId = String(paperEntry?.paper?.id || paperEntry?.id || "").trim();
       const title = String(paperEntry?.title || paperEntry?.paper?.title || "").trim();
       const summary = String(paperEntry?.summary || paperEntry?.paper?.summary || "").trim();
-      const pubDate = String(paperEntry?.publishedAt || paperEntry?.paper?.publishedAt || "").trim() || null;
+      const pubDate = String(
+        paperEntry?.submittedOnDailyAt ||
+        paperEntry?.paper?.submittedOnDailyAt ||
+        paperEntry?.publishedAt ||
+        paperEntry?.paper?.publishedAt ||
+        ""
+      ).trim() || null;
 
       let link = "";
       const paperUrl = String(paperEntry?.url || paperEntry?.paper?.url || "").trim();
@@ -2556,6 +2702,7 @@ export function preprocessCandidatePools(candidates, options = {}) {
   const newsLookbackDays = Number(options?.newsLookbackDays || NEWS_LOOKBACK_DAYS_DEFAULT);
   const paperLookbackDays = Number(options?.paperLookbackDays || PAPER_LOOKBACK_DAYS_DEFAULT);
   const applyAiGate = options?.applyAiGate !== false;
+  const newsTimeWindow = options?.newsTimeWindow || null;
   const nowMs = getRunDateAnchorMs(runDate);
   const newsCutoffMs = cutoffMsForDays(runDate, newsLookbackDays);
   const paperCutoffMs = cutoffMsForDays(runDate, paperLookbackDays);
@@ -2569,6 +2716,7 @@ export function preprocessCandidatePools(candidates, options = {}) {
     news_retained_missing_date: 0,
     news_dropped_missing_date: 0,
     news_dropped_by_time: 0,
+    news_dropped_by_edition_window: 0,
     news_dropped_stale_arxiv: 0,
     paper_dropped_missing_date: 0,
     paper_dropped_by_time: 0,
@@ -2597,6 +2745,11 @@ export function preprocessCandidatePools(candidates, options = {}) {
   for (const item of filteredPools.news) {
     if (isStaleArxivLink(item?.link || "", nowMs)) {
       stats.news_dropped_stale_arxiv += 1;
+      continue;
+    }
+
+    if (!isCandidateInsideTimeWindow(item, newsTimeWindow)) {
+      stats.news_dropped_by_edition_window += 1;
       continue;
     }
 
@@ -8160,10 +8313,16 @@ async function main() {
 
   const newsCutoff = new Date(cutoffMsForDays(dateISO, newsLookbackDays));
   const paperCutoff = new Date(cutoffMsForDays(dateISO, paperLookbackDays));
+  const digestTimeWindow = buildDigestTimeWindow(dateISO, DIGEST_EDITION, {
+    timeZone: RUN_TZ,
+  });
 
   console.log(`=== Digest 生成开始：${dateISO} ===`);
   console.log(`edition=${DIGEST_EDITION_CONFIG.edition}, region=${DIGEST_EDITION_CONFIG.region}, label=${DIGEST_EDITION_CONFIG.label}`);
   console.log(`tz=${RUN_TZ}, post_time=${DIGEST_POST_TIME}`);
+  if (digestTimeWindow) {
+    console.log(`news_time_window=${digestTimeWindow.startDate} ${digestTimeWindow.startTime} -> ${digestTimeWindow.endDate} ${digestTimeWindow.endTime} (${digestTimeWindow.timeZone})`);
+  }
   console.log(`news_lookback_days=${newsLookbackDays}, paper_lookback_days=${paperLookbackDays}, top_n=${TOP_N}, deep_read_n=${DEEP_READ_N}, extra_candidates=${Number.isFinite(EXTRA_CANDIDATES) ? EXTRA_CANDIDATES : 0}, candidate_pool_cap=${CANDIDATE_POOL_CAP}`);
   console.log(`cluster_batch_size=${CLUSTER_BATCH_SIZE}, cluster_adaptive_min_chunk_size=${CLUSTER_ADAPTIVE_MIN_CHUNK_SIZE}, cluster_adaptive_max_depth=${CLUSTER_ADAPTIVE_MAX_DEPTH}, topic_merge_batch_size=${TOPIC_MERGE_BATCH_SIZE}, timeout_zhipu_ms=${TIMEOUT_ZHIPU_MS}, llm_max_retries=${LLM_MAX_RETRIES}, llm_rate_limit_retry_delays_ms=${LLM_RATE_LIMIT_RETRY_DELAYS_MS.join(",")}`);
   console.log(`cache_retention_days=${CACHE_RETENTION_DAYS}, daily_retention_days=${DAILY_RETENTION_DAYS}`);
@@ -8291,10 +8450,12 @@ async function main() {
     runDate: dateISO,
     newsLookbackDays,
     paperLookbackDays,
+    newsTimeWindow: digestTimeWindow,
   });
   candidates = [...preprocessedPools.news, ...preprocessedPools.papers];
   const afterTimeCount = candidates.length;
   const droppedByTimeGate = preprocessedPools.stats.news_dropped_by_time + preprocessedPools.stats.paper_dropped_by_time;
+  const droppedByEditionWindowGate = preprocessedPools.stats.news_dropped_by_edition_window;
   const droppedByArxivGate = preprocessedPools.stats.news_dropped_stale_arxiv + preprocessedPools.stats.paper_dropped_stale_arxiv;
   const droppedByMissingDateGate = preprocessedPools.stats.news_dropped_missing_date + preprocessedPools.stats.paper_dropped_missing_date;
   const droppedByAiGate = preprocessedPools.stats.dropped_by_ai_gate;
@@ -8308,7 +8469,7 @@ async function main() {
   candidates = filterPreviouslyPublished(candidates, cache, {
     edition: DIGEST_EDITION,
     runDate: dateISO,
-    keepFollowUpEvidence: true,
+    keepFollowUpEvidence: false,
   });
   const afterHistoryCount = candidates.length;
 
@@ -8318,6 +8479,7 @@ async function main() {
     runDate: dateISO,
     newsLookbackDays,
     paperLookbackDays,
+    newsTimeWindow: digestTimeWindow,
     applyAiGate: false,
   });
   candidates = [...postEnrichmentPools.news, ...postEnrichmentPools.papers];
@@ -8350,6 +8512,7 @@ async function main() {
     before_time_filter: beforeTimeCount,
     after_time_filter: afterTimeCount,
     dropped_by_time_gate: droppedByTimeGate,
+    dropped_by_edition_window_gate: droppedByEditionWindowGate,
     dropped_by_arxiv_gate: droppedByArxivGate,
     dropped_by_missing_date_gate: droppedByMissingDateGate,
     dropped_by_ai_gate: droppedByAiGate,
@@ -8366,6 +8529,7 @@ async function main() {
     post_enrichment_pool_stats: postEnrichmentPools.stats,
     news_cutoff: newsCutoff.toISOString(),
     paper_cutoff: paperCutoff.toISOString(),
+    news_time_window: digestTimeWindow,
     pool_stats: preprocessedPools.stats,
   });
 
@@ -8612,6 +8776,7 @@ async function main() {
     runDate: dateISO,
     newsLookbackDays,
     paperLookbackDays,
+    newsTimeWindow: digestTimeWindow,
     applyAiGate: false,
   });
   const materialsWindowed = [...materialPools.news, ...materialPools.papers];

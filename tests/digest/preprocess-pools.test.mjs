@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 
 import {
+  buildDigestTimeWindow,
   buildPreclusterCandidateGroups,
   preprocessCandidatePools,
   selectDigestCandidatePool,
@@ -154,6 +155,100 @@ test("preprocessCandidatePools keeps boundary-day papers within the configured c
 
   assert.equal(result.papers.length, 1);
   assert.equal(result.stats.paper_dropped_by_time, 0);
+});
+
+test("preprocessCandidatePools applies morning news window between prior evening and morning stats", () => {
+  const newsTimeWindow = buildDigestTimeWindow("2026-06-02", "morning", {
+    timeZone: "Asia/Shanghai",
+    morningTime: "06:00:00",
+    eveningTime: "19:40:00",
+  });
+  const candidates = [
+    {
+      title: "Inside-window AI model launch",
+      link: "https://example.com/news/in-window",
+      source: "TechCrunch AI",
+      sourceGroup: "foreign_media",
+      trustTier: "high",
+      bucketHint: "hot_news",
+      pubDate: "2026-06-01T12:00:00.000Z",
+      contentSnippet: "AI model launch details.",
+    },
+    {
+      title: "Old morning AI model launch",
+      link: "https://example.com/news/old",
+      source: "TechCrunch AI",
+      sourceGroup: "foreign_media",
+      trustTier: "high",
+      bucketHint: "hot_news",
+      pubDate: "2026-06-01T02:00:00.000Z",
+      contentSnippet: "AI model launch details.",
+    },
+    {
+      title: "Paper outside news window should stay on paper lookback",
+      link: "https://huggingface.co/papers/2606.00001",
+      source: "Hugging Face Papers",
+      sourceGroup: "paper",
+      trustTier: "high",
+      bucketHint: "core_tech",
+      ingestionMode: "api_json",
+      pubDate: "2026-06-02T00:00:00.000Z",
+      contentSnippet: "Paper abstract.",
+    },
+  ];
+
+  const result = preprocessCandidatePools(candidates, {
+    runDate: "2026-06-02",
+    newsLookbackDays: 5,
+    paperLookbackDays: 2,
+    newsTimeWindow,
+    applyAiGate: false,
+  });
+
+  assert.deepEqual(result.news.map((item) => item.link), ["https://example.com/news/in-window"]);
+  assert.equal(result.papers.length, 1);
+  assert.equal(result.stats.news_dropped_by_edition_window, 1);
+});
+
+test("preprocessCandidatePools applies evening news window between morning and evening stats", () => {
+  const newsTimeWindow = buildDigestTimeWindow("2026-06-02", "evening", {
+    timeZone: "Asia/Shanghai",
+    morningTime: "06:00:00",
+    eveningTime: "19:40:00",
+  });
+  const candidates = [
+    {
+      title: "Evening-window AI product update",
+      link: "https://example.com/news/evening",
+      source: "36Kr AI",
+      sourceGroup: "domestic_media",
+      trustTier: "high",
+      bucketHint: "hot_news",
+      pubDate: "2026-06-02T02:00:00.000Z",
+      contentSnippet: "AI product update details.",
+    },
+    {
+      title: "Prior-night AI product update",
+      link: "https://example.com/news/prior-night",
+      source: "36Kr AI",
+      sourceGroup: "domestic_media",
+      trustTier: "high",
+      bucketHint: "hot_news",
+      pubDate: "2026-06-01T12:00:00.000Z",
+      contentSnippet: "AI product update details.",
+    },
+  ];
+
+  const result = preprocessCandidatePools(candidates, {
+    runDate: "2026-06-02",
+    newsLookbackDays: 5,
+    paperLookbackDays: 2,
+    newsTimeWindow,
+    applyAiGate: false,
+  });
+
+  assert.deepEqual(result.news.map((item) => item.link), ["https://example.com/news/evening"]);
+  assert.equal(result.stats.news_dropped_by_edition_window, 1);
 });
 
 test("preprocessCandidatePools drops old trusted news when English month dates can be inferred", () => {
