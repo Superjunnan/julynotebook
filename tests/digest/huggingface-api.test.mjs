@@ -56,6 +56,7 @@ test("normalizeHuggingFaceApiItems parses papers payload", () => {
       title: "Reasoning as Gradient: Scaling MLE Agents Beyond Tree Search",
       summary: "A new method for scalable reasoning agents.",
       publishedAt: "2026-03-03T09:00:00.000Z",
+      submittedOnDailyAt: "2026-03-04T00:00:00.000Z",
       paper: { id: "2603.01692" },
     },
   ];
@@ -65,5 +66,6 @@ test("normalizeHuggingFaceApiItems parses papers payload", () => {
   assert.equal(items[0].source, "Hugging Face Papers");
   assert.equal(items[0].link, "https://huggingface.co/papers/2603.01692");
   assert.match(items[0].title, /Reasoning as Gradient/);
+  assert.equal(items[0].pubDate, "2026-03-04T00:00:00.000Z");
   assert.equal(items[0].bucketHint, "core_tech");
 });

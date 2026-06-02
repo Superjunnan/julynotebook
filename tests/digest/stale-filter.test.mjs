@@ -89,6 +89,69 @@ test("filterPreviouslyPublished removes same-day cross-edition repeat even with 
   assert.deepEqual(filtered, []);
 });
 
+test("filterPreviouslyPublished removes prior cross-edition repeat when strict history filtering is used", () => {
+  const filtered = filterPreviouslyPublished(
+    [
+      {
+        title: "Anthropic files IPO documents",
+        link: "https://example.com/anthropic-ipo-follow",
+        pubDate: "2026-06-02T01:00:00.000Z",
+        evidenceCount: 3,
+        evidenceSources: ["TechCrunch AI", "The Verge AI", "36Kr AI"],
+        followUpSignals: {
+          newDevelopment: true,
+        },
+      },
+    ],
+    {
+      publishedByEdition: {
+        morning: {},
+        evening: {
+          "https://example.com/anthropic-ipo-follow": { at: "2026-06-01", edition: "evening" },
+        },
+      },
+      publishedSignaturesByEdition: {
+        morning: {},
+        evening: {},
+      },
+    },
+    { runDate: "2026-06-02", edition: "morning", keepFollowUpEvidence: false }
+  );
+
+  assert.deepEqual(filtered, []);
+});
+
+test("filterPreviouslyPublished can still keep explicit follow-up when caller opts in", () => {
+  const filtered = filterPreviouslyPublished(
+    [
+      {
+        title: "Anthropic files IPO documents with new valuation details",
+        link: "https://example.com/anthropic-ipo-follow",
+        pubDate: "2026-06-02T01:00:00.000Z",
+        contentSnippet: "New valuation details were added after the first report.",
+        followUpSignals: {
+          newDevelopment: true,
+        },
+      },
+    ],
+    {
+      publishedByEdition: {
+        morning: {},
+        evening: {
+          "https://example.com/anthropic-ipo-follow": { at: "2026-06-01", edition: "evening" },
+        },
+      },
+      publishedSignaturesByEdition: {
+        morning: {},
+        evening: {},
+      },
+    },
+    { runDate: "2026-06-02", edition: "morning", keepFollowUpEvidence: true }
+  );
+
+  assert.equal(filtered.length, 1);
+});
+
 test("filterPreviouslyPublished removes same-day cross-edition topic repeat from daily cache", () => {
   const filtered = filterPreviouslyPublished(
     [
