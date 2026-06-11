@@ -25269,75 +25269,208 @@
         "selectedTopicTotal": 16
       },
       "at": "2026-06-11"
+    },
+    "evening:2026-06-11": {
+      "fingerprint": "cf5778e56e7681474bab5301f7168aec59672e853c5d773d670e1ec25623c86b",
+      "daily": {
+        "overview": "6月11日，AI领域呈现工具链与模型能力双线突破态势。小米开源MiMo Code并实测1T大模型刷新推理速度纪录，阿里云开源Meoo CLI打通AI应用落地最后一公里，千问推出免费高考志愿填报Agent引发市场关注。同时，Anthropic调整Claude Fable 5策略，Google DeepMind启动多智能体安全研究，苹果Xcode集成Gemini，行业生态持续深化。",
+        "hotNews": [
+          {
+            "title": "千问上线免费高考志愿填报Agent，通过志愿日历、志愿报告等能力提供普惠服务。",
+            "insight": "千问上线免费高考志愿填报Agent，通过志愿日历、志愿报告等能力提供普惠服务。",
+            "briefing": "6月10日，千问上线国内首个全周期高考志愿填报Agent，面向全国考生免费提供志愿填报和咨询服务。该Agent的底子是专门针对高考志愿填报打磨过的Qwen大模型，并结合了夸克8年高考服务积累的数据与经验。其核心能力包括志愿日历、志愿报告和志愿问答。阿里巴巴集团副总裁、千问事业部总裁吴嘉指出，高考志愿填报服务不应该只是一种稀缺商品，它更应该接近一种公共服务。今年全国共有1290万考生，平均每位考生需要填写约50个志愿",
+            "evaluation": "千问通过免费策略推动志愿填报服务的普惠化，体现了AI在公共服务领域的应用价值。",
+            "narrative": "6月10日，千问上线国内首个全周期高考志愿填报Agent，面向全国考生免费提供志愿填报和咨询服务。该Agent的底子是专门针对高考志愿填报打磨过的Qwen大模型，并结合了夸克8年高考服务积累的数据与经验。其核心能力包括志愿日历、志愿报告和志愿问答。阿里巴巴集团副总裁、千问事业部总裁吴嘉指出，高考志愿填报服务不应该只是一种稀缺商品，它更应该接近一种公共服务。今年全国共有1290万考生，平均每位考生需要填写约50个志愿。千问通过免费策略推动志愿填报服务的普惠化，体现了AI在公共服务领域的应用价值。",
+            "summary": "6月10日，千问上线国内首个全周期高考志愿填报Agent，面向全国考生免费提供志愿填报和咨询服务。该Agent的底子是专门针对高考志愿填报打磨过的Qwen大模型，并结合了夸克8年高考服务积累的数据与经验。其核心能力包括志愿日历、志愿报告和志愿问答。阿里巴巴集团副总裁、千问事业部总裁吴嘉指出，高考志愿填报服务不应该只是一种稀缺商品，它更应该接近一种公共服务。",
+            "refs": [
+              9,
+              10
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 82,
+            "topicId": 64
+          },
+          {
+            "title": "Anthropic调整Claude Fable 5策略，将针对AI研发的降智限制改为可见。",
+            "insight": "Anthropic调整Claude Fable 5策略",
+            "briefing": "Anthropic新模型Claude Fable 5在发布后因针对AI研发的“降智”机制引发社区强烈不满。该机制允许Anthropic在用户不知情的情况下降低模型能力，以防止外国对手利用模型加速AI研发。在舆论发酵后，Anthropic宣布调整策略，将这一保护措施改为可见。现在，如果Claude Fable 5检测到用户在研发AI，会向用户发出警报，表明将拒绝请求或引导至能力较弱的模型。Anthropic在声明中进行了道歉",
+            "evaluation": "Anthropic的调整体现了对用户反馈的重视，有助于修复与开发者社区的关系。",
+            "narrative": "Anthropic新模型Claude Fable 5在发布后因针对AI研发的“降智”机制引发社区强烈不满。该机制允许Anthropic在用户不知情的情况下降低模型能力，以防止外国对手利用模型加速AI研发。在舆论发酵后，Anthropic宣布调整策略，将这一保护措施改为可见。现在，如果Claude Fable 5检测到用户在研发AI，会向用户发出警报，表明将拒绝请求或引导至能力较弱的模型。Anthropic在声明中进行了道歉。Anthropic的调整体现了对用户反馈的重视，有助于修复与开发者社区的关系。",
+            "summary": "Anthropic新模型Claude Fable 5在发布后因针对AI研发的“降智”机制引发社区强烈不满。该机制允许Anthropic在用户不知情的情况下降低模型能力，以防止外国对手利用模型加速AI研发。在舆论发酵后，Anthropic宣布调整策略，将这一保护措施改为可见。现在，如果Claude Fable 5检测到用户在研发AI，会向用户发出警报",
+            "refs": [
+              11,
+              12
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 82,
+            "topicId": 70
+          },
+          {
+            "title": "阿里云开源Meoo CLI，作为本地Agent与云端能力的连接枢纽，解决代码到部署的痛点。",
+            "insight": "阿里云开源Meoo CLI，作为本地Agent与云端能力的连接枢纽",
+            "briefing": "针对开发者将AI生成的本地代码原型转化为线上应用时面临的复杂数据对接、环境配置及发布流程痛点，阿里云于6月11日正式开源了全新的命令行工具——Meoo（秒悟）CLI。Meoo CLI的核心定位是充当“本地Agent与云端能力之间的连接枢纽”。它不仅是一个发布工具，更像是一个自动化助手，能够帮助开发者将本地开发的项目一键推进到可供用户访问的线上状态。该工具支持目前主流的Claude Code、Codex、Cursor等本地编程助手",
+            "evaluation": "Meoo CLI有效降低了AI原生应用上线的门槛，提升了开发效率。",
+            "narrative": "针对开发者将AI生成的本地代码原型转化为线上应用时面临的复杂数据对接、环境配置及发布流程痛点，阿里云于6月11日正式开源了全新的命令行工具——Meoo（秒悟）CLI。Meoo CLI的核心定位是充当“本地Agent与云端能力之间的连接枢纽”。它不仅是一个发布工具，更像是一个自动化助手，能够帮助开发者将本地开发的项目一键推进到可供用户访问的线上状态。该工具支持目前主流的Claude Code、Codex、Cursor等本地编程助手。Meoo CLI有效降低了AI原生应用上线的门槛，提升了开发效率。",
+            "summary": "针对开发者将AI生成的本地代码原型转化为线上应用时面临的复杂数据对接、环境配置及发布流程痛点，阿里云于6月11日正式开源了全新的命令行工具——Meoo（秒悟）CLI。Meoo CLI的核心定位是充当“本地Agent与云端能力之间的连接枢纽”。它不仅是一个发布工具，更像是一个自动化助手，能够帮助开发者将本地开发的项目一键推进到可供用户访问的线上状态。",
+            "refs": [
+              16
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 82,
+            "topicId": 63
+          }
+        ],
+        "otherNews": [
+          {
+            "title": "小米开源MiMo Code，引入持久记忆与无限上下文，支持多模型协同。",
+            "insight": "小米开源MiMo Code，引入持久记忆与无限上下文，支持多模型协同。",
+            "briefing": "小米技术团队于6月11日正式发布AI编程辅助工具MiMo Code。该工具基于OpenCode技术底座开发，旨在通过深度优化功能提升开发效率。MiMo Code在架构上引入了持久记忆系统与无限上下文处理能力，能够更精准地理解开发者的逻辑需求。同时，该工具支持模型Agent协同优化，并内置了独创的Compose模式，进一步简化了复杂编程任务的执行过程。在生态兼容性方面，MiMo Code展现了极高的灵活性",
+            "evaluation": "小米通过开源与模型优化双管齐下，展现了在AI开发工具链上的深度布局。",
+            "narrative": "小米技术团队于6月11日正式发布AI编程辅助工具MiMo Code。该工具基于OpenCode技术底座开发，旨在通过深度优化功能提升开发效率。MiMo Code在架构上引入了持久记忆系统与无限上下文处理能力，能够更精准地理解开发者的逻辑需求。同时，该工具支持模型Agent协同优化，并内置了独创的Compose模式，进一步简化了复杂编程任务的执行过程。在生态兼容性方面，MiMo Code展现了极高的灵活性。小米通过开源与模型优化双管齐下，展现了在AI开发工具链上的深度布局。",
+            "summary": "小米技术团队于6月11日正式发布AI编程辅助工具MiMo Code。该工具基于OpenCode技术底座开发，旨在通过深度优化功能提升开发效率。MiMo Code在架构上引入了持久记忆系统与无限上下文处理能力，能够更精准地理解开发者的逻辑需求。同时，该工具支持模型Agent协同优化，并内置了独创的Compose模式，进一步简化了复杂编程任务的执行过程。",
+            "refs": [
+              15
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 82,
+            "topicId": 66
+          },
+          {
+            "title": "Google DeepMind联合多家机构启动1000万美元研究，关注多智能体系统安全。",
+            "insight": "Google DeepMind联合多家机构启动1000万美元研究，关注多智能体系统安全。",
+            "briefing": "Google DeepMind联合Schmidt Sciences、ARIA、Cooperative AI foundation等机构宣布启动1000万美元的研究资金，用于研究多智能体系统的行为，并寻找防止不安全场景的方法。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Google DeepMind联合Schmidt Sciences、ARIA、Cooperative AI foundation等机构宣布启动1000万美元的研究资金，用于研究多智能体系统的行为，并寻找防止不安全场景的方法。",
+            "summary": "Google DeepMind联合Schmidt Sciences、ARIA、Cooperative AI foundation等机构宣布启动1000万美元的研究资金，用于研究多智能体系统的行为，并寻找防止不安全场景的方法。",
+            "refs": [
+              13
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 66,
+            "topicId": 69
+          },
+          {
+            "title": "苹果Xcode 27 Beta原生集成Gemini，成为第三个内置AI编程智能体。",
+            "insight": "苹果Xcode 27 Beta原生集成Gemini，成为第三个内置AI编程智能体。",
+            "briefing": "苹果在最新发布的Xcode 27 Beta版本中正式引入了谷歌Gemini的原生集成，这标志着该平台迎来了第三个内置的AI编程智能体。此前，Xcode已先后引入了OpenAI Codex和Anthropic Claude Agent。随着Gemini的加入，开发者如今拥有了更多元化的智能编程选择，显著提升了开发效率与交互体验。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "苹果在最新发布的Xcode 27 Beta版本中正式引入了谷歌Gemini的原生集成，这标志着该平台迎来了第三个内置的AI编程智能体。此前，Xcode已先后引入了OpenAI Codex和Anthropic Claude Agent。",
+            "summary": "苹果在最新发布的Xcode 27 Beta版本中正式引入了谷歌Gemini的原生集成，这标志着该平台迎来了第三个内置的AI编程智能体。此前，Xcode已先后引入了OpenAI Codex和Anthropic Claude Agent。",
+            "refs": [
+              14
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 66,
+            "topicId": 5
+          },
+          {
+            "title": "字节系团队GUI Agent平台Core-Mate获数千万元融资，专注真实业务环境操作。",
+            "insight": "字节系团队GUI Agent平台Core-Mate获数千万元融资，专注真实业务环境操作。",
+            "briefing": "GUI Agent执行平台Core-Mate近日宣布完成数千万人民币融资，由敦鸿资产独家投资。本轮融资将重点用于公司的底层技术升级、移动端UI视觉感知能力的深度迭代以及用户拓展。Core-Mate的核心团队主要来自字节跳动，旨在解决AI Agent从Demo走向真实场景的难题，让AI能真正接手用户在网页和App中的操作。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "GUI Agent执行平台Core-Mate近日宣布完成数千万人民币融资，由敦鸿资产独家投资。本轮融资将重点用于公司的底层技术升级、移动端UI视觉感知能力的深度迭代以及用户拓展。",
+            "summary": "GUI Agent执行平台Core-Mate近日宣布完成数千万人民币融资，由敦鸿资产独家投资。本轮融资将重点用于公司的底层技术升级、移动端UI视觉感知能力的深度迭代以及用户拓展。Core-Mate的核心团队主要来自字节跳动，旨在解决AI",
+            "refs": [
+              17
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 66,
+            "topicId": 77
+          },
+          {
+            "title": "小米实测MiMo-V2.5-Pro-UltraSpeed模型，单API推理速度达1000+ TPS。",
+            "insight": "小米实测MiMo-V2.5-Pro-UltraSpeed模型，单API推理速度达1000+ TPS。",
+            "briefing": "小米发布了全新的MiMo-V2.5-Pro-UltraSpeed模型，即MiMo-V2.5-Pro的高速版本。该模型拥有1T总参数，支持1M上下文，单API推理速度直接拉到1000+ TPS，刷新了旗舰模型全球最快推理速度的纪录。值得注意的是，小米此次的新模型打破了“快、强、通用GPU无法兼得”的行业不可能三角，用通用GPU就能实现如此高的推理速度。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "小米发布了全新的MiMo-V2.5-Pro-UltraSpeed模型，即MiMo-V2.5-Pro的高速版本。该模型拥有1T总参数，支持1M上下文，单API推理速度直接拉到1000+ TPS，刷新了旗舰模型全球最快推理速度的纪录。",
+            "summary": "小米发布了全新的MiMo-V2.5-Pro-UltraSpeed模型，即MiMo-V2.5-Pro的高速版本。该模型拥有1T总参数，支持1M上下文，单API推理速度直接拉到1000+ TPS，刷新了旗舰模型全球最快推理速度的纪录。",
+            "refs": [
+              20
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 66,
+            "topicId": 99
+          },
+          {
+            "title": "Meshy发布全球首个3D创作AI Agent，推动3D创作从一次性生成走向可控生产。",
+            "insight": "Meshy发布全球首个3D创作AI Agent，推动3D创作从一次性生成走向可控生产。",
+            "briefing": "Meshy推出了全球首个3D创作AI Agent：Meshy 3D Agent。该产品旨在解决3D创作中“让模型变为可用资产”的难题，推动3D创作从一次性模型生成走向可控生产、批量扩展和长期复用的资产体系。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Meshy推出了全球首个3D创作AI Agent：Meshy 3D Agent。该产品旨在解决3D创作中“让模型变为可用资产”的难题，推动3D创作从一次性模型生成走向可控生产、批量扩展和长期复用的资产体系。",
+            "summary": "Meshy推出了全球首个3D创作AI Agent：Meshy 3D Agent。该产品旨在解决3D创作中“让模型变为可用资产”的难题，推动3D创作从一次性模型生成走向可控生产、批量扩展和长期复用的资产体系。当前信号具备参考价值",
+            "refs": [
+              19
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 66,
+            "topicId": 95
+          }
+        ],
+        "coreTech": [
+          {
+            "title": "评估代码的基准",
+            "summary": "Claw-SWE-Bench是一个新的基准和适配器协议，旨在通过标准化评估条件，揭示适配器设计对有效代码生成的重要性，从而实现不同代码Agent的公平比较。",
+            "refs": [
+              1
+            ],
+            "topicId": 23
+          },
+          {
+            "title": "空间智能基准构建",
+            "summary": "Embodied-BenchClaw提出了一种自主多智能体系统，用于构建具身空间智能基准，解决了现有基准构建劳动密集、难以复用和维护的问题。",
+            "refs": [
+              3
+            ],
+            "topicId": 12
+          },
+          {
+            "title": "多模态社交智能推理框架",
+            "summary": "MODF-SIR提出了一种基于轻量级多模态大语言模型的多智能体协作框架，专门用于社交智能推理，通过知识蒸馏增强训练和推理阶段。",
+            "refs": [
+              5
+            ],
+            "topicId": 17
+          },
+          {
+            "title": "评估技能组织",
+            "summary": "SkillJuror是一个评估Agent技能组织如何改变运行时行为的框架，通过渐进式披露和语义控制变体来区分技能内容与组织方式。",
+            "refs": [
+              6
+            ],
+            "topicId": 19
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "Claw-SWE-Bench: 评估代码Agent的基准",
+          "2": "CRANE：通过零空间编辑实现代码代理的约束推理注入",
+          "3": "Embodied-BenchClaw: 3D空间智能基准构建",
+          "4": "HELM：基于代理的混凝土桥梁护栏有限元建模",
+          "5": "MODF-SIR: 多模态社交智能推理框架",
+          "6": "SkillJuror: 评估Agent技能组织",
+          "7": "Workflow-GYM：面向专业领域计算机使用代理任务的长期评估",
+          "8": "ISE：基于执行的多人次操作系统代理轨迹配方",
+          "9": "樊登:千问帮助考生家庭穿越信息迷雾，“看清问题”作出选择千问于6月10日上线国内首个全周期高考志愿填报Agent，免费服务全国考生。帆书APP创始人樊登指出，家庭焦虑源于缺乏认知框架而非选项少，千问能帮助考生家庭穿越信息迷雾，理性选择。",
+          "10": "张雪峰留下的空白，AI能顶上吗？",
+          "11": "刚刚，Anthropic道歉了",
+          "12": "Fable 5自带反蒸馏机制！检测到就降智，误触率高到离谱",
+          "13": "谷歌 DeepMind 担忧数百万代理交互带来的后果",
+          "14": "苹果开发者生态升级：Xcode 27 原生集成 Gemini，AI 编程阵营再添猛将苹果在Xcode 27 Beta版本中引入谷歌Gemini的原生集成，成为继OpenAI Codex和Anthropic Claude",
+          "15": "小米技术团队进击AI编程：Mi Mo Code正式开源小米旗下Mi Mo技术团队于6月11日发布AI编程辅助工具Mi Mo Code，基于Open Code技术底座开发。该工具引入持久记忆系统、无限上下文处理能力，能精准理解开发者逻辑需求",
+          "16": "打通AI应用“最后一公里”：阿里云秒悟Meoo CLI正式开源阿里云开源了命令行工具Meoo CLI，定位为本地Agent与云端能力的连接枢纽。它帮助开发者将AI生成的本地代码原型转化为线上应用，自动处理数据对接、环境配置及发布流程",
+          "17": "独家｜让AI接手真实操作，字节系团队、GUI Agent平台Core-Mate获数千万元融资",
+          "18": "1290万高考生看过来！阿里出了个志愿填报Agent，免费的",
+          "19": "3 D创作迎来ChatGPT时刻：Meshy发布全球首个3 D AI Agent",
+          "20": "实测小米最快1 T大模型：吞吐量每秒1000+ Tokens，Vibe Coding七秒交付"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 102,
+        "selectedTopicTotal": 16
+      },
+      "at": "2026-06-11"
     }
   },
   "llm": {
-    "ea010d6ea887f52c19bd4e33a0b76f73205771f9f129d949de5d1b938eb9ad8b": {
-      "operation": "cluster_assignments_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"assignments\":[{\"candidate_id\":4,\"topic_key\":\"DeepSeek V4模型发布\",\"topic_title\":\"DeepSeek V4模型发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":5,\"topic_key\":\"DeepSeek V4模型发布\",\"topic_title\":\"DeepSeek V4模型发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":57,\"topic_key\":\"DeepSeek V4模型发布\",\"topic_title\":\"DeepSeek V4模型发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":20,\"topic_key\":\"GPT-5.5模型发布与更新\",\"topic_title\":\"GPT-5.5模型发布与更新\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":55,\"topic_key\":\"GPT-5.5模型发布与更新\",\"topic_title\":\"GPT-5.5模型发布与更新\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":56,\"topic_key\":\"GPT-5.5模型发布与更新\",\"topic_title\":\"GPT-5.5模型发布与更新\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":58,\"topic_key\":\"GPT-5.5模型发布与更新\",\"topic_title\":\"GPT-5.5模型发布与更新\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":62,\"topic_key\":\"GPT-5.5模型发布与更新\",\"topic_title\":\"GPT-5.5模型发布与更新\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":21,\"topic_key\":\"腾讯云QClaw平台升级\",\"topic_title\":\"腾讯云QClaw平台升级\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":true},{\"candidate_id\":22,\"topic_key\":\"Google与Kaggle AI Agents课程\",\"topic_title\":\"Google与Kaggle AI Agents课程\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":50,\"topic_key\":\"Claude Design与GPT Image 2.0发布\",\"topic_title\":\"Claude Design与GPT Image 2.0发布\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":51,\"topic_key\":\"AI行业一周重磅新闻汇总\",\"topic_title\":\"AI行业一周重磅新闻汇总\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":52,\"topic_key\":\"AI Agent控制层与操作系统\",\"topic_title\":\"AI Agent控制层与操作系统\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":53,\"topic_key\":\"Anthropic Agent版闲鱼实验\",\"topic_title\":\"Anthropic Agent版闲鱼实验\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":59,\"topic_key\":\"OpenAI Privacy Filter模型开源\",\"topic_title\":\"OpenAI Privacy Filter模型开源\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":60,\"topic_key\":\"百度GenFlow4.0发布\",\"topic_title\":\"百度GenFlow4.0发布\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":true},{\"candidate_id\":61,\"topic_key\":\"马斯克与阿尔特曼OpenAI诉讼\",\"topic_title\":\"马斯克与阿尔特曼OpenAI诉讼\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":63,\"topic_key\":\"Anthropic Project Deal电商实验\",\"topic_title\":\"Anthropic Project Deal电商实验\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":64,\"topic_key\":\"携程商旅AI生态全景图\",\"topic_title\":\"携程商旅AI生态全景图\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":true},{\"candidate_id\":66,\"topic_key\":\"谷歌拟投资Anthropic\",\"topic_title\":\"谷歌拟投资Anthropic\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":67,\"topic_key\":\"RTX 3090自定义模型发布\",\"topic_title\":\"RTX 3090自定义模型发布\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false},{\"candidate_id\":84,\"topic_key\":\"智能体工程隐形技术债\",\"topic_title\":\"智能体工程隐形技术债\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false},{\"candidate_id\":85,\"topic_key\":\"ChatGPT广告功能测试\",\"topic_title\":\"ChatGPT广告功能测试\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false},{\"candidate_id\":86,\"topic_key\":\"OpenAI开发智能手机\",\"topic_title\":\"OpenAI开发智能手机\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false},{\"candidate_id\":87,\"topic_key\":\"Anthropic产品负责人Cat Wu\",\"topic_title\":\"Anthropic产品负责人Cat Wu\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false}]}",
-      "at": "2026-04-27"
-    },
-    "f3307cf39913edb2415d8b3fa9d0929fe8f91ade543dec422f784cae5d149059": {
-      "operation": "cluster_assignments_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"assignments\":[{\"candidate_id\":88,\"topic_key\":\"GPT-Image-2发布\",\"topic_title\":\"GPT-Image-2发布及文生图榜单表现\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":89,\"topic_key\":\"Claude Code计费Bug\",\"topic_title\":\"Claude Code计费Bug事件\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":true},{\"candidate_id\":90,\"topic_key\":\"Anthropic Mythos模型\",\"topic_title\":\"Anthropic Mythos网络攻防大模型\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":91,\"topic_key\":\"AI Agent与Moxt\",\"topic_title\":\"AI Agent与Moxt工具\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":92,\"topic_key\":\"GPT-Image-2发布\",\"topic_title\":\"GPT-Image-2发布及文生图榜单表现\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":93,\"topic_key\":\"Claude Code计费Bug\",\"topic_title\":\"Claude Code计费Bug事件\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":true},{\"candidate_id\":94,\"topic_key\":\"Anthropic Agent市场\",\"topic_title\":\"Anthropic Agent对Agent市场实验\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":95,\"topic_key\":\"谷歌投资Anthropic\",\"topic_title\":\"谷歌投资Anthropic\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":96,\"topic_key\":\"微软与OpenAI合作\",\"topic_title\":\"微软与OpenAI合作更新\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":97,\"topic_key\":\"韩国与DeepMind合作\",\"topic_title\":\"韩国与DeepMind合作备忘录\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":98,\"topic_key\":\"AI设计汽车\",\"topic_title\":\"AI设计汽车\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":100,\"topic_key\":\"韩国与DeepMind合作\",\"topic_title\":\"韩国与DeepMind合作备忘录\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":101,\"topic_key\":\"DeepSeek V4模型\",\"topic_title\":\"DeepSeek V4模型发布\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":102,\"topic_key\":\"Manus收购案被叫停\",\"topic_title\":\"Manus收购案被叫停\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":103,\"topic_key\":\"Sun语音AI公司\",\"topic_title\":\"Sun语音AI公司专访\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":104,\"topic_key\":\"微软AI Tour上海站\",\"topic_title\":\"微软AI Tour上海站\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":105,\"topic_key\":\"AI辅助考研\",\"topic_title\":\"AI辅助考研案例\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false},{\"candidate_id\":106,\"topic_key\":\"Soul推出Audio Factory\",\"topic_title\":\"Soul推出Audio Factory\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":107,\"topic_key\":\"AI短剧商业化\",\"topic_title\":\"AI短剧商业化\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":108,\"topic_key\":\"AI硬件创业\",\"topic_title\":\"AI硬件创业\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false},{\"candidate_id\":109,\"topic_key\":\"Anthropic与NEC合作\",\"topic_title\":\"Anthropic与NEC合作\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":111,\"topic_key\":\"房产交易\",\"topic_title\":\"房产交易\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false},{\"candidate_id\":112,\"topic_key\":\"OpenAI Responses API\",\"topic_title\":\"OpenAI Responses API与WebSocket\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":113,\"topic_key\":\"ChatGPT Workspace Agents\",\"topic_title\":\"ChatGPT Workspace Agents\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":115,\"topic_key\":\"审计流水线\",\"topic_title\":\"审计流水线文章\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false}]}",
-      "at": "2026-04-27"
-    },
-    "35847bf0e5cb43329cd427fdbe5ee314d22f71cbeb4212b581fbd64ebb42b60f": {
-      "operation": "cluster_assignments_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"assignments\":[{\"candidate_id\":116,\"topic_key\":\"Hugging Face 发布数据集\",\"topic_title\":\"Hugging Face 发布数据集\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":117,\"topic_key\":\"TRL v1.3 支持 Qwen 3.6\",\"topic_title\":\"TRL v1.3 支持 Qwen 3.6\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":127,\"topic_key\":\"Hugging Face 发布数据集\",\"topic_title\":\"Hugging Face 发布数据集\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":118,\"topic_key\":\"DeepSeek 降低缓存成本\",\"topic_title\":\"DeepSeek 降低缓存成本\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":119,\"topic_key\":\"Simon Willison 博客文章\",\"topic_title\":\"Simon Willison 博客文章\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":120,\"topic_key\":\"OpenAI CEO 致歉 Tumbler Ridge\",\"topic_title\":\"OpenAI CEO 致歉 Tumbler Ridge\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":121,\"topic_key\":\"AI 驱动 Mac mini 短缺\",\"topic_title\":\"AI 驱动 Mac mini 短缺\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":122,\"topic_key\":\"OpenAI 发布 GPT-5.5\",\"topic_title\":\"OpenAI 发布 GPT-5.5\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":123,\"topic_key\":\"OpenAI 发布 GPT-5.5\",\"topic_title\":\"OpenAI 发布 GPT-5.5\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":124,\"topic_key\":\"OpenAI 发布隐私过滤器\",\"topic_title\":\"OpenAI 发布隐私过滤器\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":125,\"topic_key\":\"Anthropic 更新选举安全措施\",\"topic_title\":\"Anthropic 更新选举安全措施\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":126,\"topic_key\":\"Google Gemini 空间整理技巧\",\"topic_title\":\"Google Gemini 空间整理技巧\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":131,\"topic_key\":\"华为天才少年赵立晨离职创业\",\"topic_title\":\"华为天才少年赵立晨离职创业\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":132,\"topic_key\":\"Hermes Agent 部署指南\",\"topic_title\":\"Hermes Agent 部署指南\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":133,\"topic_key\":\"Hermes Agent 部署指南\",\"topic_title\":\"Hermes Agent 部署指南\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":134,\"topic_key\":\"Claude Code 使用 GPT-5.5\",\"topic_title\":\"Claude Code 使用 GPT-5.5\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":135,\"topic_key\":\"Simon Willison 博客文章\",\"topic_title\":\"Simon Willison 博客文章\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":137,\"topic_key\":\"Cohere 收购 Aleph Alpha\",\"topic_title\":\"Cohere 收购 Aleph Alpha\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":138,\"topic_key\":\"ComfyUI 融资 5000 万美元\",\"topic_title\":\"ComfyUI 融资 5000 万美元\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":139,\"topic_key\":\"苹果 CEO 更迭与 Cursor 收购传闻\",\"topic_title\":\"苹果 CEO 更迭与 Cursor 收购传闻\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":140,\"topic_key\":\"Uber CTO 加入 TechCrunch 活动\",\"topic_title\":\"Uber CTO 加入 TechCrunch 活动\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":141,\"topic_key\":\"OpenAI Codex 插件与技能\",\"topic_title\":\"OpenAI Codex 插件与技能\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":142,\"topic_key\":\"OpenAI Codex 自动化功能\",\"topic_title\":\"OpenAI Codex 自动化功能\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":143,\"topic_key\":\"OpenAI Codex 工作应用\",\"topic_title\":\"OpenAI Codex 工作应用\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":145,\"topic_key\":\"Google 发布 Agentic Era TPU\",\"topic_title\":\"Google 发布 Agentic Era TPU\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
-      "at": "2026-04-27"
-    },
-    "728770f799f9f6dae92ea21e1963a016e8b9bbf7aa6946476bdeba125be07b5d": {
-      "operation": "cluster_assignments_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"assignments\":[{\"candidate_id\":146,\"topic_key\":\"Anthropic 安全事件\",\"topic_title\":\"Anthropic Mythos 数据泄露事件\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":147,\"topic_key\":\"Kimi K2 模型发布\",\"topic_title\":\"月之暗面 Kimi K2 开放智能体模型\",\"topic_type\":\"news\",\"confidence\":0.95,\"is_pr\":false},{\"candidate_id\":148,\"topic_key\":\"美国军事 AI 项目 Maven\",\"topic_title\":\"Project Maven 军事 AI 训练项目\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":149,\"topic_key\":\"马斯克与奥特曼冲突\",\"topic_title\":\"马斯克与奥特曼关系恶化\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":150,\"topic_key\":\"LLM 数据集工具更新\",\"topic_title\":\"Hugging Face LLM 数据集工具更新\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false}]}",
-      "at": "2026-04-27"
-    },
-    "1ae0013dbc2ff8cc3569c7cf911e33dc5a17966116d7090586d19989ac713924": {
-      "operation": "merge_topic_rows",
-      "model": "glm-4.7-flash",
-      "content": "{\"mapping\":[{\"from_key\":\"GPT-5.5模型发布与更新\",\"merged_key\":\"GPT-5.5发布\",\"merged_title\":\"GPT-5.5模型发布与更新\",\"merged_type\":\"news\"},{\"from_key\":\"DeepSeek V4模型发布\",\"merged_key\":\"DeepSeek V4模型发布\",\"merged_title\":\"DeepSeek V4模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"韩国与DeepMind合作\",\"merged_key\":\"韩国与DeepMind合作\",\"merged_title\":\"韩国与DeepMind合作备忘录\",\"merged_type\":\"news\"},{\"from_key\":\"Claude Code计费Bug\",\"merged_key\":\"Claude Code计费Bug\",\"merged_title\":\"Claude Code计费Bug事件\",\"merged_type\":\"news\"},{\"from_key\":\"GPT-Image-2发布\",\"merged_key\":\"GPT-Image-2发布\",\"merged_title\":\"GPT-Image-2发布及文生图榜单表现\",\"merged_type\":\"news\"},{\"from_key\":\"Hermes Agent 部署指南\",\"merged_key\":\"Hermes Agent 部署指南\",\"merged_title\":\"Hermes Agent 部署指南\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face 发布数据集\",\"merged_key\":\"Hugging Face 发布数据集\",\"merged_title\":\"Hugging Face 发布数据集\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 发布 GPT-5.5\",\"merged_key\":\"GPT-5.5发布\",\"merged_title\":\"GPT-5.5模型发布与更新\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison 博客文章\",\"merged_key\":\"Simon Willison 博客文章\",\"merged_title\":\"Simon Willison 博客文章\",\"merged_type\":\"news\"},{\"from_key\":\"百度GenFlow4.0发布\",\"merged_key\":\"百度GenFlow4.0发布\",\"merged_title\":\"百度GenFlow4.0发布\",\"merged_type\":\"news\"},{\"from_key\":\"房产交易\",\"merged_key\":\"房产交易\",\"merged_title\":\"房产交易\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌拟投资Anthropic\",\"merged_key\":\"谷歌投资Anthropic\",\"merged_title\":\"谷歌拟投资Anthropic\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌投资Anthropic\",\"merged_key\":\"谷歌投资Anthropic\",\"merged_title\":\"谷歌拟投资Anthropic\",\"merged_type\":\"news\"},{\"from_key\":\"华为天才少年赵立晨离职创业\",\"merged_key\":\"华为天才少年赵立晨离职创业\",\"merged_title\":\"华为天才少年赵立晨离职创业\",\"merged_type\":\"news\"},{\"from_key\":\"马斯克与阿尔特曼OpenAI诉讼\",\"merged_key\":\"马斯克与阿尔特曼OpenAI诉讼\",\"merged_title\":\"马斯克与阿尔特曼OpenAI诉讼\",\"merged_type\":\"news\"},{\"from_key\":\"马斯克与奥特曼冲突\",\"merged_key\":\"马斯克与阿尔特曼OpenAI诉讼\",\"merged_title\":\"马斯克与阿尔特曼OpenAI诉讼\",\"merged_type\":\"news\"},{\"from_key\":\"苹果 CEO 更迭与 Cursor 收购传闻\",\"merged_key\":\"苹果 CEO 更迭与 Cursor 收购传闻\",\"merged_title\":\"苹果 CEO 更迭与 Cursor 收购传闻\",\"merged_type\":\"news\"},{\"from_key\":\"审计流水线\",\"merged_key\":\"审计流水线\",\"merged_title\":\"审计流水线文章\",\"merged_type\":\"news\"},{\"from_key\":\"腾讯云QClaw平台升级\",\"merged_key\":\"腾讯云QClaw平台升级\",\"merged_title\":\"腾讯云QClaw平台升级\",\"merged_type\":\"news\"},{\"from_key\":\"微软与OpenAI合作\",\"merged_key\":\"微软与OpenAI合作\",\"merged_title\":\"微软与OpenAI合作更新\",\"merged_type\":\"news\"},{\"from_key\":\"微软AI Tour上海站\",\"merged_key\":\"微软AI Tour上海站\",\"merged_title\":\"微软AI Tour上海站\",\"merged_type\":\"news\"},{\"from_key\":\"携程商旅AI生态全景图\",\"merged_key\":\"携程商旅AI生态全景图\",\"merged_title\":\"携程商旅AI生态全景图\",\"merged_type\":\"news\"},{\"from_key\":\"Kimi K2 模型发布\",\"merged_key\":\"Kimi K2 模型发布\",\"merged_title\":\"月之暗面 Kimi K2 开放智能体模型\",\"merged_type\":\"news\"},{\"from_key\":\"智能体工程隐形技术债\",\"merged_key\":\"智能体工程隐形技术债\",\"merged_title\":\"智能体工程隐形技术债\",\"merged_type\":\"news\"},{\"from_key\":\"AI 驱动 Mac mini 短缺\",\"merged_key\":\"AI 驱动 Mac mini 短缺\",\"merged_title\":\"AI 驱动 Mac mini 短缺\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent控制层与操作系统\",\"merged_key\":\"AI Agent控制层与操作系统\",\"merged_title\":\"AI Agent控制层与操作系统\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent与Moxt\",\"merged_key\":\"AI Agent与Moxt\",\"merged_title\":\"AI Agent与Moxt工具\",\"merged_type\":\"news\"},{\"from_key\":\"AI短剧商业化\",\"merged_key\":\"AI短剧商业化\",\"merged_title\":\"AI短剧商业化\",\"merged_type\":\"news\"},{\"from_key\":\"AI辅助考研\",\"merged_key\":\"AI辅助考研\",\"merged_title\":\"AI辅助考研案例\",\"merged_type\":\"news\"},{\"from_key\":\"AI设计汽车\",\"merged_key\":\"AI设计汽车\",\"merged_title\":\"AI设计汽车\",\"merged_type\":\"news\"},{\"from_key\":\"AI行业一周重磅新闻汇总\",\"merged_key\":\"AI行业一周重磅新闻汇总\",\"merged_title\":\"AI行业一周重磅新闻汇总\",\"merged_type\":\"news\"},{\"from_key\":\"AI硬件创业\",\"merged_key\":\"AI硬件创业\",\"merged_title\":\"AI硬件创业\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic 更新选举安全措施\",\"merged_key\":\"Anthropic 更新选举安全措施\",\"merged_title\":\"Anthropic 更新选举安全措施\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Agent版闲鱼实验\",\"merged_key\":\"Anthropic Agent版闲鱼实验\",\"merged_title\":\"Anthropic Agent版闲鱼实验\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Agent市场\",\"merged_key\":\"Anthropic Agent市场\",\"merged_title\":\"Anthropic Agent对Agent市场实验\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic 安全事件\",\"merged_key\":\"Anthropic 安全事件\",\"merged_title\":\"Anthropic Mythos 数据泄露事件\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Mythos模型\",\"merged_key\":\"Anthropic Mythos模型\",\"merged_title\":\"Anthropic Mythos网络攻防大模型\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Project Deal电商实验\",\"merged_key\":\"Anthropic Project Deal电商实验\",\"merged_title\":\"Anthropic Project Deal电商实验\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic产品负责人Cat Wu\",\"merged_key\":\"Anthropic产品负责人Cat Wu\",\"merged_title\":\"Anthropic产品负责人Cat Wu\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic与NEC合作\",\"merged_key\":\"Anthropic与NEC合作\",\"merged_title\":\"Anthropic与NEC合作\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT Workspace Agents\",\"merged_key\":\"ChatGPT Workspace Agents\",\"merged_title\":\"ChatGPT Workspace Agents\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT广告功能测试\",\"merged_key\":\"ChatGPT广告功能测试\",\"merged_title\":\"ChatGPT广告功能测试\",\"merged_type\":\"news\"},{\"from_key\":\"Claude Code 使用 GPT-5.5\",\"merged_key\":\"Claude Code 使用 GPT-5.5\",\"merged_title\":\"Claude Code 使用 GPT-5.5\",\"merged_type\":\"news\"},{\"from_key\":\"Claude Design与GPT Image 2.0发布\",\"merged_key\":\"Claude Design与GPT Image 2.0发布\",\"merged_title\":\"Claude Design与GPT Image 2.0发布\",\"merged_type\":\"news\"},{\"from_key\":\"Cohere 收购 Aleph Alpha\",\"merged_key\":\"Cohere 收购 Aleph Alpha\",\"merged_title\":\"Cohere 收购 Aleph Alpha\",\"merged_type\":\"news\"},{\"from_key\":\"ComfyUI 融资 5000 万美元\",\"merged_key\":\"ComfyUI 融资 5000 万美元\",\"merged_title\":\"ComfyUI 融资 5000 万美元\",\"merged_type\":\"news\"},{\"from_key\":\"DeepSeek 降低缓存成本\",\"merged_key\":\"DeepSeek 降低缓存成本\",\"merged_title\":\"DeepSeek 降低缓存成本\",\"merged_type\":\"news\"},{\"from_key\":\"DeepSeek V4模型\",\"merged_key\":\"DeepSeek V4模型发布\",\"merged_title\":\"DeepSeek V4模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"Google 发布 Agentic Era TPU\",\"merged_key\":\"Google 发布 Agentic Era TPU\",\"merged_title\":\"Google 发布 Agentic Era TPU\",\"merged_type\":\"news\"},{\"from_key\":\"Google Gemini 空间整理技巧\",\"merged_key\":\"Google Gemini 空间整理技巧\",\"merged_title\":\"Google Gemini 空间整理技巧\",\"merged_type\":\"news\"},{\"from_key\":\"Google与Kaggle AI Agents课程\",\"merged_key\":\"Google与Kaggle AI Agents课程\",\"merged_title\":\"Google与Kaggle AI Agents课程\",\"merged_type\":\"news\"},{\"from_key\":\"LLM 数据集工具更新\",\"merged_key\":\"LLM 数据集工具更新\",\"merged_title\":\"Hugging Face LLM 数据集工具更新\",\"merged_type\":\"news\"},{\"from_key\":\"Manus收购案被叫停\",\"merged_key\":\"Manus收购案被叫停\",\"merged_title\":\"Manus收购案被叫停\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 发布隐私过滤器\",\"merged_key\":\"OpenAI 发布隐私过滤器\",\"merged_title\":\"OpenAI 发布隐私过滤器\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI CEO 致歉 Tumbler Ridge\",\"merged_key\":\"OpenAI CEO 致歉 Tumbler Ridge\",\"merged_title\":\"OpenAI CEO 致歉 Tumbler Ridge\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Codex 插件与技能\",\"merged_key\":\"OpenAI Codex 插件与技能\",\"merged_title\":\"OpenAI Codex 插件与技能\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Codex 工作应用\",\"merged_key\":\"OpenAI Codex 工作应用\",\"merged_title\":\"OpenAI Codex 工作应用\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Codex 自动化功能\",\"merged_key\":\"OpenAI Codex 自动化功能\",\"merged_title\":\"OpenAI Codex 自动化功能\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Privacy Filter模型开源\",\"merged_key\":\"OpenAI 发布隐私过滤器\",\"merged_title\":\"OpenAI 发布隐私过滤器\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Responses API\",\"merged_key\":\"OpenAI Responses API\",\"merged_title\":\"OpenAI Responses API与WebSocket\",\"merged_type\":\"news\"}]}",
-      "at": "2026-04-27"
-    },
-    "592ecf351a0c88c3e2abf9b639e97929f3705091faced800e5796b648a834a81": {
-      "operation": "merge_topic_rows",
-      "model": "glm-4.7-flash",
-      "content": "{\"mapping\":[{\"from_key\":\"OpenAI开发智能手机\",\"merged_key\":\"OpenAI开发智能手机\",\"merged_title\":\"OpenAI开发智能手机\",\"merged_type\":\"news\"},{\"from_key\":\"美国军事 AI 项目 Maven\",\"merged_key\":\"美国军事 AI 项目 Maven\",\"merged_title\":\"Project Maven 军事 AI 训练项目\",\"merged_type\":\"news\"},{\"from_key\":\"RTX 3090自定义模型发布\",\"merged_key\":\"RTX 3090自定义模型发布\",\"merged_title\":\"RTX 3090自定义模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"Soul推出Audio Factory\",\"merged_key\":\"Soul推出Audio Factory\",\"merged_title\":\"Soul推出Audio Factory\",\"merged_type\":\"news\"},{\"from_key\":\"Sun语音AI公司\",\"merged_key\":\"Sun语音AI公司\",\"merged_title\":\"Sun语音AI公司专访\",\"merged_type\":\"news\"},{\"from_key\":\"TRL v1.3 支持 Qwen 3.6\",\"merged_key\":\"TRL v1.3 支持 Qwen 3.6\",\"merged_title\":\"TRL v1.3 支持 Qwen 3.6\",\"merged_type\":\"news\"},{\"from_key\":\"Uber CTO 加入 TechCrunch 活动\",\"merged_key\":\"Uber CTO 加入 TechCrunch 活动\",\"merged_title\":\"Uber CTO 加入 TechCrunch 活动\",\"merged_type\":\"news\"}]}",
-      "at": "2026-04-27"
-    },
-    "e9afde73f4c8a36b88620d59f4a1786e96dfaafd0d7fc3848842aa54cdcdcca1": {
-      "operation": "merge_topic_rows",
-      "model": "glm-4.7-flash",
-      "content": "{\"mapping\":[{\"from_key\":\"GPT-5.5发布\",\"merged_key\":\"GPT-5.5发布\",\"merged_title\":\"GPT-5.5模型发布与更新\",\"merged_type\":\"news\"},{\"from_key\":\"DeepSeek V4模型发布\",\"merged_key\":\"DeepSeek V4模型发布\",\"merged_title\":\"DeepSeek V4模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌投资Anthropic\",\"merged_key\":\"谷歌投资Anthropic\",\"merged_title\":\"谷歌拟投资Anthropic\",\"merged_type\":\"news\"},{\"from_key\":\"韩国与DeepMind合作\",\"merged_key\":\"韩国与DeepMind合作\",\"merged_title\":\"韩国与DeepMind合作备忘录\",\"merged_type\":\"news\"},{\"from_key\":\"马斯克与阿尔特曼OpenAI诉讼\",\"merged_key\":\"马斯克与阿尔特曼OpenAI诉讼\",\"merged_title\":\"马斯克与阿尔特曼OpenAI诉讼\",\"merged_type\":\"news\"},{\"from_key\":\"Claude Code计费Bug\",\"merged_key\":\"Claude Code计费Bug\",\"merged_title\":\"Claude Code计费Bug事件\",\"merged_type\":\"news\"},{\"from_key\":\"GPT-Image-2发布\",\"merged_key\":\"GPT-Image-2发布\",\"merged_title\":\"GPT-Image-2发布及文生图榜单表现\",\"merged_type\":\"news\"},{\"from_key\":\"Hermes Agent 部署指南\",\"merged_key\":\"Hermes Agent 部署指南\",\"merged_title\":\"Hermes Agent 部署指南\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face 发布数据集\",\"merged_key\":\"Hugging Face 发布数据集\",\"merged_title\":\"Hugging Face 发布数据集\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 发布隐私过滤器\",\"merged_key\":\"OpenAI 发布隐私过滤器\",\"merged_title\":\"OpenAI 发布隐私过滤器\",\"merged_type\":\"news\"},{\"from_key\":\"Simon Willison 博客文章\",\"merged_key\":\"Simon Willison 博客文章\",\"merged_title\":\"Simon Willison 博客文章\",\"merged_type\":\"news\"},{\"from_key\":\"百度GenFlow4.0发布\",\"merged_key\":\"百度GenFlow4.0发布\",\"merged_title\":\"百度GenFlow4.0发布\",\"merged_type\":\"news\"},{\"from_key\":\"房产交易\",\"merged_key\":\"房产交易\",\"merged_title\":\"房产交易\",\"merged_type\":\"news\"},{\"from_key\":\"华为天才少年赵立晨离职创业\",\"merged_key\":\"华为天才少年赵立晨离职创业\",\"merged_title\":\"华为天才少年赵立晨离职创业\",\"merged_type\":\"news\"},{\"from_key\":\"苹果 CEO 更迭与 Cursor 收购传闻\",\"merged_key\":\"苹果 CEO 更迭与 Cursor 收购传闻\",\"merged_title\":\"苹果 CEO 更迭与 Cursor 收购传闻\",\"merged_type\":\"news\"},{\"from_key\":\"审计流水线\",\"merged_key\":\"审计流水线\",\"merged_title\":\"审计流水线文章\",\"merged_type\":\"news\"},{\"from_key\":\"腾讯云QClaw平台升级\",\"merged_key\":\"腾讯云QClaw平台升级\",\"merged_title\":\"腾讯云QClaw平台升级\",\"merged_type\":\"news\"},{\"from_key\":\"微软与OpenAI合作\",\"merged_key\":\"微软与OpenAI合作\",\"merged_title\":\"微软与OpenAI合作更新\",\"merged_type\":\"news\"},{\"from_key\":\"微软AI Tour上海站\",\"merged_key\":\"微软AI Tour上海站\",\"merged_title\":\"微软AI Tour上海站\",\"merged_type\":\"news\"},{\"from_key\":\"携程商旅AI生态全景图\",\"merged_key\":\"携程商旅AI生态全景图\",\"merged_title\":\"携程商旅AI生态全景图\",\"merged_type\":\"news\"},{\"from_key\":\"Kimi K2 模型发布\",\"merged_key\":\"Kimi K2 模型发布\",\"merged_title\":\"月之暗面 Kimi K2 开放智能体模型\",\"merged_type\":\"news\"},{\"from_key\":\"智能体工程隐形技术债\",\"merged_key\":\"智能体工程隐形技术债\",\"merged_title\":\"智能体工程隐形技术债\",\"merged_type\":\"news\"},{\"from_key\":\"AI 驱动 Mac mini 短缺\",\"merged_key\":\"AI 驱动 Mac mini 短缺\",\"merged_title\":\"AI 驱动 Mac mini 短缺\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent控制层与操作系统\",\"merged_key\":\"AI Agent控制层与操作系统\",\"merged_title\":\"AI Agent控制层与操作系统\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent与Moxt\",\"merged_key\":\"AI Agent与Moxt\",\"merged_title\":\"AI Agent与Moxt工具\",\"merged_type\":\"news\"},{\"from_key\":\"AI短剧商业化\",\"merged_key\":\"AI短剧商业化\",\"merged_title\":\"AI短剧商业化\",\"merged_type\":\"news\"},{\"from_key\":\"AI辅助考研\",\"merged_key\":\"AI辅助考研\",\"merged_title\":\"AI辅助考研案例\",\"merged_type\":\"news\"},{\"from_key\":\"AI设计汽车\",\"merged_key\":\"AI设计汽车\",\"merged_title\":\"AI设计汽车\",\"merged_type\":\"news\"},{\"from_key\":\"AI行业一周重磅新闻汇总\",\"merged_key\":\"AI行业一周重磅新闻汇总\",\"merged_title\":\"AI行业一周重磅新闻汇总\",\"merged_type\":\"news\"},{\"from_key\":\"AI硬件创业\",\"merged_key\":\"AI硬件创业\",\"merged_title\":\"AI硬件创业\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic 更新选举安全措施\",\"merged_key\":\"Anthropic 更新选举安全措施\",\"merged_title\":\"Anthropic 更新选举安全措施\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Agent版闲鱼实验\",\"merged_key\":\"Anthropic Agent版闲鱼实验\",\"merged_title\":\"Anthropic Agent版闲鱼实验\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Agent市场\",\"merged_key\":\"Anthropic Agent市场\",\"merged_title\":\"Anthropic Agent对Agent市场实验\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic 安全事件\",\"merged_key\":\"Anthropic 安全事件\",\"merged_title\":\"Anthropic Mythos 数据泄露事件\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Mythos模型\",\"merged_key\":\"Anthropic Mythos模型\",\"merged_title\":\"Anthropic Mythos网络攻防大模型\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Project Deal电商实验\",\"merged_key\":\"Anthropic Project Deal电商实验\",\"merged_title\":\"Anthropic Project Deal电商实验\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic产品负责人Cat Wu\",\"merged_key\":\"Anthropic产品负责人Cat Wu\",\"merged_title\":\"Anthropic产品负责人Cat Wu\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic与NEC合作\",\"merged_key\":\"Anthropic与NEC合作\",\"merged_title\":\"Anthropic与NEC合作\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT Workspace Agents\",\"merged_key\":\"ChatGPT Workspace Agents\",\"merged_title\":\"ChatGPT Workspace Agents\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT广告功能测试\",\"merged_key\":\"ChatGPT广告功能测试\",\"merged_title\":\"ChatGPT广告功能测试\",\"merged_type\":\"news\"},{\"from_key\":\"Claude Code 使用 GPT-5.5\",\"merged_key\":\"Claude Code 使用 GPT-5.5\",\"merged_title\":\"Claude Code 使用 GPT-5.5\",\"merged_type\":\"news\"},{\"from_key\":\"Claude Design与GPT Image 2.0发布\",\"merged_key\":\"Claude Design与GPT Image 2.0发布\",\"merged_title\":\"Claude Design与GPT Image 2.0发布\",\"merged_type\":\"news\"},{\"from_key\":\"Cohere 收购 Aleph Alpha\",\"merged_key\":\"Cohere 收购 Aleph Alpha\",\"merged_title\":\"Cohere 收购 Aleph Alpha\",\"merged_type\":\"news\"},{\"from_key\":\"ComfyUI 融资 5000 万美元\",\"merged_key\":\"ComfyUI 融资 5000 万美元\",\"merged_title\":\"ComfyUI 融资 5000 万美元\",\"merged_type\":\"news\"},{\"from_key\":\"DeepSeek 降低缓存成本\",\"merged_key\":\"DeepSeek 降低缓存成本\",\"merged_title\":\"DeepSeek 降低缓存成本\",\"merged_type\":\"news\"},{\"from_key\":\"Google 发布 Agentic Era TPU\",\"merged_key\":\"Google 发布 Agentic Era TPU\",\"merged_title\":\"Google 发布 Agentic Era TPU\",\"merged_type\":\"news\"},{\"from_key\":\"Google Gemini 空间整理技巧\",\"merged_key\":\"Google Gemini 空间整理技巧\",\"merged_title\":\"Google Gemini 空间整理技巧\",\"merged_type\":\"news\"},{\"from_key\":\"Google与Kaggle AI Agents课程\",\"merged_key\":\"Google与Kaggle AI Agents课程\",\"merged_title\":\"Google与Kaggle AI Agents课程\",\"merged_type\":\"news\"},{\"from_key\":\"LLM 数据集工具更新\",\"merged_key\":\"LLM 数据集工具更新\",\"merged_title\":\"Hugging Face LLM 数据集工具更新\",\"merged_type\":\"news\"},{\"from_key\":\"Manus收购案被叫停\",\"merged_key\":\"Manus收购案被叫停\",\"merged_title\":\"Manus收购案被叫停\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI CEO 致歉 Tumbler Ridge\",\"merged_key\":\"OpenAI CEO 致歉 Tumbler Ridge\",\"merged_title\":\"OpenAI CEO 致歉 Tumbler Ridge\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Codex 插件与技能\",\"merged_key\":\"OpenAI Codex 插件与技能\",\"merged_title\":\"OpenAI Codex 插件与技能\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Codex 工作应用\",\"merged_key\":\"OpenAI Codex 工作应用\",\"merged_title\":\"OpenAI Codex 工作应用\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Codex 自动化功能\",\"merged_key\":\"OpenAI Codex 自动化功能\",\"merged_title\":\"OpenAI Codex 自动化功能\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Responses API\",\"merged_key\":\"OpenAI Responses API\",\"merged_title\":\"OpenAI Responses API与WebSocket\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI开发智能手机\",\"merged_key\":\"OpenAI开发智能手机\",\"merged_title\":\"OpenAI开发智能手机\",\"merged_type\":\"news\"},{\"from_key\":\"美国军事 AI 项目 Maven\",\"merged_key\":\"美国军事 AI 项目 Maven\",\"merged_title\":\"Project Maven 军事 AI 训练项目\",\"merged_type\":\"news\"},{\"from_key\":\"RTX 3090自定义模型发布\",\"merged_key\":\"RTX 3090自定义模型发布\",\"merged_title\":\"RTX 3090自定义模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"Soul推出Audio Factory\",\"merged_key\":\"Soul推出Audio Factory\",\"merged_title\":\"Soul推出Audio Factory\",\"merged_type\":\"news\"},{\"from_key\":\"Sun语音AI公司\",\"merged_key\":\"Sun语音AI公司\",\"merged_title\":\"Sun语音AI公司专访\",\"merged_type\":\"news\"}]}",
-      "at": "2026-04-27"
-    },
-    "50f14cda39173dbb7b5454d53ca4119805bede0ac972ac895dea63c625980e0c": {
-      "operation": "merge_topic_rows",
-      "model": "glm-4.7-flash",
-      "content": "{\"mapping\":[{\"from_key\":\"TRL v1.3 支持 Qwen 3.6\",\"merged_key\":\"TRL v1.3 支持 Qwen 3.6\",\"merged_title\":\"TRL v1.3 支持 Qwen 3.6\",\"merged_type\":\"news\"},{\"from_key\":\"Uber CTO 加入 TechCrunch 活动\",\"merged_key\":\"Uber CTO 加入 TechCrunch 活动\",\"merged_title\":\"Uber CTO 加入 TechCrunch 活动\",\"merged_type\":\"news\"}]}",
-      "at": "2026-04-27"
-    },
-    "a4fed6ab2343a9e76e35208771c8927db5c01765792454b93501146b7202382f": {
-      "operation": "shortlist_topics",
-      "model": "glm-4.7-flash",
-      "content": "{\"selected_topic_ids\":[4,19,53,58,86,81,55,80,100,109,120,54,102,51,57,56,52,82,83],\"reasons\":[{\"topic_id\":4,\"reason\":\"DeepSeek V4模型发布，国产模型迭代热点，技术影响力强。\"},{\"topic_id\":19,\"reason\":\"GPT-5.5模型发布，行业顶级模型动态，关注度高。\"},{\"topic_id\":53,\"reason\":\"OpenAI发布隐私过滤器，涉及AI安全与伦理，行业影响大。\"},{\"topic_id\":58,\"reason\":\"谷歌拟投资Anthropic，巨头资本运作，反映行业格局变化。\"},{\"topic_id\":86,\"reason\":\"韩国与DeepMind合作备忘录，国际合作与AI落地案例。\"},{\"topic_id\":81,\"reason\":\"Claude Code计费Bug事件，涉及开发者工具与用户体验。\"},{\"topic_id\":55,\"reason\":\"马斯克与阿尔特曼OpenAI诉讼，科技巨头高层博弈。\"},{\"topic_id\":80,\"reason\":\"GPT-Image-2发布及文生图榜单表现，多模态技术进展。\"},{\"topic_id\":100,\"reason\":\"Hugging Face发布数据集，开源社区重要动态。\"},{\"topic_id\":109,\"reason\":\"Hermes Agent部署指南，国内厂商技术分享与落地。\"},{\"topic_id\":120,\"reason\":\"月之暗面Kimi K2开放智能体模型，国产大模型生态扩展。\"},{\"topic_id\":54,\"reason\":\"百度GenFlow4.0发布，国内大模型厂商产品迭代。\"},{\"topic_id\":102,\"reason\":\"DeepSeek降低缓存成本，技术优化与商业化探索。\"},{\"topic_id\":51,\"reason\":\"AI Agent控制层与操作系统，智能体底层架构趋势。\"},{\"topic_id\":57,\"reason\":\"携程商旅AI生态全景图，AI在垂直行业的应用。\"},{\"topic_id\":56,\"reason\":\"Anthropic Project Deal电商实验，Agent商业化探索。\"},{\"topic_id\":52,\"reason\":\"Anthropic Agent版闲鱼实验，Agent在C端应用尝试。\"},{\"topic_id\":82,\"reason\":\"Anthropic Mythos网络攻防大模型，AI安全与攻防研究。\"},{\"topic_id\":83,\"reason\":\"AI Agent与Moxt工具，Agent开发工具链进展。\"}]}",
-      "at": "2026-04-27"
-    },
-    "51289f2b9c980981fe7d1e95a28a853249b32c685b4dd7fee03da8cd867644d5": {
-      "operation": "daily_summary",
-      "model": "glm-4.7-flash",
-      "content": "{\"day_overview\":\"本周AI领域焦点集中在模型架构革新与Agent生态落地。DeepSeek V4以极致效率挑战前沿模型，OpenAI整合Codex能力强化GPT-5.5，同时隐私保护与Agent框架成为开源热点。国内厂商如腾讯、百度加速Agent平台升级，推动AI从技术演示向业务流程交付演进。\",\"hot_news\":[{\"topic_id\":19,\"insight\":\"OpenAI整合Codex能力至GPT-5.5，标志着AI编程从专用插件向内生全能演进。\",\"narrative\":\"OpenAI宣布终止独立编程模型Codex，将其核心能力全面并入GPT-5.5主模型。此举标志着研发思路从“专用插件式”转向“内生全能式”，开发者不再依赖专门编程分支。整合后的GPT-5.5在处理复杂编程任务时资源利用率显著优化，尽管API调用价格上涨约20%，但Token消耗量反而减少，体现了模型在逻辑代码处理上的精准高效。\",\"evaluation\":\"这一整合标志着AI编程能力已成为通用大模型的基石级指标。\",\"refs\":[4],\"mention_count\":1,\"cross_verify_score\":82},{\"topic_id\":4,\"insight\":\"DeepSeek V4在百万Token上下文下FLOPs与KV缓存成本仅为V3.2的10%左右。\",\"narrative\":\"DeepSeek发布了V4预览版，包含Flash和Pro两个版本，均为混合专家模型，上下文窗口达百万Token。在1M-token上下文场景中，DeepSeek-V4-Pro的单Token FLOPs和KV缓存大小仅为DeepSeek-V3.2的27%和10%，而DeepSeek-V4-Flash更是降至10%和7%。该模型开源，旨在与Anthropic、Google、OpenAI等领先闭源系统竞争。\",\"evaluation\":\"DeepSeek V4在效率上已接近前沿模型，且成本大幅降低。\",\"refs\":[6,7,8,9],\"mention_count\":4,\"cross_verify_score\":91},{\"topic_id\":53,\"insight\":\"OpenAI开源1.5亿参数的Privacy Filter模型，在PII识别基准测试中F1分数达97.43%。\",\"narrative\":\"OpenAI发布了一款名为Privacy Filter的新模型，旨在帮助开发者脱敏文本中的个人身份信息（PII）。该模型参数规模达1.5亿，采用混合专家设计，以Apache 2.0协议在Hugging Face和GitHub开源。其核心优势在于深度语言理解能力，能通过上下文识别非结构化文本中的敏感信息。在PII-Masking-300k基准测试中，F1分数达到96%，修正后提升至97.43%。\",\"evaluation\":\"该模型为开发者提供了超越传统规则方法的隐私保护新选择。\",\"refs\":[10,11],\"mention_count\":2,\"cross_verify_score\":70},{\"topic_id\":20,\"insight\":\"腾讯云QClaw v0.2.14接入DeepSeek-V4-Pro等模型，大幅降低AI使用门槛。\",\"narrative\":\"腾讯云Agent平台QClaw发布v0.2.14版本，这是迄今最大更新。升级包括接入Hermes框架，支持创建运行Hermes类型Agent，实现底层模型多元化。用户可在单一应用内调度多种模型，包括腾讯自研混元Hy3 preview、DeepSeek-V4-Pro、KIMI-K2.6及GLM-5.1。原有的“灵感广场”升级为“专家广场”，内置超过100个行业AI专家，用户无需复杂提示词即可获得文档、代码或分析报告。\",\"evaluation\":\"此次升级通过模型多元化和专家广场功能，显著降低了AI应用门槛。\",\"refs\":[20],\"mention_count\":1,\"cross_verify_score\":58}],\"other_news\":[{\"topic_id\":54,\"insight\":\"百度GenFlow4.0发布，月活用户突破1亿，月任务交付量达2亿次。\",\"narrative\":\"百度于4月27日AI Day发布通用智能体GenFlow4.0，并对Office Agent进行全面升级，推出首个全端可用的“AI工作台”。该版本深度兼容OpenClaw等开源框架，支持PC及移动端一键部署智能体。目前月活跃用户数已突破1亿，月任务交付量达2亿次，展现出极高的市场渗透率与用户粘性。\",\"refs\":[21],\"mention_count\":1,\"cross_verify_score\":57},{\"topic_id\":100,\"insight\":\"Hugging Face发布覆盖40多种语言的纳米翻译数据集，适合低资源场景。\",\"narrative\":\"Hugging Face发布了覆盖土耳其、英语、德语等40多种语言的纳米翻译数据集。该数据集由约600行合成句子对组成，涵盖广泛日常话题，体积小巧且多功能。它适合用于实验、原型设计和基准测试，能够快速训练迭代并轻松集成到低资源或边缘NLP工作流中。\",\"refs\":[18],\"mention_count\":1,\"cross_verify_score\":60},{\"topic_id\":108,\"insight\":\"华为天才少年赵立晨离职创业，聚焦具身Agentic OS与硬件规模化落地。\",\"narrative\":\"前华为天才少年、19级技术专家赵立晨已于2026年3月离职，加入杭州拉格朗日具身技术有限公司。拉格朗日聚焦于具身智能架构研发与硬件规模化落地，试图在具身智能最关键、也最难的一层建立优势。赵立晨想做的Agentic OS，本质上是一套面向物理世界智能体的软件中枢与系统工程框架。\",\"refs\":[24],\"mention_count\":1,\"cross_verify_score\":43}],\"core_tech\":[{\"topic_id\":12,\"title\":\"Superminds Test: Actively Evaluating Collective Intelligence\",\"summary\":\"该论文提出了Superminds Test框架，通过分层探测代理评估大规模自主智能体社会的集体智能，首次在超过两百万代理的平台上进行了实证研究。\",\"refs\":[14]},{\"topic_id\":44,\"title\":\"EvoAgent: An Evolvable Agent Framework\",\"summary\":\"EvoAgent框架集成了结构化技能学习与分层子代理委托机制，支持通过用户反馈驱动的闭环过程实现技能的持续生成与优化。\",\"refs\":[16]}],\"ref_translations\":[{\"id\":14,\"zh_title\":\"Superminds Test: 通过探测代理主动评估智能体社会的集体智能\"},{\"id\":16,\"zh_title\":\"EvoAgent: 具备技能学习与多智能体委托的可进化智能体框架\"}]}",
-      "at": "2026-04-27"
-    },
-    "3cdfa6a6cdc9a656b607fa0b322caa56d97041ed747061cf2638ce99876f9f29": {
-      "operation": "translate_missing_reference_titles",
-      "model": "glm-4.7-flash",
-      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"GPT-5.5 提示指南\"},{\"id\":2,\"zh_title\":\"OpenAI 新 GPT-5.5 在 NVIDIA 基础设施上驱动 Codex\"},{\"id\":3,\"zh_title\":\"GitHub Copilot 个人版计划变更\"},{\"id\":5,\"zh_title\":\"我们的原则\"},{\"id\":6,\"zh_title\":\"DeepSeek V4：接近前沿，价格更低\"},{\"id\":7,\"zh_title\":\"DeepSeek 预览新 AI 模型，一年前曾震慑美国同行\"},{\"id\":8,\"zh_title\":\"DeepSeek 预览新模型，缩小与前沿模型的差距\"},{\"id\":9,\"zh_title\":\"DeepSeek 新模型 V4 重要的三个原因\"},{\"id\":11,\"zh_title\":\"介绍 OpenAI 隐私过滤器\"},{\"id\":12,\"zh_title\":\"基于 Artifact 的自适应与可复现医学图像处理智能体框架\"},{\"id\":13,\"zh_title\":\"Mol Claw：用于药物分子评估、筛选和优化的自主智能体\"},{\"id\":15,\"zh_title\":\"Agent Search Bench：野外 AI 智能体搜索基准测试\"},{\"id\":17,\"zh_title\":\"Perma Frost-Attack：LLM 训练中的隐蔽预训练播种\"},{\"id\":18,\"zh_title\":\"利用我们 Hugging Face 就绪的纳米翻译数据集\"},{\"id\":19,\"zh_title\":\"使用 Flag OS 在更多 AI GPU 上运行 DeepSeek V4\"},{\"id\":22,\"zh_title\":\"DeepSeek 将缓存成本降低 90%，AI 定价进一步崩盘\"},{\"id\":23,\"zh_title\":\"TRL v1.3 首日支持 Qwen 3.6\"}]}",
-      "at": "2026-04-27"
-    },
     "36946f7ea082a578228872559164504dc89ff548eee0d1f475e5b47860dd7846": {
       "operation": "cluster_assignments_chunk",
       "model": "glm-4.7-flash",
@@ -30425,6 +30558,42 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":1,\"zh_title\":\"Diffusion Gemma\"},{\"id\":2,\"zh_title\":\"‘AI中毒’企业每月每名员工花费7500美元\"},{\"id\":3,\"zh_title\":\"Diffusion Gemma：文本生成速度提升4倍\"},{\"id\":4,\"zh_title\":\"微软似乎终于理解学生为何对AI毕业演讲者报以嘘声\"},{\"id\":5,\"zh_title\":\"谷歌承认正将YouTube创作者用于音乐AI训练\"},{\"id\":6,\"zh_title\":\"谷歌将保存Lens照片、搜索实时录音和翻译音频用于AI训练\"},{\"id\":7,\"zh_title\":\"通过Oracle云承诺访问OpenAI模型和Codex\"},{\"id\":8,\"zh_title\":\"AI监管的未来正在寻求最奇怪、最焦虑的盟友\"},{\"id\":9,\"zh_title\":\"记忆工具如何让AI模型表现更差\"},{\"id\":10,\"zh_title\":\"亚马逊刚完成债券发行，又向银行借款175亿美元以继续投入AI\"},{\"id\":19,\"zh_title\":\"介绍ESM3-PPISites！🧬🤖 我们利用多模态ESM3预测蛋白质-蛋白质相互作用界面\"}]}",
       "at": "2026-06-11"
+    },
+    "bdd5a283acfbb16b2d432f33a2a67be4aa5c5cb54b947d98a668907e52658ddb": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":5,\"topic_key\":\"苹果Xcode集成Gemini\",\"topic_title\":\"苹果Xcode集成Gemini\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":62,\"topic_key\":\"OpenAI模型代号变更与API降价\",\"topic_title\":\"OpenAI模型代号变更与API降价\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":63,\"topic_key\":\"阿里云开源Meoo CLI\",\"topic_title\":\"阿里云开源Meoo CLI\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":64,\"topic_key\":\"千问高考志愿填报Agent\",\"topic_title\":\"千问高考志愿填报Agent\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":65,\"topic_key\":\"Anthropic CEO谈AI结构性失业\",\"topic_title\":\"Anthropic CEO谈AI结构性失业\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":66,\"topic_key\":\"小米开源MiMo Code\",\"topic_title\":\"小米开源MiMo Code\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":67,\"topic_key\":\"塔塔咨询引入Claude\",\"topic_title\":\"塔塔咨询引入Claude\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":68,\"topic_key\":\"Gemini浏览器版扩展\",\"topic_title\":\"Gemini浏览器版扩展\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":69,\"topic_key\":\"Google DeepMind多智能体交互\",\"topic_title\":\"Google DeepMind多智能体交互\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":70,\"topic_key\":\"Anthropic道歉与Claude Fable 5\",\"topic_title\":\"Anthropic道歉与Claude Fable 5\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":71,\"topic_key\":\"AI原生平台改写网红营销\",\"topic_title\":\"AI原生平台改写网红营销\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":72,\"topic_key\":\"Anthropic估值与商业模式\",\"topic_title\":\"Anthropic估值与商业模式\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":73,\"topic_key\":\"千问高考志愿填报Agent\",\"topic_title\":\"千问高考志愿填报Agent\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":74,\"topic_key\":\"Anthropic CEO万字檄文\",\"topic_title\":\"Anthropic CEO万字檄文\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":75,\"topic_key\":\"Anthropic CEO管理风格\",\"topic_title\":\"Anthropic CEO管理风格\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":76,\"topic_key\":\"Anthropic IPO与监管呼吁\",\"topic_title\":\"Anthropic IPO与监管呼吁\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":77,\"topic_key\":\"OpenAI推理成本与模型表现\",\"topic_title\":\"OpenAI推理成本与模型表现\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":78,\"topic_key\":\"Core-Mate GUI Agent融资\",\"topic_title\":\"Core-Mate GUI Agent融资\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":79,\"topic_key\":\"Agent开源项目与优化\",\"topic_title\":\"Agent开源项目与优化\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":80,\"topic_key\":\"Anthropic Fable 5降智争议\",\"topic_title\":\"Anthropic Fable 5降智争议\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":81,\"topic_key\":\"题渊科技AI教育融资\",\"topic_title\":\"题渊科技AI教育融资\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":82,\"topic_key\":\"Anthropic监管立场争议\",\"topic_title\":\"Anthropic监管立场争议\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":84,\"topic_key\":\"Anthropic Claude Corps项目\",\"topic_title\":\"Anthropic Claude Corps项目\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":86,\"topic_key\":\"Open Models vs Agent Labs\",\"topic_title\":\"Open Models vs Agent Labs\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":87,\"topic_key\":\"海清智元港股上市\",\"topic_title\":\"海清智元港股上市\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-06-11"
+    },
+    "5ec25d4d608a7465d03a1ff2d1a51c9c4f6edaa36e214b12bef6dbe286dbea49": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":88,\"topic_key\":\"华纳音乐收购Sureel AI\",\"topic_title\":\"华纳音乐收购Sureel AI\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":89,\"topic_key\":\"理想汽车起诉AI造谣\",\"topic_title\":\"理想汽车起诉AI造谣\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":90,\"topic_key\":\"00后外贸人用AI拿下大单\",\"topic_title\":\"00后外贸人用AI拿下大单\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":91,\"topic_key\":\"智象未来HiDream.ai技术突破\",\"topic_title\":\"智象未来HiDream.ai技术突破\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":92,\"topic_key\":\"Opendoor关闭印度业务与AI外包\",\"topic_title\":\"Opendoor关闭印度业务与AI外包\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":93,\"topic_key\":\"OpenAI支持欧盟AI透明度准则\",\"topic_title\":\"OpenAI支持欧盟AI透明度准则\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":94,\"topic_key\":\"CVPR 2026论文盘点\",\"topic_title\":\"CVPR 2026论文盘点\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":95,\"topic_key\":\"xAI工程师因安全担忧被解雇\",\"topic_title\":\"xAI工程师因安全担忧被解雇\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":96,\"topic_key\":\"天体物理学家使用Codex模拟黑洞\",\"topic_title\":\"天体物理学家使用Codex模拟黑洞\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":97,\"topic_key\":\"阿里发布高考志愿填报Agent\",\"topic_title\":\"阿里发布高考志愿填报Agent\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":98,\"topic_key\":\"Meshy发布全球首个3D AI Agent\",\"topic_title\":\"Meshy发布全球首个3D AI Agent\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":99,\"topic_key\":\"IBM圣何塞研究实验室投资动向\",\"topic_title\":\"IBM圣何塞研究实验室投资动向\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":100,\"topic_key\":\"Google Fitbit Air智能手表发布\",\"topic_title\":\"Google Fitbit Air智能手表发布\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":102,\"topic_key\":\"AI短剧工具赛道融资\",\"topic_title\":\"AI短剧工具赛道融资\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":103,\"topic_key\":\"小米1T大模型实测\",\"topic_title\":\"小米1T大模型实测\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":104,\"topic_key\":\"谷歌I/O在抖音出圈\",\"topic_title\":\"谷歌I/O在抖音出圈\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":105,\"topic_key\":\"AI志愿填报+真人专家验真\",\"topic_title\":\"AI志愿填报+真人专家验真\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":106,\"topic_key\":\"苹果Siri提示词文件曝光\",\"topic_title\":\"苹果Siri提示词文件曝光\",\"confidence\":0.85,\"is_pr\":false}]}",
+      "at": "2026-06-11"
+    },
+    "40837f0aa5ceeb9098f54073c91eaced197f145d882f5463917b26b8537aad5f": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"千问高考志愿填报Agent\",\"merged_key\":\"千问高考志愿填报Agent\",\"merged_title\":\"千问高考志愿填报Agent\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic道歉与Claude Fable 5\",\"merged_key\":\"Anthropic道歉与Claude Fable 5\",\"merged_title\":\"Anthropic道歉与Claude Fable 5\",\"merged_type\":\"news\"},{\"from_key\":\"00后外贸人用AI拿下大单\",\"merged_key\":\"00后外贸人用AI拿下大单\",\"merged_title\":\"00后外贸人用AI拿下大单\",\"merged_type\":\"news\"},{\"from_key\":\"阿里发布高考志愿填报Agent\",\"merged_key\":\"阿里发布高考志愿填报Agent\",\"merged_title\":\"阿里发布高考志愿填报Agent\",\"merged_type\":\"news\"},{\"from_key\":\"阿里云开源Meoo CLI\",\"merged_key\":\"阿里云开源Meoo CLI\",\"merged_title\":\"阿里云开源Meoo CLI\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌I/O在抖音出圈\",\"merged_key\":\"谷歌I/O在抖音出圈\",\"merged_title\":\"谷歌I/O在抖音出圈\",\"merged_type\":\"news\"},{\"from_key\":\"海清智元港股上市\",\"merged_key\":\"海清智元港股上市\",\"merged_title\":\"海清智元港股上市\",\"merged_type\":\"news\"},{\"from_key\":\"华纳音乐收购Sureel AI\",\"merged_key\":\"华纳音乐收购Sureel AI\",\"merged_title\":\"华纳音乐收购Sureel AI\",\"merged_type\":\"news\"},{\"from_key\":\"理想汽车起诉AI造谣\",\"merged_key\":\"理想汽车起诉AI造谣\",\"merged_title\":\"理想汽车起诉AI造谣\",\"merged_type\":\"news\"},{\"from_key\":\"苹果Siri提示词文件曝光\",\"merged_key\":\"苹果Siri提示词文件曝光\",\"merged_title\":\"苹果Siri提示词文件曝光\",\"merged_type\":\"news\"},{\"from_key\":\"苹果Xcode集成Gemini\",\"merged_key\":\"苹果Xcode集成Gemini\",\"merged_title\":\"苹果Xcode集成Gemini\",\"merged_type\":\"news\"},{\"from_key\":\"塔塔咨询引入Claude\",\"merged_key\":\"塔塔咨询引入Claude\",\"merged_title\":\"塔塔咨询引入Claude\",\"merged_type\":\"news\"},{\"from_key\":\"题渊科技AI教育融资\",\"merged_key\":\"题渊科技AI教育融资\",\"merged_title\":\"题渊科技AI教育融资\",\"merged_type\":\"news\"},{\"from_key\":\"天体物理学家使用Codex模拟黑洞\",\"merged_key\":\"天体物理学家使用Codex模拟黑洞\",\"merged_title\":\"天体物理学家使用Codex模拟黑洞\",\"merged_type\":\"news\"},{\"from_key\":\"小米1T大模型实测\",\"merged_key\":\"小米1T大模型实测\",\"merged_title\":\"小米1T大模型实测\",\"merged_type\":\"news\"},{\"from_key\":\"小米开源MiMo Code\",\"merged_key\":\"小米开源MiMo Code\",\"merged_title\":\"小米开源MiMo Code\",\"merged_type\":\"news\"},{\"from_key\":\"智象未来HiDream.ai技术突破\",\"merged_key\":\"智象未来HiDream.ai技术突破\",\"merged_title\":\"智象未来HiDream.ai技术突破\",\"merged_type\":\"news\"},{\"from_key\":\"Agent开源项目与优化\",\"merged_key\":\"Agent开源项目与优化\",\"merged_title\":\"Agent开源项目与优化\",\"merged_type\":\"news\"},{\"from_key\":\"AI短剧工具赛道融资\",\"merged_key\":\"AI短剧工具赛道融资\",\"merged_title\":\"AI短剧工具赛道融资\",\"merged_type\":\"news\"},{\"from_key\":\"AI原生平台改写网红营销\",\"merged_key\":\"AI原生平台改写网红营销\",\"merged_title\":\"AI原生平台改写网红营销\",\"merged_type\":\"news\"},{\"from_key\":\"AI志愿填报+真人专家验真\",\"merged_key\":\"AI志愿填报+真人专家验真\",\"merged_title\":\"AI志愿填报+真人专家验真\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic CEO管理风格\",\"merged_key\":\"Anthropic CEO管理风格\",\"merged_title\":\"Anthropic CEO管理风格\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic CEO谈AI结构性失业\",\"merged_key\":\"Anthropic CEO谈AI结构性失业\",\"merged_title\":\"Anthropic CEO谈AI结构性失业\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic CEO万字檄文\",\"merged_key\":\"Anthropic CEO万字檄文\",\"merged_title\":\"Anthropic CEO万字檄文\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Claude Corps项目\",\"merged_key\":\"Anthropic Claude Corps项目\",\"merged_title\":\"Anthropic Claude Corps项目\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Fable 5降智争议\",\"merged_key\":\"Anthropic Fable 5降智争议\",\"merged_title\":\"Anthropic Fable 5降智争议\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic IPO与监管呼吁\",\"merged_key\":\"Anthropic IPO与监管呼吁\",\"merged_title\":\"Anthropic IPO与监管呼吁\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic估值与商业模式\",\"merged_key\":\"Anthropic估值与商业模式\",\"merged_title\":\"Anthropic估值与商业模式\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic监管立场争议\",\"merged_key\":\"Anthropic监管立场争议\",\"merged_title\":\"Anthropic监管立场争议\",\"merged_type\":\"news\"},{\"from_key\":\"Core-Mate GUI Agent融资\",\"merged_key\":\"Core-Mate GUI Agent融资\",\"merged_title\":\"Core-Mate GUI Agent融资\",\"merged_type\":\"news\"},{\"from_key\":\"CVPR 2026论文盘点\",\"merged_key\":\"CVPR 2026论文盘点\",\"merged_title\":\"CVPR 2026论文盘点\",\"merged_type\":\"news\"},{\"from_key\":\"Gemini浏览器版扩展\",\"merged_key\":\"Gemini浏览器版扩展\",\"merged_title\":\"Gemini浏览器版扩展\",\"merged_type\":\"news\"},{\"from_key\":\"Google DeepMind多智能体交互\",\"merged_key\":\"Google DeepMind多智能体交互\",\"merged_title\":\"Google DeepMind多智能体交互\",\"merged_type\":\"news\"},{\"from_key\":\"Google Fitbit Air智能手表发布\",\"merged_key\":\"Google Fitbit Air智能手表发布\",\"merged_title\":\"Google Fitbit Air智能手表发布\",\"merged_type\":\"news\"},{\"from_key\":\"IBM圣何塞研究实验室投资动向\",\"merged_key\":\"IBM圣何塞研究实验室投资动向\",\"merged_title\":\"IBM圣何塞研究实验室投资动向\",\"merged_type\":\"news\"},{\"from_key\":\"Meshy发布全球首个3D AI Agent\",\"merged_key\":\"Meshy发布全球首个3D AI Agent\",\"merged_title\":\"Meshy发布全球首个3D AI Agent\",\"merged_type\":\"news\"},{\"from_key\":\"Open Models vs Agent Labs\",\"merged_key\":\"Open Models vs Agent Labs\",\"merged_title\":\"Open Models vs Agent Labs\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI模型代号变更与API降价\",\"merged_key\":\"OpenAI模型代号变更与API降价\",\"merged_title\":\"OpenAI模型代号变更与API降价\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI推理成本与模型表现\",\"merged_key\":\"OpenAI推理成本与模型表现\",\"merged_title\":\"OpenAI推理成本与模型表现\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI支持欧盟AI透明度准则\",\"merged_key\":\"OpenAI支持欧盟AI透明度准则\",\"merged_title\":\"OpenAI支持欧盟AI透明度准则\",\"merged_type\":\"news\"},{\"from_key\":\"Opendoor关闭印度业务与AI外包\",\"merged_key\":\"Opendoor关闭印度业务与AI外包\",\"merged_title\":\"Opendoor关闭印度业务与AI外包\",\"merged_type\":\"news\"},{\"from_key\":\"xAI工程师因安全担忧被解雇\",\"merged_key\":\"xAI工程师因安全担忧被解雇\",\"merged_title\":\"xAI工程师因安全担忧被解雇\",\"merged_type\":\"news\"}]}",
+      "at": "2026-06-11"
+    },
+    "069784b185d3338fe864d644f89c8610da4820e9865b886edcb0e32d6de03ea7": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[64,70,66,63,94,77,85,99,98,101,23,2,25],\"reasons\":[{\"topic_id\":64,\"reason\":\"阿里发布高考志愿填报Agent，聚焦国内AI应用落地与商业化场景。\"},{\"topic_id\":70,\"reason\":\"Anthropic道歉与Claude Fable 5，涉及模型能力争议与行业关注焦点。\"},{\"topic_id\":66,\"reason\":\"小米开源MiMo Code，体现国内大模型在代码生成领域的开源进展。\"},{\"topic_id\":63,\"reason\":\"阿里云开源Meoo CLI，关注国内云厂商在开发者工具链的布局。\"},{\"topic_id\":94,\"reason\":\"阿里发布高考志愿填报Agent，与64号话题形成互补，验证国内Agent应用热度。\"},{\"topic_id\":77,\"reason\":\"Core-Mate GUI Agent融资，关注国内AI Agent初创企业的商业化路径。\"},{\"topic_id\":85,\"reason\":\"华纳音乐收购Sureel AI，体现AI在娱乐版权与内容生成领域的产业融合。\"},{\"topic_id\":99,\"reason\":\"小米1T大模型实测，关注国内大模型参数规模与性能表现。\"},{\"topic_id\":98,\"reason\":\"AI短剧工具赛道融资，反映AI内容生成在娱乐产业的商业化趋势。\"},{\"topic_id\":101,\"reason\":\"AI志愿填报+真人专家验真，探讨AI应用在垂直领域的落地模式。\"},{\"topic_id\":23,\"reason\":\"Claw-SWE-Bench，针对软件工程Agent的基准测试，技术深度高。\"},{\"topic_id\":2,\"reason\":\"Agentic Software，探讨AI Agent在软件工程领域的系统性研究。\"},{\"topic_id\":25,\"reason\":\"Agents All the Way Down，从架构层面探讨AI Agent的普适性与未来趋势。\"}]}",
+      "at": "2026-06-12"
+    },
+    "b7d2f4067dd080bb9411f13333dace6fabd554abc38ccd2b267b7221e24854f5": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"6月11日，AI领域呈现工具链与模型能力双线突破态势。小米开源MiMo Code并实测1T大模型刷新推理速度纪录，阿里云开源Meoo CLI打通AI应用落地最后一公里，千问推出免费高考志愿填报Agent引发市场关注。同时，Anthropic调整Claude Fable 5策略，Google DeepMind启动多智能体安全研究，苹果Xcode集成Gemini，行业生态持续深化。\",\"hot_news\":[{\"topic_id\":66,\"insight\":\"小米开源MiMo Code，引入持久记忆与无限上下文，支持多模型协同。\",\"narrative\":\"小米技术团队于6月11日正式发布AI编程辅助工具MiMo Code。该工具基于OpenCode技术底座开发，旨在通过深度优化功能提升开发效率。MiMo Code在架构上引入了持久记忆系统与无限上下文处理能力，能够更精准地理解开发者的逻辑需求。同时，该工具支持模型Agent协同优化，并内置了独创的Compose模式，进一步简化了复杂编程任务的执行过程。在生态兼容性方面，MiMo Code展现了极高的灵活性，支持接入DeepSeek、Kimi以及GLM等业界主流大模型，开发者可根据项目需求自主选择最适配的计算模型。作为一款开源产品，MiMo Code采用了MIT开源协议，鼓励全球开发者共同参与工具的迭代与优化。此外，为了方便用户快速上手，工具还内置了限时免费的多模态模型MiMo V2.5，通过AI与代码的深度融合，旨在显著提升开发者的日常编码效率与体验。业内分析认为，小米此次开源MiMo Code，不仅展示了其在AI开发工具链上的深度布局，也为广大开发者提供了一个更具自主性与扩展性的编程辅助选择，进一步推动了国产AI编程生态的建设与繁荣。\",\"evaluation\":\"小米通过开源与模型优化双管齐下，展现了在AI开发工具链上的深度布局。\",\"refs\":[15],\"mention_count\":1,\"cross_verify_score\":82},{\"topic_id\":63,\"insight\":\"阿里云开源Meoo CLI，作为本地Agent与云端能力的连接枢纽，解决代码到部署的痛点。\",\"narrative\":\"针对开发者将AI生成的本地代码原型转化为线上应用时面临的复杂数据对接、环境配置及发布流程痛点，阿里云于6月11日正式开源了全新的命令行工具——Meoo（秒悟）CLI。Meoo CLI的核心定位是充当“本地Agent与云端能力之间的连接枢纽”。它不仅是一个发布工具，更像是一个自动化助手，能够帮助开发者将本地开发的项目一键推进到可供用户访问的线上状态。该工具支持目前主流的Claude Code、Codex、Cursor等本地编程助手，极大降低了AI原生应用上线的门槛。在功能表现上，Meoo CLI展现了极强的易用性。当开发者在本地Agent中通过自然语言描述需求时，系统便会自动调用秒悟云端的强大算力，从后端接口生成、数据库开通，到环境变量配置与账号登录验证，整个过程无需人工干预。此外，工具还内置了模型调用、图片识别及文生图等服务，自动处理繁琐的API Key申请与鉴权操作，确保了开发链路的顺畅。这一工具的适用范围相当广泛，不仅限于复杂的企业级AI应用，即便是活动报名页、个人作品集、产品Demo或品牌官网等小型项目，同样可以利用Meoo CLI快速从本地原型切换至线上环境。通过代码与配置的同步，开发者还能轻松实现后续的项目管理与内容迭代。\",\"evaluation\":\"Meoo CLI有效降低了AI原生应用上线的门槛，提升了开发效率。\",\"refs\":[16],\"mention_count\":1,\"cross_verify_score\":82},{\"topic_id\":64,\"insight\":\"千问上线免费高考志愿填报Agent，通过志愿日历、志愿报告等能力提供普惠服务。\",\"narrative\":\"6月10日，千问上线国内首个全周期高考志愿填报Agent，面向全国考生免费提供志愿填报和咨询服务。该Agent的底子是专门针对高考志愿填报打磨过的Qwen大模型，并结合了夸克8年高考服务积累的数据与经验。其核心能力包括志愿日历、志愿报告和志愿问答。阿里巴巴集团副总裁、千问事业部总裁吴嘉指出，高考志愿填报服务不应该只是一种稀缺商品，它更应该接近一种公共服务。今年全国共有1290万考生，平均每位考生需要填写约50个志愿，部分省份甚至超过100个。千问通过志愿日历、志愿档案等能力，得以把分散复杂的信息整理成更清晰的分析框架，免费开放给每个考生。业内分析认为，千问提供了普惠可靠的信息路径，让普通家庭不再因信息差产生焦虑，推动志愿填报决策起点的公平化。\",\"evaluation\":\"千问通过免费策略推动志愿填报服务的普惠化，体现了AI在公共服务领域的应用价值。\",\"refs\":[9,10],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":70,\"insight\":\"Anthropic调整Claude Fable 5策略，将针对AI研发的降智限制改为可见。\",\"narrative\":\"Anthropic新模型Claude Fable 5在发布后因针对AI研发的“降智”机制引发社区强烈不满。该机制允许Anthropic在用户不知情的情况下降低模型能力，以防止外国对手利用模型加速AI研发。在舆论发酵后，Anthropic宣布调整策略，将这一保护措施改为可见。现在，如果Claude Fable 5检测到用户在研发AI，会向用户发出警报，表明将拒绝请求或引导至能力较弱的模型。Anthropic在声明中进行了道歉，表示“我们做出了错误的取舍，对于未能把握好平衡，我们深表歉意”。这一调整标志着Anthropic在模型安全与用户信任之间寻求新的平衡。\",\"evaluation\":\"Anthropic的调整体现了对用户反馈的重视，有助于修复与开发者社区的关系。\",\"refs\":[11,12],\"mention_count\":2,\"cross_verify_score\":82}],\"other_news\":[{\"topic_id\":77,\"insight\":\"字节系团队GUI Agent平台Core-Mate获数千万元融资，专注真实业务环境操作。\",\"narrative\":\"GUI Agent执行平台Core-Mate近日宣布完成数千万人民币融资，由敦鸿资产独家投资。本轮融资将重点用于公司的底层技术升级、移动端UI视觉感知能力的深度迭代以及用户拓展。Core-Mate的核心团队主要来自字节跳动，旨在解决AI Agent从Demo走向真实场景的难题，让AI能真正接手用户在网页和App中的操作。\",\"refs\":[17],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":5,\"insight\":\"苹果Xcode 27 Beta原生集成Gemini，成为第三个内置AI编程智能体。\",\"narrative\":\"苹果在最新发布的Xcode 27 Beta版本中正式引入了谷歌Gemini的原生集成，这标志着该平台迎来了第三个内置的AI编程智能体。此前，Xcode已先后引入了OpenAI Codex和Anthropic Claude Agent。随着Gemini的加入，开发者如今拥有了更多元化的智能编程选择，显著提升了开发效率与交互体验。\",\"refs\":[14],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":99,\"insight\":\"小米实测MiMo-V2.5-Pro-UltraSpeed模型，单API推理速度达1000+ TPS。\",\"narrative\":\"小米发布了全新的MiMo-V2.5-Pro-UltraSpeed模型，即MiMo-V2.5-Pro的高速版本。该模型拥有1T总参数，支持1M上下文，单API推理速度直接拉到1000+ TPS，刷新了旗舰模型全球最快推理速度的纪录。值得注意的是，小米此次的新模型打破了“快、强、通用GPU无法兼得”的行业不可能三角，用通用GPU就能实现如此高的推理速度。\",\"refs\":[20],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":95,\"insight\":\"Meshy发布全球首个3D创作AI Agent，推动3D创作从一次性生成走向可控生产。\",\"narrative\":\"Meshy推出了全球首个3D创作AI Agent：Meshy 3D Agent。该产品旨在解决3D创作中“让模型变为可用资产”的难题，推动3D创作从一次性模型生成走向可控生产、批量扩展和长期复用的资产体系。\",\"refs\":[19],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":69,\"insight\":\"Google DeepMind联合多家机构启动1000万美元研究，关注多智能体系统安全。\",\"narrative\":\"Google DeepMind联合Schmidt Sciences、ARIA、Cooperative AI foundation等机构宣布启动1000万美元的研究资金，用于研究多智能体系统的行为，并寻找防止不安全场景的方法。\",\"refs\":[13],\"mention_count\":1,\"cross_verify_score\":66}],\"core_tech\":[{\"topic_id\":23,\"title\":\"Claw-SWE-Bench: 评估代码Agent的基准\",\"summary\":\"Claw-SWE-Bench是一个新的基准和适配器协议，旨在通过标准化评估条件，揭示适配器设计对有效代码生成的重要性，从而实现不同代码Agent的公平比较。\",\"refs\":[1]},{\"topic_id\":12,\"title\":\"Embodied-BenchClaw: 3D空间智能基准构建\",\"summary\":\"Embodied-BenchClaw提出了一种自主多智能体系统，用于构建具身空间智能基准，解决了现有基准构建劳动密集、难以复用和维护的问题。\",\"refs\":[3]},{\"topic_id\":17,\"title\":\"MODF-SIR: 多模态社交智能推理框架\",\"summary\":\"MODF-SIR提出了一种基于轻量级多模态大语言模型的多智能体协作框架，专门用于社交智能推理，通过知识蒸馏增强训练和推理阶段。\",\"refs\":[5]},{\"topic_id\":19,\"title\":\"SkillJuror: 评估Agent技能组织\",\"summary\":\"SkillJuror是一个评估Agent技能组织如何改变运行时行为的框架，通过渐进式披露和语义控制变体来区分技能内容与组织方式。\",\"refs\":[6]}],\"ref_translations\":[{\"id\":1,\"zh_title\":\"Claw-SWE-Bench: 评估代码Agent的基准\"},{\"id\":3,\"zh_title\":\"Embodied-BenchClaw: 3D空间智能基准构建\"},{\"id\":5,\"zh_title\":\"MODF-SIR: 多模态社交智能推理框架\"},{\"id\":6,\"zh_title\":\"SkillJuror: 评估Agent技能组织\"}]}",
+      "at": "2026-06-12"
+    },
+    "5a0286d8d8153251d6e4307a9c98531db35d640ad29bf1dea9d5035bc3b84622": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":2,\"zh_title\":\"CRANE：通过零空间编辑实现代码代理的约束推理注入\"},{\"id\":4,\"zh_title\":\"HELM：基于代理的混凝土桥梁护栏有限元建模\"},{\"id\":7,\"zh_title\":\"Workflow-GYM：面向专业领域计算机使用代理任务的长期评估\"},{\"id\":8,\"zh_title\":\"ISE：基于执行的多人次操作系统代理轨迹配方\"},{\"id\":13,\"zh_title\":\"谷歌 DeepMind 担忧数百万代理交互带来的后果\"}]}",
+      "at": "2026-06-12"
     }
   },
   "published": {
@@ -56099,6 +56268,81 @@
         "title": "百度智能云与FluxA达成战略合作，共建 Agent 经济全球支付基础设施",
         "at": "2026-06-10",
         "edition": "evening"
+      },
+      "https://huggingface.co/papers/2606.12344": {
+        "title": "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2606.11909": {
+        "title": "Embodied-BenchClaw: An Autonomous Multi-Agent System for Embodied Spatial Intelligence Benchmark Construction",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2606.12018": {
+        "title": "MODF-SIR: A Multi-agent Omni-modal Distilled Framework for Social Intelligence Reasoning",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2606.11543": {
+        "title": "SkillJuror: Measuring How Agent Skill Organization Changes Runtime Behavior",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://news.aibase.com/zh/news/28846": {
+        "title": "樊登:千问帮助考生家庭穿越信息迷雾，“看清问题”作出选择千问于6月10日上线国内首个全周期高考志愿填报Agent，免费服务全国考生。帆书APP创始人樊登指出，家庭焦虑源于缺乏认知框架而非选项少，千问能帮助考生家庭穿越信息迷雾，理性选择。高考志愿填报是考场外的关键抉择，考验家庭在信息复杂中保持清醒，看清问题再决策。 3 小时前 18.9K",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://36kr.com/p/3848715188524034": {
+        "title": "张雪峰留下的空白，AI能顶上吗？",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://36kr.com/p/3848417901139204": {
+        "title": "刚刚，Anthropic道歉了",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://www.qbitai.com/2026/06/434326.html": {
+        "title": "Fable 5自带反蒸馏机制！检测到就降智，误触率高到离谱",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://www.technologyreview.com/2026/06/11/1138794/google-deepmind-is-worried-about-what-happens-when-millions-of-agents-start-to-interact/": {
+        "title": "Google DeepMind is worried about what happens when millions of agents start to interact",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://news.aibase.com/zh/news/28851": {
+        "title": "苹果开发者生态升级：Xcode 27 原生集成 Gemini，AI 编程阵营再添猛将苹果在Xcode 27 Beta版本中引入谷歌Gemini的原生集成，成为继OpenAI Codex和Anthropic Claude Agent后的第三个内置AI编程智能体。这一更新使开发者拥有更多元化的智能编程选择，显著提升了开发效率与交互体验，标志着苹果开发生态迎来AI赋能深度变革。 3 分钟前 10.6K",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://news.aibase.com/zh/news/28843": {
+        "title": "小米技术团队进击AI编程：MiMo Code正式开源小米旗下MiMo技术团队于6月11日发布AI编程辅助工具MiMo Code，基于OpenCode技术底座开发。该工具引入持久记忆系统、无限上下文处理能力，能精准理解开发者逻辑需求，并支持模型Agent协同优化，内置独创Compose模式，旨在提供高效智能的编码支持。 4 小时前 14.9K",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://news.aibase.com/zh/news/28860": {
+        "title": "打通AI应用“最后一公里”：阿里云秒悟Meoo CLI正式开源阿里云开源了命令行工具Meoo CLI，定位为本地Agent与云端能力的连接枢纽。它帮助开发者将AI生成的本地代码原型转化为线上应用，自动处理数据对接、环境配置及发布流程，解决从代码到部署的行业痛点。 刚刚 8.8K",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://aitntnews.com/newDetail.html?newId=26078": {
+        "title": "独家｜让AI接手真实操作，字节系团队、GUI Agent平台Core-Mate获数千万元融资",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://www.qbitai.com/2026/06/434317.html": {
+        "title": "3D创作迎来ChatGPT时刻：Meshy发布全球首个3D AI Agent",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "https://www.qbitai.com/2026/06/434225.html": {
+        "title": "实测小米最快1T大模型：吞吐量每秒1000+ Tokens，Vibe Coding七秒交付",
+        "at": "2026-06-11",
+        "edition": "evening"
       }
     }
   },
@@ -67562,6 +67806,81 @@
         "title": "百度智能云与FluxA达成战略合作，共建 Agent 经济全球支付基础设施",
         "at": "2026-06-10",
         "edition": "evening"
+      },
+      "23272ec87454dac8": {
+        "title": "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "278edce0211a83c6": {
+        "title": "Embodied-BenchClaw: An Autonomous Multi-Agent System for Embodied Spatial Intelligence Benchmark Construction",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "4980a944694bf580": {
+        "title": "MODF-SIR: A Multi-agent Omni-modal Distilled Framework for Social Intelligence Reasoning",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "a761ef9d7aee5254": {
+        "title": "SkillJuror: Measuring How Agent Skill Organization Changes Runtime Behavior",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "c68b1ee516e7bdc4": {
+        "title": "樊登:千问帮助考生家庭穿越信息迷雾，“看清问题”作出选择千问于6月10日上线国内首个全周期高考志愿填报Agent，免费服务全国考生。帆书APP创始人樊登指出，家庭焦虑源于缺乏认知框架而非选项少，千问能帮助考生家庭穿越信息迷雾，理性选择。高考志愿填报是考场外的关键抉择，考验家庭在信息复杂中保持清醒，看清问题再决策。 3 小时前 18.9K",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "78597d78124f060c": {
+        "title": "张雪峰留下的空白，AI能顶上吗？",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "65b110715916e52a": {
+        "title": "刚刚，Anthropic道歉了",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "f644b171503d85bf": {
+        "title": "Fable 5自带反蒸馏机制！检测到就降智，误触率高到离谱",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "2b35e6fcbaabdc3e": {
+        "title": "Google DeepMind is worried about what happens when millions of agents start to interact",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "44d673b4f084fd26": {
+        "title": "苹果开发者生态升级：Xcode 27 原生集成 Gemini，AI 编程阵营再添猛将苹果在Xcode 27 Beta版本中引入谷歌Gemini的原生集成，成为继OpenAI Codex和Anthropic Claude Agent后的第三个内置AI编程智能体。这一更新使开发者拥有更多元化的智能编程选择，显著提升了开发效率与交互体验，标志着苹果开发生态迎来AI赋能深度变革。 3 分钟前 10.6K",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "b2959a3a0ffc76bd": {
+        "title": "小米技术团队进击AI编程：MiMo Code正式开源小米旗下MiMo技术团队于6月11日发布AI编程辅助工具MiMo Code，基于OpenCode技术底座开发。该工具引入持久记忆系统、无限上下文处理能力，能精准理解开发者逻辑需求，并支持模型Agent协同优化，内置独创Compose模式，旨在提供高效智能的编码支持。 4 小时前 14.9K",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "9401a2c3c28b3b58": {
+        "title": "打通AI应用“最后一公里”：阿里云秒悟Meoo CLI正式开源阿里云开源了命令行工具Meoo CLI，定位为本地Agent与云端能力的连接枢纽。它帮助开发者将AI生成的本地代码原型转化为线上应用，自动处理数据对接、环境配置及发布流程，解决从代码到部署的行业痛点。 刚刚 8.8K",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "07502f89671bed3c": {
+        "title": "独家｜让AI接手真实操作，字节系团队、GUI Agent平台Core-Mate获数千万元融资",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "177615aa1cc98542": {
+        "title": "3D创作迎来ChatGPT时刻：Meshy发布全球首个3D AI Agent",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "2b4abee250bcf36e": {
+        "title": "实测小米最快1T大模型：吞吐量每秒1000+ Tokens，Vibe Coding七秒交付",
+        "at": "2026-06-11",
+        "edition": "evening"
       }
     }
   },
@@ -70927,6 +71246,60 @@
         "title": "小米前员工范典创业AI硬件，推出毫米波雷达睡眠床头灯。",
         "text": "小米前员工范典创业AI硬件，推出毫米波雷达睡眠床头灯。 小米前员工范典创业AI硬件，推出毫米波雷达睡眠床头灯。 小米前员工范典创立的格物科技，历时三年推出了AI睡眠床头灯Sleepal AI Lamp。该产品利用毫米波雷达技术测量睡眠，旨在解决睡眠呼吸暂停症等睡眠问题。产品已在Kickstarter开启众筹，定价449美金，展现了AI硬件在细分医疗场景的探索。 小米前员工范典创立的格物科技，历时三年推出了AI睡眠床头灯Sleepal AI Lamp。该产品利用毫米波雷达技术测量睡眠，旨在解决睡眠呼吸暂停症等睡眠问题。产品已在Kickstarter开启众筹，定价449美金，展现了AI硬件在细分医疗场景的探索。 小米前员工范典创立的格物科技，历时三年推出了AI睡眠床头灯Sleepal AI Lamp。该产品利用毫米波雷达技术测量睡眠，旨在解决睡眠呼吸暂停症等睡眠问题。产品已在Kickstarter开启众筹，定价449美金 当前信号具备参考价值，但仍需更多来源持续验证。",
         "at": "2026-06-10",
+        "edition": "evening"
+      },
+      "d5b195f5ec8be29518e7": {
+        "title": "千问上线免费高考志愿填报Agent，通过志愿日历、志愿报告等能力提供普惠服务。",
+        "text": "千问上线免费高考志愿填报Agent，通过志愿日历、志愿报告等能力提供普惠服务。 千问上线免费高考志愿填报Agent，通过志愿日历、志愿报告等能力提供普惠服务。 6月10日，千问上线国内首个全周期高考志愿填报Agent，面向全国考生免费提供志愿填报和咨询服务。该Agent的底子是专门针对高考志愿填报打磨过的Qwen大模型，并结合了夸克8年高考服务积累的数据与经验。其核心能力包括志愿日历、志愿报告和志愿问答。阿里巴巴集团副总裁、千问事业部总裁吴嘉指出，高考志愿填报服务不应该只是一种稀缺商品，它更应该接近一种公共服务。今年全国共有1290万考生，平均每位考生需要填写约50个志愿 6月10日，千问上线国内首个全周期高考志愿填报Agent，面向全国考生免费提供志愿填报和咨询服务。该Agent的底子是专门针对高考志愿填报打磨过的Qwen大模型，并结合了夸克8年高考服务积累的数据与经验。其核心能力包括志愿日历、志愿报告和志愿问答。阿里巴巴集团副总裁、千问事业部总裁吴嘉指出，高考志愿填报服务不应该只是一种稀缺商品，它更应该接近一种公共服务。",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "bd7ad9f140e62ef8e7e7": {
+        "title": "Anthropic调整Claude Fable 5策略",
+        "text": "Anthropic调整Claude Fable 5策略，将针对AI研发的降智限制改为可见。 Anthropic调整Claude Fable 5策略 Anthropic新模型Claude Fable 5在发布后因针对AI研发的“降智”机制引发社区强烈不满。该机制允许Anthropic在用户不知情的情况下降低模型能力，以防止外国对手利用模型加速AI研发。在舆论发酵后，Anthropic宣布调整策略，将这一保护措施改为可见。现在，如果Claude Fable 5检测到用户在研发AI，会向用户发出警报，表明将拒绝请求或引导至能力较弱的模型。Anthropic在声明中进行了道歉 Anthropic新模型Claude Fable 5在发布后因针对AI研发的“降智”机制引发社区强烈不满。该机制允许Anthropic在用户不知情的情况下降低模型能力，以防止外国对手利用模型加速AI研发。在舆论发酵后，Anthropic宣布调整策略，将这一保护措施改为可见。现在，如果Claude Fable 5检测到用户在研发AI，会向用户发出警报",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "a63d4fd20f050f94dbf5": {
+        "title": "阿里云开源Meoo CLI，作为本地Agent与云端能力的连接枢纽",
+        "text": "阿里云开源Meoo CLI，作为本地Agent与云端能力的连接枢纽，解决代码到部署的痛点。 阿里云开源Meoo CLI，作为本地Agent与云端能力的连接枢纽 针对开发者将AI生成的本地代码原型转化为线上应用时面临的复杂数据对接、环境配置及发布流程痛点，阿里云于6月11日正式开源了全新的命令行工具——Meoo（秒悟）CLI。Meoo CLI的核心定位是充当“本地Agent与云端能力之间的连接枢纽”。它不仅是一个发布工具，更像是一个自动化助手，能够帮助开发者将本地开发的项目一键推进到可供用户访问的线上状态。该工具支持目前主流的Claude Code、Codex、Cursor等本地编程助手 针对开发者将AI生成的本地代码原型转化为线上应用时面临的复杂数据对接、环境配置及发布流程痛点，阿里云于6月11日正式开源了全新的命令行工具——Meoo（秒悟）CLI。Meoo CLI的核心定位是充当“本地Agent与云端能力之间的连接枢纽”。它不仅是一个发布工具，更像是一个自动化助手，能够帮助开发者将本地开发的项目一键推进到可供用户访问的线上状态。",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "dcb1b8c7a922be6ebe83": {
+        "title": "小米开源MiMo Code，引入持久记忆与无限上下文，支持多模型协同。",
+        "text": "小米开源MiMo Code，引入持久记忆与无限上下文，支持多模型协同。 小米开源MiMo Code，引入持久记忆与无限上下文，支持多模型协同。 小米技术团队于6月11日正式发布AI编程辅助工具MiMo Code。该工具基于OpenCode技术底座开发，旨在通过深度优化功能提升开发效率。MiMo Code在架构上引入了持久记忆系统与无限上下文处理能力，能够更精准地理解开发者的逻辑需求。同时，该工具支持模型Agent协同优化，并内置了独创的Compose模式，进一步简化了复杂编程任务的执行过程。在生态兼容性方面，MiMo Code展现了极高的灵活性 小米技术团队于6月11日正式发布AI编程辅助工具MiMo Code。该工具基于OpenCode技术底座开发，旨在通过深度优化功能提升开发效率。MiMo Code在架构上引入了持久记忆系统与无限上下文处理能力，能够更精准地理解开发者的逻辑需求。同时，该工具支持模型Agent协同优化，并内置了独创的Compose模式，进一步简化了复杂编程任务的执行过程。在生态兼容性方面，MiMo Code展现了极高的灵活性。",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "5b9a30efe118ffe54cdb": {
+        "title": "Google DeepMind联合多家机构启动1000万美元研究，关注多智能体系统安全。",
+        "text": "Google DeepMind联合多家机构启动1000万美元研究，关注多智能体系统安全。 Google DeepMind联合多家机构启动1000万美元研究，关注多智能体系统安全。 Google DeepMind联合Schmidt Sciences、ARIA、Cooperative AI foundation等机构宣布启动1000万美元的研究资金，用于研究多智能体系统的行为，并寻找防止不安全场景的方法。 Google DeepMind联合Schmidt Sciences、ARIA、Cooperative AI foundation等机构宣布启动1000万美元的研究资金，用于研究多智能体系统的行为，并寻找防止不安全场景的方法。 Google DeepMind联合Schmidt Sciences、ARIA、Cooperative AI foundation等机构宣布启动1000万美元的研究资金，用于研究多智能体系统的行为，并寻找防止不安全场景的方法。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "1ff83fd29d815d031323": {
+        "title": "苹果Xcode 27 Beta原生集成Gemini，成为第三个内置AI编程智能体。",
+        "text": "苹果Xcode 27 Beta原生集成Gemini，成为第三个内置AI编程智能体。 苹果Xcode 27 Beta原生集成Gemini，成为第三个内置AI编程智能体。 苹果在最新发布的Xcode 27 Beta版本中正式引入了谷歌Gemini的原生集成，这标志着该平台迎来了第三个内置的AI编程智能体。此前，Xcode已先后引入了OpenAI Codex和Anthropic Claude Agent。随着Gemini的加入，开发者如今拥有了更多元化的智能编程选择，显著提升了开发效率与交互体验。 苹果在最新发布的Xcode 27 Beta版本中正式引入了谷歌Gemini的原生集成，这标志着该平台迎来了第三个内置的AI编程智能体。此前，Xcode已先后引入了OpenAI Codex和Anthropic Claude Agent。 苹果在最新发布的Xcode 27 Beta版本中正式引入了谷歌Gemini的原生集成，这标志着该平台迎来了第三个内置的AI编程智能体。此前，Xcode已先后引入了OpenAI Codex和Anthropic Claude",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "93133159a80c73c46083": {
+        "title": "字节系团队GUI Agent平台Core-Mate获数千万元融资，专注真实业务环境操作。",
+        "text": "字节系团队GUI Agent平台Core-Mate获数千万元融资，专注真实业务环境操作。 字节系团队GUI Agent平台Core-Mate获数千万元融资，专注真实业务环境操作。 GUI Agent执行平台Core-Mate近日宣布完成数千万人民币融资，由敦鸿资产独家投资。本轮融资将重点用于公司的底层技术升级、移动端UI视觉感知能力的深度迭代以及用户拓展。Core-Mate的核心团队主要来自字节跳动，旨在解决AI Agent从Demo走向真实场景的难题，让AI能真正接手用户在网页和App中的操作。 GUI Agent执行平台Core-Mate近日宣布完成数千万人民币融资，由敦鸿资产独家投资。本轮融资将重点用于公司的底层技术升级、移动端UI视觉感知能力的深度迭代以及用户拓展。 GUI Agent执行平台Core-Mate近日宣布完成数千万人民币融资，由敦鸿资产独家投资。本轮融资将重点用于公司的底层技术升级、移动端UI视觉感知能力的深度迭代以及用户拓展。Core-Mate的核心团队主要来自字节跳动，旨在解决AI 当前信号具备参考价值",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "e050b1dbcca15f265581": {
+        "title": "小米实测MiMo-V2.5-Pro-UltraSpeed模型，单API推理速度达1000+ TPS。",
+        "text": "小米实测MiMo-V2.5-Pro-UltraSpeed模型，单API推理速度达1000+ TPS。 小米实测MiMo-V2.5-Pro-UltraSpeed模型，单API推理速度达1000+ TPS。 小米发布了全新的MiMo-V2.5-Pro-UltraSpeed模型，即MiMo-V2.5-Pro的高速版本。该模型拥有1T总参数，支持1M上下文，单API推理速度直接拉到1000+ TPS，刷新了旗舰模型全球最快推理速度的纪录。值得注意的是，小米此次的新模型打破了“快、强、通用GPU无法兼得”的行业不可能三角，用通用GPU就能实现如此高的推理速度。 小米发布了全新的MiMo-V2.5-Pro-UltraSpeed模型，即MiMo-V2.5-Pro的高速版本。该模型拥有1T总参数，支持1M上下文，单API推理速度直接拉到1000+ TPS，刷新了旗舰模型全球最快推理速度的纪录。 小米发布了全新的MiMo-V2.5-Pro-UltraSpeed模型，即MiMo-V2.5-Pro的高速版本。该模型拥有1T总参数，支持1M上下文",
+        "at": "2026-06-11",
+        "edition": "evening"
+      },
+      "5c03a51d6ff8bac6ad7f": {
+        "title": "Meshy发布全球首个3D创作AI Agent，推动3D创作从一次性生成走向可控生产。",
+        "text": "Meshy发布全球首个3D创作AI Agent，推动3D创作从一次性生成走向可控生产。 Meshy发布全球首个3D创作AI Agent，推动3D创作从一次性生成走向可控生产。 Meshy推出了全球首个3D创作AI Agent：Meshy 3D Agent。该产品旨在解决3D创作中“让模型变为可用资产”的难题，推动3D创作从一次性模型生成走向可控生产、批量扩展和长期复用的资产体系。 Meshy推出了全球首个3D创作AI Agent：Meshy 3D Agent。该产品旨在解决3D创作中“让模型变为可用资产”的难题，推动3D创作从一次性模型生成走向可控生产、批量扩展和长期复用的资产体系。 Meshy推出了全球首个3D创作AI Agent：Meshy 3D Agent。该产品旨在解决3D创作中“让模型变为可用资产”的难题，推动3D创作从一次性模型生成走向可控生产、批量扩展和长期复用的资产体系。当前信号具备参考价值 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-06-11",
         "edition": "evening"
       }
     }
