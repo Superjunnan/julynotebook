@@ -121,7 +121,6 @@
     if (当前路径.startsWith(规范路径(`${root}categories/daily-news/`, root))) return 'daily-list';
     if (当前路径.startsWith(规范路径(`${root}categories/july-notes/`, root))) return 'note-list';
     if (当前路径.startsWith(规范路径(`${root}iteration-log/`, root))) return 'iteration-log';
-    if (当前路径.startsWith(规范路径(`${root}resume/`, root))) return 'resume';
     if (pageConfig && pageConfig.isPost) return 读取文章类型();
     return 'page';
   }
@@ -140,8 +139,6 @@
         return 'AI 笔记';
       case 'iteration-log':
         return '迭代记录';
-      case 'resume':
-        return '简历';
       default:
         return 规范标题(pageConfig.title);
     }
@@ -172,9 +169,6 @@
         </a>
         <a href="${root}iteration-log/" class="app-drawer-menu-item" data-path="${root}iteration-log/">
           <i class="fa fa-history" aria-hidden="true"></i><span>迭代记录</span>
-        </a>
-        <a href="${root}resume/" class="app-drawer-menu-item" data-path="${root}resume/">
-          <i class="fa fa-id-card" aria-hidden="true"></i><span>简历</span>
         </a>
       </nav>
     `;
@@ -390,7 +384,7 @@
       return;
     }
 
-    if (view === 'home' || view === 'daily-list' || view === 'note-list' || view === 'iteration-log' || view === 'resume') {
+    if (view === 'home' || view === 'daily-list' || view === 'note-list' || view === 'iteration-log') {
       左按钮.hidden = false;
       左按钮.setAttribute('aria-label', '打开菜单');
       左按钮.innerHTML = '<i class="fa fa-list-ul" aria-hidden="true"></i>';

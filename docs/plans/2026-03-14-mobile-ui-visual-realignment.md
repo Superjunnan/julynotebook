@@ -180,7 +180,6 @@ return `
     <a href="${root}categories/daily-news/" class="app-drawer-menu-item" data-path="${root}categories/daily-news/"><span>AI 日报</span></a>
     <a href="${root}categories/july-notes/" class="app-drawer-menu-item" data-path="${root}categories/july-notes/"><span>AI 笔记</span></a>
     <a href="${root}iteration-log/" class="app-drawer-menu-item" data-path="${root}iteration-log/"><span>迭代记录</span></a>
-    <a href="${root}resume/" class="app-drawer-menu-item" data-path="${root}resume/"><span>简历</span></a>
   </nav>
 `;
 ```
@@ -190,7 +189,7 @@ return `
 要求：
 
 - 首页：左侧只显示 `fa-bars`
-- 日报页 / 笔记页 / 迭代页 / 简历页：左侧 `fa-bars`，次按钮 `fa-angle-left`
+- 日报页 / 笔记页 / 迭代页：左侧 `fa-bars`，次按钮 `fa-angle-left`
 - 详情页：左侧只有 `fa-angle-left`，右侧 `fa-list-ul`
 
 同时在 `app-shell.styl` 中落实：

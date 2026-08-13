@@ -79,10 +79,6 @@ function buildAndReadPages() {
         path.join(repoRoot, "public/iteration-log/index.html"),
         "utf-8"
       ),
-      resume: readFileSync(
-        path.join(repoRoot, "public/resume/index.html"),
-        "utf-8"
-      ),
       appShell: readFileSync(
         path.join(repoRoot, "source/js/app-shell.js"),
         "utf-8"
@@ -422,8 +418,8 @@ test("页头操作按钮应挂到品牌容器内，并通过固定像素定位�
 test("首页外的主列表页左侧应显示菜单按钮而不是返回上一页", async () => {
   const { appShell } = await buildAndReadPages();
 
-  assert.match(appShell, /view === 'home' \|\| view === 'daily-list' \|\| view === 'note-list' \|\| view === 'iteration-log' \|\| view === 'resume'/);
-  const 菜单分支起点 = appShell.indexOf("view === 'home' || view === 'daily-list' || view === 'note-list' || view === 'iteration-log' || view === 'resume'");
+  assert.match(appShell, /view === 'home' \|\| view === 'daily-list' \|\| view === 'note-list' \|\| view === 'iteration-log'/);
+  const 菜单分支起点 = appShell.indexOf("view === 'home' || view === 'daily-list' || view === 'note-list' || view === 'iteration-log'");
   assert.notEqual(菜单分支起点, -1);
   const 菜单分支片段 = appShell.slice(菜单分支起点, 菜单分支起点 + 280);
   assert.match(菜单分支片段, /打开菜单/);
@@ -448,15 +444,6 @@ test("迭代记录页应去除重复主标题并改为日期时间线卡片", as
   assert.match(iteration, /class="iteration-entry-card"/);
   assert.match(css, /\.iteration-timeline::before\s*\{/);
   assert.match(css, /\.iteration-entry-card\s*\{/);
-});
-
-test("简历页标题应统一为简历，不再保留测试态页面名称", async () => {
-  const { resume, appShell } = await buildAndReadPages();
-
-  assert.doesNotMatch(resume, /这是我的简历测试页面/);
-  assert.match(resume, /<title>\s*简历/);
-  assert.match(resume, /content="简历"/);
-  assert.match(appShell, /case 'resume':\s*return '简历'/);
 });
 
 test("上一篇下一篇切换应显式标记回到页顶，避免切页后停留在底部", async () => {
