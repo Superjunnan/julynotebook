@@ -2,9 +2,9 @@
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** 统一首页、列表页、详情页、迭代记录和简历页的页头、卡片摘要与内容密度，完成全站收尾。
+**Goal:** 统一首页、列表页、详情页和迭代记录的页头、卡片摘要与内容密度，完成全站收尾。
 
-**Architecture:** 在现有 App Shell、首页卡片模板和详情页样式之上做最小收尾，不重写模板体系。先用测试固定目标，再分别补首页卡片、详情页信号压缩和 `resume / iteration-log` 的统一页头与标题。
+**Architecture:** 在现有 App Shell、首页卡片模板和详情页样式之上做最小收尾，不重写模板体系。先用测试固定目标，再分别补首页卡片、详情页信号压缩和 `iteration-log` 的统一页头与标题。
 
 **Tech Stack:** Hexo、NexT、Nunjucks、Stylus、原生前端脚本、Node test
 
@@ -22,8 +22,7 @@
 - 首页日报卡片标签改为 `今日主线：`
 - 首页卡片尾部间距收紧
 - `关键信号` 编号胶囊尺寸更轻
-- `resume` 页面标题统一为 `简历`
-- `resume / iteration-log` 顶部页头短名称保持一致
+- `iteration-log` 顶部页头短名称保持一致
 
 **Step 2: Run test to verify it fails**
 
@@ -83,18 +82,16 @@ Expected:
 
 - 详情页信号压缩断言通过
 
-### Task 4: 统一 resume / iteration-log 的页头与标题
+### Task 4: 统一 iteration-log 的页头与标题
 
 **Files:**
 - Modify: `source/_data/app-shell.styl`
-- Modify: `source/resume/index.md`
 - Possibly Modify: `source/_data/detail-view.styl`
 
 **Step 1: Write minimal implementation**
 
 - 移动端顶部栏保持短页面名视觉
-- 收紧 `resume / iteration-log` 首屏顶部密度
-- `resume` 标题改为 `简历`
+- 收紧 `iteration-log` 首屏顶部密度
 
 **Step 2: Run targeted test**
 
@@ -106,7 +103,7 @@ node --test tests/digest/daily-post-ui-regression.test.mjs
 
 Expected:
 
-- `resume / iteration-log` 相关断言通过
+- `iteration-log` 相关断言通过
 
 ### Task 5: 全量验证
 
@@ -163,11 +160,10 @@ Expected:
 - `http://localhost:4000/julynotebook/categories/july-notes/`
 - `http://localhost:4000/julynotebook/2026/03/19/digest-2026-03-19/`
 - `http://localhost:4000/julynotebook/iteration-log/`
-- `http://localhost:4000/julynotebook/resume/`
 
 Expected:
 
 - 页面可访问
 - 首页卡片文案为 `今日主线`
 - 详情页信号只保留轻量编号
-- `resume / iteration-log` 顶部栏名称正确
+- `iteration-log` 顶部栏名称正确
