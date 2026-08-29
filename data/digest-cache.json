@@ -42649,86 +42649,200 @@
       "at": "2026-08-28"
     },
     "evening:2026-08-29": {
-      "fingerprint": "2991a19392dd8d73fe19c6f475956a3979673d9f914078b70d02cc9c3628e767",
+      "fingerprint": "540e2a4f1c390c679040661cc5111a55234a262bbd6434baeaccdaeb5ccbed96",
       "daily": {
-        "overview": "今日 AI 资讯聚焦于多智能体系统、金融计算与科学研究的智能化应用。研究重点包括通过确定性工具和证据感知框架提升金融与科学研究的准确性，以及利用图结构优化长期记忆与技能检索。",
-        "hotNews": [],
-        "otherNews": [],
-        "coreTech": [
+        "overview": "本周AI领域聚焦于模型性能瓶颈、机构治理机制以及硬件端侧AI的突破。OpenAI终止与Cursor的合作引发开发者生态关注，同时关于AI安全与网络安全风险的警告也引发行业深思。在技术层面，多篇论文探讨了多模态推理、测试时优化及医学影像分析等前沿方向。",
+        "hotNews": [
           {
-            "title": "一种用于金融问答的确定性工具",
-            "summary": "该框架旨在解决 LLM 在金融计算中产生数值错误的问题，通过确定性工具和多智能体架构实现精确推理。",
-            "refs": [
-              5
-            ],
-            "topicId": 10
-          },
-          {
-            "title": "用于多市场股票研究的证据感知",
-            "summary": "DSA 框架通过证据感知编排，实现了对多市场股票研究中异构证据的组装和生成观点的控制。",
-            "refs": [
-              6
-            ],
-            "topicId": 12
-          },
-          {
-            "title": "将智能体经验编译为技能进化的持久知识",
-            "summary": "WikiSkill 框架将智能体经验编译为持久知识，促进技能的系统化复用与进化。",
-            "refs": [
-              7
-            ],
-            "topicId": 18
-          },
-          {
-            "title": "在现实世界中利用 加速科学研究",
-            "summary": "该研究展示了 Gemini 在现实世界科学实验流程中的加速应用能力。",
+            "title": "本地部署大模型成为趋势，用户可自主掌控数据与算力。",
+            "insight": "本地部署大模型成为趋势，用户可自主掌控数据与算力。",
+            "briefing": "随着ChatGPT等AI工具的普及，越来越多的用户开始关注如何在本地计算机上运行大语言模型。这一趋势不仅降低了使用门槛，还让用户能够更好地保护数据隐私并减少对云服务的依赖。",
+            "evaluation": "本地部署为AI应用提供了更灵活的扩展路径。",
+            "narrative": "随着ChatGPT等AI工具的普及，越来越多的用户开始关注如何在本地计算机上运行大语言模型。这一趋势不仅降低了使用门槛，还让用户能够更好地保护数据隐私并减少对云服务的依赖。本地部署为AI应用提供了更灵活的扩展路径。",
+            "summary": "随着ChatGPT等AI工具的普及，越来越多的用户开始关注如何在本地计算机上运行大语言模型。这一趋势不仅降低了使用门槛，还让用户能够更好地保护数据隐私并减少对云服务的依赖。本地部署为AI应用提供了更灵活的扩展路径。",
             "refs": [
               2
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 64,
+            "topicId": 19
+          },
+          {
+            "title": "AI巨头警告网络安全危机迫在眉睫，数据滥用风险加剧。",
+            "insight": "AI巨头警告网络安全危机迫在眉睫，数据滥用风险加剧。",
+            "briefing": "AI巨头警告称网络安全危机可能在数月内爆发，并指出自动车牌识别摄像头等技术的滥用问题日益严重。例如，有警察被指控在情感纠纷后多次搜索同事车牌，且相关数据被共享给超过2000个机构。这凸显了AI技术在执法领域的潜在风险。",
+            "evaluation": "技术进步与隐私保护之间的矛盾亟待解决。",
+            "narrative": "AI巨头警告称网络安全危机可能在数月内爆发，并指出自动车牌识别摄像头等技术的滥用问题日益严重。例如，有警察被指控在情感纠纷后多次搜索同事车牌，且相关数据被共享给超过2000个机构。这凸显了AI技术在执法领域的潜在风险。技术进步与隐私保护之间的矛盾亟待解决。",
+            "summary": "AI巨头警告称网络安全危机可能在数月内爆发，并指出自动车牌识别摄像头等技术的滥用问题日益严重。例如，有警察被指控在情感纠纷后多次搜索同事车牌，且相关数据被共享给超过2000个机构。这凸显了AI技术在执法领域的潜在风险。技术进步与隐私保护之间的矛盾亟待解决。",
+            "refs": [
+              3
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 64,
+            "topicId": 33
+          },
+          {
+            "title": "英特尔锐炫Pro B70显卡助力本地化AI视频创作。",
+            "insight": "英特尔锐炫Pro B70显卡助力本地化AI视频创作。",
+            "briefing": "英特尔在广州举办AIGC创作研讨会，展示了基于锐炫Pro B70显卡的本地化AI视频制作全流程方案。该方案支持MiniMax H3模型，旨在帮助中小型团队和个人创作者突破算力门槛，实现从创意到成品的快速转化。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "英特尔在广州举办AIGC创作研讨会，展示了基于锐炫Pro B70显卡的本地化AI视频制作全流程方案。该方案支持MiniMax H3模型，旨在帮助中小型团队和个人创作者突破算力门槛，实现从创意到成品的快速转化。",
+            "summary": "英特尔在广州举办AIGC创作研讨会，展示了基于锐炫Pro B70显卡的本地化AI视频制作全流程方案。该方案支持MiniMax H3模型，旨在帮助中小型团队和个人创作者突破算力门槛，实现从创意到成品的快速转化。当前信号具备参考价值",
+            "refs": [
+              12
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 56,
+            "topicId": 47
+          }
+        ],
+        "otherNews": [
+          {
+            "title": "OpenAI终止与Cursor合作，开发者生态面临新的整合挑战。",
+            "insight": "OpenAI终止与Cursor合作，开发者生态面临新的整合挑战。",
+            "briefing": "OpenAI宣布终止与Cursor的合作，原因是Cursor已被SpaceX收购。根据协议，Cursor对OpenAI模型的直接访问权限将于11月12日结束。这一决定主要影响依赖OpenAI模型的开发者，标志着AI巨头在收购事件后对合作伙伴关系的重新调整。",
+            "evaluation": "此次合作终止反映了AI模型分发与第三方工具整合的复杂性。",
+            "narrative": "OpenAI宣布终止与Cursor的合作，原因是Cursor已被SpaceX收购。根据协议，Cursor对OpenAI模型的直接访问权限将于11月12日结束。这一决定主要影响依赖OpenAI模型的开发者，标志着AI巨头在收购事件后对合作伙伴关系的重新调整。此次合作终止反映了AI模型分发与第三方工具整合的复杂性。",
+            "summary": "OpenAI宣布终止与Cursor的合作，原因是Cursor已被SpaceX收购。根据协议，Cursor对OpenAI模型的直接访问权限将于11月12日结束。这一决定主要影响依赖OpenAI模型的开发者，标志着AI巨头在收购事件后对合作伙伴关系的重新调整。此次合作终止反映了AI模型分发与第三方工具整合的复杂性。",
+            "refs": [
+              1
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 65,
+            "topicId": 20
+          },
+          {
+            "title": "Minimax H3无审查绘图空间引发关注。",
+            "insight": "Minimax H3无审查绘图空间引发关注。",
+            "briefing": "Hugging Face用户发布了一个基于Minimax H3的无审查绘图空间，允许用户进行图像修复创作。该工具强调责任使用，并呼吁用户在讨论区提供反馈。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Hugging Face用户发布了一个基于Minimax H3的无审查绘图空间，允许用户进行图像修复创作。该工具强调责任使用，并呼吁用户在讨论区提供反馈。",
+            "summary": "Hugging Face用户发布了一个基于Minimax H3的无审查绘图空间，允许用户进行图像修复创作。该工具强调责任使用，并呼吁用户在讨论区提供反馈。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              17
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 55,
+            "topicId": 46
+          },
+          {
+            "title": "模型基准测试面临瓶颈，开发者探索架构创新。",
+            "insight": "模型基准测试面临瓶颈，开发者探索架构创新。",
+            "briefing": "开发者反映，在调整超参数和优化数据集后，模型基准性能仍难以提升。例如，Sorbet-v2模型在多数基准测试中落后于同参数范围的其他模型，这促使开发者尝试更不寻常的架构而非单纯扩大模型规模。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "开发者反映，在调整超参数和优化数据集后，模型基准性能仍难以提升。例如，Sorbet-v2模型在多数基准测试中落后于同参数范围的其他模型，这促使开发者尝试更不寻常的架构而非单纯扩大模型规模。",
+            "summary": "开发者反映，在调整超参数和优化数据集后，模型基准性能仍难以提升。例如，Sorbet-v2模型在多数基准测试中落后于同参数范围的其他模型，这促使开发者尝试更不寻常的架构而非单纯扩大模型规模。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              10
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 56,
+            "topicId": 21
+          },
+          {
+            "title": "Open Discovery Challenge第四季聚焦非阿片类止痛药研发。",
+            "insight": "Open Discovery Challenge第四季聚焦非阿片类止痛药研发。",
+            "briefing": "Open Discovery Challenge第四季开放报名，旨在寻找能够选择性阻断Nav1.7疼痛通道而不影响心脏hERG通道的药物分子。该挑战吸引了108名参与者，在14天内提交了9886个候选分子。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Open Discovery Challenge第四季开放报名，旨在寻找能够选择性阻断Nav1.7疼痛通道而不影响心脏hERG通道的药物分子。该挑战吸引了108名参与者，在14天内提交了9886个候选分子。",
+            "summary": "Open Discovery Challenge第四季开放报名，旨在寻找能够选择性阻断Nav1.7疼痛通道而不影响心脏hERG通道的药物分子。该挑战吸引了108名参与者，在14天内提交了9886个候选分子。当前信号具备参考价值",
+            "refs": [
+              11
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 56,
+            "topicId": 35
+          },
+          {
+            "title": "学术机构需建立正式的吹哨人保护与自我纠错机制。",
+            "insight": "学术机构需建立正式的吹哨人保护与自我纠错机制。",
+            "briefing": "一篇论文强调，仅仅鼓励“发声”不足以构成有效的治理系统。机构需要建立正式的吹哨人保护通道、自我纠错审查流程以及针对恶意报告的处理机制，以防止结构性问题演变为通用的人力资源投诉。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "一篇论文强调，仅仅鼓励“发声”不足以构成有效的治理系统。机构需要建立正式的吹哨人保护通道、自我纠错审查流程以及针对恶意报告的处理机制，以防止结构性问题演变为通用的人力资源投诉。",
+            "summary": "一篇论文强调，仅仅鼓励“发声”不足以构成有效的治理系统。机构需要建立正式的吹哨人保护通道、自我纠错审查流程以及针对恶意报告的处理机制，以防止结构性问题演变为通用的人力资源投诉。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              16
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 55,
+            "topicId": 34
+          }
+        ],
+        "coreTech": [
+          {
+            "title": "论文进展 1",
+            "summary": "该论文提出通过反事实因果图构建来校准程序技能关系，以提升LLM代理的可执行检索效率。",
+            "refs": [
+              5
             ],
             "topicId": 2
           },
           {
-            "title": "用于长期多模态智能体记忆的查",
-            "summary": "GraphMemix 提出将记忆组织建模为查询感知的证据森林，以优化多模态智能体的长期记忆。",
+            "title": "论文进展 2",
+            "summary": "WikiSkill通过持久化知识库与代理技能的协同进化，系统性地积累经验并提升跨模型性能。",
             "refs": [
-              16
+              6
             ],
-            "topicId": 41
+            "topicId": 4
           },
           {
-            "title": "用于可扩展智能体技能检索的反",
-            "summary": "CaSKG 利用反事实因果图构建来提升 LLM 智能体技能检索的紧凑性和可执行性。",
+            "title": "论文进展 3",
+            "summary": "UrbanGround评估多模态语言模型代理在真实城市环境中的导航与空间推理能力，指出局部感知技能难以转化为长期目标导向行为。",
             "refs": [
-              8
+              7
             ],
-            "topicId": 19
+            "topicId": 3
+          },
+          {
+            "title": "论文进展 4",
+            "summary": "TTPO通过非对称蒸馏同意的rollout并惩罚不一致的rollout，实现了无需标签的测试时训练，匹配监督学习性能。",
+            "refs": [
+              13
+            ],
+            "topicId": 16
+          },
+          {
+            "title": "论文进展 5",
+            "summary": "Self-OPD利用自探索的随机分支和归一化优势，在无需任务特定教师的情况下优化流匹配模型的速度场。",
+            "refs": [
+              14
+            ],
+            "topicId": 14
+          },
+          {
+            "title": "论文进展 6",
+            "summary": "该论文提出一种模块化医疗成像代理，通过分解空间关系验证任务，在CT扫描空间推理中超越端到端视觉语言模型。",
+            "refs": [
+              18
+            ],
+            "topicId": 5
           }
         ],
         "aiRumor": [],
         "refTranslations": {
-          "1": "评估人类与大型语言模型的心智化能力",
-          "2": "在现实世界中利用 Gemini 加速科学研究",
-          "3": "文本债务深埋：基于视觉证据保留的上下文剪枝",
-          "4": "Bekchi AI：一键测量、观察与控制LLM智能体",
-          "5": "CIFQA：一种用于金融问答的确定性工具 grounded 多智能体 LLM 框架",
-          "6": "DSA：用于多市场股票研究的证据感知 LLM 智能体编排",
-          "7": "WikiSkill：将智能体经验编译为技能进化的持久知识",
-          "8": "CaSKG：用于可扩展智能体技能检索的反事实因果技能图",
-          "9": "面向可扩展且可管理智能体运行时的契约中心架构",
-          "10": "知识卡片：面向AI系统的结构化知识",
-          "11": "用于CT扫描可靠且可审计空间关系验证的模块化智能体",
-          "12": "从声音到症状：对话式医疗智能体的实时呼吸信号理解",
-          "13": "Red Evo智能体：基于经验驱动技能演化的自动红队测试智能体",
-          "14": "超越执行：审计LLM驱动科学研究的实验保真度",
-          "15": "SKILL.state：可扩展的长周期智能体技能",
-          "16": "GraphMemix：用于长期多模态智能体记忆的查询感知证据森林",
-          "17": "复杂城市场景中基于证据的可信多模态推理与评估基准",
-          "18": "用于纳米尺度表征的科学仪器操作智能体AI",
-          "19": "从原子到智能体：LLM智能体数学能力的可解释评估"
+          "1": "[AI新闻] OpenAI 关闭 Cursor 访问",
+          "2": "如何在本地电脑上运行聊天机器人",
+          "3": "AI巨头警告：网络安全末日将在‘数月’内降临",
+          "4": "思考关于样本：基于代理推理的一致性多样本视频编辑",
+          "5": "Ca SKG：用于可扩展代理技能检索的反事实因果技能图谱",
+          "6": "Wiki Skill：将代理经验编译为技能进化的持久知识",
+          "7": "城市地面：真实城市尺度下的从局部感知到空间代理",
+          "8": "移交税：LLM 代理中的非原生轨迹延续",
+          "9": "PILOT in the Loop：长周期代理的实时自我改进",
+          "10": "过去几周我一直在处理一些模型，发布的是",
+          "11": "🧪 开放发现挑战赛 — 第4季开启：非阿片类疼痛 WHO 将其 2023 年报告命名为‘在疼痛中被遗忘’",
+          "12": "32 GB大显存加持，英特尔锐炫Pro B70搞定AI漫剧创作",
+          "13": "TTPO：测试时策略优化",
+          "14": "Self-OPD：无教师流匹配模型的有策略蒸馏",
+          "15": "作为视觉修复上下文的评分标准用于自我演进的 UI 到代码生成",
+          "16": "✅ 文章亮点：*吹哨、受保护披露与机构自我纠正*",
+          "17": "使用 Minimax H3 的新 inpainting 空间，无任何审查！请负责任地使用",
+          "18": "用于 CT 扫描中可靠且可审计的空间关系验证的模块化代理",
+          "19": "Aphanta：诊断任务对齐图像编辑中间件以实现多模态推理"
         },
-        "candidateTotal": 250,
-        "topicTotal": 61,
-        "selectedTopicTotal": 7
+        "candidateTotal": 47,
+        "topicTotal": 47,
+        "selectedTopicTotal": 15
       },
       "at": "2026-08-29"
     },
@@ -46638,6 +46752,36 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":2,\"zh_title\":\"开源AI公司成硅谷最热门收购目标\"}]}",
       "at": "2026-08-29"
+    },
+    "4b1bae463cedb578fad5957357920096ae69ed430d13bf298c4c8afdbb66c0ed": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":19,\"topic_key\":\"本地部署大模型\",\"topic_title\":\"本地部署大模型指南\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":20,\"topic_key\":\"OpenAI 关闭 Cursor\",\"topic_title\":\"OpenAI 关闭 Cursor\",\"topic_type\":\"news\",\"confidence\":0.95,\"is_pr\":false},{\"candidate_id\":21,\"topic_key\":\"模型基准测试与性能讨论\",\"topic_title\":\"模型基准测试与性能讨论\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":33,\"topic_key\":\"AI 安全与网络安全\",\"topic_title\":\"AI 安全与网络安全\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":34,\"topic_key\":\"学术研究与机构自我纠错\",\"topic_title\":\"学术研究与机构自我纠错\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":35,\"topic_key\":\"Open Discovery Challenge\",\"topic_title\":\"Open Discovery Challenge\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":45,\"topic_key\":\"Kimi K2 发布\",\"topic_title\":\"Kimi K2 发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":true},{\"candidate_id\":46,\"topic_key\":\"Minimax H3 无审查绘图\",\"topic_title\":\"Minimax H3 无审查绘图\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":47,\"topic_key\":\"英特尔锐炫 Pro B70 AI 创作\",\"topic_title\":\"英特尔锐炫 Pro B70 AI 创作\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-08-30"
+    },
+    "85532a0195315d8c7a19d437a518c9bb73caa9aa4daa598cbcda357ce5081cd0": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"本地部署大模型\",\"merged_key\":\"本地部署大模型\",\"merged_title\":\"本地部署大模型指南\",\"merged_type\":\"news\"},{\"from_key\":\"模型基准测试与性能讨论\",\"merged_key\":\"模型基准测试与性能讨论\",\"merged_title\":\"模型基准测试与性能讨论\",\"merged_type\":\"news\"},{\"from_key\":\"学术研究与机构自我纠错\",\"merged_key\":\"学术研究与机构自我纠错\",\"merged_title\":\"学术研究与机构自我纠错\",\"merged_type\":\"news\"},{\"from_key\":\"英特尔锐炫 Pro B70 AI 创作\",\"merged_key\":\"英特尔锐炫 Pro B70 AI 创作\",\"merged_title\":\"英特尔锐炫 Pro B70 AI 创作\",\"merged_type\":\"news\"},{\"from_key\":\"AI 安全与网络安全\",\"merged_key\":\"AI 安全与网络安全\",\"merged_title\":\"AI 安全与网络安全\",\"merged_type\":\"news\"},{\"from_key\":\"Kimi K2 发布\",\"merged_key\":\"Kimi K2 发布\",\"merged_title\":\"Kimi K2 发布\",\"merged_type\":\"news\"},{\"from_key\":\"Minimax H3 无审查绘图\",\"merged_key\":\"Minimax H3 无审查绘图\",\"merged_title\":\"Minimax H3 无审查绘图\",\"merged_type\":\"news\"},{\"from_key\":\"Open Discovery Challenge\",\"merged_key\":\"Open Discovery Challenge\",\"merged_title\":\"Open Discovery Challenge\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 关闭 Cursor\",\"merged_key\":\"OpenAI 关闭 Cursor\",\"merged_title\":\"OpenAI 关闭 Cursor\",\"merged_type\":\"news\"}]}",
+      "at": "2026-08-30"
+    },
+    "2192c08a84cf0c9c20619c110a30c5992dca4a587b3c4bf7fa8b043ea6546e78": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[45,46,33,19,21,35,47,2,4],\"reasons\":[{\"topic_id\":45,\"reason\":\"月之暗面 Kimi K2 模型发布，代表国内头部模型厂商的最新技术动向，具有强时效性和行业关注度。\"},{\"topic_id\":46,\"reason\":\"MiniMax H3 无审查绘图功能引发社区热议，体现了国产大模型在应用层和商业化上的创新与边界探索。\"},{\"topic_id\":33,\"reason\":\"AI 安全与网络安全是全球性热点，WIRED 等权威媒体关注，对行业合规与治理具有重要参考价值。\"},{\"topic_id\":19,\"reason\":\"本地部署大模型指南是当前技术落地的重要趋势，WIRED 报道反映了技术普及的刚需。\"},{\"topic_id\":21,\"reason\":\"模型基准测试与性能讨论是社区核心话题，Hugging Face 的高活跃度表明其对技术选型有直接影响。\"},{\"topic_id\":35,\"reason\":\"Open Discovery Challenge 是社区驱动的创新活动，有助于推动开源生态和模型评估标准的建立。\"},{\"topic_id\":47,\"reason\":\"英特尔锐炫 Pro B70 AI 创作功能展示了硬件厂商在 AI 终端侧的布局，对产业生态有积极影响。\"},{\"topic_id\":2,\"reason\":\"CaSKG 论文关注因果推理与大模型结合，属于前沿基础研究，对提升模型逻辑能力有潜在价值。\"},{\"topic_id\":4,\"reason\":\"WikiSkill 论文聚焦智能体技能编译，是 Agent 技术栈中的关键研究方向，具有学术与产业双重意义。\"}]}",
+      "at": "2026-08-30"
+    },
+    "2e4ed0bfa197a7deaa55acbea38e1fc066c00e2f76927166de5be785ea01dd1f": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"本周AI领域聚焦于模型性能瓶颈、机构治理机制以及硬件端侧AI的突破。OpenAI终止与Cursor的合作引发开发者生态关注，同时关于AI安全与网络安全风险的警告也引发行业深思。在技术层面，多篇论文探讨了多模态推理、测试时优化及医学影像分析等前沿方向。\",\"hot_news\":[{\"topic_id\":20,\"insight\":\"OpenAI终止与Cursor合作，开发者生态面临新的整合挑战。\",\"narrative\":\"OpenAI宣布终止与Cursor的合作，原因是Cursor已被SpaceX收购。根据协议，Cursor对OpenAI模型的直接访问权限将于11月12日结束。这一决定主要影响依赖OpenAI模型的开发者，标志着AI巨头在收购事件后对合作伙伴关系的重新调整。\",\"evaluation\":\"此次合作终止反映了AI模型分发与第三方工具整合的复杂性。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":33,\"insight\":\"AI巨头警告网络安全危机迫在眉睫，数据滥用风险加剧。\",\"narrative\":\"AI巨头警告称网络安全危机可能在数月内爆发，并指出自动车牌识别摄像头等技术的滥用问题日益严重。例如，有警察被指控在情感纠纷后多次搜索同事车牌，且相关数据被共享给超过2000个机构。这凸显了AI技术在执法领域的潜在风险。\",\"evaluation\":\"技术进步与隐私保护之间的矛盾亟待解决。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":64},{\"topic_id\":19,\"insight\":\"本地部署大模型成为趋势，用户可自主掌控数据与算力。\",\"narrative\":\"随着ChatGPT等AI工具的普及，越来越多的用户开始关注如何在本地计算机上运行大语言模型。这一趋势不仅降低了使用门槛，还让用户能够更好地保护数据隐私并减少对云服务的依赖。\",\"evaluation\":\"本地部署为AI应用提供了更灵活的扩展路径。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":64}],\"other_news\":[{\"topic_id\":47,\"insight\":\"英特尔锐炫Pro B70显卡助力本地化AI视频创作。\",\"narrative\":\"英特尔在广州举办AIGC创作研讨会，展示了基于锐炫Pro B70显卡的本地化AI视频制作全流程方案。该方案支持MiniMax H3模型，旨在帮助中小型团队和个人创作者突破算力门槛，实现从创意到成品的快速转化。\",\"refs\":[12],\"mention_count\":1,\"cross_verify_score\":56},{\"topic_id\":46,\"insight\":\"Minimax H3无审查绘图空间引发关注。\",\"narrative\":\"Hugging Face用户发布了一个基于Minimax H3的无审查绘图空间，允许用户进行图像修复创作。该工具强调责任使用，并呼吁用户在讨论区提供反馈。\",\"refs\":[17],\"mention_count\":1,\"cross_verify_score\":55},{\"topic_id\":35,\"insight\":\"Open Discovery Challenge第四季聚焦非阿片类止痛药研发。\",\"narrative\":\"Open Discovery Challenge第四季开放报名，旨在寻找能够选择性阻断Nav1.7疼痛通道而不影响心脏hERG通道的药物分子。该挑战吸引了108名参与者，在14天内提交了9886个候选分子。\",\"refs\":[11],\"mention_count\":1,\"cross_verify_score\":56},{\"topic_id\":34,\"insight\":\"学术机构需建立正式的吹哨人保护与自我纠错机制。\",\"narrative\":\"一篇论文强调，仅仅鼓励“发声”不足以构成有效的治理系统。机构需要建立正式的吹哨人保护通道、自我纠错审查流程以及针对恶意报告的处理机制，以防止结构性问题演变为通用的人力资源投诉。\",\"refs\":[16],\"mention_count\":1,\"cross_verify_score\":55},{\"topic_id\":21,\"insight\":\"模型基准测试面临瓶颈，开发者探索架构创新。\",\"narrative\":\"开发者反映，在调整超参数和优化数据集后，模型基准性能仍难以提升。例如，Sorbet-v2模型在多数基准测试中落后于同参数范围的其他模型，这促使开发者尝试更不寻常的架构而非单纯扩大模型规模。\",\"refs\":[10],\"mention_count\":1,\"cross_verify_score\":56}],\"core_tech\":[{\"topic_id\":2,\"title\":\"CaSKG: Counterfactual-Causal Skill Graphs\",\"summary\":\"该论文提出通过反事实因果图构建来校准程序技能关系，以提升LLM代理的可执行检索效率。\",\"refs\":[5]},{\"topic_id\":4,\"title\":\"WikiSkill: Compiling Agent Experience\",\"summary\":\"WikiSkill通过持久化知识库与代理技能的协同进化，系统性地积累经验并提升跨模型性能。\",\"refs\":[6]},{\"topic_id\":3,\"title\":\"UrbanGround: From Local Perception to Spatial Agency\",\"summary\":\"UrbanGround评估多模态语言模型代理在真实城市环境中的导航与空间推理能力，指出局部感知技能难以转化为长期目标导向行为。\",\"refs\":[7]},{\"topic_id\":16,\"title\":\"TTPO: Test-Time Policy Optimization\",\"summary\":\"TTPO通过非对称蒸馏同意的rollout并惩罚不一致的rollout，实现了无需标签的测试时训练，匹配监督学习性能。\",\"refs\":[13]},{\"topic_id\":14,\"title\":\"Self-OPD: On-Policy Distillation for Flow Matching\",\"summary\":\"Self-OPD利用自探索的随机分支和归一化优势，在无需任务特定教师的情况下优化流匹配模型的速度场。\",\"refs\":[14]},{\"topic_id\":5,\"title\":\"A Modular Agent for Reliable Spatial Relation Verification\",\"summary\":\"该论文提出一种模块化医疗成像代理，通过分解空间关系验证任务，在CT扫描空间推理中超越端到端视觉语言模型。\",\"refs\":[18]}],\"ref_translations\":[{\"id\":1,\"zh_title\":\"[AINews] OpenAI shuts off Cursor\"},{\"id\":2,\"zh_title\":\"How to Run a Chatbot on Your Own Computer\"},{\"id\":3,\"zh_title\":\"The Cybersecurity Apocalypse Is Coming in ‘Months,’ AI Giants Warn\"},{\"id\":5,\"zh_title\":\"CaSKG: Counterfactual-Causal Skill Graphs for Scalable Agent Skill Retrieval\"},{\"id\":6,\"zh_title\":\"WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution\"},{\"id\":7,\"zh_title\":\"UrbanGround: From Local Perception to Spatial Agency in a Real-Scale City\"},{\"id\":13,\"zh_title\":\"TTPO: Test-Time Policy Optimization\"},{\"id\":14,\"zh_title\":\"Self-OPD: On-Policy Distillation for Flow Matching Models without Teacher\"},{\"id\":18,\"zh_title\":\"A Modular Agent for Reliable and Auditable Spatial Relation Verification in CT Scans\"}]}",
+      "at": "2026-08-30"
+    },
+    "a943d36d87ece143bb31ea7bec124efa49904b1632f85bb5af30c44dc2e32244": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"[AI新闻] OpenAI 关闭 Cursor 访问\"},{\"id\":2,\"zh_title\":\"如何在本地电脑上运行聊天机器人\"},{\"id\":3,\"zh_title\":\"AI巨头警告：网络安全末日将在‘数月’内降临\"},{\"id\":4,\"zh_title\":\"思考关于样本：基于代理推理的一致性多样本视频编辑\"},{\"id\":5,\"zh_title\":\"Ca SKG：用于可扩展代理技能检索的反事实因果技能图谱\"},{\"id\":6,\"zh_title\":\"Wiki Skill：将代理经验编译为技能进化的持久知识\"},{\"id\":7,\"zh_title\":\"城市地面：真实城市尺度下的从局部感知到空间代理\"},{\"id\":8,\"zh_title\":\"移交税：LLM 代理中的非原生轨迹延续\"},{\"id\":9,\"zh_title\":\"PILOT in the Loop：长周期代理的实时自我改进\"},{\"id\":10,\"zh_title\":\"过去几周我一直在处理一些模型，发布的是...\"},{\"id\":11,\"zh_title\":\"🧪 开放发现挑战赛 — 第4季开启：非阿片类疼痛 WHO 将其 2023 年报告命名为‘在疼痛中被遗忘’\"},{\"id\":13,\"zh_title\":\"TTPO：测试时策略优化\"},{\"id\":14,\"zh_title\":\"Self-OPD：无教师流匹配模型的有策略蒸馏\"},{\"id\":15,\"zh_title\":\"作为视觉修复上下文的评分标准用于自我演进的 UI 到代码生成\"},{\"id\":16,\"zh_title\":\"✅ 文章亮点：*吹哨、受保护披露与机构自我纠正*\"},{\"id\":17,\"zh_title\":\"使用 Minimax H3 的新 inpainting 空间，无任何审查！请负责任地使用...\"},{\"id\":18,\"zh_title\":\"用于 CT 扫描中可靠且可审计的空间关系验证的模块化代理\"},{\"id\":19,\"zh_title\":\"Aphanta：诊断任务对齐图像编辑中间件以实现多模态推理\"}]}",
+      "at": "2026-08-30"
     }
   },
   "published": {
@@ -84567,6 +84711,71 @@
         "title": "GraphMemix: Query-Aware Evidence Forests for Long-Term Multimodal Agent Memory",
         "at": "2026-08-29",
         "edition": "evening"
+      },
+      "https://www.latent.space/p/ainews-openai-shuts-off-cursor": {
+        "title": "[AINews] OpenAI shuts off Cursor",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://www.wired.com/story/how-to-run-your-own-local-llm/": {
+        "title": "How to Run a Chatbot on Your Own Computer",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://www.wired.com/story/security-news-this-week-the-cybersecurity-apocalypse-is-coming-in-months-ai-giants-warn/": {
+        "title": "The Cybersecurity Apocalypse Is Coming in ‘Months,’ AI Giants Warn",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2608.27454": {
+        "title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2608.27456": {
+        "title": "UrbanGround: From Local Perception to Spatial Agency in a Real-Scale City",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://huggingface.co/posts/CodeSoft/616792874930010": {
+        "title": "Over the past week or so, I've been working on some models, those released being and . In general, I'm a little confused because no matter what hyperparameters I change or datasets I add/remove, the benchmarks never move up. In a recent project, where I attached a TN-gram block to Sorbet-v2-25M, it still stayed the same on benchmarks despite the TN-gram clearly learning (due to the perplexity being lower with the TN-gram attached). When I changed the corpus to favor higher density text (the first paragraphs of Wikipedia articles and synthetic math), the benchmarks either stayed flat or went down. Does anyone have ideas on what I can do to improve my models? I'd really appreciate any feedback!",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://huggingface.co/posts/SeaWolf-AI/389284341716588": {
+        "title": "🧪 Open Discovery Challenge — Season 4 is open: non-opioid pain WHO titled its 2023 report \"Left behind in pain.\" The same drug kills by excess in one part of the world and, by its absence, lets people die in agony elsewhere. About 80% of the ~600,000 drug-related deaths WHO estimated for 2019 involved opioids. The same report records a 5-fold to 63-fold gap in morphine consumption between rich and poor countries: the richest 10% use 90% of what circulates. Everyone else endures surgery, and terminal cancer, without it. Both problems have one answer: a painkiller that does not create dependence. Nav1.7 has come closest. People born without a working copy of this channel feel no pain while every other sensation stays normal — validated not in animals but in humans. There is still no drug, and the difficulty is not the target but the discrimination. The body carries several similar sodium channels, and blocking the heart's hERG channel alongside causes fatal arrhythmia. Several candidates were discontinued for exactly that. Season 4 asks one question: can you block the pain channel alone? Target — Nav1.7 VSD4, the domain IV voltage sensor where this inhibitor class binds Anti-target — hERG pore, computed as the tetramer: four subunits together form the space a drug enters, and a monomer misses the binders that matter. Closes 2027-01-31 · Prize USD 1,000 to the season's #1 Any model, any harness. However you found the candidate, it meets the same rubric. 14 days, 9,886 candidates, 108 participants ODC opened on 2026-08-15. In the fourteen days since, 9,886 candidate molecules have come from 108 participants across four seasons — malaria, tuberculosis, Chagas disease, and now non-opioid pain. About 700 a day, from people who mostly do not know each other. The candidates are the point. The leaderboard is only how we keep score. 👉",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://www.qbitai.com/2026/08/480787.html": {
+        "title": "32GB大显存加持，英特尔锐炫Pro B70搞定AI漫剧创作",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2608.27448": {
+        "title": "TTPO: Test-Time Policy Optimization",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2608.26872": {
+        "title": "Self-OPD: On-Policy Distillation for Flow Matching Models without Teacher",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://huggingface.co/posts/kanaria007/392083099446479": {
+        "title": "✅ Article highlight: *Whistleblowing, Protected Disclosure, and Institutional Self-Correction* (art-60-289, v0.1) TL;DR: This article argues that “we encourage people to speak up” is not a governance system. When someone reports hidden override, misconduct, anomaly, or buried risk, the institution needs more than an inbox. 289 separates four questions: is the report admissible, what protection is owed, what self-correction review is required, and how should weak, mistaken, or malicious reports be handled? Read: Why it matters: • makes whistleblowing a formal self-correction path, not gossip • separates admissibility from truth • separates protection from vindication • keeps good-faith mistakes distinct from malicious fabrication • treats retaliation risk as a governance surface • prevents structural anomalies from collapsing into generic HR complaints What’s inside: • protected-disclosure channel profiles • whistleblower protection notes • self-correction review records • identity shielding, access narrowing, retaliation freeze, and evidence preservation • supported, partially supported, unsupported-good-faith, and malicious report outcomes • workflows that reopen incident, override, contradiction, or public-claim surfaces when needed Key idea: Do not say: *“we have a speak-up culture.”* Say: *“this report entered this protected channel, this protection posture activated before merits were decided, this self-correction review reopened these institutional surfaces, and unsupported portions were separated from bad-faith findings.”* A mature institution does not merely receive criticism. It knows how to correct itself before outsiders have to do it for them.",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://huggingface.co/posts/RedSparkie/927239398370968": {
+        "title": "New inpainting space using H3 from Minimax without any kind of censorship! Use it with responsability: And give it some love 🫶 Leave your opinions and suggestiona on the discussion tab, please!",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2608.21140": {
+        "title": "A Modular Agent for Reliable and Auditable Spatial Relation Verification in CT Scans",
+        "at": "2026-08-29",
+        "edition": "evening"
       }
     }
   },
@@ -102688,6 +102897,71 @@
         "title": "GraphMemix: Query-Aware Evidence Forests for Long-Term Multimodal Agent Memory",
         "at": "2026-08-29",
         "edition": "evening"
+      },
+      "79f190bf8caeb7d0": {
+        "title": "[AINews] OpenAI shuts off Cursor",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "675ba7ac01c1571d": {
+        "title": "How to Run a Chatbot on Your Own Computer",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "7c5127a998f817ea": {
+        "title": "The Cybersecurity Apocalypse Is Coming in ‘Months,’ AI Giants Warn",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "33e603e0731a3865": {
+        "title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "46d59edf3a4bf321": {
+        "title": "UrbanGround: From Local Perception to Spatial Agency in a Real-Scale City",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "2d89beba2062d8de": {
+        "title": "Over the past week or so, I've been working on some models, those released being and . In general, I'm a little confused because no matter what hyperparameters I change or datasets I add/remove, the benchmarks never move up. In a recent project, where I attached a TN-gram block to Sorbet-v2-25M, it still stayed the same on benchmarks despite the TN-gram clearly learning (due to the perplexity being lower with the TN-gram attached). When I changed the corpus to favor higher density text (the first paragraphs of Wikipedia articles and synthetic math), the benchmarks either stayed flat or went down. Does anyone have ideas on what I can do to improve my models? I'd really appreciate any feedback!",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "4b66af88cc39c0e0": {
+        "title": "🧪 Open Discovery Challenge — Season 4 is open: non-opioid pain WHO titled its 2023 report \"Left behind in pain.\" The same drug kills by excess in one part of the world and, by its absence, lets people die in agony elsewhere. About 80% of the ~600,000 drug-related deaths WHO estimated for 2019 involved opioids. The same report records a 5-fold to 63-fold gap in morphine consumption between rich and poor countries: the richest 10% use 90% of what circulates. Everyone else endures surgery, and terminal cancer, without it. Both problems have one answer: a painkiller that does not create dependence. Nav1.7 has come closest. People born without a working copy of this channel feel no pain while every other sensation stays normal — validated not in animals but in humans. There is still no drug, and the difficulty is not the target but the discrimination. The body carries several similar sodium channels, and blocking the heart's hERG channel alongside causes fatal arrhythmia. Several candidates were discontinued for exactly that. Season 4 asks one question: can you block the pain channel alone? Target — Nav1.7 VSD4, the domain IV voltage sensor where this inhibitor class binds Anti-target — hERG pore, computed as the tetramer: four subunits together form the space a drug enters, and a monomer misses the binders that matter. Closes 2027-01-31 · Prize USD 1,000 to the season's #1 Any model, any harness. However you found the candidate, it meets the same rubric. 14 days, 9,886 candidates, 108 participants ODC opened on 2026-08-15. In the fourteen days since, 9,886 candidate molecules have come from 108 participants across four seasons — malaria, tuberculosis, Chagas disease, and now non-opioid pain. About 700 a day, from people who mostly do not know each other. The candidates are the point. The leaderboard is only how we keep score. 👉",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "9d68fa721a989485": {
+        "title": "32GB大显存加持，英特尔锐炫Pro B70搞定AI漫剧创作",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "84123328268c17b9": {
+        "title": "TTPO: Test-Time Policy Optimization",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "09163caaf0baf886": {
+        "title": "Self-OPD: On-Policy Distillation for Flow Matching Models without Teacher",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "7f594c08ef028a31": {
+        "title": "✅ Article highlight: *Whistleblowing, Protected Disclosure, and Institutional Self-Correction* (art-60-289, v0.1) TL;DR: This article argues that “we encourage people to speak up” is not a governance system. When someone reports hidden override, misconduct, anomaly, or buried risk, the institution needs more than an inbox. 289 separates four questions: is the report admissible, what protection is owed, what self-correction review is required, and how should weak, mistaken, or malicious reports be handled? Read: Why it matters: • makes whistleblowing a formal self-correction path, not gossip • separates admissibility from truth • separates protection from vindication • keeps good-faith mistakes distinct from malicious fabrication • treats retaliation risk as a governance surface • prevents structural anomalies from collapsing into generic HR complaints What’s inside: • protected-disclosure channel profiles • whistleblower protection notes • self-correction review records • identity shielding, access narrowing, retaliation freeze, and evidence preservation • supported, partially supported, unsupported-good-faith, and malicious report outcomes • workflows that reopen incident, override, contradiction, or public-claim surfaces when needed Key idea: Do not say: *“we have a speak-up culture.”* Say: *“this report entered this protected channel, this protection posture activated before merits were decided, this self-correction review reopened these institutional surfaces, and unsupported portions were separated from bad-faith findings.”* A mature institution does not merely receive criticism. It knows how to correct itself before outsiders have to do it for them.",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "10d8c7da2da545ae": {
+        "title": "New inpainting space using H3 from Minimax without any kind of censorship! Use it with responsability: And give it some love 🫶 Leave your opinions and suggestiona on the discussion tab, please!",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "1b7043cad28264de": {
+        "title": "A Modular Agent for Reliable and Auditable Spatial Relation Verification in CT Scans",
+        "at": "2026-08-29",
+        "edition": "evening"
       }
     }
   },
@@ -113925,6 +114199,54 @@
         "title": "阿里云调整通义千问系列大模型价格，降低企业使用成本。",
         "text": "阿里云调整通义千问系列大模型价格，降低企业使用成本。 阿里云调整通义千问系列大模型价格，降低企业使用成本。 阿里云发布通义千问系列大模型价格调整通知，旨在降低企业使用成本。此次调整可能加速大模型在垂直行业的落地应用，提升市场竞争力。 阿里云发布通义千问系列大模型价格调整通知，旨在降低企业使用成本。此次调整可能加速大模型在垂直行业的落地应用，提升市场竞争力。价格调整有助于提升模型的市场渗透率。 阿里云发布通义千问系列大模型价格调整通知，旨在降低企业使用成本。此次调整可能加速大模型在垂直行业的落地应用，提升市场竞争力。价格调整有助于提升模型的市场渗透率。 价格调整有助于提升模型的市场渗透率。",
         "at": "2026-08-28",
+        "edition": "evening"
+      },
+      "c5254ada5691e8597cf8": {
+        "title": "本地部署大模型成为趋势，用户可自主掌控数据与算力。",
+        "text": "本地部署大模型成为趋势，用户可自主掌控数据与算力。 本地部署大模型成为趋势，用户可自主掌控数据与算力。 随着ChatGPT等AI工具的普及，越来越多的用户开始关注如何在本地计算机上运行大语言模型。这一趋势不仅降低了使用门槛，还让用户能够更好地保护数据隐私并减少对云服务的依赖。 随着ChatGPT等AI工具的普及，越来越多的用户开始关注如何在本地计算机上运行大语言模型。这一趋势不仅降低了使用门槛，还让用户能够更好地保护数据隐私并减少对云服务的依赖。本地部署为AI应用提供了更灵活的扩展路径。 随着ChatGPT等AI工具的普及，越来越多的用户开始关注如何在本地计算机上运行大语言模型。这一趋势不仅降低了使用门槛，还让用户能够更好地保护数据隐私并减少对云服务的依赖。本地部署为AI应用提供了更灵活的扩展路径。 本地部署为AI应用提供了更灵活的扩展路径。",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "84c1f3f3e6e53c83808c": {
+        "title": "AI巨头警告网络安全危机迫在眉睫，数据滥用风险加剧。",
+        "text": "AI巨头警告网络安全危机迫在眉睫，数据滥用风险加剧。 AI巨头警告网络安全危机迫在眉睫，数据滥用风险加剧。 AI巨头警告称网络安全危机可能在数月内爆发，并指出自动车牌识别摄像头等技术的滥用问题日益严重。例如，有警察被指控在情感纠纷后多次搜索同事车牌，且相关数据被共享给超过2000个机构。这凸显了AI技术在执法领域的潜在风险。 AI巨头警告称网络安全危机可能在数月内爆发，并指出自动车牌识别摄像头等技术的滥用问题日益严重。例如，有警察被指控在情感纠纷后多次搜索同事车牌，且相关数据被共享给超过2000个机构。这凸显了AI技术在执法领域的潜在风险。技术进步与隐私保护之间的矛盾亟待解决。 AI巨头警告称网络安全危机可能在数月内爆发，并指出自动车牌识别摄像头等技术的滥用问题日益严重。例如，有警察被指控在情感纠纷后多次搜索同事车牌，且相关数据被共享给超过2000个机构。这凸显了AI技术在执法领域的潜在风险。技术进步与隐私保护之间的矛盾亟待解决。 技术进步与隐私保护之间的矛盾亟待解决。",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "03f98f5139f91155fdc3": {
+        "title": "英特尔锐炫Pro B70显卡助力本地化AI视频创作。",
+        "text": "英特尔锐炫Pro B70显卡助力本地化AI视频创作。 英特尔锐炫Pro B70显卡助力本地化AI视频创作。 英特尔在广州举办AIGC创作研讨会，展示了基于锐炫Pro B70显卡的本地化AI视频制作全流程方案。该方案支持MiniMax H3模型，旨在帮助中小型团队和个人创作者突破算力门槛，实现从创意到成品的快速转化。 英特尔在广州举办AIGC创作研讨会，展示了基于锐炫Pro B70显卡的本地化AI视频制作全流程方案。该方案支持MiniMax H3模型，旨在帮助中小型团队和个人创作者突破算力门槛，实现从创意到成品的快速转化。 英特尔在广州举办AIGC创作研讨会，展示了基于锐炫Pro B70显卡的本地化AI视频制作全流程方案。该方案支持MiniMax H3模型，旨在帮助中小型团队和个人创作者突破算力门槛，实现从创意到成品的快速转化。当前信号具备参考价值 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "a685342850b7726399bd": {
+        "title": "OpenAI终止与Cursor合作，开发者生态面临新的整合挑战。",
+        "text": "OpenAI终止与Cursor合作，开发者生态面临新的整合挑战。 OpenAI终止与Cursor合作，开发者生态面临新的整合挑战。 OpenAI宣布终止与Cursor的合作，原因是Cursor已被SpaceX收购。根据协议，Cursor对OpenAI模型的直接访问权限将于11月12日结束。这一决定主要影响依赖OpenAI模型的开发者，标志着AI巨头在收购事件后对合作伙伴关系的重新调整。 OpenAI宣布终止与Cursor的合作，原因是Cursor已被SpaceX收购。根据协议，Cursor对OpenAI模型的直接访问权限将于11月12日结束。这一决定主要影响依赖OpenAI模型的开发者，标志着AI巨头在收购事件后对合作伙伴关系的重新调整。此次合作终止反映了AI模型分发与第三方工具整合的复杂性。 OpenAI宣布终止与Cursor的合作，原因是Cursor已被SpaceX收购。根据协议，Cursor对OpenAI模型的直接访问权限将于11月12日结束。这一决定主要影响依赖OpenAI模型的开发者，标志着AI巨头在收购事件后对合作伙伴关系的重新调整。",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "61bdd4d3c8110dc514fe": {
+        "title": "Minimax H3无审查绘图空间引发关注。",
+        "text": "Minimax H3无审查绘图空间引发关注。 Minimax H3无审查绘图空间引发关注。 Hugging Face用户发布了一个基于Minimax H3的无审查绘图空间，允许用户进行图像修复创作。该工具强调责任使用，并呼吁用户在讨论区提供反馈。 Hugging Face用户发布了一个基于Minimax H3的无审查绘图空间，允许用户进行图像修复创作。该工具强调责任使用，并呼吁用户在讨论区提供反馈。 Hugging Face用户发布了一个基于Minimax H3的无审查绘图空间，允许用户进行图像修复创作。该工具强调责任使用，并呼吁用户在讨论区提供反馈。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "b39a208e2e8d086cb38e": {
+        "title": "模型基准测试面临瓶颈，开发者探索架构创新。",
+        "text": "模型基准测试面临瓶颈，开发者探索架构创新。 模型基准测试面临瓶颈，开发者探索架构创新。 开发者反映，在调整超参数和优化数据集后，模型基准性能仍难以提升。例如，Sorbet-v2模型在多数基准测试中落后于同参数范围的其他模型，这促使开发者尝试更不寻常的架构而非单纯扩大模型规模。 开发者反映，在调整超参数和优化数据集后，模型基准性能仍难以提升。例如，Sorbet-v2模型在多数基准测试中落后于同参数范围的其他模型，这促使开发者尝试更不寻常的架构而非单纯扩大模型规模。 开发者反映，在调整超参数和优化数据集后，模型基准性能仍难以提升。例如，Sorbet-v2模型在多数基准测试中落后于同参数范围的其他模型，这促使开发者尝试更不寻常的架构而非单纯扩大模型规模。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "1e5df27c9e8f978d9179": {
+        "title": "Open Discovery Challenge第四季聚焦非阿片类止痛药研发。",
+        "text": "Open Discovery Challenge第四季聚焦非阿片类止痛药研发。 Open Discovery Challenge第四季聚焦非阿片类止痛药研发。 Open Discovery Challenge第四季开放报名，旨在寻找能够选择性阻断Nav1.7疼痛通道而不影响心脏hERG通道的药物分子。该挑战吸引了108名参与者，在14天内提交了9886个候选分子。 Open Discovery Challenge第四季开放报名，旨在寻找能够选择性阻断Nav1.7疼痛通道而不影响心脏hERG通道的药物分子。该挑战吸引了108名参与者，在14天内提交了9886个候选分子。 Open Discovery Challenge第四季开放报名，旨在寻找能够选择性阻断Nav1.7疼痛通道而不影响心脏hERG通道的药物分子。该挑战吸引了108名参与者，在14天内提交了9886个候选分子。当前信号具备参考价值 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-08-29",
+        "edition": "evening"
+      },
+      "6f0b6b2f91d3fcff6eab": {
+        "title": "学术机构需建立正式的吹哨人保护与自我纠错机制。",
+        "text": "学术机构需建立正式的吹哨人保护与自我纠错机制。 学术机构需建立正式的吹哨人保护与自我纠错机制。 一篇论文强调，仅仅鼓励“发声”不足以构成有效的治理系统。机构需要建立正式的吹哨人保护通道、自我纠错审查流程以及针对恶意报告的处理机制，以防止结构性问题演变为通用的人力资源投诉。 一篇论文强调，仅仅鼓励“发声”不足以构成有效的治理系统。机构需要建立正式的吹哨人保护通道、自我纠错审查流程以及针对恶意报告的处理机制，以防止结构性问题演变为通用的人力资源投诉。 一篇论文强调，仅仅鼓励“发声”不足以构成有效的治理系统。机构需要建立正式的吹哨人保护通道、自我纠错审查流程以及针对恶意报告的处理机制，以防止结构性问题演变为通用的人力资源投诉。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-08-29",
         "edition": "evening"
       }
     }
