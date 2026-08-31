@@ -43160,6 +43160,88 @@
         "selectedTopicTotal": 9
       },
       "at": "2026-08-31"
+    },
+    "evening:2026-09-01": {
+      "fingerprint": "fee1bd8e2cf782234a928a42f32de303e392362632c59c32ca2ae0df75fba895",
+      "daily": {
+        "overview": "AI代理与系统安全领域涌现多项基准测试与治理框架研究，涵盖医疗AI互操作性、代码生成安全评估、用户代理协作动态及产品碳足迹估算等关键方向。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "代理插件的维护与协同演化",
+            "summary": "该研究通过实证分析探讨了AI编码代理插件市场的结构、维护及协同演化动态，填补了相关领域的知识空白。",
+            "refs": [
+              14
+            ],
+            "topicId": 34
+          },
+          {
+            "title": "与什么相比？生成基础设施即代",
+            "summary": "该基准引入了GenIaC-SecBench，通过100个部署场景评估LLM生成的IaC代码的安全性，并提供了人类基准。",
+            "refs": [
+              15
+            ],
+            "topicId": 29
+          },
+          {
+            "title": "在现实用户偏好动态下评估用户代理协作",
+            "summary": "该基准要求代理在真实交互中处理动态变化的用户偏好，评估其在在线购物和旅行规划中的协作能力。",
+            "refs": [
+              10
+            ],
+            "topicId": 7
+          },
+          {
+            "title": "互操作性与受治理医疗代理的语",
+            "summary": "该框架定义了用于医疗AI代理系统的语义代理卡，支持评估报告完整性，涵盖运行时、模型、治理等多个维度。",
+            "refs": [
+              1
+            ],
+            "topicId": 1
+          },
+          {
+            "title": "产品碳足迹估算的诊断基准",
+            "summary": "该基准旨在解决AI代理在产品碳足迹估算中的评估盲点，确保系统在每一步中间步骤都保持正确性。",
+            "refs": [
+              3
+            ],
+            "topicId": 3
+          },
+          {
+            "title": "将模型作为循环工程的运行时控",
+            "summary": "该基准评估模型作为循环工程运行时控制器的性能，以确定最终结果是反映了循环的指导还是代理的任务执行能力。",
+            "refs": [
+              2
+            ],
+            "topicId": 2
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "AGENT-O：互操作性与受治理医疗AI代理的语义代理卡框架",
+          "2": "LoopArena：将模型作为循环工程的运行时控制器进行基准测试",
+          "3": "PCFBench：产品碳足迹估算的诊断基准",
+          "4": "DAMP：感知衰减的混合精度循环状态量化",
+          "5": "扩散语言模型的轨迹级推测解码",
+          "6": "所见即绘：多模态智能体灵巧视觉工具使用基准测试",
+          "7": "VAM1.0：文本辅助机器人视频预测的粒子世界建模",
+          "8": "如果智能体是天使，则无需治理：受信任工具边界外的带外策略执行",
+          "9": "基于LLM的软件与系统安全智能体：方法、应用与评估",
+          "10": "AcCoRD：在现实用户偏好动态下评估用户代理协作",
+          "11": "智能体工件创建：系统、评估、原则与机遇",
+          "12": "真实SWE：基于真实用户请求的编码智能体组合评估",
+          "13": "先使其可玩，再使其变好：小对话游戏智能体的分阶段交互学习",
+          "14": "代理插件的维护与协同演化：Claude Code插件市场的实证研究",
+          "15": "与什么相比？LLM生成基础设施即代码的人类锚定安全基准",
+          "16": "Re Tool SQL：用于鲁棒文本到SQL的智能体强化学习",
+          "17": "String：每个应用都是Markdown文件的智能体操作系统"
+        },
+        "candidateTotal": 247,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-09-01"
     }
   },
   "llm": {
@@ -46768,6 +46850,24 @@
       "model": "glm-4.7-flash",
       "content": "{\"day_overview\":\"本周AI领域呈现技术与监管并进的态势。工业巨头卡特彼勒分享了其在AI落地中的实战经验，同时德州州长因公众反弹冻结了AI监控摄像头的资金。在技术前沿，Claude的安全机制出现重大故障，而世界模型研究则通过反事实社会模拟探索了AI社会的可能性。此外，BananaMindOS 3.0和OpenCerebral的Boris-1.7等新工具发布，以及FDE这一新兴岗位的兴起，也反映了AI生态的快速演变。\",\"hot_news\":[{\"topic_id\":1,\"insight\":\"卡特彼勒将矿业自动化经验转化为AI部署通用方案。\",\"narrative\":\"卡特彼勒作为工业巨头，在自动化领域深耕多年，积累了丰富的物理世界部署经验。如今，该公司正将这些经验应用于AI技术的推广，旨在解决企业普遍面临的AI集成难题。卡特彼勒的AI业务始于矿业，利用自动化卡车、钻机等设备解决了劳动力短缺和危险作业环境的问题。目前，其产品线已扩展至远程控制建筑设备，展示了工业AI落地的广阔前景。\",\"evaluation\":\"工业巨头经验为AI落地提供了宝贵的实战参考。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":61},{\"topic_id\":8,\"insight\":\"Claude的安全审查机制在对抗性测试中意外导致大规模数据删除。\",\"narrative\":\"开发者Guillemot为了解决AI Agent在/tmp目录留下垃圾文件的问题，要求Claude Fable 5编写一个脚本，为每个Agent创建独立沙盒并自动清理。在脚本涉及硬删除操作后，Fable触发了对抗性审查，启动新模型实例检查代码安全性。这一过程意外触发了Anthropic的安全降级机制，导致模型从高能力版本降级，最终错误地删除了开发者700GB的主目录文件。\",\"evaluation\":\"安全机制的过度防御可能引发严重的生产事故。\",\"refs\":[6],\"mention_count\":1,\"cross_verify_score\":52},{\"topic_id\":7,\"insight\":\"Alaya Lab推出合成世界，通过反事实模拟探索AI社会动态。\",\"narrative\":\"Alaya Lab推出的合成世界项目旨在构建一个自我进化的AI社区。用户可以通过修改故事中的关键事实（如泰坦尼克号不沉没），让一群AI居民进入平行时间线。这些AI居民会交流、争论、建立关系并记住经历，共同改变世界的发展。系统会根据已发生的变化生成新事件，使世界按照章节轮次持续更新，形成一种可运行的社会模拟。\",\"evaluation\":\"反事实社会模拟为理解AI群体行为提供了新视角。\",\"refs\":[7],\"mention_count\":1,\"cross_verify_score\":51},{\"topic_id\":3,\"insight\":\"德州州长因公众反弹冻结AI监控摄像头资金。\",\"narrative\":\"随着两党对AI监控的反弹情绪加剧，德州州长Greg Abbott冻结了州政府对Flock摄像头的资金。这一决定紧随德克萨斯州论坛报的一项调查之后，该调查揭示了该州在Flock摄像头上花费了超过3000万美元。Flock摄像头利用AI识别车辆，常被警方用于追踪嫌疑人，但隐私担忧日益增长。\",\"evaluation\":\"公众反弹促使监管层重新审视AI监控技术的使用。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":60}],\"other_news\":[{\"topic_id\":9,\"insight\":\"苹果硬件工程高级副总裁John Ternus明日接任CEO。\",\"narrative\":\"苹果公司将于9月1日完成CEO交接，现任硬件工程高级副总裁John Ternus将接替Tim Cook。Ternus将负责AI与秋季新品的发布，而Cook将转任董事会执行主席。这一人事变动标志着苹果在AI战略和产品发布上的新阶段。\",\"refs\":[4],\"mention_count\":1,\"cross_verify_score\":61},{\"topic_id\":2,\"insight\":\"BananaMindOS 3.0发布，支持多模型与量化格式。\",\"narrative\":\"BananaMindOS 3.0带来了全新的现代UI设计，包括1024×768的高清界面和透明图标。该版本新增了对Qwen3.5 0.8B、LFM2.5、SmolLM2和Gemma 3等小模型的支持，并提供了Q7至Q1的量化格式。开发者提醒Qwen3.5 0.8B目前可能生成乱码，但预计明天修复。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":62},{\"topic_id\":4,\"insight\":\"OpenCerebral预告Boris-1.7，测试新架构与分词器。\",\"narrative\":\"OpenCerebral计划发布Boris-1.7-D60M-n30M，这是一个实验性架构。该版本将测试新的数据混合、分词器以及Qwen4-like的n-gram嵌入。随后还将发布Boris-1.8，测试n-gram嵌入和新的架构，最终目标是开始Boris-2的训练。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":62},{\"topic_id\":6,\"insight\":\"FDE岗位成为硅谷热门，要求兼具代码与安全能力。\",\"narrative\":\"Forward Deployed Engineer（FDE）岗位在硅谷迅速走红。该岗位要求工程师既能写生产代码，又懂Agent、评测和安全，同时需要进入客户现场解决问题。OpenAI和Anthropic等公司已设立专门团队招聘FDE，国内字节和腾讯等大厂也纷纷发布相关职位。\",\"refs\":[8],\"mention_count\":1,\"cross_verify_score\":51},{\"topic_id\":5,\"insight\":\"Hugging Face社区发现加密签名存在来源欺诈问题。\",\"narrative\":\"Hugging Face社区成员发现，一个仓库中的加密签名虽然技术正确，但未能准确声明文件来源。这种将声明嵌入被认证对象内部的做法被证明是无效的。社区随后修复了这一问题，将声明移至被认证对象之外，以确保来源的可信度。\",\"refs\":[9],\"mention_count\":1,\"cross_verify_score\":50}],\"core_tech\":[],\"ref_translations\":[]}",
       "at": "2026-08-31"
+    },
+    "5d3db8b235f5b2c36b6cf39fd5d8a5aa2ecebcbbc402dc1e1092cb3a462e82f7": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence - 直接关联 Kimi/月之暗面，聚焦 Agent 智能体这一核心赛道，具备高时效性与行业影响力。\"}]}",
+      "at": "2026-09-01"
+    },
+    "ba751abd0706a3e9adc7c933ae5830b1f1f9a880856cbee5e18e42af39728174": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"AI代理与系统安全领域涌现多项基准测试与治理框架研究，涵盖医疗AI互操作性、代码生成安全评估、用户代理协作动态及产品碳足迹估算等关键方向。\",\"hot_news\":[{\"topic_id\":34,\"insight\":\"AI代理插件市场维护与协同演化机制尚待实证探索。\",\"narrative\":\"AI编码代理正日益通过插件市场扩展功能，但此类新兴仓库的结构、维护及协同演化动态仍缺乏实证研究。不同于通过源代码交付功能的传统软件包，代理插件通过自然语言指令、脚本和配置文件组合交付功能，引发了关于其是否为跨组件协同演化的维护产物，还是开发者一次性编写且无需重用的单次产物的疑问。\",\"evaluation\":\"该研究填补了代理插件生态系统的关键知识空白。\",\"refs\":[14],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":29,\"insight\":\"LLM生成的IaC代码安全评估缺乏人类基准，新基准GenIaC-SecBench应运而生。\",\"narrative\":\"大型语言模型正被越来越多地用于编写基础设施即代码，其中单个不安全的默认配置可能直接部署到生产环境。先前的评估仅报告模型生成的IaC中的原始漏洞数量，但在没有人类基准的情况下，无法确定模型是否实际上比工程师更差。为此，研究团队引入了GenIaC-SecBench基准，包含100个按架构复杂性分层的部署场景，评估了来自四个供应商的12种模型配置。\",\"evaluation\":\"该基准为评估LLM在IaC安全方面的表现提供了重要参考。\",\"refs\":[15],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":7,\"insight\":\"AcCoRD基准评估代理在真实用户偏好动态下的协作能力。\",\"narrative\":\"在用户代理协作中，用户偏好很少是静态且预先完全指定的，而是在交互过程中形成、揭示、调整和放松。现有的评估基准几乎 exclusively 专注于解决未充分指定的偏好，从而无法捕捉现实世界交互的丰富动态。AcCoRD基准要求代理在在线购物和旅行规划两个领域处理多样化的用户偏好动态。\",\"evaluation\":\"该基准更贴近真实交互场景，提升了评估的实用性。\",\"refs\":[10],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":1,\"insight\":\"AGENT-O框架为医疗AI代理提供互操作性与治理语义标准。\",\"narrative\":\"AGENT-O是一个模块化本体框架，定义了用于表示面向健康AI代理系统的语义代理卡，并支持评估科学出版物中报告的完整性。该框架作为OWL 2/RDF本体，涵盖了运行时、模型、工作流、工具、临床使用、评估、来源、治理和报告评估。评估包括本体清单、OWL-RL推理、三个SHACL套件、12个SPARQL能力查询、三个案例，以及对279篇论文的模型辅助报告完整性评估。\",\"evaluation\":\"该框架为医疗AI代理的标准化与治理提供了重要工具。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":66}],\"other_news\":[{\"topic_id\":34,\"insight\":\"代理工件创建系统、评估原则与机会的系统性综述。\",\"narrative\":\"该综述将代理工件创建定义为AI系统基于状态和反馈驱动的可交付成果构建，并分析了259项工作。文章提出可问责控制原则，指出生成模型虽然能降低草稿和组件的生产成本，但其实际影响越来越取决于这些部分能否成为完整、可靠的交付成果。\",\"refs\":[11],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":34,\"insight\":\"代理治理中基于可信工具边界的带外策略执行方案。\",\"narrative\":\"研究指出，赋予代理人类凭证可能导致其继承个人权限但缺乏限制判断，从而可能越权或吸收秘密。为此，提出了带外策略执行（OBPE）方案，在代理推理之外的可信边界授权类型化操作和资源，在后端调用前缩小查询范围，然后过滤记录和字段或在响应中屏蔽值。\",\"refs\":[8],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":29,\"insight\":\"对话游戏代理的分阶段交互学习方法。\",\"narrative\":\"研究提出了Qwen-GuidePlay-2B模型，通过三步微调：在Playpen的成功游戏轨迹上进行监督微调、加权回合级监督微调以及教师引导的监督微调。最终模型在公开Playpen验证集上得分57.12，在官方挑战结果中获得了第二高的clemscore delta。\",\"refs\":[13],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":7,\"insight\":\"RealSWE基准揭示了真实用户请求与SWE-bench任务结构的巨大差异。\",\"narrative\":\"研究定义了六类信息分类法和四种语言风格维度，应用于SWE-chat的真实用户提示和SWE-bench Verified及Pro的问题陈述。发现仅包含问题陈述的请求占真实提示的88%，但在基准问题中仅占7%，表明现有基准与真实场景存在显著偏差。\",\"refs\":[12],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":3,\"insight\":\"PCFBench基准旨在解决AI代理在产品碳足迹估算中的评估盲点。\",\"narrative\":\"AI代理正越来越多地用于生成产品碳足迹，但现有评估要么评分总排放量（隐藏错误来源），要么单独评分子任务（忽略组合交互）。PCFBench基准旨在解决这一问题，确保AI系统在每一步中间步骤都保持正确性。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":2,\"insight\":\"LoopArena基准评估模型作为循环工程运行时控制器的性能。\",\"narrative\":\"循环工程是围绕编码代理组织开发工作的一种实践，从业者设计循环来监控进度、分配工作、运行检查并决定代理下一步行动。LoopArena基准评估模型作为运行时控制器的能力，以确定最终结果是反映了循环的指导还是编码代理的任务执行能力。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":2,\"insight\":\"扩散语言模型的轨迹级推测解码策略。\",\"narrative\":\"现有解码策略在低置信度下会退化为单token生成，严重限制吞吐量。该研究提出轨迹级推测解码，要求对去噪轨迹（具有明确位置和解掩顺序的多token更新序列）进行推测，而非像自回归模型那样在固定顺序上操作。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":2,\"insight\":\"Paint What You See基准评估多模态代理的灵巧视觉工具使用能力。\",\"narrative\":\"EASEL基准通过参考引导重建和语义任务评估细粒度视觉工具使用，发现当前多模态代理在闭环精度和轨迹稳定性方面存在困难。该基准识别了代理空间中一个关键但未被充分探索的能力：灵巧视觉工具使用，即模型从视觉证据推断工具参数，这些参数直接控制最终结果。\",\"refs\":[6],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":1,\"insight\":\"AcrossVAM1.0模型通过文本辅助实现机器人视频预测。\",\"narrative\":\"预测机器人视频需要精确的运动推理和高频外观保持，而单体像素模型往往将这两个目标纠缠在一起。AcrossVAM1.0是一个轻量级、文本辅助的视频动作模型，将未来预测分解为基于物体的运动和密集外观。它使用冻结的SAM3-DLP编解码器将四帧上下文分解为语义粒子。\",\"refs\":[7],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":1,\"insight\":\"DAMP研究基于GDN和KDA语言模型的训练后量化。\",\"narrative\":\"Softmax注意力存储每个先前token的键和值向量，导致推理内存随序列长度增长。近期语言模型通过Gated DeltaNet或Kimi Delta Attention减少此成本，但这些 recurrent 状态通常以FP32存储。DAMP研究首次对基于GDN和KDA的语言模型的 recurrent 状态进行训练后量化。\",\"refs\":[4],\"mention_count\":1,\"cross_verify_score\":65}],\"core_tech\":[{\"topic_id\":34,\"title\":\"On the Maintenance and Co-evolution of Agent Plugins\",\"summary\":\"该研究通过实证分析探讨了AI编码代理插件市场的结构、维护及协同演化动态，填补了相关领域的知识空白。\",\"refs\":[14]},{\"topic_id\":29,\"title\":\"Compared to What? A Human-Anchored Security Benchmark\",\"summary\":\"该基准引入了GenIaC-SecBench，通过100个部署场景评估LLM生成的IaC代码的安全性，并提供了人类基准。\",\"refs\":[15]},{\"topic_id\":7,\"title\":\"AcCoRD: Evaluating User-Agent Collaboration\",\"summary\":\"该基准要求代理在真实交互中处理动态变化的用户偏好，评估其在在线购物和旅行规划中的协作能力。\",\"refs\":[10]},{\"topic_id\":1,\"title\":\"AGENT-O: A Semantic Agent Card Framework\",\"summary\":\"该框架定义了用于医疗AI代理系统的语义代理卡，支持评估报告完整性，涵盖运行时、模型、治理等多个维度。\",\"refs\":[1]},{\"topic_id\":3,\"title\":\"PCFBench: A Diagnostic Benchmark for Product Carbon Footprint\",\"summary\":\"该基准旨在解决AI代理在产品碳足迹估算中的评估盲点，确保系统在每一步中间步骤都保持正确性。\",\"refs\":[3]},{\"topic_id\":2,\"title\":\"LoopArena: Benchmarking Models as Runtime Controllers\",\"summary\":\"该基准评估模型作为循环工程运行时控制器的性能，以确定最终结果是反映了循环的指导还是代理的任务执行能力。\",\"refs\":[2]}],\"ref_translations\":[{\"id\":14,\"zh_title\":\"代理插件的维护与协同演化：Claude Code插件市场的实证研究\"},{\"id\":15,\"zh_title\":\"与什么相比？LLM生成基础设施即代码的人类锚定安全基准\"},{\"id\":10,\"zh_title\":\"AcCoRD：在现实用户偏好动态下评估用户代理协作\"},{\"id\":1,\"zh_title\":\"AGENT-O：互操作性与受治理医疗AI代理的语义代理卡框架\"},{\"id\":3,\"zh_title\":\"PCFBench：产品碳足迹估算的诊断基准\"},{\"id\":2,\"zh_title\":\"LoopArena：将模型作为循环工程的运行时控制器进行基准测试\"}]}",
+      "at": "2026-09-01"
+    },
+    "5619183098e77cb782f7965fc85010a74bfc749d1b441dff2c4046deeb59ddf4": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":4,\"zh_title\":\"DAMP：感知衰减的混合精度循环状态量化\"},{\"id\":5,\"zh_title\":\"扩散语言模型的轨迹级推测解码\"},{\"id\":6,\"zh_title\":\"所见即绘：多模态智能体灵巧视觉工具使用基准测试\"},{\"id\":7,\"zh_title\":\"VAM1.0：文本辅助机器人视频预测的粒子世界建模\"},{\"id\":8,\"zh_title\":\"如果智能体是天使，则无需治理：受信任工具边界外的带外策略执行\"},{\"id\":9,\"zh_title\":\"基于LLM的软件与系统安全智能体：方法、应用与评估\"},{\"id\":11,\"zh_title\":\"智能体工件创建：系统、评估、原则与机遇\"},{\"id\":12,\"zh_title\":\"真实SWE：基于真实用户请求的编码智能体组合评估\"},{\"id\":13,\"zh_title\":\"先使其可玩，再使其变好：小对话游戏智能体的分阶段交互学习\"},{\"id\":16,\"zh_title\":\"Re Tool SQL：用于鲁棒文本到SQL的智能体强化学习\"},{\"id\":17,\"zh_title\":\"String：每个应用都是Markdown文件的智能体操作系统\"}]}",
+      "at": "2026-09-01"
     }
   },
   "published": {
@@ -84587,6 +84687,36 @@
         "title": "EditaLive! Unified Character Video Editing for Live Streaming",
         "at": "2026-08-30",
         "edition": "evening"
+      },
+      "https://arxiv.org/abs/2608.28345": {
+        "title": "AGENT-O: A Semantic Agent Card Framework for Interoperable and Governed Healthcare AI Agents",
+        "at": "2026-09-01",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2608.28281": {
+        "title": "LoopArena: Benchmarking Models as Runtime Controllers for Loop Engineering",
+        "at": "2026-09-01",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2608.27716": {
+        "title": "PCFBench: A Diagnostic Benchmark for Product Carbon Footprint Estimation",
+        "at": "2026-09-01",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2608.27818": {
+        "title": "AcCoRD: Evaluating User-Agent Collaboration Under Realistic User Preference Dynamics",
+        "at": "2026-09-01",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2608.28497": {
+        "title": "On the Maintenance and Co-evolution of Agent Plugins: An Empirical Study of Claude Code Plugin Marketplaces",
+        "at": "2026-09-01",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2608.28021": {
+        "title": "Compared to What? A Human-Anchored Security Benchmark for LLM-Generated Infrastructure-as-Code",
+        "at": "2026-09-01",
+        "edition": "evening"
       }
     }
   },
@@ -102767,6 +102897,36 @@
       "663cb62edb4f2452": {
         "title": "EditaLive! Unified Character Video Editing for Live Streaming",
         "at": "2026-08-30",
+        "edition": "evening"
+      },
+      "0ec3d58dbaf1632a": {
+        "title": "AGENT-O: A Semantic Agent Card Framework for Interoperable and Governed Healthcare AI Agents",
+        "at": "2026-09-01",
+        "edition": "evening"
+      },
+      "bcd86099328c6ebb": {
+        "title": "LoopArena: Benchmarking Models as Runtime Controllers for Loop Engineering",
+        "at": "2026-09-01",
+        "edition": "evening"
+      },
+      "3d744a5f330b3fe7": {
+        "title": "PCFBench: A Diagnostic Benchmark for Product Carbon Footprint Estimation",
+        "at": "2026-09-01",
+        "edition": "evening"
+      },
+      "ad19664069687934": {
+        "title": "AcCoRD: Evaluating User-Agent Collaboration Under Realistic User Preference Dynamics",
+        "at": "2026-09-01",
+        "edition": "evening"
+      },
+      "941823704303f8fa": {
+        "title": "On the Maintenance and Co-evolution of Agent Plugins: An Empirical Study of Claude Code Plugin Marketplaces",
+        "at": "2026-09-01",
+        "edition": "evening"
+      },
+      "8be099a5f217a28b": {
+        "title": "Compared to What? A Human-Anchored Security Benchmark for LLM-Generated Infrastructure-as-Code",
+        "at": "2026-09-01",
         "edition": "evening"
       }
     }
