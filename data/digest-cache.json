@@ -42470,6 +42470,88 @@
         "selectedTopicTotal": 8
       },
       "at": "2026-09-28"
+    },
+    "evening:2026-09-29": {
+      "fingerprint": "bd52204893e06860b9935b435f0179e5d03956a5133109a082f1463e52d0e44e",
+      "daily": {
+        "overview": "本周AI领域聚焦于多智能体协作与工具发现，发布了多个针对长时序协作、工具调用安全及强化学习策略的基准与框架，同时涉及保险精算与教育领域的应用探索。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "多智能体大语言模型长时序协作基准",
+            "summary": "该论文提出了AgentWorld基准，包含100个人工标注任务，旨在评估多智能体大语言模型在长时序场景下的协作能力，填补了现有基准的空白。",
+            "refs": [
+              1
+            ],
+            "topicId": 2
+          },
+          {
+            "title": "智能体联邦工具发现",
+            "summary": "论文介绍了Cartograph，一种联邦MCP代理，通过操作员认证和两阶段检索机制，将工具发现复杂度从O(n)优化为O(k)。",
+            "refs": [
+              8
+            ],
+            "topicId": 24
+          },
+          {
+            "title": "超越批准动作：智能体工作流中",
+            "summary": "研究关注智能体工作流中持久性结果的运行时验证，指出当前安全措施可能遗漏未批准的副作用，并提出了相应的验证框架。",
+            "refs": [
+              9
+            ],
+            "topicId": 22
+          },
+          {
+            "title": "共享智能体记忆中认知准入的基",
+            "summary": "论文引入Correlated Promotion Benchmark (CPB)，用于评估共享智能体记忆中的主张准入问题，通过追踪来源血统解决证据误认问题。",
+            "refs": [
+              15
+            ],
+            "topicId": 50
+          },
+          {
+            "title": "多智能体流策略的测试时梯度引导",
+            "summary": "提出G2MAF框架，通过测试时梯度引导优化多智能体流策略，解决离线强化学习中冻结策略可能陷入次优解的问题。",
+            "refs": [
+              10
+            ],
+            "topicId": 26
+          },
+          {
+            "title": "保险准备金智能平台",
+            "summary": "论文提出了保险准备金智能平台，旨在简化基于Thiele微分方程的精算计算，支持更高效的定价与风险管理。",
+            "refs": [
+              11
+            ],
+            "topicId": 29
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "AgentWorld：多智能体大语言模型长时序协作基准",
+          "2": "思考的代价：测试时推理在LLM交易中是否值得？",
+          "3": "学会停止而不必学会停止：自监督置信度训练提升推理效率",
+          "4": "策略性自一致性",
+          "5": "MACBT：具有纵向记忆的多智能体认知行为疗法决策支持系统",
+          "6": "Dyn Branch：动态智能体LLM服务的推测性子图重用",
+          "7": "识别、分类和解释AI生成代码中偏见的框架",
+          "8": "Cartograph：AI智能体联邦工具发现",
+          "9": "超越批准动作：智能体工作流中持久性结果的运行时验证",
+          "10": "G2MAF：多智能体流策略的测试时梯度引导",
+          "11": "保险准备金智能平台",
+          "12": "MM-Context Fold：多模态智能体检索的上下文折叠",
+          "13": "Price Bench：LLM预订代理中价格、质量和品牌偏好的诊断基准",
+          "14": "Has Mem：长期LLM智能体的硬起源自适应软化记忆",
+          "15": "共享智能体记忆中认知准入的基准与诊断研究",
+          "16": "Rufus-Air：开源LLM后训练配方",
+          "17": "Deep Edu-v1：面向越南教育的高效可扩展智能体LLM"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-09-29"
     }
   },
   "llm": {
@@ -45658,6 +45740,24 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":1,\"zh_title\":\"OpenAI 代理尝试暴力破解联合国网站\"},{\"id\":2,\"zh_title\":\"Muse 能否克服 Meta 的信任危机？\"},{\"id\":3,\"zh_title\":\"Anthropic 首席执行官即将与特朗普总统共进晚餐\"},{\"id\":4,\"zh_title\":\"Anthropic 的 Dario Amodei 接受《周六夜现场》采访\"},{\"id\":5,\"zh_title\":\"Engram：将破碎的 AI 幻觉转化为音乐的采样器\"},{\"id\":7,\"zh_title\":\"On-Fly-Jev 上线：第二款 Jev 风格模型\"},{\"id\":8,\"zh_title\":\"FLUX 3 Action 开源代码：黑森林实验室的管道仅关闭 1.5 层\"}]}",
       "at": "2026-09-28"
+    },
+    "798f35feeb3b9ede446ec57a74565fc6aa04019cb920ad87bae00687e1ebfcfc": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence，直接关联Kimi/月之暗面，聚焦Agent智能体前沿，兼具技术深度与行业影响力。\"}]}",
+      "at": "2026-09-29"
+    },
+    "110589af786f6ab97122212c3572f4b74ab836e17e5f81d5d0fbcc2f95690c87": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"本周AI领域聚焦于多智能体协作与工具发现，发布了多个针对长时序协作、工具调用安全及强化学习策略的基准与框架，同时涉及保险精算与教育领域的应用探索。\",\"hot_news\":[{\"topic_id\":2,\"insight\":\"AgentWorld挑战现有基准，聚焦长时序多智能体协作。\",\"narrative\":\"针对现有多智能体基准多侧重竞争或短时序交互的局限，研究团队推出了AgentWorld基准。该基准包含100个人工标注任务及其增强变体，旨在专门评估基于大语言模型智能体在长时序场景下的真实协作能力。\",\"evaluation\":\"填补了长时序协作评估的空白。\",\"refs\":[1,3],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":24,\"insight\":\"Cartograph优化工具发现，将复杂度从线性降至渐进式。\",\"narrative\":\"随着连接目录的增长，加载所有工具定义变得昂贵。Cartograph提出了一种联邦MCP代理方案，通过操作员认证检索和两阶段检索机制，将智能体可见的工具发现复杂度从O(n)目录遍历优化为O(k)渐进式披露。\",\"evaluation\":\"显著提升了AI智能体在复杂环境下的工具调用效率。\",\"refs\":[8,12],\"mention_count\":2,\"cross_verify_score\":80},{\"topic_id\":22,\"insight\":\"Beyond Approved Actions关注智能体工作流中的持久性结果验证。\",\"narrative\":\"大语言模型智能体在执行软件系统操作时，可能会产生超出批准范围的持久性副作用。现有安全措施往往无法在继续执行前检查这些持久结果，导致未批准的后果被误判为成功并传播。\",\"evaluation\":\"为智能体安全执行提供了关键的运行时验证思路。\",\"refs\":[9,6],\"mention_count\":2,\"cross_verify_score\":78},{\"topic_id\":50,\"insight\":\"引入Correlated Promotion Benchmark研究共享记忆中的认知准入。\",\"narrative\":\"在共享智能体记忆中评估主张准入具有挑战性，因为重复的主张可能被误认为是独立证据。研究团队构建了CPB基准，通过追踪来源血统，评估候选主张是否应被准入共享存储，以解决代理复制或误认证据的问题。\",\"evaluation\":\"为提升多智能体系统的可信度与记忆管理提供了新工具。\",\"refs\":[15,14],\"mention_count\":2,\"cross_verify_score\":76}],\"other_news\":[{\"topic_id\":26,\"insight\":\"G2MAF通过测试时梯度引导优化多智能体流策略。\",\"narrative\":\"针对离线多智能体强化学习中冻结策略在部署时可能陷入次优解的问题，G2MAF提出了一种在测试时优化联合策略的细化框架，旨在解决即使存在更好替代方案时仍可能做出次优决策的困境。\",\"refs\":[10,2],\"mention_count\":2,\"cross_verify_score\":75},{\"topic_id\":29,\"insight\":\"Insurance Reserve Intelligence平台简化精算计算。\",\"narrative\":\"针对生命保险估值中基于Thiele微分方程的重复计算成本高昂问题，研究团队提出了保险准备金智能平台，旨在支持保费定价、偿付能力评估等关键任务，同时降低敏感性分析和大规模场景评估的计算负担。\",\"refs\":[11],\"mention_count\":1,\"cross_verify_score\":70},{\"topic_id\":61,\"insight\":\"Rufus-Air与DeepEdu-v1展示开放智能体与教育应用潜力。\",\"narrative\":\"Rufus-Air提供了在GLM-4.5-Air模型上的可复现后训练配方，涵盖从指令遵循到搜索代理的多个阶段。DeepEdu-v1则针对越南教育场景，解决了云助手数据主权与本地教材适配的问题，旨在提升教育效果。\",\"refs\":[16,17],\"mention_count\":2,\"cross_verify_score\":68}],\"core_tech\":[{\"topic_id\":2,\"title\":\"AgentWorld: Benchmarking Long-Horizon Collaboration\",\"summary\":\"该论文提出了AgentWorld基准，包含100个人工标注任务，旨在评估多智能体大语言模型在长时序场景下的协作能力，填补了现有基准的空白。\",\"refs\":[1]},{\"topic_id\":24,\"title\":\"Cartograph: Federated Tool Discovery\",\"summary\":\"论文介绍了Cartograph，一种联邦MCP代理，通过操作员认证和两阶段检索机制，将工具发现复杂度从O(n)优化为O(k)。\",\"refs\":[8]},{\"topic_id\":22,\"title\":\"Beyond Approved Actions: Runtime Validation\",\"summary\":\"研究关注智能体工作流中持久性结果的运行时验证，指出当前安全措施可能遗漏未批准的副作用，并提出了相应的验证框架。\",\"refs\":[9]},{\"topic_id\":50,\"title\":\"A Benchmark and Diagnostic Study of Epistemic Admission\",\"summary\":\"论文引入Correlated Promotion Benchmark (CPB)，用于评估共享智能体记忆中的主张准入问题，通过追踪来源血统解决证据误认问题。\",\"refs\":[15]},{\"topic_id\":26,\"title\":\"G2MAF: Test-Time Gradient Guidance\",\"summary\":\"提出G2MAF框架，通过测试时梯度引导优化多智能体流策略，解决离线强化学习中冻结策略可能陷入次优解的问题。\",\"refs\":[10]},{\"topic_id\":29,\"title\":\"Insurance Reserve Intelligence Platform\",\"summary\":\"论文提出了保险准备金智能平台，旨在简化基于Thiele微分方程的精算计算，支持更高效的定价与风险管理。\",\"refs\":[11]}],\"ref_translations\":[{\"id\":1,\"zh_title\":\"AgentWorld：多智能体大语言模型长时序协作基准\"},{\"id\":8,\"zh_title\":\"Cartograph：AI智能体联邦工具发现\"},{\"id\":9,\"zh_title\":\"超越批准动作：智能体工作流中持久性结果的运行时验证\"},{\"id\":15,\"zh_title\":\"共享智能体记忆中认知准入的基准与诊断研究\"},{\"id\":10,\"zh_title\":\"G2MAF：多智能体流策略的测试时梯度引导\"},{\"id\":11,\"zh_title\":\"保险准备金智能平台\"}]}",
+      "at": "2026-09-29"
+    },
+    "e3d7636da8735a95524d6f46d9b90f95bd7d13af45c6af16a557790dc186f508": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":2,\"zh_title\":\"思考的代价：测试时推理在LLM交易中是否值得？\"},{\"id\":3,\"zh_title\":\"学会停止而不必学会停止：自监督置信度训练提升推理效率\"},{\"id\":4,\"zh_title\":\"策略性自一致性\"},{\"id\":5,\"zh_title\":\"MACBT：具有纵向记忆的多智能体认知行为疗法决策支持系统\"},{\"id\":6,\"zh_title\":\"Dyn Branch：动态智能体LLM服务的推测性子图重用\"},{\"id\":7,\"zh_title\":\"识别、分类和解释AI生成代码中偏见的框架\"},{\"id\":12,\"zh_title\":\"MM-Context Fold：多模态智能体检索的上下文折叠\"},{\"id\":13,\"zh_title\":\"Price Bench：LLM预订代理中价格、质量和品牌偏好的诊断基准\"},{\"id\":14,\"zh_title\":\"Has Mem：长期LLM智能体的硬起源自适应软化记忆\"},{\"id\":16,\"zh_title\":\"Rufus-Air：开源LLM后训练配方\"},{\"id\":17,\"zh_title\":\"Deep Edu-v1：面向越南教育的高效可扩展智能体LLM\"}]}",
+      "at": "2026-09-29"
     }
   },
   "published": {
@@ -82437,6 +82537,36 @@
         "title": "ExplorationBench: Measuring AI Systems' Exploration in Verifiable Alien Worlds",
         "at": "2026-09-27",
         "edition": "evening"
+      },
+      "https://huggingface.co/papers/2609.31590": {
+        "title": "AgentWorld: Benchmarking Long-Horizon Collaboration of Multi-agent LLMs",
+        "at": "2026-09-29",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2609.30293": {
+        "title": "Cartograph: Federated Tool Discovery with Operator-Attested Retrieval for AI Agents",
+        "at": "2026-09-29",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2609.31301": {
+        "title": "Beyond Approved Actions: Runtime Validation of Persistent Outcomes in Agent Workflows",
+        "at": "2026-09-29",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2609.31286": {
+        "title": "G2MAF: Test-Time Gradient Guidance for Multi-Agent Flow Policies",
+        "at": "2026-09-29",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2609.30765": {
+        "title": "Insurance Reserve Intelligence Platform",
+        "at": "2026-09-29",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2609.30813": {
+        "title": "A Benchmark and Diagnostic Study of Epistemic Admission in Shared Agent Memory",
+        "at": "2026-09-29",
+        "edition": "evening"
       }
     }
   },
@@ -100372,6 +100502,36 @@
       "e9f2fa94067ff80d": {
         "title": "ExplorationBench: Measuring AI Systems' Exploration in Verifiable Alien Worlds",
         "at": "2026-09-27",
+        "edition": "evening"
+      },
+      "c60016b7aa4dd114": {
+        "title": "AgentWorld: Benchmarking Long-Horizon Collaboration of Multi-agent LLMs",
+        "at": "2026-09-29",
+        "edition": "evening"
+      },
+      "beba5ca14650be03": {
+        "title": "Cartograph: Federated Tool Discovery with Operator-Attested Retrieval for AI Agents",
+        "at": "2026-09-29",
+        "edition": "evening"
+      },
+      "5eb40381b117adf4": {
+        "title": "Beyond Approved Actions: Runtime Validation of Persistent Outcomes in Agent Workflows",
+        "at": "2026-09-29",
+        "edition": "evening"
+      },
+      "78292bb9cce016d6": {
+        "title": "G2MAF: Test-Time Gradient Guidance for Multi-Agent Flow Policies",
+        "at": "2026-09-29",
+        "edition": "evening"
+      },
+      "08a25b18efb1e38f": {
+        "title": "Insurance Reserve Intelligence Platform",
+        "at": "2026-09-29",
+        "edition": "evening"
+      },
+      "923eb98c67fb2602": {
+        "title": "A Benchmark and Diagnostic Study of Epistemic Admission in Shared Agent Memory",
+        "at": "2026-09-29",
         "edition": "evening"
       }
     }
