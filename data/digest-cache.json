@@ -42225,6 +42225,89 @@
         "selectedTopicTotal": 16
       },
       "at": "2026-10-02"
+    },
+    "evening:2026-10-03": {
+      "fingerprint": "efc752785890f38cf1979a4e2f8abaf709ad9b70d61177fb410149b39ca0e8f9",
+      "daily": {
+        "overview": "10月2日AI领域聚焦多智能体协作优化与推理效率提升。研究重点包括多Token预测、全局一致性、强化学习迁移以及视频理解等方向，多篇论文探讨了如何通过算法改进解决复杂任务中的瓶颈问题。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "匹配分布而非计算",
+            "summary": "该论文提出多Token预测（MTP）技术，通过并行生成和验证步骤提升生成吞吐量，同时保持骨干模型的Token分布。",
+            "refs": [
+              1
+            ],
+            "topicId": 4
+          },
+          {
+            "title": "全局一致性：当每个智能体都正",
+            "summary": "论文定义了多智能体协作中的全局一致性失效问题，并给出了观察-别名不可能性定理，界定了策略保证有效动作的条件。",
+            "refs": [
+              6
+            ],
+            "topicId": 19
+          },
+          {
+            "title": "强化学习在编码代理任务中的跨基准迁移",
+            "summary": "研究探讨了强化学习在编码代理任务中的应用，验证了所学策略的跨基准迁移能力，并指出了编码代理在任务末尾的常见失败模式。",
+            "refs": [
+              3
+            ],
+            "topicId": 5
+          },
+          {
+            "title": "视频时间定位的演化智能体",
+            "summary": "VideoEvolve框架通过Cloze结构化表示自动演化智能体Harness，以优化视频时间定位任务中的查询引导和预测细化。",
+            "refs": [
+              9
+            ],
+            "topicId": 29
+          },
+          {
+            "title": "平衡离线代理微调中的能力获取与保留",
+            "summary": "PG-SFT研究关注离线代理轨迹微调中，如何在获取新能力的同时保留模型原有的通用推理和工具调用等能力。",
+            "refs": [
+              8
+            ],
+            "topicId": 27
+          },
+          {
+            "title": "为错误付费而非为流程付费",
+            "summary": "该论文提出了一种无标签的流程内多智能体工作流优化方法，旨在解决任务分解、代理信任和专家创建等关键决策问题。",
+            "refs": [
+              7
+            ],
+            "topicId": 26
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "匹配分布而非计算：后训练多Token预测头",
+          "2": "Incident-Arena：让智能体达到可靠性九成",
+          "3": "强化学习在编码代理任务中的跨基准迁移",
+          "4": "强化学习扩展真的需要更多训练吗？",
+          "5": "零到仓库：编码代理能否从头构建仓库？",
+          "6": "全局一致性：当每个智能体都正确而团队却错误时",
+          "7": "为错误付费而非为流程付费：无标签流程内多智能体工作流优化",
+          "8": "PG-SFT：平衡离线代理微调中的能力获取与保留",
+          "9": "VideoEvolve：视频时间定位的演化智能体Harness",
+          "10": "链接技能以劫持LLM智能体",
+          "11": "从验证失败到编码代理的可复用指导",
+          "12": "OrbitTAMP：航天器交会对接中的任务与运动规划语言模型",
+          "13": "超越记忆：利用显式信念状态驾驭长时域智能体",
+          "14": "内核管理的共享内存实现系统级个性化",
+          "15": "测量微任务合格度差距：现成小语言模型何时足够？",
+          "16": "在消失之前：在VideoLLMs中强化时间表示",
+          "17": "JevSpawn：通过组合式动作空间实现自适应智能体推理",
+          "18": "MemFit：高效长期智能体记忆"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-10-03"
     }
   },
   "llm": {
@@ -45401,6 +45484,24 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":1,\"zh_title\":\"OpenAI解雇3名安全研究员，据《华尔街日报》报道\"},{\"id\":2,\"zh_title\":\"ChatGPT可虚拟试穿衣服\"},{\"id\":3,\"zh_title\":\"Shopify推出Canvas：通过聊天构建在线商店\"},{\"id\":4,\"zh_title\":\"特朗普的‘道德约束’AI‘协议’、AI代理的兴起及选票上的极端分子\"},{\"id\":5,\"zh_title\":\"谷歌新功能Guided Vision助你阅读小字\"},{\"id\":6,\"zh_title\":\"永恒的伴侣\"},{\"id\":7,\"zh_title\":\"马斯克的AI聊天机器人Grok据称鼓励特朗普夺取委内瑞拉总统\"},{\"id\":8,\"zh_title\":\"Opus 5.5喜欢告诉你‘这很重要’（以及其他AI写作套路）\"},{\"id\":9,\"zh_title\":\"法官驳回针对谷歌AI概览的反垄断诉讼\"},{\"id\":10,\"zh_title\":\"Stratego游戏因信息隐藏难倒AI，直到现在\"},{\"id\":11,\"zh_title\":\"法官驳回针对谷歌AI搜索的Chegg和Penske反垄断诉讼\"},{\"id\":13,\"zh_title\":\"OSWorld-Science：计算机使用智能体学习与使用科学软件的基准\"},{\"id\":14,\"zh_title\":\"面向LLM智能体的基于信念的世界模型\"},{\"id\":20,\"zh_title\":\"分而治之与崩溃：通过独立子实例的精确分解实现MAPF-Collapse\"}]}",
       "at": "2026-10-02"
+    },
+    "adf7a886018881221f428638c13ae53d6188dfdf2dbd1926fe9da2e4ea05ebe1": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence - 直接关联 Kimi/月之暗面，代表国内头部模型在智能体领域的最新技术动向，兼具热点与行业影响力。\"}]}",
+      "at": "2026-10-03"
+    },
+    "b09d733d0a1fa37d2d92f6a62401ac8c2ebfc1ff22d6dd6ddaac1c9f40b67e33": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"10月2日AI领域聚焦多智能体协作优化与推理效率提升。研究重点包括多Token预测、全局一致性、强化学习迁移以及视频理解等方向，多篇论文探讨了如何通过算法改进解决复杂任务中的瓶颈问题。\",\"hot_news\":[{\"topic_id\":4,\"insight\":\"多Token预测通过并行生成提升推理吞吐量。\",\"narrative\":\"多Token预测（MTP）技术通过允许语言模型在一次前向传播中草拟多个后续Token，显著提升了自回归生成的吞吐量。该技术引入验证步骤以确保骨干模型的Token分布得以保留。目前，MiMo-7B、DeepSeek-V3和Qwen3等主流模型均在预训练过程中联合训练了这些预测头。\",\"evaluation\":\"该技术已成为提升生成效率的关键范式。\",\"refs\":[1,4],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":19,\"insight\":\"多智能体协作中存在全局一致性失效问题。\",\"narrative\":\"AI智能体在各自做出局部有效决策时，可能因共享状态失效而共同产生错误结果。研究提出了全局一致性问题，并给出了观察-别名不可能性定理，指出当k个不可区分的世界需要互斥动作时，最佳随机化最坏情况成功率仅为1/k。\",\"evaluation\":\"该定理为多智能体系统的状态一致性提供了理论边界。\",\"refs\":[6,11],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":5,\"insight\":\"强化学习在编码代理任务中实现跨基准迁移。\",\"narrative\":\"编码代理常在任务末尾失败，如遗漏需求或测试不充分。研究探讨了在专家构建的编码任务上进行强化学习是否能填补这一差距，并验证所学策略是否能超越训练分布。相关研究还涉及从零构建代码仓库以及技能链劫持等安全挑战。\",\"evaluation\":\"RL为提升编码代理的鲁棒性和泛化能力提供了新路径。\",\"refs\":[3,5,10],\"mention_count\":3,\"cross_verify_score\":82},{\"topic_id\":29,\"insight\":\"VideoEvolve框架自动优化视频时间定位。\",\"narrative\":\"针对视频时间定位任务，VideoEvolve框架通过Cloze结构化表示，自动演化智能体Harness以优化查询引导和时间预测的细化过程。此外，研究还关注了视频大模型在时间推理上的弱点，以及航天器交会对接等复杂场景下的任务规划。\",\"evaluation\":\"自动化演化技术简化了视频理解Agent的调试流程。\",\"refs\":[9,12,16],\"mention_count\":3,\"cross_verify_score\":82}],\"other_news\":[{\"topic_id\":27,\"insight\":\"PG-SFT平衡离线代理微调中的能力获取与保留。\",\"narrative\":\"在离线代理轨迹上进行监督微调（SFT）时，逐Token模仿推理和动作可能损害模型的其他能力。PG-SFT研究旨在优化新能力获取与现有能力保留之间的权衡。\",\"refs\":[8],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":26,\"insight\":\"Kernel-Managed Shared Memory实现系统级个性化。\",\"narrative\":\"在多智能体系统中，一个智能体学到的有用上下文往往无法被其他智能体访问。Kernel-Managed Shared Memory通过系统级抽象，由内核而非单个智能体管理检索、隐私执行和提示注入，实现了系统范围的个性化。\",\"refs\":[14],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":61,\"insight\":\"JevSpawn与MemFit提升智能体推理与记忆效率。\",\"narrative\":\"JevSpawn通过组合式动作空间连接自然语言任务规范与有限概率探索，实现自适应智能体推理。MemFit则提出了一种长期记忆系统，旨在降低对话代理中记忆操作的代价和延迟。\",\"refs\":[17,18],\"mention_count\":2,\"cross_verify_score\":66}],\"core_tech\":[{\"topic_id\":4,\"title\":\"Match the Distribution, Not the Compute\",\"summary\":\"该论文提出多Token预测（MTP）技术，通过并行生成和验证步骤提升生成吞吐量，同时保持骨干模型的Token分布。\",\"refs\":[1]},{\"topic_id\":19,\"title\":\"Global Coherence: When Every Agent Is Right\",\"summary\":\"论文定义了多智能体协作中的全局一致性失效问题，并给出了观察-别名不可能性定理，界定了策略保证有效动作的条件。\",\"refs\":[6]},{\"topic_id\":5,\"title\":\"Cross-Benchmark Transfer from RL on Agentic Coding Tasks\",\"summary\":\"研究探讨了强化学习在编码代理任务中的应用，验证了所学策略的跨基准迁移能力，并指出了编码代理在任务末尾的常见失败模式。\",\"refs\":[3]},{\"topic_id\":29,\"title\":\"VideoEvolve: Evolving Agent Harnesses for Video Temporal Grounding\",\"summary\":\"VideoEvolve框架通过Cloze结构化表示自动演化智能体Harness，以优化视频时间定位任务中的查询引导和预测细化。\",\"refs\":[9]},{\"topic_id\":27,\"title\":\"PG-SFT: Balancing Capability Acquisition and Retention\",\"summary\":\"PG-SFT研究关注离线代理轨迹微调中，如何在获取新能力的同时保留模型原有的通用推理和工具调用等能力。\",\"refs\":[8]},{\"topic_id\":26,\"title\":\"Pay for the Fault, Not the Flow: Label-Free In-Flow Multi-Agent Workflow Optimization\",\"summary\":\"该论文提出了一种无标签的流程内多智能体工作流优化方法，旨在解决任务分解、代理信任和专家创建等关键决策问题。\",\"refs\":[7]}],\"ref_translations\":[{\"id\":1,\"zh_title\":\"匹配分布而非计算：后训练多Token预测头\"},{\"id\":3,\"zh_title\":\"强化学习在编码代理任务中的跨基准迁移\"},{\"id\":5,\"zh_title\":\"零到仓库：编码代理能否从头构建仓库？\"},{\"id\":6,\"zh_title\":\"全局一致性：当每个智能体都正确而团队却错误时\"},{\"id\":7,\"zh_title\":\"为错误付费而非为流程付费：无标签流程内多智能体工作流优化\"},{\"id\":8,\"zh_title\":\"PG-SFT：平衡离线代理微调中的能力获取与保留\"},{\"id\":9,\"zh_title\":\"VideoEvolve：视频时间定位的演化智能体Harness\"},{\"id\":10,\"zh_title\":\"链接技能以劫持LLM智能体\"},{\"id\":11,\"zh_title\":\"从验证失败到编码代理的可复用指导\"},{\"id\":12,\"zh_title\":\"OrbitTAMP：航天器交会对接中的任务与运动规划语言模型\"},{\"id\":14,\"zh_title\":\"内核管理的共享内存实现系统级个性化\"},{\"id\":15,\"zh_title\":\"测量微任务合格度差距：现成小语言模型何时足够？\"},{\"id\":16,\"zh_title\":\"在消失之前：在VideoLLMs中强化时间表示\"},{\"id\":17,\"zh_title\":\"JevSpawn：通过组合式动作空间实现自适应智能体推理\"},{\"id\":18,\"zh_title\":\"MemFit：高效长期智能体记忆\"}]}",
+      "at": "2026-10-03"
+    },
+    "4dd44114f8f915128739132b1fd746f14a17cb8b51a78ab1f1e94c51ae91cf3e": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":2,\"zh_title\":\"Incident-Arena：让智能体达到可靠性九成\"},{\"id\":4,\"zh_title\":\"强化学习扩展真的需要更多训练吗？\"},{\"id\":13,\"zh_title\":\"超越记忆：利用显式信念状态驾驭长时域智能体\"}]}",
+      "at": "2026-10-03"
     }
   },
   "published": {
@@ -82160,6 +82261,36 @@
         "title": "Self-Evolving Algorithm-Design Agents: Escaping In-Context Evolutionary Stagnation via Population-Curated Policy Optimization",
         "at": "2026-10-02",
         "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.00888": {
+        "title": "Match the Distribution, Not the Compute: Post-Training Multi-Token Prediction Heads",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.00890": {
+        "title": "Cross-Benchmark Transfer from RL on Agentic Coding Tasks",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.02036": {
+        "title": "Global Coherence: When Every Agent Is Right and the Team Is Still Wrong - A Local-to-Global Semantic Foundation for Multi-Agent Collaboration",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.01017": {
+        "title": "Pay for the Fault, Not the Flow: Label-Free In-Flow Multi-Agent Workflow Optimization",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.00949": {
+        "title": "PG-SFT: Balancing Capability Acquisition and Retention in Offline Agent Fine-Tuning",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.01766": {
+        "title": "VideoEvolve: Evolving Agent Harnesses for Video Temporal Grounding",
+        "at": "2026-10-03",
+        "edition": "evening"
       }
     }
   },
@@ -99920,6 +100051,36 @@
       "825e67d55d050970": {
         "title": "Self-Evolving Algorithm-Design Agents: Escaping In-Context Evolutionary Stagnation via Population-Curated Policy Optimization",
         "at": "2026-10-02",
+        "edition": "evening"
+      },
+      "c46f229b3cb95e67": {
+        "title": "Match the Distribution, Not the Compute: Post-Training Multi-Token Prediction Heads",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "74d30eacf11a6591": {
+        "title": "Cross-Benchmark Transfer from RL on Agentic Coding Tasks",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "466dbd10b55c1934": {
+        "title": "Global Coherence: When Every Agent Is Right and the Team Is Still Wrong - A Local-to-Global Semantic Foundation for Multi-Agent Collaboration",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "4776334fc2a76b74": {
+        "title": "Pay for the Fault, Not the Flow: Label-Free In-Flow Multi-Agent Workflow Optimization",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "a023e28595f2b995": {
+        "title": "PG-SFT: Balancing Capability Acquisition and Retention in Offline Agent Fine-Tuning",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "8965091ff308a0fb": {
+        "title": "VideoEvolve: Evolving Agent Harnesses for Video Temporal Grounding",
+        "at": "2026-10-03",
         "edition": "evening"
       }
     }
