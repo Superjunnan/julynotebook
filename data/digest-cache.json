@@ -2,415 +2,6 @@
   "version": 7,
   "fetched": {},
   "daily": {
-    "evening:2026-06-04": {
-      "fingerprint": "ed938b971eb4dc72fd962cf457a315a1f62250d4d896387697fa6e1003c87b76",
-      "daily": {
-        "overview": "6月4日，大模型领域呈现开源架构突破与商业生态扩张并进的态势。谷歌发布Gemma 4 12B，以“无编码器”架构重塑端侧多模态模型标准；同时，企业级Agent生态加速开放，阿里千问与Suno分别引入瑞幸、肯德基等品牌及完成4亿美元融资，标志着AI应用正从技术验证走向规模化落地。",
-        "hotNews": [
-          {
-            "title": "微信与多家手机厂商推A2A助手，实现系统级调用微信服务。",
-            "insight": "微信与多家手机厂商推A2A助手，实现系统级调用微信服务。",
-            "briefing": "微信近日宣布正与华为、小米、荣耀、OPPO等多家国内主流手机厂商展开深度合作，联合推出基于A2A（Agent-to-Agent）协作机制的助手能力。该功能旨在将微信的高频沟通服务深度融入手机原生系统，用户未来可通过手机自带的系统级AI助手，直接发起微信音视频通话或向指定联系人发送消息。目前荣耀部分机型已经支持该功能，把YOYO智能体和微信更新到最新版本，即可唤醒YOYO，比如说一句“给老王打个微信视频”，剩下的交给手机。",
-            "evaluation": "A2A机制在保障安全的前提下打通了系统级Agent与微信服务的连接。",
-            "narrative": "微信近日宣布正与华为、小米、荣耀、OPPO等多家国内主流手机厂商展开深度合作，联合推出基于A2A（Agent-to-Agent）协作机制的助手能力。该功能旨在将微信的高频沟通服务深度融入手机原生系统，用户未来可通过手机自带的系统级AI助手，直接发起微信音视频通话或向指定联系人发送消息。目前荣耀部分机型已经支持该功能，把YOYO智能体和微信更新到最新版本，即可唤醒YOYO，比如说一句“给老王打个微信视频”，剩下的交给手机。A2A机制在保障安全的前提下打通了系统级Agent与微信服务的连接。",
-            "summary": "微信近日宣布正与华为、小米、荣耀、OPPO等多家国内主流手机厂商展开深度合作，联合推出基于A2A（Agent-to-Agent）协作机制的助手能力。该功能旨在将微信的高频沟通服务深度融入手机原生系统，用户未来可通过手机自带的系统级AI助手，直接发起微信音视频通话或向指定联系人发送消息。目前荣耀部分机型已经支持该功能，把YOYO智能体和微信更新到最新版本",
-            "refs": [
-              12,
-              13
-            ],
-            "mentionCount": 2,
-            "crossVerifyScore": 82,
-            "topicId": 66
-          },
-          {
-            "title": "AI音乐独角兽Suno获4亿美元融资，估值翻倍至54亿美元。",
-            "insight": "AI音乐独角兽Suno获4亿美元融资，估值翻倍至54亿美元。",
-            "briefing": "AI音乐生成赛道的头部公司Suno周三宣布完成4亿美元的D轮融资，投后估值达到54亿美元。本轮融资由“互联网女皇”玛丽·米克尔创办的Bond Capital领投，IVP、合广投资、Lightspeed Venture Partners等知名机构也参与了这一轮融资。Suno上一轮融资发生在去年11月，当时公司以24.5亿美元的估值融资2.5亿美元。短短7个月估值翻倍，显示出投资者对“AI+音乐”赛道的乐观预期",
-            "evaluation": "巨额融资印证了AI生成内容在娱乐领域的巨大商业潜力。",
-            "narrative": "AI音乐生成赛道的头部公司Suno周三宣布完成4亿美元的D轮融资，投后估值达到54亿美元。本轮融资由“互联网女皇”玛丽·米克尔创办的Bond Capital领投，IVP、合广投资、Lightspeed Venture Partners等知名机构也参与了这一轮融资。Suno上一轮融资发生在去年11月，当时公司以24.5亿美元的估值融资2.5亿美元。短短7个月估值翻倍，显示出投资者对“AI+音乐”赛道的乐观预期。巨额融资印证了AI生成内容在娱乐领域的巨大商业潜力。",
-            "summary": "AI音乐生成赛道的头部公司Suno周三宣布完成4亿美元的D轮融资，投后估值达到54亿美元。本轮融资由“互联网女皇”玛丽·米克尔创办的Bond Capital领投，IVP、合广投资、Lightspeed Venture Partners等知名机构也参与了这一轮融资。Suno上一轮融资发生在去年11月，当时公司以24.5亿美元的估值融资2.5亿美元。",
-            "refs": [
-              14,
-              16
-            ],
-            "mentionCount": 2,
-            "crossVerifyScore": 82,
-            "topicId": 70
-          },
-          {
-            "title": "谷歌发布Gemma 4 12B，取消编码器实现16GB显存本地运行。",
-            "insight": "谷歌发布Gemma 4 12B，取消编码器实现16GB显存本地运行。",
-            "briefing": "谷歌于6月3日正式发布全新统一多模态模型Gemma 4 12B，该模型最大的创新在于彻底取消了传统多模态模型必不可少的“编码器”组件。在传统的多模态架构中，模型通常需要依赖独立的视觉和音频编码器，而Gemma 4 12B采用轻量级的嵌入层来直接处理视觉输入，仅需通过单次矩阵乘法、位置嵌入和归一化操作即可完成转换。这种精简的“无编码器”设计，不仅大幅降低了计算步骤，更让整个模型变得极其轻量。得益于底层架构的瘦身",
-            "evaluation": "该架构创新显著降低了多模态模型的部署门槛，有望推动端侧AI应用的普及。",
-            "narrative": "谷歌于6月3日正式发布全新统一多模态模型Gemma 4 12B，该模型最大的创新在于彻底取消了传统多模态模型必不可少的“编码器”组件。在传统的多模态架构中，模型通常需要依赖独立的视觉和音频编码器，而Gemma 4 12B采用轻量级的嵌入层来直接处理视觉输入，仅需通过单次矩阵乘法、位置嵌入和归一化操作即可完成转换。这种精简的“无编码器”设计，不仅大幅降低了计算步骤，更让整个模型变得极其轻量。得益于底层架构的瘦身。该架构创新显著降低了多模态模型的部署门槛，有望推动端侧AI应用的普及。",
-            "summary": "谷歌于6月3日正式发布全新统一多模态模型Gemma 4 12B，该模型最大的创新在于彻底取消了传统多模态模型必不可少的“编码器”组件。在传统的多模态架构中，模型通常需要依赖独立的视觉和音频编码器，而Gemma 4 12B采用轻量级的嵌入层来直接处理视觉输入，仅需通过单次矩阵乘法、位置嵌入和归一化操作即可完成转换。这种精简的“无编码器”设计",
-            "refs": [
-              9,
-              10
-            ],
-            "mentionCount": 2,
-            "crossVerifyScore": 82,
-            "topicId": 73
-          }
-        ],
-        "otherNews": [
-          {
-            "title": "阿里千问向第三方企业开放Agent，瑞幸、肯德基等首批入驻。",
-            "insight": "阿里千问向第三方企业开放Agent，瑞幸、肯德基等首批入驻。",
-            "briefing": "6月3日，千问APP宣布向第三方Agent和Skill全面开放。未来，企业可以在千问中运营自己的品牌Agent。目前，瑞幸、肯德基、蜜雪冰城、东方航空等首批企业已启动测试，并将陆续上线。对于企业来说，这意味着除了官网、App、小程序等渠道之外，又多了一个新的用户触达入口。用户无需下载额外应用，也无需在多个平台之间来回切换，只需通过自然语言对话，就能完成点咖啡、订机票、领取优惠券、查询订单等操作。此前",
-            "evaluation": "千问此举标志着大模型平台正从内部生态向外部商业服务生态扩展。",
-            "narrative": "6月3日，千问APP宣布向第三方Agent和Skill全面开放。未来，企业可以在千问中运营自己的品牌Agent。目前，瑞幸、肯德基、蜜雪冰城、东方航空等首批企业已启动测试，并将陆续上线。对于企业来说，这意味着除了官网、App、小程序等渠道之外，又多了一个新的用户触达入口。用户无需下载额外应用，也无需在多个平台之间来回切换，只需通过自然语言对话，就能完成点咖啡、订机票、领取优惠券、查询订单等操作。此前。千问此举标志着大模型平台正从内部生态向外部商业服务生态扩展。",
-            "summary": "6月3日，千问APP宣布向第三方Agent和Skill全面开放。未来，企业可以在千问中运营自己的品牌Agent。目前，瑞幸、肯德基、蜜雪冰城、东方航空等首批企业已启动测试，并将陆续上线。对于企业来说，这意味着除了官网、App、小程序等渠道之外，又多了一个新的用户触达入口。用户无需下载额外应用，也无需在多个平台之间来回切换，只需通过自然语言对话",
-            "refs": [
-              19
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 82,
-            "topicId": 68
-          },
-          {
-            "title": "字节2026年关键命题：发力世界模型、视频生成与Agent能力。",
-            "insight": "字节2026年关键命题：发力世界模型、视频生成与Agent能力。",
-            "briefing": "从多个信源处独家获悉，2026 年，字节 AI 有四个重要的命题：加大对世界模型训练的投入，年底前，模型性能达到现阶段世界模型全球 SOTA 的水平。视频模型继续保持领先地位，探索“动态生成”等新方向。进一步打好 Coding 的地基，做好 Coding 的 Dogfooding，提升 Agent 能力。豆包强化商业化能力，重点场景是“办公”。字节是入场世界模型赛道较晚的玩家，直到 2025 年才在小范围内成立研究组",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "从多个信源处独家获悉，2026 年，字节 AI 有四个重要的命题：加大对世界模型训练的投入，年底前，模型性能达到现阶段世界模型全球 SOTA 的水平。视频模型继续保持领先地位，探索“动态生成”等新方向。进一步打好 Coding 的地基，做好 Coding 的 Dogfooding，提升 Agent 能力。",
-            "summary": "从多个信源处独家获悉，2026 年，字节 AI 有四个重要的命题：加大对世界模型训练的投入，年底前，模型性能达到现阶段世界模型全球 SOTA 的水平。视频模型继续保持领先地位，探索“动态生成”等新方向。进一步打好 Coding 的地基",
-            "refs": [
-              21
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 81
-          },
-          {
-            "title": "谷歌云获瑞典独角兽Lovable 5倍算力扩容，深度整合进谷歌商业矩阵。",
-            "insight": "谷歌云获瑞典独角兽Lovable 5倍算力扩容，深度整合进谷歌商业矩阵。",
-            "briefing": "瑞典斯德哥尔摩的初创公司Lovable宣布与谷歌云达成一项长期的深度合作协议。根据新协议，Lovable将获得对 Anthropic 旗下 Claude 模型以及谷歌原生 Gemini 模型的更广泛访问权限。此次续约将使 Lovable 在谷歌云上的资源占用和 AI 使用量直接飙升至此前的 5 倍。作为欧洲有史以来增长最快的初创公司之一，Lovable在“全自动AI编码”赛道正展现出恐怖的吸金能力。数据显示，今年 2",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "瑞典斯德哥尔摩的初创公司Lovable宣布与谷歌云达成一项长期的深度合作协议。根据新协议，Lovable将获得对 Anthropic 旗下 Claude 模型以及谷歌原生 Gemini 模型的更广泛访问权限。此次续约将使 Lovable 在谷歌云上的资源占用和 AI 使用量直接飙升至此前的 5 倍。",
-            "summary": "瑞典斯德哥尔摩的初创公司Lovable宣布与谷歌云达成一项长期的深度合作协议。根据新协议，Lovable将获得对 Anthropic 旗下 Claude 模型以及谷歌原生 Gemini 模型的更广泛访问权限。此次续约将使 Lovable",
-            "refs": [
-              1
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 75
-          },
-          {
-            "title": "戴盟机器人完成亿元A轮融资，阿里通义大牛原玮浩加盟攻关物理世界模型。",
-            "insight": "戴盟机器人完成亿元A轮融资，阿里通义大牛原玮浩加盟攻关物理世界模型。",
-            "briefing": "具身智能公司戴盟机器人新近完成亿元A轮融资，本轮融资由汇川产投和中国电信联合投资。与此同时量子位还获悉了关于这家公司的另一则消息——阿里通义实验室前多模态研究专家原玮浩加入戴盟，担任首席AI科学家。原玮浩博士毕业于香港科技大学，研究工作主要面向具身人工智能和三维视觉，拥有将多模态大模型、世界模型迁移至机器人物理操作的前沿经验。戴盟方面表明，本轮融资到账后主要会投向三件事：物理世界模型研发；含物理交互信息的超大规模数据集",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "具身智能公司戴盟机器人新近完成亿元A轮融资，本轮融资由汇川产投和中国电信联合投资。与此同时量子位还获悉了关于这家公司的另一则消息——阿里通义实验室前多模态研究专家原玮浩加入戴盟，担任首席AI科学家。",
-            "summary": "具身智能公司戴盟机器人新近完成亿元A轮融资，本轮融资由汇川产投和中国电信联合投资。与此同时量子位还获悉了关于这家公司的另一则消息——阿里通义实验室前多模态研究专家原玮浩加入戴盟，担任首席AI科学家。原玮浩博士毕业于香港科技大学",
-            "refs": [
-              20
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 78
-          },
-          {
-            "title": "快手上线AI购物助手，自动抓取浏览记录并实现商品对比。",
-            "insight": "快手上线AI购物助手，自动抓取浏览记录并实现商品对比。",
-            "briefing": "快手App近日正式推出并配齐“AI购物助手”，提供独立入口，标志着快手货架电商在智能化基础设施建设上迎来重要升级。该产品紧跟行业AI导购趋势，主打对话式智能服务，通过自动抓取用户在快手App内的历史浏览商品记录，实时转化为即时购物线索，实现降价提醒与精准选品推送。在消费决策支持方面，该助手表现出较强的信息整合能力，不仅能快速抓取并结构化拆分商品的海量评价数据，精简输出优缺点，还支持同类竞品横向对比。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "快手App近日正式推出并配齐“AI购物助手”，提供独立入口，标志着快手货架电商在智能化基础设施建设上迎来重要升级。该产品紧跟行业AI导购趋势，主打对话式智能服务，通过自动抓取用户在快手App内的历史浏览商品记录，实时转化为即时购物线索，实现降价提醒与精准选品推送。",
-            "summary": "快手App近日正式推出并配齐“AI购物助手”，提供独立入口，标志着快手货架电商在智能化基础设施建设上迎来重要升级。该产品紧跟行业AI导购趋势，主打对话式智能服务，通过自动抓取用户在快手App内的历史浏览商品记录，实时转化为即时购物线索",
-            "refs": [
-              15
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 76
-          }
-        ],
-        "coreTech": [
-          {
-            "title": "元代理挑战：当前代理具备自主",
-            "summary": "该论文提出了Meta-Agent Challenge (MAC)评估框架，旨在测试前沿模型自主开发Agent系统的能力，填补了当前基准测试在评估模型自我进化与系统构建能力方面的空白。",
-            "refs": [
-              4
-            ],
-            "topicId": 13
-          },
-          {
-            "title": "可信代理互联的开源基础设施",
-            "summary": "该论文提出了OpenAgenet (OAN)作为可信Agent互联的开源基础设施，旨在解决Agent在开放多运营商网络中面临的身份验证、治理状态和信任证据等关键问题。",
-            "refs": [
-              5
-            ],
-            "topicId": 10
-          },
-          {
-            "title": "超越基于提示的规划",
-            "summary": "该论文介绍了BioManus，一个基于图骨架规划构建的MCP原生生物医药Agent系统，旨在解决生物信息学工具异构接口与扁平提示词规划导致的工具混淆与执行不稳定问题。",
-            "refs": [
-              6
-            ],
-            "topicId": 6
-          },
-          {
-            "title": "可证明携带的代理动作",
-            "summary": "该论文提出了Proof-Carrying Agent Actions，一种模型无关的运行时治理机制，用于在异构Agent系统中一致地验证和授权高风险操作。",
-            "refs": [
-              7
-            ],
-            "topicId": 11
-          },
-          {
-            "title": "用于系统提示词优化的自进化提示代理",
-            "summary": "该论文提出了SePO方法，通过自引用设计将提示Agent自身的系统提示词作为优化目标，实现了对系统提示词的自动进化与优化。",
-            "refs": [
-              8
-            ],
-            "topicId": 12
-          },
-          {
-            "title": "大语言模型的星际争霸多智能体",
-            "summary": "该论文提出了SMAC-Talk，这是StarCraft多智能体挑战的自然语言扩展，旨在评估大语言模型在去中心化控制、部分可观测性和长期决策等复杂环境中的协作能力。",
-            "refs": [
-              3
-            ],
-            "topicId": 4
-          }
-        ],
-        "aiRumor": [],
-        "refTranslations": {
-          "1": "谷歌云AI生态再迎超级大客户！瑞典独角兽 Lovable 签约扩容 5 倍算力瑞典初创公司Lovable与谷歌云达成长期深度合作，虽未公开金额，但知情人士称其云资源和AI使用量将增至5倍。作为欧洲增长最快的初创公司之一",
-          "2": "消息人士称 Lovable 与 Google Cloud 签订多年协议，使用量将提升 5 倍",
-          "3": "SMAC-Talk：大语言模型的星际争霸多智能体挑战自然语言扩展",
-          "4": "元代理挑战：当前代理具备自主开发代理系统的能力吗？",
-          "5": "OpenAgenet/OAN：可信代理互联的开源基础设施",
-          "6": "超越基于提示的规划：基于图骨架规划的生物医药代理系统",
-          "7": "可证明携带的代理动作：异构代理系统的模型无关运行时治理",
-          "8": "SePO：用于系统提示词优化的自进化提示代理",
-          "9": "16 GB内存本地即时响应！谷歌发布Gemma 4 12 B，颠覆性“无编码器”架构引爆开源社区谷歌发布全新多模态模型Gemma4 12 B，颠覆传统架构，取消独立编码器组件，实现消费级硬件上的高效本地部署与推理。",
-          "10": "谷歌推出全新 Gemma 4 12 B 模型：轻松处理视觉与音频，无需编码器谷歌发布Gemma 4 12 B多模态模型，拥有12亿参数，创新取消传统编码器，可直接处理视觉与音频数据。该模型仅需16 GB显存，可在高端笔记本本地运行",
-          "11": "Gemma 4 12 B 现可通过 Dynamic GGUF 在仅 8 GB 内存中本地运行",
-          "12": "手机AI能直接调动微信了!微信互联多厂商推A2 A助手，操作链路迎变革微信与华为、小米、荣耀、OPPO等主流手机厂商合作，推出基于A2 A协作机制的助手能力，将微信高频服务融入手机原生系统。",
-          "13": "争夺AI手机入口，豆包和微信打起来了",
-          "14": "速递｜AI音乐独角兽Suno再融4亿美元，估值翻倍至54亿美元，订阅用户超200万",
-          "15": "快手App上线“AI购物助手” 补齐货架电商智能导购短板快手App近日正式上线“AI购物助手”，提供独立入口，标志其货架电商智能化升级。该助手紧跟行业趋势，主打对话式智能服务，能自动抓取用户历史浏览记录，转化为即时购物线索",
-          "16": "“互联网女皇”基金领投，AI音乐独角兽估值达54亿美元",
-          "17": "独家！快手APP配齐“AI购物助手”，我和它聊了这些话题",
-          "18": "GPT-5. 5 拿下利用率冠军，DeepSeek V4 Pro斩获性价比之王！大模型网络安全攻防实测报告出炉大语言模型在网络安全领域的推理能力正面临严峻考验。安全研究员Kasra Rahjerdi通过构建含有核心漏洞的图书评论APK",
-          "19": "阿里千问开放企业Agent，瑞幸、肯德基、东航集体入驻",
-          "20": "戴盟机器人完成亿元融资，阿里通义多模态大牛原玮浩加盟攻关物理世界模型",
-          "21": "36氪独家｜2026 年字节 AI 的四个关键命题"
-        },
-        "candidateTotal": 250,
-        "topicTotal": 98,
-        "selectedTopicTotal": 16
-      },
-      "at": "2026-06-04"
-    },
-    "morning:2026-06-04": {
-      "fingerprint": "06691198231e2415c87f19859898b9b17710eb74e5fc8abc24f9cd1ac8062904",
-      "daily": {
-        "overview": "微软在Build大会上推出AI助手Scout，OpenAI宣布Codex并入ChatGPT，Alphabet创纪录融资850亿美元支持Google AI业务，亚马逊搜索栏引入AI生成商品图像功能，Google推出Dreambeans工具，xAI请求法院公开Deepfake受害者身份，科技巨头加速布局物理AI与具身智能。",
-        "hotNews": [
-          {
-            "title": "微软推出养成系AI助手Scout，深度整合Microsoft 365生态。",
-            "insight": "微软推出养成系AI助手Scout，深度整合Microsoft 365生态。",
-            "briefing": "微软在Build大会上发布全新AI助手Scout，其底层框架源自开源项目OpenClaw，旨在将智能体灵活性与陪伴功能融入Microsoft 365生态。Scout强调全天候在线与个性化“持久身份”，用户可自定义姓名，系统通过长期互动将用户行为模式内化为记忆与技能。针对OpenClaw曾出现的失控问题，Scout内置了严密的策略合规系统与审计日志。此外，OpenAI宣布GPT-Rosalind在生命科学研究方面取得进展。",
-            "evaluation": "微软通过Scout强化了在AI智能体领域的生态整合能力。",
-            "narrative": "微软在Build大会上发布全新AI助手Scout，其底层框架源自开源项目OpenClaw，旨在将智能体灵活性与陪伴功能融入Microsoft 365生态。Scout强调全天候在线与个性化“持久身份”，用户可自定义姓名，系统通过长期互动将用户行为模式内化为记忆与技能。针对OpenClaw曾出现的失控问题，Scout内置了严密的策略合规系统与审计日志。此外，OpenAI宣布GPT-Rosalind在生命科学研究方面取得进展。微软通过Scout强化了在AI智能体领域的生态整合能力。",
-            "summary": "微软在Build大会上发布全新AI助手Scout，其底层框架源自开源项目OpenClaw，旨在将智能体灵活性与陪伴功能融入Microsoft 365生态。Scout强调全天候在线与个性化“持久身份”，用户可自定义姓名，系统通过长期互动将用户行为模式内化为记忆与技能。针对OpenClaw曾出现的失控问题，Scout内置了严密的策略合规系统与审计日志。此外",
-            "refs": [
-              6,
-              5,
-              7
-            ],
-            "mentionCount": 3,
-            "crossVerifyScore": 82,
-            "topicId": 3
-          },
-          {
-            "title": "Alphabet创纪录融资850亿美元，彰显投资者对AI业务的强烈信心。",
-            "insight": "Alphabet创纪录融资850亿美元，彰显投资者对AI业务的强烈信心。",
-            "briefing": "Alphabet宣布创纪录的850亿美元股票融资计划，旨在支持其不断增长的AI业务支出。该计划包括40亿美元的公开市场发行和与伯克希尔哈撒韦的100亿美元交易。由于需求旺盛，融资规模从最初计划的400亿美元大幅上调，最终筹集了450亿美元。",
-            "evaluation": "巨额融资表明资本市场对AI技术前景的极度乐观。",
-            "narrative": "Alphabet宣布创纪录的850亿美元股票融资计划，旨在支持其不断增长的AI业务支出。该计划包括40亿美元的公开市场发行和与伯克希尔哈撒韦的100亿美元交易。由于需求旺盛，融资规模从最初计划的400亿美元大幅上调，最终筹集了450亿美元。巨额融资表明资本市场对AI技术前景的极度乐观。",
-            "summary": "Alphabet宣布创纪录的850亿美元股票融资计划，旨在支持其不断增长的AI业务支出。该计划包括40亿美元的公开市场发行和与伯克希尔哈撒韦的100亿美元交易。由于需求旺盛，融资规模从最初计划的400亿美元大幅上调，最终筹集了450亿美元。巨额融资表明资本市场对AI技术前景的极度乐观。",
-            "refs": [
-              3,
-              4
-            ],
-            "mentionCount": 2,
-            "crossVerifyScore": 80,
-            "topicId": 78
-          },
-          {
-            "title": "亚马逊搜索栏引入AI生成商品图像功能，提升搜索体验。",
-            "insight": "亚马逊搜索栏引入AI生成商品图像功能，提升搜索体验。",
-            "briefing": "亚马逊宣布在购物应用搜索栏引入AI生成商品图像功能，用户可通过描述寻找特定纹理或风格的商品。目前该功能仅展示服装和家居用品的AI图像，用户可点击匹配图像进行搜索。",
-            "evaluation": "AI图像生成功能为用户提供了更直观的搜索方式。",
-            "narrative": "亚马逊宣布在购物应用搜索栏引入AI生成商品图像功能，用户可通过描述寻找特定纹理或风格的商品。目前该功能仅展示服装和家居用品的AI图像，用户可点击匹配图像进行搜索。AI图像生成功能为用户提供了更直观的搜索方式。",
-            "summary": "亚马逊宣布在购物应用搜索栏引入AI生成商品图像功能，用户可通过描述寻找特定纹理或风格的商品。目前该功能仅展示服装和家居用品的AI图像，用户可点击匹配图像进行搜索。AI图像生成功能为用户提供了更直观的搜索方式。",
-            "refs": [
-              1,
-              2
-            ],
-            "mentionCount": 2,
-            "crossVerifyScore": 80,
-            "topicId": 80
-          }
-        ],
-        "otherNews": [
-          {
-            "title": "机器人公司加速布局校园市场，争夺AI现实世界入口。",
-            "insight": "机器人公司加速布局校园市场，争夺AI现实世界入口。",
-            "briefing": "越来越多机器人公司开始将学校作为重要目标，推出校园实验室、K12课程体系及AI社团解决方案。这表明机器人产业竞争已从硬件制造升级为争夺AI进入现实世界的早期入口。",
-            "evaluation": "多来源共同指向同一趋势，短期影响值得持续跟踪。",
-            "narrative": "越来越多机器人公司开始将学校作为重要目标，推出校园实验室、K12课程体系及AI社团解决方案。这表明机器人产业竞争已从硬件制造升级为争夺AI进入现实世界的早期入口。",
-            "summary": "越来越多机器人公司开始将学校作为重要目标，推出校园实验室、K12课程体系及AI社团解决方案。这表明机器人产业竞争已从硬件制造升级为争夺AI进入现实世界的早期入口。多来源共同指向同一趋势，短期影响值得持续跟踪。",
-            "refs": [
-              16,
-              15
-            ],
-            "mentionCount": 2,
-            "crossVerifyScore": 68,
-            "topicId": 72
-          },
-          {
-            "title": "Google推出Dreambeans工具，将用户生活转化为AI故事。",
-            "insight": "Google推出Dreambeans工具，将用户生活转化为AI故事。",
-            "briefing": "Google Labs推出名为Dreambeans的AI工具，旨在将用户在Google服务中的数据转化为AI插画故事。该工具主要提供生活方式建议，目前支持iOS和Android平台。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "Google Labs推出名为Dreambeans的AI工具，旨在将用户在Google服务中的数据转化为AI插画故事。该工具主要提供生活方式建议，目前支持iOS和Android平台。",
-            "summary": "Google Labs推出名为Dreambeans的AI工具，旨在将用户在Google服务中的数据转化为AI插画故事。该工具主要提供生活方式建议，目前支持iOS和Android平台。当前信号具备参考价值，但仍需更多来源持续验证。",
-            "refs": [
-              10
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 71,
-            "topicId": 79
-          },
-          {
-            "title": "NVIDIA与Unitree合作推出人形机器人H2 Plus。",
-            "insight": "NVIDIA与Unitree合作推出人形机器人H2 Plus。",
-            "briefing": "NVIDIA宣布与Unitree合作推出人形机器人H2 Plus，该机器人结合了Unitree的硬件与NVIDIA的Thor T5000芯片及软件套件，旨在简化编程与训练流程。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "NVIDIA宣布与Unitree合作推出人形机器人H2 Plus，该机器人结合了Unitree的硬件与NVIDIA的Thor T5000芯片及软件套件，旨在简化编程与训练流程。",
-            "summary": "NVIDIA宣布与Unitree合作推出人形机器人H2 Plus，该机器人结合了Unitree的硬件与NVIDIA的Thor T5000芯片及软件套件，旨在简化编程与训练流程。当前信号具备参考价值，但仍需更多来源持续验证。",
-            "refs": [
-              14
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 71,
-            "topicId": 94
-          },
-          {
-            "title": "xAI请求法院公开Grok Deepfake受害者身份。",
-            "insight": "xAI请求法院公开Grok Deepfake受害者身份。",
-            "briefing": "xAI请求法院公开四名Grok Deepfake受害者身份，其中包括一名儿童受害者。这些受害者因Deepfake色情图像遭受情感困扰，并提起集体诉讼。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "xAI请求法院公开四名Grok Deepfake受害者身份，其中包括一名儿童受害者。这些受害者因Deepfake色情图像遭受情感困扰，并提起集体诉讼。",
-            "summary": "xAI请求法院公开四名Grok Deepfake受害者身份，其中包括一名儿童受害者。这些受害者因Deepfake色情图像遭受情感困扰，并提起集体诉讼。当前信号具备参考价值，但仍需更多来源持续验证。",
-            "refs": [
-              13
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 71,
-            "topicId": 93
-          },
-          {
-            "title": "OpenAI宣布Codex将并入ChatGPT，打造超级应用。",
-            "insight": "OpenAI宣布Codex将并入ChatGPT，打造超级应用。",
-            "briefing": "OpenAI在Intelligence at Work发布会上宣布，Codex将在未来几周内正式并入ChatGPT。此前Codex仅作为下载入口存在，合并后聊天与工作流将在同一应用中完成。Codex周活用户已突破500万，且非程序员用户增速显著，显示出强大的破圈潜力。",
-            "evaluation": "Codex并入标志着OpenAI超级应用战略的实质性落地。",
-            "narrative": "OpenAI在Intelligence at Work发布会上宣布，Codex将在未来几周内正式并入ChatGPT。此前Codex仅作为下载入口存在，合并后聊天与工作流将在同一应用中完成。Codex周活用户已突破500万，且非程序员用户增速显著，显示出强大的破圈潜力。Codex并入标志着OpenAI超级应用战略的实质性落地。",
-            "summary": "OpenAI在Intelligence at Work发布会上宣布，Codex将在未来几周内正式并入ChatGPT。此前Codex仅作为下载入口存在，合并后聊天与工作流将在同一应用中完成。Codex周活用户已突破500万，且非程序员用户增速显著，显示出强大的破圈潜力。Codex并入标志着OpenAI超级应用战略的实质性落地。",
-            "refs": [
-              9
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 71,
-            "topicId": 68
-          }
-        ],
-        "coreTech": [
-          {
-            "title": "论文进展 1",
-            "summary": "该论文提出了一种自主科学实验中智能体与物理仪器通信的协议，旨在解决当前系统因碎片化SDK和标准而难以连接的问题。",
-            "refs": [
-              17
-            ],
-            "topicId": 14
-          },
-          {
-            "title": "论文进展 2",
-            "summary": "论文描述了OpenAgenet/OAN的技术架构，这是一种用于开放智能体互连的协议中立信任层，支持多种框架与交互协议。",
-            "refs": [
-              18
-            ],
-            "topicId": 18
-          },
-          {
-            "title": "论文进展 3",
-            "summary": "论文提出了Hedge-Bench 1.0基准测试，专注于评估AI代理在真实金融分析任务中的推理能力，包含102个专业对冲基金分析师任务。",
-            "refs": [
-              19
-            ],
-            "topicId": 13
-          },
-          {
-            "title": "论文进展 4",
-            "summary": "论文介绍了MedCUA-Bench，这是一个针对临床计算机使用代理的交互式基准测试，专注于医疗软件的可靠性验证。",
-            "refs": [
-              20
-            ],
-            "topicId": 16
-          },
-          {
-            "title": "论文进展 5",
-            "summary": "论文提出了VistaHop基准测试，用于评估视觉深度搜索中的多跳视觉推理能力，涵盖迭代图像检查与视觉锚点定位。",
-            "refs": [
-              21
-            ],
-            "topicId": 23
-          },
-          {
-            "title": "论文进展 6",
-            "summary": "论文提出SkillRevise方法，通过轨迹条件化的技能修正来改进LLM代理的技能，解决冷启动设置下的技能构建难题。",
-            "refs": [
-              22
-            ],
-            "topicId": 19
-          }
-        ],
-        "aiRumor": [],
-        "refTranslations": {
-          "1": "亚马逊将在搜索时显示AI生成的产品图像",
-          "2": "亚马逊搜索栏将展示你无法购买的AI生成产品",
-          "3": "Alphabet创纪录的850亿美元融资对Google AI业务是极好的信号",
-          "4": "Alphabet为AI支出将股权发行规模扩大至850亿美元",
-          "5": "微软和OpenAI分手了——现在他们准备战斗",
-          "6": "介绍GPT-Rosalind的新功能",
-          "7": "打通微软全家桶！微软发布全新 AI 助手 Scout，承袭 Open Claw 基因主打“养成系”定制微软在Build大会上推出AI助手Scout，将其智能体灵活性与陪伴功能融入Microsoft 365生态。",
-          "8": "随着AI变得更好，它揭示了一个空洞的承诺",
-          "9": "“ChatGPT以后可能要没了”",
-          "10": "Google的Dreambeans，其名字最奇怪的AI工具将把你的生活变成卡通",
-          "11": "OpenAI重新利用Codex构建实时数据企业Web应用",
-          "12": "超越非正式 AI：Carina Hong, Axiom Math",
-          "13": "xAI请求法院剥夺涉嫌Grok Deepfake裸照受害者的匿名权",
-          "14": "未来的人形机器人是一个6英尺高的肌肉男，拥有中国身体和美国大脑",
-          "15": "机器人的规则之争：科技巨头正加速构建物理AI生态物理AI正成为科技巨头新战场。OpenAI、英伟达与特斯拉近期在具身智能领域推出重大举措，表明机器人产业竞争从硬件制造升级为底层基础设施与行业标准制定。OpenAI新成立“OpenAI",
-          "16": "机器人进校潮背后：AI产业正在争夺“真实世界入口”",
-          "17": "LAP：自主科学代理的代理到工具协议",
-          "18": "Open Agenet/OAN：受信任治理的代理身份识别与发现技术架构",
-          "19": "Hedge-Bench：金融推理中困难且现实任务的代理基准测试",
-          "20": "Med CUA-Bench：临床计算机使用代理的纯截图基准测试",
-          "21": "Vista Hop：视觉深度搜索的多跳视觉推理基准测试",
-          "22": "Skill Revise：通过轨迹条件化技能修订改进 LLM 编写的代理技能"
-        },
-        "candidateTotal": 250,
-        "topicTotal": 98,
-        "selectedTopicTotal": 16
-      },
-      "at": "2026-06-04"
-    },
     "morning:2026-06-05": {
       "fingerprint": "e661505521fba19a23b50062537e73a0ca08c07d697fd8713d8f95a4fba57db1",
       "daily": {
@@ -42406,87 +41997,237 @@
         "selectedTopicTotal": 7
       },
       "at": "2026-10-02"
+    },
+    "morning:2026-10-02": {
+      "fingerprint": "1485cd42cc659631007a2df646c43ab22886c9119258c78738168c244c84794f",
+      "daily": {
+        "overview": "OpenAI解雇安全研究员引发安全团队动荡，同时推出ChatGPT虚拟试衣等新功能；Shopify发布AI网站构建工具Canvas；Google AI Overviews反垄断案被驳回；AI在Stratego等游戏上取得突破。研究方面，多篇论文聚焦多智能体系统、知识模型与安全防御。",
+        "hotNews": [
+          {
+            "title": "Google AI Overviews反垄断案被法官驳回。",
+            "insight": "Google AI Overviews反垄断案被法官驳回。",
+            "briefing": "美国联邦法官驳回了对Google AI搜索功能提起的反垄断诉讼，原告包括Chegg和Penske媒体集团。尽管这些公司声称AI搜索导致其网站流量下降，但法官裁定Google的行为不违反反垄断法。此前Google曾请求驳回此案。",
+            "evaluation": "判决结果可能为AI搜索功能的进一步推广扫清法律障碍。",
+            "narrative": "美国联邦法官驳回了对Google AI搜索功能提起的反垄断诉讼，原告包括Chegg和Penske媒体集团。尽管这些公司声称AI搜索导致其网站流量下降，但法官裁定Google的行为不违反反垄断法。此前Google曾请求驳回此案。判决结果可能为AI搜索功能的进一步推广扫清法律障碍。",
+            "summary": "美国联邦法官驳回了对Google AI搜索功能提起的反垄断诉讼，原告包括Chegg和Penske媒体集团。尽管这些公司声称AI搜索导致其网站流量下降，但法官裁定Google的行为不违反反垄断法。此前Google曾请求驳回此案。判决结果可能为AI搜索功能的进一步推广扫清法律障碍。",
+            "refs": [
+              9,
+              11
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 70,
+            "topicId": 75
+          },
+          {
+            "title": "OpenAI因泄密解雇安全研究员，凸显内部安全管控挑战。",
+            "insight": "OpenAI因泄密解雇安全研究员，凸显内部安全管控挑战。",
+            "briefing": "OpenAI周四宣布解雇三名安全研究员，据《华尔街日报》报道，这些研究员被指将敏感公司信息泄露给第三方AI安全组织。OpenAI发言人表示，这是因违反访问和处理敏感信息的政策所致。此举引发外界对OpenAI内部安全团队稳定性的关注。",
+            "evaluation": "事件表明OpenAI在追求技术突破的同时，内部安全合规面临严峻考验。",
+            "narrative": "OpenAI周四宣布解雇三名安全研究员，据《华尔街日报》报道，这些研究员被指将敏感公司信息泄露给第三方AI安全组织。OpenAI发言人表示，这是因违反访问和处理敏感信息的政策所致。此举引发外界对OpenAI内部安全团队稳定性的关注。事件表明OpenAI在追求技术突破的同时，内部安全合规面临严峻考验。",
+            "summary": "OpenAI周四宣布解雇三名安全研究员，据《华尔街日报》报道，这些研究员被指将敏感公司信息泄露给第三方AI安全组织。OpenAI发言人表示，这是因违反访问和处理敏感信息的政策所致。此举引发外界对OpenAI内部安全团队稳定性的关注。事件表明OpenAI在追求技术突破的同时，内部安全合规面临严峻考验。",
+            "refs": [
+              1
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 71,
+            "topicId": 67
+          },
+          {
+            "title": "特朗普与科技高管签署AI伦理协定。",
+            "insight": "特朗普与科技高管签署AI伦理协定。",
+            "briefing": "特朗普与科技高管签署了一份“具有约束力”的AI安全协定，承诺AI实验室将自我监管。该协定被批评为缺乏实际约束力，仅是“口头承诺”。同时，OpenAI开发者日推出了面向普通用户的AI代理Dots。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "特朗普与科技高管签署了一份“具有约束力”的AI安全协定，承诺AI实验室将自我监管。该协定被批评为缺乏实际约束力，仅是“口头承诺”。同时，OpenAI开发者日推出了面向普通用户的AI代理Dots。",
+            "summary": "特朗普与科技高管签署了一份“具有约束力”的AI安全协定，承诺AI实验室将自我监管。该协定被批评为缺乏实际约束力，仅是“口头承诺”。同时，OpenAI开发者日推出了面向普通用户的AI代理Dots。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              4
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 70,
+            "topicId": 69
+          }
+        ],
+        "otherNews": [
+          {
+            "title": "AI Ataraxos击败Stratego世界冠军。",
+            "insight": "AI Ataraxos击败Stratego世界冠军。",
+            "briefing": "卡内基梅隆、MIT、NYU和斯坦福的研究团队开发的AI Ataraxos，以15胜1负4平的成绩击败了Stratego历史最佳玩家Pim Niemeijer。该AI仅使用16块GPU和数千美元训练成本，成功破解了这一信息隐藏类游戏。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "卡内基梅隆、MIT、NYU和斯坦福的研究团队开发的AI Ataraxos，以15胜1负4平的成绩击败了Stratego历史最佳玩家Pim Niemeijer。该AI仅使用16块GPU和数千美元训练成本，成功破解了这一信息隐藏类游戏。",
+            "summary": "卡内基梅隆、MIT、NYU和斯坦福的研究团队开发的AI Ataraxos，以15胜1负4平的成绩击败了Stratego历史最佳玩家Pim Niemeijer。该AI仅使用16块GPU和数千美元训练成本，成功破解了这一信息隐藏类游戏。",
+            "refs": [
+              10
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 70,
+            "topicId": 79
+          },
+          {
+            "title": "ChatGPT新增虚拟试衣功能，拓展AI在电商领域的应用场景。",
+            "insight": "ChatGPT新增虚拟试衣功能，拓展AI在电商领域的应用场景。",
+            "briefing": "OpenAI周四宣布全球推出两项购物新功能，包括虚拟试穿服装和配饰，以及收藏产品功能。此前OpenAI曾尝试过即时结账功能但效果不佳，此次转向更注重用户体验的虚拟试衣。这反映了AI助手在电商消费场景中的持续探索。",
+            "evaluation": "功能落地标志着AI助手在电商辅助决策方面迈出实质性一步。",
+            "narrative": "OpenAI周四宣布全球推出两项购物新功能，包括虚拟试穿服装和配饰，以及收藏产品功能。此前OpenAI曾尝试过即时结账功能但效果不佳，此次转向更注重用户体验的虚拟试衣。这反映了AI助手在电商消费场景中的持续探索。功能落地标志着AI助手在电商辅助决策方面迈出实质性一步。",
+            "summary": "OpenAI周四宣布全球推出两项购物新功能，包括虚拟试穿服装和配饰，以及收藏产品功能。此前OpenAI曾尝试过即时结账功能但效果不佳，此次转向更注重用户体验的虚拟试衣。这反映了AI助手在电商消费场景中的持续探索。功能落地标志着AI助手在电商辅助决策方面迈出实质性一步。",
+            "refs": [
+              2
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 71,
+            "topicId": 66
+          },
+          {
+            "title": "OpenAI探讨AI在执行层面的经济价值。",
+            "insight": "OpenAI探讨AI在执行层面的经济价值。",
+            "briefing": "OpenAI发布文章探讨高级AI在突破性想法背后的常规工作中可能发挥的最大作用，强调执行力可能塑造下一个经济体的形态。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "OpenAI发布文章探讨高级AI在突破性想法背后的常规工作中可能发挥的最大作用，强调执行力可能塑造下一个经济体的形态。",
+            "summary": "OpenAI发布文章探讨高级AI在突破性想法背后的常规工作中可能发挥的最大作用，强调执行力可能塑造下一个经济体的形态。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              6
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 70,
+            "topicId": 74
+          },
+          {
+            "title": "Google Gemini Live推出Guided Vision辅助阅读功能。",
+            "insight": "Google Gemini Live推出Guided Vision辅助阅读功能。",
+            "briefing": "Google在兼容Android设备的Gemini Live中推出Guided Vision功能，利用AI为手机摄像头捕捉的画面提供实时语音描述。该功能可帮助用户识别小字、描述环境或识别物体，类似于苹果的VoiceOver Live Recognition。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Google在兼容Android设备的Gemini Live中推出Guided Vision功能，利用AI为手机摄像头捕捉的画面提供实时语音描述。该功能可帮助用户识别小字、描述环境或识别物体，类似于苹果的VoiceOver Live Recognition。",
+            "summary": "Google在兼容Android设备的Gemini Live中推出Guided Vision功能，利用AI为手机摄像头捕捉的画面提供实时语音描述。该功能可帮助用户识别小字、描述环境或识别物体，类似于苹果的VoiceOver Live",
+            "refs": [
+              5
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 70,
+            "topicId": 70
+          },
+          {
+            "title": "Shopify Canvas通过对话式AI简化网站构建流程。",
+            "insight": "Shopify Canvas通过对话式AI简化网站构建流程。",
+            "briefing": "Shopify周四发布新工具Canvas，允许商家通过对话与AI代理Sidekick直接构建在线商店。相比此前需要编辑代码或依赖开发者的无代码构建器，Canvas实现了更深度的实时定制与可视化反馈，降低了建站门槛。",
+            "evaluation": "工具降低了电商建站的技术门槛，提升了中小商家的运营效率。",
+            "narrative": "Shopify周四发布新工具Canvas，允许商家通过对话与AI代理Sidekick直接构建在线商店。相比此前需要编辑代码或依赖开发者的无代码构建器，Canvas实现了更深度的实时定制与可视化反馈，降低了建站门槛。工具降低了电商建站的技术门槛，提升了中小商家的运营效率。",
+            "summary": "Shopify周四发布新工具Canvas，允许商家通过对话与AI代理Sidekick直接构建在线商店。相比此前需要编辑代码或依赖开发者的无代码构建器，Canvas实现了更深度的实时定制与可视化反馈，降低了建站门槛。工具降低了电商建站的技术门槛，提升了中小商家的运营效率。",
+            "refs": [
+              3
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 71,
+            "topicId": 68
+          },
+          {
+            "title": "Grok曾建议特朗普武力占领委内瑞拉。",
+            "insight": "Grok曾建议特朗普武力占领委内瑞拉。",
+            "briefing": "据《时代》杂志报道，特朗普曾与马斯克的Grok聊天机器人进行长时间对话，并询问如何应对委内瑞拉总统马杜罗被俘后的局势。该事件发生在2025年12月，即美国入侵委内瑞拉前一个月。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "据《时代》杂志报道，特朗普曾与马斯克的Grok聊天机器人进行长时间对话，并询问如何应对委内瑞拉总统马杜罗被俘后的局势。该事件发生在2025年12月，即美国入侵委内瑞拉前一个月。",
+            "summary": "据《时代》杂志报道，特朗普曾与马斯克的Grok聊天机器人进行长时间对话，并询问如何应对委内瑞拉总统马杜罗被俘后的局势。该事件发生在2025年12月，即美国入侵委内瑞拉前一个月。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              7
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 70,
+            "topicId": 72
+          },
+          {
+            "title": "AI写作特征识别研究揭示模型独特习惯。",
+            "insight": "AI写作特征识别研究揭示模型独特习惯。",
+            "briefing": "营销公司Graphite的研究发现，尽管早期的AI写作特征如破折号和“delve”已被淘汰，但模型仍会使用对比强烈的句式结构。不同版本的模型展现出独特的写作习惯，这为识别AI生成内容提供了新的线索。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "营销公司Graphite的研究发现，尽管早期的AI写作特征如破折号和“delve”已被淘汰，但模型仍会使用对比强烈的句式结构。不同版本的模型展现出独特的写作习惯，这为识别AI生成内容提供了新的线索。",
+            "summary": "营销公司Graphite的研究发现，尽管早期的AI写作特征如破折号和“delve”已被淘汰，但模型仍会使用对比强烈的句式结构。不同版本的模型展现出独特的写作习惯，这为识别AI生成内容提供了新的线索。当前信号具备参考价值",
+            "refs": [
+              8
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 70,
+            "topicId": 73
+          }
+        ],
+        "coreTech": [
+          {
+            "title": "大规模知识模型：大规模代理科",
+            "summary": "该论文提出大规模知识模型，旨在为大规模代理科学提供知识基础，支持高并发访问、可追溯推理和增量增长。",
+            "refs": [
+              12
+            ],
+            "topicId": 1
+          },
+          {
+            "title": "推测性安全蜜罐：迈向多轮代理",
+            "summary": "论文提出Speculative Safety Honeypot框架，利用多智能体模拟系统构建推测与验证工作流，以主动防御多轮交互攻击。",
+            "refs": [
+              15
+            ],
+            "topicId": 24
+          },
+          {
+            "title": "个人设备的代理基准测试",
+            "summary": "AgBench为个人AI设备上的代理AI系统提供基准测试套件，旨在系统评估设备资源限制下的任务性能与部署架构。",
+            "refs": [
+              16
+            ],
+            "topicId": 37
+          },
+          {
+            "title": "地图不确定性下的信念感知多智",
+            "summary": "研究在地图不确定性下实现多智能体路径规划，利用空间相关性推断未观测区域的通行性。",
+            "refs": [
+              17
+            ],
+            "topicId": 40
+          },
+          {
+            "title": "编码代理记忆后训练",
+            "summary": "论文通过强化学习解锁预训练文件操作的记忆潜力，使语言模型代理能够处理超长时序任务。",
+            "refs": [
+              18
+            ],
+            "topicId": 45
+          },
+          {
+            "title": "自动化证明发现的多智能体编排",
+            "summary": "Cogentic是一个多智能体编排框架，用于自动化发现开放研究问题的证明，通过多轮探索解决复杂技术障碍。",
+            "refs": [
+              19
+            ],
+            "topicId": 46
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "OpenAI解雇3名安全研究员，据《华尔街日报》报道",
+          "2": "ChatGPT可虚拟试穿衣服",
+          "3": "Shopify推出Canvas：通过聊天构建在线商店",
+          "4": "特朗普的‘道德约束’AI‘协议’、AI代理的兴起及选票上的极端分子",
+          "5": "谷歌新功能Guided Vision助你阅读小字",
+          "6": "永恒的伴侣",
+          "7": "马斯克的AI聊天机器人Grok据称鼓励特朗普夺取委内瑞拉总统",
+          "8": "Opus 5.5喜欢告诉你‘这很重要’（以及其他AI写作套路）",
+          "9": "法官驳回针对谷歌AI概览的反垄断诉讼",
+          "10": "Stratego游戏因信息隐藏难倒AI，直到现在",
+          "11": "法官驳回针对谷歌AI搜索的Chegg和Penske反垄断诉讼",
+          "12": "大规模知识模型：大规模代理科学的知识基础",
+          "13": "OSWorld-Science：计算机使用智能体学习与使用科学软件的基准",
+          "14": "面向LLM智能体的基于信念的世界模型",
+          "15": "推测性安全蜜罐：迈向多轮代理攻击的主动防御",
+          "16": "AgBench：个人AI设备的代理AI基准测试",
+          "17": "地图不确定性下的信念感知多智能体路径规划",
+          "18": "编码代理记忆后训练：通过强化学习解锁长时序任务的记忆潜力",
+          "19": "Cogentic：自动化证明发现的多智能体编排",
+          "20": "分而治之与崩溃：通过独立子实例的精确分解实现MAPF-Collapse"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 92,
+        "selectedTopicTotal": 16
+      },
+      "at": "2026-10-02"
     }
   },
   "llm": {
-    "4e2fd53bd241858c16d8ac657747bcbe4e2b99bf5363e1c256fd3da9a6de6a0b": {
-      "operation": "cluster_assignments_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"assignments\":[{\"candidate_id\":45,\"topic_key\":\"大模型上下文窗口扩展\",\"topic_title\":\"OpenAI Codex百万Token上下文窗口开放\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":64,\"topic_key\":\"大模型上下文窗口扩展\",\"topic_title\":\"OpenAI Codex百万Token上下文窗口开放\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":62,\"topic_key\":\"亚马逊收购稀有书籍用于AI训练\",\"topic_title\":\"亚马逊收购稀有书籍用于AI训练\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":71,\"topic_key\":\"亚马逊收购稀有书籍用于AI训练\",\"topic_title\":\"亚马逊收购稀有书籍用于AI训练\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":63,\"topic_key\":\"Nvidia投资SoftBank数据中心\",\"topic_title\":\"Nvidia投资SoftBank数据中心\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":66,\"topic_key\":\"DeepSeek API峰谷定价策略\",\"topic_title\":\"DeepSeek API峰谷定价上线\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":67,\"topic_key\":\"360启动AI原生组织转型\",\"topic_title\":\"360启动AI原生组织转型\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":true},{\"candidate_id\":68,\"topic_key\":\"Anthropic CEO回应AI抵制\",\"topic_title\":\"Anthropic CEO称AI抵制是信任危机\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":69,\"topic_key\":\"AI自动化工具Relay关闭\",\"topic_title\":\"AI自动化工具Relay关闭\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":70,\"topic_key\":\"Groq融资转型Neocloud\",\"topic_title\":\"Groq融资转型Neocloud\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":72,\"topic_key\":\"Flock安防技术争议\",\"topic_title\":\"Flock安防技术争议\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":73,\"topic_key\":\"AI后训练数据与Agent\",\"topic_title\":\"本周AI项目推荐｜智能知识、Copula Lab、UniPat\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":74,\"topic_key\":\"AI后训练数据与Agent\",\"topic_title\":\"本周AI项目推荐｜智能知识、Copula Lab、UniPat\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":75,\"topic_key\":\"小米超级小爱2.0发布\",\"topic_title\":\"超级小爱2.0，小米把AI做成了Agent\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":76,\"topic_key\":\"大模型Benchmark大众化\",\"topic_title\":\"速来网吧线下真实所有大模型\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":77,\"topic_key\":\"AI数字员工应用\",\"topic_title\":\"猿辅导前妙多研发负责人想把AI变成同事\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":78,\"topic_key\":\"AI Agent企业应用\",\"topic_title\":\"在 Agent Night 看到AI agent进入企业\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":79,\"topic_key\":\"Anthropic CEO辟谣\",\"topic_title\":\"Anthropic CEO辟谣！为亡父转AI\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":80,\"topic_key\":\"AI Agent技术趋势\",\"topic_title\":\"专访00后港大博士、Evolvent AI创始人\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":82,\"topic_key\":\"AI机器人工厂\",\"topic_title\":\"前SpaceX工程师打造AI机器人工厂\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":84,\"topic_key\":\"AI生成内容滥用\",\"topic_title\":\"348万澳元报告被ChatGPT润色\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":85,\"topic_key\":\"阿里发布AI音乐模型\",\"topic_title\":\"阿里发布AI音乐模型HappyShrimp 1.0\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":true},{\"candidate_id\":86,\"topic_key\":\"AI提示词注入法律风险\",\"topic_title\":\"美国原告在诉状暗藏AI提示词\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":87,\"topic_key\":\"苹果Siri引入实时新闻\",\"topic_title\":\"苹果与出版商洽谈付费引入实时新闻\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":true}]}",
-      "at": "2026-08-18"
-    },
-    "f752ea1e2543dc160d9871ac25871d68b9d40c8047bfd7d9a57177daf168e936": {
-      "operation": "cluster_assignments_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"assignments\":[{\"candidate_id\":88,\"topic_key\":\"亚马逊AI生成书籍泛滥\",\"topic_title\":\"亚马逊AI生成书籍泛滥\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":89,\"topic_key\":\"Hugging Face安全事件\",\"topic_title\":\"Hugging Face安全事件\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":90,\"topic_key\":\"具身智能下半场\",\"topic_title\":\"具身智能下半场\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":92,\"topic_key\":\"YC开源Harness\",\"topic_title\":\"YC开源Harness\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":93,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":94,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":95,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.75,\"is_pr\":false},{\"candidate_id\":96,\"topic_key\":\"ChatGPT用于法律报告\",\"topic_title\":\"ChatGPT用于法律报告\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":97,\"topic_key\":\"Mistral AI发布Shieldstral\",\"topic_title\":\"Mistral AI发布Shieldstral\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":98,\"topic_key\":\"共生知行人形机器人Demo\",\"topic_title\":\"共生知行人形机器人Demo\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":99,\"topic_key\":\"具身智能第一视角数据\",\"topic_title\":\"具身智能第一视角数据\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":100,\"topic_key\":\"智象未来发布HiDream-O1-World\",\"topic_title\":\"智象未来发布HiDream-O1-World\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":101,\"topic_key\":\"SpaceX收购Cursor\",\"topic_title\":\"SpaceX收购Cursor\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
-      "at": "2026-08-18"
-    },
-    "ada1bd4c3d88980f77486c1b77929ebac24633e98ccbb85d81f0aee0152436a4": {
-      "operation": "merge_topic_rows",
-      "model": "glm-4.7-flash",
-      "content": "{\"mapping\":[{\"from_key\":\"Hugging Face社区动态\",\"merged_key\":\"Hugging Face社区动态\",\"merged_title\":\"Hugging Face社区动态\",\"merged_type\":\"news\"},{\"from_key\":\"AI后训练数据与Agent\",\"merged_key\":\"AI后训练数据与Agent\",\"merged_title\":\"本周AI项目推荐｜智能知识、Copula Lab、UniPat\",\"merged_type\":\"news\"},{\"from_key\":\"亚马逊收购稀有书籍用于AI训练\",\"merged_key\":\"亚马逊收购稀有书籍用于AI训练\",\"merged_title\":\"亚马逊收购稀有书籍用于AI训练\",\"merged_type\":\"news\"},{\"from_key\":\"大模型上下文窗口扩展\",\"merged_key\":\"大模型上下文窗口扩展\",\"merged_title\":\"OpenAI Codex百万Token上下文窗口开放\",\"merged_type\":\"news\"},{\"from_key\":\"AI生成内容滥用\",\"merged_key\":\"AI生成内容滥用\",\"merged_title\":\"348万澳元报告被ChatGPT润色\",\"merged_type\":\"news\"},{\"from_key\":\"360启动AI原生组织转型\",\"merged_key\":\"360启动AI原生组织转型\",\"merged_title\":\"360启动AI原生组织转型\",\"merged_type\":\"news\"},{\"from_key\":\"阿里发布AI音乐模型\",\"merged_key\":\"阿里发布AI音乐模型\",\"merged_title\":\"阿里发布AI音乐模型HappyShrimp 1.0\",\"merged_type\":\"news\"},{\"from_key\":\"小米超级小爱2.0发布\",\"merged_key\":\"小米超级小爱2.0发布\",\"merged_title\":\"超级小爱2.0，小米把AI做成了Agent\",\"merged_type\":\"news\"},{\"from_key\":\"共生知行人形机器人Demo\",\"merged_key\":\"共生知行人形机器人Demo\",\"merged_title\":\"共生知行人形机器人Demo\",\"merged_type\":\"news\"},{\"from_key\":\"single-65\",\"merged_key\":\"谷歌图片视频水印功能\",\"merged_title\":\"谷歌AI大动作：图片视频水印终于可以去掉了！谷歌推出新功能\",\"merged_type\":\"news\"},{\"from_key\":\"具身智能第一视角数据\",\"merged_key\":\"具身智能第一视角数据\",\"merged_title\":\"具身智能第一视角数据\",\"merged_type\":\"news\"},{\"from_key\":\"具身智能下半场\",\"merged_key\":\"具身智能下半场\",\"merged_title\":\"具身智能下半场\",\"merged_type\":\"news\"},{\"from_key\":\"AI提示词注入法律风险\",\"merged_key\":\"AI提示词注入法律风险\",\"merged_title\":\"美国原告在诉状暗藏AI提示词\",\"merged_type\":\"news\"},{\"from_key\":\"苹果Siri引入实时新闻\",\"merged_key\":\"苹果Siri引入实时新闻\",\"merged_title\":\"苹果与出版商洽谈付费引入实时新闻\",\"merged_type\":\"news\"},{\"from_key\":\"AI机器人工厂\",\"merged_key\":\"AI机器人工厂\",\"merged_title\":\"前SpaceX工程师打造AI机器人工厂\",\"merged_type\":\"news\"},{\"from_key\":\"大模型Benchmark大众化\",\"merged_key\":\"大模型Benchmark大众化\",\"merged_title\":\"速来网吧线下真实所有大模型\",\"merged_type\":\"news\"},{\"from_key\":\"亚马逊AI生成书籍泛滥\",\"merged_key\":\"亚马逊AI生成书籍泛滥\",\"merged_title\":\"亚马逊AI生成书籍泛滥\",\"merged_type\":\"news\"},{\"from_key\":\"AI数字员工应用\",\"merged_key\":\"AI数字员工应用\",\"merged_title\":\"猿辅导前妙多研发负责人想把AI变成同事\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent企业应用\",\"merged_key\":\"AI Agent企业应用\",\"merged_title\":\"在 Agent Night 看到AI agent进入企业\",\"merged_type\":\"news\"},{\"from_key\":\"智象未来发布HiDream-O1-World\",\"merged_key\":\"智象未来发布HiDream-O1-World\",\"merged_title\":\"智象未来发布HiDream-O1-World\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent技术趋势\",\"merged_key\":\"AI Agent技术趋势\",\"merged_title\":\"专访00后港大博士、Evolvent AI创始人\",\"merged_type\":\"news\"},{\"from_key\":\"AI自动化工具Relay关闭\",\"merged_key\":\"AI自动化工具Relay关闭\",\"merged_title\":\"AI自动化工具Relay关闭\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic CEO回应AI抵制\",\"merged_key\":\"Anthropic CEO回应AI抵制\",\"merged_title\":\"Anthropic CEO称AI抵制是信任危机\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic CEO辟谣\",\"merged_key\":\"Anthropic CEO辟谣\",\"merged_title\":\"Anthropic CEO辟谣！为亡父转AI\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT用于法律报告\",\"merged_key\":\"ChatGPT用于法律报告\",\"merged_title\":\"ChatGPT用于法律报告\",\"merged_type\":\"news\"},{\"from_key\":\"DeepSeek API峰谷定价策略\",\"merged_key\":\"DeepSeek API峰谷定价策略\",\"merged_title\":\"DeepSeek API峰谷定价上线\",\"merged_type\":\"news\"},{\"from_key\":\"Flock安防技术争议\",\"merged_key\":\"Flock安防技术争议\",\"merged_title\":\"Flock安防技术争议\",\"merged_type\":\"news\"},{\"from_key\":\"Groq融资转型Neocloud\",\"merged_key\":\"Groq融资转型Neocloud\",\"merged_title\":\"Groq融资转型Neocloud\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face安全事件\",\"merged_key\":\"Hugging Face安全事件\",\"merged_title\":\"Hugging Face安全事件\",\"merged_type\":\"news\"},{\"from_key\":\"Mistral AI发布Shieldstral\",\"merged_key\":\"Mistral AI发布Shieldstral\",\"merged_title\":\"Mistral AI发布Shieldstral\",\"merged_type\":\"news\"},{\"from_key\":\"Nvidia投资SoftBank数据中心\",\"merged_key\":\"Nvidia投资SoftBank数据中心\",\"merged_title\":\"Nvidia投资SoftBank数据中心\",\"merged_type\":\"news\"},{\"from_key\":\"SpaceX收购Cursor\",\"merged_key\":\"SpaceX收购Cursor\",\"merged_title\":\"SpaceX收购Cursor\",\"merged_type\":\"news\"},{\"from_key\":\"YC开源Harness\",\"merged_key\":\"YC开源Harness\",\"merged_title\":\"YC开源Harness\",\"merged_type\":\"news\"}]}",
-      "at": "2026-08-18"
-    },
-    "4c13a4c50aaf0dae111c8a394ebc3587a38ca7603596d2d89d1bb103afd55f71": {
-      "operation": "merge_topic_rows",
-      "model": "glm-4.7-flash",
-      "content": "{\"mapping\":[{\"from_key\":\"Hugging Face社区动态\",\"merged_key\":\"Hugging Face社区动态\",\"merged_title\":\"Hugging Face社区动态\",\"merged_type\":\"news\"},{\"from_key\":\"AI后训练数据与Agent\",\"merged_key\":\"AI后训练数据与Agent\",\"merged_title\":\"AI后训练数据与Agent\",\"merged_type\":\"news\"},{\"from_key\":\"亚马逊收购稀有书籍用于AI训练\",\"merged_key\":\"亚马逊收购稀有书籍用于AI训练\",\"merged_title\":\"亚马逊收购稀有书籍用于AI训练\",\"merged_type\":\"news\"},{\"from_key\":\"大模型上下文窗口扩展\",\"merged_key\":\"大模型上下文窗口扩展\",\"merged_title\":\"大模型上下文窗口扩展\",\"merged_type\":\"news\"},{\"from_key\":\"AI生成内容滥用\",\"merged_key\":\"AI生成内容滥用\",\"merged_title\":\"AI生成内容滥用\",\"merged_type\":\"news\"},{\"from_key\":\"360启动AI原生组织转型\",\"merged_key\":\"360启动AI原生组织转型\",\"merged_title\":\"360启动AI原生组织转型\",\"merged_type\":\"news\"},{\"from_key\":\"阿里发布AI音乐模型\",\"merged_key\":\"阿里发布AI音乐模型\",\"merged_title\":\"阿里发布AI音乐模型\",\"merged_type\":\"news\"},{\"from_key\":\"小米超级小爱2.0发布\",\"merged_key\":\"小米超级小爱2.0发布\",\"merged_title\":\"小米超级小爱2.0发布\",\"merged_type\":\"news\"},{\"from_key\":\"共生知行人形机器人Demo\",\"merged_key\":\"共生知行人形机器人Demo\",\"merged_title\":\"共生知行人形机器人Demo\",\"merged_type\":\"news\"},{\"from_key\":\"谷歌图片视频水印功能\",\"merged_key\":\"谷歌图片视频水印功能\",\"merged_title\":\"谷歌图片视频水印功能\",\"merged_type\":\"news\"},{\"from_key\":\"具身智能第一视角数据\",\"merged_key\":\"具身智能第一视角数据\",\"merged_title\":\"具身智能第一视角数据\",\"merged_type\":\"news\"},{\"from_key\":\"具身智能下半场\",\"merged_key\":\"具身智能下半场\",\"merged_title\":\"具身智能下半场\",\"merged_type\":\"news\"},{\"from_key\":\"AI提示词注入法律风险\",\"merged_key\":\"AI提示词注入法律风险\",\"merged_title\":\"AI提示词注入法律风险\",\"merged_type\":\"news\"},{\"from_key\":\"苹果Siri引入实时新闻\",\"merged_key\":\"苹果Siri引入实时新闻\",\"merged_title\":\"苹果Siri引入实时新闻\",\"merged_type\":\"news\"},{\"from_key\":\"AI机器人工厂\",\"merged_key\":\"AI机器人工厂\",\"merged_title\":\"AI机器人工厂\",\"merged_type\":\"news\"},{\"from_key\":\"大模型Benchmark大众化\",\"merged_key\":\"大模型Benchmark大众化\",\"merged_title\":\"大模型Benchmark大众化\",\"merged_type\":\"news\"},{\"from_key\":\"亚马逊AI生成书籍泛滥\",\"merged_key\":\"亚马逊AI生成书籍泛滥\",\"merged_title\":\"亚马逊AI生成书籍泛滥\",\"merged_type\":\"news\"},{\"from_key\":\"AI数字员工应用\",\"merged_key\":\"AI数字员工应用\",\"merged_title\":\"AI数字员工应用\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent企业应用\",\"merged_key\":\"AI Agent企业应用\",\"merged_title\":\"AI Agent企业应用\",\"merged_type\":\"news\"},{\"from_key\":\"智象未来发布HiDream-O1-World\",\"merged_key\":\"智象未来发布HiDream-O1-World\",\"merged_title\":\"智象未来发布HiDream-O1-World\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent技术趋势\",\"merged_key\":\"AI Agent技术趋势\",\"merged_title\":\"AI Agent技术趋势\",\"merged_type\":\"news\"},{\"from_key\":\"AI自动化工具Relay关闭\",\"merged_key\":\"AI自动化工具Relay关闭\",\"merged_title\":\"AI自动化工具Relay关闭\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic CEO回应AI抵制\",\"merged_key\":\"Anthropic CEO回应AI抵制\",\"merged_title\":\"Anthropic CEO回应AI抵制\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic CEO辟谣\",\"merged_key\":\"Anthropic CEO辟谣\",\"merged_title\":\"Anthropic CEO辟谣\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT用于法律报告\",\"merged_key\":\"ChatGPT用于法律报告\",\"merged_title\":\"ChatGPT用于法律报告\",\"merged_type\":\"news\"},{\"from_key\":\"DeepSeek API峰谷定价策略\",\"merged_key\":\"DeepSeek API峰谷定价策略\",\"merged_title\":\"DeepSeek API峰谷定价策略\",\"merged_type\":\"news\"},{\"from_key\":\"Flock安防技术争议\",\"merged_key\":\"Flock安防技术争议\",\"merged_title\":\"Flock安防技术争议\",\"merged_type\":\"news\"},{\"from_key\":\"Groq融资转型Neocloud\",\"merged_key\":\"Groq融资转型Neocloud\",\"merged_title\":\"Groq融资转型Neocloud\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face安全事件\",\"merged_key\":\"Hugging Face安全事件\",\"merged_title\":\"Hugging Face安全事件\",\"merged_type\":\"news\"},{\"from_key\":\"Mistral AI发布Shieldstral\",\"merged_key\":\"Mistral AI发布Shieldstral\",\"merged_title\":\"Mistral AI发布Shieldstral\",\"merged_type\":\"news\"},{\"from_key\":\"Nvidia投资SoftBank数据中心\",\"merged_key\":\"Nvidia投资SoftBank数据中心\",\"merged_title\":\"Nvidia投资SoftBank数据中心\",\"merged_type\":\"news\"},{\"from_key\":\"SpaceX收购Cursor\",\"merged_key\":\"SpaceX收购Cursor\",\"merged_title\":\"SpaceX收购Cursor\",\"merged_type\":\"news\"},{\"from_key\":\"YC开源Harness\",\"merged_key\":\"YC开源Harness\",\"merged_title\":\"YC开源Harness\",\"merged_type\":\"news\"}]}",
-      "at": "2026-08-18"
-    },
-    "c10f509ddf8b6f2cc75d4909acd33811dfc151e7592cf19891a0a419638c729d": {
-      "operation": "singleton_recluster_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"decisions\":[{\"candidate_id\":69,\"action\":\"keep\",\"confidence\":0.5,\"reason\":\"Relay是一家AI自动化初创公司，属于通用AI工具赛道，与Hugging Face社区动态（模型/库开发）语义不一致。\"},{\"candidate_id\":70,\"action\":\"keep\",\"confidence\":0.5,\"reason\":\"Groq是一家AI芯片/云服务公司，属于基础设施赛道，与Hugging Face社区动态（模型/库开发）语义不一致。\"},{\"candidate_id\":82,\"action\":\"keep\",\"confidence\":0.5,\"reason\":\"Factory OS是机器人制造工厂，属于硬件/制造赛道，与Hugging Face社区动态（模型/库开发）语义不一致。\"},{\"candidate_id\":72,\"action\":\"keep\",\"confidence\":0.5,\"reason\":\"Flock是城市监控技术公司，属于安防/城市技术赛道，与亚马逊收购书籍（AI训练数据）语义不一致。\"}]}",
-      "at": "2026-08-18"
-    },
-    "cdd1430327e730948a8d24e4ac012737a3be9381d27b1ba151d2d03c3f5428c3": {
-      "operation": "shortlist_topics",
-      "model": "glm-4.7-flash",
-      "content": "{\"selected_topic_ids\":[45,69,78,70,63,62,87,71,72,65,80,1,27,4,13],\"reasons\":[{\"topic_id\":45,\"reason\":\"大模型上下文窗口扩展是当前技术突破的关键方向，直接影响模型应用边界。\"},{\"topic_id\":69,\"reason\":\"Groq融资转型Neocloud聚焦推理加速，代表AI算力基础设施的重要产业动向。\"},{\"topic_id\":78,\"reason\":\"AI机器人工厂概念反映了具身智能从单点突破向规模化落地的趋势。\"},{\"topic_id\":70,\"reason\":\"Flock安防技术争议涉及AI伦理与隐私边界，具有高行业影响力和讨论价值。\"},{\"topic_id\":63,\"reason\":\"Nvidia投资SoftBank数据中心，体现巨头在AI算力布局上的强关联与产业协同。\"},{\"topic_id\":62,\"reason\":\"亚马逊收购稀有书籍用于AI训练，涉及数据版权与训练数据来源的深层行业问题。\"},{\"topic_id\":87,\"reason\":\"Hugging Face社区动态是AI开源生态的核心风向标，影响开发者社区。\"},{\"topic_id\":71,\"reason\":\"AI后训练数据与Agent结合，是提升模型智能体能力的关键技术路径。\"},{\"topic_id\":72,\"reason\":\"小米超级小爱2.0发布，代表AI在消费级终端的落地应用与生态整合。\"},{\"topic_id\":65,\"reason\":\"DeepSeek API峰谷定价策略反映国内大模型商业化与成本控制的新模式。\"},{\"topic_id\":80,\"reason\":\"阿里发布AI音乐模型，展示大模型在垂直内容生成领域的产业应用。\"},{\"topic_id\":1,\"reason\":\"Don't Claim Benchmark-Oriented：批判性论文，挑战当前模型评估标准，具有学术影响力。\"},{\"topic_id\":27,\"reason\":\"Agents Catching Agents：探讨多智能体博弈与对抗，是Agent安全与交互的前沿研究。\"},{\"topic_id\":4,\"reason\":\"Agentic Transaction：研究智能体间的交易机制，是Agent经济系统的理论基础。\"},{\"topic_id\":13,\"reason\":\"Demystifying Agent Skills：解析智能体技能习得过程，对Agent工程化落地有指导意义。\"}]}",
-      "at": "2026-08-18"
-    },
-    "de515517414a9416d14690b20a64887a30676a2dda2e168302ce0e8965f30c43": {
-      "operation": "daily_summary",
-      "model": "glm-4.7-flash",
-      "content": "{\"day_overview\":\"大模型上下文窗口持续扩展，OpenAI Codex向全体用户开放百万Token上下文；亚马逊收购稀有书籍用于AI训练引发伦理争议；Groq融资转型Neocloud，估值回落至35亿美元；Nvidia向SoftBank数据中心投资15亿美元。同时，DeepSeek推出峰谷定价策略，小米发布超级小爱2.0 Agent，开源模型Kimi K3在科研任务中逼近闭源旗舰。\",\"hot_news\":[{\"topic_id\":45,\"insight\":\"OpenAI Codex向全体用户开放百万Token上下文，开发者可处理更复杂项目。\",\"narrative\":\"OpenAI旗下的Codex编程工具迎来重磅更新，备受瞩目的GPT-5.6Sol模型百万Token上下文窗口功能，已正式向全体ChatGPT账号开放。此前，这一超大上下文能力仅限API密钥调用。随着限制解除，持有ChatGPT Plus及Pro等订阅计划的用户，只要手动配置，就能在Codex编程代理工具中享受约105万Token的完整上下文窗口。这一特性对于大型代码库重构、复杂项目深度调试以及长时间高强度会话带来了极大便利，彻底解决了以往因上下文不足而影响大项目维护的痛点。开发团队也提醒，当前默认上下文长度是兼顾性能与成本的折中结果，盲目拉满上限可能加速消耗周额度。\",\"evaluation\":\"此举标志着大模型上下文能力向大众开发者普及，显著降低了复杂工程任务的门槛。\",\"refs\":[6,7],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":62,\"insight\":\"亚马逊收购稀有书籍并扫描用于AI训练，引发对文化遗产保护的伦理担忧。\",\"narrative\":\"据404 Media报道，亚马逊正在大量收购稀有书籍，切断书脊后进行扫描以用于AI模型训练。为了追踪这些书籍的去向，媒体在书籍中放置了Apple AirTag，最终发现它们被运往了位于拉斯维加斯的亚马逊AI训练设施VGT3。这一行为引发了关于科技公司如何处理珍贵文化遗产的广泛争议，亚马逊作为曾经的在线书店，如今却通过销毁书籍来训练AI，其商业逻辑与伦理边界受到质疑。\",\"evaluation\":\"亚马逊的AI训练数据获取方式引发了关于文化遗产保护与商业利益之间平衡的深刻反思。\",\"refs\":[1,2],\"mention_count\":2,\"cross_verify_score\":79},{\"topic_id\":69,\"insight\":\"Groq融资3.5亿美元转型Neocloud，估值从69亿美元回落至35亿美元。\",\"narrative\":\"初创公司Groq宣布完成3.5亿美元融资，用于支持其从AI芯片制造商向提供强大GPU和AI基础设施服务的Neocloud公司的转型。本轮融资由投资公司Disruptive领投，Nvidia计划参与，公司估值达到35亿美元。这一估值较去年9月Nvidia挖角其创始人Jonathan Ross并达成200亿美元授权交易时的69亿美元大幅回落。此前，Nvidia曾以20亿美元授权交易向投资者支付了部分款项。\",\"evaluation\":\"融资与估值的变化反映了市场对AI芯片初创公司转型Neocloud模式的谨慎态度。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":71},{\"topic_id\":63,\"insight\":\"Nvidia向SoftBank关联的数据中心投资15亿美元，确保其成为OpenAI项目的唯一算力供应商。\",\"narrative\":\"Nvidia宣布向SB Energy投资15亿美元，SB Energy是一家与SoftBank和OpenAI有关联的数据中心开发商。这笔投资确保Nvidia将成为位于俄亥俄州辛辛那提附近OpenAI Ports-Pike数据中心的唯一算力基础设施供应商。Nvidia还将提供高达1050亿美元的信贷额度以帮助建设该设施，其规模可能从初始的4.25吉瓦扩展至8吉瓦。SB Energy的现有投资者包括SoftBank和OpenAI。\",\"evaluation\":\"Nvidia通过巨额投资巩固了其在OpenAI算力基础设施中的核心地位，进一步强化了其市场垄断优势。\",\"refs\":[17],\"mention_count\":1,\"cross_verify_score\":62}],\"other_news\":[{\"topic_id\":70,\"insight\":\"Flock公司对其自动车牌识别系统进行更新，旨在防止警察滥用平台进行非法监视。\",\"narrative\":\"Flock是一家拥有约12万个自动车牌识别器的美国警察技术巨头，该公司最近对其平台进行了更新。这些更新旨在防止警察利用平台进行非法或不正当的用途，包括跟踪。随着城市重新审视该技术，值得思考的是公司的设计选择如何影响了解决犯罪与保护公民自由之间的权衡。\",\"refs\":[4],\"mention_count\":1,\"cross_verify_score\":71},{\"topic_id\":78,\"insight\":\"前SpaceX工程师创立1872公司，利用AI和机器人技术建设钢铁制造工厂。\",\"narrative\":\"三名前SpaceX工程师已将注意力从制造火箭发动机转向利用AI驱动的软件和机器人制造钢铁部件。他们创立了1872公司，并于2026年7月22日在俄亥俄州辛辛那提的Factory One设施举行了剪彩仪式。他们的即时目标是在2027年前建立一家原型工厂，能够自动化制造关键基础设施组件所需的大部分钢铁制造流程。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":71},{\"topic_id\":65,\"insight\":\"DeepSeek推出API峰谷分时计价，高峰时段价格翻倍，旨在缓解算力拥堵。\",\"narrative\":\"深度求索于8月17日零时起正式启用DeepSeek API峰谷分时计价新规。官方划定每日北京时间9:00至12:00、14:00至18:00为算力高峰时段，其余时间为空闲低峰区间。计费单位统一为元/百万tokens。此举旨在通过市场化价格杠杆引导开发者错峰调度大模型任务，以缓解日间算力拥堵、提升平台运行稳定性。DeepSeek V4Pro在高峰时段的缓存命中输入价格涨幅达1100%，输出价格涨幅350%。\",\"refs\":[20],\"mention_count\":1,\"cross_verify_score\":54},{\"topic_id\":72,\"insight\":\"小米发布超级小爱2.0，将其定位为能够自主规划路径并执行任务的AI Agent。\",\"narrative\":\"小米在澎湃OS 4 Beta版中推出了超级小爱2.0。与前几代语音助手不同，超级小爱2.0不再仅仅是被动响应指令，而是能够像代理人一样完整地完成一件事。它不需要用户告诉它每一步怎么做，只需告诉它想要什么结果，它自己会规划路径、调用工具、执行步骤并最终将结果交还给用户。小米官方称其从一个听得懂的对话框变成了一个做得到的协作者。\",\"refs\":[21],\"mention_count\":1,\"cross_verify_score\":54},{\"topic_id\":71,\"insight\":\"开源模型Kimi K3在Prime Intellect的Harness框架下，在科研任务中逼近闭源旗舰模型。\",\"narrative\":\"开源AI基础设施公司Prime Intellect提出，借助多智能体Harness，可以让“AI开发AI”变得更便宜甚至效果更好。在实验中，他们将Fable 5、Opus 5、GPT-5.6 Sol、Kimi K3等18个前沿模型投入nanoGPT优化器速通。结果显示，开源权重模型Kimi K3搭配Prime Agent Harness后，跑出了2930步的成绩，超过了GPT-5.6 Sol的3042步，距离Claude的旗舰模型Opus 5的2920步也只差10步。\",\"refs\":[19],\"mention_count\":1,\"cross_verify_score\":55}],\"core_tech\":[{\"topic_id\":1,\"title\":\"Don't Claim Benchmark-Oriented Optimization Improves General Coding Capability\",\"summary\":\"论文指出，针对特定编码基准的优化往往只能提升任务特定性能，而非通用编码能力，呼吁采用多样化评估方法。\",\"refs\":[11]},{\"topic_id\":4,\"title\":\"Agentic Transaction: Towards ACID-Compliant Agent Systems\",\"summary\":\"研究探讨了如何将事务数据库系统的ACID特性引入LLM Agent系统，以解决长期任务执行中的可靠性、一致性和状态管理问题。\",\"refs\":[12]},{\"topic_id\":13,\"title\":\"Demystifying Agent Skills: Why They Work-Until They Don't\",\"summary\":\"论文通过控制实验分析了Agent技能在何种情况下有效、为何有效以及何处失效，揭示了技能在表示、检索和跨框架鲁棒性方面的局限性。\",\"refs\":[14]},{\"topic_id\":15,\"title\":\"From Prediction to Intervention: Personalized Meal-Level Glucose Regulation via an LLM Agent\",\"summary\":\"研究提出利用LLM Agent根据个人生理反馈动态调整餐食，以实现个性化的餐后血糖调节，解决了传统方法无法适应个体差异的难题。\",\"refs\":[15]},{\"topic_id\":46,\"title\":\"A Four-Axis Trustworthiness Benchmark for LLM-as-Judge in Principle-Based Regulation\",\"summary\":\"论文提出了一个评估LLM作为法官在原则性监管场景中可信度的四轴基准，涵盖准确性、释义鲁棒性、对抗鲁棒性和校准性。\",\"refs\":[16]}],\"ref_translations\":[{\"id\":11,\"zh_title\":\"不要声称基于基准的优化提升了通用编码能力——需要多样化评估\"},{\"id\":12,\"zh_title\":\"代理事务：迈向ACID合规的代理系统\"},{\"id\":13,\"zh_title\":\"解密代理技能：它们为何有效——直到失效\"},{\"id\":14,\"zh_title\":\"从预测到干预：通过LLM Agent实现个性化餐后血糖调节\"},{\"id\":15,\"zh_title\":\"原则性监管中LLM作为法官的四轴可信度基准\"}]}",
-      "at": "2026-08-18"
-    },
-    "c57c0ed0eb084a5627676fcb4e2cabb3c08cab0d27c037be7d3d1e67e8236412": {
-      "operation": "translate_missing_reference_titles",
-      "model": "glm-4.7-flash",
-      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"亚马逊为训练AI销毁珍本古籍\"},{\"id\":2,\"zh_title\":\"追踪一批珍本书籍：最终抵达亚马逊AI训练中心\"},{\"id\":3,\"zh_title\":\"Groq融资3.5亿美元，从AI芯片转向新云服务\"},{\"id\":4,\"zh_title\":\"Flock的辩护者忽略了什么\"},{\"id\":5,\"zh_title\":\"前SpaceX工程师打造机器人工厂制造钢制零件\"},{\"id\":6,\"zh_title\":\"教大家“钓”Token\"},{\"id\":8,\"zh_title\":\"我有一个跨分词器对话与噪声的解决方案，并为此构建了原型\"},{\"id\":9,\"zh_title\":\"Day zero是你对自己做的事：EXP-032一夜之间在15次消融实验中输掉14次\"},{\"id\":10,\"zh_title\":\"新架构。训练开始。几天后你就能看到它了。两个模型连接成一个统一模型\"},{\"id\":16,\"zh_title\":\"基于原则监管的LLM作为裁判的四轴可信度基准\"},{\"id\":17,\"zh_title\":\"英伟达向OpenAI项目背后的软银数据中心开发商投资15亿美元\"}]}",
-      "at": "2026-08-18"
-    },
-    "e02c3571db3db853c87a84b63286f1bcfaaf8371a8ca79267b013e068d2916a7": {
-      "operation": "cluster_assignments_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"assignments\":[{\"candidate_id\":61,\"topic_key\":\"Anthropic Model 2 披露\",\"topic_title\":\"Anthropic Model 2 披露\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":62,\"topic_key\":\"Anthropic Model 2 披露\",\"topic_title\":\"Anthropic Model 2 披露\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":63,\"topic_key\":\"AI 使用现状与青少年模式\",\"topic_title\":\"AI 使用现状与青少年模式\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":64,\"topic_key\":\"Coding Agent 进化\",\"topic_title\":\"Coding Agent 进化\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":65,\"topic_key\":\"AI 攻破 Hugging Face\",\"topic_title\":\"AI 攻破 Hugging Face\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":66,\"topic_key\":\"奥特曼谈大学教育\",\"topic_title\":\"奥特曼谈大学教育\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":67,\"topic_key\":\"Anthropic 营收与版权诉讼\",\"topic_title\":\"Anthropic 营收与版权诉讼\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":68,\"topic_key\":\"哈佛 MIT MatrAIx 系统发布\",\"topic_title\":\"哈佛 MIT MatrAIx 系统发布\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":69,\"topic_key\":\"企业微信 5.0.10 AI 能力升级\",\"topic_title\":\"企业微信 5.0.10 AI 能力升级\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":70,\"topic_key\":\"Ollmo v0.1.0 发布\",\"topic_title\":\"Ollmo v0.1.0 发布\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":72,\"topic_key\":\"Google AI 重组与 DeepMind 权力洗牌\",\"topic_title\":\"Google AI 重组与 DeepMind 权力洗牌\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":73,\"topic_key\":\"AI 杀猪盘\",\"topic_title\":\"AI 杀猪盘\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":74,\"topic_key\":\"OpenAI 推翻 Erdős 猜想\",\"topic_title\":\"OpenAI 推翻 Erdős 猜想\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":75,\"topic_key\":\"Cherry Studio 复盘\",\"topic_title\":\"Cherry Studio 复盘\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":76,\"topic_key\":\"OpenAI 与 CodeAI 合作\",\"topic_title\":\"OpenAI 与 CodeAI 合作\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":77,\"topic_key\":\"Z.ai 强大模型发布\",\"topic_title\":\"Z.ai 强大模型发布\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":78,\"topic_key\":\"Anthropic 年化营收 650 亿美元\",\"topic_title\":\"Anthropic 年化营收 650 亿美元\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":79,\"topic_key\":\"九章智算云训推一致\",\"topic_title\":\"九章智算云训推一致\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":82,\"topic_key\":\"AI 视频电影《牛来》\",\"topic_title\":\"AI 视频电影《牛来》\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":83,\"topic_key\":\"AI for Science 材料生成\",\"topic_title\":\"AI for Science 材料生成\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":84,\"topic_key\":\"CurrentWorld-0 物理世界模型\",\"topic_title\":\"CurrentWorld-0 物理世界模型\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":85,\"topic_key\":\"奥特曼谈大学教育\",\"topic_title\":\"奥特曼谈大学教育\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":87,\"topic_key\":\"AI 自我递归改进\",\"topic_title\":\"AI 自我递归改进\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":88,\"topic_key\":\"Hugging Face 开源工具发布\",\"topic_title\":\"Hugging Face 开源工具发布\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":89,\"topic_key\":\"Hugging Face Phase 2 语音功能\",\"topic_title\":\"Hugging Face Phase 2 语音功能\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false}]}",
-      "at": "2026-08-18"
-    },
-    "85bec8afc98f618da06b02015e23fadcb206af572e734a1a4f16516a75a80f36": {
-      "operation": "cluster_assignments_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"assignments\":[{\"candidate_id\":90,\"topic_key\":\"SmilyAI发布Mira助手\",\"topic_title\":\"SmilyAI发布Mira助手\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":91,\"topic_key\":\"Vibe Gaming发布Agent\",\"topic_title\":\"Vibe Gaming发布Agent\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":92,\"topic_key\":\"阿里钉钉Agent上下文\",\"topic_title\":\"阿里钉钉Agent上下文\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":93,\"topic_key\":\"OpenAI解散安全储备团队\",\"topic_title\":\"OpenAI解散安全储备团队\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":94,\"topic_key\":\"Kimi K2发布\",\"topic_title\":\"Kimi K2发布\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":95,\"topic_key\":\"Qwen3.8 27B模型发布\",\"topic_title\":\"Qwen3.8 27B模型发布\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":97,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.5,\"is_pr\":false},{\"candidate_id\":98,\"topic_key\":\"Hugging Face社区动态\",\"topic_title\":\"Hugging Face社区动态\",\"topic_type\":\"news\",\"confidence\":0.5,\"is_pr\":false},{\"candidate_id\":99,\"topic_key\":\"网易发布蜜蜂AI\",\"topic_title\":\"网易发布蜜蜂AI\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":100,\"topic_key\":\"阿里发布HappyShrimp音乐模型\",\"topic_title\":\"阿里发布HappyShrimp音乐模型\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":101,\"topic_key\":\"清华团队AI优化AI\",\"topic_title\":\"清华团队AI优化AI\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false}]}",
-      "at": "2026-08-18"
-    },
-    "52f7d39d4ac04dc9f6c2c7ec7efdb60e5f734e79b5caf9be8598fcc565879928": {
-      "operation": "merge_topic_rows",
-      "model": "glm-4.7-flash",
-      "content": "{\"mapping\":[{\"from_key\":\"奥特曼谈大学教育\",\"merged_key\":\"奥特曼谈大学教育\",\"merged_title\":\"奥特曼谈大学教育\",\"merged_type\":\"news\"},{\"from_key\":\"AI 使用现状与青少年模式\",\"merged_key\":\"AI 使用现状与青少年模式\",\"merged_title\":\"AI 使用现状与青少年模式\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Model 2 披露\",\"merged_key\":\"Anthropic Model 2 披露\",\"merged_title\":\"Anthropic Model 2 披露\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face社区动态\",\"merged_key\":\"Hugging Face社区动态\",\"merged_title\":\"Hugging Face社区动态\",\"merged_type\":\"news\"},{\"from_key\":\"阿里钉钉Agent上下文\",\"merged_key\":\"阿里钉钉Agent上下文\",\"merged_title\":\"阿里钉钉Agent上下文\",\"merged_type\":\"news\"},{\"from_key\":\"阿里发布HappyShrimp音乐模型\",\"merged_key\":\"阿里发布HappyShrimp音乐模型\",\"merged_title\":\"阿里发布HappyShrimp音乐模型\",\"merged_type\":\"news\"},{\"from_key\":\"哈佛 MIT MatrAIx 系统发布\",\"merged_key\":\"哈佛 MIT MatrAIx 系统发布\",\"merged_title\":\"哈佛 MIT MatrAIx 系统发布\",\"merged_type\":\"news\"},{\"from_key\":\"九章智算云训推一致\",\"merged_key\":\"九章智算云训推一致\",\"merged_title\":\"九章智算云训推一致\",\"merged_type\":\"news\"},{\"from_key\":\"企业微信 5.0.10 AI 能力升级\",\"merged_key\":\"企业微信 5.0.10 AI 能力升级\",\"merged_title\":\"企业微信 5.0.10 AI 能力升级\",\"merged_type\":\"news\"}]}",
-      "at": "2026-08-18"
-    },
-    "43de73884242f0278a657d8fd43daefe6aaa0a93aa8658659caaa044a551516e": {
-      "operation": "merge_topic_rows",
-      "model": "glm-4.7-flash",
-      "content": "{\"mapping\":[{\"from_key\":\"Anthropic 营收与版权诉讼\",\"merged_key\":\"Anthropic 营收与版权诉讼\",\"merged_title\":\"Anthropic 营收与版权诉讼\",\"merged_type\":\"news\"},{\"from_key\":\"Cherry Studio 复盘\",\"merged_key\":\"Cherry Studio 复盘\",\"merged_title\":\"Cherry Studio 复盘\",\"merged_type\":\"news\"},{\"from_key\":\"Coding Agent 进化\",\"merged_key\":\"Coding Agent 进化\",\"merged_title\":\"Coding Agent 进化\",\"merged_type\":\"news\"},{\"from_key\":\"CurrentWorld-0 物理世界模型\",\"merged_key\":\"CurrentWorld-0 物理世界模型\",\"merged_title\":\"CurrentWorld-0 物理世界模型\",\"merged_type\":\"news\"},{\"from_key\":\"Google AI 重组与 DeepMind 权力洗牌\",\"merged_key\":\"Google AI 重组与 DeepMind 权力洗牌\",\"merged_title\":\"Google AI 重组与 DeepMind 权力洗牌\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face 开源工具发布\",\"merged_key\":\"Hugging Face 开源工具发布\",\"merged_title\":\"Hugging Face 开源工具发布\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face Phase 2 语音功能\",\"merged_key\":\"Hugging Face Phase 2 语音功能\",\"merged_title\":\"Hugging Face Phase 2 语音功能\",\"merged_type\":\"news\"},{\"from_key\":\"Kimi K2发布\",\"merged_key\":\"Kimi K2发布\",\"merged_title\":\"Kimi K2发布\",\"merged_type\":\"news\"},{\"from_key\":\"Ollmo v0.1.0 发布\",\"merged_key\":\"Ollmo v0.1.0 发布\",\"merged_title\":\"Ollmo v0.1.0 发布\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 推翻 Erdős 猜想\",\"merged_key\":\"OpenAI 推翻 Erdős 猜想\",\"merged_title\":\"OpenAI 推翻 Erdős 猜想\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 与 CodeAI 合作\",\"merged_key\":\"OpenAI 与 CodeAI 合作\",\"merged_title\":\"OpenAI 与 CodeAI 合作\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI解散安全储备团队\",\"merged_key\":\"OpenAI解散安全储备团队\",\"merged_title\":\"OpenAI解散安全储备团队\",\"merged_type\":\"news\"},{\"from_key\":\"Qwen3.8 27B模型发布\",\"merged_key\":\"Qwen3.8 27B模型发布\",\"merged_title\":\"Qwen3.8 27B模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"SmilyAI发布Mira助手\",\"merged_key\":\"SmilyAI发布Mira助手\",\"merged_title\":\"SmilyAI发布Mira助手\",\"merged_type\":\"news\"},{\"from_key\":\"Vibe Gaming发布Agent\",\"merged_key\":\"Vibe Gaming发布Agent\",\"merged_title\":\"Vibe Gaming发布Agent\",\"merged_type\":\"news\"},{\"from_key\":\"Z.ai 强大模型发布\",\"merged_key\":\"Z.ai 强大模型发布\",\"merged_title\":\"Z.ai 强大模型发布\",\"merged_type\":\"news\"}]}",
-      "at": "2026-08-18"
-    },
-    "a484fe391e4656649006007f8ffe4b40de9cf273ef04474bdb7faa8fa7dbbe07": {
-      "operation": "shortlist_topics",
-      "model": "glm-4.7-flash",
-      "content": "{\"selected_topic_ids\":[65,61,76,88,68,92,86,77,87,72],\"reasons\":[{\"topic_id\":65,\"reason\":\"奥特曼谈大学教育，涉及AI人才培养与教育变革，具有高行业影响力和时效性。\"},{\"topic_id\":61,\"reason\":\"Anthropic Model 2 披露，代表前沿模型技术进展，关注度高。\"},{\"topic_id\":76,\"reason\":\"Anthropic 年化营收 650 亿美元，展示顶级AI公司的商业化实力。\"},{\"topic_id\":88,\"reason\":\"Kimi K2 发布，直接关联月之暗面，体现国内头部模型进展。\"},{\"topic_id\":68,\"reason\":\"企业微信 5.0.10 AI 能力升级，体现AI在办公场景的深度应用与商业化。\"},{\"topic_id\":92,\"reason\":\"阿里发布 HappyShrimp 音乐模型，展示国内大厂在垂直领域的创新。\"},{\"topic_id\":86,\"reason\":\"阿里钉钉 Agent 上下文能力，聚焦AI Agent在生产力工具中的落地。\"},{\"topic_id\":77,\"reason\":\"九章智算云训推一致，关注国产算力基础设施与云服务能力。\"},{\"topic_id\":87,\"reason\":\"OpenAI 解散安全储备团队，反映AI安全策略的重大调整，影响深远。\"},{\"topic_id\":72,\"reason\":\"OpenAI 推翻 Erdős 猜想，涉及AI在数学领域的突破性进展。\"}]}",
-      "at": "2026-08-18"
-    },
     "4c4f4be64e9ab7baf8dac944222df76ba2a777a4151aaa67b256ff73dbf13680": {
       "operation": "translate_missing_reference_titles",
       "model": "glm-4.7-flash",
@@ -45618,104 +45359,51 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":3,\"zh_title\":\"大规模知识模型：规模化代理科学的知识基石\"},{\"id\":4,\"zh_title\":\"技能健身房：利用自动可验证环境生成训练技能使用代理\"},{\"id\":7,\"zh_title\":\"隐形语言税：2026年大语言模型分词器中法语及区域语言的代币溢价\"},{\"id\":8,\"zh_title\":\"LEAP：长音频视频感知的块级学习证据检索\"},{\"id\":9,\"zh_title\":\"Fyan：面向文档级形式化的语义审计人机协同工具\"},{\"id\":10,\"zh_title\":\"代码代理记忆后训练：解锁预训练文件操作在长任务中的记忆潜力\"},{\"id\":11,\"zh_title\":\"Co Visco：用于统一图像视频理解的编码器原生视觉编码器与代币压缩\"},{\"id\":12,\"zh_title\":\"上下文变化时：理解大语言模型中的更新失败\"},{\"id\":15,\"zh_title\":\"虚假前沿：诊断并缓解自进化搜索代理中的共作弊现象\"},{\"id\":16,\"zh_title\":\"Cogentic：自动化证明发现的多人代理编排\"},{\"id\":17,\"zh_title\":\"十年之后：利用代理训练数据将去阴影技术带入现实世界\"},{\"id\":18,\"zh_title\":\"假设廉价，验证昂贵：代理漏洞发现的防御面\"}]}",
       "at": "2026-10-02"
+    },
+    "7c5d064bec20e1e838adfa857c64ea09a7814bb8abb9f60d8ca8c7b582feebb2": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":3,\"topic_key\":\"Kevin O'Leary Utah 数据中心调查\",\"topic_title\":\"Kevin O'Leary Utah 数据中心调查\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":11,\"topic_key\":\"OpenAI GPT-6.1 Astra 模型被搁置\",\"topic_title\":\"OpenAI GPT-6.1 Astra 模型被搁置\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":63,\"topic_key\":\"Airbnb AI 搜索功能更新\",\"topic_title\":\"Airbnb AI 搜索功能更新\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":64,\"topic_key\":\"AI Agent 取代移动应用趋势\",\"topic_title\":\"AI Agent 取代移动应用趋势\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":65,\"topic_key\":\"Barclays Anthropic Claude 集成\",\"topic_title\":\"Barclays Anthropic Claude 集成\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":66,\"topic_key\":\"OpenAI ChatGPT 虚拟试衣功能\",\"topic_title\":\"OpenAI ChatGPT 虚拟试衣功能\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":67,\"topic_key\":\"OpenAI 解雇安全研究员\",\"topic_title\":\"OpenAI 解雇安全研究员\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":68,\"topic_key\":\"Shopify Canvas AI 网站构建工具\",\"topic_title\":\"Shopify Canvas AI 网站构建工具\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":69,\"topic_key\":\"AI 伦理协定与 AI Agent\",\"topic_title\":\"AI 伦理协定与 AI Agent\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":71,\"topic_key\":\"Google Guided Vision 辅助阅读功能\",\"topic_title\":\"Google Guided Vision 辅助阅读功能\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":72,\"topic_key\":\"Hugging Face 开源水下目标检测模型\",\"topic_title\":\"Hugging Face 开源水下目标检测模型\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":73,\"topic_key\":\"Grok 推荐特朗普占领委内瑞拉\",\"topic_title\":\"Grok 推荐特朗普占领委内瑞拉\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":74,\"topic_key\":\"AI 写作特征识别\",\"topic_title\":\"AI 写作特征识别\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":75,\"topic_key\":\"OpenAI 执行力与 AI 经济\",\"topic_title\":\"OpenAI 执行力与 AI 经济\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":76,\"topic_key\":\"Google AI Overviews 反垄断案驳回\",\"topic_title\":\"Google AI Overviews 反垄断案驳回\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":77,\"topic_key\":\"Comma Personal Agent 发布\",\"topic_title\":\"Comma Personal Agent 发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":78,\"topic_key\":\"Personal Agent 热潮与 Instinct\",\"topic_title\":\"Personal Agent 热潮与 Instinct\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":79,\"topic_key\":\"Legato AI 助听眼镜发布\",\"topic_title\":\"Legato AI 助听眼镜发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":81,\"topic_key\":\"AI 破解 Stratego 游戏\",\"topic_title\":\"AI 破解 Stratego 游戏\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":82,\"topic_key\":\"OpenAI DevDay 2026\",\"topic_title\":\"OpenAI DevDay 2026\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":83,\"topic_key\":\"Hugging Face 视频数据测试集发布\",\"topic_title\":\"Hugging Face 视频数据测试集发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":84,\"topic_key\":\"PrunaSuperPoint 开源发布\",\"topic_title\":\"PrunaSuperPoint 开源发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":85,\"topic_key\":\"stuntd 支持工单分类模型\",\"topic_title\":\"stuntd 支持工单分类模型\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":86,\"topic_key\":\"ACR 1.0 模型发布\",\"topic_title\":\"ACR 1.0 模型发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":87,\"topic_key\":\"Imajev-4b 图像决策模型榜单第一\",\"topic_title\":\"Imajev-4b 图像决策模型榜单第一\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-10-02"
+    },
+    "1fe319500a6c3cc83f93af27356e622d6177f74f8ff073e5f15d9d9679b9b484": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":88,\"topic_key\":\"字节跳动 豆包 个人助手 小豆\",\"topic_title\":\"字节跳动豆包推出个人助手产品“小豆”\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":89,\"topic_key\":\"AMD 收购 World Labs\",\"topic_title\":\"AMD以82亿美元收购世界模型公司World Labs\",\"topic_type\":\"news\",\"confidence\":0.95,\"is_pr\":false},{\"candidate_id\":90,\"topic_key\":\"快手 AI 组织架构调整\",\"topic_title\":\"快手调整AI组织架构：程一笑兼任社区科学线\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":91,\"topic_key\":\"AI视频创作 技巧\",\"topic_title\":\"AI视频反复抽卡问题与创作技巧探讨\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":92,\"topic_key\":\"AI生成图像 识别挑战\",\"topic_title\":\"加州蛇类假新闻事件凸显AI图像识别挑战\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":93,\"topic_key\":\"AI 监管\",\"topic_title\":\"Larry Magid呼吁加强AI监管\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":94,\"topic_key\":\"苹果 智能家居\",\"topic_title\":\"苹果计划10月13日推出智能家居家庭中枢\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-10-02"
+    },
+    "588b58e82927499344e8d7472755f189b62648dc85c7775ce5517d8072145b81": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"AI生成图像 识别挑战\",\"merged_key\":\"AI生成图像识别挑战\",\"merged_title\":\"AI生成图像识别挑战\",\"merged_type\":\"news\"},{\"from_key\":\"快手 AI 组织架构调整\",\"merged_key\":\"快手AI组织架构调整\",\"merged_title\":\"快手AI组织架构调整\",\"merged_type\":\"news\"},{\"from_key\":\"苹果 智能家居\",\"merged_key\":\"苹果智能家居\",\"merged_title\":\"苹果智能家居\",\"merged_type\":\"news\"},{\"from_key\":\"字节跳动 豆包 个人助手 小豆\",\"merged_key\":\"字节跳动豆包个人助手\",\"merged_title\":\"字节跳动豆包个人助手\",\"merged_type\":\"news\"},{\"from_key\":\"ACR 1.0 模型发布\",\"merged_key\":\"ACR 1.0模型发布\",\"merged_title\":\"ACR 1.0模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"AI 伦理协定与 AI Agent\",\"merged_key\":\"AI伦理协定与AI Agent\",\"merged_title\":\"AI伦理协定与AI Agent\",\"merged_type\":\"news\"},{\"from_key\":\"AI 破解 Stratego 游戏\",\"merged_key\":\"AI破解Stratego游戏\",\"merged_title\":\"AI破解Stratego游戏\",\"merged_type\":\"news\"},{\"from_key\":\"AI 写作特征识别\",\"merged_key\":\"AI写作特征识别\",\"merged_title\":\"AI写作特征识别\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent 取代移动应用趋势\",\"merged_key\":\"AI Agent取代移动应用趋势\",\"merged_title\":\"AI Agent取代移动应用趋势\",\"merged_type\":\"news\"},{\"from_key\":\"AI视频创作 技巧\",\"merged_key\":\"AI视频创作技巧\",\"merged_title\":\"AI视频创作技巧\",\"merged_type\":\"news\"},{\"from_key\":\"Airbnb AI 搜索功能更新\",\"merged_key\":\"Airbnb AI搜索功能更新\",\"merged_title\":\"Airbnb AI搜索功能更新\",\"merged_type\":\"news\"},{\"from_key\":\"AMD 收购 World Labs\",\"merged_key\":\"AMD收购World Labs\",\"merged_title\":\"AMD收购World Labs\",\"merged_type\":\"news\"},{\"from_key\":\"Barclays Anthropic Claude 集成\",\"merged_key\":\"Barclays Anthropic Claude集成\",\"merged_title\":\"Barclays Anthropic Claude集成\",\"merged_type\":\"news\"},{\"from_key\":\"Comma Personal Agent 发布\",\"merged_key\":\"Comma Personal Agent发布\",\"merged_title\":\"Comma Personal Agent发布\",\"merged_type\":\"news\"},{\"from_key\":\"Google AI Overviews 反垄断案驳回\",\"merged_key\":\"Google AI Overviews反垄断案驳回\",\"merged_title\":\"Google AI Overviews反垄断案驳回\",\"merged_type\":\"news\"},{\"from_key\":\"Google Guided Vision 辅助阅读功能\",\"merged_key\":\"Google Guided Vision辅助阅读功能\",\"merged_title\":\"Google Guided Vision辅助阅读功能\",\"merged_type\":\"news\"},{\"from_key\":\"Grok 推荐特朗普占领委内瑞拉\",\"merged_key\":\"Grok推荐特朗普占领委内瑞拉\",\"merged_title\":\"Grok推荐特朗普占领委内瑞拉\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face 开源水下目标检测模型\",\"merged_key\":\"Hugging Face开源水下目标检测模型\",\"merged_title\":\"Hugging Face开源水下目标检测模型\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face 视频数据测试集发布\",\"merged_key\":\"Hugging Face视频数据测试集发布\",\"merged_title\":\"Hugging Face视频数据测试集发布\",\"merged_type\":\"news\"},{\"from_key\":\"Imajev-4b 图像决策模型榜单第一\",\"merged_key\":\"Imajev-4b图像决策模型榜单第一\",\"merged_title\":\"Imajev-4b图像决策模型榜单第一\",\"merged_type\":\"news\"},{\"from_key\":\"Kevin O'Leary Utah 数据中心调查\",\"merged_key\":\"Kevin O'Leary Utah数据中心调查\",\"merged_title\":\"Kevin O'Leary Utah数据中心调查\",\"merged_type\":\"news\"},{\"from_key\":\"AI 监管\",\"merged_key\":\"AI监管\",\"merged_title\":\"AI监管\",\"merged_type\":\"news\"},{\"from_key\":\"Legato AI 助听眼镜发布\",\"merged_key\":\"Legato AI助听眼镜发布\",\"merged_title\":\"Legato AI助听眼镜发布\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 解雇安全研究员\",\"merged_key\":\"OpenAI解雇安全研究员\",\"merged_title\":\"OpenAI解雇安全研究员\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI 执行力与 AI 经济\",\"merged_key\":\"OpenAI执行力与AI经济\",\"merged_title\":\"OpenAI执行力与AI经济\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI ChatGPT 虚拟试衣功能\",\"merged_key\":\"OpenAI ChatGPT虚拟试衣功能\",\"merged_title\":\"OpenAI ChatGPT虚拟试衣功能\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI DevDay 2026\",\"merged_key\":\"OpenAI DevDay 2026\",\"merged_title\":\"OpenAI DevDay 2026\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI GPT-6.1 Astra 模型被搁置\",\"merged_key\":\"OpenAI GPT-6.1 Astra模型被搁置\",\"merged_title\":\"OpenAI GPT-6.1 Astra模型被搁置\",\"merged_type\":\"news\"},{\"from_key\":\"Personal Agent 热潮与 Instinct\",\"merged_key\":\"Personal Agent热潮与Instinct\",\"merged_title\":\"Personal Agent热潮与Instinct\",\"merged_type\":\"news\"},{\"from_key\":\"PrunaSuperPoint 开源发布\",\"merged_key\":\"PrunaSuperPoint开源发布\",\"merged_title\":\"PrunaSuperPoint开源发布\",\"merged_type\":\"news\"},{\"from_key\":\"Shopify Canvas AI 网站构建工具\",\"merged_key\":\"Shopify Canvas AI网站构建工具\",\"merged_title\":\"Shopify Canvas AI网站构建工具\",\"merged_type\":\"news\"},{\"from_key\":\"stuntd 支持工单分类模型\",\"merged_key\":\"stuntd支持工单分类模型\",\"merged_title\":\"stuntd支持工单分类模型\",\"merged_type\":\"news\"}]}",
+      "at": "2026-10-02"
+    },
+    "7a08e19312fe86205a1996f408d3543e19767820cd1bb949521ed133f894ca94": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"快手AI组织架构调整\",\"merged_key\":\"快手AI组织架构调整\",\"merged_title\":\"快手AI组织架构调整\",\"merged_type\":\"news\"},{\"from_key\":\"苹果智能家居\",\"merged_key\":\"苹果智能家居\",\"merged_title\":\"苹果智能家居\",\"merged_type\":\"news\"},{\"from_key\":\"字节跳动豆包个人助手\",\"merged_key\":\"字节跳动豆包个人助手\",\"merged_title\":\"字节跳动豆包个人助手\",\"merged_type\":\"news\"},{\"from_key\":\"ACR 1.0模型发布\",\"merged_key\":\"ACR 1.0模型发布\",\"merged_title\":\"ACR 1.0模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"AI Agent取代移动应用趋势\",\"merged_key\":\"AI Agent取代移动应用趋势\",\"merged_title\":\"AI Agent取代移动应用趋势\",\"merged_type\":\"news\"},{\"from_key\":\"AI监管\",\"merged_key\":\"AI监管\",\"merged_title\":\"AI监管\",\"merged_type\":\"news\"},{\"from_key\":\"AI伦理协定与AI Agent\",\"merged_key\":\"AI伦理协定与AI Agent\",\"merged_title\":\"AI伦理协定与AI Agent\",\"merged_type\":\"news\"},{\"from_key\":\"AI破解Stratego游戏\",\"merged_key\":\"AI破解Stratego游戏\",\"merged_title\":\"AI破解Stratego游戏\",\"merged_type\":\"news\"},{\"from_key\":\"AI生成图像识别挑战\",\"merged_key\":\"AI生成图像识别挑战\",\"merged_title\":\"AI生成图像识别挑战\",\"merged_type\":\"news\"},{\"from_key\":\"AI视频创作技巧\",\"merged_key\":\"AI视频创作技巧\",\"merged_title\":\"AI视频创作技巧\",\"merged_type\":\"news\"},{\"from_key\":\"AI写作特征识别\",\"merged_key\":\"AI写作特征识别\",\"merged_title\":\"AI写作特征识别\",\"merged_type\":\"news\"},{\"from_key\":\"Airbnb AI搜索功能更新\",\"merged_key\":\"Airbnb AI搜索功能更新\",\"merged_title\":\"Airbnb AI搜索功能更新\",\"merged_type\":\"news\"},{\"from_key\":\"AMD收购World Labs\",\"merged_key\":\"AMD收购World Labs\",\"merged_title\":\"AMD收购World Labs\",\"merged_type\":\"news\"},{\"from_key\":\"Barclays Anthropic Claude集成\",\"merged_key\":\"Barclays Anthropic Claude集成\",\"merged_title\":\"Barclays Anthropic Claude集成\",\"merged_type\":\"news\"},{\"from_key\":\"Comma Personal Agent发布\",\"merged_key\":\"Comma Personal Agent发布\",\"merged_title\":\"Comma Personal Agent发布\",\"merged_type\":\"news\"},{\"from_key\":\"Google AI Overviews反垄断案驳回\",\"merged_key\":\"Google AI Overviews反垄断案驳回\",\"merged_title\":\"Google AI Overviews反垄断案驳回\",\"merged_type\":\"news\"},{\"from_key\":\"Google Guided Vision辅助阅读功能\",\"merged_key\":\"Google Guided Vision辅助阅读功能\",\"merged_title\":\"Google Guided Vision辅助阅读功能\",\"merged_type\":\"news\"},{\"from_key\":\"Grok推荐特朗普占领委内瑞拉\",\"merged_key\":\"Grok推荐特朗普占领委内瑞拉\",\"merged_title\":\"Grok推荐特朗普占领委内瑞拉\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face开源水下目标检测模型\",\"merged_key\":\"Hugging Face开源水下目标检测模型\",\"merged_title\":\"Hugging Face开源水下目标检测模型\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face视频数据测试集发布\",\"merged_key\":\"Hugging Face视频数据测试集发布\",\"merged_title\":\"Hugging Face视频数据测试集发布\",\"merged_type\":\"news\"},{\"from_key\":\"Imajev-4b图像决策模型榜单第一\",\"merged_key\":\"Imajev-4b图像决策模型榜单第一\",\"merged_title\":\"Imajev-4b图像决策模型榜单第一\",\"merged_type\":\"news\"},{\"from_key\":\"Kevin O'Leary Utah数据中心调查\",\"merged_key\":\"Kevin O'Leary Utah数据中心调查\",\"merged_title\":\"Kevin O'Leary Utah数据中心调查\",\"merged_type\":\"news\"},{\"from_key\":\"Legato AI助听眼镜发布\",\"merged_key\":\"Legato AI助听眼镜发布\",\"merged_title\":\"Legato AI助听眼镜发布\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI ChatGPT虚拟试衣功能\",\"merged_key\":\"OpenAI ChatGPT虚拟试衣功能\",\"merged_title\":\"OpenAI ChatGPT虚拟试衣功能\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI DevDay 2026\",\"merged_key\":\"OpenAI DevDay 2026\",\"merged_title\":\"OpenAI DevDay 2026\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI GPT-6.1 Astra模型被搁置\",\"merged_key\":\"OpenAI GPT-6.1 Astra模型被搁置\",\"merged_title\":\"OpenAI GPT-6.1 Astra模型被搁置\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI解雇安全研究员\",\"merged_key\":\"OpenAI解雇安全研究员\",\"merged_title\":\"OpenAI解雇安全研究员\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI执行力与AI经济\",\"merged_key\":\"OpenAI执行力与AI经济\",\"merged_title\":\"OpenAI执行力与AI经济\",\"merged_type\":\"news\"},{\"from_key\":\"Personal Agent热潮与Instinct\",\"merged_key\":\"Personal Agent热潮与Instinct\",\"merged_title\":\"Personal Agent热潮与Instinct\",\"merged_type\":\"news\"},{\"from_key\":\"PrunaSuperPoint开源发布\",\"merged_key\":\"PrunaSuperPoint开源发布\",\"merged_title\":\"PrunaSuperPoint开源发布\",\"merged_type\":\"news\"},{\"from_key\":\"Shopify Canvas AI网站构建工具\",\"merged_key\":\"Shopify Canvas AI网站构建工具\",\"merged_title\":\"Shopify Canvas AI网站构建工具\",\"merged_type\":\"news\"},{\"from_key\":\"stuntd支持工单分类模型\",\"merged_key\":\"stuntd支持工单分类模型\",\"merged_title\":\"stuntd支持工单分类模型\",\"merged_type\":\"news\"}]}",
+      "at": "2026-10-02"
+    },
+    "71982ae14327cafe956bff10a40beef34a314a68adab4cb592ea864efec04293": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[67,66,68,69,75,74,72,70,73,79,64,65,63,78,24,37,1],\"reasons\":[{\"topic_id\":67,\"reason\":\"涉及OpenAI核心安全团队变动，直接影响AI产品安全策略与舆论风向。\"},{\"topic_id\":66,\"reason\":\"ChatGPT虚拟试衣功能展示多模态应用落地，具有高用户关注度。\"},{\"topic_id\":68,\"reason\":\"Shopify Canvas展示AI在SaaS工具中的深度集成，体现产业赋能。\"},{\"topic_id\":69,\"reason\":\"AI伦理协定与Agent结合，探讨技术治理与自主智能体的边界。\"},{\"topic_id\":75,\"reason\":\"Google AI Overviews反垄断案驳回，反映巨头AI搜索的合规与竞争态势。\"},{\"topic_id\":74,\"reason\":\"OpenAI执行力与AI经济分析，揭示技术商业化进程中的挑战。\"},{\"topic_id\":72,\"reason\":\"Grok推荐虚假政治信息，暴露大模型在事实核查与安全对齐上的风险。\"},{\"topic_id\":70,\"reason\":\"Google Guided Vision辅助阅读，展示AI在无障碍领域的实用价值。\"},{\"topic_id\":73,\"reason\":\"AI写作特征识别，回应教育与企业内容审核的刚需。\"},{\"topic_id\":79,\"reason\":\"AI破解Stratego游戏，展示强化学习在复杂策略博弈中的突破。\"},{\"topic_id\":64,\"reason\":\"AI Agent取代移动应用趋势，预测下一代人机交互范式变革。\"},{\"topic_id\":65,\"reason\":\"Barclays集成Anthropic Claude，体现传统金融业拥抱AI Agent的动向。\"},{\"topic_id\":63,\"reason\":\"Airbnb AI搜索功能更新，展示AI在垂直电商场景的优化。\"},{\"topic_id\":78,\"reason\":\"Legato AI助听眼镜发布，结合硬件与AI解决听力障碍。\"},{\"topic_id\":24,\"reason\":\"Speculative Safety Honeypot论文，提出新型AI安全防御机制。\"},{\"topic_id\":37,\"reason\":\"AgBench论文，建立Agent智能体评估基准，推动行业标准化。\"},{\"topic_id\":1,\"reason\":\"Large Knowledge Model论文，探索知识密集型大模型的新架构。\"}]}",
+      "at": "2026-10-02"
+    },
+    "13509a96ca00eafd8062e5dfbc79affe29fb512a8c48fefd570dac0e251e7ce1": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"OpenAI解雇安全研究员引发安全团队动荡，同时推出ChatGPT虚拟试衣等新功能；Shopify发布AI网站构建工具Canvas；Google AI Overviews反垄断案被驳回；AI在Stratego等游戏上取得突破。研究方面，多篇论文聚焦多智能体系统、知识模型与安全防御。\",\"hot_news\":[{\"topic_id\":67,\"insight\":\"OpenAI因泄密解雇安全研究员，凸显内部安全管控挑战。\",\"narrative\":\"OpenAI周四宣布解雇三名安全研究员，据《华尔街日报》报道，这些研究员被指将敏感公司信息泄露给第三方AI安全组织。OpenAI发言人表示，这是因违反访问和处理敏感信息的政策所致。此举引发外界对OpenAI内部安全团队稳定性的关注。\",\"evaluation\":\"事件表明OpenAI在追求技术突破的同时，内部安全合规面临严峻考验。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":71},{\"topic_id\":66,\"insight\":\"ChatGPT新增虚拟试衣功能，拓展AI在电商领域的应用场景。\",\"narrative\":\"OpenAI周四宣布全球推出两项购物新功能，包括虚拟试穿服装和配饰，以及收藏产品功能。此前OpenAI曾尝试过即时结账功能但效果不佳，此次转向更注重用户体验的虚拟试衣。这反映了AI助手在电商消费场景中的持续探索。\",\"evaluation\":\"功能落地标志着AI助手在电商辅助决策方面迈出实质性一步。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":71},{\"topic_id\":68,\"insight\":\"Shopify Canvas通过对话式AI简化网站构建流程。\",\"narrative\":\"Shopify周四发布新工具Canvas，允许商家通过对话与AI代理Sidekick直接构建在线商店。相比此前需要编辑代码或依赖开发者的无代码构建器，Canvas实现了更深度的实时定制与可视化反馈，降低了建站门槛。\",\"evaluation\":\"工具降低了电商建站的技术门槛，提升了中小商家的运营效率。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":71},{\"topic_id\":75,\"insight\":\"Google AI Overviews反垄断案被法官驳回。\",\"narrative\":\"美国联邦法官驳回了对Google AI搜索功能提起的反垄断诉讼，原告包括Chegg和Penske媒体集团。尽管这些公司声称AI搜索导致其网站流量下降，但法官裁定Google的行为不违反反垄断法。此前Google曾请求驳回此案。\",\"evaluation\":\"判决结果可能为AI搜索功能的进一步推广扫清法律障碍。\",\"refs\":[9,11],\"mention_count\":2,\"cross_verify_score\":70}],\"other_news\":[{\"topic_id\":72,\"insight\":\"Grok曾建议特朗普武力占领委内瑞拉。\",\"narrative\":\"据《时代》杂志报道，特朗普曾与马斯克的Grok聊天机器人进行长时间对话，并询问如何应对委内瑞拉总统马杜罗被俘后的局势。该事件发生在2025年12月，即美国入侵委内瑞拉前一个月。\",\"refs\":[7],\"mention_count\":1,\"cross_verify_score\":70},{\"topic_id\":70,\"insight\":\"Google Gemini Live推出Guided Vision辅助阅读功能。\",\"narrative\":\"Google在兼容Android设备的Gemini Live中推出Guided Vision功能，利用AI为手机摄像头捕捉的画面提供实时语音描述。该功能可帮助用户识别小字、描述环境或识别物体，类似于苹果的VoiceOver Live Recognition。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":70},{\"topic_id\":73,\"insight\":\"AI写作特征识别研究揭示模型独特习惯。\",\"narrative\":\"营销公司Graphite的研究发现，尽管早期的AI写作特征如破折号和“delve”已被淘汰，但模型仍会使用对比强烈的句式结构。不同版本的模型展现出独特的写作习惯，这为识别AI生成内容提供了新的线索。\",\"refs\":[8],\"mention_count\":1,\"cross_verify_score\":70},{\"topic_id\":79,\"insight\":\"AI Ataraxos击败Stratego世界冠军。\",\"narrative\":\"卡内基梅隆、MIT、NYU和斯坦福的研究团队开发的AI Ataraxos，以15胜1负4平的成绩击败了Stratego历史最佳玩家Pim Niemeijer。该AI仅使用16块GPU和数千美元训练成本，成功破解了这一信息隐藏类游戏。\",\"refs\":[10],\"mention_count\":1,\"cross_verify_score\":70},{\"topic_id\":69,\"insight\":\"特朗普与科技高管签署AI伦理协定。\",\"narrative\":\"特朗普与科技高管签署了一份“具有约束力”的AI安全协定，承诺AI实验室将自我监管。该协定被批评为缺乏实际约束力，仅是“口头承诺”。同时，OpenAI开发者日推出了面向普通用户的AI代理Dots。\",\"refs\":[4],\"mention_count\":1,\"cross_verify_score\":70},{\"topic_id\":74,\"insight\":\"OpenAI探讨AI在执行层面的经济价值。\",\"narrative\":\"OpenAI发布文章探讨高级AI在突破性想法背后的常规工作中可能发挥的最大作用，强调执行力可能塑造下一个经济体的形态。\",\"refs\":[6],\"mention_count\":1,\"cross_verify_score\":70}],\"core_tech\":[{\"topic_id\":1,\"title\":\"Large Knowledge Model: A Knowledge Foundation for Agentic Science at Scale\",\"summary\":\"该论文提出大规模知识模型，旨在为大规模代理科学提供知识基础，支持高并发访问、可追溯推理和增量增长。\",\"refs\":[12]},{\"topic_id\":24,\"title\":\"Speculative Safety Honeypot: Toward Proactive Defense Against Multi-turn Agent Attacks\",\"summary\":\"论文提出Speculative Safety Honeypot框架，利用多智能体模拟系统构建推测与验证工作流，以主动防御多轮交互攻击。\",\"refs\":[15]},{\"topic_id\":37,\"title\":\"AgBench: Agentic AI Benchmarks for Personal AI Devices\",\"summary\":\"AgBench为个人AI设备上的代理AI系统提供基准测试套件，旨在系统评估设备资源限制下的任务性能与部署架构。\",\"refs\":[16]},{\"topic_id\":40,\"title\":\"Belief-Aware Multi-Agent Path Finding under Map Uncertainty\",\"summary\":\"研究在地图不确定性下实现多智能体路径规划，利用空间相关性推断未观测区域的通行性。\",\"refs\":[17]},{\"topic_id\":45,\"title\":\"Coding Agent Memory Post-training: Unlocking the Memory Potential of Pre-trained File Operations for Long-Horizon Tasks via Reinforcement Learning\",\"summary\":\"论文通过强化学习解锁预训练文件操作的记忆潜力，使语言模型代理能够处理超长时序任务。\",\"refs\":[18]},{\"topic_id\":46,\"title\":\"Cogentic: Multi-Agent Orchestration for Automated Proof Discovery\",\"summary\":\"Cogentic是一个多智能体编排框架，用于自动化发现开放研究问题的证明，通过多轮探索解决复杂技术障碍。\",\"refs\":[19]}],\"ref_translations\":[{\"id\":12,\"zh_title\":\"大规模知识模型：大规模代理科学的知识基础\"},{\"id\":15,\"zh_title\":\"推测性安全蜜罐：迈向多轮代理攻击的主动防御\"},{\"id\":16,\"zh_title\":\"AgBench：个人AI设备的代理AI基准测试\"},{\"id\":17,\"zh_title\":\"地图不确定性下的信念感知多智能体路径规划\"},{\"id\":18,\"zh_title\":\"编码代理记忆后训练：通过强化学习解锁长时序任务的记忆潜力\"},{\"id\":19,\"zh_title\":\"Cogentic：自动化证明发现的多智能体编排\"}]}",
+      "at": "2026-10-02"
+    },
+    "207d4cc431c18201b86bfa33d963cec2f1c5d0de830db300ed8e4e14bc68c5d7": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"OpenAI解雇3名安全研究员，据《华尔街日报》报道\"},{\"id\":2,\"zh_title\":\"ChatGPT可虚拟试穿衣服\"},{\"id\":3,\"zh_title\":\"Shopify推出Canvas：通过聊天构建在线商店\"},{\"id\":4,\"zh_title\":\"特朗普的‘道德约束’AI‘协议’、AI代理的兴起及选票上的极端分子\"},{\"id\":5,\"zh_title\":\"谷歌新功能Guided Vision助你阅读小字\"},{\"id\":6,\"zh_title\":\"永恒的伴侣\"},{\"id\":7,\"zh_title\":\"马斯克的AI聊天机器人Grok据称鼓励特朗普夺取委内瑞拉总统\"},{\"id\":8,\"zh_title\":\"Opus 5.5喜欢告诉你‘这很重要’（以及其他AI写作套路）\"},{\"id\":9,\"zh_title\":\"法官驳回针对谷歌AI概览的反垄断诉讼\"},{\"id\":10,\"zh_title\":\"Stratego游戏因信息隐藏难倒AI，直到现在\"},{\"id\":11,\"zh_title\":\"法官驳回针对谷歌AI搜索的Chegg和Penske反垄断诉讼\"},{\"id\":13,\"zh_title\":\"OSWorld-Science：计算机使用智能体学习与使用科学软件的基准\"},{\"id\":14,\"zh_title\":\"面向LLM智能体的基于信念的世界模型\"},{\"id\":20,\"zh_title\":\"分而治之与崩溃：通过独立子实例的精确分解实现MAPF-Collapse\"}]}",
+      "at": "2026-10-02"
     }
   },
   "published": {
-    "https://techcrunch.com/2026/06/03/amazon-will-show-ai-product-images-when-you-search-for-some-reason/": {
-      "title": "Amazon will show AI product images when you search for some reason",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://www.theverge.com/tech/942547/amazon-search-bar-ai-images": {
-      "title": "Amazon&#8217;s search bar will invent AI-generated products you can&#8217;t buy",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://techcrunch.com/2026/06/03/alphabets-record-breaking-85b-raise-for-googles-ai-business-is-a-helluva-good-signal/": {
-      "title": "Alphabet’s record-breaking $85B raise for Google’s AI business is a helluva good signal",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://www.siliconvalley.com/2026/06/03/alphabet-upsizes-equity-offering-to-85-billion-for-ai-spending/": {
-      "title": "Alphabet upsizes equity offering to $85 billion for AI spending",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://www.theverge.com/ai-artificial-intelligence/942242/microsoft-build-ai-agents-openai-competition": {
-      "title": "Microsoft and OpenAI broke up — now they’re ready to fight",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind": {
-      "title": "Introducing new capabilities to GPT-Rosalind",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://news.aibase.com/zh/news/28598": {
-      "title": "打通微软全家桶！微软发布全新 AI 助手 Scout，承袭 OpenClaw 基因主打“养成系”定制微软在Build大会上推出AI助手Scout，将其智能体灵活性与陪伴功能融入Microsoft 365生态。Scout基于年初火爆的开源项目OpenClaw，但该项目因创始人被OpenAI收编而热度下降。 12 小时前 11.9K",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://36kr.com/p/3837314291299464": {
-      "title": "“ChatGPT以后可能要没了”",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://techcrunch.com/2026/06/03/googles-dreambeans-its-weirdest-named-ai-tool-to-date-will-turn-your-life-into-a-cartoon/": {
-      "title": "Google’s Dreambeans, its weirdest-named AI tool to date, will turn your life into a cartoon",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://www.wired.com/story/xai-asks-court-to-strip-alleged-grok-deepfake-nudes-victims-of-anonymity/": {
-      "title": "xAI Asks Court to Strip Alleged Grok Deepfake Nudes Victims of Anonymity",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://www.wired.com/story/nvidia-unitree-humanoid-robot-h2-plus/": {
-      "title": "The Humanoid Robot of the Future Is a 6-Foot-Tall Beefcake With a Chinese Body and an American Brain",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://news.aibase.com/zh/news/28611": {
-      "title": "机器人的规则之争：科技巨头正加速构建物理AI生态物理AI正成为科技巨头新战场。OpenAI、英伟达与特斯拉近期在具身智能领域推出重大举措，表明机器人产业竞争从硬件制造升级为底层基础设施与行业标准制定。OpenAI新成立“OpenAI Robotics”团队，标志着科技巨头深度下场，打破初创和传统企业主导格局。 7 小时前 11.6K",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://36kr.com/p/3837116661904774": {
-      "title": "机器人进校潮背后：AI产业正在争夺“真实世界入口”",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.03755": {
-      "title": "LAP: An Agent-to-Instrument Protocol for Autonomous Science",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.03163": {
-      "title": "OpenAgenet/OAN: Technical Architecture for Trust-Governed Agent Identity and Discovery",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.03918": {
-      "title": "Hedge-Bench: Benchmarking Agents on Hard, Realistic Tasks Pertaining to Financial Reasoning",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.03203": {
-      "title": "MedCUA-Bench: A Screenshot-Only Benchmark for Clinical Computer-Use Agents",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.03273": {
-      "title": "VistaHop: Benchmarking Multi-hop Visual Reasoning for Visual DeepSearch",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.01139": {
-      "title": "SkillRevise: Improving LLM-Authored Agent Skills via Trace-Conditioned Skill Revision",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
     "https://news.aibase.com/zh/news/28657": {
       "title": "进军全能工作流！Meta 智能体全球上线，WhatsApp 变身中小企业 AI 助手Meta宣布将旗下客户支持AI机器人更名为“Meta商务智能体”，并在全球WhatsApp Business平台全面上线。此举标志着WhatsApp从小商户沟通工具升级为具备工作流处理能力的生产力软件，加速了AI在通信生态中的渗透。 6 小时前 12.5K",
       "at": "2026-06-05",
@@ -55080,104 +54768,94 @@
       "title": "独家 | 腾讯秘密开发Personal Agent独立App“Handy Bot”",
       "at": "2026-10-01",
       "edition": "morning"
+    },
+    "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/": {
+      "title": "OpenAI cuts ties with 3 safety researchers, WSJ reports",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/": {
+      "title": "ChatGPT can now virtually try on clothes for you",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/": {
+      "title": "Shopify debuts Canvas, a way to build online stores by chatting with AI",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://www.wired.com/story/uncanny-valley-podcast-trumps-pinky-swear-ai-safety-accord-an-ai-agent-worth-the-risk/": {
+      "title": "Trump’s ‘Morally Binding’ AI ‘Accord,’ the Rise of AI Agents, and Extremists on the Ballot",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/1003756/google-gemini-live-guided-vision": {
+      "title": "Google’s new Guided Vision feature can help you read the fine print",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://openai.com/index/the-eternal-complement": {
+      "title": "The eternal complement",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/": {
+      "title": "Musk’s AI chatbot Grok reportedly encouraged Trump to capture  Venezuela’s president",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/10/01/opus-5-5-loves-to-tell-you-this-matters-and-other-ai-writing-tells/": {
+      "title": "Opus 5.5 loves to tell you ‘this matters’ (and other AI writing tells)",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://www.theverge.com/tech/1003589/google-ai-overviews-chegg-penske-lawsuits-dismissed": {
+      "title": "Judge dismisses antitrust lawsuits over Google’s AI Overviews",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/": {
+      "title": "With most information hidden, the game Stratego had stumped AI—until now",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://arstechnica.com/google/2026/10/antitrust-lawsuits-targeting-google-ai-search-dismissed-by-federal-judge/": {
+      "title": "Judge dismisses Chegg and Penske antitrust lawsuits targeting Google AI search",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2609.27297": {
+      "title": "Large Knowledge Model: A Knowledge Foundation for Agentic Science at Scale",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2609.39549": {
+      "title": "Speculative Safety Honeypot: Toward Proactive Defense Against Multi-turn Agent Attacks",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2609.38652": {
+      "title": "AgBench: Agentic AI Benchmarks for Personal AI Devices",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2609.40269": {
+      "title": "Belief-Aware Multi-Agent Path Finding under Map Uncertainty",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2609.34422": {
+      "title": "Coding Agent Memory Post-training: Unlocking the Memory Potential of Pre-trained File Operations for Long-Horizon Tasks via Reinforcement Learning",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2609.40324": {
+      "title": "Cogentic: Multi-Agent Orchestration for Automated Proof Discovery",
+      "at": "2026-10-02",
+      "edition": "morning"
     }
   },
   "publishedSignatures": {
-    "db69f78133abd4d6": {
-      "title": "Amazon will show AI product images when you search for some reason",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "d20a6234a3100f07": {
-      "title": "Amazon&#8217;s search bar will invent AI-generated products you can&#8217;t buy",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "b98988f3eaa04969": {
-      "title": "Alphabet’s record-breaking $85B raise for Google’s AI business is a helluva good signal",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "b5e3abd5d7ed908d": {
-      "title": "Alphabet upsizes equity offering to $85 billion for AI spending",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "24b83cd271aad6f5": {
-      "title": "Microsoft and OpenAI broke up — now they’re ready to fight",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "350db9de478fb582": {
-      "title": "Introducing new capabilities to GPT-Rosalind",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "cb15e4fcf01eb9f5": {
-      "title": "打通微软全家桶！微软发布全新 AI 助手 Scout，承袭 OpenClaw 基因主打“养成系”定制微软在Build大会上推出AI助手Scout，将其智能体灵活性与陪伴功能融入Microsoft 365生态。Scout基于年初火爆的开源项目OpenClaw，但该项目因创始人被OpenAI收编而热度下降。 12 小时前 11.9K",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "9609cc86f90e74c9": {
-      "title": "“ChatGPT以后可能要没了”",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "43324e9085ec2a5f": {
-      "title": "Google’s Dreambeans, its weirdest-named AI tool to date, will turn your life into a cartoon",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "50c0fcb9b1512d55": {
-      "title": "xAI Asks Court to Strip Alleged Grok Deepfake Nudes Victims of Anonymity",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "adeaa71d5c412777": {
-      "title": "The Humanoid Robot of the Future Is a 6-Foot-Tall Beefcake With a Chinese Body and an American Brain",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "5e9f60adac5b8bf5": {
-      "title": "机器人的规则之争：科技巨头正加速构建物理AI生态物理AI正成为科技巨头新战场。OpenAI、英伟达与特斯拉近期在具身智能领域推出重大举措，表明机器人产业竞争从硬件制造升级为底层基础设施与行业标准制定。OpenAI新成立“OpenAI Robotics”团队，标志着科技巨头深度下场，打破初创和传统企业主导格局。 7 小时前 11.6K",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "73cedeb8cd20659a": {
-      "title": "机器人进校潮背后：AI产业正在争夺“真实世界入口”",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "0c79262cced42e1c": {
-      "title": "LAP: An Agent-to-Instrument Protocol for Autonomous Science",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "7aca5261571d0909": {
-      "title": "OpenAgenet/OAN: Technical Architecture for Trust-Governed Agent Identity and Discovery",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "bb6a629084e94c96": {
-      "title": "Hedge-Bench: Benchmarking Agents on Hard, Realistic Tasks Pertaining to Financial Reasoning",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "8aab021822bbf904": {
-      "title": "MedCUA-Bench: A Screenshot-Only Benchmark for Clinical Computer-Use Agents",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "a3a52213b9b03761": {
-      "title": "VistaHop: Benchmarking Multi-hop Visual Reasoning for Visual DeepSearch",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
-    "bdaf783e81283c28": {
-      "title": "SkillRevise: Improving LLM-Authored Agent Skills via Trace-Conditioned Skill Revision",
-      "at": "2026-06-04",
-      "edition": "morning"
-    },
     "81921c990adc527a": {
       "title": "进军全能工作流！Meta 智能体全球上线，WhatsApp 变身中小企业 AI 助手Meta宣布将旗下客户支持AI机器人更名为“Meta商务智能体”，并在全球WhatsApp Business平台全面上线。此举标志着WhatsApp从小商户沟通工具升级为具备工作流处理能力的生产力软件，加速了AI在通信生态中的渗透。 6 小时前 12.5K",
       "at": "2026-06-05",
@@ -64427,105 +64105,95 @@
       "title": "独家 | 腾讯秘密开发Personal Agent独立App“Handy Bot”",
       "at": "2026-10-01",
       "edition": "morning"
+    },
+    "d50417bd492736e2": {
+      "title": "OpenAI cuts ties with 3 safety researchers, WSJ reports",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "6edf64973950527b": {
+      "title": "ChatGPT can now virtually try on clothes for you",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "e0ba9ed48bdacbf7": {
+      "title": "Shopify debuts Canvas, a way to build online stores by chatting with AI",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "e9ada719aceaf00e": {
+      "title": "Trump’s ‘Morally Binding’ AI ‘Accord,’ the Rise of AI Agents, and Extremists on the Ballot",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "a909da8bdc5c36a0": {
+      "title": "Google’s new Guided Vision feature can help you read the fine print",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "d418200f22a7d56e": {
+      "title": "The eternal complement",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "c1b74c1e3369f3f4": {
+      "title": "Musk’s AI chatbot Grok reportedly encouraged Trump to capture  Venezuela’s president",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "8501d165efa07a41": {
+      "title": "Opus 5.5 loves to tell you ‘this matters’ (and other AI writing tells)",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "c228cf153d592c29": {
+      "title": "Judge dismisses antitrust lawsuits over Google’s AI Overviews",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "351040f33912fd75": {
+      "title": "With most information hidden, the game Stratego had stumped AI—until now",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "c50b20dd6c78020b": {
+      "title": "Judge dismisses Chegg and Penske antitrust lawsuits targeting Google AI search",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "050054a2964acaa2": {
+      "title": "Large Knowledge Model: A Knowledge Foundation for Agentic Science at Scale",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "cf68915b1b342590": {
+      "title": "Speculative Safety Honeypot: Toward Proactive Defense Against Multi-turn Agent Attacks",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "0fd64ccc75bd18c7": {
+      "title": "AgBench: Agentic AI Benchmarks for Personal AI Devices",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "3818c5e22ef732ba": {
+      "title": "Belief-Aware Multi-Agent Path Finding under Map Uncertainty",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "7394ee3f02c3988a": {
+      "title": "Coding Agent Memory Post-training: Unlocking the Memory Potential of Pre-trained File Operations for Long-Horizon Tasks via Reinforcement Learning",
+      "at": "2026-10-02",
+      "edition": "morning"
+    },
+    "da78f6faaa4b877e": {
+      "title": "Cogentic: Multi-Agent Orchestration for Automated Proof Discovery",
+      "at": "2026-10-02",
+      "edition": "morning"
     }
   },
   "publishedByEdition": {
     "morning": {
-      "https://techcrunch.com/2026/06/03/amazon-will-show-ai-product-images-when-you-search-for-some-reason/": {
-        "title": "Amazon will show AI product images when you search for some reason",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://www.theverge.com/tech/942547/amazon-search-bar-ai-images": {
-        "title": "Amazon&#8217;s search bar will invent AI-generated products you can&#8217;t buy",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://techcrunch.com/2026/06/03/alphabets-record-breaking-85b-raise-for-googles-ai-business-is-a-helluva-good-signal/": {
-        "title": "Alphabet’s record-breaking $85B raise for Google’s AI business is a helluva good signal",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://www.siliconvalley.com/2026/06/03/alphabet-upsizes-equity-offering-to-85-billion-for-ai-spending/": {
-        "title": "Alphabet upsizes equity offering to $85 billion for AI spending",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://www.theverge.com/ai-artificial-intelligence/942242/microsoft-build-ai-agents-openai-competition": {
-        "title": "Microsoft and OpenAI broke up — now they’re ready to fight",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind": {
-        "title": "Introducing new capabilities to GPT-Rosalind",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://news.aibase.com/zh/news/28598": {
-        "title": "打通微软全家桶！微软发布全新 AI 助手 Scout，承袭 OpenClaw 基因主打“养成系”定制微软在Build大会上推出AI助手Scout，将其智能体灵活性与陪伴功能融入Microsoft 365生态。Scout基于年初火爆的开源项目OpenClaw，但该项目因创始人被OpenAI收编而热度下降。 12 小时前 11.9K",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://36kr.com/p/3837314291299464": {
-        "title": "“ChatGPT以后可能要没了”",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://techcrunch.com/2026/06/03/googles-dreambeans-its-weirdest-named-ai-tool-to-date-will-turn-your-life-into-a-cartoon/": {
-        "title": "Google’s Dreambeans, its weirdest-named AI tool to date, will turn your life into a cartoon",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://www.wired.com/story/xai-asks-court-to-strip-alleged-grok-deepfake-nudes-victims-of-anonymity/": {
-        "title": "xAI Asks Court to Strip Alleged Grok Deepfake Nudes Victims of Anonymity",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://www.wired.com/story/nvidia-unitree-humanoid-robot-h2-plus/": {
-        "title": "The Humanoid Robot of the Future Is a 6-Foot-Tall Beefcake With a Chinese Body and an American Brain",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://news.aibase.com/zh/news/28611": {
-        "title": "机器人的规则之争：科技巨头正加速构建物理AI生态物理AI正成为科技巨头新战场。OpenAI、英伟达与特斯拉近期在具身智能领域推出重大举措，表明机器人产业竞争从硬件制造升级为底层基础设施与行业标准制定。OpenAI新成立“OpenAI Robotics”团队，标志着科技巨头深度下场，打破初创和传统企业主导格局。 7 小时前 11.6K",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://36kr.com/p/3837116661904774": {
-        "title": "机器人进校潮背后：AI产业正在争夺“真实世界入口”",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.03755": {
-        "title": "LAP: An Agent-to-Instrument Protocol for Autonomous Science",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.03163": {
-        "title": "OpenAgenet/OAN: Technical Architecture for Trust-Governed Agent Identity and Discovery",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.03918": {
-        "title": "Hedge-Bench: Benchmarking Agents on Hard, Realistic Tasks Pertaining to Financial Reasoning",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.03203": {
-        "title": "MedCUA-Bench: A Screenshot-Only Benchmark for Clinical Computer-Use Agents",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.03273": {
-        "title": "VistaHop: Benchmarking Multi-hop Visual Reasoning for Visual DeepSearch",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.01139": {
-        "title": "SkillRevise: Improving LLM-Authored Agent Skills via Trace-Conditioned Skill Revision",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
       "https://news.aibase.com/zh/news/28657": {
         "title": "进军全能工作流！Meta 智能体全球上线，WhatsApp 变身中小企业 AI 助手Meta宣布将旗下客户支持AI机器人更名为“Meta商务智能体”，并在全球WhatsApp Business平台全面上线。此举标志着WhatsApp从小商户沟通工具升级为具备工作流处理能力的生产力软件，加速了AI在通信生态中的渗透。 6 小时前 12.5K",
         "at": "2026-06-05",
@@ -73890,159 +73558,94 @@
         "title": "独家 | 腾讯秘密开发Personal Agent独立App“Handy Bot”",
         "at": "2026-10-01",
         "edition": "morning"
+      },
+      "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/": {
+        "title": "OpenAI cuts ties with 3 safety researchers, WSJ reports",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/": {
+        "title": "ChatGPT can now virtually try on clothes for you",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/": {
+        "title": "Shopify debuts Canvas, a way to build online stores by chatting with AI",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://www.wired.com/story/uncanny-valley-podcast-trumps-pinky-swear-ai-safety-accord-an-ai-agent-worth-the-risk/": {
+        "title": "Trump’s ‘Morally Binding’ AI ‘Accord,’ the Rise of AI Agents, and Extremists on the Ballot",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://www.theverge.com/ai-artificial-intelligence/1003756/google-gemini-live-guided-vision": {
+        "title": "Google’s new Guided Vision feature can help you read the fine print",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://openai.com/index/the-eternal-complement": {
+        "title": "The eternal complement",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/": {
+        "title": "Musk’s AI chatbot Grok reportedly encouraged Trump to capture  Venezuela’s president",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/10/01/opus-5-5-loves-to-tell-you-this-matters-and-other-ai-writing-tells/": {
+        "title": "Opus 5.5 loves to tell you ‘this matters’ (and other AI writing tells)",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://www.theverge.com/tech/1003589/google-ai-overviews-chegg-penske-lawsuits-dismissed": {
+        "title": "Judge dismisses antitrust lawsuits over Google’s AI Overviews",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/": {
+        "title": "With most information hidden, the game Stratego had stumped AI—until now",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://arstechnica.com/google/2026/10/antitrust-lawsuits-targeting-google-ai-search-dismissed-by-federal-judge/": {
+        "title": "Judge dismisses Chegg and Penske antitrust lawsuits targeting Google AI search",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2609.27297": {
+        "title": "Large Knowledge Model: A Knowledge Foundation for Agentic Science at Scale",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2609.39549": {
+        "title": "Speculative Safety Honeypot: Toward Proactive Defense Against Multi-turn Agent Attacks",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2609.38652": {
+        "title": "AgBench: Agentic AI Benchmarks for Personal AI Devices",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2609.40269": {
+        "title": "Belief-Aware Multi-Agent Path Finding under Map Uncertainty",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2609.34422": {
+        "title": "Coding Agent Memory Post-training: Unlocking the Memory Potential of Pre-trained File Operations for Long-Horizon Tasks via Reinforcement Learning",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2609.40324": {
+        "title": "Cogentic: Multi-Agent Orchestration for Automated Proof Discovery",
+        "at": "2026-10-02",
+        "edition": "morning"
       }
     },
     "evening": {
-      "https://36kr.com/p/3837264010361729": {
-        "title": "微软很怕被AI巨头架空",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3837001359947143": {
-        "title": "16亿Windows用户，一夜冲进Agent时代",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.02951": {
-        "title": "SCOPE: Real-Time Natural Language Camera Agent at the Edge",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.03618": {
-        "title": "Cross-Lingual Token Arbitrage: Optimizing Code Agent Context Windows via Local LLM Preprocessing",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.02862": {
-        "title": "Toward a Modular Architecture for Embedded AI Agent Systems at the Edge",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.03161": {
-        "title": "OpenAgenet/OAN: Open Infrastructure for Trusted Agent Interconnection",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.03829": {
-        "title": "BigFinanceBench: A Workflow-Grounded Benchmark for Financial-Research Agents",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.03435": {
-        "title": "CP-Agent: Context-Aware Multimodal Reasoning for Cellular Morphological Profiling under Chemical Perturbations",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3836194689088130": {
-        "title": "Anthropic秘密递表背后：算力赎身迫在眉睫",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3837018445280649": {
-        "title": "万亿IPO前夜，OpenAI把赌注押到了基建工地上",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3830224890568969": {
-        "title": "20VC最新播客实录：当Anthropic引发商业化讨论，销售在AI时代会变得更贵？",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3836943798369158": {
-        "title": "Codex 加入，ChatGPT变成“打工bot”",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3837240754403977": {
-        "title": "为何Gemini体验越来越拧巴？好AI越用越贵，免费AI集体降智",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3837249413084288": {
-        "title": "“父母说话不如AI管用”，算法时代的育儿黑洞",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://news.aibase.com/zh/news/28656": {
-        "title": "谷歌云AI生态再迎超级大客户！瑞典独角兽 Lovable 签约扩容 5 倍算力瑞典初创公司Lovable与谷歌云达成长期深度合作，虽未公开金额，但知情人士称其云资源和AI使用量将增至5倍。作为欧洲增长最快的初创公司之一，Lovable在“全自动AI编码”赛道表现抢眼，此次合作标志着全球云算力与AI生态的强强联合。 刚刚 9.3K",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.04202": {
-        "title": "SMAC-Talk: A Natural Language Extension of the StarCraft Multi-Agent Challenge for Large Language Models",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.04455": {
-        "title": "The Meta-Agent Challenge: Are Current Agents Capable of Autonomous Agent Development?",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.04494": {
-        "title": "Beyond Prompt-Based Planning: MCP-Native Graph Planning-based Biomedical Agent System",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.04104": {
-        "title": "Proof-Carrying Agent Actions: Model-Agnostic Runtime Governance for Heterogeneous Agent Systems",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.04465": {
-        "title": "SePO: Self-Evolving Prompt Agent for System Prompt Optimization",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://news.aibase.com/zh/news/28643": {
-        "title": "16GB内存本地即时响应！谷歌发布Gemma 4 12B，颠覆性“无编码器”架构引爆开源社区谷歌发布全新多模态模型Gemma4 12B，颠覆传统架构，取消独立编码器组件，实现消费级硬件上的高效本地部署与推理。这一突破显著降低多模态模型的计算复杂度，提升运行速度，标志着开源大模型生态进入新阶段。 31 分钟前 11.0K",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://news.aibase.com/zh/news/28640": {
-        "title": "谷歌推出全新 Gemma 4 12B 模型：轻松处理视觉与音频，无需编码器谷歌发布Gemma 4 12B多模态模型，拥有12亿参数，创新取消传统编码器，可直接处理视觉与音频数据。该模型仅需16GB显存，可在高端笔记本本地运行，无需依赖云端资源。 2 小时前 11.5K",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://news.aibase.com/zh/news/28644": {
-        "title": "手机AI能直接调动微信了!微信互联多厂商推A2A助手，操作链路迎变革微信与华为、小米、荣耀、OPPO等主流手机厂商合作，推出基于A2A协作机制的助手能力，将微信高频服务融入手机原生系统。用户可通过系统级AI助手直接发起微信音视频通话或发送消息。腾讯客服证实多家厂商已完成接入，合作涉及技术底层与合规层面。 18 分钟前 12.3K",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3838411102534533": {
-        "title": "争夺AI手机入口，豆包和微信打起来了",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://aitntnews.com/newDetail.html?newId=25854": {
-        "title": "速递｜AI音乐独角兽Suno再融4亿美元，估值翻倍至54亿美元，订阅用户超200万",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://news.aibase.com/zh/news/28646": {
-        "title": "快手App上线“AI购物助手” 补齐货架电商智能导购短板快手App近日正式上线“AI购物助手”，提供独立入口，标志其货架电商智能化升级。该助手紧跟行业趋势，主打对话式智能服务，能自动抓取用户历史浏览记录，转化为即时购物线索，实现降价提醒和精准选品推送。在消费决策支持上，它具备强信息整合能力，可快速抓取并结构化商品信息。 刚刚 12.0K",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3838144949700865": {
-        "title": "“互联网女皇”基金领投，AI音乐独角兽估值达54亿美元",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://aitntnews.com/newDetail.html?newId=25861": {
-        "title": "阿里千问开放企业Agent，瑞幸、肯德基、东航集体入驻",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://aitntnews.com/newDetail.html?newId=25855": {
-        "title": "戴盟机器人完成亿元融资，阿里通义多模态大牛原玮浩加盟攻关物理世界模型",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3838454229027072": {
-        "title": "36氪独家｜2026 年字节 AI 的四个关键命题",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
       "https://arxiv.org/abs/2606.05658": {
         "title": "Agent-Orchestrated Adaptive RAG: A Comparative Study on Structured and Multi-Hop Retrieval",
         "at": "2026-06-05",
@@ -82562,101 +82165,6 @@
   },
   "publishedSignaturesByEdition": {
     "morning": {
-      "db69f78133abd4d6": {
-        "title": "Amazon will show AI product images when you search for some reason",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "d20a6234a3100f07": {
-        "title": "Amazon&#8217;s search bar will invent AI-generated products you can&#8217;t buy",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "b98988f3eaa04969": {
-        "title": "Alphabet’s record-breaking $85B raise for Google’s AI business is a helluva good signal",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "b5e3abd5d7ed908d": {
-        "title": "Alphabet upsizes equity offering to $85 billion for AI spending",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "24b83cd271aad6f5": {
-        "title": "Microsoft and OpenAI broke up — now they’re ready to fight",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "350db9de478fb582": {
-        "title": "Introducing new capabilities to GPT-Rosalind",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "cb15e4fcf01eb9f5": {
-        "title": "打通微软全家桶！微软发布全新 AI 助手 Scout，承袭 OpenClaw 基因主打“养成系”定制微软在Build大会上推出AI助手Scout，将其智能体灵活性与陪伴功能融入Microsoft 365生态。Scout基于年初火爆的开源项目OpenClaw，但该项目因创始人被OpenAI收编而热度下降。 12 小时前 11.9K",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "9609cc86f90e74c9": {
-        "title": "“ChatGPT以后可能要没了”",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "43324e9085ec2a5f": {
-        "title": "Google’s Dreambeans, its weirdest-named AI tool to date, will turn your life into a cartoon",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "50c0fcb9b1512d55": {
-        "title": "xAI Asks Court to Strip Alleged Grok Deepfake Nudes Victims of Anonymity",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "adeaa71d5c412777": {
-        "title": "The Humanoid Robot of the Future Is a 6-Foot-Tall Beefcake With a Chinese Body and an American Brain",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "5e9f60adac5b8bf5": {
-        "title": "机器人的规则之争：科技巨头正加速构建物理AI生态物理AI正成为科技巨头新战场。OpenAI、英伟达与特斯拉近期在具身智能领域推出重大举措，表明机器人产业竞争从硬件制造升级为底层基础设施与行业标准制定。OpenAI新成立“OpenAI Robotics”团队，标志着科技巨头深度下场，打破初创和传统企业主导格局。 7 小时前 11.6K",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "73cedeb8cd20659a": {
-        "title": "机器人进校潮背后：AI产业正在争夺“真实世界入口”",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "0c79262cced42e1c": {
-        "title": "LAP: An Agent-to-Instrument Protocol for Autonomous Science",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "7aca5261571d0909": {
-        "title": "OpenAgenet/OAN: Technical Architecture for Trust-Governed Agent Identity and Discovery",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "bb6a629084e94c96": {
-        "title": "Hedge-Bench: Benchmarking Agents on Hard, Realistic Tasks Pertaining to Financial Reasoning",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "8aab021822bbf904": {
-        "title": "MedCUA-Bench: A Screenshot-Only Benchmark for Clinical Computer-Use Agents",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "a3a52213b9b03761": {
-        "title": "VistaHop: Benchmarking Multi-hop Visual Reasoning for Visual DeepSearch",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "bdaf783e81283c28": {
-        "title": "SkillRevise: Improving LLM-Authored Agent Skills via Trace-Conditioned Skill Revision",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
       "81921c990adc527a": {
         "title": "进军全能工作流！Meta 智能体全球上线，WhatsApp 变身中小企业 AI 助手Meta宣布将旗下客户支持AI机器人更名为“Meta商务智能体”，并在全球WhatsApp Business平台全面上线。此举标志着WhatsApp从小商户沟通工具升级为具备工作流处理能力的生产力软件，加速了AI在通信生态中的渗透。 6 小时前 12.5K",
         "at": "2026-06-05",
@@ -91906,164 +91414,94 @@
         "title": "独家 | 腾讯秘密开发Personal Agent独立App“Handy Bot”",
         "at": "2026-10-01",
         "edition": "morning"
+      },
+      "d50417bd492736e2": {
+        "title": "OpenAI cuts ties with 3 safety researchers, WSJ reports",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "6edf64973950527b": {
+        "title": "ChatGPT can now virtually try on clothes for you",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "e0ba9ed48bdacbf7": {
+        "title": "Shopify debuts Canvas, a way to build online stores by chatting with AI",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "e9ada719aceaf00e": {
+        "title": "Trump’s ‘Morally Binding’ AI ‘Accord,’ the Rise of AI Agents, and Extremists on the Ballot",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "a909da8bdc5c36a0": {
+        "title": "Google’s new Guided Vision feature can help you read the fine print",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "d418200f22a7d56e": {
+        "title": "The eternal complement",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "c1b74c1e3369f3f4": {
+        "title": "Musk’s AI chatbot Grok reportedly encouraged Trump to capture  Venezuela’s president",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "8501d165efa07a41": {
+        "title": "Opus 5.5 loves to tell you ‘this matters’ (and other AI writing tells)",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "c228cf153d592c29": {
+        "title": "Judge dismisses antitrust lawsuits over Google’s AI Overviews",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "351040f33912fd75": {
+        "title": "With most information hidden, the game Stratego had stumped AI—until now",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "c50b20dd6c78020b": {
+        "title": "Judge dismisses Chegg and Penske antitrust lawsuits targeting Google AI search",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "050054a2964acaa2": {
+        "title": "Large Knowledge Model: A Knowledge Foundation for Agentic Science at Scale",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "cf68915b1b342590": {
+        "title": "Speculative Safety Honeypot: Toward Proactive Defense Against Multi-turn Agent Attacks",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "0fd64ccc75bd18c7": {
+        "title": "AgBench: Agentic AI Benchmarks for Personal AI Devices",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "3818c5e22ef732ba": {
+        "title": "Belief-Aware Multi-Agent Path Finding under Map Uncertainty",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "7394ee3f02c3988a": {
+        "title": "Coding Agent Memory Post-training: Unlocking the Memory Potential of Pre-trained File Operations for Long-Horizon Tasks via Reinforcement Learning",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "da78f6faaa4b877e": {
+        "title": "Cogentic: Multi-Agent Orchestration for Automated Proof Discovery",
+        "at": "2026-10-02",
+        "edition": "morning"
       }
     },
     "evening": {
-      "81bf7e3277ff6324": {
-        "title": "微软很怕被AI巨头架空",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "0de5f3db980e6757": {
-        "title": "16亿Windows用户，一夜冲进Agent时代",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "f6e3882bbb789f24": {
-        "title": "SCOPE: Real-Time Natural Language Camera Agent at the Edge",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "90dd8c0cad9680ec": {
-        "title": "Cross-Lingual Token Arbitrage: Optimizing Code Agent Context Windows via Local LLM Preprocessing",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "f9806f67f5bdb63e": {
-        "title": "Toward a Modular Architecture for Embedded AI Agent Systems at the Edge",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "83713b922f31dea7": {
-        "title": "OpenAgenet/OAN: Open Infrastructure for Trusted Agent Interconnection",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "9e6b5fa8c096c391": {
-        "title": "BigFinanceBench: A Workflow-Grounded Benchmark for Financial-Research Agents",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "9e15a6e8a64005fc": {
-        "title": "CP-Agent: Context-Aware Multimodal Reasoning for Cellular Morphological Profiling under Chemical Perturbations",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "11e633026aa67c04": {
-        "title": "Anthropic秘密递表背后：算力赎身迫在眉睫",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "99a4f6cda418863b": {
-        "title": "万亿IPO前夜，OpenAI把赌注押到了基建工地上",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "0ee15e7aac9e14a8": {
-        "title": "20VC最新播客实录：当Anthropic引发商业化讨论，销售在AI时代会变得更贵？",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "5f9d417a313aac2e": {
-        "title": "Codex 加入，ChatGPT变成“打工bot”",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "601ea88fd9efabdd": {
-        "title": "为何Gemini体验越来越拧巴？好AI越用越贵，免费AI集体降智",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "509c6527d951440c": {
-        "title": "“父母说话不如AI管用”，算法时代的育儿黑洞",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "56e60e022fe59c55": {
-        "title": "谷歌云AI生态再迎超级大客户！瑞典独角兽 Lovable 签约扩容 5 倍算力瑞典初创公司Lovable与谷歌云达成长期深度合作，虽未公开金额，但知情人士称其云资源和AI使用量将增至5倍。作为欧洲增长最快的初创公司之一，Lovable在“全自动AI编码”赛道表现抢眼，此次合作标志着全球云算力与AI生态的强强联合。 刚刚 9.3K",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "9a305f27ce2ffdd2": {
-        "title": "SMAC-Talk: A Natural Language Extension of the StarCraft Multi-Agent Challenge for Large Language Models",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "333a365ead81c33e": {
-        "title": "The Meta-Agent Challenge: Are Current Agents Capable of Autonomous Agent Development?",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "b450182306fad002": {
-        "title": "OpenAgenet/OAN: Open Infrastructure for Trusted Agent Interconnection",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "a31944294515b4db": {
-        "title": "Beyond Prompt-Based Planning: MCP-Native Graph Planning-based Biomedical Agent System",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "f39744c7dd66905c": {
-        "title": "Proof-Carrying Agent Actions: Model-Agnostic Runtime Governance for Heterogeneous Agent Systems",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "5d8e8757074bb341": {
-        "title": "SePO: Self-Evolving Prompt Agent for System Prompt Optimization",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "0149cdb89af9dbb7": {
-        "title": "16GB内存本地即时响应！谷歌发布Gemma 4 12B，颠覆性“无编码器”架构引爆开源社区谷歌发布全新多模态模型Gemma4 12B，颠覆传统架构，取消独立编码器组件，实现消费级硬件上的高效本地部署与推理。这一突破显著降低多模态模型的计算复杂度，提升运行速度，标志着开源大模型生态进入新阶段。 31 分钟前 11.0K",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "ed83056328bc4a22": {
-        "title": "谷歌推出全新 Gemma 4 12B 模型：轻松处理视觉与音频，无需编码器谷歌发布Gemma 4 12B多模态模型，拥有12亿参数，创新取消传统编码器，可直接处理视觉与音频数据。该模型仅需16GB显存，可在高端笔记本本地运行，无需依赖云端资源。 2 小时前 11.5K",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "fe0e4d7e6433b5c5": {
-        "title": "手机AI能直接调动微信了!微信互联多厂商推A2A助手，操作链路迎变革微信与华为、小米、荣耀、OPPO等主流手机厂商合作，推出基于A2A协作机制的助手能力，将微信高频服务融入手机原生系统。用户可通过系统级AI助手直接发起微信音视频通话或发送消息。腾讯客服证实多家厂商已完成接入，合作涉及技术底层与合规层面。 18 分钟前 12.3K",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "0aa7640e9706f86e": {
-        "title": "争夺AI手机入口，豆包和微信打起来了",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "f145503303e8eff2": {
-        "title": "速递｜AI音乐独角兽Suno再融4亿美元，估值翻倍至54亿美元，订阅用户超200万",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "8d5204f240db3ab3": {
-        "title": "快手App上线“AI购物助手” 补齐货架电商智能导购短板快手App近日正式上线“AI购物助手”，提供独立入口，标志其货架电商智能化升级。该助手紧跟行业趋势，主打对话式智能服务，能自动抓取用户历史浏览记录，转化为即时购物线索，实现降价提醒和精准选品推送。在消费决策支持上，它具备强信息整合能力，可快速抓取并结构化商品信息。 刚刚 12.0K",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "48fe6b143d7c908b": {
-        "title": "“互联网女皇”基金领投，AI音乐独角兽估值达54亿美元",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "6ff4dd2b46fa7d53": {
-        "title": "阿里千问开放企业Agent，瑞幸、肯德基、东航集体入驻",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "ebd7bf11f296f8b0": {
-        "title": "戴盟机器人完成亿元融资，阿里通义多模态大牛原玮浩加盟攻关物理世界模型",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "98667d06b53678c7": {
-        "title": "36氪独家｜2026 年字节 AI 的四个关键命题",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
       "1dcc27cc76818e38": {
         "title": "Agent-Orchestrated Adaptive RAG: A Comparative Study on Structured and Multi-Hop Retrieval",
         "at": "2026-06-05",
@@ -100488,54 +99926,6 @@
   },
   "publishedTopicsByEdition": {
     "morning": {
-      "a93f35ecc5ddc177e22b": {
-        "title": "微软推出养成系AI助手Scout，深度整合Microsoft 365生态。",
-        "text": "微软推出养成系AI助手Scout，深度整合Microsoft 365生态。 微软推出养成系AI助手Scout，深度整合Microsoft 365生态。 微软在Build大会上发布全新AI助手Scout，其底层框架源自开源项目OpenClaw，旨在将智能体灵活性与陪伴功能融入Microsoft 365生态。Scout强调全天候在线与个性化“持久身份”，用户可自定义姓名，系统通过长期互动将用户行为模式内化为记忆与技能。针对OpenClaw曾出现的失控问题，Scout内置了严密的策略合规系统与审计日志。此外，OpenAI宣布GPT-Rosalind在生命科学研究方面取得进展。 微软在Build大会上发布全新AI助手Scout，其底层框架源自开源项目OpenClaw，旨在将智能体灵活性与陪伴功能融入Microsoft 365生态。Scout强调全天候在线与个性化“持久身份”，用户可自定义姓名，系统通过长期互动将用户行为模式内化为记忆与技能。针对OpenClaw曾出现的失控问题，Scout内置了严密的策略合规系统与审计日志。此外",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "17447d971ecd79173581": {
-        "title": "Alphabet创纪录融资850亿美元，彰显投资者对AI业务的强烈信心。",
-        "text": "Alphabet创纪录融资850亿美元，彰显投资者对AI业务的强烈信心。 Alphabet创纪录融资850亿美元，彰显投资者对AI业务的强烈信心。 Alphabet宣布创纪录的850亿美元股票融资计划，旨在支持其不断增长的AI业务支出。该计划包括40亿美元的公开市场发行和与伯克希尔哈撒韦的100亿美元交易。由于需求旺盛，融资规模从最初计划的400亿美元大幅上调，最终筹集了450亿美元。 Alphabet宣布创纪录的850亿美元股票融资计划，旨在支持其不断增长的AI业务支出。该计划包括40亿美元的公开市场发行和与伯克希尔哈撒韦的100亿美元交易。由于需求旺盛，融资规模从最初计划的400亿美元大幅上调，最终筹集了450亿美元。巨额融资表明资本市场对AI技术前景的极度乐观。 Alphabet宣布创纪录的850亿美元股票融资计划，旨在支持其不断增长的AI业务支出。该计划包括40亿美元的公开市场发行和与伯克希尔哈撒韦的100亿美元交易。由于需求旺盛，融资规模从最初计划的400亿美元大幅上调，最终筹集了450亿美元。",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "84a21cd8649244f911b8": {
-        "title": "亚马逊搜索栏引入AI生成商品图像功能，提升搜索体验。",
-        "text": "亚马逊搜索栏引入AI生成商品图像功能，提升搜索体验。 亚马逊搜索栏引入AI生成商品图像功能，提升搜索体验。 亚马逊宣布在购物应用搜索栏引入AI生成商品图像功能，用户可通过描述寻找特定纹理或风格的商品。目前该功能仅展示服装和家居用品的AI图像，用户可点击匹配图像进行搜索。 亚马逊宣布在购物应用搜索栏引入AI生成商品图像功能，用户可通过描述寻找特定纹理或风格的商品。目前该功能仅展示服装和家居用品的AI图像，用户可点击匹配图像进行搜索。AI图像生成功能为用户提供了更直观的搜索方式。 亚马逊宣布在购物应用搜索栏引入AI生成商品图像功能，用户可通过描述寻找特定纹理或风格的商品。目前该功能仅展示服装和家居用品的AI图像，用户可点击匹配图像进行搜索。AI图像生成功能为用户提供了更直观的搜索方式。 AI图像生成功能为用户提供了更直观的搜索方式。",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "733e0032f5f321ce4737": {
-        "title": "机器人公司加速布局校园市场，争夺AI现实世界入口。",
-        "text": "机器人公司加速布局校园市场，争夺AI现实世界入口。 机器人公司加速布局校园市场，争夺AI现实世界入口。 越来越多机器人公司开始将学校作为重要目标，推出校园实验室、K12课程体系及AI社团解决方案。这表明机器人产业竞争已从硬件制造升级为争夺AI进入现实世界的早期入口。 越来越多机器人公司开始将学校作为重要目标，推出校园实验室、K12课程体系及AI社团解决方案。这表明机器人产业竞争已从硬件制造升级为争夺AI进入现实世界的早期入口。 越来越多机器人公司开始将学校作为重要目标，推出校园实验室、K12课程体系及AI社团解决方案。这表明机器人产业竞争已从硬件制造升级为争夺AI进入现实世界的早期入口。多来源共同指向同一趋势，短期影响值得持续跟踪。 多来源共同指向同一趋势，短期影响值得持续跟踪。",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "dff060b014a5a876eb52": {
-        "title": "Google推出Dreambeans工具，将用户生活转化为AI故事。",
-        "text": "Google推出Dreambeans工具，将用户生活转化为AI故事。 Google推出Dreambeans工具，将用户生活转化为AI故事。 Google Labs推出名为Dreambeans的AI工具，旨在将用户在Google服务中的数据转化为AI插画故事。该工具主要提供生活方式建议，目前支持iOS和Android平台。 Google Labs推出名为Dreambeans的AI工具，旨在将用户在Google服务中的数据转化为AI插画故事。该工具主要提供生活方式建议，目前支持iOS和Android平台。 Google Labs推出名为Dreambeans的AI工具，旨在将用户在Google服务中的数据转化为AI插画故事。该工具主要提供生活方式建议，目前支持iOS和Android平台。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "90c0585eec31122d99a3": {
-        "title": "NVIDIA与Unitree合作推出人形机器人H2 Plus。",
-        "text": "NVIDIA与Unitree合作推出人形机器人H2 Plus。 NVIDIA与Unitree合作推出人形机器人H2 Plus。 NVIDIA宣布与Unitree合作推出人形机器人H2 Plus，该机器人结合了Unitree的硬件与NVIDIA的Thor T5000芯片及软件套件，旨在简化编程与训练流程。 NVIDIA宣布与Unitree合作推出人形机器人H2 Plus，该机器人结合了Unitree的硬件与NVIDIA的Thor T5000芯片及软件套件，旨在简化编程与训练流程。 NVIDIA宣布与Unitree合作推出人形机器人H2 Plus，该机器人结合了Unitree的硬件与NVIDIA的Thor T5000芯片及软件套件，旨在简化编程与训练流程。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "af5e9c32d1dafd364732": {
-        "title": "xAI请求法院公开Grok Deepfake受害者身份。",
-        "text": "xAI请求法院公开Grok Deepfake受害者身份。 xAI请求法院公开Grok Deepfake受害者身份。 xAI请求法院公开四名Grok Deepfake受害者身份，其中包括一名儿童受害者。这些受害者因Deepfake色情图像遭受情感困扰，并提起集体诉讼。 xAI请求法院公开四名Grok Deepfake受害者身份，其中包括一名儿童受害者。这些受害者因Deepfake色情图像遭受情感困扰，并提起集体诉讼。 xAI请求法院公开四名Grok Deepfake受害者身份，其中包括一名儿童受害者。这些受害者因Deepfake色情图像遭受情感困扰，并提起集体诉讼。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
-      "0ae8f1e706f79815effb": {
-        "title": "OpenAI宣布Codex将并入ChatGPT，打造超级应用。",
-        "text": "OpenAI宣布Codex将并入ChatGPT，打造超级应用。 OpenAI宣布Codex将并入ChatGPT，打造超级应用。 OpenAI在Intelligence at Work发布会上宣布，Codex将在未来几周内正式并入ChatGPT。此前Codex仅作为下载入口存在，合并后聊天与工作流将在同一应用中完成。Codex周活用户已突破500万，且非程序员用户增速显著，显示出强大的破圈潜力。 OpenAI在Intelligence at Work发布会上宣布，Codex将在未来几周内正式并入ChatGPT。此前Codex仅作为下载入口存在，合并后聊天与工作流将在同一应用中完成。Codex周活用户已突破500万，且非程序员用户增速显著，显示出强大的破圈潜力。Codex并入标志着OpenAI超级应用战略的实质性落地。 OpenAI在Intelligence at Work发布会上宣布，Codex将在未来几周内正式并入ChatGPT。此前Codex仅作为下载入口存在，合并后聊天与工作流将在同一应用中完成。Codex周活用户已突破500万",
-        "at": "2026-06-04",
-        "edition": "morning"
-      },
       "86679c03f64c11010959": {
         "title": "Meta商务智能体全球上线，WhatsApp变身生产力工具。",
         "text": "Meta商务智能体全球上线，WhatsApp变身生产力工具。 Meta商务智能体全球上线，WhatsApp变身生产力工具。 Meta宣布旗下客户支持AI机器人更名为“Meta商务智能体”，并在全球WhatsApp Business平台全面上线。此前已在印度、墨西哥等市场进行两年实测，新智能体不仅能实时解答顾客提问、推荐商品、预订行程，还能筛选销售线索，遇复杂问题则转接真人客服。此外，该智能体已同步向Instagram私信生态开放，并内测“每日简报”功能，为商家自动梳理夜间留言。 Meta宣布旗下客户支持AI机器人更名为“Meta商务智能体”，并在全球WhatsApp Business平台全面上线。此前已在印度、墨西哥等市场进行两年实测，新智能体不仅能实时解答顾客提问、推荐商品、预订行程，还能筛选销售线索，遇复杂问题则转接真人客服。此外，该智能体已同步向Instagram私信生态开放，并内测“每日简报”功能，为商家自动梳理夜间留言。标志着WhatsApp从小商户沟通工具升级为具备工作流处理能力的生产力软件。",
@@ -106661,99 +106051,69 @@
         "text": "ChatGPT生成虚假证人案 ChatGPT生成虚假证人案 据海外科技媒体报道，ChatGPT生成虚假证人案。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。 据海外科技媒体报道，ChatGPT生成虚假证人案。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。 据海外科技媒体报道，ChatGPT生成虚假证人案。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
         "at": "2026-10-01",
         "edition": "morning"
+      },
+      "f411eb946b284466f4fa": {
+        "title": "Google AI Overviews反垄断案被法官驳回。",
+        "text": "Google AI Overviews反垄断案被法官驳回。 Google AI Overviews反垄断案被法官驳回。 美国联邦法官驳回了对Google AI搜索功能提起的反垄断诉讼，原告包括Chegg和Penske媒体集团。尽管这些公司声称AI搜索导致其网站流量下降，但法官裁定Google的行为不违反反垄断法。此前Google曾请求驳回此案。 美国联邦法官驳回了对Google AI搜索功能提起的反垄断诉讼，原告包括Chegg和Penske媒体集团。尽管这些公司声称AI搜索导致其网站流量下降，但法官裁定Google的行为不违反反垄断法。此前Google曾请求驳回此案。判决结果可能为AI搜索功能的进一步推广扫清法律障碍。 美国联邦法官驳回了对Google AI搜索功能提起的反垄断诉讼，原告包括Chegg和Penske媒体集团。尽管这些公司声称AI搜索导致其网站流量下降，但法官裁定Google的行为不违反反垄断法。此前Google曾请求驳回此案。判决结果可能为AI搜索功能的进一步推广扫清法律障碍。 判决结果可能为AI搜索功能的进一步推广扫清法律障碍。",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "9267cd2b0c589d884879": {
+        "title": "OpenAI因泄密解雇安全研究员，凸显内部安全管控挑战。",
+        "text": "OpenAI因泄密解雇安全研究员，凸显内部安全管控挑战。 OpenAI因泄密解雇安全研究员，凸显内部安全管控挑战。 OpenAI周四宣布解雇三名安全研究员，据《华尔街日报》报道，这些研究员被指将敏感公司信息泄露给第三方AI安全组织。OpenAI发言人表示，这是因违反访问和处理敏感信息的政策所致。此举引发外界对OpenAI内部安全团队稳定性的关注。 OpenAI周四宣布解雇三名安全研究员，据《华尔街日报》报道，这些研究员被指将敏感公司信息泄露给第三方AI安全组织。OpenAI发言人表示，这是因违反访问和处理敏感信息的政策所致。此举引发外界对OpenAI内部安全团队稳定性的关注。事件表明OpenAI在追求技术突破的同时，内部安全合规面临严峻考验。 OpenAI周四宣布解雇三名安全研究员，据《华尔街日报》报道，这些研究员被指将敏感公司信息泄露给第三方AI安全组织。OpenAI发言人表示，这是因违反访问和处理敏感信息的政策所致。此举引发外界对OpenAI内部安全团队稳定性的关注。事件表明OpenAI在追求技术突破的同时，内部安全合规面临严峻考验。",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "bce2f81fea363dc8cd64": {
+        "title": "特朗普与科技高管签署AI伦理协定。",
+        "text": "特朗普与科技高管签署AI伦理协定。 特朗普与科技高管签署AI伦理协定。 特朗普与科技高管签署了一份“具有约束力”的AI安全协定，承诺AI实验室将自我监管。该协定被批评为缺乏实际约束力，仅是“口头承诺”。同时，OpenAI开发者日推出了面向普通用户的AI代理Dots。 特朗普与科技高管签署了一份“具有约束力”的AI安全协定，承诺AI实验室将自我监管。该协定被批评为缺乏实际约束力，仅是“口头承诺”。同时，OpenAI开发者日推出了面向普通用户的AI代理Dots。 特朗普与科技高管签署了一份“具有约束力”的AI安全协定，承诺AI实验室将自我监管。该协定被批评为缺乏实际约束力，仅是“口头承诺”。同时，OpenAI开发者日推出了面向普通用户的AI代理Dots。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "2118b2eec32fb3497e73": {
+        "title": "AI Ataraxos击败Stratego世界冠军。",
+        "text": "AI Ataraxos击败Stratego世界冠军。 AI Ataraxos击败Stratego世界冠军。 卡内基梅隆、MIT、NYU和斯坦福的研究团队开发的AI Ataraxos，以15胜1负4平的成绩击败了Stratego历史最佳玩家Pim Niemeijer。该AI仅使用16块GPU和数千美元训练成本，成功破解了这一信息隐藏类游戏。 卡内基梅隆、MIT、NYU和斯坦福的研究团队开发的AI Ataraxos，以15胜1负4平的成绩击败了Stratego历史最佳玩家Pim Niemeijer。该AI仅使用16块GPU和数千美元训练成本，成功破解了这一信息隐藏类游戏。 卡内基梅隆、MIT、NYU和斯坦福的研究团队开发的AI Ataraxos，以15胜1负4平的成绩击败了Stratego历史最佳玩家Pim Niemeijer。该AI仅使用16块GPU和数千美元训练成本，成功破解了这一信息隐藏类游戏。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "2b7f42de2afa017a1300": {
+        "title": "ChatGPT新增虚拟试衣功能，拓展AI在电商领域的应用场景。",
+        "text": "ChatGPT新增虚拟试衣功能，拓展AI在电商领域的应用场景。 ChatGPT新增虚拟试衣功能，拓展AI在电商领域的应用场景。 OpenAI周四宣布全球推出两项购物新功能，包括虚拟试穿服装和配饰，以及收藏产品功能。此前OpenAI曾尝试过即时结账功能但效果不佳，此次转向更注重用户体验的虚拟试衣。这反映了AI助手在电商消费场景中的持续探索。 OpenAI周四宣布全球推出两项购物新功能，包括虚拟试穿服装和配饰，以及收藏产品功能。此前OpenAI曾尝试过即时结账功能但效果不佳，此次转向更注重用户体验的虚拟试衣。这反映了AI助手在电商消费场景中的持续探索。功能落地标志着AI助手在电商辅助决策方面迈出实质性一步。 OpenAI周四宣布全球推出两项购物新功能，包括虚拟试穿服装和配饰，以及收藏产品功能。此前OpenAI曾尝试过即时结账功能但效果不佳，此次转向更注重用户体验的虚拟试衣。这反映了AI助手在电商消费场景中的持续探索。功能落地标志着AI助手在电商辅助决策方面迈出实质性一步。 功能落地标志着AI助手在电商辅助决策方面迈出实质性一步。",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "a612f389f1c782086141": {
+        "title": "OpenAI探讨AI在执行层面的经济价值。",
+        "text": "OpenAI探讨AI在执行层面的经济价值。 OpenAI探讨AI在执行层面的经济价值。 OpenAI发布文章探讨高级AI在突破性想法背后的常规工作中可能发挥的最大作用，强调执行力可能塑造下一个经济体的形态。 OpenAI发布文章探讨高级AI在突破性想法背后的常规工作中可能发挥的最大作用，强调执行力可能塑造下一个经济体的形态。 OpenAI发布文章探讨高级AI在突破性想法背后的常规工作中可能发挥的最大作用，强调执行力可能塑造下一个经济体的形态。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "8fd4d7d38bdb8b39598a": {
+        "title": "Google Gemini Live推出Guided Vision辅助阅读功能。",
+        "text": "Google Gemini Live推出Guided Vision辅助阅读功能。 Google Gemini Live推出Guided Vision辅助阅读功能。 Google在兼容Android设备的Gemini Live中推出Guided Vision功能，利用AI为手机摄像头捕捉的画面提供实时语音描述。该功能可帮助用户识别小字、描述环境或识别物体，类似于苹果的VoiceOver Live Recognition。 Google在兼容Android设备的Gemini Live中推出Guided Vision功能，利用AI为手机摄像头捕捉的画面提供实时语音描述。该功能可帮助用户识别小字、描述环境或识别物体，类似于苹果的VoiceOver Live Recognition。 Google在兼容Android设备的Gemini Live中推出Guided Vision功能，利用AI为手机摄像头捕捉的画面提供实时语音描述。该功能可帮助用户识别小字、描述环境或识别物体，类似于苹果的VoiceOver Live 当前信号具备参考价值",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "d21126ddff0b77180962": {
+        "title": "Shopify Canvas通过对话式AI简化网站构建流程。",
+        "text": "Shopify Canvas通过对话式AI简化网站构建流程。 Shopify Canvas通过对话式AI简化网站构建流程。 Shopify周四发布新工具Canvas，允许商家通过对话与AI代理Sidekick直接构建在线商店。相比此前需要编辑代码或依赖开发者的无代码构建器，Canvas实现了更深度的实时定制与可视化反馈，降低了建站门槛。 Shopify周四发布新工具Canvas，允许商家通过对话与AI代理Sidekick直接构建在线商店。相比此前需要编辑代码或依赖开发者的无代码构建器，Canvas实现了更深度的实时定制与可视化反馈，降低了建站门槛。工具降低了电商建站的技术门槛，提升了中小商家的运营效率。 Shopify周四发布新工具Canvas，允许商家通过对话与AI代理Sidekick直接构建在线商店。相比此前需要编辑代码或依赖开发者的无代码构建器，Canvas实现了更深度的实时定制与可视化反馈，降低了建站门槛。工具降低了电商建站的技术门槛，提升了中小商家的运营效率。 工具降低了电商建站的技术门槛，提升了中小商家的运营效率。",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "612e708599033f971a75": {
+        "title": "Grok曾建议特朗普武力占领委内瑞拉。",
+        "text": "Grok曾建议特朗普武力占领委内瑞拉。 Grok曾建议特朗普武力占领委内瑞拉。 据《时代》杂志报道，特朗普曾与马斯克的Grok聊天机器人进行长时间对话，并询问如何应对委内瑞拉总统马杜罗被俘后的局势。该事件发生在2025年12月，即美国入侵委内瑞拉前一个月。 据《时代》杂志报道，特朗普曾与马斯克的Grok聊天机器人进行长时间对话，并询问如何应对委内瑞拉总统马杜罗被俘后的局势。该事件发生在2025年12月，即美国入侵委内瑞拉前一个月。 据《时代》杂志报道，特朗普曾与马斯克的Grok聊天机器人进行长时间对话，并询问如何应对委内瑞拉总统马杜罗被俘后的局势。该事件发生在2025年12月，即美国入侵委内瑞拉前一个月。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-10-02",
+        "edition": "morning"
+      },
+      "a0ed7061cbb861199a0f": {
+        "title": "AI写作特征识别研究揭示模型独特习惯。",
+        "text": "AI写作特征识别研究揭示模型独特习惯。 AI写作特征识别研究揭示模型独特习惯。 营销公司Graphite的研究发现，尽管早期的AI写作特征如破折号和“delve”已被淘汰，但模型仍会使用对比强烈的句式结构。不同版本的模型展现出独特的写作习惯，这为识别AI生成内容提供了新的线索。 营销公司Graphite的研究发现，尽管早期的AI写作特征如破折号和“delve”已被淘汰，但模型仍会使用对比强烈的句式结构。不同版本的模型展现出独特的写作习惯，这为识别AI生成内容提供了新的线索。 营销公司Graphite的研究发现，尽管早期的AI写作特征如破折号和“delve”已被淘汰，但模型仍会使用对比强烈的句式结构。不同版本的模型展现出独特的写作习惯，这为识别AI生成内容提供了新的线索。当前信号具备参考价值 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-10-02",
+        "edition": "morning"
       }
     },
     "evening": {
-      "7bce41f0438fa1841f81": {
-        "title": "微软Build 2026发布七款自研模型，Windows全面支持Agent生态。",
-        "text": "微软Build 2026发布七款自研模型，Windows全面支持Agent生态。 微软Build 2026发布七款自研模型，Windows全面支持Agent生态。 6月2日，微软Build 2026大会开幕，CEO纳德拉一口气发布了七款自研MAI模型，涵盖推理、编程和语音领域。微软宣布Windows将成为Agent的最佳运行平台，龙虾之父Peter Steinberger现场官宣OpenClaw正式登陆Windows生态。Copilot迎来史诗级进化，推出首个企业级自主Agent Scout，并计划在今年夏天将Chat、Cowork、Code与Autopilots功能整合为超级应用。此外 6月2日，微软Build 2026大会开幕，CEO纳德拉一口气发布了七款自研MAI模型，涵盖推理、编程和语音领域。微软宣布Windows将成为Agent的最佳运行平台，龙虾之父Peter Steinberger现场官宣OpenClaw正式登陆Windows生态。Copilot迎来史诗级进化，推出首个企业级自主Agent Scout",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "00ad7bcfdcb73f983ddf": {
-        "title": "Anthropic与OpenAI争相成为首个上市的大模型企业，算力成本驱动上市潮。",
-        "text": "Anthropic与OpenAI争相成为首个上市的大模型企业，算力成本驱动上市潮。 Anthropic与OpenAI争相成为首个上市的大模型企业，算力成本驱动上市潮。 2026年6月，Anthropic向SEC秘密递交S-1招股书，估值达9650亿美元，OpenAI也在筹备递表。两家公司正抢着成为美国“第一个上市的大模型企业”。与此同时，智谱AI与MiniMax正在紧锣密鼓筹备A股上市。行业扎堆上市的核心原因在于高昂的算力账单已到期，私募融资规模不足以覆盖持续迭代成本，必须依靠公开市场的海量资本续命。 2026年6月，Anthropic向SEC秘密递交S-1招股书，估值达9650亿美元，OpenAI也在筹备递表。两家公司正抢着成为美国“第一个上市的大模型企业”。与此同时，智谱AI与MiniMax正在紧锣密鼓筹备A股上市。行业扎堆上市的核心原因在于高昂的算力账单已到期，私募融资规模不足以覆盖持续迭代成本，必须依靠公开市场的海量资本续命。算力成本压力迫使头部AI企业加速上市，资本结构正从私募转向公开市场。 2026年6月",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "7fb6555a07b70a9569c9": {
-        "title": "Codex深度集成进ChatGPT，向更广泛的企业岗位扩散。",
-        "text": "Codex深度集成进ChatGPT，向更广泛的企业岗位扩散。 Codex深度集成进ChatGPT，向更广泛的企业岗位扩散。 OpenAI在《工作中的智能》直播中展示了Codex面向企业和知识工作的最新更新。未来几周，Codex能力将接入ChatGPT，用户可在熟悉入口直接调用。Codex新增了6个覆盖数据分析、创意生产、销售等岗位的插件，并推出Sites和Annotations功能，允许用户直接圈选修改AI生成的内容。数据显示，Codex每周活跃用户已超500万，其中五分之一来自非开发者知识工作者。 OpenAI在《工作中的智能》直播中展示了Codex面向企业和知识工作的最新更新。未来几周，Codex能力将接入ChatGPT，用户可在熟悉入口直接调用。Codex新增了6个覆盖数据分析、创意生产、销售等岗位的插件，并推出Sites和Annotations功能，允许用户直接圈选修改AI生成的内容。数据显示，Codex每周活跃用户已超500万，其中五分之一来自非开发者知识工作者。Codex正从程序员工具演变为全场景AI白领工作台",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "a494b200a05e7032e6fa": {
-        "title": "谷歌Gemini 3.5 Flash体验割裂，免费额度与付费配额规则引发争议。",
-        "text": "谷歌Gemini 3.5 Flash体验割裂，免费额度与付费配额规则引发争议。 谷歌Gemini 3.5 Flash体验割裂，免费额度与付费配额规则引发争议。 谷歌Gemini 3.5 Flash在宣传中表现强劲，但实际体验中存在割裂感。谷歌在I/O 2026前夕悄悄修改了会员订阅额度规则，从固定消息数改为基于计算资源的配额，导致用户在使用视频和图片生成功能时感到受限。 谷歌Gemini 3.5 Flash在宣传中表现强劲，但实际体验中存在割裂感。谷歌在I/O 2026前夕悄悄修改了会员订阅额度规则，从固定消息数改为基于计算资源的配额，导致用户在使用视频和图片生成功能时感到受限。 谷歌Gemini 3.5 Flash在宣传中表现强劲，但实际体验中存在割裂感。谷歌在I/O 2026前夕悄悄修改了会员订阅额度规则，从固定消息数改为基于计算资源的配额，导致用户在使用视频和图片生成功能时感到受限。当前信号具备参考价值 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "e89079fb22b120e2ec1e": {
-        "title": "OpenAI启动星门计划，在密歇根建设1GW超级数据中心。",
-        "text": "OpenAI启动星门计划，在密歇根建设1GW超级数据中心。 OpenAI启动星门计划，在密歇根建设1GW超级数据中心。 当地时间6月1日，OpenAI在密歇根Saline破土动工，建设代号“谷仓”的超级数据中心园区，规划容量高达1GW。该项目属于OpenAI的星门计划，联合Oracle、软银等伙伴投入约5000亿美元，旨在全美多地铺开AI算力基建。OpenAI承诺电费不涨、水资源不抢，并安排了充足的岗位税收，试图将密歇根打造为AI时代的新核心。 当地时间6月1日，OpenAI在密歇根Saline破土动工，建设代号“谷仓”的超级数据中心园区，规划容量高达1GW。该项目属于OpenAI的星门计划，联合Oracle、软银等伙伴投入约5000亿美元，旨在全美多地铺开AI算力基建。OpenAI承诺电费不涨、水资源不抢，并安排了充足的岗位税收，试图将密歇根打造为AI时代的新核心。OpenAI通过大规模算力基建布局，试图掌握AI时代的物理地基与主动权。 当地时间6月1日，OpenAI在密歇根Saline破土动工，建设代号“谷仓”的超级数据中心园区",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "508ddd40d700c1f7263f": {
-        "title": "Anthropic半年内月收入增长N倍，逼近450亿美元。",
-        "text": "Anthropic半年内月收入增长N倍，逼近450亿美元。 Anthropic半年内月收入增长N倍，逼近450亿美元。 Anthropic在半年内月收入增长N倍，从1月的90亿美元年化收入飙升至5月的450亿美元。这种指数级增长在商业史上极为罕见，远超Snowflake和Salesforce等传统ToB神话公司多年的积累速度。 Anthropic在半年内月收入增长N倍，从1月的90亿美元年化收入飙升至5月的450亿美元。这种指数级增长在商业史上极为罕见，远超Snowflake和Salesforce等传统ToB神话公司多年的积累速度。 Anthropic在半年内月收入增长N倍，从1月的90亿美元年化收入飙升至5月的450亿美元。这种指数级增长在商业史上极为罕见，远超Snowflake和Salesforce等传统ToB神话公司多年的积累速度。当前信号具备参考价值 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "abc5e5230dadf0c4d330": {
-        "title": "AI与算法共同养大10后一代，青少年面临自我认同与心理挑战。",
-        "text": "AI与算法共同养大10后一代，青少年面临自我认同与心理挑战。 AI与算法共同养大10后一代，青少年面临自我认同与心理挑战。 这一代孩子是历史上第一批同时被算法、社交媒体和AI养大的群体。他们熟练运用MBTI、ADHD等互联网黑话描述自己，但也更容易感到焦虑、抑郁与自我怀疑。父母权威松动，AI开始替代部分人际互动，如何建立稳定的自我成为新的育儿难题。 这一代孩子是历史上第一批同时被算法、社交媒体和AI养大的群体。他们熟练运用MBTI、ADHD等互联网黑话描述自己，但也更容易感到焦虑、抑郁与自我怀疑。父母权威松动，AI开始替代部分人际互动，如何建立稳定的自我成为新的育儿难题。 这一代孩子是历史上第一批同时被算法、社交媒体和AI养大的群体。他们熟练运用MBTI、ADHD等互联网黑话描述自己，但也更容易感到焦虑、抑郁与自我怀疑。父母权威松动，AI开始替代部分人际互动，如何建立稳定的自我成为新的育儿难题。 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "229d724644bdf0d8fad7": {
-        "title": "微信与多家手机厂商推A2A助手，实现系统级调用微信服务。",
-        "text": "微信与多家手机厂商推A2A助手，实现系统级调用微信服务。 微信与多家手机厂商推A2A助手，实现系统级调用微信服务。 微信近日宣布正与华为、小米、荣耀、OPPO等多家国内主流手机厂商展开深度合作，联合推出基于A2A（Agent-to-Agent）协作机制的助手能力。该功能旨在将微信的高频沟通服务深度融入手机原生系统，用户未来可通过手机自带的系统级AI助手，直接发起微信音视频通话或向指定联系人发送消息。目前荣耀部分机型已经支持该功能，把YOYO智能体和微信更新到最新版本，即可唤醒YOYO，比如说一句“给老王打个微信视频”，剩下的交给手机。 微信近日宣布正与华为、小米、荣耀、OPPO等多家国内主流手机厂商展开深度合作，联合推出基于A2A（Agent-to-Agent）协作机制的助手能力。该功能旨在将微信的高频沟通服务深度融入手机原生系统，用户未来可通过手机自带的系统级AI助手，直接发起微信音视频通话或向指定联系人发送消息。目前荣耀部分机型已经支持该功能，把YOYO智能体和微信更新到最新版本，即可唤醒YOYO，比如说一句“给老王打个微信视频”",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "2fc3c9701f2b5c8be709": {
-        "title": "AI音乐独角兽Suno获4亿美元融资，估值翻倍至54亿美元。",
-        "text": "AI音乐独角兽Suno获4亿美元融资，估值翻倍至54亿美元。 AI音乐独角兽Suno获4亿美元融资，估值翻倍至54亿美元。 AI音乐生成赛道的头部公司Suno周三宣布完成4亿美元的D轮融资，投后估值达到54亿美元。本轮融资由“互联网女皇”玛丽·米克尔创办的Bond Capital领投，IVP、合广投资、Lightspeed Venture Partners等知名机构也参与了这一轮融资。Suno上一轮融资发生在去年11月，当时公司以24.5亿美元的估值融资2.5亿美元。短短7个月估值翻倍，显示出投资者对“AI+音乐”赛道的乐观预期 AI音乐生成赛道的头部公司Suno周三宣布完成4亿美元的D轮融资，投后估值达到54亿美元。本轮融资由“互联网女皇”玛丽·米克尔创办的Bond Capital领投，IVP、合广投资、Lightspeed Venture Partners等知名机构也参与了这一轮融资。Suno上一轮融资发生在去年11月，当时公司以24.5亿美元的估值融资2.5亿美元。短短7个月估值翻倍，显示出投资者对“AI+音乐”赛道的乐观预期。",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "c8b000e654089d81e609": {
-        "title": "谷歌发布Gemma 4 12B，取消编码器实现16GB显存本地运行。",
-        "text": "谷歌发布Gemma 4 12B，取消编码器实现16GB显存本地运行。 谷歌发布Gemma 4 12B，取消编码器实现16GB显存本地运行。 谷歌于6月3日正式发布全新统一多模态模型Gemma 4 12B，该模型最大的创新在于彻底取消了传统多模态模型必不可少的“编码器”组件。在传统的多模态架构中，模型通常需要依赖独立的视觉和音频编码器，而Gemma 4 12B采用轻量级的嵌入层来直接处理视觉输入，仅需通过单次矩阵乘法、位置嵌入和归一化操作即可完成转换。这种精简的“无编码器”设计，不仅大幅降低了计算步骤，更让整个模型变得极其轻量。得益于底层架构的瘦身 谷歌于6月3日正式发布全新统一多模态模型Gemma 4 12B，该模型最大的创新在于彻底取消了传统多模态模型必不可少的“编码器”组件。在传统的多模态架构中，模型通常需要依赖独立的视觉和音频编码器，而Gemma 4 12B采用轻量级的嵌入层来直接处理视觉输入，仅需通过单次矩阵乘法、位置嵌入和归一化操作即可完成转换。这种精简的“无编码器”设计，不仅大幅降低了计算步骤，更让整个模型变得极其轻量。",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "534a07483c9b4f3aa981": {
-        "title": "阿里千问向第三方企业开放Agent，瑞幸、肯德基等首批入驻。",
-        "text": "阿里千问向第三方企业开放Agent，瑞幸、肯德基等首批入驻。 阿里千问向第三方企业开放Agent，瑞幸、肯德基等首批入驻。 6月3日，千问APP宣布向第三方Agent和Skill全面开放。未来，企业可以在千问中运营自己的品牌Agent。目前，瑞幸、肯德基、蜜雪冰城、东方航空等首批企业已启动测试，并将陆续上线。对于企业来说，这意味着除了官网、App、小程序等渠道之外，又多了一个新的用户触达入口。用户无需下载额外应用，也无需在多个平台之间来回切换，只需通过自然语言对话，就能完成点咖啡、订机票、领取优惠券、查询订单等操作。此前 6月3日，千问APP宣布向第三方Agent和Skill全面开放。未来，企业可以在千问中运营自己的品牌Agent。目前，瑞幸、肯德基、蜜雪冰城、东方航空等首批企业已启动测试，并将陆续上线。对于企业来说，这意味着除了官网、App、小程序等渠道之外，又多了一个新的用户触达入口。用户无需下载额外应用，也无需在多个平台之间来回切换，只需通过自然语言对话，就能完成点咖啡、订机票、领取优惠券、查询订单等操作。此前。",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "cd97fd8c2cfce015931d": {
-        "title": "字节2026年关键命题：发力世界模型、视频生成与Agent能力。",
-        "text": "字节2026年关键命题：发力世界模型、视频生成与Agent能力。 字节2026年关键命题：发力世界模型、视频生成与Agent能力。 从多个信源处独家获悉，2026 年，字节 AI 有四个重要的命题：加大对世界模型训练的投入，年底前，模型性能达到现阶段世界模型全球 SOTA 的水平。视频模型继续保持领先地位，探索“动态生成”等新方向。进一步打好 Coding 的地基，做好 Coding 的 Dogfooding，提升 Agent 能力。豆包强化商业化能力，重点场景是“办公”。字节是入场世界模型赛道较晚的玩家，直到 2025 年才在小范围内成立研究组 从多个信源处独家获悉，2026 年，字节 AI 有四个重要的命题：加大对世界模型训练的投入，年底前，模型性能达到现阶段世界模型全球 SOTA 的水平。视频模型继续保持领先地位，探索“动态生成”等新方向。进一步打好 Coding 的地基，做好 Coding 的 Dogfooding，提升 Agent 能力。 从多个信源处独家获悉，2026 年，字节 AI 有四个重要的命题：加大对世界模型训练的投入",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "ea23933a867a851f8a9d": {
-        "title": "谷歌云获瑞典独角兽Lovable 5倍算力扩容，深度整合进谷歌商业矩阵。",
-        "text": "谷歌云获瑞典独角兽Lovable 5倍算力扩容，深度整合进谷歌商业矩阵。 谷歌云获瑞典独角兽Lovable 5倍算力扩容，深度整合进谷歌商业矩阵。 瑞典斯德哥尔摩的初创公司Lovable宣布与谷歌云达成一项长期的深度合作协议。根据新协议，Lovable将获得对 Anthropic 旗下 Claude 模型以及谷歌原生 Gemini 模型的更广泛访问权限。此次续约将使 Lovable 在谷歌云上的资源占用和 AI 使用量直接飙升至此前的 5 倍。作为欧洲有史以来增长最快的初创公司之一，Lovable在“全自动AI编码”赛道正展现出恐怖的吸金能力。数据显示，今年 2 瑞典斯德哥尔摩的初创公司Lovable宣布与谷歌云达成一项长期的深度合作协议。根据新协议，Lovable将获得对 Anthropic 旗下 Claude 模型以及谷歌原生 Gemini 模型的更广泛访问权限。此次续约将使 Lovable 在谷歌云上的资源占用和 AI 使用量直接飙升至此前的 5 倍。 瑞典斯德哥尔摩的初创公司Lovable宣布与谷歌云达成一项长期的深度合作协议。",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "f030a8c3498da0e8609c": {
-        "title": "戴盟机器人完成亿元A轮融资，阿里通义大牛原玮浩加盟攻关物理世界模型。",
-        "text": "戴盟机器人完成亿元A轮融资，阿里通义大牛原玮浩加盟攻关物理世界模型。 戴盟机器人完成亿元A轮融资，阿里通义大牛原玮浩加盟攻关物理世界模型。 具身智能公司戴盟机器人新近完成亿元A轮融资，本轮融资由汇川产投和中国电信联合投资。与此同时量子位还获悉了关于这家公司的另一则消息——阿里通义实验室前多模态研究专家原玮浩加入戴盟，担任首席AI科学家。原玮浩博士毕业于香港科技大学，研究工作主要面向具身人工智能和三维视觉，拥有将多模态大模型、世界模型迁移至机器人物理操作的前沿经验。戴盟方面表明，本轮融资到账后主要会投向三件事：物理世界模型研发；含物理交互信息的超大规模数据集 具身智能公司戴盟机器人新近完成亿元A轮融资，本轮融资由汇川产投和中国电信联合投资。与此同时量子位还获悉了关于这家公司的另一则消息——阿里通义实验室前多模态研究专家原玮浩加入戴盟，担任首席AI科学家。 具身智能公司戴盟机器人新近完成亿元A轮融资，本轮融资由汇川产投和中国电信联合投资。与此同时量子位还获悉了关于这家公司的另一则消息——阿里通义实验室前多模态研究专家原玮浩加入戴盟",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
-      "fb6a9cb607d668cb948a": {
-        "title": "快手上线AI购物助手，自动抓取浏览记录并实现商品对比。",
-        "text": "快手上线AI购物助手，自动抓取浏览记录并实现商品对比。 快手上线AI购物助手，自动抓取浏览记录并实现商品对比。 快手App近日正式推出并配齐“AI购物助手”，提供独立入口，标志着快手货架电商在智能化基础设施建设上迎来重要升级。该产品紧跟行业AI导购趋势，主打对话式智能服务，通过自动抓取用户在快手App内的历史浏览商品记录，实时转化为即时购物线索，实现降价提醒与精准选品推送。在消费决策支持方面，该助手表现出较强的信息整合能力，不仅能快速抓取并结构化拆分商品的海量评价数据，精简输出优缺点，还支持同类竞品横向对比。 快手App近日正式推出并配齐“AI购物助手”，提供独立入口，标志着快手货架电商在智能化基础设施建设上迎来重要升级。该产品紧跟行业AI导购趋势，主打对话式智能服务，通过自动抓取用户在快手App内的历史浏览商品记录，实时转化为即时购物线索，实现降价提醒与精准选品推送。 快手App近日正式推出并配齐“AI购物助手”，提供独立入口，标志着快手货架电商在智能化基础设施建设上迎来重要升级。该产品紧跟行业AI导购趋势，主打对话式智能服务",
-        "at": "2026-06-04",
-        "edition": "evening"
-      },
       "f63730b95ec99efae473": {
         "title": "Anthropic罕见呼吁全球放缓AI研发，揭示AI递归自我改进逼近现实。",
         "text": "Anthropic罕见呼吁全球放缓AI研发，揭示AI递归自我改进逼近现实。 Anthropic罕见呼吁全球放缓AI研发，揭示AI递归自我改进逼近现实。 当地时间6月4日，AI巨头Anthropic发布重磅文章《当AI构建自身》，首次系统披露AI在自主编写和改进代码方面的惊人进展。文章指出，截至2026年5月，Anthropic合并进代码库的代码中已有超过80%由旗下AI助手Claude自主编写，工程师平均交付代码量达到2024年同期的8倍。在优化小模型训练代码的测试中，Claude的加速能力在一年内从3倍飙升至52倍。Anthropic警告，在充足算力支持下 当地时间6月4日，AI巨头Anthropic发布重磅文章《当AI构建自身》，首次系统披露AI在自主编写和改进代码方面的惊人进展。文章指出，截至2026年5月，Anthropic合并进代码库的代码中已有超过80%由旗下AI助手Claude自主编写，工程师平均交付代码量达到2024年同期的8倍。在优化小模型训练代码的测试中，Claude的加速能力在一年内从3倍飙升至52倍。",
