@@ -41853,85 +41853,172 @@
       "at": "2026-10-02"
     },
     "evening:2026-10-03": {
-      "fingerprint": "efc752785890f38cf1979a4e2f8abaf709ad9b70d61177fb410149b39ca0e8f9",
+      "fingerprint": "45c66854ea7ddde6e6c2967915bd25cfb256c48f140da27d39e1bce8aa7eef0c",
       "daily": {
-        "overview": "10月2日AI领域聚焦多智能体协作优化与推理效率提升。研究重点包括多Token预测、全局一致性、强化学习迁移以及视频理解等方向，多篇论文探讨了如何通过算法改进解决复杂任务中的瓶颈问题。",
-        "hotNews": [],
-        "otherNews": [],
-        "coreTech": [
+        "overview": "AI领域今日热点聚焦于视频交互与生物安全两大方向。Tavus发布的Griffin模型在视频图灵测试中表现亮眼，而Google DeepMind则将水印技术引入蛋白质设计。此外，哈佛教授利用Claude构建科研框架，Meta开源Muse Gadgets，以及Apple调整macOS权限限制AI滥用，均引发广泛关注。",
+        "hotNews": [
           {
-            "title": "匹配分布而非计算",
-            "summary": "该论文提出多Token预测（MTP）技术，通过并行生成和验证步骤提升生成吞吐量，同时保持骨干模型的Token分布。",
+            "title": "Google DeepMind将水印技术首次引入蛋白质设计，为合成生物学提供溯源方案。",
+            "insight": "Google DeepMind将水印技术首次引入蛋白质设计，为合成生物学提供溯源方案",
+            "briefing": "Google DeepMind发布了SynthID Bio，这是将水印技术第一次带进合成生物学的尝试。该技术旨在给AI设计的蛋白质打上“由AI生成”的水印，标记被写入蛋白质的氨基酸序列和三维坐标中。团队证明，生命分子能携带可追溯的“来源标记”，且不影响原本的蛋白功能。这一技术旨在为狂飙的AI生物学补上生物安全性和科学诚信这块拼图，研究阵容包括DeepMind研究副总裁Pushmeet Kohli和创始人Demis Hassabis。",
+            "evaluation": "为AI生成的生物分子提供了可追溯的数字身份证，有望提升合成生物学的可信度。",
+            "narrative": "Google DeepMind发布了SynthID Bio，这是将水印技术第一次带进合成生物学的尝试。该技术旨在给AI设计的蛋白质打上“由AI生成”的水印，标记被写入蛋白质的氨基酸序列和三维坐标中。团队证明，生命分子能携带可追溯的“来源标记”，且不影响原本的蛋白功能。这一技术旨在为狂飙的AI生物学补上生物安全性和科学诚信这块拼图，研究阵容包括DeepMind研究副总裁Pushmeet Kohli和创始人Demis Hassabis。为AI生成的生物分子提供了可追溯的数字身份证，有望提升合成生物学的可信度。",
+            "summary": "Google DeepMind发布了SynthID Bio，这是将水印技术第一次带进合成生物学的尝试。该技术旨在给AI设计的蛋白质打上“由AI生成”的水印，标记被写入蛋白质的氨基酸序列和三维坐标中。团队证明，生命分子能携带可追溯的“来源标记”，且不影响原本的蛋白功能。这一技术旨在为狂飙的AI生物学补上生物安全性和科学诚信这块拼图",
+            "refs": [
+              5
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 82,
+            "topicId": 25
+          },
+          {
+            "title": "Meta开源Muse Gadgets，开发者可利用ESP32和树莓派等设备打造专属AI外设。",
+            "insight": "Meta开源Muse Gadgets，开发者可利用ESP32和树莓派等设备打等进展",
+            "briefing": "Meta正式推出了Muse Gadgets开源项目，旨在全面下放硬件能力，让全球创客与开发者能够为Muse打造专属的外围硬件设备。开发者可以使用ESP32开发板运行Muse固件，或使用Linux SDK连接更复杂的设备。官方还列举了多种极具实用性的DIY形态参考，包括彩色墨水屏、HDMI显示棒以及触控掌上挂件等。",
+            "evaluation": "降低了AI Agent的硬件接入门槛，为AI外设生态的繁荣奠定了基础。",
+            "narrative": "Meta正式推出了Muse Gadgets开源项目，旨在全面下放硬件能力，让全球创客与开发者能够为Muse打造专属的外围硬件设备。开发者可以使用ESP32开发板运行Muse固件，或使用Linux SDK连接更复杂的设备。官方还列举了多种极具实用性的DIY形态参考，包括彩色墨水屏、HDMI显示棒以及触控掌上挂件等。降低了AI Agent的硬件接入门槛，为AI外设生态的繁荣奠定了基础。",
+            "summary": "Meta正式推出了Muse Gadgets开源项目，旨在全面下放硬件能力，让全球创客与开发者能够为Muse打造专属的外围硬件设备。开发者可以使用ESP32开发板运行Muse固件，或使用Linux SDK连接更复杂的设备。官方还列举了多种极具实用性的DIY形态参考，包括彩色墨水屏、HDMI显示棒以及触控掌上挂件等。降低了AI Agent的硬件接入门槛",
+            "refs": [
+              3
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 82,
+            "topicId": 8
+          },
+          {
+            "title": "Apple调整macOS权限以限制AI滥用，防止第三方应用访问消息历史。",
+            "insight": "Apple调整macOS权限以限制AI滥用，防止第三方应用访问消息历史。",
+            "briefing": "Apple宣布将改变macOS隐私设置，以阻止第三方应用开发者滥用权限访问消息历史。这一调整发生在Meta的AI agent Muse被曝未经许可发送通知引用用户与同事的对话线程之后。此前，用户Jason Aten表示他从未授予Muse读取消息的权限，并认为这些消息应该是受限的。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Apple宣布将改变macOS隐私设置，以阻止第三方应用开发者滥用权限访问消息历史。这一调整发生在Meta的AI agent Muse被曝未经许可发送通知引用用户与同事的对话线程之后。此前，用户Jason Aten表示他从未授予Muse读取消息的权限，并认为这些消息应该是受限的。",
+            "summary": "Apple宣布将改变macOS隐私设置，以阻止第三方应用开发者滥用权限访问消息历史。这一调整发生在Meta的AI agent Muse被曝未经许可发送通知引用用户与同事的对话线程之后。此前，用户Jason",
             "refs": [
               1
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 66,
+            "topicId": 26
+          }
+        ],
+        "otherNews": [
+          {
+            "title": "Tavus Griffin模型在视频图灵测试中真人识别率达48%，刷新历史记录。",
+            "insight": "Tavus Griffin模型在视频图灵测试中真人识别率达48%，刷新历史记录。",
+            "briefing": "AI研究团队Tavus发布了实时视频交互模型Griffin，并在实验中取得了突破性进展。在与其研究预览版Griffin-Lite进行一分钟视频通话后，54名参与者中有26人认为屏幕另一端坐着一个真人，占比约为48%。作为对照，Tavus上一代系统在相同实验流程下，只有41人中的1人被当成真人，比例为2.4%。Tavus据此宣称Griffin是首个通过实时“视频图灵测试”的模型，并将其归入新类别Human Interaction",
+            "evaluation": "实验结果具有里程碑意义，但需警惕“画饼Demo”嫌疑，需进一步验证其长期表现。",
+            "narrative": "AI研究团队Tavus发布了实时视频交互模型Griffin，并在实验中取得了突破性进展。在与其研究预览版Griffin-Lite进行一分钟视频通话后，54名参与者中有26人认为屏幕另一端坐着一个真人，占比约为48%。作为对照，Tavus上一代系统在相同实验流程下，只有41人中的1人被当成真人，比例为2.4%。Tavus据此宣称Griffin是首个通过实时“视频图灵测试”的模型，并将其归入新类别Human Interaction。实验结果具有里程碑意义，但需警惕“画饼Demo”嫌疑，需进一步验证其长期表现。",
+            "summary": "AI研究团队Tavus发布了实时视频交互模型Griffin，并在实验中取得了突破性进展。在与其研究预览版Griffin-Lite进行一分钟视频通话后，54名参与者中有26人认为屏幕另一端坐着一个真人，占比约为48%。作为对照，Tavus上一代系统在相同实验流程下，只有41人中的1人被当成真人，比例为2.4%。",
+            "refs": [
+              4
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 82,
+            "topicId": 23
+          },
+          {
+            "title": "哈佛物理教授利用Claude构建科研框架，三个月完成36篇跨领域学术手稿。",
+            "insight": "哈佛物理教授利用Claude构建科研框架，三个月完成36篇跨领域学术手稿。",
+            "briefing": "哈佛大学理论物理学家马修·施瓦茨在Anthropic博客上发文，分享了其利用Claude和开源工具包BootLoops 1.0进行科研的成果。在过去三个月里，他和19位合作者从约400个候选问题中筛选推进，最终完成了36篇学术手稿，涉及粒子物理、宇宙学、生态学等18个领域。施瓦茨借鉴物理学中的“阻抗失配”概念，调整了与AI的协作方式，不再逼着模型像人类学者那样思考，而是寻找适合AI发挥的问题。",
+            "evaluation": "展示了AI在科研辅助中的巨大潜力，为科学家与AI协作提供了可复现的框架。",
+            "narrative": "哈佛大学理论物理学家马修·施瓦茨在Anthropic博客上发文，分享了其利用Claude和开源工具包BootLoops 1.0进行科研的成果。在过去三个月里，他和19位合作者从约400个候选问题中筛选推进，最终完成了36篇学术手稿，涉及粒子物理、宇宙学、生态学等18个领域。施瓦茨借鉴物理学中的“阻抗失配”概念，调整了与AI的协作方式，不再逼着模型像人类学者那样思考，而是寻找适合AI发挥的问题。展示了AI在科研辅助中的巨大潜力，为科学家与AI协作提供了可复现的框架。",
+            "summary": "哈佛大学理论物理学家马修·施瓦茨在Anthropic博客上发文，分享了其利用Claude和开源工具包BootLoops 1.0进行科研的成果。在过去三个月里，他和19位合作者从约400个候选问题中筛选推进，最终完成了36篇学术手稿，涉及粒子物理、宇宙学、生态学等18个领域。施瓦茨借鉴物理学中的“阻抗失配”概念，调整了与AI的协作方式",
+            "refs": [
+              2
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 82,
+            "topicId": 9
+          },
+          {
+            "title": "Isomorphic Labs五年交卷，AI在几天内完成传统制药需数年的化学空间搜索。",
+            "insight": "Isomorphic Labs五年交卷，AI在几天内完成传统制药需数年的化学空间搜索。",
+            "briefing": "Isomorphic Labs总裁Max Jaderberg交出了五年成绩单，宣布AI不仅解锁了多种疾病类别的全新疗法，更彻底颠覆了药物发现流程。过去传统药企要完成10的60次方化学空间搜索需耗费数年，现在AI直接在几天内完成了。这些由AI“凭空捏造”的全新分子经过严苛的湿实验验证，成药性极佳，即将大步迈向临床试验。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Isomorphic Labs总裁Max Jaderberg交出了五年成绩单，宣布AI不仅解锁了多种疾病类别的全新疗法，更彻底颠覆了药物发现流程。过去传统药企要完成10的60次方化学空间搜索需耗费数年，现在AI直接在几天内完成了。这些由AI“凭空捏造”的全新分子经过严苛的湿实验验证，成药性极佳，即将大步迈向临床试验。",
+            "summary": "Isomorphic Labs总裁Max Jaderberg交出了五年成绩单，宣布AI不仅解锁了多种疾病类别的全新疗法，更彻底颠覆了药物发现流程。过去传统药企要完成10的60次方化学空间搜索需耗费数年，现在AI直接在几天内完成了。",
+            "refs": [
+              6
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 66,
+            "topicId": 24
+          }
+        ],
+        "coreTech": [
+          {
+            "title": "更好的监督就在附近",
+            "summary": "该论文提出了一种基于邻近参数扰动的自蒸馏方法，通过局部参数变化揭示互补的监督信号，从而提升数学推理模型的性能。",
+            "refs": [
+              11
+            ],
+            "topicId": 6
+          },
+          {
+            "title": "在编码代理管道中推进基于检索",
+            "summary": "该论文针对编码代理管道中的检索基础推测解码提出了AgSpec框架，解决了现有方法在可重用文本存储和接受长度变化方面的不足。",
+            "refs": [
+              12
             ],
             "topicId": 4
           },
           {
-            "title": "全局一致性：当每个智能体都正",
-            "summary": "论文定义了多智能体协作中的全局一致性失效问题，并给出了观察-别名不可能性定理，界定了策略保证有效动作的条件。",
+            "title": "上网络安全工具使用的细粒度基准",
+            "summary": "该论文提出了KaliBench基准测试，用于评估LLM在Kali Linux上使用网络安全工具的细粒度能力，填补了现有评估在可执行命令生成方面的空白。",
             "refs": [
-              6
+              13
             ],
-            "topicId": 19
+            "topicId": 7
           },
           {
-            "title": "强化学习在编码代理任务中的跨基准迁移",
-            "summary": "研究探讨了强化学习在编码代理任务中的应用，验证了所学策略的跨基准迁移能力，并指出了编码代理在任务末尾的常见失败模式。",
+            "title": "用于高效代理泛化的可重用经验分词",
+            "summary": "该论文提出X-Tree方法，通过从数据中恢复层次结构并直接在权重上训练，实现了多步代理的高效泛化，无需LLM调用。",
             "refs": [
-              3
+              14
             ],
-            "topicId": 5
+            "topicId": 22
           },
           {
-            "title": "视频时间定位的演化智能体",
-            "summary": "VideoEvolve框架通过Cloze结构化表示自动演化智能体Harness，以优化视频时间定位任务中的查询引导和预测细化。",
+            "title": "合成场景下的空间引导策略自蒸馏",
+            "summary": "该论文将自蒸馏方法应用于多模态大语言模型，利用合成场景中的特权视觉信息来提升模型的细粒度感知能力。",
             "refs": [
-              9
+              15
             ],
-            "topicId": 29
+            "topicId": 21
           },
           {
-            "title": "平衡离线代理微调中的能力获取与保留",
-            "summary": "PG-SFT研究关注离线代理轨迹微调中，如何在获取新能力的同时保留模型原有的通用推理和工具调用等能力。",
+            "title": "多学科肿瘤委员会讨论轨迹的真",
+            "summary": "该论文提出了OpenTumorBoard基准测试，包含611个患者案例和19,157次讨论轮次，旨在评估多学科肿瘤委员会讨论轨迹的真实世界表现。",
             "refs": [
-              8
+              16
             ],
-            "topicId": 27
-          },
-          {
-            "title": "为错误付费而非为流程付费",
-            "summary": "该论文提出了一种无标签的流程内多智能体工作流优化方法，旨在解决任务分解、代理信任和专家创建等关键决策问题。",
-            "refs": [
-              7
-            ],
-            "topicId": 26
+            "topicId": 17
           }
         ],
         "aiRumor": [],
         "refTranslations": {
-          "1": "匹配分布而非计算：后训练多Token预测头",
-          "2": "Incident-Arena：让智能体达到可靠性九成",
-          "3": "强化学习在编码代理任务中的跨基准迁移",
-          "4": "强化学习扩展真的需要更多训练吗？",
-          "5": "零到仓库：编码代理能否从头构建仓库？",
-          "6": "全局一致性：当每个智能体都正确而团队却错误时",
-          "7": "为错误付费而非为流程付费：无标签流程内多智能体工作流优化",
-          "8": "PG-SFT：平衡离线代理微调中的能力获取与保留",
-          "9": "VideoEvolve：视频时间定位的演化智能体Harness",
-          "10": "链接技能以劫持LLM智能体",
-          "11": "从验证失败到编码代理的可复用指导",
-          "12": "OrbitTAMP：航天器交会对接中的任务与运动规划语言模型",
-          "13": "超越记忆：利用显式信念状态驾驭长时域智能体",
-          "14": "内核管理的共享内存实现系统级个性化",
-          "15": "测量微任务合格度差距：现成小语言模型何时足够？",
-          "16": "在消失之前：在VideoLLMs中强化时间表示",
-          "17": "JevSpawn：通过组合式动作空间实现自适应智能体推理",
-          "18": "MemFit：高效长期智能体记忆"
+          "1": "苹果调整全盘访问权限以遏制 AI 代理滥用",
+          "2": "哈佛物理教授用Claude三个月横扫18个领域36个难题后，他总结出了一套可复现的AI科研框架",
+          "3": "刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设」",
+          "4": "刚刚，AI 击穿了「视频图灵测试」，1700 万网友在线围观",
+          "5": "突发，谷歌把「该内容由AI生成」写进了蛋白质！",
+          "6": "哈萨比斯嫡系交卷！AI用几天打穿10的60次方化学宇宙，制药业迎「iPhone时刻」",
+          "7": "何时纠错变为修复？工具使用大模型内部干预的机制审计",
+          "8": "本应自动停止的操作耗时 2.5 小时。OpenAI 关于 DNS 事件的报告：监控发出警报",
+          "9": "电影通过精心设计的创意选择进行交流，包括灯光、色彩、构图、剪辑和对话",
+          "10": "Mem Fold：通过策略优化学习用于长上下文个性化的紧凑软记忆",
+          "11": "更好的监督就在附近：邻域策略自蒸馏",
+          "12": "AgSpec：在编码代理管道中推进基于检索的推测解码的极限",
+          "13": "KaliBench：Kali Linux上网络安全工具使用的细粒度基准",
+          "14": "X-Tree：用于高效代理泛化的可重用经验分词",
+          "15": "Where-OPD：合成场景下MLLM的空间引导策略自蒸馏",
+          "16": "OpenTumorBoard：多学科肿瘤委员会讨论轨迹的真实世界基准",
+          "17": "关键词 Harness 失效即开放：小语言模型工具使用主张的廉价诊断阶梯",
+          "18": "策略内还是策略外学习？蒸馏动力学的系统研究",
+          "19": "人格剂量：用于分级特质控制的可校准激活引导"
         },
-        "candidateTotal": 250,
-        "topicTotal": 61,
-        "selectedTopicTotal": 7
+        "candidateTotal": 45,
+        "topicTotal": 45,
+        "selectedTopicTotal": 15
       },
       "at": "2026-10-03"
     },
@@ -45333,6 +45420,30 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":1,\"zh_title\":\"智能体是系统而非模型：重新思考智能体评估\"},{\"id\":2,\"zh_title\":\"苹果收紧 macOS 全盘访问权限以应对 AI 智能体新风险\"},{\"id\":3,\"zh_title\":\"苹果将限制 Mac 磁盘访问权限，因 AI 智能体风险显著增加\"},{\"id\":4,\"zh_title\":\"OpenAI 的 Dot 智能体是企业软件，也能帮你点晚餐\"},{\"id\":5,\"zh_title\":\"TechCrunch Disrupt 2026：黑山高管谈构建下一代 AI 巨头\"},{\"id\":6,\"zh_title\":\"TechCrunch Disrupt 2026：Clay 高管谈 GTM 工程师的崛起\"},{\"id\":7,\"zh_title\":\"GPT-6 系列模型指南\"},{\"id\":8,\"zh_title\":\"Meta 开源代码，让你制作 Muse AI 设备\"},{\"id\":9,\"zh_title\":\"称之为 AI 或超级智能，但只有 2% 的消费者买单\"},{\"id\":10,\"zh_title\":\"Circuit Breaker Labs 旨在让 AI 对你的孩子（和你）更安全\"},{\"id\":11,\"zh_title\":\"这些 AI 专家希望公开进行高风险研究\"},{\"id\":12,\"zh_title\":\"Sean Parker 正围绕音乐重建 Stability AI\"},{\"id\":13,\"zh_title\":\"美国逮捕涉嫌向中国走私 3 亿美元英伟达芯片的科技 CEO\"},{\"id\":20,\"zh_title\":\"2026 年 10 月 2 日公告：Anthropic 投资 1 亿美元培训 1 万名工程师并解决企业 AI 人才问题\"}]}",
       "at": "2026-10-03"
+    },
+    "34ff53aa4e78727452a0b2bd56cbd82241cee61028c71328424e4ed5b80ab399": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":8,\"topic_key\":\"Meta开源Muse Gadgets\",\"topic_title\":\"Meta开源Muse Gadgets\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":9,\"topic_key\":\"哈佛教授用Claude横扫科研难题\",\"topic_title\":\"哈佛教授用Claude横扫科研难题\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":23,\"topic_key\":\"Tavus发布Griffin模型击穿视频图灵测试\",\"topic_title\":\"Tavus发布Griffin模型击穿视频图灵测试\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":24,\"topic_key\":\"Isomorphic Labs五年交卷：AI制药\",\"topic_title\":\"Isomorphic Labs五年交卷：AI制药\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":25,\"topic_key\":\"Google DeepMind发布SynthID Bio\",\"topic_title\":\"Google DeepMind发布SynthID Bio\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":26,\"topic_key\":\"Apple调整macOS权限以限制AI滥用\",\"topic_title\":\"Apple调整macOS权限以限制AI滥用\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":27,\"topic_key\":\"电影艺术创作要素解析\",\"topic_title\":\"电影艺术创作要素解析\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":28,\"topic_key\":\"OpenAI DNS故障事件复盘\",\"topic_title\":\"OpenAI DNS故障事件复盘\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":45,\"topic_key\":\"Kimi K2发布\",\"topic_title\":\"Kimi K2发布\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-10-04"
+    },
+    "927ccec4ba31867317d41a25146caa69c9357f0e0fb67fee87cc33ff5d1c75fb": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[45,23,25,9,8,24,28,1,2],\"reasons\":[{\"topic_id\":45,\"reason\":\"Kimi K2发布，直接关联国内头部模型厂商，代表技术迭代与商业化进展。\"},{\"topic_id\":23,\"reason\":\"Tavus Griffin模型击穿视频图灵测试，展示视频生成领域的前沿突破。\"},{\"topic_id\":25,\"reason\":\"Google DeepMind发布SynthID Bio，涉及生物安全与AI合成技术，行业影响深远。\"},{\"topic_id\":9,\"reason\":\"哈佛教授用Claude横扫科研难题，体现AI在科研领域的实际应用价值。\"},{\"topic_id\":8,\"reason\":\"Meta开源Muse Gadgets，关注多模态与硬件结合的开源动态。\"},{\"topic_id\":24,\"reason\":\"Isomorphic Labs五年交卷，展示AI在生物医药领域的长期价值。\"},{\"topic_id\":28,\"reason\":\"OpenAI DNS故障事件复盘，反映大模型基础设施的稳定性挑战。\"},{\"topic_id\":1,\"reason\":\"JevSpawn: Adaptive Agentic，关于智能体自适应能力的最新研究。\"},{\"topic_id\":2,\"reason\":\"Architect-Ant: Editable Automatic，关于可编辑自动架构的研究。\"}]}",
+      "at": "2026-10-04"
+    },
+    "0b9d37639afb2d2ffa9a7c9ee0ba30b76abde4536a9e4a9444d90bcfc8336c75": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"AI领域今日热点聚焦于视频交互与生物安全两大方向。Tavus发布的Griffin模型在视频图灵测试中表现亮眼，而Google DeepMind则将水印技术引入蛋白质设计。此外，哈佛教授利用Claude构建科研框架，Meta开源Muse Gadgets，以及Apple调整macOS权限限制AI滥用，均引发广泛关注。\",\"hot_news\":[{\"topic_id\":23,\"insight\":\"Tavus Griffin模型在视频图灵测试中真人识别率达48%，刷新历史记录。\",\"narrative\":\"AI研究团队Tavus发布了实时视频交互模型Griffin，并在实验中取得了突破性进展。在与其研究预览版Griffin-Lite进行一分钟视频通话后，54名参与者中有26人认为屏幕另一端坐着一个真人，占比约为48%。作为对照，Tavus上一代系统在相同实验流程下，只有41人中的1人被当成真人，比例为2.4%。Tavus据此宣称Griffin是首个通过实时“视频图灵测试”的模型，并将其归入新类别Human Interaction Model。尽管“首次通过”的定义仍需严谨验证，且模型尚未全面开放预览，但这一成果标志着AI在模拟人类交互细节方面取得了重要进展。\",\"evaluation\":\"实验结果具有里程碑意义，但需警惕“画饼Demo”嫌疑，需进一步验证其长期表现。\",\"refs\":[4],\"mention_count\":1,\"cross_verify_score\":82},{\"topic_id\":25,\"insight\":\"Google DeepMind将水印技术首次引入蛋白质设计，为合成生物学提供溯源方案。\",\"narrative\":\"Google DeepMind发布了SynthID Bio，这是将水印技术第一次带进合成生物学的尝试。该技术旨在给AI设计的蛋白质打上“由AI生成”的水印，标记被写入蛋白质的氨基酸序列和三维坐标中。团队证明，生命分子能携带可追溯的“来源标记”，且不影响原本的蛋白功能。这一技术旨在为狂飙的AI生物学补上生物安全性和科学诚信这块拼图，研究阵容包括DeepMind研究副总裁Pushmeet Kohli和创始人Demis Hassabis。\",\"evaluation\":\"为AI生成的生物分子提供了可追溯的数字身份证，有望提升合成生物学的可信度。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":82},{\"topic_id\":9,\"insight\":\"哈佛物理教授利用Claude构建科研框架，三个月完成36篇跨领域学术手稿。\",\"narrative\":\"哈佛大学理论物理学家马修·施瓦茨在Anthropic博客上发文，分享了其利用Claude和开源工具包BootLoops 1.0进行科研的成果。在过去三个月里，他和19位合作者从约400个候选问题中筛选推进，最终完成了36篇学术手稿，涉及粒子物理、宇宙学、生态学等18个领域。施瓦茨借鉴物理学中的“阻抗失配”概念，调整了与AI的协作方式，不再逼着模型像人类学者那样思考，而是寻找适合AI发挥的问题。\",\"evaluation\":\"展示了AI在科研辅助中的巨大潜力，为科学家与AI协作提供了可复现的框架。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":82},{\"topic_id\":8,\"insight\":\"Meta开源Muse Gadgets，开发者可利用ESP32和树莓派等设备打造专属AI外设。\",\"narrative\":\"Meta正式推出了Muse Gadgets开源项目，旨在全面下放硬件能力，让全球创客与开发者能够为Muse打造专属的外围硬件设备。开发者可以使用ESP32开发板运行Muse固件，或使用Linux SDK连接更复杂的设备。官方还列举了多种极具实用性的DIY形态参考，包括彩色墨水屏、HDMI显示棒以及触控掌上挂件等。\",\"evaluation\":\"降低了AI Agent的硬件接入门槛，为AI外设生态的繁荣奠定了基础。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":82}],\"other_news\":[{\"topic_id\":26,\"insight\":\"Apple调整macOS权限以限制AI滥用，防止第三方应用访问消息历史。\",\"narrative\":\"Apple宣布将改变macOS隐私设置，以阻止第三方应用开发者滥用权限访问消息历史。这一调整发生在Meta的AI agent Muse被曝未经许可发送通知引用用户与同事的对话线程之后。此前，用户Jason Aten表示他从未授予Muse读取消息的权限，并认为这些消息应该是受限的。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":24,\"insight\":\"Isomorphic Labs五年交卷，AI在几天内完成传统制药需数年的化学空间搜索。\",\"narrative\":\"Isomorphic Labs总裁Max Jaderberg交出了五年成绩单，宣布AI不仅解锁了多种疾病类别的全新疗法，更彻底颠覆了药物发现流程。过去传统药企要完成10的60次方化学空间搜索需耗费数年，现在AI直接在几天内完成了。这些由AI“凭空捏造”的全新分子经过严苛的湿实验验证，成药性极佳，即将大步迈向临床试验。\",\"refs\":[6],\"mention_count\":1,\"cross_verify_score\":66}],\"core_tech\":[{\"topic_id\":6,\"title\":\"Better Supervision Is Nearby\",\"summary\":\"该论文提出了一种基于邻近参数扰动的自蒸馏方法，通过局部参数变化揭示互补的监督信号，从而提升数学推理模型的性能。\",\"refs\":[11]},{\"topic_id\":4,\"title\":\"AgSpec: Pushing the Limits\",\"summary\":\"该论文针对编码代理管道中的检索基础推测解码提出了AgSpec框架，解决了现有方法在可重用文本存储和接受长度变化方面的不足。\",\"refs\":[12]},{\"topic_id\":7,\"title\":\"KaliBench: A Fine-Grained\",\"summary\":\"该论文提出了KaliBench基准测试，用于评估LLM在Kali Linux上使用网络安全工具的细粒度能力，填补了现有评估在可执行命令生成方面的空白。\",\"refs\":[13]},{\"topic_id\":22,\"title\":\"X-Tree: Tokenizing Reusable\",\"summary\":\"该论文提出X-Tree方法，通过从数据中恢复层次结构并直接在权重上训练，实现了多步代理的高效泛化，无需LLM调用。\",\"refs\":[14]},{\"topic_id\":21,\"title\":\"Where-OPD: Spatially Guided On\",\"summary\":\"该论文将自蒸馏方法应用于多模态大语言模型，利用合成场景中的特权视觉信息来提升模型的细粒度感知能力。\",\"refs\":[15]},{\"topic_id\":17,\"title\":\"OpenTumorBoard: A Real-World\",\"summary\":\"该论文提出了OpenTumorBoard基准测试，包含611个患者案例和19,157次讨论轮次，旨在评估多学科肿瘤委员会讨论轨迹的真实世界表现。\",\"refs\":[16]}],\"ref_translations\":[{\"id\":11,\"zh_title\":\"更好的监督就在附近：邻域策略自蒸馏\"},{\"id\":12,\"zh_title\":\"AgSpec：在编码代理管道中推进基于检索的推测解码的极限\"},{\"id\":13,\"zh_title\":\"KaliBench：Kali Linux上网络安全工具使用的细粒度基准\"},{\"id\":14,\"zh_title\":\"X-Tree：用于高效代理泛化的可重用经验分词\"},{\"id\":15,\"zh_title\":\"Where-OPD：合成场景下MLLM的空间引导策略自蒸馏\"},{\"id\":16,\"zh_title\":\"OpenTumorBoard：多学科肿瘤委员会讨论轨迹的真实世界基准\"}]}",
+      "at": "2026-10-04"
+    },
+    "d89d6ad06ece5d16de74f5a3b05ec5c2bd490ebe9ca8174fdac19e212f41f159": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"苹果调整全盘访问权限以遏制 AI 代理滥用\"},{\"id\":7,\"zh_title\":\"何时纠错变为修复？工具使用大模型内部干预的机制审计\"},{\"id\":8,\"zh_title\":\"本应自动停止的操作耗时 2.5 小时。OpenAI 关于 DNS 事件的报告：监控发出警报\"},{\"id\":9,\"zh_title\":\"电影通过精心设计的创意选择进行交流，包括灯光、色彩、构图、剪辑和对话\"},{\"id\":10,\"zh_title\":\"Mem Fold：通过策略优化学习用于长上下文个性化的紧凑软记忆\"},{\"id\":17,\"zh_title\":\"关键词 Harness 失效即开放：小语言模型工具使用主张的廉价诊断阶梯\"},{\"id\":18,\"zh_title\":\"策略内还是策略外学习？蒸馏动力学的系统研究\"},{\"id\":19,\"zh_title\":\"人格剂量：用于分级特质控制的可校准激活引导\"}]}",
+      "at": "2026-10-04"
     }
   },
   "published": {
@@ -82097,6 +82208,66 @@
         "title": "VideoEvolve: Evolving Agent Harnesses for Video Temporal Grounding",
         "at": "2026-10-03",
         "edition": "evening"
+      },
+      "https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents/": {
+        "title": "Apple changes full-disk access permissions to curb abuse from AI agents",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://aitntnews.com/newDetail.html?newId=29949": {
+        "title": "哈佛物理教授用Claude三个月横扫18个领域36个难题后，他总结出了一套可复现的AI科研框架",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://aitntnews.com/newDetail.html?newId=29955": {
+        "title": "刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设」",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://aitntnews.com/newDetail.html?newId=29956": {
+        "title": "刚刚，AI 击穿了「视频图灵测试」，1700 万网友在线围观",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://aitntnews.com/newDetail.html?newId=29953": {
+        "title": "突发，谷歌把「该内容由AI生成」写进了蛋白质！",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://aitntnews.com/newDetail.html?newId=29954": {
+        "title": "哈萨比斯嫡系交卷！AI用几天打穿10的60次方化学宇宙，制药业迎「iPhone时刻」",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2609.39687": {
+        "title": "Better Supervision Is Nearby: Neighborhood On-Policy Self-Distillation",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.01108": {
+        "title": "AgSpec: Pushing the Limits of Retrieval-Based Speculative Decoding in Coding Agent Pipelines",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.02206": {
+        "title": "KaliBench: A Fine-Grained Benchmark for Cybersecurity Tool Use on Kali Linux with Runtime-Free Verifiable Rewards",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2609.32993": {
+        "title": "X-Tree: Tokenizing Reusable Experience for Efficient Agent Generalization",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.02117": {
+        "title": "Where-OPD: Spatially Guided On-Policy Self-Distillation of MLLMs with Synthetic Scenes",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2609.32810": {
+        "title": "OpenTumorBoard: A Real-World Benchmark of Multidisciplinary Tumor Board Discussion Trajectories",
+        "at": "2026-10-03",
+        "edition": "evening"
       }
     }
   },
@@ -99848,6 +100019,66 @@
         "title": "VideoEvolve: Evolving Agent Harnesses for Video Temporal Grounding",
         "at": "2026-10-03",
         "edition": "evening"
+      },
+      "1a2f5cdf74143f0a": {
+        "title": "Apple changes full-disk access permissions to curb abuse from AI agents",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "38f40edc5a9101c8": {
+        "title": "哈佛物理教授用Claude三个月横扫18个领域36个难题后，他总结出了一套可复现的AI科研框架",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "0a0a9af1549f1cce": {
+        "title": "刚刚，Meta开源Muse Gadgets，让全球开发者自己「造AI外设」",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "0c20b4e2444b7a2b": {
+        "title": "刚刚，AI 击穿了「视频图灵测试」，1700 万网友在线围观",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "36bba60dec6d3ada": {
+        "title": "突发，谷歌把「该内容由AI生成」写进了蛋白质！",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "41ca88b19e4a5406": {
+        "title": "哈萨比斯嫡系交卷！AI用几天打穿10的60次方化学宇宙，制药业迎「iPhone时刻」",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "c9c9330fc897deb4": {
+        "title": "Better Supervision Is Nearby: Neighborhood On-Policy Self-Distillation",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "8623ded9f6a5227d": {
+        "title": "AgSpec: Pushing the Limits of Retrieval-Based Speculative Decoding in Coding Agent Pipelines",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "593c35439066425d": {
+        "title": "KaliBench: A Fine-Grained Benchmark for Cybersecurity Tool Use on Kali Linux with Runtime-Free Verifiable Rewards",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "e2d69df80d869b83": {
+        "title": "X-Tree: Tokenizing Reusable Experience for Efficient Agent Generalization",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "57fdeb0a90dbd873": {
+        "title": "Where-OPD: Spatially Guided On-Policy Self-Distillation of MLLMs with Synthetic Scenes",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "fc14820cd39d9bd9": {
+        "title": "OpenTumorBoard: A Real-World Benchmark of Multidisciplinary Tumor Board Discussion Trajectories",
+        "at": "2026-10-03",
+        "edition": "evening"
       }
     }
   },
@@ -111301,6 +111532,42 @@
         "title": "Hugging Face开源KITTI目标检测模型库，包含YOLOv8至YOLO26系列12个模型。",
         "text": "Hugging Face开源KITTI目标检测模型库，包含YOLOv8至YOLO26系列12个模型。 Hugging Face开源KITTI目标检测模型库，包含YOLOv8至YOLO26系列12个模型。 Hugging Face开源了KITTI目标检测模型库，包含YOLOv8、YOLOv9、YOLO11和YOLO26系列12个模型，从nano到x-large规模。该库支持KITTI超宽帧下的街道场景检测，包括汽车、骑行者、行人、货车、卡车等。模型卡片包含指标、每类结果、曲线、展示和完整配置。YOLO26x在mAP@50上达到43.73%，YOLO26n在仅6.1 GFLOPs下达到42.54% mAP@50 Hugging Face开源了KITTI目标检测模型库，包含YOLOv8、YOLOv9、YOLO11和YOLO26系列12个模型，从nano到x-large规模。该库支持KITTI超宽帧下的街道场景检测，包括汽车、骑行者、行人、货车、卡车等。模型卡片包含指标、每类结果、曲线、展示和完整配置。 Hugging",
         "at": "2026-09-27",
+        "edition": "evening"
+      },
+      "5248560ce7684675fc19": {
+        "title": "Google DeepMind将水印技术首次引入蛋白质设计，为合成生物学提供溯源方案",
+        "text": "Google DeepMind将水印技术首次引入蛋白质设计，为合成生物学提供溯源方案。 Google DeepMind将水印技术首次引入蛋白质设计，为合成生物学提供溯源方案 Google DeepMind发布了SynthID Bio，这是将水印技术第一次带进合成生物学的尝试。该技术旨在给AI设计的蛋白质打上“由AI生成”的水印，标记被写入蛋白质的氨基酸序列和三维坐标中。团队证明，生命分子能携带可追溯的“来源标记”，且不影响原本的蛋白功能。这一技术旨在为狂飙的AI生物学补上生物安全性和科学诚信这块拼图，研究阵容包括DeepMind研究副总裁Pushmeet Kohli和创始人Demis Hassabis。 Google DeepMind发布了SynthID Bio，这是将水印技术第一次带进合成生物学的尝试。该技术旨在给AI设计的蛋白质打上“由AI生成”的水印，标记被写入蛋白质的氨基酸序列和三维坐标中。团队证明，生命分子能携带可追溯的“来源标记”，且不影响原本的蛋白功能。这一技术旨在为狂飙的AI生物学补上生物安全性和科学诚信这块拼图",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "cc8323e42a17bbad312d": {
+        "title": "Meta开源Muse Gadgets，开发者可利用ESP32和树莓派等设备打等进展",
+        "text": "Meta开源Muse Gadgets，开发者可利用ESP32和树莓派等设备打造专属AI外设。 Meta开源Muse Gadgets，开发者可利用ESP32和树莓派等设备打等进展 Meta正式推出了Muse Gadgets开源项目，旨在全面下放硬件能力，让全球创客与开发者能够为Muse打造专属的外围硬件设备。开发者可以使用ESP32开发板运行Muse固件，或使用Linux SDK连接更复杂的设备。官方还列举了多种极具实用性的DIY形态参考，包括彩色墨水屏、HDMI显示棒以及触控掌上挂件等。 Meta正式推出了Muse Gadgets开源项目，旨在全面下放硬件能力，让全球创客与开发者能够为Muse打造专属的外围硬件设备。开发者可以使用ESP32开发板运行Muse固件，或使用Linux SDK连接更复杂的设备。官方还列举了多种极具实用性的DIY形态参考，包括彩色墨水屏、HDMI显示棒以及触控掌上挂件等。降低了AI Agent的硬件接入门槛，为AI外设生态的繁荣奠定了基础。 Meta正式推出了Muse Gadgets开源项目，旨在全面下放硬件能力",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "8bda1c6fa4164262c542": {
+        "title": "Apple调整macOS权限以限制AI滥用，防止第三方应用访问消息历史。",
+        "text": "Apple调整macOS权限以限制AI滥用，防止第三方应用访问消息历史。 Apple调整macOS权限以限制AI滥用，防止第三方应用访问消息历史。 Apple宣布将改变macOS隐私设置，以阻止第三方应用开发者滥用权限访问消息历史。这一调整发生在Meta的AI agent Muse被曝未经许可发送通知引用用户与同事的对话线程之后。此前，用户Jason Aten表示他从未授予Muse读取消息的权限，并认为这些消息应该是受限的。 Apple宣布将改变macOS隐私设置，以阻止第三方应用开发者滥用权限访问消息历史。这一调整发生在Meta的AI agent Muse被曝未经许可发送通知引用用户与同事的对话线程之后。此前，用户Jason Aten表示他从未授予Muse读取消息的权限，并认为这些消息应该是受限的。 Apple宣布将改变macOS隐私设置，以阻止第三方应用开发者滥用权限访问消息历史。这一调整发生在Meta的AI agent Muse被曝未经许可发送通知引用用户与同事的对话线程之后。此前，用户Jason 当前信号具备参考价值",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "33741973aa7741c1a2cd": {
+        "title": "Tavus Griffin模型在视频图灵测试中真人识别率达48%，刷新历史记录。",
+        "text": "Tavus Griffin模型在视频图灵测试中真人识别率达48%，刷新历史记录。 Tavus Griffin模型在视频图灵测试中真人识别率达48%，刷新历史记录。 AI研究团队Tavus发布了实时视频交互模型Griffin，并在实验中取得了突破性进展。在与其研究预览版Griffin-Lite进行一分钟视频通话后，54名参与者中有26人认为屏幕另一端坐着一个真人，占比约为48%。作为对照，Tavus上一代系统在相同实验流程下，只有41人中的1人被当成真人，比例为2.4%。Tavus据此宣称Griffin是首个通过实时“视频图灵测试”的模型，并将其归入新类别Human Interaction AI研究团队Tavus发布了实时视频交互模型Griffin，并在实验中取得了突破性进展。在与其研究预览版Griffin-Lite进行一分钟视频通话后，54名参与者中有26人认为屏幕另一端坐着一个真人，占比约为48%。作为对照，Tavus上一代系统在相同实验流程下，只有41人中的1人被当成真人，比例为2.4%。",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "143bce7d4f042d9a07ea": {
+        "title": "哈佛物理教授利用Claude构建科研框架，三个月完成36篇跨领域学术手稿。",
+        "text": "哈佛物理教授利用Claude构建科研框架，三个月完成36篇跨领域学术手稿。 哈佛物理教授利用Claude构建科研框架，三个月完成36篇跨领域学术手稿。 哈佛大学理论物理学家马修·施瓦茨在Anthropic博客上发文，分享了其利用Claude和开源工具包BootLoops 1.0进行科研的成果。在过去三个月里，他和19位合作者从约400个候选问题中筛选推进，最终完成了36篇学术手稿，涉及粒子物理、宇宙学、生态学等18个领域。施瓦茨借鉴物理学中的“阻抗失配”概念，调整了与AI的协作方式，不再逼着模型像人类学者那样思考，而是寻找适合AI发挥的问题。 哈佛大学理论物理学家马修·施瓦茨在Anthropic博客上发文，分享了其利用Claude和开源工具包BootLoops 1.0进行科研的成果。在过去三个月里，他和19位合作者从约400个候选问题中筛选推进，最终完成了36篇学术手稿，涉及粒子物理、宇宙学、生态学等18个领域。施瓦茨借鉴物理学中的“阻抗失配”概念，调整了与AI的协作方式，不再逼着模型像人类学者那样思考，而是寻找适合AI发挥的问题。",
+        "at": "2026-10-03",
+        "edition": "evening"
+      },
+      "b159fcd872b76cbab4c3": {
+        "title": "Isomorphic Labs五年交卷，AI在几天内完成传统制药需数年的化学空间搜索。",
+        "text": "Isomorphic Labs五年交卷，AI在几天内完成传统制药需数年的化学空间搜索。 Isomorphic Labs五年交卷，AI在几天内完成传统制药需数年的化学空间搜索。 Isomorphic Labs总裁Max Jaderberg交出了五年成绩单，宣布AI不仅解锁了多种疾病类别的全新疗法，更彻底颠覆了药物发现流程。过去传统药企要完成10的60次方化学空间搜索需耗费数年，现在AI直接在几天内完成了。这些由AI“凭空捏造”的全新分子经过严苛的湿实验验证，成药性极佳，即将大步迈向临床试验。 Isomorphic Labs总裁Max Jaderberg交出了五年成绩单，宣布AI不仅解锁了多种疾病类别的全新疗法，更彻底颠覆了药物发现流程。过去传统药企要完成10的60次方化学空间搜索需耗费数年，现在AI直接在几天内完成了。这些由AI“凭空捏造”的全新分子经过严苛的湿实验验证，成药性极佳，即将大步迈向临床试验。 Isomorphic Labs总裁Max Jaderberg交出了五年成绩单，宣布AI不仅解锁了多种疾病类别的全新疗法",
+        "at": "2026-10-03",
         "edition": "evening"
       }
     }
