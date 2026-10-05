@@ -41934,6 +41934,63 @@
         "selectedTopicTotal": 6
       },
       "at": "2026-10-05"
+    },
+    "evening:2026-10-06": {
+      "fingerprint": "8b420ae7d67bfbe5351630cd65775f53e903e04d53a5921f8eb2604513c8cc8c",
+      "daily": {
+        "overview": "10月5日，AI领域聚焦于多智能体系统优化、金融智能体评估及模型压缩技术。研究重点包括通过继承机制提升多智能体工作流效率、分解金融智能体技能溢价，以及探索低秩压缩在保持数学推理能力方面的应用。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "通过工作流与执行继承进行多智",
+            "summary": "Inherit-MAS提出在流程和工作执行层面显式引入继承机制，以优化多智能体系统的测试时演化，解决工作流设计困难及冗余计算问题。",
+            "refs": [
+              5
+            ],
+            "topicId": 11
+          },
+          {
+            "title": "知识还是计算？可验证金融智能",
+            "summary": "FinSkillBench评估套件通过2603个场景分解了金融智能体工作流中的知识与计算技能溢价，采用确定性验证器进行评估。",
+            "refs": [
+              13
+            ],
+            "topicId": 39
+          },
+          {
+            "title": "代理安全基准中威胁保持表示敏感性",
+            "summary": "研究引入威胁保持表示敏感性（TPRS）来评估安全基准的测量偏差，探讨改变代理可见表示对攻击成功率（ASR）的影响。",
+            "refs": [
+              6
+            ],
+            "topicId": 20
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "代币成本几何？基于混合智能体的充分代币计算测量",
+          "2": "开放游戏评估：在状态游戏引擎中测试智能体编程与探索",
+          "3": "Mask Co FT：用于高效 Mo E 推理的掩码协同自适应微调",
+          "4": "无解码批处理语音决策：单代币监督让冻结 LLM 听见转录之外的内容",
+          "5": "Inherit-MAS：通过工作流与执行继承进行多智能体系统的测试时演化",
+          "6": "代理安全基准中威胁保持表示敏感性",
+          "7": "学习下一步调查什么：长时程研究智能体的元推理",
+          "8": "Web Fovea：当模型正确但点击错误时——基于视觉的实时网页智能体可靠往返机制",
+          "9": "i S-KV：基于块增量 SVD 的在线低秩 KV 缓存压缩",
+          "10": "Neutron Gym：面向 LLM 智能体的物理分级中子仪器设计",
+          "11": "接收器条件化潜在通信实现 94% 缓存回退",
+          "12": "hacktrace：代码生成中基于行为的奖励黑客检测",
+          "13": "知识还是计算？可验证金融智能体工作流中技能溢价的分解",
+          "14": "通过非结构化知识编辑中的聚焦视图提升原子事实召回率",
+          "15": "通过轨迹感知低秩近似在压缩扩散语言模型中保留数学推理",
+          "16": "跟随赢家：基于交叉熵方法的无评价器 RFT 保守策略改进"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-10-06"
     }
   },
   "llm": {
@@ -45038,6 +45095,24 @@
       "model": "glm-4.7-flash",
       "content": "{\"day_overview\":\"本周AI领域聚焦于超级智能的政府化运作与安全协议的实效性，同时个人代理在复杂任务规划上的局限性引发行业反思，量化技术则揭示了中文模型在低比特压缩下的脆弱性。\",\"hot_news\":[{\"topic_id\":3,\"insight\":\"特朗普政府将AI升级为超级智能并成立专门机构，试图通过非约束性协议解决行业信任危机。\",\"narrative\":\"美国总统特朗普本周召集AI行业巨头，宣布将“人工智能”更名为“超级智能”，并正式组建“超级智能部队”，由国家情报总监Jay Clayton领导，旨在协调联邦政府确保美国在超级智能领域的全球领导地位。与此同时，行业高管签署了“前沿责任联合承诺”，但该协议被广泛认为缺乏法律约束力，其能否真正解决AI行业的信任危机仍存巨大争议。\",\"evaluation\":\"政府介入虽提升关注度，但非约束性协议难以实质保障安全。\",\"refs\":[1,2],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":1,\"insight\":\"前新泽西州副州长利用AI生成内容试图为自己性骚扰指控辩护，引发对AI证据可信度的担忧。\",\"narrative\":\"新泽西州前副州长Dale Caldwell因性骚扰调查和违反伦理规则被迫辞职，但他随后利用AI生成内容在媒体上宣称自己无罪。这一事件凸显了AI生成内容在法律和道德层面的模糊地带，公众对于仅凭AI生成的文本作为无罪证据的接受度极低，同时也引发了关于AI在司法辩护中滥用风险的讨论。\",\"evaluation\":\"AI辩护内容缺乏法律效力，反而可能加剧公众对AI技术的抵触。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":71},{\"topic_id\":5,\"insight\":\"尽管Personal Agent概念火热，但当前AI在处理复杂旅游攻略时仍缺乏深度逻辑判断能力。\",\"narrative\":\"Meta和OpenAI近期纷纷推出具备跨应用操作能力的Personal Agent，旨在接管邮件、购物和旅行规划等任务。然而，实际测试显示，这些AI助手虽然能快速生成看似完整的行程表，却无法像人类一样理解路线的可行性和细节逻辑，导致生成的攻略往往无法真正落地执行。\",\"evaluation\":\"Personal Agent在复杂任务规划上仍处于“伪智能”阶段。\",\"refs\":[7],\"mention_count\":1,\"cross_verify_score\":52}],\"other_news\":[{\"topic_id\":2,\"insight\":\"谷歌因AI提交的漏洞报告激增而暂停开源漏洞赏金计划。\",\"narrative\":\"谷歌宣布暂停其开源软件漏洞赏金计划，原因是收到了大量由AI生成的漏洞报告。网络安全专家此前曾警告AI生成的“垃圾内容”对漏洞赏金计划构成严重风险，谷歌此举表明其正在积极应对AI技术滥用带来的合规与审核挑战。\",\"refs\":[4],\"mention_count\":1,\"cross_verify_score\":70},{\"topic_id\":4,\"insight\":\"LLM量化实验显示，在低比特压缩下中文模型的损失率显著高于英文模型。\",\"narrative\":\"针对12B参数重写模型的量化测试发现，随着比特数降低，中文模型的KL散度损失增长速度远快于英文模型。在2比特量化时，中文模型的损失率约为英文的1.6倍，这表明中文模型在极端压缩场景下更容易出现性能崩塌。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":61},{\"topic_id\":6,\"insight\":\"Hugging Face用户确认其Space项目已恢复正常维护。\",\"narrative\":\"Hugging Face用户Nymbo发布公告，确认其所有Space项目已修复并恢复活跃维护，此前出现故障的用户现在可以正常使用。该用户承诺将持续跟进Issue和PR，确保项目长期稳定运行。\",\"refs\":[6],\"mention_count\":1,\"cross_verify_score\":60}],\"core_tech\":[],\"ref_translations\":[{\"id\":1,\"zh_title\":\"‘超级智能’和非约束性安全协议能解决AI的信任问题吗？\"},{\"id\":2,\"zh_title\":\"特朗普推出新的超级智能部队\"},{\"id\":3,\"zh_title\":\"新泽西州前副州长利用AI声称自己性骚扰指控无罪\"},{\"id\":4,\"zh_title\":\"谷歌因AI提交激增暂停开源漏洞赏金计划\"},{\"id\":5,\"zh_title\":\"单用途12B重写模型每比特损失多少？中文最先崩溃\"},{\"id\":6,\"zh_title\":\"FYI：我的所有Space已确认恢复正常并积极维护\"},{\"id\":7,\"zh_title\":\"都2026年了，AI为什么还做不好旅游攻略\"}]}",
       "at": "2026-10-05"
+    },
+    "89fca062a9ffadebcba760ac5c0bbc9870105ced44518825604032e559267ac1": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence - 直接关联 Kimi/月之暗面，代表国产模型在智能体领域的最新技术探索，具有高时效性和行业影响力。\"}]}",
+      "at": "2026-10-06"
+    },
+    "55713336f1c53b5163a025887e257908d3dad706f9760e57579a8beb951adb65": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"10月5日，AI领域聚焦于多智能体系统优化、金融智能体评估及模型压缩技术。研究重点包括通过继承机制提升多智能体工作流效率、分解金融智能体技能溢价，以及探索低秩压缩在保持数学推理能力方面的应用。\",\"hot_news\":[{\"topic_id\":11,\"insight\":\"Inherit-MAS通过显式继承机制优化多智能体系统工作流与执行。\",\"narrative\":\"多智能体系统（MAS）在处理复杂任务时面临工作流设计困难的问题。Inherit-MAS提出了一种基于生物进化中继承与选择机制的测试时演化方法，在流程和工作执行层面显式引入继承机制。该方法旨在解决传统测试时演化中广泛修订可能破坏有用组件，以及重复执行未改变请求带来的冗余计算问题。\",\"evaluation\":\"该方法为多智能体系统的动态优化提供了新的理论框架。\",\"refs\":[5,11,12],\"mention_count\":3,\"cross_verify_score\":85},{\"topic_id\":39,\"insight\":\"FinSkillBench评估套件分解了金融智能体工作流中的知识与计算技能溢价。\",\"narrative\":\"金融AI智能体不仅需要检索事实，还需执行正确的量化操作、可靠使用程序化资源以及提供可审计的结构化输出。为此，研究团队推出了FinSkillBench评估套件，包含2603个时间点场景，涵盖投资组合构建、风险管理和基本面分析等12个子任务。该套件采用隐藏的可再生真实值和特定任务的确定性验证器。\",\"evaluation\":\"该评估套件为金融智能体的技能分解提供了标准化的测试基准。\",\"refs\":[13,14],\"mention_count\":2,\"cross_verify_score\":80},{\"topic_id\":20,\"insight\":\"威胁保持表示敏感性（TPRS）评估了安全基准对代理可见表示的依赖。\",\"narrative\":\"LLM代理安全基准通常报告攻击成功率（ASR）作为模型鲁棒性的度量。然而，基准的测量是否受其表示方式影响尚不明确。研究引入了威胁保持表示敏感性（TPRS）来衡量当改变代理可见表示时ASR的变化，同时保持底层任务、有害行为、安全策略、真实环境评估标准不变。\",\"evaluation\":\"TPRS为评估安全基准的测量偏差提供了关键指标。\",\"refs\":[6,15],\"mention_count\":2,\"cross_verify_score\":78}],\"other_news\":[{\"topic_id\":3,\"insight\":\"OpenGameEval在Roblox Studio中直接测量智能体编程与探索行为。\",\"narrative\":\"OpenGameEval是一个针对Roblox Studio内智能体游戏开发的基准和评估框架。该框架在可重现的状态机游戏引擎会话中运行语言模型作为智能体，并通过可执行检查对编辑场景和模拟游玩会话进行评分。与大多数仅评分最终任务成功的智能体编码基准不同，OpenGameEval在八工具动作空间中分离了观察工具和编辑工具，从而可以直接测量探索行为。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":70},{\"topic_id\":14,\"insight\":\"MIRA架构分离了研究分配与执行，用于长时序研究代理。\",\"narrative\":\"长时序研究代理必须在证据积累时决定如何调查以及调查什么。MIRA（Meta-reasoning for Iterative Research Agents）引入了一种分层架构，将研究分配与执行分离。外层元推理器从持久的研究记录中筛选上下文，然后为下一次调查编写工作指令或结束回合。\",\"refs\":[7,9,10],\"mention_count\":3,\"cross_verify_score\":72}],\"core_tech\":[{\"topic_id\":11,\"title\":\"Inherit-MAS: Test-Time Evolution of Multi-Agent Systems\",\"summary\":\"Inherit-MAS提出在流程和工作执行层面显式引入继承机制，以优化多智能体系统的测试时演化，解决工作流设计困难及冗余计算问题。\",\"refs\":[5]},{\"topic_id\":39,\"title\":\"Knowledge or Calculator? Decomposing the Skill Premium\",\"summary\":\"FinSkillBench评估套件通过2603个场景分解了金融智能体工作流中的知识与计算技能溢价，采用确定性验证器进行评估。\",\"refs\":[13]},{\"topic_id\":20,\"title\":\"Threat-Preserving Representation Sensitivity in Agent-Security Benchmarks\",\"summary\":\"研究引入威胁保持表示敏感性（TPRS）来评估安全基准的测量偏差，探讨改变代理可见表示对攻击成功率（ASR）的影响。\",\"refs\":[6]}],\"ref_translations\":[{\"id\":5,\"zh_title\":\"Inherit-MAS：通过工作流与执行继承进行多智能体系统的测试时演化\"},{\"id\":13,\"zh_title\":\"知识还是计算？可验证金融智能体工作流中技能溢价的分解\"},{\"id\":6,\"zh_title\":\"代理安全基准中威胁保持表示敏感性\"}]}",
+      "at": "2026-10-06"
+    },
+    "0338b5d22b7e8510e6c51366d27f168c82ea206c69ae462fef720c1f40dba1ad": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"代币成本几何？基于混合智能体的充分代币计算测量\"},{\"id\":2,\"zh_title\":\"开放游戏评估：在状态游戏引擎中测试智能体编程与探索\"},{\"id\":3,\"zh_title\":\"Mask Co FT：用于高效 MoE 推理的掩码协同自适应微调\"},{\"id\":4,\"zh_title\":\"无解码批处理语音决策：单代币监督让冻结 LLM 听见转录之外的内容\"},{\"id\":7,\"zh_title\":\"学习下一步调查什么：长时程研究智能体的元推理\"},{\"id\":8,\"zh_title\":\"Web Fovea：当模型正确但点击错误时——基于视觉的实时网页智能体可靠往返机制\"},{\"id\":9,\"zh_title\":\"i S-KV：基于块增量 SVD 的在线低秩 KV 缓存压缩\"},{\"id\":10,\"zh_title\":\"Neutron Gym：面向 LLM 智能体的物理分级中子仪器设计\"},{\"id\":11,\"zh_title\":\"接收器条件化潜在通信实现 94% 缓存回退\"},{\"id\":12,\"zh_title\":\"hacktrace：代码生成中基于行为的奖励黑客检测\"},{\"id\":14,\"zh_title\":\"通过非结构化知识编辑中的聚焦视图提升原子事实召回率\"},{\"id\":15,\"zh_title\":\"通过轨迹感知低秩近似在压缩扩散语言模型中保留数学推理\"},{\"id\":16,\"zh_title\":\"跟随赢家：基于交叉熵方法的无评价器 RFT 保守策略改进\"}]}",
+      "at": "2026-10-06"
     }
   },
   "published": {
@@ -81642,6 +81717,21 @@
         "title": "Decoding Looped Transformers Better for (Almost) Free",
         "at": "2026-10-04",
         "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.02396": {
+        "title": "Inherit-MAS: Test-Time Evolution of Multi-Agent Systems through Workflow and Execution Inheritance",
+        "at": "2026-10-06",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.03585": {
+        "title": "Threat-Preserving Representation Sensitivity in Agent-Security Benchmarks",
+        "at": "2026-10-06",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.03564": {
+        "title": "Knowledge or Calculator? Decomposing the Skill Premium in Verifiable Financial Agent Workflows",
+        "at": "2026-10-06",
+        "edition": "evening"
       }
     }
   },
@@ -99332,6 +99422,21 @@
       "1225ec1c94042f50": {
         "title": "Decoding Looped Transformers Better for (Almost) Free",
         "at": "2026-10-04",
+        "edition": "evening"
+      },
+      "1745d839f0003345": {
+        "title": "Inherit-MAS: Test-Time Evolution of Multi-Agent Systems through Workflow and Execution Inheritance",
+        "at": "2026-10-06",
+        "edition": "evening"
+      },
+      "7eb6bbc55e49dc6d": {
+        "title": "Threat-Preserving Representation Sensitivity in Agent-Security Benchmarks",
+        "at": "2026-10-06",
+        "edition": "evening"
+      },
+      "39b55f6d8828ca8c": {
+        "title": "Knowledge or Calculator? Decomposing the Skill Premium in Verifiable Financial Agent Workflows",
+        "at": "2026-10-06",
         "edition": "evening"
       }
     }
