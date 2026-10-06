@@ -41850,6 +41850,50 @@
         "selectedTopicTotal": 16
       },
       "at": "2026-10-06"
+    },
+    "evening:2026-10-07": {
+      "fingerprint": "db1523c233a58f7fa5d27177ab1f2d4afadc59664dc71aa20c044e53b70c2d56",
+      "daily": {
+        "overview": "今日AI领域聚焦于多智能体协作、代码生成与代理服务架构的优化。研究重点包括解决部分可观测环境下的协作挑战、提升代码生成的执行验证能力以及构建可信的代理服务协议。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "代理宿主与推理引擎能相互听见",
+            "summary": "该论文提出了HEAR协议，旨在解决代理宿主与推理引擎之间的信息断层问题，通过双向宿主-引擎配对协议实现工作流感知执行。",
+            "refs": [
+              1
+            ],
+            "topicId": 1
+          },
+          {
+            "title": "部分可观测环境下基于的多智能",
+            "summary": "该论文提出了MASBench基准测试，专门用于评估在部分可观测环境下，基于大语言模型的多智能体协作系统的有效性。",
+            "refs": [
+              14
+            ],
+            "topicId": 36
+          },
+          {
+            "title": "带语言条件化的执行验证多智能体学习",
+            "summary": "该论文提出了CodeForge-MA框架，通过多智能体协作和执行验证的强化指令调优，解决了代码生成中的执行失败和多语言覆盖问题。",
+            "refs": [
+              15
+            ],
+            "topicId": 21
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "代理宿主与推理引擎能相互听见吗？代理LLM服务的HEAR协议",
+          "14": "MASBench：部分可观测环境下基于LLM的多智能体协作基准测试",
+          "15": "CodeForge-MA：带语言条件化LoRA的执行验证多智能体学习"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-10-07"
     }
   },
   "llm": {
@@ -44948,6 +44992,18 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":1,\"zh_title\":\"OpenAI 在 ChatGPT 和 Codex 中添加文本水印\"},{\"id\":2,\"zh_title\":\"我们应对欧盟文本来源规则的方法\"},{\"id\":3,\"zh_title\":\"OpenAI 将开始在欧盟为 ChatGPT 文本添加水印\"},{\"id\":4,\"zh_title\":\"Sam Altman 称‘坏事会发生’，但 AI 值得\"},{\"id\":5,\"zh_title\":\"围绕 AI 接管数学的种种闹剧\"},{\"id\":6,\"zh_title\":\"Instinct 推出 AI 代理，支持群聊，无需账号\"},{\"id\":7,\"zh_title\":\"Reflection 发布 Beam，开源模型可低成本媲美国产模型\"},{\"id\":8,\"zh_title\":\"TikTok 推出 AI 购物助手和一键结账功能\"},{\"id\":9,\"zh_title\":\"HackerRank 的 AI 面试官展示未来面试的样貌\"},{\"id\":13,\"zh_title\":\"Mini-Beatrix-3 进入自动模型测试阶段，目前无手臂，仓库将支持双臂\"},{\"id\":14,\"zh_title\":\"参议员 Adam Schiff 谈 AI 监管、言论自由及再次弹劾特朗普\"},{\"id\":18,\"zh_title\":\"OpenAI 推出伴随图像生成结果的视觉广告\"},{\"id\":19,\"zh_title\":\"Vev：基于 Jev 风格的图像决策，支持 4B 或 9B 模型，可自行运行\"}]}",
       "at": "2026-10-06"
+    },
+    "452529b549affdf86b80e6a6bacb4fc20d4ec1b66b30d527940059d675f0557e": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence 是唯一的高质量新闻话题，直接关联 Kimi/月之暗面，聚焦前沿的 Agent 智能体技术，符合 AI 晚报对国内头部模型进展的优先关注标准。\"}]}",
+      "at": "2026-10-07"
+    },
+    "dd24dcc15f719a4e42e04167368730ce5660b395560976c2a60552fe24103d2f": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"今日AI领域聚焦于多智能体协作、代码生成与代理服务架构的优化。研究重点包括解决部分可观测环境下的协作挑战、提升代码生成的执行验证能力以及构建可信的代理服务协议。\",\"hot_news\":[{\"topic_id\":36,\"insight\":\"MASBench基准测试聚焦部分可观测环境下的多智能体协作。\",\"narrative\":\"随着大语言模型成为自主代理的核心，基于LLM的多智能体系统（MAS）通过协调多个智能体完成复杂任务。然而，现实世界的协作通常是部分可观测的，每个智能体仅能访问环境的部分信息。MASBench基准测试旨在评估这种协作机制的有效性，为多智能体系统的设计提供新的评估标准。\",\"evaluation\":\"该基准测试填补了部分可观测环境下多智能体协作评估的空白。\",\"refs\":[14],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":21,\"insight\":\"CodeForge-MA通过多智能体协作提升多语言代码生成的执行验证能力。\",\"narrative\":\"针对大语言模型在代码生成中常遇到的执行失败、多语言覆盖不足及污染控制问题，CodeForge-MA提出了一种统一框架。该框架利用多智能体数据锻造、执行验证的强化指令调优以及语言条件化的LoRA适配器，通过Composer、Reviewer、Executor和Curator四个专门智能体的迭代协作，不断优化指令代码对并过滤重复项。\",\"evaluation\":\"该框架有效解决了代码生成的执行验证难题。\",\"refs\":[15],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":1,\"insight\":\"HEAR协议旨在解决代理宿主与推理引擎之间的信息断层。\",\"narrative\":\"LLM代理越来越多地执行涉及多轮推理、工具使用和并行代理的复杂工作流。高效服务需要跨越两个互补信息层的决策：代理宿主理解工作流依赖、上下文生命周期和执行目标，而推理引擎观察请求队列、KV缓存状态、资源压力和执行能力。HEAR协议提出了一种双向宿主-引擎配对协议，以系统性地连接这些视图。\",\"evaluation\":\"HEAR协议为工作流感知执行提供了新的接口标准。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":66}],\"other_news\":[{\"topic_id\":52,\"insight\":\"VideoResearchAgent框架解决了开放网络视频研究的训练挑战。\",\"narrative\":\"现有的深度研究代理主要针对文本和图像源，而视频推理系统通常假设相关视频已预先提供。VideoResearchAgent是一个可扩展的训练框架，旨在解决开放网络视频研究中代理必须自主发现相关视频、导航其时间内容并将答案建立在视觉证据上的挑战。该框架通过结合固定本地模拟和实时视频交互，解决了训练规模化的难题。\",\"refs\":[12],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":4,\"insight\":\"SWE-CC基准测试评估代码代理对仓库治理政策的合规性。\",\"narrative\":\"自主代码代理现在解决了大量现实世界的GitHub问题。然而，通过功能测试与产生可合并的高质量贡献存在根本差异。成熟的开放源代码项目发布特定的仓库贡献政策，以确保代码质量和长期可维护性。SWE-CC基准测试引入了对自主软件工程中代码和流程合规性的评估。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":52,\"insight\":\"递归改进框架加速了可微分科学软件生态系统的演变。\",\"narrative\":\"可微分编程将科学计算与基于梯度的推理、学习和设计连接起来。扩展这些能力需要专门的精力来实现导数、集成接口和评估质量。AI编码代理可以加速这一转变，但将它们的能力转化为有用的科学软件需要识别研究需求并评估实现如何满足这些需求。该环境连接了需求识别、开发和质量评估。\",\"refs\":[10],\"mention_count\":1,\"cross_verify_score\":65}],\"core_tech\":[{\"topic_id\":1,\"title\":\"Can Agent Harnesses and Inference Engines Hear Each Other?\",\"summary\":\"该论文提出了HEAR协议，旨在解决代理宿主与推理引擎之间的信息断层问题，通过双向宿主-引擎配对协议实现工作流感知执行。\",\"refs\":[1]},{\"topic_id\":36,\"title\":\"MASBench: Benchmarking LLM-based Multi-Agent Collaboration under Partial Observability\",\"summary\":\"该论文提出了MASBench基准测试，专门用于评估在部分可观测环境下，基于大语言模型的多智能体协作系统的有效性。\",\"refs\":[14]},{\"topic_id\":21,\"title\":\"CodeForge-MA: Execution-Verified Multi-Agent Learning with Language-Conditioned LoRA\",\"summary\":\"该论文提出了CodeForge-MA框架，通过多智能体协作和执行验证的强化指令调优，解决了代码生成中的执行失败和多语言覆盖问题。\",\"refs\":[15]}],\"ref_translations\":[{\"id\":1,\"zh_title\":\"代理宿主与推理引擎能相互听见吗？代理LLM服务的HEAR协议\"},{\"id\":14,\"zh_title\":\"MASBench：部分可观测环境下基于LLM的多智能体协作基准测试\"},{\"id\":15,\"zh_title\":\"CodeForge-MA：带语言条件化LoRA的执行验证多智能体学习\"}]}",
+      "at": "2026-10-07"
     }
   },
   "published": {
@@ -81617,6 +81673,21 @@
         "title": "Knowledge or Calculator? Decomposing the Skill Premium in Verifiable Financial Agent Workflows",
         "at": "2026-10-06",
         "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.06597": {
+        "title": "Can Agent Harnesses and Inference Engines Hear Each Other? The HEAR Protocol for Agentic LLM Serving",
+        "at": "2026-10-07",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.04672": {
+        "title": "MASBench: Benchmarking LLM-based Multi-Agent Collaboration under Partial Observability",
+        "at": "2026-10-07",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.05481": {
+        "title": "CodeForge-MA: Execution-Verified Multi-Agent Learning with Language-Conditioned LoRA for Multilingual Code Generation",
+        "at": "2026-10-07",
+        "edition": "evening"
       }
     }
   },
@@ -99287,6 +99358,21 @@
       "39b55f6d8828ca8c": {
         "title": "Knowledge or Calculator? Decomposing the Skill Premium in Verifiable Financial Agent Workflows",
         "at": "2026-10-06",
+        "edition": "evening"
+      },
+      "c2dccdefb2eca96c": {
+        "title": "Can Agent Harnesses and Inference Engines Hear Each Other? The HEAR Protocol for Agentic LLM Serving",
+        "at": "2026-10-07",
+        "edition": "evening"
+      },
+      "0e602e0edddd4033": {
+        "title": "MASBench: Benchmarking LLM-based Multi-Agent Collaboration under Partial Observability",
+        "at": "2026-10-07",
+        "edition": "evening"
+      },
+      "7fb4728c287ca439": {
+        "title": "CodeForge-MA: Execution-Verified Multi-Agent Learning with Language-Conditioned LoRA for Multilingual Code Generation",
+        "at": "2026-10-07",
         "edition": "evening"
       }
     }
