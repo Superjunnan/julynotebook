@@ -41853,6 +41853,90 @@
         "selectedTopicTotal": 16
       },
       "at": "2026-10-08"
+    },
+    "evening:2026-10-09": {
+      "fingerprint": "9e3421aa3daa311019472c7fc4f87bd803b5665b5adc135288be90d1d56a8bf1",
+      "daily": {
+        "overview": "今日 AI 资讯聚焦于智能体评估基准的革新、企业级自动化工作流的认知架构设计，以及程序验证与多智能体推理中的成本与不确定性优化。多篇来自 arXiv 的论文深入探讨了如何通过更贴近真实场景的基准测试、反思机制和高效编排来提升智能体的可靠性与实用性。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "编码智能体基准测试应匹配其用",
+            "summary": "该论文通过分析 4,782 个真实软件工程师在 JetBrains IDE 中的会话，指出现有基准测试未能反映用户在会话中频繁切换任务类型（如代码查询、规划、重构等）的真实行为，呼吁建立更贴近生产环境的评估标准。",
+            "refs": [
+              16
+            ],
+            "topicId": 45
+          },
+          {
+            "title": "自适应工作流智能：面向上下文",
+            "summary": "论文提出了自适应工作流智能（AWI）架构，旨在解决企业系统在动态环境下的脆弱性问题，通过感知-认知-行动-反思（PCAR）循环提供持久化反思机制，并介绍了 WAMJET 加速工具。",
+            "refs": [
+              4
+            ],
+            "topicId": 1
+          },
+          {
+            "title": "通过程序验证中的智能体编排实",
+            "summary": "研究探讨了如何通过智能体编排在程序验证中实现成本效率，指出现有证明器过度关注通过率而忽视成本，并提出了利用验证失败经验生成可复用指导的方法。",
+            "refs": [
+              8
+            ],
+            "topicId": 10
+          },
+          {
+            "title": "并行多智能体推理系统的顺序概",
+            "summary": "论文聚焦于并行多智能体推理系统的不确定性估计，指出系统的可靠性不仅取决于个体生成，还取决于智能体在多轮交互中的演化，并提出了相应的概率估计方法。",
+            "refs": [
+              10
+            ],
+            "topicId": 25
+          },
+          {
+            "title": "在解决之前：从基础模型预测后",
+            "summary": "该论文研究了如何从基础模型预测编码智能体在后续训练中的性能，旨在帮助开发者判断哪些基础检查点值得投入昂贵的智能体后训练成本。",
+            "refs": [
+              17
+            ],
+            "topicId": 40
+          },
+          {
+            "title": "用于长视频理解中帧选择的反射",
+            "summary": "针对长视频理解中的帧选择难题，RACER 框架通过反射智能体耦合查询解释与基于工具的检索，解决了基于相似度和基于判断方法中的关键差距。",
+            "refs": [
+              9
+            ],
+            "topicId": 22
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "Geo Nature Agent (GNA)：用于地理空间工具使用代理预生产评估的框架与基准",
+          "2": "基于任务结果训练 LLM 代理的顾问",
+          "3": "面向长期 LLM 代理的情境条件化思维策略学习",
+          "4": "自适应工作流智能：面向上下文驱动企业自动化的认知架构",
+          "5": "WAMJET：世界动作模型加速工具",
+          "6": "从像素到编码：评估 MLLMs 的图像复现能力",
+          "7": "Qu Sema：通过量子知识增强代理检测量子库中的静默错误",
+          "8": "通过程序验证中的智能体编排实现成本高效的定理证明",
+          "9": "RACER：用于长视频理解中帧选择的反射智能体耦合",
+          "10": "并行多智能体推理系统的顺序概率不确定性估计",
+          "11": "从验证失败到编码代理的可复用指导",
+          "12": "Humanize：面向代理编码的判断工程",
+          "13": "SWE-Game：编码代理能否构建我们想要的游戏？",
+          "14": "验证更少，进化更多：训练验证高效 ML 进化代理的思路级评论家",
+          "15": "系统切换：快速决策模型何时应停止思考？",
+          "16": "编码智能体基准测试应匹配其用户的任务流程",
+          "17": "在解决之前：从基础模型预测后训练编码智能体性能",
+          "18": "算法草稿本与课程编排：用于微型 Transformer 的算术推理",
+          "19": "通过规则文件中的提示注入对编码代理实施包幻觉攻击"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-10-09"
     }
   },
   "llm": {
@@ -44921,6 +45005,24 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":1,\"zh_title\":\"Muse 在 iPad 上线\"},{\"id\":2,\"zh_title\":\"Meta 的 Muse 在 iPad 上线，距移动版发布仅一月\"},{\"id\":3,\"zh_title\":\"Meta 推出 AI 工具以检测引向儿童性虐待材料的广告\"},{\"id\":4,\"zh_title\":\"微软发布搭载新 Nvidia 芯片的 AI PC 及升级版 Windows 11\"},{\"id\":5,\"zh_title\":\"NVIDIA 与微软通过 RTX Spark 和 AI 代理开启 Windows PC 新篇章\"},{\"id\":9,\"zh_title\":\"Nous Research 确认估值达 15 亿美元\"},{\"id\":10,\"zh_title\":\"微软赋予 Copilot 更多控制 Windows 和文件的能力\"},{\"id\":11,\"zh_title\":\"ChatGPT 推出新界面，视觉体验大幅提升\"},{\"id\":12,\"zh_title\":\"ChatGPT 推出大学规划工具\"},{\"id\":13,\"zh_title\":\"“软件已死”：开源克隆版挑战 Adobe\"},{\"id\":20,\"zh_title\":\"五角大楼希望通过 5 分钟视频加速‘杀戮链’ AI 采购\"}]}",
       "at": "2026-10-08"
+    },
+    "99438c452e81185efb301d22c7c7e1e38dc03930ee4c7f3dc1b407d4bf8a28d4": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence 是唯一具有明确新闻属性且与国内头部AI公司（月之暗面）强相关的话题，具备热点程度、时效性和行业影响力，符合晚报选材标准。\"}]}",
+      "at": "2026-10-09"
+    },
+    "7472bc9c0fa79ac9d9b2ab7f6e93b32e8ac3bdab3814b0994052e98c24380231": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"今日 AI 资讯聚焦于智能体评估基准的革新、企业级自动化工作流的认知架构设计，以及程序验证与多智能体推理中的成本与不确定性优化。多篇来自 arXiv 的论文深入探讨了如何通过更贴近真实场景的基准测试、反思机制和高效编排来提升智能体的可靠性与实用性。\",\"hot_news\":[{\"topic_id\":45,\"insight\":\"现有编码智能体基准测试往往脱离真实开发流程，导致评估结果与实际应用存在偏差。\",\"narrative\":\"针对当前编码智能体评估基准过于理想化的问题，研究团队收集了 4,782 个来自 JetBrains IDE 的真实工程师会话，即“生产会话”。这些长交互会话与传统的基于 Issue 的基准任务不同，用户请求涵盖了代码查询、规划、审查、重构和执行等多种任务类型，且用户在会话中会频繁切换任务类型。研究指出，现有的基准测试未能捕捉到这种动态变化的任务流，因此提出了新的评估标准。\",\"evaluation\":\"该研究为构建更贴近真实生产环境的智能体评估体系提供了重要参考。\",\"refs\":[16],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":1,\"insight\":\"企业级自动化工作流需要具备在非平稳条件和动态政策下持续反思与适应的能力。\",\"narrative\":\"为了解决企业系统在非平稳条件、动态政策和延迟反馈下表现脆弱的问题，研究提出了自适应工作流智能（AWI）的认知架构。该架构围绕感知-认知-行动-反思（PCAR）循环组织，旨在为上下文驱动的企业智能体提供持久化的反思机制。此外，研究还介绍了 WAMJET 工具，用于加速世界动作模型的推理，并通过 QuSema 方法检测量子库中的静默错误。\",\"evaluation\":\"该架构为构建鲁棒的企业级 AI 自动化系统提供了理论框架与实用工具。\",\"refs\":[4,5,7],\"mention_count\":3,\"cross_verify_score\":78},{\"topic_id\":10,\"insight\":\"程序验证应从单纯追求通过率转向在成本与成功率之间寻找最优平衡。\",\"narrative\":\"针对大型语言模型生成的代码缺乏正确性保证的问题，研究探讨了程序验证中的成本效率问题。现有证明器往往不计成本地追求通过率，而忽略了成功与成本的权衡。研究提出了通过智能体编排进行成本高效的定理证明方法，并进一步探讨了如何利用验证失败的经验来生成可复用的指导，以及训练更高效的验证型批评家。\",\"evaluation\":\"这一研究方向对于大规模软件验证和 AI 代码生成的可靠性保障至关重要。\",\"refs\":[8,11,14],\"mention_count\":3,\"cross_verify_score\":76},{\"topic_id\":25,\"insight\":\"并行多智能体推理系统的可靠性不仅取决于个体生成质量，还取决于智能体间的交互演化过程。\",\"narrative\":\"随着多智能体系统在复杂推理任务中的广泛应用，其不确定性估计变得日益重要。研究聚焦于并行多智能体推理系统，即多个智能体在多轮中解决同一问题并聚合输出。研究指出，系统的可靠性不仅取决于个体生成，还取决于智能体在多轮交互中的演化方式。此外，研究还探讨了长时运行智能体如何通过情境条件化的思考策略来复用推理经验。\",\"evaluation\":\"该研究填补了多智能体系统不确定性估计领域的空白。\",\"refs\":[10,3,18],\"mention_count\":3,\"cross_verify_score\":74}],\"other_news\":[{\"topic_id\":40,\"insight\":\"多模态大模型在视觉理解与代码生成统一任务上的表现仍需更严格的基准测试。\",\"narrative\":\"为了评估多模态大模型（MLLMs）在从像素到代码的统一能力，研究提出了从复杂视觉结构感知并合成精确可执行代码的评估方法。现有的基准测试往往将视觉理解和代码生成分开评估，且依赖简化的布局。研究指出，真正的统一多模态推理需要更复杂的测试环境。\",\"refs\":[6,13,17],\"mention_count\":3,\"cross_verify_score\":72},{\"topic_id\":22,\"insight\":\"长视频理解中的帧选择面临查询理解差距与解释选择差距两大挑战。\",\"narrative\":\"针对视频大模型在长视频理解中帧选择的难题，研究从任务分解的角度分析了主导方法。研究识别出基于相似度的方法存在查询理解差距，而基于判断的方法存在解释-选择差距。为此，研究提出了 RACER 框架，通过反射智能体耦合查询解释与基于工具的检索来解决帧选择问题。\",\"refs\":[1,2,9],\"mention_count\":3,\"cross_verify_score\":70},{\"topic_id\":61,\"insight\":\"社区共享的规则文件可能成为编码智能体遭受提示注入攻击的入口。\",\"narrative\":\"现代编码智能体框架日益依赖社区共享的规则文件来指导代码生成，但这带来了潜在的安全风险。研究引入了“包幻觉攻击”，攻击者通过在良性规则文件中注入恶意提示，诱导编码智能体用攻击者控制的包替换合法依赖。这一发现揭示了智能体工作流中安全性的新盲点。\",\"refs\":[19],\"mention_count\":1,\"cross_verify_score\":68}],\"core_tech\":[{\"topic_id\":45,\"title\":\"Coding-Agent Benchmarks Should Match Their Users' Task Flows\",\"summary\":\"该论文通过分析 4,782 个真实软件工程师在 JetBrains IDE 中的会话，指出现有基准测试未能反映用户在会话中频繁切换任务类型（如代码查询、规划、重构等）的真实行为，呼吁建立更贴近生产环境的评估标准。\",\"refs\":[16]},{\"topic_id\":1,\"title\":\"Adaptive Workflow Intelligence: A Cognitive Architecture for Context-Driven Enterprise Automation\",\"summary\":\"论文提出了自适应工作流智能（AWI）架构，旨在解决企业系统在动态环境下的脆弱性问题，通过感知-认知-行动-反思（PCAR）循环提供持久化反思机制，并介绍了 WAMJET 加速工具。\",\"refs\":[4]},{\"topic_id\":10,\"title\":\"Cost-Efficient Theorem Proving via Agent Orchestration in Program Verification\",\"summary\":\"研究探讨了如何通过智能体编排在程序验证中实现成本效率，指出现有证明器过度关注通过率而忽视成本，并提出了利用验证失败经验生成可复用指导的方法。\",\"refs\":[8]},{\"topic_id\":25,\"title\":\"Sequential Probabilistic Uncertainty Estimation for Parallel Multi-Agent Reasoning Systems\",\"summary\":\"论文聚焦于并行多智能体推理系统的不确定性估计，指出系统的可靠性不仅取决于个体生成，还取决于智能体在多轮交互中的演化，并提出了相应的概率估计方法。\",\"refs\":[10]},{\"topic_id\":40,\"title\":\"Before They Can Solve: Predicting Post-Training Coding-Agent Performance from Base Models\",\"summary\":\"该论文研究了如何从基础模型预测编码智能体在后续训练中的性能，旨在帮助开发者判断哪些基础检查点值得投入昂贵的智能体后训练成本。\",\"refs\":[17]},{\"topic_id\":22,\"title\":\"RACER: Reflective Agent Coupling Query Interpretation and Tool-Based Retrieval for Frame Selection in Long Video Understanding\",\"summary\":\"针对长视频理解中的帧选择难题，RACER 框架通过反射智能体耦合查询解释与基于工具的检索，解决了基于相似度和基于判断方法中的关键差距。\",\"refs\":[9]}],\"ref_translations\":[{\"id\":16,\"zh_title\":\"编码智能体基准测试应匹配其用户的任务流程\"},{\"id\":4,\"zh_title\":\"自适应工作流智能：面向上下文驱动企业自动化的认知架构\"},{\"id\":8,\"zh_title\":\"通过程序验证中的智能体编排实现成本高效的定理证明\"},{\"id\":10,\"zh_title\":\"并行多智能体推理系统的顺序概率不确定性估计\"},{\"id\":17,\"zh_title\":\"在解决之前：从基础模型预测后训练编码智能体性能\"},{\"id\":9,\"zh_title\":\"RACER：用于长视频理解中帧选择的反射智能体耦合\"}]}",
+      "at": "2026-10-09"
+    },
+    "42e947edaf5069b605ec5fb45f481f7b2ff020541c3f94f3eb3fc1c8120119ce": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"Geo Nature Agent (GNA)：用于地理空间工具使用代理预生产评估的框架与基准\"},{\"id\":2,\"zh_title\":\"基于任务结果训练 LLM 代理的顾问\"},{\"id\":3,\"zh_title\":\"面向长期 LLM 代理的情境条件化思维策略学习\"},{\"id\":5,\"zh_title\":\"WAMJET：世界动作模型加速工具\"},{\"id\":6,\"zh_title\":\"从像素到编码：评估 MLLMs 的图像复现能力\"},{\"id\":7,\"zh_title\":\"Qu Sema：通过量子知识增强代理检测量子库中的静默错误\"},{\"id\":11,\"zh_title\":\"从验证失败到编码代理的可复用指导\"},{\"id\":12,\"zh_title\":\"Humanize：面向代理编码的判断工程\"},{\"id\":13,\"zh_title\":\"SWE-Game：编码代理能否构建我们想要的游戏？\"},{\"id\":14,\"zh_title\":\"验证更少，进化更多：训练验证高效 ML 进化代理的思路级评论家\"},{\"id\":15,\"zh_title\":\"系统切换：快速决策模型何时应停止思考？\"},{\"id\":18,\"zh_title\":\"算法草稿本与课程编排：用于微型 Transformer 的算术推理\"},{\"id\":19,\"zh_title\":\"通过规则文件中的提示注入对编码代理实施包幻觉攻击\"}]}",
+      "at": "2026-10-09"
     }
   },
   "published": {
@@ -81430,6 +81532,36 @@
         "title": "Agent Behavior as Code: Efficient and Robust LLM Agents with Programmatic Specifications",
         "at": "2026-10-08",
         "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.08793": {
+        "title": "Adaptive Workflow Intelligence: A Cognitive Architecture for Context-Driven Enterprise Automation",
+        "at": "2026-10-09",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.09681": {
+        "title": "Cost-Efficient Theorem Proving via Agent Orchestration in Program Verification",
+        "at": "2026-10-09",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.08954": {
+        "title": "RACER: Reflective Agent Coupling Query Interpretation and Tool-Based Retrieval for Frame Selection in Long Video Understanding",
+        "at": "2026-10-09",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.08901": {
+        "title": "Sequential Probabilistic Uncertainty Estimation for Parallel Multi-Agent Reasoning Systems",
+        "at": "2026-10-09",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.09633": {
+        "title": "Coding-Agent Benchmarks Should Match Their Users' Task Flows",
+        "at": "2026-10-09",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.10478": {
+        "title": "Before They Can Solve: Predicting Post-Training Coding-Agent Performance from Base Models",
+        "at": "2026-10-09",
+        "edition": "evening"
       }
     }
   },
@@ -98970,6 +99102,36 @@
       "ffd1bbe477ce9ac6": {
         "title": "Agent Behavior as Code: Efficient and Robust LLM Agents with Programmatic Specifications",
         "at": "2026-10-08",
+        "edition": "evening"
+      },
+      "fd4a1e6c8ff7c825": {
+        "title": "Adaptive Workflow Intelligence: A Cognitive Architecture for Context-Driven Enterprise Automation",
+        "at": "2026-10-09",
+        "edition": "evening"
+      },
+      "90f795482f8da437": {
+        "title": "Cost-Efficient Theorem Proving via Agent Orchestration in Program Verification",
+        "at": "2026-10-09",
+        "edition": "evening"
+      },
+      "8a6abce1d37eebe2": {
+        "title": "RACER: Reflective Agent Coupling Query Interpretation and Tool-Based Retrieval for Frame Selection in Long Video Understanding",
+        "at": "2026-10-09",
+        "edition": "evening"
+      },
+      "c7ada4974e62c3fe": {
+        "title": "Sequential Probabilistic Uncertainty Estimation for Parallel Multi-Agent Reasoning Systems",
+        "at": "2026-10-09",
+        "edition": "evening"
+      },
+      "7d77dbfd098eaaf9": {
+        "title": "Coding-Agent Benchmarks Should Match Their Users' Task Flows",
+        "at": "2026-10-09",
+        "edition": "evening"
+      },
+      "cc504c7bd53522d4": {
+        "title": "Before They Can Solve: Predicting Post-Training Coding-Agent Performance from Base Models",
+        "at": "2026-10-09",
         "edition": "evening"
       }
     }
