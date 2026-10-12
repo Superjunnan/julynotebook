@@ -41147,6 +41147,90 @@
         "selectedTopicTotal": 10
       },
       "at": "2026-10-12"
+    },
+    "evening:2026-10-13": {
+      "fingerprint": "f3a2612654026da4fba914f959bdd1314151ef4c11e737d3ca90d0a7a8ec9223",
+      "daily": {
+        "overview": "本周AI领域聚焦于智能体在软件工程与复杂任务中的能力评估与优化。研究重点包括提升编码智能体的评估基准、多智能体系统的协作机制以及强化学习在智能体训练中的创新应用。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "用于评估编码智能体轨迹的后训",
+            "summary": "论文提出了一种通用的后训练验证器，用于评估编码智能体的行为轨迹，解决了长跨度软件工程任务中缺乏现成评估器的问题。",
+            "refs": [
+              1
+            ],
+            "topicId": 6
+          },
+          {
+            "title": "编码智能体能构建你真正想要的代理吗",
+            "summary": "论文引入了一个跨越代理开发生命周期的基准测试，验证了编码智能体构建符合用户工作流代理的能力。",
+            "refs": [
+              2
+            ],
+            "topicId": 1
+          },
+          {
+            "title": "编码智能体基准测试应匹配其用",
+            "summary": "论文基于4,782个真实生产会话，指出现有基准测试在任务流程匹配上的不足，强调了评估基准必须匹配用户实际任务流程。",
+            "refs": [
+              14
+            ],
+            "topicId": 53
+          },
+          {
+            "title": "干预：解锁超越政策限制的智能",
+            "summary": "论文提出Rollout-Time干预技术，旨在突破强化学习在智能体推理中的政策限制，解决任务超出模型能力边界时的训练崩溃问题。",
+            "refs": [
+              5
+            ],
+            "topicId": 15
+          },
+          {
+            "title": "多智能体系统的心理模型",
+            "summary": "论文探讨了多智能体系统中显式伙伴状态表示的重要性，指出当前系统缺乏可跨任务重用的决策变量。",
+            "refs": [
+              3
+            ],
+            "topicId": 8
+          },
+          {
+            "title": "人性化智能体：超越单智能体限",
+            "summary": "论文提出多智能体会话交替的方法，旨在突破单智能体在长期机器学习工程任务中的性能限制。",
+            "refs": [
+              6
+            ],
+            "topicId": 10
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "SWE-Critix：用于评估编码智能体轨迹的后训练通用验证器",
+          "2": "AgentSWE：编码智能体能构建你真正想要的代理吗？",
+          "3": "多智能体系统的心理模型",
+          "4": "MAGMA-Bench：动态任务与执行失败下的长周期具身智能体评估",
+          "5": "Rollout-Time干预：解锁超越政策限制的智能体强化学习",
+          "6": "人性化MLE智能体：超越单智能体限制的多智能体会话交替",
+          "7": "质量而非结果：用于监督学习的编码智能体轨迹结构化评分框架",
+          "8": "语言模型能玩维基百科游戏吗？",
+          "9": "自适应DHi稀疏：基于负载自适应KV层级的推测解码",
+          "10": "多Harness强化学习用于编码智能体：训练增益与Harness依赖性",
+          "11": "TRIAGE：原生NVFP4强化学习的方向感知失配稳定化",
+          "12": "技能即防御：面向技能增强智能体的运行时防御技能演化",
+          "13": "少即是多：从密集参考中强化稀疏视频推理",
+          "14": "编码智能体基准测试应匹配其用户的任务流程",
+          "15": "面向基于LLM的多智能体系统的胜任力感知编排",
+          "16": "循环Harness：面向智能体持续学习的循环架构",
+          "17": "Meta Kernel Bench：超越代码的GPU内核知识迁移测量",
+          "18": "长Harness：通过有状态证据管理在100 M Token语料上推进智能体推理",
+          "19": "Web$hell：面向智能体网络访问的统一接口"
+        },
+        "candidateTotal": 236,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-10-13"
     }
   },
   "llm": {
@@ -44191,6 +44275,24 @@
       "model": "glm-4.7-flash",
       "content": "{\"day_overview\":\"亚马逊拟70亿美元收购Decart加码算力基建，OpenAI将GPT-6.1 Sol上下文窗口扩容至50万token并取消长文本计费，硅谷巨头跟进特朗普改AI名为超级智能。字节跳动通过大规模招聘布局AI，蚂蚁集团“灵光”对标Meta Muse升级个人智能体，中国AI球类机器人赛道在Kickstarter上融资火爆。\",\"hot_news\":[{\"topic_id\":2,\"insight\":\"亚马逊70亿美元收购Decart，意在解决AI模型跨芯片适配难题。\",\"narrative\":\"亚马逊正谈判以约70亿美元收购旧金山AI初创公司Decart，若交易达成将显示其加码AI算力布局的决心。Decart的核心技术是跨芯片适配软件，旨在解决开发者训练好的模型被绑定在特定厂商芯片上、难以迁移的痛点。此举被视为亚马逊在算力争夺战中获取关键底层调度能力的战略举措。Anthropic此前曾与Decart洽谈收购但已退出，亚马逊接手意味着更高的溢价。\",\"evaluation\":\"收购价较Decart此前估值有显著溢价，显示巨头对底层适配能力的重视。\",\"refs\":[4],\"mention_count\":1,\"cross_verify_score\":63},{\"topic_id\":3,\"insight\":\"OpenAI将GPT-6.1 Sol上下文窗口扩容至50万token并取消长文本计费。\",\"narrative\":\"OpenAI宣布在Codex和Work环境中，GPT-6.1 Sol的默认上下文窗口从27.2万token提升至50万token，扩容约80%。此次调整显著降低了模型容量不足时被迫丢弃前文内容的“上下文压缩”频率，让重度代码用户能更从容地处理长任务。同时，OpenAI取消了长上下文单独计费，降低了用户使用成本。模型支持的最大上下文长度上限为100万token。\",\"evaluation\":\"大幅提升模型记忆容量并降低使用门槛，有利于吸引重度开发者。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":63},{\"topic_id\":7,\"insight\":\"硅谷巨头跟进特朗普改AI名为超级智能，马斯克率先响应。\",\"narrative\":\"特朗普宣布将人工智能改名为“超级智能”后，硅谷部分高管开始跟进。马斯克承诺将SpaceXAI更名为SpaceXSI，以支持这一品牌重塑计划。尽管大众仍普遍使用“AI”一词，但科技界部分核心力量正试图推动这一新名称的普及。\",\"evaluation\":\"品牌重塑尝试在科技圈获得部分响应，但大众认知短期内难以改变。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":70}],\"other_news\":[{\"topic_id\":5,\"insight\":\"亚马逊微软取消与地方政府谈判NDA，试图通过透明化赢得社区支持。\",\"narrative\":\"亚马逊和微软近期宣布在谈判数据中心项目时不再使用保密协议（NDA），旨在通过提高透明度来回应当地社区的担忧。这一举措被视为科技公司试图通过公开沟通来缓解因数据中心建设引发的社区反对情绪。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":70},{\"topic_id\":14,\"insight\":\"字节跳动社招中AI岗位占比高达42.8%，显示其激进的人才战略。\",\"narrative\":\"字节跳动在招聘官网挂出11187个社招岗位，其中AI相关岗位达4791个，占比42.8%。这一数据表明字节正在通过大规模招聘来加速其AI战略落地，其体量已接近Meta。\",\"refs\":[11],\"mention_count\":1,\"cross_verify_score\":51},{\"topic_id\":17,\"insight\":\"蚂蚁集团“灵光”开启新版本内测，对标Meta Muse升级为AI原生个人智能体。\",\"narrative\":\"蚂蚁集团AI产品“灵光”开启新版本小范围内测，全面对标Meta Muse。新版本实现了从基础聊天助手向具备长期记忆、可主动推进复杂任务的AI原生个人智能体的跨越，支持调用Skill和MCP进行跨应用操作。\",\"refs\":[15],\"mention_count\":1,\"cross_verify_score\":48},{\"topic_id\":13,\"insight\":\"中国AI球类机器人在Kickstarter上融资火爆，赛道定义权竞争激烈。\",\"narrative\":\"过去一年，至少四款中国团队打造的AI球类机器人在Kickstarter上筹得百万美元级资金。SwitchBot推出的Acemate、Tenniix等品牌均获得融资，但赛道连“卖的是什么”都还没说清，竞争焦点在于将机器定位为器材还是对手。\",\"refs\":[14],\"mention_count\":1,\"cross_verify_score\":51}],\"core_tech\":[],\"ref_translations\":[{\"id\":4,\"zh_title\":\"Anthropic放手后亚马逊接盘：70亿美元洽购Decart，盯上AI芯片间的万能转接头\"},{\"id\":5,\"zh_title\":\"OpenAI给GPT-6.1 Sol扩容记忆：默认上下文顶到50万，长文本不再单独计费\"},{\"id\":3,\"zh_title\":\"硅谷正在追随特朗普重命名AI的尝试\"},{\"id\":1,\"zh_title\":\"AI行业能否通过取消NDA来说服数据中心反对者？\"},{\"id\":11,\"zh_title\":\"字节凶猛：从招聘看字节AI战略战术背后的逻辑与细节\"},{\"id\":15,\"zh_title\":\"蚂蚁“灵光”开启新版内测，对标Meta Muse升级个人智能体\"},{\"id\":14,\"zh_title\":\"中国AI硬件的下一个爆款，可能生在网球场\"}]}",
       "at": "2026-10-12"
+    },
+    "dab57d8ce62768afef122b2faf3e19a9b42a88f91b59ea24e601445db41f81f6": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence - 直接关联 Kimi/月之暗面，代表国产模型在 Agent 领域的前沿探索，兼具技术深度与产业关注度。\"}]}",
+      "at": "2026-10-13"
+    },
+    "5454522295f5411eddb9174c7c43356f921a80ed04bb63734ea054c7796cfa64": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"本周AI领域聚焦于智能体在软件工程与复杂任务中的能力评估与优化。研究重点包括提升编码智能体的评估基准、多智能体系统的协作机制以及强化学习在智能体训练中的创新应用。\",\"hot_news\":[{\"topic_id\":6,\"insight\":\"SWE-Critix提出通用验证器以解决编码智能体轨迹评估难题。\",\"narrative\":\"随着编码智能体被部署用于端到端的软件工程任务，现有的成功标准往往难以界定。SWE-Critix论文提出了一种通用的后训练验证器，旨在可靠地评估和解释编码智能体的行为轨迹。该研究解决了智能体在处理长跨度软件工程任务时，其执行轨迹可能包含数百次与代码库和外部工具交互的复杂性问题。\",\"evaluation\":\"该研究为缺乏现成评估器的场景提供了关键解决方案。\",\"refs\":[1,7],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":1,\"insight\":\"AgentSWE基准测试验证了编码智能体构建符合用户工作流代理的能力。\",\"narrative\":\"软件生产正逐渐由软件本身接管，编码智能体被越来越多地委托去构建符合用户特定工作流的代理。然而，现有基准测试往往假设交付的代理能忠实服务于其构建要求，而非仅仅表面符合。AgentSWE论文引入了一个跨越代理开发生命周期三个阶段的基准测试：从自然语言需求创建完整代理、编辑生产代理代码库以及向可衡量目标优化。\",\"evaluation\":\"填补了现有基准测试无法验证代理忠实服务假设的空白。\",\"refs\":[2,8],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":53,\"insight\":\"真实生产环境数据揭示了现有基准测试在任务流程匹配上的不足。\",\"narrative\":\"为了使编码智能体的评估尽可能真实，研究团队收集了4,782个来自JetBrains IDE的真实软件工程师会话，称为生产会话。这些长会话与基于问题的基准测试任务存在显著差异：用户请求涵盖了更广泛的任务类型，包括代码查询、规划、审查、重构和执行，且用户在整个会话中会在不同任务类型间切换。\",\"evaluation\":\"强调了评估基准必须匹配用户实际任务流程的重要性。\",\"refs\":[4,14],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":15,\"insight\":\"Rollout-Time干预技术突破了强化学习在智能体推理中的政策限制。\",\"narrative\":\"强化学习已成为提升大型语言模型智能体推理、规划和工具使用能力的关键范式。然而，现有方法受限于在线推理瓶颈，当任务超出模型当前能力边界时，有效轨迹变得极其稀疏，导致训练容易崩溃。Rollout-Time干预论文提出了一种新方法，旨在解锁超越政策限制的智能体强化学习。\",\"evaluation\":\"为解决智能体在复杂交互环境中的训练难题提供了新思路。\",\"refs\":[5,11],\"mention_count\":2,\"cross_verify_score\":82}],\"other_news\":[{\"topic_id\":8,\"insight\":\"多智能体系统需要显式的伙伴状态表示以实现跨任务决策。\",\"narrative\":\"大型基础模型加速了通用智能体的发展，但鲁棒的多智能体决策需要推理其他智能体知道、意图及可能的行为。现有系统通常通过提示设计或行为塑造操作，但缺乏可跨任务重用的显式伙伴状态表示。Mental-Models论文探讨了如何构建这种表示以支持更可靠的多智能体协作。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":10,\"insight\":\"Humanize MLE Agents研究探索了超越单智能体限制的多智能体会话交替。\",\"narrative\":\"针对长期机器学习工程任务，现有的基于LLM的智能体方法常使用上下文工程。Humanize MLE Agents论文提出了一种多智能体会话交替的方法，旨在突破单智能体的性能极限。研究关注如何通过多智能体的协作与交替来提升复杂任务的执行效率与质量。\",\"refs\":[6],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":53,\"insight\":\"Defense-as-Skill提出将运行时防御本身作为可安装技能。\",\"narrative\":\"技能增强型智能体加载可重用技能作为持久运行时上下文，这虽然提升了任务性能，但也可能给恶意技能提供持久通道。Defense-as-Skill论文提出了一种防御范式，将运行时防御本身实现为可安装、可检查和可编辑的技能，以应对任务条件下的安全威胁。\",\"refs\":[12],\"mention_count\":1,\"cross_verify_score\":66}],\"core_tech\":[{\"topic_id\":6,\"title\":\"SWE-Critix: Post-Training Generalist Verifiers\",\"summary\":\"论文提出了一种通用的后训练验证器，用于评估编码智能体的行为轨迹，解决了长跨度软件工程任务中缺乏现成评估器的问题。\",\"refs\":[1]},{\"topic_id\":1,\"title\":\"AgentSWE: Can Coding Agents Build the Agent\",\"summary\":\"论文引入了一个跨越代理开发生命周期的基准测试，验证了编码智能体构建符合用户工作流代理的能力。\",\"refs\":[2]},{\"topic_id\":53,\"title\":\"Coding-Agent Benchmarks Should Match Their Users\",\"summary\":\"论文基于4,782个真实生产会话，指出现有基准测试在任务流程匹配上的不足，强调了评估基准必须匹配用户实际任务流程。\",\"refs\":[14]},{\"topic_id\":15,\"title\":\"Rollout-Time Intervention: Unlocking Agentic RL\",\"summary\":\"论文提出Rollout-Time干预技术，旨在突破强化学习在智能体推理中的政策限制，解决任务超出模型能力边界时的训练崩溃问题。\",\"refs\":[5]},{\"topic_id\":8,\"title\":\"Mental-Models for Multi-Agent Systems\",\"summary\":\"论文探讨了多智能体系统中显式伙伴状态表示的重要性，指出当前系统缺乏可跨任务重用的决策变量。\",\"refs\":[3]},{\"topic_id\":10,\"title\":\"Humanize MLE Agents: Multi-Agent Session Alternation\",\"summary\":\"论文提出多智能体会话交替的方法，旨在突破单智能体在长期机器学习工程任务中的性能限制。\",\"refs\":[6]}],\"ref_translations\":[{\"id\":1,\"zh_title\":\"SWE-Critix：用于评估编码智能体轨迹的后训练通用验证器\"},{\"id\":2,\"zh_title\":\"AgentSWE：编码智能体能构建你真正想要的代理吗？\"},{\"id\":14,\"zh_title\":\"编码智能体基准测试应匹配其用户的任务流程\"},{\"id\":5,\"zh_title\":\"Rollout-Time干预：解锁超越政策限制的智能体强化学习\"},{\"id\":3,\"zh_title\":\"多智能体系统的心理模型\"},{\"id\":6,\"zh_title\":\"人性化MLE智能体：超越单智能体限制的多智能体会话交替\"}]}",
+      "at": "2026-10-13"
+    },
+    "83bd45395b9220147a453ced1606449deb1e1989af68d00037acc832fdf3d9fe": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":4,\"zh_title\":\"MAGMA-Bench：动态任务与执行失败下的长周期具身智能体评估\"},{\"id\":7,\"zh_title\":\"质量而非结果：用于监督学习的编码智能体轨迹结构化评分框架\"},{\"id\":8,\"zh_title\":\"语言模型能玩维基百科游戏吗？\"},{\"id\":9,\"zh_title\":\"自适应DHi稀疏：基于负载自适应KV层级的推测解码\"},{\"id\":10,\"zh_title\":\"多Harness强化学习用于编码智能体：训练增益与Harness依赖性\"},{\"id\":11,\"zh_title\":\"TRIAGE：原生NVFP4强化学习的方向感知失配稳定化\"},{\"id\":12,\"zh_title\":\"技能即防御：面向技能增强智能体的运行时防御技能演化\"},{\"id\":13,\"zh_title\":\"少即是多：从密集参考中强化稀疏视频推理\"},{\"id\":15,\"zh_title\":\"面向基于LLM的多智能体系统的胜任力感知编排\"},{\"id\":16,\"zh_title\":\"循环Harness：面向智能体持续学习的循环架构\"},{\"id\":17,\"zh_title\":\"Meta Kernel Bench：超越代码的GPU内核知识迁移测量\"},{\"id\":18,\"zh_title\":\"长Harness：通过有状态证据管理在100M Token语料上推进智能体推理\"},{\"id\":19,\"zh_title\":\"Web$hell：面向智能体网络访问的统一接口\"}]}",
+      "at": "2026-10-13"
     }
   },
   "published": {
@@ -80305,6 +80407,36 @@
         "title": "Code Understanding is a Bottleneck for Coding Agents",
         "at": "2026-10-11",
         "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.13356": {
+        "title": "SWE-Critix: Post-Training Generalist Verifiers for Assessing Coding-Agent Trajectories",
+        "at": "2026-10-13",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.13361": {
+        "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+        "at": "2026-10-13",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.12453": {
+        "title": "Mental-Models for Multi-Agent Systems",
+        "at": "2026-10-13",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.13438": {
+        "title": "Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits",
+        "at": "2026-10-13",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.13494": {
+        "title": "Humanize MLE Agents: Multi-Agent Session Alternation Beyond Single-Agent Limits",
+        "at": "2026-10-13",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.09633": {
+        "title": "Coding-Agent Benchmarks Should Match Their Users' Task Flows",
+        "at": "2026-10-13",
+        "edition": "evening"
       }
     }
   },
@@ -97580,6 +97712,36 @@
       "995baab6b1a64017": {
         "title": "Code Understanding is a Bottleneck for Coding Agents",
         "at": "2026-10-11",
+        "edition": "evening"
+      },
+      "a68dcadeaf134e82": {
+        "title": "SWE-Critix: Post-Training Generalist Verifiers for Assessing Coding-Agent Trajectories",
+        "at": "2026-10-13",
+        "edition": "evening"
+      },
+      "199ee8bedb76eb49": {
+        "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+        "at": "2026-10-13",
+        "edition": "evening"
+      },
+      "4fcb2dbe57581b86": {
+        "title": "Mental-Models for Multi-Agent Systems",
+        "at": "2026-10-13",
+        "edition": "evening"
+      },
+      "c7303bb2337d0653": {
+        "title": "Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits",
+        "at": "2026-10-13",
+        "edition": "evening"
+      },
+      "c12f14a2996995b7": {
+        "title": "Humanize MLE Agents: Multi-Agent Session Alternation Beyond Single-Agent Limits",
+        "at": "2026-10-13",
+        "edition": "evening"
+      },
+      "501e8ff40d212a5d": {
+        "title": "Coding-Agent Benchmarks Should Match Their Users' Task Flows",
+        "at": "2026-10-13",
         "edition": "evening"
       }
     }
