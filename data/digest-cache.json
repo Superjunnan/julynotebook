@@ -40509,6 +40509,71 @@
         "selectedTopicTotal": 13
       },
       "at": "2026-10-18"
+    },
+    "evening:2026-10-20": {
+      "fingerprint": "efd525c817c01ba733df50ce44158789e7d2e81f2e4624b748bf2a1d224ed517",
+      "daily": {
+        "overview": "今日 AI 资讯聚焦于多模态模型细粒度理解、复杂任务评估基准以及强化学习在长程任务中的应用。小米发布 4B 多模态模型以提升区域推理能力，同时多项针对智能体在动态环境、科学研究和代码生成中的评估基准相继问世，为 AI 智能体的发展提供了新的测试与训练范式。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "Xiaomi-Lens-0 技术报告",
+            "summary": "Xiaomi-Lens-0 是一个基于 Qwen3.5 的 4B 多模态模型，通过预测内部视觉表示中的掩码来增强细粒度区域推理和指代理解能力。",
+            "refs": [
+              5
+            ],
+            "topicId": 14
+          },
+          {
+            "title": "在科学自动研究智能体关键时刻",
+            "summary": "SciΠvot 基准包含 248 个人工修正案例，用于评估 LLM 智能体在科学实验关键决策时刻的科学判断能力。",
+            "refs": [
+              3
+            ],
+            "topicId": 4
+          },
+          {
+            "title": "面向动态 应用的编码智能体基准",
+            "summary": "EvoWeb 基准包含 320 个累积请求和 32 个 Web 应用，旨在评估智能体在动态 Web 应用开发中的持续能力。",
+            "refs": [
+              2
+            ],
+            "topicId": 3
+          },
+          {
+            "title": "在动态市场中评估",
+            "summary": "LiveMACE 结合实时金融市场模拟交易，从工具使用、持久记忆、规则遵循和多智能体协作四个维度评估智能体能力。",
+            "refs": [
+              6
+            ],
+            "topicId": 9
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "基于信念更新与世界建模的长时域智能体失败恢复",
+          "2": "EvoWeb：面向动态 Web 应用的编码智能体基准",
+          "3": "SciΠvot：在科学自动研究智能体关键时刻评估首席研究员判断",
+          "4": "OfficeTown：用于进化智能体的生成式组织",
+          "5": "Xiaomi-Lens-0 技术报告",
+          "6": "LiveMACE：在动态市场中评估 LLM 智能体能力的过程感知方法",
+          "7": "Lean4 智能体强化学习：通过可验证的多级过程奖励推进智能体强化学习",
+          "8": "FC-SWE：面向长时域软件工程智能体的条件失败强化学习",
+          "9": "MTEdit：打包轨迹优于随机采样用于多轮图像编辑",
+          "10": "AVC-Reward：基于事件的音视频一致性评估",
+          "11": "驱散幻影：用于动态内容衰减的高斯分配",
+          "12": "OPMD：超越输出监督的基于策略的机制蒸馏",
+          "13": "信念轨迹能量：衡量通往预测的路径",
+          "14": "视觉生成能否扩展统一多模态模型的知识？",
+          "15": "MOSS-Image 技术报告",
+          "16": "Scene-Designer：面向智能体 3 D 场景生成的设计智能学习"
+        },
+        "candidateTotal": 37,
+        "topicTotal": 37,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-10-20"
     }
   },
   "llm": {
@@ -43553,6 +43618,30 @@
       "model": "glm-4.7-flash",
       "content": "{\"selected_topic_ids\":[1,2],\"reasons\":[{\"topic_id\":1,\"reason\":\"Anthropic 公益基金持股涉及头部 AI 公司治理与资本运作，跨源一致性高，具有显著的行业影响力和权威性。\"},{\"topic_id\":2,\"reason\":\"Character.AI 并购与裁员是 AI 产业格局调整的重要信号，反映了头部 AI 创业公司的生存现状与资本动向。\"}]}",
       "at": "2026-10-19"
+    },
+    "1ccaaefc76f20085e93e0cd7029d8086f441c322846d70e442298dc7e67ba49b": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":37,\"topic_key\":\"Kimi K2 发布\",\"topic_title\":\"Kimi K2: Open Agentic Intelligence\",\"topic_type\":\"news\",\"confidence\":0.95,\"is_pr\":false}]}",
+      "at": "2026-10-20"
+    },
+    "915ccf3706f47d895b40d13cfcfa09f6da8d2d1d11fc512f9510edef0d1f8722": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[37],\"reasons\":[{\"topic_id\":37,\"reason\":\"Kimi K2: Open Agentic Intelligence - 代表了国产大模型向智能体（Agent）方向演进的前沿动态，具有显著的行业影响力和时效性。\"}]}",
+      "at": "2026-10-20"
+    },
+    "cd3f21e0309b611fb4c1e3bec64f67554a853f6926a8cf234b98d86a2bc57672": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"今日 AI 资讯聚焦于多模态模型细粒度理解、复杂任务评估基准以及强化学习在长程任务中的应用。小米发布 4B 多模态模型以提升区域推理能力，同时多项针对智能体在动态环境、科学研究和代码生成中的评估基准相继问世，为 AI 智能体的发展提供了新的测试与训练范式。\",\"hot_news\":[{\"topic_id\":14,\"insight\":\"小米发布 4B 多模态模型，通过预测掩码提升细粒度区域推理能力。\",\"narrative\":\"小米于 10 月 16 日发布了 Xiaomi-Lens-0 技术报告，这是一个基于 Qwen3.5 的 4B 多模态大语言模型。该模型的核心创新在于能够从其内部视觉表示中预测掩码，从而解决多模态模型在处理细粒度区域理解时面临的挑战。传统监督仅关注整体图像，无法指定支持答案的具体区域，而 Xiaomi-Lens-0 通过引入掩码预测机制，显著改善了模型对图像局部细节的推理和指代理解能力。\",\"evaluation\":\"该模型为多模态大模型在细粒度视觉理解领域提供了新的技术路径。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":82},{\"topic_id\":4,\"insight\":\"SciΠvot 基准揭示前沿模型在科学判断上常优于人类专家。\",\"narrative\":\"SciΠvot 是一个评估 LLM 智能体科学判断能力的基准，包含 248 个人工修正案例。研究发现，前沿模型在面对科学实验的关键决策时刻时，往往倾向于选择有缺陷的计划而非专家的修正建议，且整体表现低于人类水平。尽管 LLM 智能体可以在无人监督下运行数月的实验，但可靠的自主研究还需要具备科学判断力，而评估这种开放式的判断能力极具挑战性。\",\"evaluation\":\"SciΠvot 填补了评估智能体科学判断能力的空白，揭示了当前模型在决策层面的不足。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":80},{\"topic_id\":3,\"insight\":\"EvoWeb 基准通过 320 个累积请求评估智能体在动态 Web 应用中的开发能力。\",\"narrative\":\"EvoWeb 是一个针对智能体在动态 Web 应用中开发能力的基准测试，包含 32 个应用和 320 个累积请求。与以往仅针对固定规格的基准不同，EvoWeb 基于真实产品功能构建，并按功能依赖图进行结构化。该基准旨在评估智能体如何通过连续的请求来扩展现有实现，从而更好地模拟现实世界的软件工程流程。\",\"evaluation\":\"EvoWeb 为评估智能体在复杂、动态环境下的持续开发能力提供了更真实的测试场景。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":78},{\"topic_id\":9,\"insight\":\"LiveMACE 结合实时金融市场与过程感知评估，全面测试智能体能力。\",\"narrative\":\"LiveMACE 是一个利用实时金融市场评估 LLM 智能体能力的基准。由于静态基准问题可能进入训练数据，而未来市场事件尚未发生，因此动态市场是测试智能体应对新条件的理想环境。LiveMACE 结合了加密货币和美股市场的模拟交易，并从工具使用、持久记忆、规则遵循和多智能体协作四个维度进行过程感知评估。\",\"evaluation\":\"LiveMACE 提供了超越单纯回报率的全面评估框架，更准确地刻画智能体在复杂市场环境中的表现。\",\"refs\":[6],\"mention_count\":1,\"cross_verify_score\":76}],\"other_news\":[{\"topic_id\":6,\"insight\":\"OfficeTown 框架通过生成模拟组织来创建工作导向的训练数据。\",\"narrative\":\"OfficeTown 是一个生成式模拟框架，旨在创建持久的专业组织以生成工作导向的训练数据和评估基准。随着 AI 智能体越来越多地使用文件和软件工具来交付专业成果，这种基于持续组织工作的任务和上下文生成方式显得尤为重要。\",\"refs\":[4],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":25,\"insight\":\"OPMD 提出基于策略的机制蒸馏，超越输出监督提升模型推理能力。\",\"narrative\":\"OPMD（On-Policy Mechanism Distillation）通过转移与学生架构兼容的教师中间计算，改进了语言模型的蒸馏过程。传统的基于策略的蒸馏仅监督输出空间，而 OPMD 则引入了对产生预测的中间计算的监督，从而在保持架构兼容的同时，增强了模型的推理和内化能力。\",\"refs\":[12],\"mention_count\":1,\"cross_verify_score\":64}],\"core_tech\":[{\"topic_id\":14,\"title\":\"Xiaomi-Lens-0 Technical Report\",\"summary\":\"Xiaomi-Lens-0 是一个基于 Qwen3.5 的 4B 多模态模型，通过预测内部视觉表示中的掩码来增强细粒度区域推理和指代理解能力。\",\"refs\":[5]},{\"topic_id\":4,\"title\":\"SciΠvot: Benchmarking Principal-Investigator Judgment\",\"summary\":\"SciΠvot 基准包含 248 个人工修正案例，用于评估 LLM 智能体在科学实验关键决策时刻的科学判断能力。\",\"refs\":[3]},{\"topic_id\":3,\"title\":\"EvoWeb: A Benchmark for Coding Agents\",\"summary\":\"EvoWeb 基准包含 320 个累积请求和 32 个 Web 应用，旨在评估智能体在动态 Web 应用开发中的持续能力。\",\"refs\":[2]},{\"topic_id\":9,\"title\":\"LiveMACE: Process-Aware Evaluation of LLM Agent Capabilities\",\"summary\":\"LiveMACE 结合实时金融市场模拟交易，从工具使用、持久记忆、规则遵循和多智能体协作四个维度评估智能体能力。\",\"refs\":[6]}],\"ref_translations\":[{\"id\":5,\"zh_title\":\"Xiaomi-Lens-0 技术报告\"},{\"id\":3,\"zh_title\":\"SciΠvot：在科学自动研究智能体关键时刻评估首席研究员判断\"},{\"id\":2,\"zh_title\":\"EvoWeb：面向动态 Web 应用的编码智能体基准\"},{\"id\":6,\"zh_title\":\"LiveMACE：在动态市场中评估 LLM 智能体能力的过程感知方法\"},{\"id\":4,\"zh_title\":\"OfficeTown：用于进化智能体的生成式组织\"},{\"id\":12,\"zh_title\":\"OPMD：超越输出监督的基于策略的机制蒸馏\"}]}",
+      "at": "2026-10-20"
+    },
+    "4e26b86c6f53e66775654e1af78d741c6e21d43a1d3df3c5f7dea1d68591aeca": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"基于信念更新与世界建模的长时域智能体失败恢复\"},{\"id\":7,\"zh_title\":\"Lean4 智能体强化学习：通过可验证的多级过程奖励推进智能体强化学习\"},{\"id\":8,\"zh_title\":\"FC-SWE：面向长时域软件工程智能体的条件失败强化学习\"},{\"id\":9,\"zh_title\":\"MTEdit：打包轨迹优于随机采样用于多轮图像编辑\"},{\"id\":10,\"zh_title\":\"AVC-Reward：基于事件的音视频一致性评估\"},{\"id\":11,\"zh_title\":\"驱散幻影：用于动态内容衰减的高斯分配\"},{\"id\":13,\"zh_title\":\"信念轨迹能量：衡量通往预测的路径\"},{\"id\":14,\"zh_title\":\"视觉生成能否扩展统一多模态模型的知识？\"},{\"id\":15,\"zh_title\":\"MOSS-Image 技术报告\"},{\"id\":16,\"zh_title\":\"Scene-Designer：面向智能体 3D 场景生成的设计智能学习\"}]}",
+      "at": "2026-10-20"
     }
   },
   "published": {
@@ -79752,6 +79841,26 @@
         "title": "When the KV Cache Is Slower Than the GPU: Scaling Remote KV Tiers for Context-Parallel Prefill",
         "at": "2026-10-18",
         "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.16402": {
+        "title": "EvoWeb: A Benchmark for Coding Agents on Evolving Web Applications",
+        "at": "2026-10-20",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.21082": {
+        "title": "SciΠvot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents",
+        "at": "2026-10-20",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.23279": {
+        "title": "Xiaomi-Lens-0 Technical Report",
+        "at": "2026-10-20",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.09872": {
+        "title": "LiveMACE: Process-Aware Evaluation of LLM Agent Capabilities in Evolving Markets",
+        "at": "2026-10-20",
+        "edition": "evening"
       }
     }
   },
@@ -96987,6 +97096,26 @@
       "64445d389fe8e2ff": {
         "title": "When the KV Cache Is Slower Than the GPU: Scaling Remote KV Tiers for Context-Parallel Prefill",
         "at": "2026-10-18",
+        "edition": "evening"
+      },
+      "e3f1f210653c525e": {
+        "title": "EvoWeb: A Benchmark for Coding Agents on Evolving Web Applications",
+        "at": "2026-10-20",
+        "edition": "evening"
+      },
+      "035ab48fa45e126f": {
+        "title": "SciΠvot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents",
+        "at": "2026-10-20",
+        "edition": "evening"
+      },
+      "754d5ac1d76ad931": {
+        "title": "Xiaomi-Lens-0 Technical Report",
+        "at": "2026-10-20",
+        "edition": "evening"
+      },
+      "47f4037e67327682": {
+        "title": "LiveMACE: Process-Aware Evaluation of LLM Agent Capabilities in Evolving Markets",
+        "at": "2026-10-20",
         "edition": "evening"
       }
     }
