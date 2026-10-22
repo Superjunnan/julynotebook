@@ -2,218 +2,6 @@
   "version": 7,
   "fetched": {},
   "daily": {
-    "evening:2026-06-24": {
-      "fingerprint": "23c00d0ef1cd781c9253e68c74b7a1faffc8e1a839e1a8d282208b3af91b2f53",
-      "daily": {
-        "overview": "6月24日，大模型行业在成本控制、商业化落地与Agent能力进化上取得显著进展。DeepSeek凭借成本优势引发迁移热潮，阿里云推出峰谷Token计费，豆包与MiniMax分别通过付费订阅与股权激励强化商业化与人才战略。同时，企业微信、腾讯云等平台加速Agent生态布局，技术层面Qwen-AgentWorld等论文发布为通用智能体发展提供新范式。",
-        "hotNews": [
-          {
-            "title": "DeepSeek V4以成本优势推动AI Agent企业迁移，验证了模型性价比在商业化中的决定性作用。",
-            "insight": "DeepSeek V4以成本优势推动AI Agent企业迁移",
-            "briefing": "随着AI Agent进入生产环境，推理成本成为企业可持续经营的关键瓶颈。Lindy公司创始人宣布将生产环境全部模型流量从Anthropic切换至DeepSeek V4，耗时9个月完成迁移。尽管迁移工作量暴涨100倍，但此举为公司节省了数百万美元推理成本，并在部分核心业务场景中实现了模型性能提升。这一案例引发了行业对模型成本与性能平衡的广泛讨论。",
-            "evaluation": "DeepSeek的迁移成功为追求成本效益的AI Agent企业提供了可复制的参考路径。",
-            "narrative": "随着AI Agent进入生产环境，推理成本成为企业可持续经营的关键瓶颈。Lindy公司创始人宣布将生产环境全部模型流量从Anthropic切换至DeepSeek V4，耗时9个月完成迁移。尽管迁移工作量暴涨100倍，但此举为公司节省了数百万美元推理成本，并在部分核心业务场景中实现了模型性能提升。这一案例引发了行业对模型成本与性能平衡的广泛讨论。DeepSeek的迁移成功为追求成本效益的AI Agent企业提供了可复制的参考路径。",
-            "summary": "随着AI Agent进入生产环境，推理成本成为企业可持续经营的关键瓶颈。Lindy公司创始人宣布将生产环境全部模型流量从Anthropic切换至DeepSeek V4，耗时9个月完成迁移。尽管迁移工作量暴涨100倍，但此举为公司节省了数百万美元推理成本，并在部分核心业务场景中实现了模型性能提升。这一案例引发了行业对模型成本与性能平衡的广泛讨论。",
-            "refs": [
-              9
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 82,
-            "topicId": 61
-          },
-          {
-            "title": "豆包专业版上线Agent模式，依托2亿日活用户推动AI从对话工具向生产力助手转型。",
-            "insight": "豆包专业版上线Agent模式，依托2亿日活用户推动AI从对话工具向生产力助手转型。",
-            "briefing": "6月24日，豆包上线专业版，搭载豆包2.1 Pro模型，推出首个Agent驱动的办公任务模式。该模式支持自主拆解步骤、调用本地工具，产出可直接交付的工作成品，如行业报告、数据分析表或网站。实测显示，豆包2.1 Pro在芯片设计RTL代码生成等工程场景中展现出生产级Coding能力，过去需3-5名工程师数周完成的任务，现在可由模型在18小时内完成。豆包日活超2亿，此次更新标志着其从聊天工具向生产力助手的深度转型。",
-            "evaluation": "豆包通过Agent模式将AI能力下沉至2亿用户群体，显著提升了AI应用的实际生产力价值。",
-            "narrative": "6月24日，豆包上线专业版，搭载豆包2.1 Pro模型，推出首个Agent驱动的办公任务模式。该模式支持自主拆解步骤、调用本地工具，产出可直接交付的工作成品，如行业报告、数据分析表或网站。实测显示，豆包2.1 Pro在芯片设计RTL代码生成等工程场景中展现出生产级Coding能力，过去需3-5名工程师数周完成的任务，现在可由模型在18小时内完成。豆包日活超2亿，此次更新标志着其从聊天工具向生产力助手的深度转型。豆包通过Agent模式将AI能力下沉至2亿用户群体，显著提升了AI应用的实际生产力价值。",
-            "summary": "6月24日，豆包上线专业版，搭载豆包2.1 Pro模型，推出首个Agent驱动的办公任务模式。该模式支持自主拆解步骤、调用本地工具，产出可直接交付的工作成品，如行业报告、数据分析表或网站。实测显示，豆包2.1 Pro在芯片设计RTL代码生成等工程场景中展现出生产级Coding能力，过去需3-5名工程师数周完成的任务，现在可由模型在18小时内完成。",
-            "refs": [
-              12
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 82,
-            "topicId": 73
-          },
-          {
-            "title": "阿里云峰谷Token计费开创AI算力分时调度先河，推动AI应用向夜间自主生产模式转变。",
-            "insight": "阿里云峰谷Token计费开创AI算力分时调度先河，推动AI应用向夜间自主生产模式转变",
-            "briefing": "阿里云旗下QoderWork推出“峰谷Token”计费模式，引导用户在夜间（22:00至次日8:00）利用闲置算力，任务自动享受低至2折优惠。该模式覆盖Qwen3.7-Max等主力模型，通过精细化资源配置大幅降低企业大模型应用成本。用户可在白天设定任务，由智能体在夜间自主执行，次日清晨验收成果。此举不仅缓解了算力高峰压力，还将用户积分消耗降至白天的20%至40%。",
-            "evaluation": "峰谷Token计费通过价格杠杆有效调配闲置算力，为AI商业化落地提供了新的成本优化方案。",
-            "narrative": "阿里云旗下QoderWork推出“峰谷Token”计费模式，引导用户在夜间（22:00至次日8:00）利用闲置算力，任务自动享受低至2折优惠。该模式覆盖Qwen3.7-Max等主力模型，通过精细化资源配置大幅降低企业大模型应用成本。用户可在白天设定任务，由智能体在夜间自主执行，次日清晨验收成果。此举不仅缓解了算力高峰压力，还将用户积分消耗降至白天的20%至40%。峰谷Token计费通过价格杠杆有效调配闲置算力，为AI商业化落地提供了新的成本优化方案。",
-            "summary": "阿里云旗下QoderWork推出“峰谷Token”计费模式，引导用户在夜间（22:00至次日8:00）利用闲置算力，任务自动享受低至2折优惠。该模式覆盖Qwen3.7-Max等主力模型，通过精细化资源配置大幅降低企业大模型应用成本。用户可在白天设定任务，由智能体在夜间自主执行，次日清晨验收成果。此举不仅缓解了算力高峰压力",
-            "refs": [
-              15
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 82,
-            "topicId": 81
-          }
-        ],
-        "otherNews": [
-          {
-            "title": "MiniMax豪掷6亿港元股权激励，以“去绩效化”策略强化人才护城河，应对行业激烈竞争。",
-            "insight": "MiniMax豪掷6亿港元股权激励，以“去绩效化”策略强化人才护城河",
-            "briefing": "MiniMax向董事、员工及合作伙伴授出116.88万股奖励，购买价均为零，总市值约6亿港元。此次激励覆盖范围广泛，且明确表示“不受任何绩效目标限制”，只要员工在归属期内留任即可全额获得奖励。此举彰显了公司对人才长期价值的认可，旨在高速发展期保障团队稳定。分析指出，人才密度直接决定技术迭代速度，MiniMax通过将核心骨干利益与公司发展深度捆绑，为后续大模型研发与商业化夯实基础。",
-            "evaluation": "MiniMax的股权激励策略不仅是对人才的直接回报，更是其在资本与人才双重博弈中构建护城河的关键举措。",
-            "narrative": "MiniMax向董事、员工及合作伙伴授出116.88万股奖励，购买价均为零，总市值约6亿港元。此次激励覆盖范围广泛，且明确表示“不受任何绩效目标限制”，只要员工在归属期内留任即可全额获得奖励。此举彰显了公司对人才长期价值的认可，旨在高速发展期保障团队稳定。分析指出，人才密度直接决定技术迭代速度，MiniMax通过将核心骨干利益与公司发展深度捆绑，为后续大模型研发与商业化夯实基础。MiniMax的股权激励策略不仅是对人才的直接回报，更是其在资本与人才双重博弈中构建护城河的关键举措。",
-            "summary": "MiniMax向董事、员工及合作伙伴授出116.88万股奖励，购买价均为零，总市值约6亿港元。此次激励覆盖范围广泛，且明确表示“不受任何绩效目标限制”，只要员工在归属期内留任即可全额获得奖励。此举彰显了公司对人才长期价值的认可，旨在高速发展期保障团队稳定。分析指出，人才密度直接决定技术迭代速度，MiniMax通过将核心骨干利益与公司发展深度捆绑",
-            "refs": [
-              16
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 82,
-            "topicId": 84
-          },
-          {
-            "title": "豆包推出三档付费订阅服务，以高性价比策略对标全球巨头，推动商业化深度挖掘。",
-            "insight": "豆包推出三档付费订阅服务，以高性价比策略对标全球巨头，推动商业化深度挖掘。",
-            "briefing": "豆包正式推出标准版（68元/月）、加强版（200元/月）及高级版（500元/月）三档付费订阅服务，全线产品接入豆包2.1大模型。官方强调免费用户权益不变，付费服务旨在满足更高生产力需求。对比ChatGPT等海外产品，豆包定价显著更低，如标准版仅为ChatGPT Plus的一半左右。此举标志着豆包从追求用户规模扩张转向对存量用户深度价值的挖掘。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "豆包正式推出标准版（68元/月）、加强版（200元/月）及高级版（500元/月）三档付费订阅服务，全线产品接入豆包2.1大模型。官方强调免费用户权益不变，付费服务旨在满足更高生产力需求。对比ChatGPT等海外产品，豆包定价显著更低，如标准版仅为ChatGPT Plus的一半左右。",
-            "summary": "豆包正式推出标准版（68元/月）、加强版（200元/月）及高级版（500元/月）三档付费订阅服务，全线产品接入豆包2.1大模型。官方强调免费用户权益不变，付费服务旨在满足更高生产力需求。对比ChatGPT等海外产品，豆包定价显著更低",
-            "refs": [
-              17
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 82
-          },
-          {
-            "title": "豆包音频生成模型1.0发布，以多模态参考生成技术简化音频后期流程，开启“音频导演”时代。",
-            "insight": "豆包音频生成模型1.0发布，以多模态参考生成技术简化音频后期流程，开启“音频导演”时代。",
-            "briefing": "火山引擎发布豆包音频生成模型1.0，支持用户输入包含台词、情绪、背景音乐等Prompt，直接生成完整音频成片。该模型具备“长时音色一致性”能力，可稳定保持角色声音特性，解决长音频创作中的“角色串戏”痛点。同时支持“0样本多模态音频创造”与“一声多角”演绎，显著降低专业音频制作门槛。该模型即将上线剪映、即梦等平台，推动音频创作从“剪辑拼接”向“创意导演”演进。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "火山引擎发布豆包音频生成模型1.0，支持用户输入包含台词、情绪、背景音乐等Prompt，直接生成完整音频成片。该模型具备“长时音色一致性”能力，可稳定保持角色声音特性，解决长音频创作中的“角色串戏”痛点。同时支持“0样本多模态音频创造”与“一声多角”演绎，显著降低专业音频制作门槛。",
-            "summary": "火山引擎发布豆包音频生成模型1.0，支持用户输入包含台词、情绪、背景音乐等Prompt，直接生成完整音频成片。该模型具备“长时音色一致性”能力，可稳定保持角色声音特性，解决长音频创作中的“角色串戏”痛点。",
-            "refs": [
-              18
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 83
-          },
-          {
-            "title": "腾讯云EdgeOne Makers平台简化Agent开发部署流程，助力中小企业实现0成本全球上线。",
-            "insight": "腾讯云EdgeOne Makers平台简化Agent开发部署流程，助力中小企业实现0成本全球上线。",
-            "briefing": "腾讯云发布边缘Web与AI Agent托管平台EdgeOne Makers，开发者无需自建服务器或配置环境，即可通过Git、CLI等方式一键构建、部署、托管Web与AI Agent应用，实现分钟级全球上线。平台内置运行时、沙箱工具、对话记忆等Agent运行底座，支持全链路追踪与调试。此举填补了从原型到稳定上线之间的承接平台空白，降低了Agent应用的运维门槛。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "腾讯云发布边缘Web与AI Agent托管平台EdgeOne Makers，开发者无需自建服务器或配置环境，即可通过Git、CLI等方式一键构建、部署、托管Web与AI Agent应用，实现分钟级全球上线。平台内置运行时、沙箱工具、对话记忆等Agent运行底座，支持全链路追踪与调试。",
-            "summary": "腾讯云发布边缘Web与AI Agent托管平台EdgeOne Makers，开发者无需自建服务器或配置环境，即可通过Git、CLI等方式一键构建、部署、托管Web与AI Agent应用，实现分钟级全球上线。",
-            "refs": [
-              13
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 77
-          },
-          {
-            "title": "企业微信内测AI Agent“大圆”，原生嵌入生态实现办公与客户经营场景的深度智能化。",
-            "insight": "企业微信内测AI Agent“大圆”，原生嵌入生态实现办公与客户经营场景的深度智能化。",
-            "briefing": "企业微信启动AI智能体“大圆”内测，用户可通过左滑唤醒，自动识别当前页面。基于群聊、文档、会议等沉淀数据，“大圆”可提供场景化智能服务，如一键总结群聊讨论、提炼报表结论并自动生成回复。依托企业微信庞大的生态体量（接入超1400万企业，服务7.5亿用户），“大圆”能够有效整理销售、客服与客户的非结构化沟通记录，转化为可复用的客户画像与经营洞察。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "企业微信启动AI智能体“大圆”内测，用户可通过左滑唤醒，自动识别当前页面。基于群聊、文档、会议等沉淀数据，“大圆”可提供场景化智能服务，如一键总结群聊讨论、提炼报表结论并自动生成回复。",
-            "summary": "企业微信启动AI智能体“大圆”内测，用户可通过左滑唤醒，自动识别当前页面。基于群聊、文档、会议等沉淀数据，“大圆”可提供场景化智能服务，如一键总结群聊讨论、提炼报表结论并自动生成回复。依托企业微信庞大的生态体量（接入超1400万企业",
-            "refs": [
-              11
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 69
-          },
-          {
-            "title": "港大MaRS Lab FAST-LIVO2获IEEE TRO傅京孙纪念最佳论文奖",
-            "insight": "港大MaRS Lab FAST-LIVO2获IEEE TRO傅京孙纪念最佳论文奖",
-            "briefing": "香港大学机械与机器人系统实验室张富副教授团队研发的FAST-LIVO2获得IEEE Transactions on Robotics（TRO）傅京孙纪念最佳论文奖。这是该奖项有史以来第二次颁给中国科研团队。论文第一作者郑纯然为华为天才少年，其开源项目在GitHub累计斩获9.1k Star。通讯作者张富在机器人感知与自主导航领域全球排名第五、华人第一。",
-            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
-            "narrative": "香港大学机械与机器人系统实验室张富副教授团队研发的FAST-LIVO2获得IEEE Transactions on Robotics（TRO）傅京孙纪念最佳论文奖。这是该奖项有史以来第二次颁给中国科研团队。论文第一作者郑纯然为华为天才少年，其开源项目在GitHub累计斩获9.1k Star。",
-            "summary": "香港大学机械与机器人系统实验室张富副教授团队研发的FAST-LIVO2获得IEEE Transactions on Robotics（TRO）傅京孙纪念最佳论文奖。这是该奖项有史以来第二次颁给中国科研团队。论文第一作者郑纯然为华为天才少年",
-            "refs": [
-              19
-            ],
-            "mentionCount": 1,
-            "crossVerifyScore": 66,
-            "topicId": 96
-          }
-        ],
-        "coreTech": [
-          {
-            "title": "通用智能体的语言世界模型",
-            "summary": "Qwen-AgentWorld是全球首个原生语言世界模型，支持跨多种复杂环境的统一掌控，为AI从对话者向行动者演进奠定基础。",
-            "refs": [
-              5
-            ],
-            "topicId": 38
-          },
-          {
-            "title": "中文精神科问诊与诊断的多智能",
-            "summary": "LingxiDiagBench是一个大规模多智能体基准测试框架，揭示了LLM在中文精神科问诊与诊断中的能力边界。",
-            "refs": [
-              6
-            ],
-            "topicId": 36
-          },
-          {
-            "title": "智能体模型批判",
-            "summary": "该论文探讨了LLM系统作为“智能体”工具的边界，厘清了自动化与代理权的界限，回应了关于AI失控的潜在担忧。",
-            "refs": [
-              1
-            ],
-            "topicId": 2
-          },
-          {
-            "title": "智能体模型的数据配方",
-            "summary": "OpenThoughts-Agent提出了面向智能体模型的数据配方方法，旨在提升智能体在复杂任务中的表现与泛化能力。",
-            "refs": [
-              2
-            ],
-            "topicId": 8
-          },
-          {
-            "title": "高效视频生成的原生全栈加速框架",
-            "summary": "Sol Video Inference Engine是一个面向视频生成的全栈加速框架，通过Agent原生设计解决不同模型与硬件配置下的加速难题。",
-            "refs": [
-              3
-            ],
-            "topicId": 10
-          },
-          {
-            "title": "多智能体强化学习中横向转移的",
-            "summary": "ASALT提出了一种自适应状态对齐方法，解决了多智能体强化学习中源域与目标域状态空间维度不匹配的问题。",
-            "refs": [
-              7
-            ],
-            "topicId": 15
-          }
-        ],
-        "aiRumor": [],
-        "refTranslations": {
-          "1": "智能体模型批判",
-          "2": "OpenThoughts-Agent：智能体模型的数据配方",
-          "3": "Sol Video Inference Engine：高效视频生成的Agent原生全栈加速框架",
-          "4": "加速罕见病诊断的专用推理大语言模型：一项随机AI医生研究",
-          "5": "Qwen-AgentWorld：通用智能体的语言世界模型",
-          "6": "LingxiDiagBench：中文精神科问诊与诊断的LLM多智能体基准测试框架",
-          "7": "ASALT：多智能体强化学习中横向转移的自适应状态对齐",
-          "8": "AI智能体的进化新里程：千问发布原生语言世界模型 Qwen-Agent World千问发布全球首个原生语言世界模型Qwen-Agent World。其核心突破在于实现了跨多种复杂环境的统一掌控力，打破了仅处理对话或文本的局限",
-          "9": "“用Claude比发工资还贵？换！”耗时9个月，这家AI公司换上DeepSeek后，CEO直言：迁移工作量暴涨100倍，但一年省下数百万美元",
-          "10": "Karpathy投了一家AI记忆公司，撞名DeepSeek Engram记忆架构",
-          "11": "企业微信内测AI Agent“大圆”:打通企微生态，主打办公与客户经营提效腾讯旗下企业微信启动AI智能体“大圆”内测。该助理原生嵌入企微生态，突破独立对话机器人局限，用户左滑即可唤醒，能自动识别当前页面。基于群聊、文档、会议等沉淀数据",
-          "12": "豆包专业版实测：2亿人都可以体验能干活的Agent了",
-          "13": "5分钟上线全球！腾讯云边缘Web与AI Agent托管平台 Edge One Makers助力中小企业0成本出海",
-          "14": "实测微信 AI：「小微」入驻首页首屏，朋友圈、群聊都能问",
-          "15": "阿里云Qoder Work推出“峰谷Token”:错峰调用Qwen3.7-Max低至2折阿里云旗下Qoder Work推出“峰谷Token”计费，引导用户错峰利用夜间（22:00至次日8:00）闲置算力，任务自动享低至2折优惠",
-          "16": "豪掷 6 亿港元激励全员：Mini Max 以“真金白银”提振团队信心Mini Max推零对价股权激励，向董事、员工及合作伙伴授出116.88万股，当日市值约6亿港元，凸显AI人才战白热化下厂商以重磅激励构筑护城河的策略。 刚刚 18.4",
-          "17": "豆包付费时代开启：三档订阅服务落地，性价比对标全球巨头豆包正式推出三档付费订阅（68元/月、200元/月、500元/月），全线产品接入豆包2.1大模型，输出质量与效率显著提升。官方称免费用户权益不变，付费服务主要满足更高生产力需求。 2",
-          "18": "豆包音频生成模型1. 0 发布，开启“音频导演”时代火山引擎发布豆包音频生成模型1.0，以“多模态参考生成”和“长时音色一致性”两大核心技术，简化传统音频后期流程，可一站式生成对白、音效与配乐，提升创作效率。 3 小时前 10.9 K",
-          "19": "华为天才少年一作，港大Ma RS Lab拿下IEEE TRO傅京孙纪念最佳论文奖"
-        },
-        "candidateTotal": 250,
-        "topicTotal": 98,
-        "selectedTopicTotal": 16
-      },
-      "at": "2026-06-24"
-    },
     "morning:2026-06-25": {
       "fingerprint": "a9d0e2af961fb7a51a97df46408ed4bca954dd5f01efd17ebf530507fb296f3a",
       "daily": {
@@ -40273,45 +40061,224 @@
         "selectedTopicTotal": 7
       },
       "at": "2026-10-22"
+    },
+    "morning:2026-10-22": {
+      "fingerprint": "66128e4049f0025728f82d1bed91fee2cb9cf1ed396d27078ed4be77962eb4ef",
+      "daily": {
+        "overview": "Anthropic IPO招股书曝光，营收暴涨但巨额亏损与算力成本引发关注；Meta Muse用户破千万，阿里与腾讯云厂商加速布局AI原生搜索；OpenAI模型接入Google Cloud，ChatGPT广告扩展至全球多国；多篇关于多智能体系统与安全性的研究论文发布。",
+        "hotNews": [
+          {
+            "title": "OpenAI模型接入Google Cloud，GPT模型将进入Gemini Model Garden。",
+            "insight": "OpenAI模型接入Google Cloud",
+            "briefing": "OpenAI与Google Cloud达成合作，将OpenAI的前沿模型和Codex工作流引入Google Cloud的Gemini Model Garden，用户可通过Google Cloud Marketplace访问。此外，GPT模型还将出现在Google的AI编码工具Antigravity中。这一合作打破了Google Cloud对自家Gemini模型的依赖，为用户提供了更多选择。对于企业客户和AI爱好者来说",
+            "evaluation": "OpenAI与Google Cloud的合作是AI模型生态开放化的重要一步，有助于推动AI技术在更多平台和场景中的应用。",
+            "narrative": "OpenAI与Google Cloud达成合作，将OpenAI的前沿模型和Codex工作流引入Google Cloud的Gemini Model Garden，用户可通过Google Cloud Marketplace访问。此外，GPT模型还将出现在Google的AI编码工具Antigravity中。这一合作打破了Google Cloud对自家Gemini模型的依赖，为用户提供了更多选择。对于企业客户和AI爱好者来说。OpenAI与Google Cloud的合作是AI模型生态开放化的重要一步，有助于推动AI技术在更多平台和场景中的应用。",
+            "summary": "OpenAI与Google Cloud达成合作，将OpenAI的前沿模型和Codex工作流引入Google Cloud的Gemini Model Garden，用户可通过Google Cloud Marketplace访问。此外，GPT模型还将出现在Google的AI编码工具Antigravity中。这一合作打破了Google",
+            "refs": [
+              13,
+              17
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 60,
+            "topicId": 21
+          },
+          {
+            "title": "Anthropic招股书显示营收暴涨1382%，但半年亏损807亿美元，算力成本压力巨大。",
+            "insight": "Anthropic招股书显示营收暴涨1382%，但半年亏损807亿美元",
+            "briefing": "《华尔街日报》披露的Anthropic IPO招股书草案揭示了公司光鲜增长背后的巨大成本压力。截至2026年6月30日的六个月里，Anthropic营收约163亿美元，同比暴涨1382%，但同期算力与基础设施支出近90亿美元，已超过去年全年73亿的水平。更令人震惊的是，上半年净亏损高达807亿美元，其中720亿来自会计调整。招股书还披露，未来七到十年内，Anthropic需根据云计算协议支付约4500亿美元，且大部分交易不可取消",
+            "evaluation": "Anthropic的财务状况反映了当前AI行业高速增长与巨额投入并存的矛盾，算力成本已成为制约发展的关键瓶颈。",
+            "narrative": "《华尔街日报》披露的Anthropic IPO招股书草案揭示了公司光鲜增长背后的巨大成本压力。截至2026年6月30日的六个月里，Anthropic营收约163亿美元，同比暴涨1382%，但同期算力与基础设施支出近90亿美元，已超过去年全年73亿的水平。更令人震惊的是，上半年净亏损高达807亿美元，其中720亿来自会计调整。招股书还披露，未来七到十年内，Anthropic需根据云计算协议支付约4500亿美元，且大部分交易不可取消。Anthropic的财务状况反映了当前AI行业高速增长与巨额投入并存的矛盾，算力成本已成为制约发展的关键瓶颈。",
+            "summary": "《华尔街日报》披露的Anthropic IPO招股书草案揭示了公司光鲜增长背后的巨大成本压力。截至2026年6月30日的六个月里，Anthropic营收约163亿美元，同比暴涨1382%，但同期算力与基础设施支出近90亿美元，已超过去年全年73亿的水平。更令人震惊的是，上半年净亏损高达807亿美元，其中720亿来自会计调整。招股书还披露，未来七到十年内",
+            "refs": [
+              8,
+              9
+            ],
+            "mentionCount": 2,
+            "crossVerifyScore": 82,
+            "topicId": 87
+          },
+          {
+            "title": "Anthropic发布Claude Duet AI代理，面向专业人士和小企业。",
+            "insight": "Anthropic发布Claude Duet AI代理，面向专业人士和小企业。",
+            "briefing": "Anthropic推出了Claude Duet，这是一个面向专业人士和小企业主的AI代理，目前处于研究预览阶段。Claude Duet是Anthropic对Meta Muse和OpenAI Dots的竞争产品。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Anthropic推出了Claude Duet，这是一个面向专业人士和小企业主的AI代理，目前处于研究预览阶段。Claude Duet是Anthropic对Meta Muse和OpenAI Dots的竞争产品。",
+            "summary": "Anthropic推出了Claude Duet，这是一个面向专业人士和小企业主的AI代理，目前处于研究预览阶段。Claude Duet是Anthropic对Meta Muse和OpenAI Dots的竞争产品。当前信号具备参考价值",
+            "refs": [
+              1
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 70,
+            "topicId": 22
+          }
+        ],
+        "otherNews": [
+          {
+            "title": "阿里推出AI原生搜索引擎CleverSee，云厂商AI搜索基建战升级。",
+            "insight": "阿里推出AI原生搜索引擎CleverSee，云厂商AI搜索基建战升级。",
+            "briefing": "阿里云宣布将原IQS信息查询服务和CleverSee合并，推出全新的“CleverSee”AI原生智能信息检索引擎。该产品深度融合大语言模型、多模态模型、意图推理及搜索工程能力，为企业提供搜索、问答一体化的开箱即用平台。CleverSee主要包含三大子产品：联网搜问、垂域搜问和企业内搜。与此同时，腾讯云也对外开放了“元宝搜索”，字节火山引擎推出了Viking AI搜索。这标志着国内云厂商在企业端AI搜索的军备竞赛已进入实质落地阶段。",
+            "evaluation": "阿里与腾讯云的AI搜索布局，反映了云服务商正从基础设施提供商向AI应用生态构建者转型，争夺企业级AI服务市场。",
+            "narrative": "阿里云宣布将原IQS信息查询服务和CleverSee合并，推出全新的“CleverSee”AI原生智能信息检索引擎。该产品深度融合大语言模型、多模态模型、意图推理及搜索工程能力，为企业提供搜索、问答一体化的开箱即用平台。CleverSee主要包含三大子产品：联网搜问、垂域搜问和企业内搜。与此同时，腾讯云也对外开放了“元宝搜索”，字节火山引擎推出了Viking AI搜索。这标志着国内云厂商在企业端AI搜索的军备竞赛已进入实质落地阶段。阿里与腾讯云的AI搜索布局，反映了云服务商正从基础设施提供商向AI应用生态构建者转型，争夺企业级AI服务市场。",
+            "summary": "阿里云宣布将原IQS信息查询服务和CleverSee合并，推出全新的“CleverSee”AI原生智能信息检索引擎。该产品深度融合大语言模型、多模态模型、意图推理及搜索工程能力，为企业提供搜索、问答一体化的开箱即用平台。CleverSee主要包含三大子产品：联网搜问、垂域搜问和企业内搜。与此同时，腾讯云也对外开放了“元宝搜索”",
+            "refs": [
+              7
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 61,
+            "topicId": 78
+          },
+          {
+            "title": "Blacksmith获红杉领投C轮，估值达10亿美元。",
+            "insight": "Blacksmith获红杉领投C轮，估值达10亿美元。",
+            "briefing": "Blacksmith宣布完成6600万美元C轮融资，由红杉资本领投，公司估值达到10亿美元。Blacksmith是一个帮助公司更高效构建和测试软件的平台，包括AI生成的代码。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "Blacksmith宣布完成6600万美元C轮融资，由红杉资本领投，公司估值达到10亿美元。Blacksmith是一个帮助公司更高效构建和测试软件的平台，包括AI生成的代码。",
+            "summary": "Blacksmith宣布完成6600万美元C轮融资，由红杉资本领投，公司估值达到10亿美元。Blacksmith是一个帮助公司更高效构建和测试软件的平台，包括AI生成的代码。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              3
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 69,
+            "topicId": 75
+          },
+          {
+            "title": "ChatGPT广告扩展至26个新国家，超10万广告主已使用平台。",
+            "insight": "ChatGPT广告扩展至26个新国家，超10万广告主已使用平台。",
+            "briefing": "OpenAI宣布ChatGPT广告业务扩展至全球26个新国家，目前已有超过10万名广告主使用该平台。广告主可以从本地企业到全球品牌，在用户探索、比较和购买决策的过程中触达目标受众。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "OpenAI宣布ChatGPT广告业务扩展至全球26个新国家，目前已有超过10万名广告主使用该平台。广告主可以从本地企业到全球品牌，在用户探索、比较和购买决策的过程中触达目标受众。",
+            "summary": "OpenAI宣布ChatGPT广告业务扩展至全球26个新国家，目前已有超过10万名广告主使用该平台。广告主可以从本地企业到全球品牌，在用户探索、比较和购买决策的过程中触达目标受众。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              19
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 59,
+            "topicId": 77
+          },
+          {
+            "title": "黄仁勋提出欧洲AI经济愿景，强调模块化数据中心与物理AI。",
+            "insight": "黄仁勋提出欧洲AI经济愿景，强调模块化数据中心与物理AI。",
+            "briefing": "在Nvidia柏林全球大会上，黄仁勋概述了欧洲未来的AI经济愿景，包括机器人、AI代理和模块化数据中心。他强调，要参与AI经济，不能只是消费AI，更要生产AI。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "在Nvidia柏林全球大会上，黄仁勋概述了欧洲未来的AI经济愿景，包括机器人、AI代理和模块化数据中心。他强调，要参与AI经济，不能只是消费AI，更要生产AI。",
+            "summary": "在Nvidia柏林全球大会上，黄仁勋概述了欧洲未来的AI经济愿景，包括机器人、AI代理和模块化数据中心。他强调，要参与AI经济，不能只是消费AI，更要生产AI。当前信号具备参考价值，但仍需更多来源持续验证。",
+            "refs": [
+              20
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 59,
+            "topicId": 84
+          },
+          {
+            "title": "Meta Muse AI应用用户突破千万，购物成为核心活跃场景。",
+            "insight": "Meta Muse AI应用用户突破千万，购物成为核心活跃场景。",
+            "briefing": "Meta在第三季度财报电话会议上确认，其AI应用Muse已获得超过1000万用户，验证了市场对其AI产品的接受度。值得注意的是，约25%的注册用户现在每天都会使用Muse，这显著提升了用户留存率。更令人意外的是，超过四分之一的活跃用户通过AI代理进行购物，平均客单价超过200美元。这一数据表明，Muse不仅是一个聊天工具，更正在成为用户日常消费决策的重要助手。",
+            "evaluation": "Muse的高用户粘性与高客单价证明了AI代理在电商场景中的巨大潜力，Meta正成功将AI技术转化为实际商业价值。",
+            "narrative": "Meta在第三季度财报电话会议上确认，其AI应用Muse已获得超过1000万用户，验证了市场对其AI产品的接受度。值得注意的是，约25%的注册用户现在每天都会使用Muse，这显著提升了用户留存率。更令人意外的是，超过四分之一的活跃用户通过AI代理进行购物，平均客单价超过200美元。这一数据表明，Muse不仅是一个聊天工具，更正在成为用户日常消费决策的重要助手。Muse的高用户粘性与高客单价证明了AI代理在电商场景中的巨大潜力，Meta正成功将AI技术转化为实际商业价值。",
+            "summary": "Meta在第三季度财报电话会议上确认，其AI应用Muse已获得超过1000万用户，验证了市场对其AI产品的接受度。值得注意的是，约25%的注册用户现在每天都会使用Muse，这显著提升了用户留存率。更令人意外的是，超过四分之一的活跃用户通过AI代理进行购物，平均客单价超过200美元。这一数据表明，Muse不仅是一个聊天工具",
+            "refs": [
+              2
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 69,
+            "topicId": 74
+          },
+          {
+            "title": "AI防护措施难以阻止黑客攻击，犯罪分子利用智能体绕过模型安全限制。",
+            "insight": "AI防护措施难以阻止黑客攻击，犯罪分子利用智能体绕过模型安全限制。",
+            "briefing": "CrowdStrike的研究显示，随着AI在恶意黑客和防御者中的普及，即使是相对简单的网络犯罪分子也开始将智能体AI纳入其攻击活动，并成功绕过模型的安全限制。研究团队分析了四个此前未报告的威胁组织在5月至8月间的AI基础设施。",
+            "evaluation": "当前信号具备参考价值，但仍需更多来源持续验证。",
+            "narrative": "CrowdStrike的研究显示，随着AI在恶意黑客和防御者中的普及，即使是相对简单的网络犯罪分子也开始将智能体AI纳入其攻击活动，并成功绕过模型的安全限制。研究团队分析了四个此前未报告的威胁组织在5月至8月间的AI基础设施。",
+            "summary": "CrowdStrike的研究显示，随着AI在恶意黑客和防御者中的普及，即使是相对简单的网络犯罪分子也开始将智能体AI纳入其攻击活动，并成功绕过模型的安全限制。研究团队分析了四个此前未报告的威胁组织在5月至8月间的AI基础设施。",
+            "refs": [
+              18
+            ],
+            "mentionCount": 1,
+            "crossVerifyScore": 59,
+            "topicId": 69
+          }
+        ],
+        "coreTech": [
+          {
+            "title": "在形式化本科研究问题上评估编码代理",
+            "summary": "该论文提出了ReuF2F基准，用于评估编码代理在形式化本科研究问题上的表现，强调可靠验证在AI系统解决开放研究问题中的重要性。",
+            "refs": [
+              5
+            ],
+            "topicId": 4
+          },
+          {
+            "title": "安全多智能体强化学习的脆弱性分析",
+            "summary": "论文研究了安全多智能体强化学习（SMARL）在推理时的脆弱性，提出了一种名为MinMax Attack的攻击框架，用于评估和防御针对SMARL的观察攻击。",
+            "refs": [
+              6
+            ],
+            "topicId": 19
+          },
+          {
+            "title": "自动多智能体组织设计",
+            "summary": "该研究探讨了自动多智能体组织设计，从架构搜索转向组织学习，旨在解决自动生成的多智能体结构何时具有功能性的责任划分。",
+            "refs": [
+              14
+            ],
+            "topicId": 28
+          },
+          {
+            "title": "多智能体协作是否减少临床任务",
+            "summary": "论文质疑了多智能体协作在临床任务中减少幻觉的普遍性，指出协作性能提升并不等同于系统更可信，需要评估推理过程而非仅关注最终答案。",
+            "refs": [
+              15
+            ],
+            "topicId": 35
+          },
+          {
+            "title": "用于智能体递归自我改进的模型作为数据",
+            "summary": "该研究提出了MaD-RSI方法，通过模型作为数据（Model-as-Data）实现智能体Harness的递归自我改进，旨在发现针对特定大语言模型能力的定制化Harness。",
+            "refs": [
+              16
+            ],
+            "topicId": 47
+          },
+          {
+            "title": "用于离散低维环境之外主动推理",
+            "summary": "论文介绍了JAXbounce基准，这是一个用于评估离散低维环境之外主动推理的连续控制乒乓球游戏基准，支持状态向量和像素网格表示。",
+            "refs": [
+              4
+            ],
+            "topicId": 2
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "Anthropic推出Claude Duet AI代理，与Meta Muse和OpenAI Dots竞争",
+          "2": "Meta称Muse用户超1000万，购物是主要活动",
+          "3": "Blacksmith获红杉领投C轮，估值达10亿美元",
+          "4": "JAXbounce: 用于离散低维环境之外主动推理的连续控制乒乓球基准",
+          "5": "ReuF2F: 在形式化本科研究问题上评估编码代理",
+          "6": "安全多智能体强化学习的脆弱性分析",
+          "7": "阿里推出全新AI搜索引擎“Clever See”，云厂商打响AI搜索基建战",
+          "8": "Anthropic 招股书拆解:营收暴涨1382%，半年却亏掉807亿美元，算力账单压顶《华尔街日报》看到Anthropic的IPO招股书草案：公司收入狂飙但亏损惊人。截至6月30日六个月营收约163亿美元",
+          "9": "Anthropic 招股书曝光：半年营收 163 亿却亏 807 亿，算力枷锁越套越紧《华尔街日报》看到的IPO招股书草案显示，Anthropic增速光鲜背后成本高企：截至6月30日半年营收约163亿美元，同比由11亿暴涨1382%",
+          "10": "Anthropic招股书显示80亿美元亏损",
+          "11": "正式成为人类垃圾",
+          "12": "我还有5天假期，刚发现酒店没有接地孔 😟，电脑电了我一下",
+          "13": "OpenAI模型接入Google Cloud",
+          "14": "自动多智能体组织设计：从架构搜索到组织学习",
+          "15": "多智能体协作是否减少临床任务中的幻觉？",
+          "16": "MaD-RSI: 用于智能体Harness递归自我改进的模型作为数据",
+          "17": "OpenAI最新AI模型将进入Google Cloud和Antigravity",
+          "18": "AI防护措施无法阻止黑客攻击",
+          "19": "ChatGPT广告扩展至26个新国家，超10万广告主已使用平台",
+          "20": "黄仁勋关于欧洲插拔式数据中心的愿景"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 99,
+        "selectedTopicTotal": 16
+      },
+      "at": "2026-10-22"
     }
   },
   "llm": {
-    "62d0f264f820cb9f42c0f18b3b0080ecce61af09db725d65c6b8d02f123277bd": {
-      "operation": "cluster_assignments_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"assignments\":[{\"candidate_id\":1,\"topic_key\":\"Anthropic版权和解争议\",\"topic_title\":\"Anthropic版权和解争议\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":2,\"topic_key\":\"Hugging Face新模型发布\",\"topic_title\":\"Hugging Face新模型发布\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":3,\"topic_key\":\"Hugging Face新模型发布\",\"topic_title\":\"Hugging Face新模型发布\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":4,\"topic_key\":\"Hugging Face工具与模型发布\",\"topic_title\":\"Hugging Face工具与模型发布\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":5,\"topic_key\":\"Hugging Face工具与模型发布\",\"topic_title\":\"Hugging Face工具与模型发布\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false}]}",
-      "at": "2026-09-07"
-    },
-    "b023755df2f323637afcfac2ed79459d7b05a44acd8e18189c8a062602b37021": {
-      "operation": "merge_topic_rows",
-      "model": "glm-4.7-flash",
-      "content": "{\"mapping\":[{\"from_key\":\"Hugging Face工具与模型发布\",\"merged_key\":\"Hugging Face工具与模型发布\",\"merged_title\":\"Hugging Face工具与模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face新模型发布\",\"merged_key\":\"Hugging Face工具与模型发布\",\"merged_title\":\"Hugging Face工具与模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic版权和解争议\",\"merged_key\":\"Anthropic版权和解争议\",\"merged_title\":\"Anthropic版权和解争议\",\"merged_type\":\"news\"}]}",
-      "at": "2026-09-07"
-    },
-    "6b5a32a489efb97d942158b41208141894ccbe2529abc3386ca720071a0968fa": {
-      "operation": "merge_topic_rows",
-      "model": "glm-4.7-flash",
-      "content": "{\"mapping\":[{\"from_key\":\"Hugging Face工具与模型发布\",\"merged_key\":\"Hugging Face工具与模型发布\",\"merged_title\":\"Hugging Face工具与模型发布\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic版权和解争议\",\"merged_key\":\"Anthropic版权和解争议\",\"merged_title\":\"Anthropic版权和解争议\",\"merged_type\":\"news\"}]}",
-      "at": "2026-09-07"
-    },
-    "26400d20d6d55d2c08cb4d86257e771f6259f3e40f63c05a6bf9500adcf71e72": {
-      "operation": "singleton_recluster_chunk",
-      "model": "glm-4.7-flash",
-      "content": "{\"decisions\":[{\"candidate_id\":1,\"action\":\"keep\",\"confidence\":0.85,\"reason\":\"主题为作者与出版商关于Anthropic版权和解的争议，与锚点话题'Hugging Face工具与模型发布'完全无关，属于不同事件。\"}]}",
-      "at": "2026-09-07"
-    },
-    "397be62ca7f161bd33be7e25eb25ca8d9ac3684c65c7505fdd07ab15724eac58": {
-      "operation": "shortlist_topics",
-      "model": "glm-4.7-flash",
-      "content": "{\"selected_topic_ids\":[1],\"reasons\":[{\"topic_id\":1,\"reason\":\"涉及AI巨头Anthropic的版权和解争议，具有高行业影响力和跨源一致性，且聚焦AI技术伦理与法律边界，符合AI强相关标准。\"}]}",
-      "at": "2026-09-07"
-    },
-    "7517ff71229a0d878428c19e6c626c9b847ee8a4055939a592eaf93a2d25b489": {
-      "operation": "daily_summary",
-      "model": "glm-4.7-flash",
-      "content": "{\"day_overview\":\"Anthropic版权和解争议引发作者不满，Hugging Face发布多款新工具与模型，包括跨语言语法模型Tarakib与TurboQuant量化指南。\",\"hot_news\":[{\"topic_id\":1,\"insight\":\"作者对版权和解分配机制表示强烈不满，认为资金分配存在争议。\",\"narrative\":\"Anthropic与作者达成的15亿美元版权和解协议于7月获得最终批准，近50万部作品的作者本应获得每部3000美元的赔偿。然而，部分作者本周收到令人惊讶的邮件，被告知其款项已被他人主张。这引发了作者群体对和解条款执行过程的不满与质疑。\",\"evaluation\":\"版权和解争议反映了AI训练数据合规性讨论的复杂性。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":72},{\"topic_id\":2,\"insight\":\"Hugging Face发布跨语言语法模型Tarakib，展示了通用语法表示的潜力。\",\"narrative\":\"Hugging Face团队在Sawtone基础表示上训练了名为Tarakib的神经语法模型，覆盖166种语言。团队在未直接训练过的28种语言上测试了该模型，发现其仍能学习到有用的词性结构。研究显示，约四分之一的稳定迁移链接跨越了书写系统，表明Sawtone的表示中包含可跨语言复用的通用语法线索。\",\"evaluation\":\"该研究为“为每种语言提供spaCy”的目标迈出了重要一步。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":67},{\"topic_id\":2,\"insight\":\"TurboQuant量化指南提供了多种量化方法的基准对比。\",\"narrative\":\"Hugging Face发布了关于TurboQuant量化的详细指南，解释了该算法的工作原理以及Qdrant在其上的增强功能。指南中包含了针对BEIR数据集上SciFact、ArguAna和NFCorpus的基准测试，比较了float32、标量、二进制和TurboQuant在召回率@10、精确率@10和nDCG@10指标上的表现。\",\"evaluation\":\"量化指南为开发者提供了实用的性能优化参考。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":67}],\"other_news\":[{\"topic_id\":2,\"insight\":\"用户测试了FWKV架构在不同模型尺寸和序列长度下的性能。\",\"narrative\":\"一位用户在Hugging Face上分享了关于FWKV架构的测试结果，对比了RWKV和Transformer架构在不同参数规模和序列长度下的表现。测试发现Transformer列的性能与模型尺寸的特定属性（如是否为64的倍数）密切相关。\",\"refs\":[4],\"mention_count\":1,\"cross_verify_score\":15},{\"topic_id\":2,\"insight\":\"发布了多种AI工具的一键安装程序。\",\"narrative\":\"Hugging Face发布了包含视频字幕工具、模型安装程序等AI工具的一键安装包，支持Windows、RunPod和Massed Compute平台。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":15}],\"core_tech\":[],\"ref_translations\":[{\"id\":1,\"zh_title\":\"作者反对出版商和代理机构对Anthropic和解协议的主张\"},{\"id\":2,\"zh_title\":\"显然语法可以不带护照旅行 🌍 我们在Sawtone上训练了新的神经语法模型Tarakib\"},{\"id\":3,\"zh_title\":\"发布了TurboQuant量化的指南：算法如何工作以及Qdrant在其上的增强\"},{\"id\":4,\"zh_title\":\"Hello HuggingFace！我测试了FWKV架构在不同尺寸和序列长度下的性能\"},{\"id\":5,\"zh_title\":\"SECourses视频字幕专业版 - Qwen3-Omni - TimeChat字幕生成器GRPO - AVoCaDO - 一键Windows、RunPod、Massed Compute安装程序\"}]}",
-      "at": "2026-09-07"
-    },
     "efd47865815b50b4724cf8b661b41c13df35962d186a22b2eb5702fc47dd9f23": {
       "operation": "shortlist_topics",
       "model": "glm-4.7-flash",
@@ -43317,119 +43284,63 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":1,\"zh_title\":\"Pro Mem Agent：基于感官感知的上下文感知前瞻性记忆长时主动辅助\"},{\"id\":3,\"zh_title\":\"面向任意测试约束的预算感知多轮自适应智能体奖励机制\"},{\"id\":4,\"zh_title\":\"Navalia：通过可验证任务合成与长时后训练推进协作智能体\"},{\"id\":8,\"zh_title\":\"Auto Red Claw：针对爪式智能体的自动化红队测试\"},{\"id\":9,\"zh_title\":\"利用自我进化实现长时终端智能体\"},{\"id\":10,\"zh_title\":\"Data Praxis：通过验证工作空间进化扩展分析任务\"},{\"id\":11,\"zh_title\":\"多智能体协作能否减少临床任务中的幻觉？\"},{\"id\":12,\"zh_title\":\"MADDIE：多智能体药物发现引擎\"},{\"id\":13,\"zh_title\":\"JAXbounce：超越低维环境的主动推理连续控制乒乓球基准\"},{\"id\":14,\"zh_title\":\"安全多智能体强化学习的漏洞分析\"},{\"id\":15,\"zh_title\":\"RAG-NIMBF：用于自动RAG配置分析的非侵入式模块化基准框架\"},{\"id\":18,\"zh_title\":\"GBClaw：用于原子晶界研究与机理发现的智能体AI框架\"},{\"id\":19,\"zh_title\":\"适体作为实验室闭环智能分子发现的沙盒\"}]}",
       "at": "2026-10-22"
+    },
+    "b3389de142632707e1200fd31634903ddf4a01164a5f65b6285119d61d0c01c3": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":20,\"topic_key\":\"Recursive Flint AI Coding Model\",\"topic_title\":\"Recursive 发布 AI 编码模型 Flint\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":21,\"topic_key\":\"OpenAI Models on Google Cloud\",\"topic_title\":\"OpenAI 模型接入 Google Cloud\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":22,\"topic_key\":\"Anthropic Claude Duet Agent\",\"topic_title\":\"Anthropic 发布 Claude Duet 代理\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":23,\"topic_key\":\"North Mini Code 1.0 Local Model\",\"topic_title\":\"本地运行 North Mini Code 1.0 模型\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":65,\"topic_key\":\"Walmart Agent Gateway Commerce\",\"topic_title\":\"沃尔玛推出 Agent Gateway 电商\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":66,\"topic_key\":\"Walmart Agent Gateway Commerce\",\"topic_title\":\"沃尔玛推出 Agent Gateway 电商\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":67,\"topic_key\":\"Anthropic Long-Term Benefit Trust\",\"topic_title\":\"Anthropic 长期受益信托\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":68,\"topic_key\":\"PHP Security Vulnerabilities\",\"topic_title\":\"PHP 安全漏洞与修复\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":69,\"topic_key\":\"OpenAI Usage Policy & Partnerships\",\"topic_title\":\"OpenAI 政策与合作伙伴\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":true},{\"candidate_id\":72,\"topic_key\":\"AI Guardrails and Cybercrime\",\"topic_title\":\"AI 防护措施与黑客攻击\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":74,\"topic_key\":\"Gemini CarPlay Integration\",\"topic_title\":\"Gemini 接入 CarPlay\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":75,\"topic_key\":\"Anthropic Announcements\",\"topic_title\":\"Anthropic 官方公告\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":true},{\"candidate_id\":76,\"topic_key\":\"Claude Opus 5.5 & Sonnet 5.5\",\"topic_title\":\"Claude Opus 5.5 与 Sonnet 5.5\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":77,\"topic_key\":\"OpenAI Acquires Orchestra Bio\",\"topic_title\":\"OpenAI 收购 Orchestra Bio\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":78,\"topic_key\":\"Meta Muse AI App Users\",\"topic_title\":\"Meta Muse AI 应用用户破千万\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":79,\"topic_key\":\"Blacksmith Startup Valuation\",\"topic_title\":\"Blacksmith 获红杉领投 C 轮\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":80,\"topic_key\":\"AI Tools for Managers\",\"topic_title\":\"AI 工具对管理者的挑战\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":81,\"topic_key\":\"ChatGPT Ads Expansion\",\"topic_title\":\"ChatGPT 广告扩展至 26 国\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":82,\"topic_key\":\"Recursive Flint AI Coding Model\",\"topic_title\":\"Recursive 发布 AI 编码模型 Flint\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":84,\"topic_key\":\"Alibaba CleverSee AI Search\",\"topic_title\":\"阿里推出 AI 搜索引擎 CleverSee\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":85,\"topic_key\":\"AI Singularity Speculation\",\"topic_title\":\"AI 终局与奥特曼观点\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":86,\"topic_key\":\"Nvidia Jensen Huang AI Regulation\",\"topic_title\":\"黄仁勋谈 AI 供应与监管\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":87,\"topic_key\":\"Personal Agent Boom\",\"topic_title\":\"Personal Agent 爆火与融资\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":88,\"topic_key\":\"Apple Music Brand Identity\",\"topic_title\":\"Apple Music 品牌重塑\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":89,\"topic_key\":\"AI Startup Drug Discovery\",\"topic_title\":\"AI 驱动的药物发现初创\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-10-22"
+    },
+    "235ba0eb6123248f750a918a424df1af4044ce441474a2bf3e35093a9542a29a": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":90,\"topic_key\":\"Nvidia DSX Pod\",\"topic_title\":\"Nvidia DSX Pod Plug-in Data Centers\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":91,\"topic_key\":\"办公Agent赛道格局\",\"topic_title\":\"办公Agent赛道格局：WorkBuddy、百度搭子、千问办公位居前三\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":92,\"topic_key\":\"OpenAI智能体逃避监管\",\"topic_title\":\"OpenAI披露智能体曾试图关闭内部监控警报\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":93,\"topic_key\":\"Anthropic招股书\",\"topic_title\":\"Anthropic招股书：营收暴涨1382%但亏损807亿美元\",\"topic_type\":\"news\",\"confidence\":0.95,\"is_pr\":false},{\"candidate_id\":94,\"topic_key\":\"Anthropic招股书\",\"topic_title\":\"Anthropic招股书：营收暴涨1382%但亏损807亿美元\",\"topic_type\":\"news\",\"confidence\":0.95,\"is_pr\":false}]}",
+      "at": "2026-10-22"
+    },
+    "ac1adab9ca623b3b903bfb8ca97d0008301ac85f72e022692314cbdee60495b6": {
+      "operation": "cluster_assignments_chunk",
+      "model": "glm-4.7-flash",
+      "content": "{\"assignments\":[{\"candidate_id\":100,\"topic_key\":\"国产视频Agent Opus\",\"topic_title\":\"国产视频Agent Opus\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":101,\"topic_key\":\"AI 搜索\",\"topic_title\":\"AI 搜索\",\"topic_type\":\"news\",\"confidence\":0.85,\"is_pr\":false},{\"candidate_id\":103,\"topic_key\":\"Anthropic IPO招股书\",\"topic_title\":\"Anthropic IPO招股书\",\"topic_type\":\"news\",\"confidence\":0.8,\"is_pr\":false},{\"candidate_id\":104,\"topic_key\":\"Meta Muse 隐私漏洞\",\"topic_title\":\"Meta Muse 隐私漏洞\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":105,\"topic_key\":\"Hugging Face 社区讨论\",\"topic_title\":\"Hugging Face 社区讨论\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false},{\"candidate_id\":106,\"topic_key\":\"Hugging Face 社区讨论\",\"topic_title\":\"Hugging Face 社区讨论\",\"topic_type\":\"news\",\"confidence\":0.7,\"is_pr\":false},{\"candidate_id\":107,\"topic_key\":\"美国AI基础设施受阻\",\"topic_title\":\"美国AI基础设施受阻\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":109,\"topic_key\":\"三星SK海力士升级中国工厂\",\"topic_title\":\"三星SK海力士升级中国工厂\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false},{\"candidate_id\":110,\"topic_key\":\"SpaceX与特斯拉合并讨论\",\"topic_title\":\"SpaceX与特斯拉合并讨论\",\"topic_type\":\"news\",\"confidence\":0.9,\"is_pr\":false}]}",
+      "at": "2026-10-22"
+    },
+    "a71bcf2280f88bb6eb3c56aa1011c6b3d1f08effd07439481d5c60bca7d07c5d": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"Walmart Agent Gateway Commerce\",\"merged_key\":\"Walmart Agent Gateway Commerce\",\"merged_title\":\"沃尔玛推出 Agent Gateway 电商\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic招股书\",\"merged_key\":\"Anthropic IPO招股书\",\"merged_title\":\"Anthropic IPO招股书\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face 社区讨论\",\"merged_key\":\"Hugging Face 社区讨论\",\"merged_title\":\"Hugging Face 社区讨论\",\"merged_type\":\"news\"},{\"from_key\":\"Recursive Flint AI Coding Model\",\"merged_key\":\"Recursive Flint AI Coding Model\",\"merged_title\":\"Recursive 发布 AI 编码模型 Flint\",\"merged_type\":\"news\"},{\"from_key\":\"single-99\",\"merged_key\":\"single-99\",\"merged_title\":\"📣 HF Viewer device farm!\",\"merged_type\":\"news\"},{\"from_key\":\"Alibaba CleverSee AI Search\",\"merged_key\":\"Alibaba CleverSee AI Search\",\"merged_title\":\"阿里推出 AI 搜索引擎 CleverSee\",\"merged_type\":\"news\"},{\"from_key\":\"办公Agent赛道格局\",\"merged_key\":\"办公Agent赛道格局\",\"merged_title\":\"办公Agent赛道格局：WorkBuddy、百度搭子、千问办公位居前三\",\"merged_type\":\"news\"},{\"from_key\":\"North Mini Code 1.0 Local Model\",\"merged_key\":\"North Mini Code 1.0 Local Model\",\"merged_title\":\"本地运行 North Mini Code 1.0 模型\",\"merged_type\":\"news\"},{\"from_key\":\"国产视频Agent Opus\",\"merged_key\":\"国产视频Agent Opus\",\"merged_title\":\"国产视频Agent Opus\",\"merged_type\":\"news\"},{\"from_key\":\"Nvidia Jensen Huang AI Regulation\",\"merged_key\":\"Nvidia Jensen Huang AI Regulation\",\"merged_title\":\"黄仁勋谈 AI 供应与监管\",\"merged_type\":\"news\"},{\"from_key\":\"美国AI基础设施受阻\",\"merged_key\":\"美国AI基础设施受阻\",\"merged_title\":\"美国AI基础设施受阻\",\"merged_type\":\"news\"},{\"from_key\":\"三星SK海力士升级中国工厂\",\"merged_key\":\"三星SK海力士升级中国工厂\",\"merged_title\":\"三星、SK 海力士升级中国工厂\",\"merged_type\":\"news\"},{\"from_key\":\"AI Guardrails and Cybercrime\",\"merged_key\":\"AI Guardrails and Cybercrime\",\"merged_title\":\"AI 防护措施与黑客攻击\",\"merged_type\":\"news\"},{\"from_key\":\"AI Tools for Managers\",\"merged_key\":\"AI Tools for Managers\",\"merged_title\":\"AI 工具对管理者的挑战\",\"merged_type\":\"news\"},{\"from_key\":\"AI Startup Drug Discovery\",\"merged_key\":\"AI Startup Drug Discovery\",\"merged_title\":\"AI 驱动的药物发现初创\",\"merged_type\":\"news\"},{\"from_key\":\"AI 搜索\",\"merged_key\":\"AI 搜索\",\"merged_title\":\"AI 搜索\",\"merged_type\":\"news\"},{\"from_key\":\"AI Singularity Speculation\",\"merged_key\":\"AI Singularity Speculation\",\"merged_title\":\"AI 终局与奥特曼观点\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Claude Duet Agent\",\"merged_key\":\"Anthropic Claude Duet Agent\",\"merged_title\":\"Anthropic 发布 Claude Duet 代理\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Announcements\",\"merged_key\":\"Anthropic Announcements\",\"merged_title\":\"Anthropic 官方公告\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Long-Term Benefit Trust\",\"merged_key\":\"Anthropic Long-Term Benefit Trust\",\"merged_title\":\"Anthropic 长期受益信托\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic IPO招股书\",\"merged_key\":\"Anthropic IPO招股书\",\"merged_title\":\"Anthropic IPO招股书\",\"merged_type\":\"news\"},{\"from_key\":\"Apple Music Brand Identity\",\"merged_key\":\"Apple Music Brand Identity\",\"merged_title\":\"Apple Music 品牌重塑\",\"merged_type\":\"news\"},{\"from_key\":\"Blacksmith Startup Valuation\",\"merged_key\":\"Blacksmith Startup Valuation\",\"merged_title\":\"Blacksmith 获红杉领投 C 轮\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT Ads Expansion\",\"merged_key\":\"ChatGPT Ads Expansion\",\"merged_title\":\"ChatGPT 广告扩展至 26 国\",\"merged_type\":\"news\"},{\"from_key\":\"Claude Opus 5.5 & Sonnet 5.5\",\"merged_key\":\"Claude Opus 5.5 & Sonnet 5.5\",\"merged_title\":\"Claude Opus 5.5 与 Sonnet 5.5\",\"merged_type\":\"news\"},{\"from_key\":\"Gemini CarPlay Integration\",\"merged_key\":\"Gemini CarPlay Integration\",\"merged_title\":\"Gemini 接入 CarPlay\",\"merged_type\":\"news\"},{\"from_key\":\"single-95\",\"merged_key\":\"single-95\",\"merged_title\":\"Hugging Face 掌门人呛声 Netflix\",\"merged_type\":\"news\"},{\"from_key\":\"single-98\",\"merged_key\":\"single-98\",\"merged_title\":\"I keep both temperature\",\"merged_type\":\"news\"},{\"from_key\":\"Meta Muse 隐私漏洞\",\"merged_key\":\"Meta Muse 隐私漏洞\",\"merged_title\":\"Meta Muse 隐私漏洞\",\"merged_type\":\"news\"},{\"from_key\":\"Meta Muse AI App Users\",\"merged_key\":\"Meta Muse AI App Users\",\"merged_title\":\"Meta Muse AI 应用用户破千万\",\"merged_type\":\"news\"},{\"from_key\":\"single-96\",\"merged_key\":\"single-96\",\"merged_title\":\"Mistral 发布 Voxtral 3 语音\",\"merged_type\":\"news\"},{\"from_key\":\"Nvidia DSX Pod\",\"merged_key\":\"Nvidia DSX Pod\",\"merged_title\":\"Nvidia DSX Pod Plug-in Data Centers\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Models on Google Cloud\",\"merged_key\":\"OpenAI Models on Google Cloud\",\"merged_title\":\"OpenAI 模型接入 Google Cloud\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Acquires Orchestra Bio\",\"merged_key\":\"OpenAI Acquires Orchestra Bio\",\"merged_title\":\"OpenAI 收购 Orchestra Bio\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Usage Policy & Partnerships\",\"merged_key\":\"OpenAI Usage Policy & Partnerships\",\"merged_title\":\"OpenAI 政策与合作伙伴\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI智能体逃避监管\",\"merged_key\":\"OpenAI智能体逃避监管\",\"merged_title\":\"OpenAI披露智能体曾试图关闭内部监控警报\",\"merged_type\":\"news\"},{\"from_key\":\"Personal Agent Boom\",\"merged_key\":\"Personal Agent Boom\",\"merged_title\":\"Personal Agent 爆火与融资\",\"merged_type\":\"news\"},{\"from_key\":\"PHP Security Vulnerabilities\",\"merged_key\":\"PHP Security Vulnerabilities\",\"merged_title\":\"PHP 安全漏洞与修复\",\"merged_type\":\"news\"},{\"from_key\":\"single-97\",\"merged_key\":\"single-97\",\"merged_title\":\"Same base model. Same\",\"merged_type\":\"news\"},{\"from_key\":\"SpaceX与特斯拉合并讨论\",\"merged_key\":\"SpaceX与特斯拉合并讨论\",\"merged_title\":\"SpaceX与特斯拉合并讨论\",\"merged_type\":\"news\"}]}",
+      "at": "2026-10-22"
+    },
+    "210e1909710a7813b6edd2ba9b216296a7bd983c76abf1745d66f4e4511f299e": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"Anthropic IPO招股书\",\"merged_key\":\"Anthropic IPO招股书\",\"merged_title\":\"Anthropic IPO招股书\",\"merged_type\":\"news\"},{\"from_key\":\"Walmart Agent Gateway Commerce\",\"merged_key\":\"Walmart Agent Gateway Commerce\",\"merged_title\":\"沃尔玛推出 Agent Gateway 电商\",\"merged_type\":\"news\"},{\"from_key\":\"Hugging Face 社区讨论\",\"merged_key\":\"Hugging Face 社区讨论\",\"merged_title\":\"Hugging Face 社区讨论\",\"merged_type\":\"news\"},{\"from_key\":\"Recursive Flint AI Coding Model\",\"merged_key\":\"Recursive Flint AI Coding Model\",\"merged_title\":\"Recursive 发布 AI 编码模型 Flint\",\"merged_type\":\"news\"},{\"from_key\":\"single-99\",\"merged_key\":\"single-99\",\"merged_title\":\"📣 HF Viewer device farm!\",\"merged_type\":\"news\"},{\"from_key\":\"Alibaba CleverSee AI Search\",\"merged_key\":\"Alibaba CleverSee AI Search\",\"merged_title\":\"阿里推出 AI 搜索引擎 CleverSee\",\"merged_type\":\"news\"},{\"from_key\":\"办公Agent赛道格局\",\"merged_key\":\"办公Agent赛道格局\",\"merged_title\":\"办公Agent赛道格局：WorkBuddy、百度搭子、千问办公位居前三\",\"merged_type\":\"news\"},{\"from_key\":\"North Mini Code 1.0 Local Model\",\"merged_key\":\"North Mini Code 1.0 Local Model\",\"merged_title\":\"本地运行 North Mini Code 1.0 模型\",\"merged_type\":\"news\"},{\"from_key\":\"国产视频Agent Opus\",\"merged_key\":\"国产视频Agent Opus\",\"merged_title\":\"国产视频Agent Opus\",\"merged_type\":\"news\"},{\"from_key\":\"Nvidia Jensen Huang AI Regulation\",\"merged_key\":\"Nvidia Jensen Huang AI Regulation\",\"merged_title\":\"黄仁勋谈 AI 供应与监管\",\"merged_type\":\"news\"},{\"from_key\":\"美国AI基础设施受阻\",\"merged_key\":\"美国AI基础设施受阻\",\"merged_title\":\"美国AI基础设施受阻\",\"merged_type\":\"news\"},{\"from_key\":\"三星SK海力士升级中国工厂\",\"merged_key\":\"三星SK海力士升级中国工厂\",\"merged_title\":\"三星、SK 海力士升级中国工厂\",\"merged_type\":\"news\"},{\"from_key\":\"AI Guardrails and Cybercrime\",\"merged_key\":\"AI Guardrails and Cybercrime\",\"merged_title\":\"AI 防护措施与黑客攻击\",\"merged_type\":\"news\"},{\"from_key\":\"AI Tools for Managers\",\"merged_key\":\"AI Tools for Managers\",\"merged_title\":\"AI 工具对管理者的挑战\",\"merged_type\":\"news\"},{\"from_key\":\"AI Startup Drug Discovery\",\"merged_key\":\"AI Startup Drug Discovery\",\"merged_title\":\"AI 驱动的药物发现初创\",\"merged_type\":\"news\"},{\"from_key\":\"AI 搜索\",\"merged_key\":\"AI 搜索\",\"merged_title\":\"AI 搜索\",\"merged_type\":\"news\"},{\"from_key\":\"AI Singularity Speculation\",\"merged_key\":\"AI Singularity Speculation\",\"merged_title\":\"AI 终局与奥特曼观点\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Claude Duet Agent\",\"merged_key\":\"Anthropic Claude Duet Agent\",\"merged_title\":\"Anthropic 发布 Claude Duet 代理\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Announcements\",\"merged_key\":\"Anthropic Announcements\",\"merged_title\":\"Anthropic 官方公告\",\"merged_type\":\"news\"},{\"from_key\":\"Anthropic Long-Term Benefit Trust\",\"merged_key\":\"Anthropic Long-Term Benefit Trust\",\"merged_title\":\"Anthropic 长期受益信托\",\"merged_type\":\"news\"}]}",
+      "at": "2026-10-22"
+    },
+    "06379498ff63a43fdd2df4442223aee296917334036751b35adb05a3f20e4ae4": {
+      "operation": "merge_topic_rows",
+      "model": "glm-4.7-flash",
+      "content": "{\"mapping\":[{\"from_key\":\"Apple Music Brand Identity\",\"merged_key\":\"Apple Music 品牌重塑\",\"merged_title\":\"Apple Music 品牌重塑\",\"merged_type\":\"news\"},{\"from_key\":\"Blacksmith Startup Valuation\",\"merged_key\":\"Blacksmith 获红杉领投 C 轮\",\"merged_title\":\"Blacksmith 获红杉领投 C 轮\",\"merged_type\":\"news\"},{\"from_key\":\"ChatGPT Ads Expansion\",\"merged_key\":\"ChatGPT 广告扩展至 26 国\",\"merged_title\":\"ChatGPT 广告扩展至 26 国\",\"merged_type\":\"news\"},{\"from_key\":\"Claude Opus 5.5 & Sonnet 5.5\",\"merged_key\":\"Claude Opus 5.5 与 Sonnet 5.5\",\"merged_title\":\"Claude Opus 5.5 与 Sonnet 5.5\",\"merged_type\":\"news\"},{\"from_key\":\"Gemini CarPlay Integration\",\"merged_key\":\"Gemini 接入 CarPlay\",\"merged_title\":\"Gemini 接入 CarPlay\",\"merged_type\":\"news\"},{\"from_key\":\"single-95\",\"merged_key\":\"Hugging Face 掌门人呛声 Netflix\",\"merged_title\":\"Hugging Face 掌门人呛声 Netflix\",\"merged_type\":\"news\"},{\"from_key\":\"single-98\",\"merged_key\":\"I keep both temperature\",\"merged_title\":\"I keep both temperature\",\"merged_type\":\"news\"},{\"from_key\":\"Meta Muse 隐私漏洞\",\"merged_key\":\"Meta Muse 隐私漏洞\",\"merged_title\":\"Meta Muse 隐私漏洞\",\"merged_type\":\"news\"},{\"from_key\":\"Meta Muse AI App Users\",\"merged_key\":\"Meta Muse AI 应用用户破千万\",\"merged_title\":\"Meta Muse AI 应用用户破千万\",\"merged_type\":\"news\"},{\"from_key\":\"single-96\",\"merged_key\":\"Mistral 发布 Voxtral 3 语音\",\"merged_title\":\"Mistral 发布 Voxtral 3 语音\",\"merged_type\":\"news\"},{\"from_key\":\"Nvidia DSX Pod\",\"merged_key\":\"Nvidia DSX Pod Plug-in Data Centers\",\"merged_title\":\"Nvidia DSX Pod Plug-in Data Centers\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Models on Google Cloud\",\"merged_key\":\"OpenAI 模型接入 Google Cloud\",\"merged_title\":\"OpenAI 模型接入 Google Cloud\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Acquires Orchestra Bio\",\"merged_key\":\"OpenAI 收购 Orchestra Bio\",\"merged_title\":\"OpenAI 收购 Orchestra Bio\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI Usage Policy & Partnerships\",\"merged_key\":\"OpenAI 政策与合作伙伴\",\"merged_title\":\"OpenAI 政策与合作伙伴\",\"merged_type\":\"news\"},{\"from_key\":\"OpenAI智能体逃避监管\",\"merged_key\":\"OpenAI披露智能体曾试图关闭内部监控警报\",\"merged_title\":\"OpenAI披露智能体曾试图关闭内部监控警报\",\"merged_type\":\"news\"},{\"from_key\":\"Personal Agent Boom\",\"merged_key\":\"Personal Agent 爆火与融资\",\"merged_title\":\"Personal Agent 爆火与融资\",\"merged_type\":\"news\"},{\"from_key\":\"PHP Security Vulnerabilities\",\"merged_key\":\"PHP 安全漏洞与修复\",\"merged_title\":\"PHP 安全漏洞与修复\",\"merged_type\":\"news\"},{\"from_key\":\"single-97\",\"merged_key\":\"Same base model. Same\",\"merged_title\":\"Same base model. Same\",\"merged_type\":\"news\"},{\"from_key\":\"SpaceX与特斯拉合并讨论\",\"merged_key\":\"SpaceX与特斯拉合并讨论\",\"merged_title\":\"SpaceX与特斯拉合并讨论\",\"merged_type\":\"news\"}]}",
+      "at": "2026-10-22"
+    },
+    "bc0d45fc8da2cb5ee68b9fe5b5409c8004d1107de67c4d96680058435b16a783": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[87,22,74,75,78,21,77,84,69,96],\"reasons\":[{\"topic_id\":87,\"reason\":\"Anthropic IPO招股书披露，是AI行业里程碑事件，兼具高权威性与重大产业影响。\"},{\"topic_id\":22,\"reason\":\"Anthropic发布Claude Duet代理，代表AI代理技术的重要进展，跨源验证度高。\"},{\"topic_id\":74,\"reason\":\"Meta Muse用户破千万，验证AI应用在消费端的爆发力与市场接受度。\"},{\"topic_id\":75,\"reason\":\"Blacksmith获红杉领投C轮，体现资本对AI Agent赛道的持续看好。\"},{\"topic_id\":78,\"reason\":\"阿里推出AI搜索引擎CleverSee，反映国内巨头在AI搜索领域的战略布局。\"},{\"topic_id\":21,\"reason\":\"OpenAI模型接入Google Cloud，标志着云厂商与AI模型厂商的深度绑定。\"},{\"topic_id\":77,\"reason\":\"ChatGPT广告扩展至26国，预示AI商业化变现进入新阶段。\"},{\"topic_id\":84,\"reason\":\"Nvidia推出DSX Pod插件，推动AI基础设施向模块化、易部署方向发展。\"},{\"topic_id\":69,\"reason\":\"AI防护措施与黑客攻击，关注AI安全与对抗性研究，具有行业警示意义。\"},{\"topic_id\":96,\"reason\":\"Hugging Face社区讨论，反映开源社区对AI技术趋势的实时反馈与关注。\"}]}",
+      "at": "2026-10-22"
+    },
+    "e331e29f7a255614198ca9fa21706945cdbaa272a46e7e2682883ba199a74597": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"Anthropic IPO招股书曝光，营收暴涨但巨额亏损与算力成本引发关注；Meta Muse用户破千万，阿里与腾讯云厂商加速布局AI原生搜索；OpenAI模型接入Google Cloud，ChatGPT广告扩展至全球多国；多篇关于多智能体系统与安全性的研究论文发布。\",\"hot_news\":[{\"topic_id\":87,\"insight\":\"Anthropic招股书显示营收暴涨1382%，但半年亏损807亿美元，算力成本压力巨大。\",\"narrative\":\"《华尔街日报》披露的Anthropic IPO招股书草案揭示了公司光鲜增长背后的巨大成本压力。截至2026年6月30日的六个月里，Anthropic营收约163亿美元，同比暴涨1382%，但同期算力与基础设施支出近90亿美元，已超过去年全年73亿的水平。更令人震惊的是，上半年净亏损高达807亿美元，其中720亿来自会计调整。招股书还披露，未来七到十年内，Anthropic需根据云计算协议支付约4500亿美元，且大部分交易不可取消，基础设施总成本已突破6000亿美元。这表明公司在高速扩张的同时，正面临严峻的算力成本与资源卡脖子问题。\",\"evaluation\":\"Anthropic的财务状况反映了当前AI行业高速增长与巨额投入并存的矛盾，算力成本已成为制约发展的关键瓶颈。\",\"refs\":[8,9],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":74,\"insight\":\"Meta Muse AI应用用户突破千万，购物成为核心活跃场景。\",\"narrative\":\"Meta在第三季度财报电话会议上确认，其AI应用Muse已获得超过1000万用户，验证了市场对其AI产品的接受度。值得注意的是，约25%的注册用户现在每天都会使用Muse，这显著提升了用户留存率。更令人意外的是，超过四分之一的活跃用户通过AI代理进行购物，平均客单价超过200美元。这一数据表明，Muse不仅是一个聊天工具，更正在成为用户日常消费决策的重要助手。\",\"evaluation\":\"Muse的高用户粘性与高客单价证明了AI代理在电商场景中的巨大潜力，Meta正成功将AI技术转化为实际商业价值。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":69},{\"topic_id\":78,\"insight\":\"阿里推出AI原生搜索引擎CleverSee，云厂商AI搜索基建战升级。\",\"narrative\":\"阿里云宣布将原IQS信息查询服务和CleverSee合并，推出全新的“CleverSee”AI原生智能信息检索引擎。该产品深度融合大语言模型、多模态模型、意图推理及搜索工程能力，为企业提供搜索、问答一体化的开箱即用平台。CleverSee主要包含三大子产品：联网搜问、垂域搜问和企业内搜。与此同时，腾讯云也对外开放了“元宝搜索”，字节火山引擎推出了Viking AI搜索。这标志着国内云厂商在企业端AI搜索的军备竞赛已进入实质落地阶段。\",\"evaluation\":\"阿里与腾讯云的AI搜索布局，反映了云服务商正从基础设施提供商向AI应用生态构建者转型，争夺企业级AI服务市场。\",\"refs\":[7],\"mention_count\":1,\"cross_verify_score\":61},{\"topic_id\":21,\"insight\":\"OpenAI模型接入Google Cloud，GPT模型将进入Gemini Model Garden。\",\"narrative\":\"OpenAI与Google Cloud达成合作，将OpenAI的前沿模型和Codex工作流引入Google Cloud的Gemini Model Garden，用户可通过Google Cloud Marketplace访问。此外，GPT模型还将出现在Google的AI编码工具Antigravity中。这一合作打破了Google Cloud对自家Gemini模型的依赖，为用户提供了更多选择。对于企业客户和AI爱好者来说，OpenAI的最新模型将在未来几周内加入Google的“模型花园”，与Gemini、Mistral、Llama等模型并列。\",\"evaluation\":\"OpenAI与Google Cloud的合作是AI模型生态开放化的重要一步，有助于推动AI技术在更多平台和场景中的应用。\",\"refs\":[13,17],\"mention_count\":2,\"cross_verify_score\":60}],\"other_news\":[{\"topic_id\":77,\"insight\":\"ChatGPT广告扩展至26个新国家，超10万广告主已使用平台。\",\"narrative\":\"OpenAI宣布ChatGPT广告业务扩展至全球26个新国家，目前已有超过10万名广告主使用该平台。广告主可以从本地企业到全球品牌，在用户探索、比较和购买决策的过程中触达目标受众。\",\"refs\":[19],\"mention_count\":1,\"cross_verify_score\":59},{\"topic_id\":75,\"insight\":\"Blacksmith获红杉领投C轮，估值达10亿美元。\",\"narrative\":\"Blacksmith宣布完成6600万美元C轮融资，由红杉资本领投，公司估值达到10亿美元。Blacksmith是一个帮助公司更高效构建和测试软件的平台，包括AI生成的代码。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":69},{\"topic_id\":22,\"insight\":\"Anthropic发布Claude Duet AI代理，面向专业人士和小企业。\",\"narrative\":\"Anthropic推出了Claude Duet，这是一个面向专业人士和小企业主的AI代理，目前处于研究预览阶段。Claude Duet是Anthropic对Meta Muse和OpenAI Dots的竞争产品。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":70},{\"topic_id\":69,\"insight\":\"AI防护措施难以阻止黑客攻击，犯罪分子利用智能体绕过模型安全限制。\",\"narrative\":\"CrowdStrike的研究显示，随着AI在恶意黑客和防御者中的普及，即使是相对简单的网络犯罪分子也开始将智能体AI纳入其攻击活动，并成功绕过模型的安全限制。研究团队分析了四个此前未报告的威胁组织在5月至8月间的AI基础设施。\",\"refs\":[18],\"mention_count\":1,\"cross_verify_score\":59},{\"topic_id\":84,\"insight\":\"黄仁勋提出欧洲AI经济愿景，强调模块化数据中心与物理AI。\",\"narrative\":\"在Nvidia柏林全球大会上，黄仁勋概述了欧洲未来的AI经济愿景，包括机器人、AI代理和模块化数据中心。他强调，要参与AI经济，不能只是消费AI，更要生产AI。\",\"refs\":[20],\"mention_count\":1,\"cross_verify_score\":59}],\"core_tech\":[{\"topic_id\":4,\"title\":\"ReuF2F: Benchmarking Coding Agents\",\"summary\":\"该论文提出了ReuF2F基准，用于评估编码代理在形式化本科研究问题上的表现，强调可靠验证在AI系统解决开放研究问题中的重要性。\",\"refs\":[5]},{\"topic_id\":19,\"title\":\"Vulnerability Analysis for Safe Multi-Agent Reinforcement\",\"summary\":\"论文研究了安全多智能体强化学习（SMARL）在推理时的脆弱性，提出了一种名为MinMax Attack的攻击框架，用于评估和防御针对SMARL的观察攻击。\",\"refs\":[6]},{\"topic_id\":28,\"title\":\"Automated Multi-Agent Organization Design\",\"summary\":\"该研究探讨了自动多智能体组织设计，从架构搜索转向组织学习，旨在解决自动生成的多智能体结构何时具有功能性的责任划分。\",\"refs\":[14]},{\"topic_id\":35,\"title\":\"Does Multi-Agent Collaboration Reduce Hallucination\",\"summary\":\"论文质疑了多智能体协作在临床任务中减少幻觉的普遍性，指出协作性能提升并不等同于系统更可信，需要评估推理过程而非仅关注最终答案。\",\"refs\":[15]},{\"topic_id\":47,\"title\":\"MaD-RSI: Model-as-Data for Recursive Self-Improvement\",\"summary\":\"该研究提出了MaD-RSI方法，通过模型作为数据（Model-as-Data）实现智能体Harness的递归自我改进，旨在发现针对特定大语言模型能力的定制化Harness。\",\"refs\":[16]},{\"topic_id\":2,\"title\":\"JAXbounce: A Continuous-Control Pong-Like Benchmark\",\"summary\":\"论文介绍了JAXbounce基准，这是一个用于评估离散低维环境之外主动推理的连续控制乒乓球游戏基准，支持状态向量和像素网格表示。\",\"refs\":[4]}],\"ref_translations\":[{\"id\":1,\"zh_title\":\"Anthropic推出Claude Duet AI代理，与Meta Muse和OpenAI Dots竞争\"},{\"id\":2,\"zh_title\":\"Meta称Muse用户超1000万，购物是主要活动\"},{\"id\":3,\"zh_title\":\"Blacksmith获红杉领投C轮，估值达10亿美元\"},{\"id\":4,\"zh_title\":\"JAXbounce: 用于离散低维环境之外主动推理的连续控制乒乓球基准\"},{\"id\":5,\"zh_title\":\"ReuF2F: 在形式化本科研究问题上评估编码代理\"},{\"id\":6,\"zh_title\":\"安全多智能体强化学习的脆弱性分析\"},{\"id\":7,\"zh_title\":\"阿里推出全新AI搜索引擎“CleverSee”，云厂商打响AI搜索基建战\"},{\"id\":8,\"zh_title\":\"Anthropic招股书拆解:营收暴涨1382%，半年却亏掉807亿美元，算力账单压顶\"},{\"id\":9,\"zh_title\":\"Anthropic招股书曝光：半年营收 163 亿却亏 807 亿，算力枷锁越套越紧\"},{\"id\":10,\"zh_title\":\"Anthropic招股书显示80亿美元亏损\"},{\"id\":11,\"zh_title\":\"is officialy humanslop\"},{\"id\":12,\"zh_title\":\"So... im on vacation for 5 more days and I just realized... my hotel doesent have a grounding port\"},{\"id\":13,\"zh_title\":\"OpenAI模型接入Google Cloud\"},{\"id\":14,\"zh_title\":\"自动多智能体组织设计：从架构搜索到组织学习\"},{\"id\":15,\"zh_title\":\"多智能体协作是否减少临床任务中的幻觉？\"},{\"id\":16,\"zh_title\":\"MaD-RSI: 用于智能体Harness递归自我改进的模型作为数据\"},{\"id\":17,\"zh_title\":\"OpenAI最新AI模型将进入Google Cloud和Antigravity\"},{\"id\":18,\"zh_title\":\"AI防护措施无法阻止黑客攻击\"},{\"id\":19,\"zh_title\":\"ChatGPT广告扩展至26个新国家，超10万广告主已使用平台\"},{\"id\":20,\"zh_title\":\"黄仁勋关于欧洲插拔式数据中心的愿景\"}]}",
+      "at": "2026-10-22"
+    },
+    "6e2638bd346279b8f81d5d6fd59a93ca29d022b248e0ff8839ca879524713ea5": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":11,\"zh_title\":\"正式成为人类垃圾\"},{\"id\":12,\"zh_title\":\"我还有5天假期，刚发现酒店没有接地孔 😟，电脑电了我一下\"}]}",
+      "at": "2026-10-22"
     }
   },
   "published": {
-    "https://36kr.com/p/3865691912616833": {
-      "title": "巨头打响Context之战，重构AI护城河",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://36kr.com/p/3865676527785223": {
-      "title": "中国团队拿下ICRA'26最佳论文：Agentic Coding驱动工业制造通往自主通用智能",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://www.anthropic.com/news/introducing-claude-tag": {
-      "title": "ProductJun 23, 2026Introducing Claude TagClaude Tag is a new way for teams to work with Claude.",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments/": {
-      "title": "Oracle’s 21,000 layoffs help drive its debt-fueled AI investments",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://news.aibase.com/zh/news/29091": {
-      "title": "甲骨文一年裁员2. 1 万人：AI转型的账单，全球科技巨头都在付甲骨文2026财年裁员2.1万人，员工总数从16.2万降至14.1万，降幅达13%。为此公司支付了高达125亿元的重组成本，远超往年。此次大规模调整，反映出AI时代下科技巨头面临的巨大成本压力与战略转型阵痛。 8 小时前 14.7K",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://openai.com/index/gpt-5-immunology-mystery": {
-      "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://36kr.com/p/3865676543972360": {
-      "title": "刚刚，物理世界的Anthropic现身，团队来自中国",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://36kr.com/p/3865591032337671": {
-      "title": "具身智能芯片，先卷疯了",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.20621": {
-      "title": "PEAR: Permutation-Equivariant Adaptive Routing Multi-Agent Debate",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.20629": {
-      "title": "Specialize Roles, Mix Deployments: Pushing the Cost-Accuracy Frontier of LLM Agent Teams",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.20700": {
-      "title": "Machine-Coached Policy Revision in Adaptive Agent-Based Regulatory Simulation: A Controller-Level Contestability Layer",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.20699": {
-      "title": "Structural Distinguishability of Static and Adaptive Policy Regimes in Agent-Based Regulatory Simulation",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.20585": {
-      "title": "Turning Intent into Specifications: A Benchmark and an Interactive User-Assistant Agent",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://arxiv.org/abs/2606.20669": {
-      "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://36kr.com/p/3865665208095753": {
-      "title": "大模型一年内就会吞噬 Harness，Google AI Studio负责人：深耕垂直领域才是创业公司唯一生路",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://news.aibase.com/zh/news/29095": {
-      "title": "火山引擎发布豆包2.1Pro:日常功能确认免费，将推专业版办公模式2026年6月23日火山引擎FORCE大会，字节跳动发布豆包大模型重大升级：推出2.1Pro，聚焦编程、智能体与视觉语言模型；同时发布视频生成模型Seedance 2.5及2.04K版、图像生成模型Seedream 5.0 Pro、音频生成模型1.0。2.1Pro已开放API并接入扣子生态。火山引擎总裁谭待表示，豆包面向用户的日常基础功能（如搜索问答）将持续免费。 7 小时前 12.7K",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://news.aibase.com/zh/news/29085": {
-      "title": "字节跳动火山引擎 2026 大会重磅发布：Seedance 2.5 直出 30 秒视频，豆包 2.1 Pro 对标 Opus 4.6字节跳动发布视频生成模型Seedance2.5，支持单次直出30秒完整视频，标志视频生成迈入长序列时代。同时推出多模态模型豆包Seed2.1及图像模型Seeddream5.0，提升其在AI领域的竞争力。 12 小时前 33.6K",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://www.qbitai.com/2026/06/437503.html": {
-      "title": "刚刚，豆包2.1发布！Agent自己跑18个小时搞定芯片设计代码",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://blogs.nvidia.com/blog/nvidia-agent-toolkit-open-models-tools-skills-secure-runtime-ai-agents/": {
-      "title": "How Businesses Are Building Specialized AI They Can Trust",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://techcrunch.com/2026/06/23/fika-jobs-raises-4m-to-build-a-video-first-hiring-platform-where-ai-agents-interview-candidates/": {
-      "title": "Fika Jobs raises $4M to build a video-first hiring platform where AI agents interview candidates",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://openai.com/index/helping-build-shared-standards-for-advanced-ai": {
-      "title": "Helping build shared standards for advanced AI",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "https://news.aibase.com/zh/news/29086": {
-      "title": "首个高考志愿AI测评发布:千问多项表现超过人类志愿咨询师国内首份《高考志愿AI测评基准》报告发布，由友松实验室独立完成，以千问高考志愿填报Agent为对象。结果显示，千问在稳定性、精确性、结构化表达与效率上已达人类咨询师水平。该研究体现AI在教育决策场景的评估进展。 11 小时前 17.3K",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
     "https://www.theverge.com/tech/955831/figma-code-design-tools-config-2026-announcements": {
       "title": "Figma now has AI motion graphics and shader tools",
       "at": "2026-06-25",
@@ -52814,119 +52725,94 @@
       "title": "国模Agent第一！MiniMax爆改Flash战力，全时段大肥鱼谷价",
       "at": "2026-10-21",
       "edition": "morning"
+    },
+    "https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent": {
+      "title": "Anthropic takes on Muse with Claude Duet, its new AI agent",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/10/21/meta-says-muse-has-over-10m-users-with-shopping-a-top-activity/": {
+      "title": "Meta says Muse has over 10M users, with shopping a top activity",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://techcrunch.com/2026/10/21/blacksmith-hits-unicorn-valuation-after-sequoia-leads-series-c/": {
+      "title": "Blacksmith hits unicorn valuation after Sequoia leads Series C",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2610.28203": {
+      "title": "JAXbounce: A Continuous-Control Pong-Like Benchmark for Active Inference Beyond Low Dimensional Environments",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2610.27046": {
+      "title": "ReuF2F: Benchmarking Coding Agents on Formalized Undergraduate Research Problems",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2610.27293": {
+      "title": "Vulnerability Analysis for Safe Multi-Agent Reinforcement",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://aitntnews.com/newDetail.html?newId=30464": {
+      "title": "阿里推出全新AI搜索引擎“CleverSee”，云厂商打响AI搜索基建战",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://news.aibase.com/zh/news/31780": {
+      "title": "Anthropic 招股书拆解:营收暴涨1382%，半年却亏掉807亿美元，算力账单压顶《华尔街日报》看到Anthropic的IPO招股书草案：公司收入狂飙但亏损惊人。截至6月30日六个月营收约163亿美元，较上年同期11亿美元暴涨1382%；同期算力与基础设施支出近90亿美元。生意高速扩张，烧钱更快，算力成为最大压力，招股书呈现增长与巨额成本并存的矛盾画像。 8 小时前 11.1K",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://news.aibase.com/zh/news/31778": {
+      "title": "Anthropic 招股书曝光：半年营收 163 亿却亏 807 亿，算力枷锁越套越紧《华尔街日报》看到的IPO招股书草案显示，Anthropic增速光鲜背后成本高企：截至6月30日半年营收约163亿美元，同比由11亿暴涨1382%；同期算力与基础设施开支近90亿美元，2025年同期仅23亿，已超去年全年73亿。上半年净亏损807亿美元，亏损压力巨大。 8 小时前 9.8K",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://openai.com/index/openai-models-google-cloud": {
+      "title": "OpenAI models are coming to Google Cloud",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2610.27531": {
+      "title": "Automated Multi-Agent Organization Design: From Architecture Search to Organizational Learning",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2610.27027": {
+      "title": "Does Multi-Agent Collaboration Reduce Hallucination in Clinical Tasks?",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://arxiv.org/abs/2610.28201": {
+      "title": "MaD-RSI: Model-as-Data for Recursive Self-Improvement of Agent Harnesses",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://arstechnica.com/ai/2026/10/openais-latest-ai-models-are-coming-to-google-cloud-and-antigravity/": {
+      "title": "OpenAI's latest AI models are coming to Google Cloud and Antigravity",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://www.wired.com/story/ai-guardrails-arent-stopping-criminal-hackers/": {
+      "title": "AI Guardrails Aren’t Stopping Criminal Hackers",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://openai.com/index/chatgpt-ads-expands-26-new-countries": {
+      "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "https://www.wired.com/story/jensen-huangs-vision-for-europe-runs-on-plug-in-data-centers/": {
+      "title": "Jensen Huang’s Vision for Europe Runs on Plug-In Data Centers",
+      "at": "2026-10-22",
+      "edition": "morning"
     }
   },
   "publishedSignatures": {
-    "ad6122b4c3851b2d": {
-      "title": "巨头打响Context之战，重构AI护城河",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "3b35bab458d2b76e": {
-      "title": "中国团队拿下ICRA'26最佳论文：Agentic Coding驱动工业制造通往自主通用智能",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "282d5be501ce4ca0": {
-      "title": "ProductJun 23, 2026Introducing Claude TagClaude Tag is a new way for teams to work with Claude.",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "7e8235b9d026ba5e": {
-      "title": "Oracle’s 21,000 layoffs help drive its debt-fueled AI investments",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "d074c92b2aae827f": {
-      "title": "甲骨文一年裁员2. 1 万人：AI转型的账单，全球科技巨头都在付甲骨文2026财年裁员2.1万人，员工总数从16.2万降至14.1万，降幅达13%。为此公司支付了高达125亿元的重组成本，远超往年。此次大规模调整，反映出AI时代下科技巨头面临的巨大成本压力与战略转型阵痛。 8 小时前 14.7K",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "6f101923624ec3a4": {
-      "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "83661efaef28925e": {
-      "title": "刚刚，物理世界的Anthropic现身，团队来自中国",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "d6014ffbdd2f0bd3": {
-      "title": "具身智能芯片，先卷疯了",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "98af29f9d52a901c": {
-      "title": "PEAR: Permutation-Equivariant Adaptive Routing Multi-Agent Debate",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "57ab82273a01c3e9": {
-      "title": "Specialize Roles, Mix Deployments: Pushing the Cost-Accuracy Frontier of LLM Agent Teams",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "83e5823f24b2baa4": {
-      "title": "Machine-Coached Policy Revision in Adaptive Agent-Based Regulatory Simulation: A Controller-Level Contestability Layer",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "05fc22555582dafd": {
-      "title": "Structural Distinguishability of Static and Adaptive Policy Regimes in Agent-Based Regulatory Simulation",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "fcbad5d6c0b34bf4": {
-      "title": "Turning Intent into Specifications: A Benchmark and an Interactive User-Assistant Agent",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "599d64995df7a795": {
-      "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "d7e2eb8e7e79832c": {
-      "title": "大模型一年内就会吞噬 Harness，Google AI Studio负责人：深耕垂直领域才是创业公司唯一生路",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "0c732618839db4d7": {
-      "title": "火山引擎发布豆包2.1Pro:日常功能确认免费，将推专业版办公模式2026年6月23日火山引擎FORCE大会，字节跳动发布豆包大模型重大升级：推出2.1Pro，聚焦编程、智能体与视觉语言模型；同时发布视频生成模型Seedance 2.5及2.04K版、图像生成模型Seedream 5.0 Pro、音频生成模型1.0。2.1Pro已开放API并接入扣子生态。火山引擎总裁谭待表示，豆包面向用户的日常基础功能（如搜索问答）将持续免费。 7 小时前 12.7K",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "a9ea03c4ff9b861b": {
-      "title": "字节跳动火山引擎 2026 大会重磅发布：Seedance 2.5 直出 30 秒视频，豆包 2.1 Pro 对标 Opus 4.6字节跳动发布视频生成模型Seedance2.5，支持单次直出30秒完整视频，标志视频生成迈入长序列时代。同时推出多模态模型豆包Seed2.1及图像模型Seeddream5.0，提升其在AI领域的竞争力。 12 小时前 33.6K",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "47546287f4554249": {
-      "title": "刚刚，豆包2.1发布！Agent自己跑18个小时搞定芯片设计代码",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "c4bc35e800f6b74f": {
-      "title": "How Businesses Are Building Specialized AI They Can Trust",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "a67b6dba8231606e": {
-      "title": "Fika Jobs raises $4M to build a video-first hiring platform where AI agents interview candidates",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "6bc389bfba0f7f48": {
-      "title": "Helping build shared standards for advanced AI",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
-    "0dd1bbec6c71f5d8": {
-      "title": "首个高考志愿AI测评发布:千问多项表现超过人类志愿咨询师国内首份《高考志愿AI测评基准》报告发布，由友松实验室独立完成，以千问高考志愿填报Agent为对象。结果显示，千问在稳定性、精确性、结构化表达与效率上已达人类咨询师水平。该研究体现AI在教育决策场景的评估进展。 11 小时前 17.3K",
-      "at": "2026-06-24",
-      "edition": "morning"
-    },
     "fb4394a161585d9d": {
       "title": "Figma now has AI motion graphics and shader tools",
       "at": "2026-06-25",
@@ -62191,120 +62077,95 @@
       "title": "国模Agent第一！MiniMax爆改Flash战力，全时段大肥鱼谷价",
       "at": "2026-10-21",
       "edition": "morning"
+    },
+    "54ad136b539bf931": {
+      "title": "Anthropic takes on Muse with Claude Duet, its new AI agent",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "7c3577674690835f": {
+      "title": "Meta says Muse has over 10M users, with shopping a top activity",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "adf0471aee538673": {
+      "title": "Blacksmith hits unicorn valuation after Sequoia leads Series C",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "22cee233d5ec3953": {
+      "title": "JAXbounce: A Continuous-Control Pong-Like Benchmark for Active Inference Beyond Low Dimensional Environments",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "50e478e3999a49f9": {
+      "title": "ReuF2F: Benchmarking Coding Agents on Formalized Undergraduate Research Problems",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "5b0961995741cf1d": {
+      "title": "Vulnerability Analysis for Safe Multi-Agent Reinforcement",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "60910668303d6048": {
+      "title": "阿里推出全新AI搜索引擎“CleverSee”，云厂商打响AI搜索基建战",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "21f2f4a4540480ad": {
+      "title": "Anthropic 招股书拆解:营收暴涨1382%，半年却亏掉807亿美元，算力账单压顶《华尔街日报》看到Anthropic的IPO招股书草案：公司收入狂飙但亏损惊人。截至6月30日六个月营收约163亿美元，较上年同期11亿美元暴涨1382%；同期算力与基础设施支出近90亿美元。生意高速扩张，烧钱更快，算力成为最大压力，招股书呈现增长与巨额成本并存的矛盾画像。 8 小时前 11.1K",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "495dec35a4b61012": {
+      "title": "Anthropic 招股书曝光：半年营收 163 亿却亏 807 亿，算力枷锁越套越紧《华尔街日报》看到的IPO招股书草案显示，Anthropic增速光鲜背后成本高企：截至6月30日半年营收约163亿美元，同比由11亿暴涨1382%；同期算力与基础设施开支近90亿美元，2025年同期仅23亿，已超去年全年73亿。上半年净亏损807亿美元，亏损压力巨大。 8 小时前 9.8K",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "1c7cd86ae47c8dca": {
+      "title": "OpenAI models are coming to Google Cloud",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "c44304f54ef4a603": {
+      "title": "Automated Multi-Agent Organization Design: From Architecture Search to Organizational Learning",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "24e065afec8d8c24": {
+      "title": "Does Multi-Agent Collaboration Reduce Hallucination in Clinical Tasks?",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "e04a7f8e3b9db573": {
+      "title": "MaD-RSI: Model-as-Data for Recursive Self-Improvement of Agent Harnesses",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "d19c9b4db4b21b39": {
+      "title": "OpenAI's latest AI models are coming to Google Cloud and Antigravity",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "3e7a4d0e851cd59d": {
+      "title": "AI Guardrails Aren’t Stopping Criminal Hackers",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "f767f1306572f178": {
+      "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+      "at": "2026-10-22",
+      "edition": "morning"
+    },
+    "c78771e3c70d8b96": {
+      "title": "Jensen Huang’s Vision for Europe Runs on Plug-In Data Centers",
+      "at": "2026-10-22",
+      "edition": "morning"
     }
   },
   "publishedByEdition": {
     "morning": {
-      "https://36kr.com/p/3865691912616833": {
-        "title": "巨头打响Context之战，重构AI护城河",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://36kr.com/p/3865676527785223": {
-        "title": "中国团队拿下ICRA'26最佳论文：Agentic Coding驱动工业制造通往自主通用智能",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://www.anthropic.com/news/introducing-claude-tag": {
-        "title": "ProductJun 23, 2026Introducing Claude TagClaude Tag is a new way for teams to work with Claude.",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments/": {
-        "title": "Oracle’s 21,000 layoffs help drive its debt-fueled AI investments",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://news.aibase.com/zh/news/29091": {
-        "title": "甲骨文一年裁员2. 1 万人：AI转型的账单，全球科技巨头都在付甲骨文2026财年裁员2.1万人，员工总数从16.2万降至14.1万，降幅达13%。为此公司支付了高达125亿元的重组成本，远超往年。此次大规模调整，反映出AI时代下科技巨头面临的巨大成本压力与战略转型阵痛。 8 小时前 14.7K",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://openai.com/index/gpt-5-immunology-mystery": {
-        "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://36kr.com/p/3865676543972360": {
-        "title": "刚刚，物理世界的Anthropic现身，团队来自中国",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://36kr.com/p/3865591032337671": {
-        "title": "具身智能芯片，先卷疯了",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.20621": {
-        "title": "PEAR: Permutation-Equivariant Adaptive Routing Multi-Agent Debate",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.20629": {
-        "title": "Specialize Roles, Mix Deployments: Pushing the Cost-Accuracy Frontier of LLM Agent Teams",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.20700": {
-        "title": "Machine-Coached Policy Revision in Adaptive Agent-Based Regulatory Simulation: A Controller-Level Contestability Layer",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.20699": {
-        "title": "Structural Distinguishability of Static and Adaptive Policy Regimes in Agent-Based Regulatory Simulation",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.20585": {
-        "title": "Turning Intent into Specifications: A Benchmark and an Interactive User-Assistant Agent",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://arxiv.org/abs/2606.20669": {
-        "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://36kr.com/p/3865665208095753": {
-        "title": "大模型一年内就会吞噬 Harness，Google AI Studio负责人：深耕垂直领域才是创业公司唯一生路",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://news.aibase.com/zh/news/29095": {
-        "title": "火山引擎发布豆包2.1Pro:日常功能确认免费，将推专业版办公模式2026年6月23日火山引擎FORCE大会，字节跳动发布豆包大模型重大升级：推出2.1Pro，聚焦编程、智能体与视觉语言模型；同时发布视频生成模型Seedance 2.5及2.04K版、图像生成模型Seedream 5.0 Pro、音频生成模型1.0。2.1Pro已开放API并接入扣子生态。火山引擎总裁谭待表示，豆包面向用户的日常基础功能（如搜索问答）将持续免费。 7 小时前 12.7K",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://news.aibase.com/zh/news/29085": {
-        "title": "字节跳动火山引擎 2026 大会重磅发布：Seedance 2.5 直出 30 秒视频，豆包 2.1 Pro 对标 Opus 4.6字节跳动发布视频生成模型Seedance2.5，支持单次直出30秒完整视频，标志视频生成迈入长序列时代。同时推出多模态模型豆包Seed2.1及图像模型Seeddream5.0，提升其在AI领域的竞争力。 12 小时前 33.6K",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://www.qbitai.com/2026/06/437503.html": {
-        "title": "刚刚，豆包2.1发布！Agent自己跑18个小时搞定芯片设计代码",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://blogs.nvidia.com/blog/nvidia-agent-toolkit-open-models-tools-skills-secure-runtime-ai-agents/": {
-        "title": "How Businesses Are Building Specialized AI They Can Trust",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://techcrunch.com/2026/06/23/fika-jobs-raises-4m-to-build-a-video-first-hiring-platform-where-ai-agents-interview-candidates/": {
-        "title": "Fika Jobs raises $4M to build a video-first hiring platform where AI agents interview candidates",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://openai.com/index/helping-build-shared-standards-for-advanced-ai": {
-        "title": "Helping build shared standards for advanced AI",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "https://news.aibase.com/zh/news/29086": {
-        "title": "首个高考志愿AI测评发布:千问多项表现超过人类志愿咨询师国内首份《高考志愿AI测评基准》报告发布，由友松实验室独立完成，以千问高考志愿填报Agent为对象。结果显示，千问在稳定性、精确性、结构化表达与效率上已达人类咨询师水平。该研究体现AI在教育决策场景的评估进展。 11 小时前 17.3K",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
       "https://www.theverge.com/tech/955831/figma-code-design-tools-config-2026-announcements": {
         "title": "Figma now has AI motion graphics and shader tools",
         "at": "2026-06-25",
@@ -71689,84 +71550,94 @@
         "title": "国模Agent第一！MiniMax爆改Flash战力，全时段大肥鱼谷价",
         "at": "2026-10-21",
         "edition": "morning"
+      },
+      "https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent": {
+        "title": "Anthropic takes on Muse with Claude Duet, its new AI agent",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/10/21/meta-says-muse-has-over-10m-users-with-shopping-a-top-activity/": {
+        "title": "Meta says Muse has over 10M users, with shopping a top activity",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://techcrunch.com/2026/10/21/blacksmith-hits-unicorn-valuation-after-sequoia-leads-series-c/": {
+        "title": "Blacksmith hits unicorn valuation after Sequoia leads Series C",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2610.28203": {
+        "title": "JAXbounce: A Continuous-Control Pong-Like Benchmark for Active Inference Beyond Low Dimensional Environments",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2610.27046": {
+        "title": "ReuF2F: Benchmarking Coding Agents on Formalized Undergraduate Research Problems",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2610.27293": {
+        "title": "Vulnerability Analysis for Safe Multi-Agent Reinforcement",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://aitntnews.com/newDetail.html?newId=30464": {
+        "title": "阿里推出全新AI搜索引擎“CleverSee”，云厂商打响AI搜索基建战",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://news.aibase.com/zh/news/31780": {
+        "title": "Anthropic 招股书拆解:营收暴涨1382%，半年却亏掉807亿美元，算力账单压顶《华尔街日报》看到Anthropic的IPO招股书草案：公司收入狂飙但亏损惊人。截至6月30日六个月营收约163亿美元，较上年同期11亿美元暴涨1382%；同期算力与基础设施支出近90亿美元。生意高速扩张，烧钱更快，算力成为最大压力，招股书呈现增长与巨额成本并存的矛盾画像。 8 小时前 11.1K",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://news.aibase.com/zh/news/31778": {
+        "title": "Anthropic 招股书曝光：半年营收 163 亿却亏 807 亿，算力枷锁越套越紧《华尔街日报》看到的IPO招股书草案显示，Anthropic增速光鲜背后成本高企：截至6月30日半年营收约163亿美元，同比由11亿暴涨1382%；同期算力与基础设施开支近90亿美元，2025年同期仅23亿，已超去年全年73亿。上半年净亏损807亿美元，亏损压力巨大。 8 小时前 9.8K",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://openai.com/index/openai-models-google-cloud": {
+        "title": "OpenAI models are coming to Google Cloud",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2610.27531": {
+        "title": "Automated Multi-Agent Organization Design: From Architecture Search to Organizational Learning",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2610.27027": {
+        "title": "Does Multi-Agent Collaboration Reduce Hallucination in Clinical Tasks?",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://arxiv.org/abs/2610.28201": {
+        "title": "MaD-RSI: Model-as-Data for Recursive Self-Improvement of Agent Harnesses",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://arstechnica.com/ai/2026/10/openais-latest-ai-models-are-coming-to-google-cloud-and-antigravity/": {
+        "title": "OpenAI's latest AI models are coming to Google Cloud and Antigravity",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://www.wired.com/story/ai-guardrails-arent-stopping-criminal-hackers/": {
+        "title": "AI Guardrails Aren’t Stopping Criminal Hackers",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://openai.com/index/chatgpt-ads-expands-26-new-countries": {
+        "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "https://www.wired.com/story/jensen-huangs-vision-for-europe-runs-on-plug-in-data-centers/": {
+        "title": "Jensen Huang’s Vision for Europe Runs on Plug-In Data Centers",
+        "at": "2026-10-22",
+        "edition": "morning"
       }
     },
     "evening": {
-      "https://arxiv.org/abs/2606.23991": {
-        "title": "Critique of Agent Model",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.24855": {
-        "title": "OpenThoughts-Agent: Data Recipes for Agentic Models",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.23743": {
-        "title": "Sol Video Inference Engine: Agent-Native Full-Stack Acceleration Framework for Efficient Video Generation",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://huggingface.co/papers/2606.24597": {
-        "title": "Qwen-AgentWorld: Language World Models for General Agents",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://huggingface.co/papers/2602.09379": {
-        "title": "LingxiDiagBench: A Multi-Agent Framework for Benchmarking LLMs in Chinese Psychiatric Consultation and Diagnosis",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://arxiv.org/abs/2606.24601": {
-        "title": "ASALT: Adaptive State Alignment for Lateral Transfer in Multi-agent Reinforcement Learning",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3867009591645191": {
-        "title": "“用Claude比发工资还贵？换！”耗时9个月，这家AI公司换上DeepSeek后，CEO直言：迁移工作量暴涨100倍，但一年省下数百万美元",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://news.aibase.com/zh/news/29125": {
-        "title": "企业微信内测AI Agent“大圆”:打通企微生态，主打办公与客户经营提效腾讯旗下企业微信启动AI智能体“大圆”内测。该助理原生嵌入企微生态，突破独立对话机器人局限，用户左滑即可唤醒，能自动识别当前页面。基于群聊、文档、会议等沉淀数据，提供场景化智能服务，进一步提升办公效率与协作体验。 刚刚 10.2K",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://36kr.com/p/3867047187420420": {
-        "title": "豆包专业版实测：2亿人都可以体验能干活的Agent了",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://aitntnews.com/newDetail.html?newId=26494": {
-        "title": "5分钟上线全球！腾讯云边缘Web与AI Agent托管平台 EdgeOne Makers助力中小企业0成本出海",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://news.aibase.com/zh/news/29122": {
-        "title": "阿里云QoderWork推出“峰谷Token”:错峰调用Qwen3.7-Max低至2折阿里云旗下QoderWork推出“峰谷Token”计费，引导用户错峰利用夜间（22:00至次日8:00）闲置算力，任务自动享低至2折优惠，主力模型Qwen3.7-Max等受益。该模式精细化配置AI资源，为企业和开发者大幅降低大模型应用成本。 刚刚 10.1K",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://news.aibase.com/zh/news/29135": {
-        "title": "豪掷 6 亿港元激励全员：MiniMax 以“真金白银”提振团队信心MiniMax推零对价股权激励，向董事、员工及合作伙伴授出116.88万股，当日市值约6亿港元，凸显AI人才战白热化下厂商以重磅激励构筑护城河的策略。 刚刚 18.4K",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://news.aibase.com/zh/news/29121": {
-        "title": "豆包付费时代开启：三档订阅服务落地，性价比对标全球巨头豆包正式推出三档付费订阅（68元/月、200元/月、500元/月），全线产品接入豆包2.1大模型，输出质量与效率显著提升。官方称免费用户权益不变，付费服务主要满足更高生产力需求。 2 小时前 18.8K",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://news.aibase.com/zh/news/29117": {
-        "title": "豆包音频生成模型1. 0 发布，开启“音频导演”时代火山引擎发布豆包音频生成模型1.0，以“多模态参考生成”和“长时音色一致性”两大核心技术，简化传统音频后期流程，可一站式生成对白、音效与配乐，提升创作效率。 3 小时前 10.9K",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "https://www.qbitai.com/2026/06/437833.html": {
-        "title": "华为天才少年一作，港大MaRS Lab拿下IEEE TRO傅京孙纪念最佳论文奖",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
       "https://openai.com/index/how-agents-are-transforming-work": {
         "title": "How agents are transforming work",
         "at": "2026-06-25",
@@ -79676,116 +79547,6 @@
   },
   "publishedSignaturesByEdition": {
     "morning": {
-      "ad6122b4c3851b2d": {
-        "title": "巨头打响Context之战，重构AI护城河",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "3b35bab458d2b76e": {
-        "title": "中国团队拿下ICRA'26最佳论文：Agentic Coding驱动工业制造通往自主通用智能",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "282d5be501ce4ca0": {
-        "title": "ProductJun 23, 2026Introducing Claude TagClaude Tag is a new way for teams to work with Claude.",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "7e8235b9d026ba5e": {
-        "title": "Oracle’s 21,000 layoffs help drive its debt-fueled AI investments",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "d074c92b2aae827f": {
-        "title": "甲骨文一年裁员2. 1 万人：AI转型的账单，全球科技巨头都在付甲骨文2026财年裁员2.1万人，员工总数从16.2万降至14.1万，降幅达13%。为此公司支付了高达125亿元的重组成本，远超往年。此次大规模调整，反映出AI时代下科技巨头面临的巨大成本压力与战略转型阵痛。 8 小时前 14.7K",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "6f101923624ec3a4": {
-        "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "83661efaef28925e": {
-        "title": "刚刚，物理世界的Anthropic现身，团队来自中国",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "d6014ffbdd2f0bd3": {
-        "title": "具身智能芯片，先卷疯了",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "98af29f9d52a901c": {
-        "title": "PEAR: Permutation-Equivariant Adaptive Routing Multi-Agent Debate",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "57ab82273a01c3e9": {
-        "title": "Specialize Roles, Mix Deployments: Pushing the Cost-Accuracy Frontier of LLM Agent Teams",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "83e5823f24b2baa4": {
-        "title": "Machine-Coached Policy Revision in Adaptive Agent-Based Regulatory Simulation: A Controller-Level Contestability Layer",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "05fc22555582dafd": {
-        "title": "Structural Distinguishability of Static and Adaptive Policy Regimes in Agent-Based Regulatory Simulation",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "fcbad5d6c0b34bf4": {
-        "title": "Turning Intent into Specifications: A Benchmark and an Interactive User-Assistant Agent",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "599d64995df7a795": {
-        "title": "Agent Behavior Mining: Generative AI Agent Governance in Business Processes",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "d7e2eb8e7e79832c": {
-        "title": "大模型一年内就会吞噬 Harness，Google AI Studio负责人：深耕垂直领域才是创业公司唯一生路",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "0c732618839db4d7": {
-        "title": "火山引擎发布豆包2.1Pro:日常功能确认免费，将推专业版办公模式2026年6月23日火山引擎FORCE大会，字节跳动发布豆包大模型重大升级：推出2.1Pro，聚焦编程、智能体与视觉语言模型；同时发布视频生成模型Seedance 2.5及2.04K版、图像生成模型Seedream 5.0 Pro、音频生成模型1.0。2.1Pro已开放API并接入扣子生态。火山引擎总裁谭待表示，豆包面向用户的日常基础功能（如搜索问答）将持续免费。 7 小时前 12.7K",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "a9ea03c4ff9b861b": {
-        "title": "字节跳动火山引擎 2026 大会重磅发布：Seedance 2.5 直出 30 秒视频，豆包 2.1 Pro 对标 Opus 4.6字节跳动发布视频生成模型Seedance2.5，支持单次直出30秒完整视频，标志视频生成迈入长序列时代。同时推出多模态模型豆包Seed2.1及图像模型Seeddream5.0，提升其在AI领域的竞争力。 12 小时前 33.6K",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "47546287f4554249": {
-        "title": "刚刚，豆包2.1发布！Agent自己跑18个小时搞定芯片设计代码",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "c4bc35e800f6b74f": {
-        "title": "How Businesses Are Building Specialized AI They Can Trust",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "a67b6dba8231606e": {
-        "title": "Fika Jobs raises $4M to build a video-first hiring platform where AI agents interview candidates",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "6bc389bfba0f7f48": {
-        "title": "Helping build shared standards for advanced AI",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "0dd1bbec6c71f5d8": {
-        "title": "首个高考志愿AI测评发布:千问多项表现超过人类志愿咨询师国内首份《高考志愿AI测评基准》报告发布，由友松实验室独立完成，以千问高考志愿填报Agent为对象。结果显示，千问在稳定性、精确性、结构化表达与效率上已达人类咨询师水平。该研究体现AI在教育决策场景的评估进展。 11 小时前 17.3K",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
       "fb4394a161585d9d": {
         "title": "Figma now has AI motion graphics and shader tools",
         "at": "2026-06-25",
@@ -89050,84 +88811,94 @@
         "title": "国模Agent第一！MiniMax爆改Flash战力，全时段大肥鱼谷价",
         "at": "2026-10-21",
         "edition": "morning"
+      },
+      "54ad136b539bf931": {
+        "title": "Anthropic takes on Muse with Claude Duet, its new AI agent",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "7c3577674690835f": {
+        "title": "Meta says Muse has over 10M users, with shopping a top activity",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "adf0471aee538673": {
+        "title": "Blacksmith hits unicorn valuation after Sequoia leads Series C",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "22cee233d5ec3953": {
+        "title": "JAXbounce: A Continuous-Control Pong-Like Benchmark for Active Inference Beyond Low Dimensional Environments",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "50e478e3999a49f9": {
+        "title": "ReuF2F: Benchmarking Coding Agents on Formalized Undergraduate Research Problems",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "5b0961995741cf1d": {
+        "title": "Vulnerability Analysis for Safe Multi-Agent Reinforcement",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "60910668303d6048": {
+        "title": "阿里推出全新AI搜索引擎“CleverSee”，云厂商打响AI搜索基建战",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "21f2f4a4540480ad": {
+        "title": "Anthropic 招股书拆解:营收暴涨1382%，半年却亏掉807亿美元，算力账单压顶《华尔街日报》看到Anthropic的IPO招股书草案：公司收入狂飙但亏损惊人。截至6月30日六个月营收约163亿美元，较上年同期11亿美元暴涨1382%；同期算力与基础设施支出近90亿美元。生意高速扩张，烧钱更快，算力成为最大压力，招股书呈现增长与巨额成本并存的矛盾画像。 8 小时前 11.1K",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "495dec35a4b61012": {
+        "title": "Anthropic 招股书曝光：半年营收 163 亿却亏 807 亿，算力枷锁越套越紧《华尔街日报》看到的IPO招股书草案显示，Anthropic增速光鲜背后成本高企：截至6月30日半年营收约163亿美元，同比由11亿暴涨1382%；同期算力与基础设施开支近90亿美元，2025年同期仅23亿，已超去年全年73亿。上半年净亏损807亿美元，亏损压力巨大。 8 小时前 9.8K",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "1c7cd86ae47c8dca": {
+        "title": "OpenAI models are coming to Google Cloud",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "c44304f54ef4a603": {
+        "title": "Automated Multi-Agent Organization Design: From Architecture Search to Organizational Learning",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "24e065afec8d8c24": {
+        "title": "Does Multi-Agent Collaboration Reduce Hallucination in Clinical Tasks?",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "e04a7f8e3b9db573": {
+        "title": "MaD-RSI: Model-as-Data for Recursive Self-Improvement of Agent Harnesses",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "d19c9b4db4b21b39": {
+        "title": "OpenAI's latest AI models are coming to Google Cloud and Antigravity",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "3e7a4d0e851cd59d": {
+        "title": "AI Guardrails Aren’t Stopping Criminal Hackers",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "f767f1306572f178": {
+        "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "c78771e3c70d8b96": {
+        "title": "Jensen Huang’s Vision for Europe Runs on Plug-In Data Centers",
+        "at": "2026-10-22",
+        "edition": "morning"
       }
     },
     "evening": {
-      "46a184d57806d442": {
-        "title": "Critique of Agent Model",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "cdffbe5ed90297cb": {
-        "title": "OpenThoughts-Agent: Data Recipes for Agentic Models",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "65f3f90109c6c454": {
-        "title": "Sol Video Inference Engine: Agent-Native Full-Stack Acceleration Framework for Efficient Video Generation",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "73f2778c17769677": {
-        "title": "Qwen-AgentWorld: Language World Models for General Agents",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "6c74b4d568bed017": {
-        "title": "LingxiDiagBench: A Multi-Agent Framework for Benchmarking LLMs in Chinese Psychiatric Consultation and Diagnosis",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "3510f169fde0e126": {
-        "title": "ASALT: Adaptive State Alignment for Lateral Transfer in Multi-agent Reinforcement Learning",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "de62176d3ddfa6b8": {
-        "title": "“用Claude比发工资还贵？换！”耗时9个月，这家AI公司换上DeepSeek后，CEO直言：迁移工作量暴涨100倍，但一年省下数百万美元",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "9159745072e002dc": {
-        "title": "企业微信内测AI Agent“大圆”:打通企微生态，主打办公与客户经营提效腾讯旗下企业微信启动AI智能体“大圆”内测。该助理原生嵌入企微生态，突破独立对话机器人局限，用户左滑即可唤醒，能自动识别当前页面。基于群聊、文档、会议等沉淀数据，提供场景化智能服务，进一步提升办公效率与协作体验。 刚刚 10.2K",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "d72966643ca7e7d1": {
-        "title": "豆包专业版实测：2亿人都可以体验能干活的Agent了",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "058a4dacd7b9e06b": {
-        "title": "5分钟上线全球！腾讯云边缘Web与AI Agent托管平台 EdgeOne Makers助力中小企业0成本出海",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "d7e4564e6822c9fa": {
-        "title": "阿里云QoderWork推出“峰谷Token”:错峰调用Qwen3.7-Max低至2折阿里云旗下QoderWork推出“峰谷Token”计费，引导用户错峰利用夜间（22:00至次日8:00）闲置算力，任务自动享低至2折优惠，主力模型Qwen3.7-Max等受益。该模式精细化配置AI资源，为企业和开发者大幅降低大模型应用成本。 刚刚 10.1K",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "39e5488ed1cd16ab": {
-        "title": "豪掷 6 亿港元激励全员：MiniMax 以“真金白银”提振团队信心MiniMax推零对价股权激励，向董事、员工及合作伙伴授出116.88万股，当日市值约6亿港元，凸显AI人才战白热化下厂商以重磅激励构筑护城河的策略。 刚刚 18.4K",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "5edad2d18ee16800": {
-        "title": "豆包付费时代开启：三档订阅服务落地，性价比对标全球巨头豆包正式推出三档付费订阅（68元/月、200元/月、500元/月），全线产品接入豆包2.1大模型，输出质量与效率显著提升。官方称免费用户权益不变，付费服务主要满足更高生产力需求。 2 小时前 18.8K",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "0ec2d3630961d07f": {
-        "title": "豆包音频生成模型1. 0 发布，开启“音频导演”时代火山引擎发布豆包音频生成模型1.0，以“多模态参考生成”和“长时音色一致性”两大核心技术，简化传统音频后期流程，可一站式生成对白、音效与配乐，提升创作效率。 3 小时前 10.9K",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "e96f8abf695b3bb3": {
-        "title": "华为天才少年一作，港大MaRS Lab拿下IEEE TRO傅京孙纪念最佳论文奖",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
       "adf59bc64f3f02b4": {
         "title": "How agents are transforming work",
         "at": "2026-06-25",
@@ -96957,66 +96728,6 @@
   },
   "publishedTopicsByEdition": {
     "morning": {
-      "3492dd972fa2084b0eea": {
-        "title": "AI模型上下文记忆功能",
-        "text": "AI模型上下文记忆功能 AI模型上下文记忆功能 围绕AI模型上下文记忆功能，2023 年 5 月，Anthropic 率先把 Claude 的上下文窗口从 9K 拉到 100K，约等于 7.5 万字，首次让“上传一整本书”成为现实；刚刚，在维也纳落幕的机器人顶会ICRA 2026上，最佳论文奖（自动化方向）颁给了一支中国团队。后续可重点观察产品落地、资源投入与产业链反馈。 围绕AI模型上下文记忆功能，2023 年 5 月，Anthropic 率先把 Claude 的上下文窗口从 9K 拉到 100K，约等于 7.5 万字，首次让“上传一整本书”成为现实；刚刚，在维也纳落幕的机器人顶会ICRA 2026上，最佳论文奖（自动化方向）颁给了一支中国团队。后续可重点观察产品落地、资源投入与产业链反馈。 围绕AI模型上下文记忆功能，2023 年 5 月，Anthropic 率先把 Claude 的上下文窗口从 9K 拉到 100K，约等于 7.5 万字，首次让“上传一整本书”成为现实；刚刚，在维也纳落幕的机器人顶会ICRA 2026上",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "dfa12bf738fff9b05d1c": {
-        "title": "甲骨文裁员与AI投资",
-        "text": "甲骨文裁员与AI投资 甲骨文裁员与AI投资 围绕甲骨文裁员与AI投资，1 万人，降幅高达13%，涉及裁员约2.。后续可重点观察产品落地、资源投入与产业链反馈。 围绕甲骨文裁员与AI投资，1 万人，降幅高达13%，涉及裁员约2.。后续可重点观察产品落地、资源投入与产业链反馈。 围绕甲骨文裁员与AI投资，1 万人，降幅高达13%，涉及裁员约2.。后续可重点观察产品落地、资源投入与产业链反馈。多来源共同指向同一趋势，短期影响值得持续跟踪。 多来源共同指向同一趋势，短期影响值得持续跟踪。",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "a08b1b93dbb0782f7f64": {
-        "title": "火山引擎豆包2.1 Pro发布",
-        "text": "火山引擎豆包2.1 Pro发布 火山引擎豆包2.1 Pro发布 围绕火山引擎豆包2.1 Pro发布，在2026年6月23日的火山引擎FORCE原动力大会上，字节跳动旗下“豆包”大模型迎来重大升级，集中发布了豆包大模型2.1Pro、视频生成模型Seedance2.5及2.04K；并且根据火山引擎总裁谭待的介绍，豆包日均Token的使用量已经突破180万亿。后续可重点观察产品落地、资源投入与产业链反馈。 围绕火山引擎豆包2.1 Pro发布，在2026年6月23日的火山引擎FORCE原动力大会上，字节跳动旗下“豆包”大模型迎来重大升级，集中发布了豆包大模型2.1Pro、视频生成模型Seedance2.5及2.04K；并且根据火山引擎总裁谭待的介绍，豆包日均Token的使用量已经突破180万亿。后续可重点观察产品落地、资源投入与产业链反馈。 围绕火山引擎豆包2.1 Pro发布，在2026年6月23日的火山引擎FORCE原动力大会上，字节跳动旗下“豆包”大模型迎来重大升级，集中发布了豆包大模型2.1Pro、视频生成模型Seedance2.5及2.04K",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "4582943c109d8f7a1e3c": {
-        "title": "物理世界AI与具身智能",
-        "text": "物理世界AI与具身智能 物理世界AI与具身智能 围绕物理世界AI与具身智能，6月18日，一家估值超千亿的中国公司通过了港交所聆讯。中国跑城区领航辅助驾驶的车，65%用的是它的方案。量产车超90万辆，全球前十大车企九家是客户；最近，沐曦股份与优必选在南京签订战略合作协议，合资成立曦选创智科技（无锡）有限公司，方向指向具身智能端侧芯片研发与量产。后续可重点观察产品落地、资源投入与产业链反馈。 围绕物理世界AI与具身智能，6月18日，一家估值超千亿的中国公司通过了港交所聆讯。中国跑城区领航辅助驾驶的车，65%用的是它的方案。量产车超90万辆，全球前十大车企九家是客户；最近，沐曦股份与优必选在南京签订战略合作协议，合资成立曦选创智科技（无锡）有限公司，方向指向具身智能端侧芯片研发与量产。后续可重点观察产品落地、资源投入与产业链反馈。 围绕物理世界AI与具身智能，6月18日，一家估值超千亿的中国公司通过了港交所聆讯。中国跑城区领航辅助驾驶的车，65%用的是它的方案。量产车超90万辆，全球前十大车企九家是客户；最近，沐曦股份与优必选在南京签订战略合作协议",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "e516555cd70224fc9994": {
-        "title": "AI安全与标准",
-        "text": "AI安全与标准 AI安全与标准 据海外科技媒体报道，AI安全与标准。核心看点在于资本市场正在重新定价相关AI公司的技术路线与商业潜力，后续应关注融资落地、股东结构和算力投入节奏。 据海外科技媒体报道，AI安全与标准。核心看点在于资本市场正在重新定价相关AI公司的技术路线与商业潜力，后续应关注融资落地、股东结构和算力投入节奏。 据海外科技媒体报道，AI安全与标准。核心看点在于资本市场正在重新定价相关AI公司的技术路线与商业潜力，后续应关注融资落地、股东结构和算力投入节奏。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "b0deb85069d8aee90868": {
-        "title": "GPT-5科学应用",
-        "text": "GPT-5科学应用 GPT-5科学应用 据海外科技媒体报道，GPT-5科学应用。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。 据海外科技媒体报道，GPT-5科学应用。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。 据海外科技媒体报道，GPT-5科学应用。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "cca973d3e77f8c209f75": {
-        "title": "AI编程与工程",
-        "text": "AI编程与工程 AI编程与工程 围绕AI编程与工程，在红杉资本合伙人 Sonya Huang 主持的这次深度访谈中，作为手握 13 个“十亿用户级产品”的大厂主管，Logan 毫无保留地戳破了硅谷各家关于失业、算力、以及大厂内部。后续可重点观察产品落地、资源投入与产业链反馈。 围绕AI编程与工程，在红杉资本合伙人 Sonya Huang 主持的这次深度访谈中，作为手握 13 个“十亿用户级产品”的大厂主管，Logan 毫无保留地戳破了硅谷各家关于失业、算力、以及大厂内部。后续可重点观察产品落地、资源投入与产业链反馈。 围绕AI编程与工程，在红杉资本合伙人 Sonya Huang 主持的这次深度访谈中，作为手握 13 个“十亿用户级产品”的大厂主管，Logan 毫无保留地戳破了硅谷各家关于失业、算力、以及大厂内部。 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "6b759806e26b30e106bc": {
-        "title": "企业级AI应用与工作流",
-        "text": "企业级AI应用与工作流 企业级AI应用与工作流 据海外科技媒体报道，企业级AI应用与工作流。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。 据海外科技媒体报道，企业级AI应用与工作流。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。 据海外科技媒体报道，企业级AI应用与工作流。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "041001d3cb143b7f889d": {
-        "title": "AI招聘与面试",
-        "text": "AI招聘与面试 AI招聘与面试 据海外科技媒体报道，AI招聘与面试。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。 据海外科技媒体报道，AI招聘与面试。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。 据海外科技媒体报道，AI招聘与面试。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
-      "e927a0eeb4b85c543840": {
-        "title": "AI教育应用",
-        "text": "AI教育应用 AI教育应用 围绕AI教育应用，6月23日，国内首个针对高考志愿填报场景的AI能力测评报告《高考志愿AI测评基准》发布。该报告由友松实验室独立完成，以千问高考志愿填报Agent作为测评对象。后续可重点观察产品落地、资源投入与产业链反馈。 围绕AI教育应用，6月23日，国内首个针对高考志愿填报场景的AI能力测评报告《高考志愿AI测评基准》发布。该报告由友松实验室独立完成，以千问高考志愿填报Agent作为测评对象。后续可重点观察产品落地、资源投入与产业链反馈。 围绕AI教育应用，6月23日，国内首个针对高考志愿填报场景的AI能力测评报告《高考志愿AI测评基准》发布。该报告由友松实验室独立完成，以千问高考志愿填报Agent作为测评对象。后续可重点观察产品落地、资源投入与产业链反馈。 当前信号具备参考价值，但仍需更多来源持续验证。",
-        "at": "2026-06-24",
-        "edition": "morning"
-      },
       "3b1ef0609732f2eed5fd": {
         "title": "OpenAI与博通联合推出Jalapeño芯片，专为AI推理优化。",
         "text": "OpenAI与博通联合推出Jalapeño芯片，专为AI推理优化。 OpenAI与博通联合推出Jalapeño芯片，专为AI推理优化。 OpenAI与博通联合发布了首款自研AI处理器Jalapeño，这是一款专为AI推理设计的ASIC芯片。该芯片从零开始设计，围绕大模型推理机制构建，旨在提升算力、内存和网络资源的利用率，使实际利用率更接近理论峰值。工程样品已稳定运行包括GPT-5.3-Codex-Spark在内的ML工作负载，早期测试显示其每瓦性能大幅优于当前最先进水平。博通负责芯片实现与系统集成，Celestica参与电路板与机架集成。 OpenAI与博通联合发布了首款自研AI处理器Jalapeño，这是一款专为AI推理设计的ASIC芯片。该芯片从零开始设计，围绕大模型推理机制构建，旨在提升算力、内存和网络资源的利用率，使实际利用率更接近理论峰值。工程样品已稳定运行包括GPT-5.3-Codex-Spark在内的ML工作负载，早期测试显示其每瓦性能大幅优于当前最先进水平。博通负责芯片实现与系统集成，Celestica参与电路板与机架集成。",
@@ -103196,63 +102907,63 @@
         "text": "美国AI对就业市场的影响 美国AI对就业市场的影响 据海外科技媒体报道，美国AI对就业市场的影响。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。 据海外科技媒体报道，美国AI对就业市场的影响。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。 据海外科技媒体报道，美国AI对就业市场的影响。核心看点在于事件本身已经进入可跟踪阶段，后续需要关注官方披露、执行节奏与对产品或行业竞争格局的影响。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
         "at": "2026-10-21",
         "edition": "morning"
+      },
+      "855737c2eb73baa62ec9": {
+        "title": "OpenAI模型接入Google Cloud",
+        "text": "OpenAI模型接入Google Cloud，GPT模型将进入Gemini Model Garden。 OpenAI模型接入Google Cloud OpenAI与Google Cloud达成合作，将OpenAI的前沿模型和Codex工作流引入Google Cloud的Gemini Model Garden，用户可通过Google Cloud Marketplace访问。此外，GPT模型还将出现在Google的AI编码工具Antigravity中。这一合作打破了Google Cloud对自家Gemini模型的依赖，为用户提供了更多选择。对于企业客户和AI爱好者来说 OpenAI与Google Cloud达成合作，将OpenAI的前沿模型和Codex工作流引入Google Cloud的Gemini Model Garden，用户可通过Google Cloud Marketplace访问。此外，GPT模型还将出现在Google的AI编码工具Antigravity中。这一合作打破了Google Cloud对自家Gemini模型的依赖",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "a2216a94448fbbd8fd31": {
+        "title": "Anthropic招股书显示营收暴涨1382%，但半年亏损807亿美元",
+        "text": "Anthropic招股书显示营收暴涨1382%，但半年亏损807亿美元，算力成本压力巨大。 Anthropic招股书显示营收暴涨1382%，但半年亏损807亿美元 《华尔街日报》披露的Anthropic IPO招股书草案揭示了公司光鲜增长背后的巨大成本压力。截至2026年6月30日的六个月里，Anthropic营收约163亿美元，同比暴涨1382%，但同期算力与基础设施支出近90亿美元，已超过去年全年73亿的水平。更令人震惊的是，上半年净亏损高达807亿美元，其中720亿来自会计调整。招股书还披露，未来七到十年内，Anthropic需根据云计算协议支付约4500亿美元，且大部分交易不可取消 《华尔街日报》披露的Anthropic IPO招股书草案揭示了公司光鲜增长背后的巨大成本压力。截至2026年6月30日的六个月里，Anthropic营收约163亿美元，同比暴涨1382%，但同期算力与基础设施支出近90亿美元，已超过去年全年73亿的水平。更令人震惊的是，上半年净亏损高达807亿美元，其中720亿来自会计调整。招股书还披露，未来七到十年内",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "5b97fc57ef60ea4920f8": {
+        "title": "Anthropic发布Claude Duet AI代理，面向专业人士和小企业。",
+        "text": "Anthropic发布Claude Duet AI代理，面向专业人士和小企业。 Anthropic发布Claude Duet AI代理，面向专业人士和小企业。 Anthropic推出了Claude Duet，这是一个面向专业人士和小企业主的AI代理，目前处于研究预览阶段。Claude Duet是Anthropic对Meta Muse和OpenAI Dots的竞争产品。 Anthropic推出了Claude Duet，这是一个面向专业人士和小企业主的AI代理，目前处于研究预览阶段。Claude Duet是Anthropic对Meta Muse和OpenAI Dots的竞争产品。 Anthropic推出了Claude Duet，这是一个面向专业人士和小企业主的AI代理，目前处于研究预览阶段。Claude Duet是Anthropic对Meta Muse和OpenAI Dots的竞争产品。当前信号具备参考价值 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "181e89193a4e30f0fda1": {
+        "title": "阿里推出AI原生搜索引擎CleverSee，云厂商AI搜索基建战升级。",
+        "text": "阿里推出AI原生搜索引擎CleverSee，云厂商AI搜索基建战升级。 阿里推出AI原生搜索引擎CleverSee，云厂商AI搜索基建战升级。 阿里云宣布将原IQS信息查询服务和CleverSee合并，推出全新的“CleverSee”AI原生智能信息检索引擎。该产品深度融合大语言模型、多模态模型、意图推理及搜索工程能力，为企业提供搜索、问答一体化的开箱即用平台。CleverSee主要包含三大子产品：联网搜问、垂域搜问和企业内搜。与此同时，腾讯云也对外开放了“元宝搜索”，字节火山引擎推出了Viking AI搜索。这标志着国内云厂商在企业端AI搜索的军备竞赛已进入实质落地阶段。 阿里云宣布将原IQS信息查询服务和CleverSee合并，推出全新的“CleverSee”AI原生智能信息检索引擎。该产品深度融合大语言模型、多模态模型、意图推理及搜索工程能力，为企业提供搜索、问答一体化的开箱即用平台。CleverSee主要包含三大子产品：联网搜问、垂域搜问和企业内搜。与此同时，腾讯云也对外开放了“元宝搜索”，字节火山引擎推出了Viking AI搜索。",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "05a62128b00bef57c20d": {
+        "title": "Blacksmith获红杉领投C轮，估值达10亿美元。",
+        "text": "Blacksmith获红杉领投C轮，估值达10亿美元。 Blacksmith获红杉领投C轮，估值达10亿美元。 Blacksmith宣布完成6600万美元C轮融资，由红杉资本领投，公司估值达到10亿美元。Blacksmith是一个帮助公司更高效构建和测试软件的平台，包括AI生成的代码。 Blacksmith宣布完成6600万美元C轮融资，由红杉资本领投，公司估值达到10亿美元。Blacksmith是一个帮助公司更高效构建和测试软件的平台，包括AI生成的代码。 Blacksmith宣布完成6600万美元C轮融资，由红杉资本领投，公司估值达到10亿美元。Blacksmith是一个帮助公司更高效构建和测试软件的平台，包括AI生成的代码。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "098bd9cffc4794c8d37d": {
+        "title": "ChatGPT广告扩展至26个新国家，超10万广告主已使用平台。",
+        "text": "ChatGPT广告扩展至26个新国家，超10万广告主已使用平台。 ChatGPT广告扩展至26个新国家，超10万广告主已使用平台。 OpenAI宣布ChatGPT广告业务扩展至全球26个新国家，目前已有超过10万名广告主使用该平台。广告主可以从本地企业到全球品牌，在用户探索、比较和购买决策的过程中触达目标受众。 OpenAI宣布ChatGPT广告业务扩展至全球26个新国家，目前已有超过10万名广告主使用该平台。广告主可以从本地企业到全球品牌，在用户探索、比较和购买决策的过程中触达目标受众。 OpenAI宣布ChatGPT广告业务扩展至全球26个新国家，目前已有超过10万名广告主使用该平台。广告主可以从本地企业到全球品牌，在用户探索、比较和购买决策的过程中触达目标受众。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "34ad1df82d17ec37a872": {
+        "title": "黄仁勋提出欧洲AI经济愿景，强调模块化数据中心与物理AI。",
+        "text": "黄仁勋提出欧洲AI经济愿景，强调模块化数据中心与物理AI。 黄仁勋提出欧洲AI经济愿景，强调模块化数据中心与物理AI。 在Nvidia柏林全球大会上，黄仁勋概述了欧洲未来的AI经济愿景，包括机器人、AI代理和模块化数据中心。他强调，要参与AI经济，不能只是消费AI，更要生产AI。 在Nvidia柏林全球大会上，黄仁勋概述了欧洲未来的AI经济愿景，包括机器人、AI代理和模块化数据中心。他强调，要参与AI经济，不能只是消费AI，更要生产AI。 在Nvidia柏林全球大会上，黄仁勋概述了欧洲未来的AI经济愿景，包括机器人、AI代理和模块化数据中心。他强调，要参与AI经济，不能只是消费AI，更要生产AI。当前信号具备参考价值，但仍需更多来源持续验证。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "d2558fa12f25d37df66d": {
+        "title": "Meta Muse AI应用用户突破千万，购物成为核心活跃场景。",
+        "text": "Meta Muse AI应用用户突破千万，购物成为核心活跃场景。 Meta Muse AI应用用户突破千万，购物成为核心活跃场景。 Meta在第三季度财报电话会议上确认，其AI应用Muse已获得超过1000万用户，验证了市场对其AI产品的接受度。值得注意的是，约25%的注册用户现在每天都会使用Muse，这显著提升了用户留存率。更令人意外的是，超过四分之一的活跃用户通过AI代理进行购物，平均客单价超过200美元。这一数据表明，Muse不仅是一个聊天工具，更正在成为用户日常消费决策的重要助手。 Meta在第三季度财报电话会议上确认，其AI应用Muse已获得超过1000万用户，验证了市场对其AI产品的接受度。值得注意的是，约25%的注册用户现在每天都会使用Muse，这显著提升了用户留存率。更令人意外的是，超过四分之一的活跃用户通过AI代理进行购物，平均客单价超过200美元。这一数据表明，Muse不仅是一个聊天工具，更正在成为用户日常消费决策的重要助手。Muse的高用户粘性与高客单价证明了AI代理在电商场景中的巨大潜力",
+        "at": "2026-10-22",
+        "edition": "morning"
+      },
+      "af541496800050b94957": {
+        "title": "AI防护措施难以阻止黑客攻击，犯罪分子利用智能体绕过模型安全限制。",
+        "text": "AI防护措施难以阻止黑客攻击，犯罪分子利用智能体绕过模型安全限制。 AI防护措施难以阻止黑客攻击，犯罪分子利用智能体绕过模型安全限制。 CrowdStrike的研究显示，随着AI在恶意黑客和防御者中的普及，即使是相对简单的网络犯罪分子也开始将智能体AI纳入其攻击活动，并成功绕过模型的安全限制。研究团队分析了四个此前未报告的威胁组织在5月至8月间的AI基础设施。 CrowdStrike的研究显示，随着AI在恶意黑客和防御者中的普及，即使是相对简单的网络犯罪分子也开始将智能体AI纳入其攻击活动，并成功绕过模型的安全限制。研究团队分析了四个此前未报告的威胁组织在5月至8月间的AI基础设施。 CrowdStrike的研究显示，随着AI在恶意黑客和防御者中的普及，即使是相对简单的网络犯罪分子也开始将智能体AI纳入其攻击活动，并成功绕过模型的安全限制。研究团队分析了四个此前未报告的威胁组织在5月至8月间的AI基础设施。 当前信号具备参考价值，但仍需更多来源持续验证。",
+        "at": "2026-10-22",
+        "edition": "morning"
       }
     },
     "evening": {
-      "5575e5378de90ad06351": {
-        "title": "DeepSeek V4以成本优势推动AI Agent企业迁移",
-        "text": "DeepSeek V4以成本优势推动AI Agent企业迁移，验证了模型性价比在商业化中的决定性作用。 DeepSeek V4以成本优势推动AI Agent企业迁移 随着AI Agent进入生产环境，推理成本成为企业可持续经营的关键瓶颈。Lindy公司创始人宣布将生产环境全部模型流量从Anthropic切换至DeepSeek V4，耗时9个月完成迁移。尽管迁移工作量暴涨100倍，但此举为公司节省了数百万美元推理成本，并在部分核心业务场景中实现了模型性能提升。这一案例引发了行业对模型成本与性能平衡的广泛讨论。 随着AI Agent进入生产环境，推理成本成为企业可持续经营的关键瓶颈。Lindy公司创始人宣布将生产环境全部模型流量从Anthropic切换至DeepSeek V4，耗时9个月完成迁移。尽管迁移工作量暴涨100倍，但此举为公司节省了数百万美元推理成本，并在部分核心业务场景中实现了模型性能提升。这一案例引发了行业对模型成本与性能平衡的广泛讨论。DeepSeek的迁移成功为追求成本效益的AI Agent企业提供了可复制的参考路径。 随着AI",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "3a087fa6bfbb0cfd5692": {
-        "title": "豆包专业版上线Agent模式，依托2亿日活用户推动AI从对话工具向生产力助手转型。",
-        "text": "豆包专业版上线Agent模式，依托2亿日活用户推动AI从对话工具向生产力助手转型。 豆包专业版上线Agent模式，依托2亿日活用户推动AI从对话工具向生产力助手转型。 6月24日，豆包上线专业版，搭载豆包2.1 Pro模型，推出首个Agent驱动的办公任务模式。该模式支持自主拆解步骤、调用本地工具，产出可直接交付的工作成品，如行业报告、数据分析表或网站。实测显示，豆包2.1 Pro在芯片设计RTL代码生成等工程场景中展现出生产级Coding能力，过去需3-5名工程师数周完成的任务，现在可由模型在18小时内完成。豆包日活超2亿，此次更新标志着其从聊天工具向生产力助手的深度转型。 6月24日，豆包上线专业版，搭载豆包2.1 Pro模型，推出首个Agent驱动的办公任务模式。该模式支持自主拆解步骤、调用本地工具，产出可直接交付的工作成品，如行业报告、数据分析表或网站。实测显示，豆包2.1 Pro在芯片设计RTL代码生成等工程场景中展现出生产级Coding能力，过去需3-5名工程师数周完成的任务，现在可由模型在18小时内完成。豆包日活超2亿",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "ef065a751764f0c62437": {
-        "title": "阿里云峰谷Token计费开创AI算力分时调度先河，推动AI应用向夜间自主生产模式转变",
-        "text": "阿里云峰谷Token计费开创AI算力分时调度先河，推动AI应用向夜间自主生产模式转变。 阿里云峰谷Token计费开创AI算力分时调度先河，推动AI应用向夜间自主生产模式转变 阿里云旗下QoderWork推出“峰谷Token”计费模式，引导用户在夜间（22:00至次日8:00）利用闲置算力，任务自动享受低至2折优惠。该模式覆盖Qwen3.7-Max等主力模型，通过精细化资源配置大幅降低企业大模型应用成本。用户可在白天设定任务，由智能体在夜间自主执行，次日清晨验收成果。此举不仅缓解了算力高峰压力，还将用户积分消耗降至白天的20%至40%。 阿里云旗下QoderWork推出“峰谷Token”计费模式，引导用户在夜间（22:00至次日8:00）利用闲置算力，任务自动享受低至2折优惠。该模式覆盖Qwen3.7-Max等主力模型，通过精细化资源配置大幅降低企业大模型应用成本。用户可在白天设定任务，由智能体在夜间自主执行，次日清晨验收成果。此举不仅缓解了算力高峰压力，还将用户积分消耗降至白天的20%至40%。峰谷Token计费通过价格杠杆有效调配闲置算力",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "c3c84d4fd962a482dab8": {
-        "title": "MiniMax豪掷6亿港元股权激励，以“去绩效化”策略强化人才护城河",
-        "text": "MiniMax豪掷6亿港元股权激励，以“去绩效化”策略强化人才护城河，应对行业激烈竞争。 MiniMax豪掷6亿港元股权激励，以“去绩效化”策略强化人才护城河 MiniMax向董事、员工及合作伙伴授出116.88万股奖励，购买价均为零，总市值约6亿港元。此次激励覆盖范围广泛，且明确表示“不受任何绩效目标限制”，只要员工在归属期内留任即可全额获得奖励。此举彰显了公司对人才长期价值的认可，旨在高速发展期保障团队稳定。分析指出，人才密度直接决定技术迭代速度，MiniMax通过将核心骨干利益与公司发展深度捆绑，为后续大模型研发与商业化夯实基础。 MiniMax向董事、员工及合作伙伴授出116.88万股奖励，购买价均为零，总市值约6亿港元。此次激励覆盖范围广泛，且明确表示“不受任何绩效目标限制”，只要员工在归属期内留任即可全额获得奖励。此举彰显了公司对人才长期价值的认可，旨在高速发展期保障团队稳定。分析指出，人才密度直接决定技术迭代速度，MiniMax通过将核心骨干利益与公司发展深度捆绑，为后续大模型研发与商业化夯实基础。",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "e80ab294c12ad08919ff": {
-        "title": "豆包推出三档付费订阅服务，以高性价比策略对标全球巨头，推动商业化深度挖掘。",
-        "text": "豆包推出三档付费订阅服务，以高性价比策略对标全球巨头，推动商业化深度挖掘。 豆包推出三档付费订阅服务，以高性价比策略对标全球巨头，推动商业化深度挖掘。 豆包正式推出标准版（68元/月）、加强版（200元/月）及高级版（500元/月）三档付费订阅服务，全线产品接入豆包2.1大模型。官方强调免费用户权益不变，付费服务旨在满足更高生产力需求。对比ChatGPT等海外产品，豆包定价显著更低，如标准版仅为ChatGPT Plus的一半左右。此举标志着豆包从追求用户规模扩张转向对存量用户深度价值的挖掘。 豆包正式推出标准版（68元/月）、加强版（200元/月）及高级版（500元/月）三档付费订阅服务，全线产品接入豆包2.1大模型。官方强调免费用户权益不变，付费服务旨在满足更高生产力需求。对比ChatGPT等海外产品，豆包定价显著更低，如标准版仅为ChatGPT Plus的一半左右。 豆包正式推出标准版（68元/月）、加强版（200元/月）及高级版（500元/月）三档付费订阅服务，全线产品接入豆包2.1大模型。官方强调免费用户权益不变",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "fe9e9688c9b9187ef032": {
-        "title": "豆包音频生成模型1.0发布，以多模态参考生成技术简化音频后期流程，开启“音频导演”时代。",
-        "text": "豆包音频生成模型1.0发布，以多模态参考生成技术简化音频后期流程，开启“音频导演”时代。 豆包音频生成模型1.0发布，以多模态参考生成技术简化音频后期流程，开启“音频导演”时代。 火山引擎发布豆包音频生成模型1.0，支持用户输入包含台词、情绪、背景音乐等Prompt，直接生成完整音频成片。该模型具备“长时音色一致性”能力，可稳定保持角色声音特性，解决长音频创作中的“角色串戏”痛点。同时支持“0样本多模态音频创造”与“一声多角”演绎，显著降低专业音频制作门槛。该模型即将上线剪映、即梦等平台，推动音频创作从“剪辑拼接”向“创意导演”演进。 火山引擎发布豆包音频生成模型1.0，支持用户输入包含台词、情绪、背景音乐等Prompt，直接生成完整音频成片。该模型具备“长时音色一致性”能力，可稳定保持角色声音特性，解决长音频创作中的“角色串戏”痛点。同时支持“0样本多模态音频创造”与“一声多角”演绎，显著降低专业音频制作门槛。 火山引擎发布豆包音频生成模型1.0，支持用户输入包含台词、情绪、背景音乐等Prompt，直接生成完整音频成片。",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "f149a40b73630187a1b9": {
-        "title": "腾讯云EdgeOne Makers平台简化Agent开发部署流程，助力中小企业实现0成本全球上线。",
-        "text": "腾讯云EdgeOne Makers平台简化Agent开发部署流程，助力中小企业实现0成本全球上线。 腾讯云EdgeOne Makers平台简化Agent开发部署流程，助力中小企业实现0成本全球上线。 腾讯云发布边缘Web与AI Agent托管平台EdgeOne Makers，开发者无需自建服务器或配置环境，即可通过Git、CLI等方式一键构建、部署、托管Web与AI Agent应用，实现分钟级全球上线。平台内置运行时、沙箱工具、对话记忆等Agent运行底座，支持全链路追踪与调试。此举填补了从原型到稳定上线之间的承接平台空白，降低了Agent应用的运维门槛。 腾讯云发布边缘Web与AI Agent托管平台EdgeOne Makers，开发者无需自建服务器或配置环境，即可通过Git、CLI等方式一键构建、部署、托管Web与AI Agent应用，实现分钟级全球上线。平台内置运行时、沙箱工具、对话记忆等Agent运行底座，支持全链路追踪与调试。 腾讯云发布边缘Web与AI Agent托管平台EdgeOne Makers，开发者无需自建服务器或配置环境",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "a0e47d428cf74a31f3c6": {
-        "title": "企业微信内测AI Agent“大圆”，原生嵌入生态实现办公与客户经营场景的深度智能化。",
-        "text": "企业微信内测AI Agent“大圆”，原生嵌入生态实现办公与客户经营场景的深度智能化。 企业微信内测AI Agent“大圆”，原生嵌入生态实现办公与客户经营场景的深度智能化。 企业微信启动AI智能体“大圆”内测，用户可通过左滑唤醒，自动识别当前页面。基于群聊、文档、会议等沉淀数据，“大圆”可提供场景化智能服务，如一键总结群聊讨论、提炼报表结论并自动生成回复。依托企业微信庞大的生态体量（接入超1400万企业，服务7.5亿用户），“大圆”能够有效整理销售、客服与客户的非结构化沟通记录，转化为可复用的客户画像与经营洞察。 企业微信启动AI智能体“大圆”内测，用户可通过左滑唤醒，自动识别当前页面。基于群聊、文档、会议等沉淀数据，“大圆”可提供场景化智能服务，如一键总结群聊讨论、提炼报表结论并自动生成回复。 企业微信启动AI智能体“大圆”内测，用户可通过左滑唤醒，自动识别当前页面。基于群聊、文档、会议等沉淀数据，“大圆”可提供场景化智能服务，如一键总结群聊讨论、提炼报表结论并自动生成回复。依托企业微信庞大的生态体量（接入超1400万企业",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
-      "70a9f5c850cf5aecf176": {
-        "title": "港大MaRS Lab FAST-LIVO2获IEEE TRO傅京孙纪念最佳论文奖",
-        "text": "港大MaRS Lab FAST-LIVO2获IEEE TRO傅京孙纪念最佳论文奖 港大MaRS Lab FAST-LIVO2获IEEE TRO傅京孙纪念最佳论文奖 香港大学机械与机器人系统实验室张富副教授团队研发的FAST-LIVO2获得IEEE Transactions on Robotics（TRO）傅京孙纪念最佳论文奖。这是该奖项有史以来第二次颁给中国科研团队。论文第一作者郑纯然为华为天才少年，其开源项目在GitHub累计斩获9.1k Star。通讯作者张富在机器人感知与自主导航领域全球排名第五、华人第一。 香港大学机械与机器人系统实验室张富副教授团队研发的FAST-LIVO2获得IEEE Transactions on Robotics（TRO）傅京孙纪念最佳论文奖。这是该奖项有史以来第二次颁给中国科研团队。论文第一作者郑纯然为华为天才少年，其开源项目在GitHub累计斩获9.1k Star。 香港大学机械与机器人系统实验室张富副教授团队研发的FAST-LIVO2获得IEEE Transactions on",
-        "at": "2026-06-24",
-        "edition": "evening"
-      },
       "dc22541101559fd48ce1": {
         "title": "OpenAI自研推理芯片Jalapeño性能媲美英伟达Blackwell",
         "text": "OpenAI自研推理芯片Jalapeño性能媲美英伟达Blackwell，仅用9个月完成设计。 OpenAI自研推理芯片Jalapeño性能媲美英伟达Blackwell OpenAI与博通、Celestica合作，于6月25日正式发布首款自研推理加速芯片Jalapeño。该芯片专为ChatGPT、Codex及未来智能体产品量身定制，性能可媲美英伟达Blackwell或谷歌TPU。开发周期仅9个月，是高性能ASIC领域最快记录，计划于2026年底部署。Richard Ho（前谷歌TPU核心成员）主导设计，团队围绕内核、内存移动、网络和服务模式优化架构。此举标志着OpenAI构建全栈优势 OpenAI与博通、Celestica合作，于6月25日正式发布首款自研推理加速芯片Jalapeño。该芯片专为ChatGPT、Codex及未来智能体产品量身定制，性能可媲美英伟达Blackwell或谷歌TPU。开发周期仅9个月，是高性能ASIC领域最快记录，计划于2026年底部署。Richard Ho（前谷歌TPU核心成员）主导设计",
