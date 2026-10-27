@@ -40019,6 +40019,90 @@
         "selectedTopicTotal": 16
       },
       "at": "2026-10-27"
+    },
+    "evening:2026-10-28": {
+      "fingerprint": "9ea629fbafcd6c160ec36f27273a460aba4d48d2631ea121ff73426bb40fd4c1",
+      "daily": {
+        "overview": "本周多智能体系统与长时记忆研究取得重要进展，涌现出多个针对复杂协作、通信失败及长时推理的基准测试与框架。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "基于- 的长时时空记忆基准测试",
+            "summary": "引入包含900小时视频的LongVideo数据集及4DMemoryBench，旨在评估和提升模型在长时跨度下的多模态时空记忆与推理能力。",
+            "refs": [
+              3
+            ],
+            "topicId": 8
+          },
+          {
+            "title": "理解多智能体大语言系统中的通信失败",
+            "summary": "构建了涵盖3211条失败轨迹的分类法，系统性地识别了多智能体系统中的早期收敛、压制少数派等通信失败模式。",
+            "refs": [
+              15
+            ],
+            "topicId": 48
+          },
+          {
+            "title": "相同上下文，不同代理",
+            "summary": "全面分析了语义层描述、多智能体编排及交互历史压缩三种上下文工程技术在长程数据任务中的行为与效果。",
+            "refs": [
+              13
+            ],
+            "topicId": 43
+          },
+          {
+            "title": "学习自由形式的多智能体编排",
+            "summary": "将自由形式可执行工作流合成集成到主智能体动作空间，使其能自主生成程序协调子智能体。",
+            "refs": [
+              2
+            ],
+            "topicId": 18
+          },
+          {
+            "title": "网络代理可复用验证器的基准测试",
+            "summary": "连接冻结接受规则与执行轨迹，建立可复用网络代理验证器的基线测量，涵盖97个任务。",
+            "refs": [
+              1
+            ],
+            "topicId": 16
+          },
+          {
+            "title": "鲁棒代理对话模拟资源",
+            "summary": "提出合成数据生成管道，用于生成并验证对抗性对话轨迹，以训练和评估鲁棒的对话代理。",
+            "refs": [
+              14
+            ],
+            "topicId": 47
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "AgentProofBench: 网络代理可复用验证器的基准测试",
+          "2": "DynaFlow: 学习自由形式的多智能体编排",
+          "3": "4DMemory: 基于Harness-Augmented Agents的长时时空记忆基准测试",
+          "4": "Embodied Lab：基于行动的知识基准测试",
+          "5": "BARC-Bench：良性请求，危险后果",
+          "6": "从视觉亲和度到多模态强化学习中的学习分配",
+          "7": "Leaf Skill：递归 LLM 智能体的高效叶子级动作定位",
+          "8": "大型语言模型驱动智能体的行为分析",
+          "9": "CEMIR vs. FISER：基于推理与增强的语用意图识别方法比较",
+          "10": "Δτ-Bench：推动智能体迈向动态能力",
+          "11": "POSEIDON：从代码仓库扩展科学智能体的训练环境",
+          "12": "CASE：面向冻结多模态情感模型的困惑感知技能进化",
+          "13": "相同上下文，不同代理：数据代理中语义层、多智能体编排与记忆压缩的行为研究",
+          "14": "ToolRACER: 鲁棒代理对话模拟资源",
+          "15": "理解多智能体大语言系统中的通信失败",
+          "16": "Open Home：智能家居摄像头视频从感知到洞察",
+          "17": "约束解码：有害还是有益？重新审视其对 LLM 性能的影响",
+          "18": "回到未来：重新思考芯片设计验证中智能体系统的 EDA 基础设施",
+          "19": "共递归语义自扩展：开放性智能的数学基础"
+        },
+        "candidateTotal": 237,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-10-28"
     }
   },
   "llm": {
@@ -43123,6 +43207,24 @@
       "model": "glm-4.7-flash",
       "content": "{\"day_overview\":\"Anthropic启动630亿美元融资计划并提交IPO申请，OpenAI发布GPT-6.1 Terra模型大幅降价，微软CEO纳德拉公开修正AI对齐观点。同时，苹果推送iOS 27.2更新强化Siri记忆功能，小米推出150元开源AI硬件HachimoDock，AI代理在电商与客服领域的应用与防御问题引发关注。\",\"hot_news\":[{\"topic_id\":51,\"insight\":\"Anthropic获630亿美元融资并提交IPO，AI算力基建融资规模创纪录。\",\"narrative\":\"Anthropic已正式向SEC提交IPO申请，同时宣布获得由美国银行、黑石、花旗及摩根士丹利等金融机构共同提供的630亿美元债务融资。这笔资金专项用于采购博通的AI加速芯片与网络设备，预计2027年开始交付，旨在大幅扩充其算力底座。此次融资通过设立特殊目的实体实施，博通还提供了残值支持担保。与此同时，Anthropic的S-1文件披露了其通过跨产品生态策略增强企业客户粘性的成效，超过一半年消费额超10万美元的客户同时使用Claude平台及Claude Code等自有应用。此外，文件还披露了高管薪酬等细节。SpaceX也同步宣布了与Apollo达成约400亿美元的GPU融资协议，显示出科技巨头在AI算力上的巨额投入。\",\"evaluation\":\"Anthropic的巨额融资与IPO申请标志着AI独角兽进入资本扩张新阶段，算力基建成为竞争焦点。\",\"refs\":[1,3,4,5,6],\"mention_count\":5,\"cross_verify_score\":82},{\"topic_id\":76,\"insight\":\"OpenAI发布GPT-6.1 Terra，性能提升且API价格腰斩，中端模型反超旗舰。\",\"narrative\":\"OpenAI正式推出了新一代模型GPT-6.1 Terra，重点优化了电脑端自主操作、视觉理解与复杂编程能力。该模型在自动化操作任务上的速度较上一代提升了3倍以上，错误率显著降低，编程测试得分大幅跃升。值得注意的是，GPT-6.1 Terra的API价格较以往降低了50%，每百万输入词元定价为1美元。尽管定位为中端模型，但通过微软和GitHub代码库泄露的线索显示，其逻辑推理与判别能力甚至可能反超自家旗舰GPT-6.1 Sol。目前该模型已面向ChatGPT Work及Codex全系列用户开放。\",\"evaluation\":\"GPT-6.1 Terra通过性能与成本的双重优化，进一步巩固了OpenAI在AI模型市场的竞争力。\",\"refs\":[22,23],\"mention_count\":2,\"cross_verify_score\":66},{\"topic_id\":66,\"insight\":\"微软CEO纳德拉修正AI对齐观点，认为模型越强对齐问题越棘手。\",\"narrative\":\"微软CEO萨提亚·纳德拉在《20VC》播客中公开修正了其对AI“对齐”问题的判断。他坦言过去认为AI越强大，使其贴合人类价值观与目标会顺理成章地解决，但现实并未按剧本走。随着模型规模膨胀、能力提升，对齐问题非但未自然解决，反而变得更加棘手。纳德拉建议企业应将AI模型视为“内部安全威胁”，在防护时先假定模型已被攻破，并建立可靠、具有确定性的系统设计、人工管控和完善的操作规程三道防线。\",\"evaluation\":\"纳德拉的观点反映了科技巨头对AI安全与可控性的深层担忧，推动AI治理从口号走向更硬的工程与制度。\",\"refs\":[13],\"mention_count\":1,\"cross_verify_score\":62},{\"topic_id\":67,\"insight\":\"苹果推送iOS 27.2，Siri新增记忆功能并支持多语言。\",\"narrative\":\"苹果向iPhone 18 Pro等机型推送了iOS 27.2正式版，重点强化了Siri的AI能力。新版本允许Siri记住之前的对话，用户无需重述即可追问，并新增了法语、日语、韩语、葡萄牙语和西班牙语支持。此外，Siri可调用的信息源得到拓宽，包括信息里的照片、日历参与者、语音留言以及Safari浏览与阅读列表。配套的“排除应用”功能也被重新设计，能更快圈定Siri、搜索和建议不能碰的App。同时，苹果还修复了超过160个漏洞。\",\"evaluation\":\"iOS 27.2通过增强Siri的记忆与多语言能力，进一步提升了人机交互的自然度与便捷性。\",\"refs\":[7,8],\"mention_count\":2,\"cross_verify_score\":74}],\"other_news\":[{\"topic_id\":68,\"insight\":\"小米发布150元开源AI硬件HachimoDock，定位大众入门Vibe Coding产品。\",\"narrative\":\"小米技术委创新产品团队在2026观猹大会上推出了开源AI硬件HachimoDock。该设备自制成本约150元，旨在降低AI硬件体验门槛。HachimoDock深度集成桌面宠物、语音操控电脑端Agent、智能家居联动及自定义组件创作等核心能力，用户可通过自然语言交互与AI协作，现场生成并运行快捷语音麦克风、微型游戏机、FM收音机、电脑状态副屏及智能家居中控等多元组件。目前，该项目的软件源码、硬件物料清单及装配教程已在GitHub开源。\",\"refs\":[24],\"mention_count\":1,\"cross_verify_score\":52},{\"topic_id\":50,\"insight\":\"二手奢侈品平台The RealReal更新机器人防御系统，阻止AI代理抢购。\",\"narrative\":\"二手奢侈品转售平台The RealReal宣布更新其机器人防御系统，以阻止AI代理利用其商品预留系统进行抢购。此前有报道称，AI代理可以通过将商品加入购物车来将其“保留”20分钟，从而阻碍其他用户购买。此次更新旨在有效增加AI代理在平台上的购物难度。\",\"refs\":[11],\"mention_count\":1,\"cross_verify_score\":69},{\"topic_id\":69,\"insight\":\"ChatGPT频繁向用户推荐404 Media解决技术支持问题。\",\"narrative\":\"许多用户在遇到常规技术问题时转向ChatGPT寻求帮助，但ChatGPT increasingly告诉他们这些问题是“值得报道的”，并推荐404 Media来协助解决。这导致404 Media收到了大量看似AI生成的邮件，询问其是否能调查用户的账号封禁或技术问题。\",\"refs\":[9,10],\"mention_count\":2,\"cross_verify_score\":73},{\"topic_id\":71,\"insight\":\"Google推出AI Quest第三课“Polar Peaks”，结合AI素养与神经科学。\",\"narrative\":\"Google Research与斯坦福加速学习实验室合作推出了AI Quest系列的第三课“Polar Peaks”。该课程旨在教导学生如何使用AI以及如何负责任地使用AI，同时深入探讨神经科学知识。\",\"refs\":[12],\"mention_count\":1,\"cross_verify_score\":69},{\"topic_id\":64,\"insight\":\"GPT-6.1 Sol被CodeRabbit用于加强代码库安全审查。\",\"narrative\":\"代码审查工具CodeRabbit利用GPT-6.1 Sol来调查复杂代码库中的安全风险。其安全代理帮助开发者审查发现的问题和提出的修复方案。\",\"refs\":[21],\"mention_count\":1,\"cross_verify_score\":59},{\"topic_id\":49,\"insight\":\"OpenAI与学术社区合作，分享模型在数学与物理领域的计算结果。\",\"narrative\":\"OpenAI分享了其在Kakeya猜想、指数时间假设和量子色动力学等数学与物理问题上的模型计算结果，并提供了研究人员验证和在此基础上进行研究的指南。\",\"refs\":[20],\"mention_count\":1,\"cross_verify_score\":60}],\"core_tech\":[{\"topic_id\":48,\"title\":\"Kolab: Benchmarking Human-Agent Collaboration\",\"summary\":\"Kolab是一个包含专业屏幕录制的数据集，揭示了前沿AI代理在长期工作流中往往高估协作质量，且无法预测专家对贡献的采纳。研究表明，人类在长期任务中更重视与AI代理的持续交互（如修订计划），而非其单次完成任务的能力。\",\"refs\":[15]},{\"topic_id\":24,\"title\":\"Don't Forget What You Just Learned\",\"summary\":\"论文提出了Self-Direction机制，使智能体能够从错误中学习并将经验转化为持久的教训。该机制结合了上下文反思和轻量级低秩适配器更新，解决了代理在会话间容易遗忘错误反思的问题。\",\"refs\":[18]},{\"topic_id\":20,\"title\":\"Bridging Exploration and Persona\",\"summary\":\"ID-TAP是一种基于信息导向决斗的框架，用于在测试时对LLM代理进行个性化。它通过轻量级交互和二进制比较来选择最佳人设，并利用相似性加权预热在相关查询间转移比较证据。\",\"refs\":[17]},{\"topic_id\":34,\"title\":\"Permission to Retry\",\"summary\":\"该研究探讨了AI代理工作流中的授权与恢复问题，将执行时可靠性从语言模型行为中分离出来。论文提出了检查点状态、调度权限、外部效果证据和和解权限等不同义务，并通过有限合规性研究进行验证。\",\"refs\":[19]},{\"topic_id\":1,\"title\":\"Benchmarks Are Surprisingly Compaction-Friendly\",\"summary\":\"研究指出，在处理长期代理任务时，为了腾出上下文窗口，代理通常需要进行“上下文压缩”。然而，这种压缩过程是有损的，可能导致代理在压缩过程中丢失任务约束、指令或早期决策的推理依据。\",\"refs\":[14]},{\"topic_id\":32,\"title\":\"Machine-Readable Operator Manuals\",\"summary\":\"论文分析了在ISO 11783网络上的操作手册语义同步过程，旨在实现农业机械的离线、多语言LLM辅助。研究评估了Markdown、JSON和XML的数据传输性能，并测试了各种开源LLM在跨语言查询任务中的表现。\",\"refs\":[16]}],\"ref_translations\":[{\"id\":1,\"zh_title\":\"华尔街联手黑石砸下 630 亿美元巨资：为Anthropic采购博通AI芯片铺路\"},{\"id\":3,\"zh_title\":\"Anthropic的IPO文件揭示了其留住企业客户的策略\"},{\"id\":4,\"zh_title\":\"Anthropic IPO文件中的五个奇怪细节\"},{\"id\":5,\"zh_title\":\"真正的Anthropic请站出来\"},{\"id\":6,\"zh_title\":\"SpaceX与Apollo锁定400亿美元GPU融资交易\"},{\"id\":22,\"zh_title\":\"电脑操作提速超 3 倍、API价格直接腰斩：OpenAI重磅发布GPT-6.1 Terra\"},{\"id\":23,\"zh_title\":\"OpenAI新模型曝光！GPT-6.1 Terra把旗舰反超了？\"},{\"id\":13,\"zh_title\":\"微软 CEO 认错：曾以为 AI 越强越安全，如今不敢这么想了\"},{\"id\":7,\"zh_title\":\"iOS 27.2 正式推送：Siri 能记对话，Apple Music 换黑白脸\"},{\"id\":8,\"zh_title\":\"Apple releases iOS and macOS 27.2 with new Siri AI features, new Music logo\"},{\"id\":24,\"zh_title\":\"小米发布150元开源硬件 HachimoDock，打造万能AI桌宠与桌面Agent中控\"},{\"id\":11,\"zh_title\":\"The RealReal won’t let AI agents hog designer clothing\"},{\"id\":9,\"zh_title\":\"Quoting Jason Koebler\"},{\"id\":10,\"zh_title\":\"ChatGPT Keeps Telling People 404 Media Can Solve Their Tech Support Problems\"},{\"id\":12,\"zh_title\":\"Our newest AI Quest: Mapping the human brain\"},{\"id\":21,\"zh_title\":\"GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases\"},{\"id\":20,\"zh_title\":\"Working with academic communities to build scientific understanding\"},{\"id\":15,\"zh_title\":\"Kolab: Benchmarking Human-Agent Collaboration in Long-Horizon Workflows\"},{\"id\":18,\"zh_title\":\"Don't Forget What You Just Learned: Self-Directed Repair Turns Agent Mistakes Into Lasting Lessons\"},{\"id\":17,\"zh_title\":\"Bridging Exploration and Persona: Information-Directed Dueling for Test-Time Agent Personalization\"},{\"id\":19,\"zh_title\":\"Permission to Retry: A Study of Authorization and Recovery in AI Agent Workflows\"},{\"id\":14,\"zh_title\":\"Benchmarks Are Surprisingly Compaction-Friendly\"},{\"id\":16,\"zh_title\":\"Machine-Readable Operator Manuals over the ISO 11783 Network for Offline, Multilingual LLM Assistance\"}]}",
       "at": "2026-10-27"
+    },
+    "e8ea9aac40667edbe88b314441211ee1d26c9d83d32aad3b4b6f3da826fc2d0b": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence - 直接关联月之暗面（Kimi），聚焦智能体（Agent）这一核心前沿方向，具备高时效性与行业影响力。\"}]}",
+      "at": "2026-10-28"
+    },
+    "c61f23e8b2cc4506974d211c431eab1508fc7ef21a016cc9abb7ea0fef35aca5": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"本周多智能体系统与长时记忆研究取得重要进展，涌现出多个针对复杂协作、通信失败及长时推理的基准测试与框架。\",\"hot_news\":[{\"topic_id\":8,\"insight\":\"4DMemory引入长视频数据集与基准，解决模型长时记忆与推理难题。\",\"narrative\":\"针对现有基准多集中于短中程任务且模型难以保留长时细粒度信息的痛点，研究团队发布了包含约900小时视频与5000多道题目的LongVideo数据集及4DMemoryBench。该基准旨在评估和提升模型对跨越数小时至数年的多模态流进行持久、细粒度时空记忆的能力，从而支持对长程事件的预测与推理。\",\"evaluation\":\"填补了长时记忆评估领域的空白，为提升模型在长程任务中的表现提供了重要工具。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":48,\"insight\":\"多智能体系统通信失败分类法揭示早期收敛与压制少数派等隐蔽问题。\",\"narrative\":\"多智能体大语言模型系统虽通过辩论与互纠提升推理能力，但交互过程常引入仅靠最终准确率无法解释的失败。研究团队构建了一个基于3211条失败轨迹的分类法，系统性地识别了早期收敛、忽视异议、压制正确少数派以及错误框架固化等通信失败模式，覆盖了医疗问答、编程、金融等多个领域。\",\"evaluation\":\"为优化多智能体协作机制、提升系统鲁棒性提供了关键的诊断视角。\",\"refs\":[15],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":43,\"insight\":\"多智能体数据代理的上下文工程技术（语义层、编排、压缩）被全面验证。\",\"narrative\":\"在处理异构数据时，数据代理的成功高度依赖于上下文构建。研究团队对语义层描述、多智能体编排以及交互历史压缩这三种上下文工程技术进行了综合分析，并在七个大语言模型上测试了1,514个长程任务。研究揭示了这些技术单独或组合使用时对行为、准确性和成本的具体影响。\",\"evaluation\":\"为构建高效、准确的数据代理提供了系统性的工程指导。\",\"refs\":[13],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":18,\"insight\":\"DynaFlow框架允许主智能体合成自由形式工作流以协调子智能体。\",\"narrative\":\"传统多智能体系统常依赖预定义结构，限制了其适应多样化任务需求的能力。DynaFlow框架将自由形式可执行工作流合成集成到主智能体的动作空间中，使其能够自主决定何时协作并生成特定任务的程序，通过顺序或并行执行、结构化信息交换及验证来协调子智能体。\",\"evaluation\":\"增强了多智能体系统的适应性与协作灵活性。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":66}],\"other_news\":[{\"topic_id\":16,\"insight\":\"AgentProofBench评估可复用验证器，连接冻结规则与执行轨迹。\",\"narrative\":\"AgentProofBench旨在评估可复用的网络代理验证器，通过将冻结的接受规则与执行轨迹关联，建立程序门正确性和复用性的基线测量。该资源涵盖97个任务、79个家族和四个Web服务，实验使用DeepSeek Flash/Pro模型建立了两个关联测量指标。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":27},{\"topic_id\":47,\"insight\":\"ToolRACER合成数据管道用于训练和评估鲁棒的对话代理。\",\"narrative\":\"针对现有功能调用基准过度强调合作交互而忽视对抗性轨迹的问题，ToolRACER提出了一种合成数据生成管道。该管道协调用户、助手和工具模拟模型，生成并验证用户与代理之间的多轮交互，旨在为开发更鲁棒的代理提供训练资源。\",\"refs\":[14],\"mention_count\":1,\"cross_verify_score\":25},{\"topic_id\":43,\"insight\":\"Δτ-Bench评估代理对动态工具生态系统的适应能力。\",\"narrative\":\"Δτ-Bench是一个可执行的代理基准，用于模拟大型工具生态系统的结构演变。在该基准中，独立演化的服务不断重塑任务完成方式，熟悉工具可能消失或被替代，而更高效的替代品则在重叠功能和嘈杂文档中涌现。\",\"refs\":[10],\"mention_count\":1,\"cross_verify_score\":29},{\"topic_id\":47,\"insight\":\"POSEIDON从代码仓库自动生成科学代理的训练环境。\",\"narrative\":\"为了解决科学发现中代理训练环境规模小且构建困难的问题，POSEIDON提出了一种自动化管道，能够从科学代码仓库中大规模生成多样化、可验证的训练环境。\",\"refs\":[11],\"mention_count\":1,\"cross_verify_score\":27},{\"topic_id\":48,\"insight\":\"约束解码通过移除无效路径提升大语言模型的可靠性与准确性。\",\"narrative\":\"研究重新审视了约束解码对大语言模型性能的影响，发现其效果取决于约束类型。格式约束、有效性约束和推理约束通常能通过移除无效路径来提高可靠性和准确性，而并非必然损害推理能力。\",\"refs\":[17],\"mention_count\":1,\"cross_verify_score\":25},{\"topic_id\":61,\"insight\":\"Kimi K2研究探讨开放式智能的数学基础。\",\"narrative\":\"研究从目的转向推理系统，利用康德和哥德尔的理论，将认知状态建模为形式语言上的部分评估，旨在为开放式智能寻找数学基础。\",\"refs\":[19],\"mention_count\":1,\"cross_verify_score\":25}],\"core_tech\":[{\"topic_id\":8,\"title\":\"4DMemory: Benchmarking Long-Horizon Spatiotemporal Memory\",\"summary\":\"引入包含900小时视频的LongVideo数据集及4DMemoryBench，旨在评估和提升模型在长时跨度下的多模态时空记忆与推理能力。\",\"refs\":[3]},{\"topic_id\":48,\"title\":\"Understanding Communication Failures in Multi-Agent LLM Systems\",\"summary\":\"构建了涵盖3211条失败轨迹的分类法，系统性地识别了多智能体系统中的早期收敛、压制少数派等通信失败模式。\",\"refs\":[15]},{\"topic_id\":43,\"title\":\"Same Context, Different Agents: A Behavioral Study\",\"summary\":\"全面分析了语义层描述、多智能体编排及交互历史压缩三种上下文工程技术在长程数据任务中的行为与效果。\",\"refs\":[13]},{\"topic_id\":18,\"title\":\"DynaFlow: Learning Free-Form Multi-Agent Orchestration\",\"summary\":\"将自由形式可执行工作流合成集成到主智能体动作空间，使其能自主生成程序协调子智能体。\",\"refs\":[2]},{\"topic_id\":16,\"title\":\"AgentProofBench: Benchmarking Reusable Verifiers for Web Agents\",\"summary\":\"连接冻结接受规则与执行轨迹，建立可复用网络代理验证器的基线测量，涵盖97个任务。\",\"refs\":[1]},{\"topic_id\":47,\"title\":\"ToolRACER: A Robust Agentic Conversation Emulation Resource\",\"summary\":\"提出合成数据生成管道，用于生成并验证对抗性对话轨迹，以训练和评估鲁棒的对话代理。\",\"refs\":[14]}],\"ref_translations\":[{\"id\":3,\"zh_title\":\"4DMemory: 基于Harness-Augmented Agents的长时时空记忆基准测试\"},{\"id\":15,\"zh_title\":\"理解多智能体大语言系统中的通信失败\"},{\"id\":13,\"zh_title\":\"相同上下文，不同代理：数据代理中语义层、多智能体编排与记忆压缩的行为研究\"},{\"id\":2,\"zh_title\":\"DynaFlow: 学习自由形式的多智能体编排\"},{\"id\":1,\"zh_title\":\"AgentProofBench: 网络代理可复用验证器的基准测试\"},{\"id\":14,\"zh_title\":\"ToolRACER: 鲁棒代理对话模拟资源\"}]}",
+      "at": "2026-10-28"
+    },
+    "bfa19e9069bfaf96716d06c3387be5997500c1e7be5bea9fe861dead7e9de4fa": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":4,\"zh_title\":\"Embodied Lab：基于行动的知识基准测试\"},{\"id\":5,\"zh_title\":\"BARC-Bench：良性请求，危险后果\"},{\"id\":6,\"zh_title\":\"从视觉亲和度到多模态强化学习中的学习分配\"},{\"id\":7,\"zh_title\":\"Leaf Skill：递归 LLM 智能体的高效叶子级动作定位\"},{\"id\":8,\"zh_title\":\"大型语言模型驱动智能体的行为分析\"},{\"id\":9,\"zh_title\":\"CEMIR vs. FISER：基于推理与增强的语用意图识别方法比较\"},{\"id\":10,\"zh_title\":\"Δτ-Bench：推动智能体迈向动态能力\"},{\"id\":11,\"zh_title\":\"POSEIDON：从代码仓库扩展科学智能体的训练环境\"},{\"id\":12,\"zh_title\":\"CASE：面向冻结多模态情感模型的困惑感知技能进化\"},{\"id\":16,\"zh_title\":\"Open Home：智能家居摄像头视频从感知到洞察\"},{\"id\":17,\"zh_title\":\"约束解码：有害还是有益？重新审视其对 LLM 性能的影响\"},{\"id\":18,\"zh_title\":\"回到未来：重新思考芯片设计验证中智能体系统的 EDA 基础设施\"},{\"id\":19,\"zh_title\":\"共递归语义自扩展：开放性智能的数学基础\"}]}",
+      "at": "2026-10-28"
     }
   },
   "published": {
@@ -79117,6 +79219,36 @@
         "title": "Beyond On-Policy vs. Off-Policy: At What Level Should LLM Agent Distillation Follow the Student?",
         "at": "2026-10-27",
         "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.34634": {
+        "title": "AgentProofBench: Benchmarking Reusable Verifiers for Web Agents",
+        "at": "2026-10-28",
+        "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.34467": {
+        "title": "DynaFlow: Learning Free-Form Multi-Agent Orchestration",
+        "at": "2026-10-28",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.32332": {
+        "title": "4DMemory: Benchmarking Long-Horizon Spatiotemporal Memory with Harness-Augmented Agents",
+        "at": "2026-10-28",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.20959": {
+        "title": "Same Context, Different Agents: A Behavioral Study of Semantic Layers, Multi-Agent Orchestration and Memory Compaction in Data Agents",
+        "at": "2026-10-28",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.09163": {
+        "title": "ToolRACER: A Robust Agentic Conversation Emulation Resource for Agent Training and Evaluation",
+        "at": "2026-10-28",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.32060": {
+        "title": "Understanding Communication Failures in Multi-Agent LLM Systems",
+        "at": "2026-10-28",
+        "edition": "evening"
       }
     }
   },
@@ -96117,6 +96249,36 @@
       "2dd77be084849ba2": {
         "title": "Beyond On-Policy vs. Off-Policy: At What Level Should LLM Agent Distillation Follow the Student?",
         "at": "2026-10-27",
+        "edition": "evening"
+      },
+      "f34164de7ce96df3": {
+        "title": "AgentProofBench: Benchmarking Reusable Verifiers for Web Agents",
+        "at": "2026-10-28",
+        "edition": "evening"
+      },
+      "134a7599d53de4ab": {
+        "title": "DynaFlow: Learning Free-Form Multi-Agent Orchestration",
+        "at": "2026-10-28",
+        "edition": "evening"
+      },
+      "b50db1d7d38eb5a4": {
+        "title": "4DMemory: Benchmarking Long-Horizon Spatiotemporal Memory with Harness-Augmented Agents",
+        "at": "2026-10-28",
+        "edition": "evening"
+      },
+      "da45583cee52d301": {
+        "title": "Same Context, Different Agents: A Behavioral Study of Semantic Layers, Multi-Agent Orchestration and Memory Compaction in Data Agents",
+        "at": "2026-10-28",
+        "edition": "evening"
+      },
+      "0dc6057fc0849951": {
+        "title": "ToolRACER: A Robust Agentic Conversation Emulation Resource for Agent Training and Evaluation",
+        "at": "2026-10-28",
+        "edition": "evening"
+      },
+      "e5d7a22f5fbbb7c1": {
+        "title": "Understanding Communication Failures in Multi-Agent LLM Systems",
+        "at": "2026-10-28",
         "edition": "evening"
       }
     }
