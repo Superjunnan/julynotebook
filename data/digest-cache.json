@@ -39767,6 +39767,90 @@
         "selectedTopicTotal": 16
       },
       "at": "2026-10-29"
+    },
+    "evening:2026-10-30": {
+      "fingerprint": "b741915cd90ce327bad7cc4d9f71428368bf714f313a1758f6b0cc15980d7b8b",
+      "daily": {
+        "overview": "本周AI领域聚焦于智能体评估基准的革新与训练框架的优化。CLI与GUI智能体协作评估、专业任务生成框架以及强化学习中的推理难题成为研究热点。同时，针对长时序任务与多模态感知的评估工具与数据构建方法也取得了重要进展。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "智能体人类协作评估的统一基准",
+            "summary": "该论文提出了REALCLI基准，旨在统一评估CLI智能体的任务执行与人类协作质量，揭示了在可操控性、信任校准和安全管理方面的主要差距。",
+            "refs": [
+              5
+            ],
+            "topicId": 13
+          },
+          {
+            "title": "将专业意图转化为可执行工作以",
+            "summary": "WorkFactory是一个可扩展的框架，用于构建连贯且可执行的专业任务，从而解决专业智能体训练中任务信息缺失或不一致的问题。",
+            "refs": [
+              7
+            ],
+            "topicId": 45
+          },
+          {
+            "title": "当所有失败时：硬问题推理的策",
+            "summary": "该研究探讨了强化学习与可验证奖励（RLVR）在处理超出模型能力难题时面临的“学习悬崖”问题，即当所有rollout失败时，基于组的相对估计器会失效。",
+            "refs": [
+              6
+            ],
+            "topicId": 12
+          },
+          {
+            "title": "驱动智能体骨架进化中评估预算",
+            "summary": "该研究调查了在LLM驱动的智能体骨架进化中，如何分配评估预算以平衡搜索引导与最终选择，发现稀疏反馈和针对性评估各有其作用。",
+            "refs": [
+              11
+            ],
+            "topicId": 44
+          },
+          {
+            "title": "智能体轨迹的步骤级标注工作台",
+            "summary": "Annotrace是一个工作台工具，能够读取多种格式的智能体轨迹，并将其转化为有序的嵌套步骤列表，解决了手动标注和工具构建的痛点。",
+            "refs": [
+              16
+            ],
+            "topicId": 52
+          },
+          {
+            "title": "作为移动智能体快速动作策略的",
+            "summary": "GUI-JEPA提出了首个基于JEPA架构的解码器-free GUI智能体策略，利用预训练的JEPA编码器潜在空间来选择动作，旨在解决移动GUI智能体速度慢和内存消耗大的问题。",
+            "refs": [
+              9
+            ],
+            "topicId": 13
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "基于行为充分性的软件需求测试生成：LLM智能体基准测试",
+          "2": "罕见、相关但依然错误：记忆如何导致LLM群体决策失败",
+          "3": "Feature Arc：在演进功能上对编码智能体进行基准测试",
+          "4": "Ada PRA：面向数据科学的自适应标准过程奖励智能体",
+          "5": "RealCLI：CLI智能体人类协作评估的统一基准",
+          "6": "当所有rollout失败时：硬问题推理的策略兼容联合解码",
+          "7": "WorkFactory：将专业意图转化为可执行工作以实现可扩展智能体训练",
+          "8": "提出更好的在线策略蒸馏 rollout 方法",
+          "9": "GUI-JEPA：作为移动GUI智能体快速动作策略的候选条件JEPA潜在表示",
+          "10": "揭示LLM失败原因：从内部机制到对抗性推理轨迹",
+          "11": "LLM驱动智能体骨架进化中评估预算应投向何处？",
+          "12": "实时搜索：将问题转化为可执行验证器代码以测试专业金融搜索智能体",
+          "13": "LLM能否可靠地评判奥赛证明？基于数学验证的LLM研究",
+          "14": "Percept RL：从答案到交互，使多模态大模型中的视觉感知可奖励",
+          "15": "在思维链忠实度评估中作为选择的正确性约束",
+          "16": "Annotrace：智能体轨迹的步骤级标注工作台",
+          "17": "超越证据连贯性陷阱：面向时间错乱假新闻检测的智能体驱动证据选择",
+          "18": "Zooming without Zooming v2：从观察细节到连接证据以实现可泛化的多模态感知",
+          "19": "约束承诺边界：面向智能体实体解析的DIO/ODI授权护栏"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-10-30"
     }
   },
   "llm": {
@@ -42937,6 +43021,24 @@
       "model": "glm-4.7-flash",
       "content": "{\"day_overview\":\"Google DeepMind发布Gemini 4 Carbon模型，强调网络安全与长时程能力；Chrome浏览器新增AI自动填充功能，可读取Gmail信息辅助表单填写；AI在数学领域取得突破，完成有限单群分类定理的形式化证明。\",\"hot_news\":[{\"topic_id\":16,\"insight\":\"Gemini 4 Carbon在网络安全与长时程任务上达到新高度，但发布策略仍采取分阶段限制。\",\"narrative\":\"Google DeepMind于10月28日宣布推出Gemini 4 Carbon模型，这是其最新的前沿模型，重点强化了网络安全和长时程任务能力。该模型在Artificial Analysis Intelligence Index v5.0中排名第一，得分59，并在编码、代理任务及科学分析方面取得显著进展。特别是在网络安全领域，Carbon在SEC-bench Pro、ExploitGym和CWE-bench等基准测试中表现优异。然而，与之前的Gemini 4 Argon类似，Google采取了分阶段发布策略，用户目前仍无法直接使用该模型。这一发布时间点紧随Argon两周之后，显示出Google在保持技术领先的同时，也在谨慎控制市场预期。\",\"evaluation\":\"Gemini 4 Carbon标志着Google在网络安全与长时程AI能力上的重要突破，但分阶段发布策略可能影响其市场影响力。\",\"refs\":[3,5],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":65,\"insight\":\"Chrome AI自动填充功能升级，可读取Gmail邮件内容，提升表单填写效率。\",\"narrative\":\"谷歌宣布Chrome浏览器将推出高级AI自动填充功能，该功能能够读取用户Gmail邮件中的信息，为在线表单生成更精准的建议。用户在填写航班确认号、会员ID、物流跟踪信息、订单号、地址、电话或信用卡号等关键数据时，Chrome将自动提示相关内容。这一功能是谷歌个人智能能力的延伸，此前用户已可通过连接Gemini助手来检索细节并回答复杂问题，现在类似能力被直接嵌入浏览器中。谷歌强调敏感数据将进行加密处理，用户可在设置中自主选择是否启用。该功能目前面向美国桌面用户，并逐步在Chrome浏览器中的Gemini iOS与Android应用中推出。\",\"evaluation\":\"Chrome AI自动填充功能通过深度整合邮件与搜索数据，进一步巩固了谷歌在AI驱动浏览器领域的竞争优势。\",\"refs\":[7,10],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":68,\"insight\":\"AI在数学领域取得重大突破，24天内完成有限单群分类定理的形式化证明。\",\"narrative\":\"AI数学公司Axiom Math宣布，由人类数学家和工程师组织的数十个AI Agent在24天内完成了有限单群分类定理的Lean形式化，生成约4310万行代码和205万个形式化声明。这是人类数学史上最庞大的工程之一，原本需要100多位顶尖数学家耗费数十年、写下1.5万页证明。更令人惊讶的是，AI在检查这些数学家留下的证明时，还揪出了一个存在近40年的论证漏洞。此外，AI还参与构造了一项新的群论结果。这一突破不仅展示了AI在数学推理中的强大能力，也标志着数学研究进入人机协作的新阶段。\",\"evaluation\":\"AI在数学领域的突破性进展，不仅验证了其处理复杂逻辑的能力，也为数学研究提供了全新的工具和方法。\",\"refs\":[12],\"mention_count\":1,\"cross_verify_score\":73}],\"other_news\":[{\"topic_id\":66,\"insight\":\"Anthropic拟赴美上市，计划向全球散户开放认购。\",\"narrative\":\"Anthropic已向美国SEC提交赴美上市申请，计划在纳斯达克挂牌，股票代码为“ANT”。此次IPO的募资规模有望创下全球历史之最。Anthropic还计划将相当比例的发行股份分配给全球散户，并在欧洲市场与英国专业投资平台RetailBook合作，通过“公开发行平台”监管框架，让个人投资者直接参与认购。\",\"refs\":[17],\"mention_count\":1,\"cross_verify_score\":61},{\"topic_id\":73,\"insight\":\"AI数据中心能耗激增，可能抵消过去15年的减排成果。\",\"narrative\":\"环保组织塞拉俱乐部的内部测算显示，为AI数据中心供能而涌起的一轮化石燃料电厂建设潮，可能把过去15年攒下的减排成果一口气抵消。若计入规划中的AI项目，到2030年二氧化碳年排放将达21亿吨，较2025年增长约42%。企业为应对AI的巨大用电需求，正绕过公共电网，自行建设天然气发电站。\",\"refs\":[19],\"mention_count\":1,\"cross_verify_score\":61},{\"topic_id\":71,\"insight\":\"电商AI模特图产业链加速成型，价格仅为实拍图的四分之一。\",\"narrative\":\"电商平台AI模特图使用日益普遍，引发消费者对“失真”“无法判断版型”的吐槽。乱象背后，AI模特图产业链已逐步清晰，有电商摄影师报价显示，AI生成图价格不到实拍图的四分之一。部分摄影公司则拒绝使用AI，理由是“AI面料还原度低，难以呈现真实质感”。律师分析指出，使用AI模特图是否构成虚假宣传，关键在于商家展示内容与实际销售商品是否相符。\",\"refs\":[18],\"mention_count\":1,\"cross_verify_score\":61},{\"topic_id\":78,\"insight\":\"微软停止在智能电视上支持Copilot AI助手。\",\"narrative\":\"微软宣布将于2026年结束在所有智能电视上对Copilot AI助手的支持。这一决定是在LG和Samsung于2025年CES宣布其最新智能电视将包含Copilot功能近两年后做出的。\",\"refs\":[15],\"mention_count\":1,\"cross_verify_score\":69}],\"core_tech\":[{\"topic_id\":5,\"title\":\"AutoVend: Benchmarking LLM Agents\",\"summary\":\"AutoVend是一个基准测试，评估LLM代理在长期自主售货运营中的表现，通过模拟20台售货机在180天内的运营来衡量其经济回报能力。\",\"refs\":[20]},{\"topic_id\":24,\"title\":\"Context Is a Pipeline\",\"summary\":\"该研究指出，在LLM代理中，工具输出在模型看到之前的信息流失是一个关键问题，并测量了这种流失对代理性能的影响。\",\"refs\":[21]},{\"topic_id\":23,\"title\":\"CogArena: Benchmarking Multimodal\",\"summary\":\"CogArena是一个基准测试，用于评估多模态代理在交互式行为实验中的表现，旨在解决在线数据集可能被污染的问题。\",\"refs\":[22]},{\"topic_id\":31,\"title\":\"Generation and Verification\",\"summary\":\"该研究提出了一种用于汽车C/C++的编码助手，专注于安全关键软件工程中的生成与验证，满足MISRA和AUTOSAR等行业标准。\",\"refs\":[23]},{\"topic_id\":35,\"title\":\"LM-DSB: A Lightweight Multi-agent\",\"summary\":\"LM-DSB是一个轻量级多代理系统，用于自动化生成建筑行业的每日安全公告，集成检索增强生成技术。\",\"refs\":[24]},{\"topic_id\":46,\"title\":\"The Agent in the Middle\",\"summary\":\"该研究通过VELA基准测试，探讨了AI中介访问如何改变Web漏洞的利用方式，并分析了代理接口对安全性的影响。\",\"refs\":[25]}],\"ref_translations\":[{\"id\":20,\"zh_title\":\"AutoVend：在长期自主售货运营中评估LLM代理\"},{\"id\":21,\"zh_title\":\"上下文是管道而非窗口：LLM代理工具中的信息流失\"},{\"id\":22,\"zh_title\":\"CogArena：在交互式行为实验中评估多模态代理\"},{\"id\":23,\"zh_title\":\"生成与验证：安全关键汽车软件工程中的人机协作\"},{\"id\":24,\"zh_title\":\"LM-DSB：建筑行业自动化每日安全公告生成的轻量级多代理系统\"},{\"id\":25,\"zh_title\":\"中间的代理：AI中介访问如何重塑Web漏洞利用\"}]}",
       "at": "2026-10-29"
+    },
+    "5515600b4dcc5ef45fdd0d746c63598ff30d79f6482305ab2c3417450c3cb790": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence - 直接关联 Kimi/月之暗面，聚焦 Agent 智能体，具备高时效性与行业影响力。\"}]}",
+      "at": "2026-10-30"
+    },
+    "df053d629c05942d6275dc82b43d64ab87a260ec5527c6d785b3ea54151fc38d": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"本周AI领域聚焦于智能体评估基准的革新与训练框架的优化。CLI与GUI智能体协作评估、专业任务生成框架以及强化学习中的推理难题成为研究热点。同时，针对长时序任务与多模态感知的评估工具与数据构建方法也取得了重要进展。\",\"hot_news\":[{\"topic_id\":13,\"insight\":\"CLI智能体需在任务执行与人类协作质量间取得平衡。\",\"narrative\":\"随着CLI智能体执行长时序任务的能力增强，现有的评估基准往往假设用户指令固定不变，或仅评估任务结果而忽略了运行时的协作质量。为此，Hugging Face Papers发布了RealCLI基准，旨在统一评估CLI智能体的任务执行与人类协作质量，揭示了在可操控性、信任校准和安全管理方面的主要差距。\",\"evaluation\":\"该基准为评估复杂CLI交互场景提供了新的统一视角。\",\"refs\":[5],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":45,\"insight\":\"WorkFactory通过构建连贯的专业任务框架解决训练数据缺失问题。\",\"narrative\":\"在扩展监督训练以构建专业智能体时，缺乏或任务信息不一致会阻碍教师执行并削弱监督效果。arXiv cs.AI提出的WorkFactory框架旨在构建连贯且可执行的专业任务，从而为可扩展的智能体训练提供可靠的专业演示。\",\"evaluation\":\"该框架为解决专业领域智能体训练数据匮乏提供了有效方案。\",\"refs\":[7],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":12,\"insight\":\"RLVR在处理超出模型能力的难题时面临学习悬崖。\",\"narrative\":\"强化学习与可验证奖励（RLVR）通过在线探索从二元奖励中获取学习信号，是提升大语言模型推理能力的强大范式。然而，当所有rollout都失败时，样本无法揭示正确解，导致基于组的相对估计器（如GRPO、RLOO）的优势估计归零，从而引发学习悬崖。\",\"evaluation\":\"该研究指出了当前RLVR范式在极端困难问题上的局限性。\",\"refs\":[6],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":44,\"insight\":\"评估预算的分配策略直接影响智能体骨架进化的效率。\",\"narrative\":\"在LLM驱动的智能体骨架进化中，评估既指导后续搜索也决定最终骨架选择，但全量评估成本高昂。arXiv cs.AI的研究表明，稀疏反馈可以维持生产性的进化，而额外的针对性评估则能改善最终选择。\",\"evaluation\":\"该研究为优化智能体开发流程中的资源分配提供了实证依据。\",\"refs\":[11],\"mention_count\":1,\"cross_verify_score\":65}],\"other_news\":[{\"topic_id\":52,\"insight\":\"Annotrace工具支持多种格式，将运行轨迹转化为结构化步骤。\",\"narrative\":\"LLM智能体失败研究通常需要手动标注轨迹，且每个研究都需构建专用工具。Annotrace能够读取包括OpenTelemetry GenAI、LangSmith和Langfuse在内的六种轨迹格式，并将每次运行转化为有序的嵌套步骤列表。\",\"refs\":[16],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":13,\"insight\":\"GUI-JEPA提出首个基于JEPA架构的解码器-free GUI智能体策略。\",\"narrative\":\"移动GUI智能体通常依赖大型视觉语言模型逐个解码动作令牌，导致速度慢且内存消耗大。GUI-JEPA利用在未标注GUI截图上预训练的JEPA编码器潜在空间中的候选条件JEPA潜在表示来选择动作，据称是首个基于JEPA的解码器-free GUI智能体策略。\",\"refs\":[9],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":45,\"insight\":\"LiveSearch基准通过可执行代码解决金融搜索的时效性问题。\",\"narrative\":\"大多数金融基准在标注时固定答案，导致黄金标准随市场变化而过时。LiveSearch引入了一个实时基准，将每个问题存储为可执行的验证器代码，即对专业金融数据服务的调用序列后跟声明式提取器。\",\"refs\":[12],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":45,\"insight\":\"PerceptRL在多模态大模型后训练中强化视觉感知能力。\",\"narrative\":\"细粒度视觉感知是多模态大模型后训练的瓶颈。PerceptRL在两个互补层面强化感知能力，通过持续的字幕监督来应对主观且信息密集的描述带来的可验证奖励设计挑战。\",\"refs\":[14],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":2,\"insight\":\"FeatureArc基准评估智能体在代码库历史上的功能扩展能力。\",\"narrative\":\"大多数功能基准在固定代码库上评估单个请求。FeatureArc旨在评估智能体在自身先前代码上的连续扩展，并检查功能是否保持正确，通过从代码库历史构建任务管道。\",\"refs\":[3],\"mention_count\":1,\"cross_verify_score\":65},{\"topic_id\":2,\"insight\":\"CrossProfile基准诊断LLM群体决策中的记忆失效问题。\",\"narrative\":\"当LLM群体的讨论被压缩为短记忆时，应保留哪些信息？CrossProfile是一个包含60个模板的诊断基准，其中支持性、诱饵和不相关事实的所有权被交叉，而文本保持固定。\",\"refs\":[2],\"mention_count\":1,\"cross_verify_score\":65}],\"core_tech\":[{\"topic_id\":13,\"title\":\"RealCLI: Toward a Unified Evaluation of Human-Agent Collaboration for CLI Agents\",\"summary\":\"该论文提出了REALCLI基准，旨在统一评估CLI智能体的任务执行与人类协作质量，揭示了在可操控性、信任校准和安全管理方面的主要差距。\",\"refs\":[5]},{\"topic_id\":45,\"title\":\"WorkFactory: Turning Professional Intents into Executable Work for Scalable Agent Training\",\"summary\":\"WorkFactory是一个可扩展的框架，用于构建连贯且可执行的专业任务，从而解决专业智能体训练中任务信息缺失或不一致的问题。\",\"refs\":[7]},{\"topic_id\":12,\"title\":\"When All Rollouts Fail: Policy-Compatible Joint Decoding for Hard-Problem Reasoning\",\"summary\":\"该研究探讨了强化学习与可验证奖励（RLVR）在处理超出模型能力难题时面临的“学习悬崖”问题，即当所有rollout失败时，基于组的相对估计器会失效。\",\"refs\":[6]},{\"topic_id\":44,\"title\":\"Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution?\",\"summary\":\"该研究调查了在LLM驱动的智能体骨架进化中，如何分配评估预算以平衡搜索引导与最终选择，发现稀疏反馈和针对性评估各有其作用。\",\"refs\":[11]},{\"topic_id\":52,\"title\":\"Annotrace: A Workbench for Step-Level Annotation of Agent Traces\",\"summary\":\"Annotrace是一个工作台工具，能够读取多种格式的智能体轨迹，并将其转化为有序的嵌套步骤列表，解决了手动标注和工具构建的痛点。\",\"refs\":[16]},{\"topic_id\":13,\"title\":\"GUI-JEPA: Candidate-Conditioned JEPA Latents as a Fast Action Policy for Mobile GUI Agents\",\"summary\":\"GUI-JEPA提出了首个基于JEPA架构的解码器-free GUI智能体策略，利用预训练的JEPA编码器潜在空间来选择动作，旨在解决移动GUI智能体速度慢和内存消耗大的问题。\",\"refs\":[9]}],\"ref_translations\":[{\"id\":5,\"zh_title\":\"RealCLI：CLI智能体人类协作评估的统一基准\"},{\"id\":7,\"zh_title\":\"WorkFactory：将专业意图转化为可执行工作以实现可扩展智能体训练\"},{\"id\":6,\"zh_title\":\"当所有rollout失败时：硬问题推理的策略兼容联合解码\"},{\"id\":11,\"zh_title\":\"LLM驱动智能体骨架进化中评估预算应投向何处？\"},{\"id\":16,\"zh_title\":\"Annotrace：智能体轨迹的步骤级标注工作台\"},{\"id\":9,\"zh_title\":\"GUI-JEPA：作为移动GUI智能体快速动作策略的候选条件JEPA潜在表示\"}]}",
+      "at": "2026-10-30"
+    },
+    "06c8251ddf983c1edb3367e6df2362c45be0e2fea2ad0fff9b4455fb98474a45": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":1,\"zh_title\":\"基于行为充分性的软件需求测试生成：LLM智能体基准测试\"},{\"id\":2,\"zh_title\":\"罕见、相关但依然错误：记忆如何导致LLM群体决策失败\"},{\"id\":3,\"zh_title\":\"Feature Arc：在演进功能上对编码智能体进行基准测试\"},{\"id\":4,\"zh_title\":\"Ada PRA：面向数据科学的自适应标准过程奖励智能体\"},{\"id\":8,\"zh_title\":\"提出更好的在线策略蒸馏 rollout 方法\"},{\"id\":10,\"zh_title\":\"揭示LLM失败原因：从内部机制到对抗性推理轨迹\"},{\"id\":12,\"zh_title\":\"实时搜索：将问题转化为可执行验证器代码以测试专业金融搜索智能体\"},{\"id\":13,\"zh_title\":\"LLM能否可靠地评判奥赛证明？基于数学验证的LLM研究\"},{\"id\":14,\"zh_title\":\"Percept RL：从答案到交互，使多模态大模型中的视觉感知可奖励\"},{\"id\":15,\"zh_title\":\"在思维链忠实度评估中作为选择的正确性约束\"},{\"id\":17,\"zh_title\":\"超越证据连贯性陷阱：面向时间错乱假新闻检测的智能体驱动证据选择\"},{\"id\":18,\"zh_title\":\"Zooming without Zooming v2：从观察细节到连接证据以实现可泛化的多模态感知\"},{\"id\":19,\"zh_title\":\"约束承诺边界：面向智能体实体解析的DIO/ODI授权护栏\"}]}",
+      "at": "2026-10-30"
     }
   },
   "published": {
@@ -78846,6 +78948,36 @@
         "title": "刚刚，面壁智能开源AI横扫全球4项第一！1.3B逆袭大厂，OCR极限实测杀疯了",
         "at": "2026-10-29",
         "edition": "evening"
+      },
+      "https://huggingface.co/papers/2610.22507": {
+        "title": "RealCLI: Toward a Unified Evaluation of Human-Agent Collaboration for CLI Agents",
+        "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.36849": {
+        "title": "When All Rollouts Fail: Policy-Compatible Joint Decoding for Hard-Problem Reasoning",
+        "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.37161": {
+        "title": "WorkFactory: Turning Professional Intents into Executable Work for Scalable Agent Training",
+        "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.36877": {
+        "title": "GUI-JEPA: Candidate-Conditioned JEPA Latents as a Fast Action Policy for Mobile GUI Agents",
+        "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.37276": {
+        "title": "Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution?",
+        "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.23284": {
+        "title": "Annotrace: A Workbench for Step-Level Annotation of Agent Traces",
+        "at": "2026-10-30",
+        "edition": "evening"
       }
     }
   },
@@ -95761,6 +95893,36 @@
       "cc6f89b7edb5a3ff": {
         "title": "刚刚，面壁智能开源AI横扫全球4项第一！1.3B逆袭大厂，OCR极限实测杀疯了",
         "at": "2026-10-29",
+        "edition": "evening"
+      },
+      "4db8451b60127f50": {
+        "title": "RealCLI: Toward a Unified Evaluation of Human-Agent Collaboration for CLI Agents",
+        "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "bb456754f7553c7c": {
+        "title": "When All Rollouts Fail: Policy-Compatible Joint Decoding for Hard-Problem Reasoning",
+        "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "9a15e7080cd4b729": {
+        "title": "WorkFactory: Turning Professional Intents into Executable Work for Scalable Agent Training",
+        "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "86bb36597560a80d": {
+        "title": "GUI-JEPA: Candidate-Conditioned JEPA Latents as a Fast Action Policy for Mobile GUI Agents",
+        "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "9afd4c52e117b5d4": {
+        "title": "Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution?",
+        "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "3358f8cebe1ea2f6": {
+        "title": "Annotrace: A Workbench for Step-Level Annotation of Agent Traces",
+        "at": "2026-10-30",
         "edition": "evening"
       }
     }
