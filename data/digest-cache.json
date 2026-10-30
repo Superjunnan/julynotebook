@@ -39434,6 +39434,88 @@
         "selectedTopicTotal": 7
       },
       "at": "2026-10-30"
+    },
+    "evening:2026-10-31": {
+      "fingerprint": "f5bc8b8365684e089d8fabc156c293948adc668081d907ee3242aa619923eb60",
+      "daily": {
+        "overview": "今日AI领域聚焦于多智能体协作、强化学习与系统优化。多篇论文探讨了如何通过外部记忆、程序化编译和专家推理提升智能体性能，同时针对隐私保护与置信度校准提出了新的解决方案。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "潜在多智能体推理的紧凑外部技能记忆",
+            "summary": "提出将可重用技能表示为小型外部潜在记忆，并通过角色条件化交叉注意力实现高效访问。",
+            "refs": [
+              1
+            ],
+            "topicId": 12
+          },
+          {
+            "title": "用于实时应用导航的在线密集强化学习",
+            "summary": "提出在线强化学习框架，直接在实时iOS应用上训练UI导航智能体，解决静态轨迹问题。",
+            "refs": [
+              2
+            ],
+            "topicId": 9
+          },
+          {
+            "title": "专家教学推理代理的运算放大器设计",
+            "summary": "利用通用LLM代理结合开源工具，实现从规格到版图的CMOS运算放大器自动化设计。",
+            "refs": [
+              3
+            ],
+            "topicId": 10
+          },
+          {
+            "title": "消除不确定性：通过程序化编译",
+            "summary": "通过程序化编译将智能体技能转化为可执行程序，消除执行过程中的不确定性。",
+            "refs": [
+              10
+            ],
+            "topicId": 16
+          },
+          {
+            "title": "学习多智能体协作的校准置信度",
+            "summary": "研究多智能体协作中的置信度校准问题，旨在提升复杂信息检索任务的准确性。",
+            "refs": [
+              12
+            ],
+            "topicId": 22
+          },
+          {
+            "title": "传播前判断：多智能体隐私的任",
+            "summary": "提出任务图上下文完整性机制，评估信息在多智能体传播中的隐私风险。",
+            "refs": [
+              11
+            ],
+            "topicId": 21
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "SkillMem: 潜在多智能体推理的紧凑外部技能记忆",
+          "2": "用于实时iOS应用UI导航的在线密集强化学习",
+          "3": "OPERA: 专家教学推理代理的运算放大器设计",
+          "4": "评估与改进用于理解测序协议的AI智能体",
+          "5": "LLM因果推理评估：程序生成挑战的案例研究",
+          "6": "正确实现多Token预测",
+          "7": "系统1模型指南：超越LLM的快速决策",
+          "8": "基于技能中心的智能体推进临床基因组分析",
+          "9": "GARDEN：通过证据导航实现通用自主奖励设计的多智能体强化学习",
+          "10": "消除不确定性：通过程序化编译实现自进化智能体技能",
+          "11": "传播前判断：多智能体隐私的任务图上下文完整性",
+          "12": "学习多智能体协作的校准置信度",
+          "13": "规范且经过测试？利用自进化智能体评估SWE-bench风格数据集",
+          "14": "置信度锚定顺序残差解码：用于掩码扩散语言模型",
+          "15": "Evo Team：通过进化团队实现多智能体协作",
+          "16": "ATLAS-Bench：面向本地搜索的智能体工具使用基准",
+          "17": "学习制定：通过渐进优化实现AI基础设施的智能体软硬件协同设计"
+        },
+        "candidateTotal": 250,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-10-31"
     }
   },
   "llm": {
@@ -42640,6 +42722,24 @@
       "model": "glm-4.7-flash",
       "content": "{\"selected_topic_ids\":[14,80,64,83,69,5,2,4,7,8],\"reasons\":[{\"topic_id\":14,\"reason\":\"Mistral开源旗舰模型Le Chonk，高热度与跨源一致性，代表开源社区重要进展。\"},{\"topic_id\":80,\"reason\":\"Anthropic商业计划与算力投入，涉及巨头竞争与基础设施，行业影响深远。\"},{\"topic_id\":64,\"reason\":\"字节跳动豆包工作接入多模型，体现国内大厂在生产力工具上的深度整合。\"},{\"topic_id\":83,\"reason\":\"Hugging Face发布长音频数据集，为语音AI研究提供高质量基础资源。\"},{\"topic_id\":69,\"reason\":\"MCP与AI Agent架构讨论，涉及技术标准与生态构建，具有长期技术价值。\"},{\"topic_id\":5,\"reason\":\"FeatureArc: Benchmarking Coding，针对代码生成能力的专业评估基准。\"},{\"topic_id\":2,\"reason\":\"AgentBaton: Efficient Model，探索高效模型在Agent场景下的应用。\"},{\"topic_id\":4,\"reason\":\"AOS-Bench: Can LLM Agents Manage，评估多智能体协作管理的挑战。\"},{\"topic_id\":7,\"reason\":\"PROBE: Frontier Coding Agents，前沿代码代理能力的基准测试。\"},{\"topic_id\":8,\"reason\":\"Rare, Relevant，关注模型在罕见但相关场景下的表现。\"}]}",
       "at": "2026-10-30"
+    },
+    "4122d38a7f0cb4a817f94c6aba82c61e8b0bca0379472536550f25a1dd228cc6": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence - 直接关联 Kimi/月之暗面，聚焦前沿的开放智能体技术，兼具热点与行业深度。\"}]}",
+      "at": "2026-10-31"
+    },
+    "8cfc59970af9bbac6118b223f7c236b1fd4a01495482fcf9e4a527b9989cc65f": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"今日AI领域聚焦于多智能体协作、强化学习与系统优化。多篇论文探讨了如何通过外部记忆、程序化编译和专家推理提升智能体性能，同时针对隐私保护与置信度校准提出了新的解决方案。\",\"hot_news\":[{\"topic_id\":12,\"insight\":\"SkillMem提出用外部潜在记忆替代传统技能存储，降低推理成本。\",\"narrative\":\"针对潜在多智能体系统中可重用技能存储开销大、重复处理的问题，SkillMem提出将每个技能表示为小型外部潜在记忆。该框架通过角色条件化的交叉注意力阅读器，使不同智能体能根据角色和隐藏状态直接访问同一记忆，从而优化了多智能体推理的效率与存储。\",\"evaluation\":\"为多智能体系统提供了一种高效的技能复用机制。\",\"refs\":[1,8],\"mention_count\":2,\"cross_verify_score\":82},{\"topic_id\":9,\"insight\":\"在线强化学习框架直接在iOS应用上训练导航智能体，解决静态轨迹问题。\",\"narrative\":\"为解决前沿视觉语言模型推理成本高及小模型易死记硬背的问题，研究提出了一种在线强化学习框架。该框架将智能体解耦为规划代理和UI定位模型，直接在实时iOS应用上训练导航智能体，使其具备更强的执行鲁棒性和错误恢复能力。\",\"evaluation\":\"实现了在真实应用环境中的高效UI导航训练。\",\"refs\":[2,4],\"mention_count\":2,\"cross_verify_score\":80},{\"topic_id\":10,\"insight\":\"OPERA利用通用LLM代理从规格到版图设计CMOS运算放大器。\",\"narrative\":\"针对模拟电路设计流程中从规格到版图往往需要手动迭代的问题，OPERA提出了一种通用LLM代理。该代理结合开源工具，能够从规格说明直接设计出CMOS运算放大器，直至完成版图签核，实现了端到端的自动化设计。\",\"evaluation\":\"显著降低了模拟电路设计的迭代成本。\",\"refs\":[3,5],\"mention_count\":2,\"cross_verify_score\":78},{\"topic_id\":16,\"insight\":\"通过程序化编译将技能转化为可执行程序，消除执行不确定性。\",\"narrative\":\"针对自进化智能体技能通常以文本形式表示并依赖LLM推理导致的执行不确定性，研究提出通过程序化编译将技能转化为可执行程序。这种方法利用确定性程序执行替代LLM推理，从而在无需更新模型参数的情况下，提升技能执行的可靠性与可验证性。\",\"evaluation\":\"为智能体技能的可靠执行提供了新范式。\",\"refs\":[10,13],\"mention_count\":2,\"cross_verify_score\":76}],\"other_news\":[{\"topic_id\":22,\"insight\":\"Cord解码器通过几何残差学习动态调整揭示顺序，提升生成质量。\",\"narrative\":\"针对掩码扩散语言模型中固定揭示规则可能影响生成质量的问题，Cord提出了一种轻量级提示条件策略。该策略在保持置信度解码作为稳定参考的同时，通过几何残差学习何时以及如何偏离参考，从而优化了生成过程。\",\"refs\":[14],\"mention_count\":1,\"cross_verify_score\":66},{\"topic_id\":21,\"insight\":\"任务图上下文完整性机制在多智能体隐私保护中评估信息传播风险。\",\"narrative\":\"为应对多智能体系统中信息传播带来的隐私风险，研究提出了任务图上下文完整性机制。该机制在信息传播前进行判断，评估信息在结合先前披露或传播至下游智能体后的适当性，从而增强了系统的隐私保护能力。\",\"refs\":[11],\"mention_count\":1,\"cross_verify_score\":65}],\"core_tech\":[{\"topic_id\":12,\"title\":\"SkillMem: Compact External Skill Memory\",\"summary\":\"提出将可重用技能表示为小型外部潜在记忆，并通过角色条件化交叉注意力实现高效访问。\",\"refs\":[1]},{\"topic_id\":9,\"title\":\"Online Dense Reinforcement Learning with Planning-Grounding Agent\",\"summary\":\"提出在线强化学习框架，直接在实时iOS应用上训练UI导航智能体，解决静态轨迹问题。\",\"refs\":[2]},{\"topic_id\":10,\"title\":\"OPERA: OPamp Design by an Expert-Taught Reasoning Agent\",\"summary\":\"利用通用LLM代理结合开源工具，实现从规格到版图的CMOS运算放大器自动化设计。\",\"refs\":[3]},{\"topic_id\":16,\"title\":\"Compile Away Uncertainty: Self-Evolving Agent Skills\",\"summary\":\"通过程序化编译将智能体技能转化为可执行程序，消除执行过程中的不确定性。\",\"refs\":[10]},{\"topic_id\":22,\"title\":\"Learning Calibrated Confidence for Multi-Agent Collaboration\",\"summary\":\"研究多智能体协作中的置信度校准问题，旨在提升复杂信息检索任务的准确性。\",\"refs\":[12]},{\"topic_id\":21,\"title\":\"Judging Before Propagation: Task-Graph Contextual Integrity\",\"summary\":\"提出任务图上下文完整性机制，评估信息在多智能体传播中的隐私风险。\",\"refs\":[11]}],\"ref_translations\":[{\"id\":1,\"zh_title\":\"SkillMem: 潜在多智能体推理的紧凑外部技能记忆\"},{\"id\":2,\"zh_title\":\"用于实时iOS应用UI导航的在线密集强化学习\"},{\"id\":3,\"zh_title\":\"OPERA: 专家教学推理代理的运算放大器设计\"},{\"id\":10,\"zh_title\":\"消除不确定性：通过程序化编译实现自进化智能体技能\"},{\"id\":11,\"zh_title\":\"传播前判断：多智能体隐私的任务图上下文完整性\"},{\"id\":12,\"zh_title\":\"学习多智能体协作的校准置信度\"},{\"id\":14,\"zh_title\":\"置信度锚定顺序残差解码：用于掩码扩散语言模型\"}]}",
+      "at": "2026-10-31"
+    },
+    "14934865e24a89baaf49d5df83e346b8f4590a9ef6f6e53def300fa108944c94": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":4,\"zh_title\":\"评估与改进用于理解测序协议的AI智能体\"},{\"id\":5,\"zh_title\":\"LLM因果推理评估：程序生成挑战的案例研究\"},{\"id\":6,\"zh_title\":\"正确实现多Token预测\"},{\"id\":7,\"zh_title\":\"系统1模型指南：超越LLM的快速决策\"},{\"id\":8,\"zh_title\":\"基于技能中心的智能体推进临床基因组分析\"},{\"id\":9,\"zh_title\":\"GARDEN：通过证据导航实现通用自主奖励设计的多智能体强化学习\"},{\"id\":13,\"zh_title\":\"规范且经过测试？利用自进化智能体评估SWE-bench风格数据集\"},{\"id\":15,\"zh_title\":\"Evo Team：通过进化团队实现多智能体协作\"},{\"id\":16,\"zh_title\":\"ATLAS-Bench：面向本地搜索的智能体工具使用基准\"},{\"id\":17,\"zh_title\":\"学习制定：通过渐进优化实现AI基础设施的智能体软硬件协同设计\"}]}",
+      "at": "2026-10-31"
     }
   },
   "published": {
@@ -78529,6 +78629,36 @@
         "title": "Annotrace: A Workbench for Step-Level Annotation of Agent Traces",
         "at": "2026-10-30",
         "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.37935": {
+        "title": "SkillMem: Compact External Skill Memory for Latent Multi-Agent Reasoning",
+        "at": "2026-10-31",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.39264": {
+        "title": "Online Dense Reinforcement Learning with Planning-Grounding Agent for UI Navigation on Live IOS Apps",
+        "at": "2026-10-31",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.39395": {
+        "title": "OPERA: OPamp Design by an Expert-Taught Reasoning Agent, from Specifications to Layout",
+        "at": "2026-10-31",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.39508": {
+        "title": "Compile Away Uncertainty: Self-Evolving Agent Skills via Programmatic Compilation",
+        "at": "2026-10-31",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.39532": {
+        "title": "Judging Before Propagation: Task-Graph Contextual Integrity for Multi-Agent Privacy",
+        "at": "2026-10-31",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.39927": {
+        "title": "Learning Calibrated Confidence for Multi-Agent Collaboration",
+        "at": "2026-10-31",
+        "edition": "evening"
       }
     }
   },
@@ -95404,6 +95534,36 @@
       "3358f8cebe1ea2f6": {
         "title": "Annotrace: A Workbench for Step-Level Annotation of Agent Traces",
         "at": "2026-10-30",
+        "edition": "evening"
+      },
+      "d7134c260060063b": {
+        "title": "SkillMem: Compact External Skill Memory for Latent Multi-Agent Reasoning",
+        "at": "2026-10-31",
+        "edition": "evening"
+      },
+      "82108b9fc074c8b9": {
+        "title": "Online Dense Reinforcement Learning with Planning-Grounding Agent for UI Navigation on Live IOS Apps",
+        "at": "2026-10-31",
+        "edition": "evening"
+      },
+      "fcace98750bbff80": {
+        "title": "OPERA: OPamp Design by an Expert-Taught Reasoning Agent, from Specifications to Layout",
+        "at": "2026-10-31",
+        "edition": "evening"
+      },
+      "c7a3fb4b2f726976": {
+        "title": "Compile Away Uncertainty: Self-Evolving Agent Skills via Programmatic Compilation",
+        "at": "2026-10-31",
+        "edition": "evening"
+      },
+      "e0c09738e95f5fa6": {
+        "title": "Judging Before Propagation: Task-Graph Contextual Integrity for Multi-Agent Privacy",
+        "at": "2026-10-31",
+        "edition": "evening"
+      },
+      "8d4dbe4aa052811e": {
+        "title": "Learning Calibrated Confidence for Multi-Agent Collaboration",
+        "at": "2026-10-31",
         "edition": "evening"
       }
     }
