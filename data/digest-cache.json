@@ -38824,6 +38824,90 @@
         "selectedTopicTotal": 10
       },
       "at": "2026-11-02"
+    },
+    "evening:2026-11-03": {
+      "fingerprint": "e262bd3d65fadfd269737ef8d0d2a4c62e696fdf7c50079814df08cb859825a5",
+      "daily": {
+        "overview": "AI Agent 领域涌现多篇高质量研究，涵盖时间序列预测、代理行为评估、个人上下文理解及仿真规范等方向。研究重点转向构建可复现的基准测试、提升代理在复杂环境中的可靠性以及规范化代理基础设施。",
+        "hotNews": [],
+        "otherNews": [],
+        "coreTech": [
+          {
+            "title": "用于时间序列预测研究的自改进",
+            "summary": "TSFLab 是一个用于时间序列预测研究的自改进代理无关工作台，旨在解决代码缺失和手动维护困难的问题。",
+            "refs": [
+              1
+            ],
+            "topicId": 3
+          },
+          {
+            "title": "在模块阴影环境中刻画 代理行为",
+            "summary": "该论文提出了一个评估框架，通过编码代理轨迹并与环境记录对齐来验证执行历史，特别关注模块阴影环境。",
+            "refs": [
+              7
+            ],
+            "topicId": 11
+          },
+          {
+            "title": "从个人事实回忆到个性化代理行为",
+            "summary": "P-ContextBench 是一个用于评估个性化上下文理解的基准，构建了基于人口结构的数字人类。",
+            "refs": [
+              8
+            ],
+            "topicId": 19
+          },
+          {
+            "title": "迈向代理 的可移植规范",
+            "summary": "研究将代理基础设施分解为八个功能组件，并提出可移植规范框架以记录模型运行环境。",
+            "refs": [
+              14
+            ],
+            "topicId": 46
+          },
+          {
+            "title": "在昨日之明日上对预测代理进行基准测试",
+            "summary": "FABench 是一个可扩展的回测环境，用于评估预测代理在整合不完整证据和推断因果驱动方面的能力。",
+            "refs": [
+              9
+            ],
+            "topicId": 10
+          },
+          {
+            "title": "从一维基准到复杂 几何",
+            "summary": "研究探讨了代理在将工程请求转化为仿真规范时的可靠性，特别是针对复杂的 3D 几何问题。",
+            "refs": [
+              10
+            ],
+            "topicId": 14
+          }
+        ],
+        "aiRumor": [],
+        "refTranslations": {
+          "1": "TSFLab：用于时间序列预测研究的自改进代理无关工作台",
+          "2": "隐私流：通过信息流分析与后果感知风险管理实现AI代理隐私保护",
+          "3": "面向优化建模的结构感知技能检索与仲裁",
+          "4": "Sec PO：提示注入安全的原理性对抗训练",
+          "5": "Agent Orch：全局编排能多接近逐步交互？",
+          "6": "专家展现结构冗余：面向混合专家大语言模型的结构保持专家剪枝",
+          "7": "在模块阴影环境中刻画 LLM 代理行为",
+          "8": "P-ContextBench：从个人事实回忆到个性化代理行为",
+          "9": "在昨日之明日上对预测代理进行基准测试",
+          "10": "从一维基准到复杂 3D 几何：代理能否可靠地指定自动化 PDE 模拟的问题？",
+          "11": "Robo Architect：利用持久记忆自动化机器人代理设计",
+          "12": "更多规则，更长列表？基于隐藏规则课程的自演化代理基准测试",
+          "13": "辅助奖励下的自我提升：从验证轨迹学习与评估迁移",
+          "14": "迈向代理 Harness 的可移植规范",
+          "15": "从动物园到牛棚：通过多通道模型嵌入实现高效LLM分析",
+          "16": "ANGLER：面向Web代理的验证器基准测试与自适应攻击者",
+          "17": "通过行为派生语义维度对齐MLLM与人类认知的潜在结构",
+          "18": "迈向AGI的扩展是否取决于系统1允许系统2执行什么？",
+          "19": "Sketch Director：通过代理布局推理与细节细化实现复杂场景素描"
+        },
+        "candidateTotal": 242,
+        "topicTotal": 61,
+        "selectedTopicTotal": 7
+      },
+      "at": "2026-11-03"
     }
   },
   "llm": {
@@ -41910,6 +41994,24 @@
       "model": "glm-4.7-flash",
       "content": "{\"items\":[{\"id\":2,\"zh_title\":\"OpenAI 可能将数据中心重新命名为‘AI 计算园区’\"},{\"id\":3,\"zh_title\":\"AI 角色如今拥有记忆：COF 1.1 赋予角色过去\"},{\"id\":4,\"zh_title\":\"Gemini 4 Carbon 在 Artificial Analysis 智能指数 v5 中排名 59\"},{\"id\":7,\"zh_title\":\"免费纠纷信生成器 + 费用回收计算器\"},{\"id\":8,\"zh_title\":\"AI 能让科技 CEO 的生活更轻松，其他人呢？\"},{\"id\":9,\"zh_title\":\"我喜欢 Local LLaMA/typed-decisions 基准测试，所以创建了一个小型 Space\"},{\"id\":10,\"zh_title\":\"引用 Kyle Kingsbury\"}]}",
       "at": "2026-11-02"
+    },
+    "1f4a84daf03576cacdd4024d67fb8289b42cfe34328d91a60aaca558d7f03ca5": {
+      "operation": "shortlist_topics",
+      "model": "glm-4.7-flash",
+      "content": "{\"selected_topic_ids\":[61],\"reasons\":[{\"topic_id\":61,\"reason\":\"Kimi K2: Open Agentic Intelligence - 涉及国产头部模型（月之暗面）的最新技术动向，聚焦 Agent 智能体，具有显著的行业影响力和时效性。\"}]}",
+      "at": "2026-11-03"
+    },
+    "5befaf3fbf42e59d652deb5ad5b5c7bdf18e60a16cd7572e81f8e2b42ab0597f": {
+      "operation": "daily_summary",
+      "model": "glm-4.7-flash",
+      "content": "{\"day_overview\":\"AI Agent 领域涌现多篇高质量研究，涵盖时间序列预测、代理行为评估、个人上下文理解及仿真规范等方向。研究重点转向构建可复现的基准测试、提升代理在复杂环境中的可靠性以及规范化代理基础设施。\",\"hot_news\":[{\"topic_id\":3,\"insight\":\"TSFLab 利用 AI 代理解决时间序列预测研究代码缺失与维护困难的问题。\",\"narrative\":\"随着时间序列预测（TSF）论文和产品的激增，研究人员面临代码发布率低（约20%）及代码维护成本高的困境。TSFLab 提出利用 AI 代理进行基准测试甚至支持自动研究，旨在解决独立实现差异大且难以维护的问题。\",\"evaluation\":\"为 TSF 领域提供了自动化的研究工作台，有望大幅提升研究效率。\",\"refs\":[1],\"mention_count\":1,\"cross_verify_score\":64},{\"topic_id\":11,\"insight\":\"新框架通过编码代理轨迹与独立环境记录来验证执行历史。\",\"narrative\":\"LLM 代理在不受信任的工作空间中面临未受信任代码执行的风险，但仅靠最终报告和状态难以可靠判断执行是否发生。研究引入评估框架，通过编码观察、推理、执行和响应行为，并与独立环境记录对齐，重构执行历史并验证报告。\",\"evaluation\":\"为评估代理在模块阴影环境中的安全性提供了可靠的方法论。\",\"refs\":[7],\"mention_count\":1,\"cross_verify_score\":64},{\"topic_id\":19,\"insight\":\"P-ContextBench 构建了基于人口结构的个性化数字人基准。\",\"narrative\":\"评估 LLM 在个人任务中安全使用个人上下文具有挑战性，因为上下文具有私密性、碎片化等特点。P-ContextBench 提出了一种现实、可验证且可扩展的基准，通过反映美国人口统计特征的种子构建了人口结构化、基于生活故事的数字人类。\",\"evaluation\":\"为评估 LLM 的个性化上下文理解能力提供了新的标准化工具。\",\"refs\":[8],\"mention_count\":1,\"cross_verify_score\":64},{\"topic_id\":46,\"insight\":\"研究将代理基础设施分解为八个功能组件并提出可移植规范框架。\",\"narrative\":\"代理基础设施（Harness）决定了模型能完成什么任务以及如何失败，但目前缺乏 settled 定义。研究将 Harness 分解为八个可跨系统指定和比较的功能组件，并提出可移植规范框架，用于记录模型在特定 Harness 中的运行情况。\",\"evaluation\":\"有助于解决不同 Harness 配置导致模型评分差异巨大的问题。\",\"refs\":[14],\"mention_count\":1,\"cross_verify_score\":64}],\"other_news\":[{\"topic_id\":10,\"insight\":\"FABench 提供了可扩展的回测环境来评估预测代理。\",\"narrative\":\"现有基准在测量和提升预测代理能力方面表现不佳。FABench 作为一个可扩展的回测环境，旨在解决固定语料库评估局限于预收集文档以及实时基准等待事件解决的问题。\",\"refs\":[9],\"mention_count\":1,\"cross_verify_score\":64},{\"topic_id\":14,\"insight\":\"研究探讨了代理在复杂 3D 几何问题中的可靠性。\",\"narrative\":\"将工程请求转化为仿真需要一致的几何、物理和边界条件。研究探讨了代理是否能可靠地构建完整的可执行 JSON 规范，用于自动化几何创建、网格划分、PDE 求解和结果导出。\",\"refs\":[10],\"mention_count\":1,\"cross_verify_score\":64},{\"topic_id\":61,\"insight\":\"Kimi K2 研究探讨了系统 1 与系统 2 协同设计对 AGI 的影响。\",\"narrative\":\"Kimi K2 的研究指出，通过轻量级预测器（系统 1）与资源密集型执行器（系统 2）的协同设计，可以减少执行成本并提升效率。这种设计可能成为通往 AGI 的下一阶段关键。\",\"refs\":[18],\"mention_count\":1,\"cross_verify_score\":25}],\"core_tech\":[{\"topic_id\":3,\"title\":\"TSFLab: A Self-Improving Agent-Agnostic Workbench\",\"summary\":\"TSFLab 是一个用于时间序列预测研究的自改进代理无关工作台，旨在解决代码缺失和手动维护困难的问题。\",\"refs\":[1]},{\"topic_id\":11,\"title\":\"Characterizing LLM Agent Behaviors in Module Shadowing Environments\",\"summary\":\"该论文提出了一个评估框架，通过编码代理轨迹并与环境记录对齐来验证执行历史，特别关注模块阴影环境。\",\"refs\":[7]},{\"topic_id\":19,\"title\":\"P-ContextBench: From Personal Fact Recall to Personalized Agent Behavior\",\"summary\":\"P-ContextBench 是一个用于评估个性化上下文理解的基准，构建了基于人口结构的数字人类。\",\"refs\":[8]},{\"topic_id\":46,\"title\":\"Towards Portable Specification of the Agent Harness\",\"summary\":\"研究将代理基础设施分解为八个功能组件，并提出可移植规范框架以记录模型运行环境。\",\"refs\":[14]},{\"topic_id\":10,\"title\":\"Benchmarking Forecasting Agents on Yesterday's Tomorrows\",\"summary\":\"FABench 是一个可扩展的回测环境，用于评估预测代理在整合不完整证据和推断因果驱动方面的能力。\",\"refs\":[9]},{\"topic_id\":14,\"title\":\"From 1D Benchmarks to Complex 3D Geometries\",\"summary\":\"研究探讨了代理在将工程请求转化为仿真规范时的可靠性，特别是针对复杂的 3D 几何问题。\",\"refs\":[10]}],\"ref_translations\":[{\"id\":1,\"zh_title\":\"TSFLab：用于时间序列预测研究的自改进代理无关工作台\"},{\"id\":7,\"zh_title\":\"在模块阴影环境中刻画 LLM 代理行为\"},{\"id\":8,\"zh_title\":\"P-ContextBench：从个人事实回忆到个性化代理行为\"},{\"id\":14,\"zh_title\":\"迈向代理 Harness 的可移植规范\"},{\"id\":9,\"zh_title\":\"在昨日之明日上对预测代理进行基准测试\"},{\"id\":10,\"zh_title\":\"从一维基准到复杂 3D 几何：代理能否可靠地指定自动化 PDE 模拟的问题？\"}]}",
+      "at": "2026-11-03"
+    },
+    "a438043bab1fdc7ed67587f161210fa2b38d08c94df292b313762c2dee2ac2c1": {
+      "operation": "translate_missing_reference_titles",
+      "model": "glm-4.7-flash",
+      "content": "{\"items\":[{\"id\":2,\"zh_title\":\"隐私流：通过信息流分析与后果感知风险管理实现AI代理隐私保护\"},{\"id\":3,\"zh_title\":\"面向优化建模的结构感知技能检索与仲裁\"},{\"id\":4,\"zh_title\":\"Sec PO：提示注入安全的原理性对抗训练\"},{\"id\":5,\"zh_title\":\"Agent Orch：全局编排能多接近逐步交互？\"},{\"id\":6,\"zh_title\":\"专家展现结构冗余：面向混合专家大语言模型的结构保持专家剪枝\"},{\"id\":11,\"zh_title\":\"Robo Architect：利用持久记忆自动化机器人代理设计\"},{\"id\":12,\"zh_title\":\"更多规则，更长列表？基于隐藏规则课程的自演化代理基准测试\"},{\"id\":13,\"zh_title\":\"辅助奖励下的自我提升：从验证轨迹学习与评估迁移\"},{\"id\":15,\"zh_title\":\"从动物园到牛棚：通过多通道模型嵌入实现高效LLM分析\"},{\"id\":16,\"zh_title\":\"ANGLER：面向Web代理的验证器基准测试与自适应攻击者\"},{\"id\":17,\"zh_title\":\"通过行为派生语义维度对齐MLLM与人类认知的潜在结构\"},{\"id\":18,\"zh_title\":\"迈向AGI的扩展是否取决于系统1允许系统2执行什么？\"},{\"id\":19,\"zh_title\":\"Sketch Director：通过代理布局推理与细节细化实现复杂场景素描\"}]}",
+      "at": "2026-11-03"
     }
   },
   "published": {
@@ -77389,6 +77491,36 @@
         "title": "What Does \"Now\" Mean to Your Computer-Use Agent? Stale Screenshots, Page Loads, and Which Check to Run Before a Click",
         "at": "2026-11-01",
         "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.40901": {
+        "title": "TSFLab: A Self-Improving Agent-Agnostic Workbench for Time Series Forecasting Research",
+        "at": "2026-11-03",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.40716": {
+        "title": "Characterizing LLM Agent Behaviors in Module Shadowing Environments",
+        "at": "2026-11-03",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.40959": {
+        "title": "P-ContextBench: From Personal Fact Recall to Personalized Agent Behavior",
+        "at": "2026-11-03",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.40940": {
+        "title": "Benchmarking Forecasting Agents on Yesterday's Tomorrows",
+        "at": "2026-11-03",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.41267": {
+        "title": "From 1D Benchmarks to Complex 3D Geometries: Can Agents Reliably Specify Problems for Automated PDE Simulation?",
+        "at": "2026-11-03",
+        "edition": "evening"
+      },
+      "https://arxiv.org/abs/2610.40917": {
+        "title": "Towards Portable Specification of the Agent Harness",
+        "at": "2026-11-03",
+        "edition": "evening"
       }
     }
   },
@@ -94039,6 +94171,36 @@
       "1e0ebb6962ad6b8e": {
         "title": "What Does \"Now\" Mean to Your Computer-Use Agent? Stale Screenshots, Page Loads, and Which Check to Run Before a Click",
         "at": "2026-11-01",
+        "edition": "evening"
+      },
+      "f87099997a8a4eca": {
+        "title": "TSFLab: A Self-Improving Agent-Agnostic Workbench for Time Series Forecasting Research",
+        "at": "2026-11-03",
+        "edition": "evening"
+      },
+      "9ae5d4d48f1b4647": {
+        "title": "Characterizing LLM Agent Behaviors in Module Shadowing Environments",
+        "at": "2026-11-03",
+        "edition": "evening"
+      },
+      "5a57e6cf458d6bde": {
+        "title": "P-ContextBench: From Personal Fact Recall to Personalized Agent Behavior",
+        "at": "2026-11-03",
+        "edition": "evening"
+      },
+      "d00f144726feb3ec": {
+        "title": "Benchmarking Forecasting Agents on Yesterday's Tomorrows",
+        "at": "2026-11-03",
+        "edition": "evening"
+      },
+      "1ba3729a8d9af702": {
+        "title": "From 1D Benchmarks to Complex 3D Geometries: Can Agents Reliably Specify Problems for Automated PDE Simulation?",
+        "at": "2026-11-03",
+        "edition": "evening"
+      },
+      "108dd28e7ce4caaa": {
+        "title": "Towards Portable Specification of the Agent Harness",
+        "at": "2026-11-03",
         "edition": "evening"
       }
     }
