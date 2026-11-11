@@ -2,14 +2,16 @@
 
 {%- set isDailyCategory = page.category == 'AI 日报' or page.category == '每日资讯' -%}
 {%- set isNoteCategory = page.category == 'AI 笔记' or page.category == 'july笔记' -%}
+{%- set isFocusCategory = page.category == '每日关注' -%}
 
 {% block title %}{{ __('title.category') }}: {{ page.category }} | {{ title }}{% endblock %}
 
-{% block class %}{% if isDailyCategory or isNoteCategory %}category category-app-list{% else %}category posts-collapse{% endif %}{% endblock %}
+{% block class %}{% if isDailyCategory or isNoteCategory or isFocusCategory %}category category-app-list{% else %}category posts-collapse{% endif %}{% endblock %}
 
 {% block content %}
   {%- set isDaily = isDailyCategory %}
   {%- set isNote = isNoteCategory %}
+  {%- set isFocus = isFocusCategory %}
 
   {% if isDaily %}
     {%- set dailyGroups = site.daily_archive_view %}
@@ -124,6 +126,52 @@
         <div class="app-empty-state">当前暂无可展示的笔记。</div>
       {% endif %}
     </section>
+  {% elif isFocus %}
+    {%- set focusData = site.focus_archive_view %}
+
+    <section class="app-list-shell app-view app-view-focus">
+      <div id="focus-posts-container" class="app-feed">
+        {%- for post in focusData.posts %}
+          <a href="{{ url_for(post.path) }}" class="app-card app-card--focus post-title-link">
+            <div class="app-card__header">
+              <span class="app-card__icon" aria-hidden="true">{{ post.app_badge.icon or '⭐' }}</span>
+              <h2 class="app-card__title">{{ post.app_display_title or post.title }}</h2>
+              <span class="app-card__badge">{{ post.app_badge.text or '每日关注' }}</span>
+            </div>
+
+            <div class="app-card__meta">
+              <span><i class="far fa-calendar"></i>{{ date(post.date, 'YYYY-MM-DD HH:mm') }}</span>
+              {% if post.app_wordcount_fmt %}
+                <span><i class="far fa-file-word"></i>{{ post.app_wordcount_fmt }}</span>
+              {% endif %}
+              {% if post.app_reading_time %}
+                <span><i class="far fa-clock"></i>{{ post.app_reading_time }} 分钟</span>
+              {% endif %}
+              <span class="app-pro-view" data-pro-view-url="{{ url_for(post.path) }}">
+                <i class="far fa-eye"></i>
+                <span data-pro-view-value>--</span>
+              </span>
+            </div>
+
+            <div class="app-card__summary-label">本期看点：</div>
+            <div class="app-card__summary">{{ post.app_excerpt | safe }}</div>
+
+            <div class="app-card__footer">
+              <span class="app-card__tags">
+                {% for tag in post.tagsList %}
+                  <span class="app-tag-chip"># {{ tag }}</span>
+                {% endfor %}
+              </span>
+              <span class="app-card__footer-arrow">阅读全文 &gt;</span>
+            </div>
+          </a>
+        {%- endfor %}
+      </div>
+
+      {% if not focusData.posts.length %}
+        <div class="app-empty-state">当前暂无可展示的关注内容。</div>
+      {% endif %}
+    </section>
   {% else %}
     <div class="post-block">
       <div class="post-content">
@@ -139,7 +187,7 @@
     </div>
   {% endif %}
 
-  {%- if not isDaily and not isNote %}
+  {%- if not isDaily and not isNote and not isFocus %}
     {%- include '_partials/pagination.njk' -%}
   {%- endif %}
 {% endblock %}
