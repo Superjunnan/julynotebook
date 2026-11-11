@@ -22,6 +22,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 300
     env:
       ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
       ZHIPU_MODEL: glm-4.7-flash
@@ -37,10 +38,13 @@ jobs:
       DIGEST_LLM_CACHE_RETENTION_DAYS: "45"
       DIGEST_TOPIC_MERGE_BATCH_SIZE: "60"
       DIGEST_CLUSTER_INPUT_CAP_PAPERS: "60"
-      DIGEST_CLUSTER_INPUT_CAP: "150"
+      DIGEST_CLUSTER_INPUT_CAP: "100"
+      DIGEST_CLUSTER_INPUT_CAP_NEWS: "50"
+      DIGEST_CANDIDATE_POOL_CAP: "180"
+      DIGEST_DEEP_READ_N: "20"
       DIGEST_CLUSTER_BATCH_SIZE: "25"
       DIGEST_CLUSTER_NEWS_PER_SOURCE_CAP: "10"
-      DIGEST_CI_MAX_ATTEMPTS: "3"
+      DIGEST_CI_MAX_ATTEMPTS: "2"
       DIGEST_CI_RETRY_BASE_DELAY_MS: "60000"
       DIGEST_CI_RETRY_MAX_DELAY_MS: "240000"
 
@@ -85,8 +89,8 @@ jobs:
             exit 1
           fi
 
-      - name: Upload digest diagnostics on failure
-        if: failure()
+      - name: Upload digest diagnostics
+        if: always()
         uses: actions/upload-artifact@v6
         with:
           name: digest-debug-${{ steps.digest_meta.outputs.date }}
@@ -107,6 +111,9 @@ jobs:
             git add "$DIGEST_PATH"
           else
             echo "Digest file not found for ${DIGEST_PATH}; skip file add."
+          fi
+          if [ -d "${{ steps.digest_meta.outputs.reports_dir }}" ]; then
+            git add "${{ steps.digest_meta.outputs.reports_dir }}"
           fi
           if [ -f "data/digest-cache.json" ]; then
             git add data/digest-cache.json
