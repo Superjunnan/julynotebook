@@ -21,6 +21,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     env:
       ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
       ZHIPU_MODEL: glm-4.7-flash
@@ -38,6 +39,7 @@ jobs:
       DIGEST_CLUSTER_INPUT_CAP_PAPERS: "60"
       DIGEST_CLUSTER_INPUT_CAP: "150"
       DIGEST_CLUSTER_BATCH_SIZE: "25"
+      DIGEST_TOPIC_MIN_NEWS: "3"
       DIGEST_CLUSTER_NEWS_PER_SOURCE_CAP: "10"
       DIGEST_CI_MAX_ATTEMPTS: "3"
       DIGEST_CI_RETRY_BASE_DELAY_MS: "60000"
@@ -61,7 +63,15 @@ jobs:
       - name: Resolve digest run metadata
         id: digest_meta
         run: |
-          DIGEST_DATE="$(TZ="${DIGEST_TZ:-Asia/Shanghai}" date +%F)"
+          # 晚报窗口是当天 06:00-19:40；cron 常延迟到次日 00:xx-05:xx 才启动，
+          # 此时若仍取当天日期，窗口还没开始、候选全被过滤成 0 条。
+          # 凌晨 6 点前启动一律算前一天的晚报。
+          SH_HOUR="$(TZ="${DIGEST_TZ:-Asia/Shanghai}" date +%H)"
+          if [ "$SH_HOUR" -lt 6 ]; then
+            DIGEST_DATE="$(TZ="${DIGEST_TZ:-Asia/Shanghai}" date -d "yesterday" +%F)"
+          else
+            DIGEST_DATE="$(TZ="${DIGEST_TZ:-Asia/Shanghai}" date +%F)"
+          fi
           echo "date=${DIGEST_DATE}" >> "$GITHUB_OUTPUT"
           echo "path=source/_posts/evening-digest-${DIGEST_DATE}.md" >> "$GITHUB_OUTPUT"
           echo "reports_dir=data/digest-reports/evening/${DIGEST_DATE}" >> "$GITHUB_OUTPUT"
@@ -84,8 +94,8 @@ jobs:
             exit 1
           fi
 
-      - name: Upload digest diagnostics on failure
-        if: failure()
+      - name: Upload digest diagnostics
+        if: always()
         uses: actions/upload-artifact@v6
         with:
           name: evening-digest-debug-${{ steps.digest_meta.outputs.date }}
@@ -105,6 +115,9 @@ jobs:
             git add "$DIGEST_PATH"
           else
             echo "Digest file not found for ${DIGEST_PATH}; skip file add."
+          fi
+          if [ -d "${{ steps.digest_meta.outputs.reports_dir }}" ]; then
+            git add "${{ steps.digest_meta.outputs.reports_dir }}"
           fi
           if [ -f "data/digest-cache.json" ]; then
             git add data/digest-cache.json
