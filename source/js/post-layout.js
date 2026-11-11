@@ -17,6 +17,9 @@
     if (分类链接.some(href => href.includes('/daily-news/') || href.includes('每日资讯') || href.includes('AI 日报'))) {
       return 'daily';
     }
+    if (分类链接.some(href => href.includes('/daily-focus/') || href.includes('每日关注'))) {
+      return 'focus';
+    }
     if (分类链接.some(href => href.includes('/july-notes/') || href.includes('july笔记') || href.includes('AI 笔记'))) {
       return 'note';
     }
@@ -64,6 +67,7 @@
     document.body.classList.toggle('detail-page-mobile', window.matchMedia('(max-width: 767px)').matches);
     document.body.classList.toggle('detail-page--daily', 识别详情页类型() === 'daily');
     document.body.classList.toggle('detail-page--note', 识别详情页类型() === 'note');
+    document.body.classList.toggle('detail-page--focus', 识别详情页类型() === 'focus');
 
     压缩历史关键信号();
   }

@@ -1,4 +1,4 @@
-const 首页混合流分类 = new Set(['每日资讯', 'AI 日报', 'july笔记', 'AI 笔记']);
+const 首页混合流分类 = new Set(['每日资讯', 'AI 日报', '每日关注', 'july笔记', 'AI 笔记']);
 
 function 读取分类名称(post) {
   if (!post.categories || typeof post.categories.toArray !== 'function') return [];

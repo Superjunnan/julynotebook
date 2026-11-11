@@ -108,6 +108,9 @@
     if (分类链接.some(href => href.includes('/daily-news/') || href.includes('每日资讯') || href.includes('AI 日报'))) {
       return 'daily-post';
     }
+    if (分类链接.some(href => href.includes('/daily-focus/') || href.includes('每日关注'))) {
+      return 'focus-post';
+    }
     if (分类链接.some(href => href.includes('/july-notes/') || href.includes('july笔记') || href.includes('AI 笔记'))) {
       return 'note-post';
     }
@@ -119,6 +122,7 @@
 
     if (当前路径 === 规范路径(root, root)) return 'home';
     if (当前路径.startsWith(规范路径(`${root}categories/daily-news/`, root))) return 'daily-list';
+    if (当前路径.startsWith(规范路径(`${root}categories/daily-focus/`, root))) return 'focus-list';
     if (当前路径.startsWith(规范路径(`${root}categories/july-notes/`, root))) return 'note-list';
     if (当前路径.startsWith(规范路径(`${root}iteration-log/`, root))) return 'iteration-log';
     if (pageConfig && pageConfig.isPost) return 读取文章类型();
@@ -131,10 +135,14 @@
         return '川下の楠木';
       case 'daily-list':
         return 'AI 日报';
+      case 'focus-list':
+        return '每日关注';
       case 'note-list':
         return 'AI 笔记';
       case 'daily-post':
         return 'AI 日报';
+      case 'focus-post':
+        return '每日关注';
       case 'note-post':
         return 'AI 笔记';
       case 'iteration-log':
@@ -163,6 +171,9 @@
         </a>
         <a href="${root}categories/daily-news/" class="app-drawer-menu-item" data-path="${root}categories/daily-news/">
           <i class="fa fa-rss" aria-hidden="true"></i><span>AI 日报</span>
+        </a>
+        <a href="${root}categories/daily-focus/" class="app-drawer-menu-item" data-path="${root}categories/daily-focus/">
+          <i class="fa fa-star" aria-hidden="true"></i><span>每日关注</span>
         </a>
         <a href="${root}categories/july-notes/" class="app-drawer-menu-item" data-path="${root}categories/july-notes/">
           <i class="fa fa-pen" aria-hidden="true"></i><span>AI 笔记</span>
@@ -384,7 +395,7 @@
       return;
     }
 
-    if (view === 'home' || view === 'daily-list' || view === 'note-list' || view === 'iteration-log') {
+    if (view === 'home' || view === 'daily-list' || view === 'focus-list' || view === 'note-list' || view === 'iteration-log') {
       左按钮.hidden = false;
       左按钮.setAttribute('aria-label', '打开菜单');
       左按钮.innerHTML = '<i class="fa fa-list-ul" aria-hidden="true"></i>';
@@ -415,7 +426,7 @@
     const 目录容器 = document.querySelector('.post-toc-wrap');
     const 目录主体 = 目录容器 && 目录容器.querySelector('.post-toc, .nav');
     const 有目录 = Boolean(目录主体 && 目录主体.querySelector('a[href^="#"]'));
-    const 允许展示 = view === 'daily-post' || view === 'note-post' || view === 'post';
+    const 允许展示 = view === 'daily-post' || view === 'focus-post' || view === 'note-post' || view === 'post';
 
     if (!有目录 || !允许展示) return;
 
@@ -449,7 +460,7 @@
     const 目录容器 = document.querySelector('.post-toc-wrap');
     const 目录主体 = 目录容器 && 目录容器.querySelector('.post-toc, .nav');
     const 有目录 = Boolean(目录主体 && 目录主体.querySelector('a[href^="#"]'));
-    const 允许展示 = view === 'daily-post' || view === 'note-post' || view === 'post';
+    const 允许展示 = view === 'daily-post' || view === 'focus-post' || view === 'note-post' || view === 'post';
 
     if (!有目录 || !允许展示) {
       右按钮.hidden = true;

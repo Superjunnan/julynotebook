@@ -11,6 +11,7 @@
     <div class="home-top-tabs app-tab-strip" role="tablist" aria-label="首页内容筛选">
       <button type="button" class="app-tab home-tab is-active" data-filter="all">全部</button>
       <button type="button" class="app-tab home-tab" data-filter="daily">AI 日报</button>
+      <button type="button" class="app-tab home-tab" data-filter="focus">每日关注</button>
       <button type="button" class="app-tab home-tab" data-filter="note">AI 笔记</button>
     </div>
 
@@ -62,6 +63,7 @@
 
     <div class="home-actions-row">
       <a href="{{ url_for('/categories/daily-news/') }}" class="home-action-link">查看全部日报 &gt;</a>
+      <a href="{{ url_for('/categories/daily-focus/') }}" class="home-action-link">查看全部关注 &gt;</a>
       <a href="{{ url_for('/categories/july-notes/') }}" class="home-action-link">查看全部笔记 &gt;</a>
     </div>
   </section>

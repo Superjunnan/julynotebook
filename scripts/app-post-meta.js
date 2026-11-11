@@ -279,10 +279,11 @@ hexo.extend.filter.register('after_post_render', function(data) {
     const 标签数组 = 读取标签数组(data);
     const isDaily = 分类名称.some(name => name === '每日资讯' || name === 'AI 日报');
     const isNote = 分类名称.some(name => name === 'july笔记' || name === 'AI 笔记');
+    const isFocus = 分类名称.some(name => name === '每日关注');
     const digestEdition = String(data.digest_edition || '').trim().toLowerCase();
     const htmlContent = data.content || '';
 
-    data.app_type = isDaily ? 'daily' : (isNote ? 'note' : 'default');
+    data.app_type = isDaily ? 'daily' : (isFocus ? 'focus' : (isNote ? 'note' : 'default'));
 
     if (isDaily) {
       if (digestEdition === 'evening') {
@@ -290,6 +291,8 @@ hexo.extend.filter.register('after_post_render', function(data) {
       } else {
         data.app_badge = { text: 'AI早报', color: '#9d473d', bg: '#f8d9d4', icon: '🤖' };
       }
+    } else if (isFocus) {
+      data.app_badge = { text: '每日关注', color: '#2f5d8a', bg: '#dcebf8', icon: '⭐' };
     } else if (isNote) {
       data.app_badge = { text: 'AI 笔记', color: '#8d7630', bg: '#f6ebbf', icon: '📔' };
     } else {
