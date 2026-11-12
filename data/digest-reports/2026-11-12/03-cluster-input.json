@@ -1,0 +1,2043 @@
+{
+  "run_date": "2026-11-12",
+  "cluster_input_cap": 100,
+  "cluster_input_cap_news": 50,
+  "cluster_input_cap_papers": 60,
+  "cluster_batch_size": 25,
+  "cluster_text_mode": "title_lead",
+  "cluster_enrich_mode": "hybrid",
+  "cluster_text_max_chars": 380,
+  "cluster_enrich_force_top_news": 20,
+  "input_count": 95,
+  "input_news_count": 35,
+  "input_paper_count": 60,
+  "dropped_by_cap": 80,
+  "enrichment": {
+    "cluster_text_mode": "title_lead",
+    "enrich_mode": "hybrid",
+    "total_cards": 100,
+    "considered": 21,
+    "enriched": 21,
+    "cache_hits": 6,
+    "fetched": 15,
+    "skipped_with_long_snippet": 38,
+    "skipped_low_quality_source": 60
+  },
+  "precluster": {
+    "input_cards": 100,
+    "grouped_cards": 96,
+    "merged_away": 4,
+    "multi_member_groups": 3,
+    "groups": [
+      {
+        "representative_id": 1,
+        "member_ids": [
+          1
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Micius-Flash: Lightweight Agentic"
+      },
+      {
+        "representative_id": 2,
+        "member_ids": [
+          2
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "EngineAgent: Agentizing On-Device LLM"
+      },
+      {
+        "representative_id": 3,
+        "member_ids": [
+          3
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "From Process Models to Composable Agentic"
+      },
+      {
+        "representative_id": 4,
+        "member_ids": [
+          4
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Program-Aided Patchable Skill Evolution"
+      },
+      {
+        "representative_id": 5,
+        "member_ids": [
+          5
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Toward Autonomous RTL and Synthesis"
+      },
+      {
+        "representative_id": 6,
+        "member_ids": [
+          6
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "BuySideFlow: A Point-in-Time Benchmark for"
+      },
+      {
+        "representative_id": 7,
+        "member_ids": [
+          7
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "CompressionBench: How can your coding agents"
+      },
+      {
+        "representative_id": 8,
+        "member_ids": [
+          8
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Controlled Knowledge Engineering for Taxonomy"
+      },
+      {
+        "representative_id": 9,
+        "member_ids": [
+          9
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Embodied Science Agents: Making Embodied"
+      },
+      {
+        "representative_id": 10,
+        "member_ids": [
+          10
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Hx2Dx: From Anamnesis to Diagnosis - A"
+      },
+      {
+        "representative_id": 11,
+        "member_ids": [
+          11
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "ICLayout-Bench: Benchmarking LLM Agents for"
+      },
+      {
+        "representative_id": 12,
+        "member_ids": [
+          12
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Knowing When to Intervene arXiv:2611.09792v2"
+      },
+      {
+        "representative_id": 13,
+        "member_ids": [
+          13
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "On Private Knowledge Retrieval and Private"
+      },
+      {
+        "representative_id": 14,
+        "member_ids": [
+          14
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "PegasusAI Studio: Legible Cyberinfrastructure"
+      },
+      {
+        "representative_id": 15,
+        "member_ids": [
+          15
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Personalized Memory Rubrics: Learning What to"
+      },
+      {
+        "representative_id": 16,
+        "member_ids": [
+          16
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "ProofCoder: Continuous Reasoning for"
+      },
+      {
+        "representative_id": 17,
+        "member_ids": [
+          17
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Repository-Context-Guided Image Understanding"
+      },
+      {
+        "representative_id": 18,
+        "member_ids": [
+          18
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "ReTrace: Distilling Tool-Using Agents into"
+      },
+      {
+        "representative_id": 19,
+        "member_ids": [
+          19
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "SteerDistill: Quantizing LLM Agents via"
+      },
+      {
+        "representative_id": 20,
+        "member_ids": [
+          20
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Stinging the Swarm: Extracting Attacker"
+      },
+      {
+        "representative_id": 21,
+        "member_ids": [
+          21
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Anthropic's IPO roadshow video <p><strong><a"
+      },
+      {
+        "representative_id": 22,
+        "member_ids": [
+          22
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Agent Architecture Cost-Success Trade-offs: A"
+      },
+      {
+        "representative_id": 23,
+        "member_ids": [
+          23
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Agentic AI Meets Formal Verification in the"
+      },
+      {
+        "representative_id": 24,
+        "member_ids": [
+          24
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Agentic discrete-event simulation for"
+      },
+      {
+        "representative_id": 25,
+        "member_ids": [
+          25
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "AgentScript-Eval: Benchmarking LLMs and"
+      },
+      {
+        "representative_id": 26,
+        "member_ids": [
+          26
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Agreeing on the Answer but Not the Reason"
+      },
+      {
+        "representative_id": 27,
+        "member_ids": [
+          27
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Autonomous Optimization of Numerical"
+      },
+      {
+        "representative_id": 28,
+        "member_ids": [
+          28
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Before Words, Beyond Speech: Evaluating"
+      },
+      {
+        "representative_id": 29,
+        "member_ids": [
+          29
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Bridging Graph and Pairwise Learning for Gene"
+      },
+      {
+        "representative_id": 30,
+        "member_ids": [
+          30
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Cognitive Mapping of Learning by Thinking"
+      },
+      {
+        "representative_id": 31,
+        "member_ids": [
+          31
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Deletion Sensitivity Is a Property of the"
+      },
+      {
+        "representative_id": 32,
+        "member_ids": [
+          32
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Evaluating LLM-Generated World Models for"
+      },
+      {
+        "representative_id": 33,
+        "member_ids": [
+          33
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "From Attack Surface to Defense Architecture"
+      },
+      {
+        "representative_id": 34,
+        "member_ids": [
+          34
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Graph Visualizations in Prompts for Knowledge"
+      },
+      {
+        "representative_id": 35,
+        "member_ids": [
+          35
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "LandslideFM: A Foundation Model Towards"
+      },
+      {
+        "representative_id": 36,
+        "member_ids": [
+          36
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Looking One Step Ahead: An Anticipation"
+      },
+      {
+        "representative_id": 37,
+        "member_ids": [
+          37
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "MRFoundry: Knowledge-guided agent loops for"
+      },
+      {
+        "representative_id": 38,
+        "member_ids": [
+          38
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Multimodal Road Closure Mapping via Cross"
+      },
+      {
+        "representative_id": 39,
+        "member_ids": [
+          39
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "PhysMoE: Fast Spatial Grounding with Single"
+      },
+      {
+        "representative_id": 40,
+        "member_ids": [
+          40
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Rethinking in Spikes: Mitigating"
+      },
+      {
+        "representative_id": 41,
+        "member_ids": [
+          41
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Softness is something you also need! Why"
+      },
+      {
+        "representative_id": 42,
+        "member_ids": [
+          42
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "SplatLab: Autonomous Scientific Discovery for"
+      },
+      {
+        "representative_id": 43,
+        "member_ids": [
+          43
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "STAR: Semantic-Criticality Tiered Allocation"
+      },
+      {
+        "representative_id": 44,
+        "member_ids": [
+          44
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Synapse-Control: Making Agent Experience"
+      },
+      {
+        "representative_id": 45,
+        "member_ids": [
+          45
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "TreeAgent: Structure-Aware Memory Agent for"
+      },
+      {
+        "representative_id": 46,
+        "member_ids": [
+          46
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Verifiable Agentic Traffic Class: A Policed"
+      },
+      {
+        "representative_id": 47,
+        "member_ids": [
+          47
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "When Should Agents Remember? Falsification"
+      },
+      {
+        "representative_id": 48,
+        "member_ids": [
+          48
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "When Should Diffusion Language Models"
+      },
+      {
+        "representative_id": 49,
+        "member_ids": [
+          49
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Which Successes Make Good References? Action"
+      },
+      {
+        "representative_id": 50,
+        "member_ids": [
+          50
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "FINCOSMOS: An Open-World Evaluation Paradigm"
+      },
+      {
+        "representative_id": 51,
+        "member_ids": [
+          51
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "llm 0.37.2 <p><strong>Release:</strong> <a"
+      },
+      {
+        "representative_id": 52,
+        "member_ids": [
+          52
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Plurai wants to help AI agents work better"
+      },
+      {
+        "representative_id": 53,
+        "member_ids": [
+          53
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "Anthropic是如何设计Agent记忆的 前不久"
+      },
+      {
+        "representative_id": 54,
+        "member_ids": [
+          54,
+          69,
+          71
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "告别冗长文本！谷歌发布 Gemini Decisions API：单次前向传递打分"
+      },
+      {
+        "representative_id": 55,
+        "member_ids": [
+          55
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "United won’t let your AI agent book your"
+      },
+      {
+        "representative_id": 56,
+        "member_ids": [
+          56
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Google’s AlphaGenome 2 zooms in on the"
+      },
+      {
+        "representative_id": 57,
+        "member_ids": [
+          57
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "Introducing V-Agent: a local-first AI agent"
+      },
+      {
+        "representative_id": 58,
+        "member_ids": [
+          58
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "A computational framework for understanding"
+      },
+      {
+        "representative_id": 59,
+        "member_ids": [
+          59
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "A Cross-Scenario Survey and Analysis of Self"
+      },
+      {
+        "representative_id": 60,
+        "member_ids": [
+          60
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Actionable Feedback: Improving Model"
+      },
+      {
+        "representative_id": 61,
+        "member_ids": [
+          61
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "ADIndex: Layer-Adaptive Sparse Attention"
+      },
+      {
+        "representative_id": 62,
+        "member_ids": [
+          62
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "ALTO: African and Levantine Tech-Facilitated"
+      },
+      {
+        "representative_id": 63,
+        "member_ids": [
+          63
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Are Spiking Neural Networks Harder to Steal?"
+      },
+      {
+        "representative_id": 64,
+        "member_ids": [
+          64
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "ASPIRE: An Agentic System-Identification"
+      },
+      {
+        "representative_id": 65,
+        "member_ids": [
+          65
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Auditable Human-Agent Teams for Autonomous X"
+      },
+      {
+        "representative_id": 66,
+        "member_ids": [
+          66
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Beyond Proxy Metrics: MLLMs as Human"
+      },
+      {
+        "representative_id": 67,
+        "member_ids": [
+          67
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Breakdown of Autoregressive Multi-Step"
+      },
+      {
+        "representative_id": 68,
+        "member_ids": [
+          68
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Bridging the Evidence-to-Execution Gap:A"
+      },
+      {
+        "representative_id": 70,
+        "member_ids": [
+          70
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "估值飙升至 70 亿美元！英国 AI 芯片新星 Fractile 获 7.2 亿融资"
+      },
+      {
+        "representative_id": 72,
+        "member_ids": [
+          72
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "苹果把谷歌 AI 请进了车机：CarPlay 接通 Gemini，开车能自然唠嗑谷歌11月11日宣布"
+      },
+      {
+        "representative_id": 73,
+        "member_ids": [
+          73
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "OpenAI第三季度营收突破100亿美元，环比增长近50%彭博社援引匿名消息人士报道"
+      },
+      {
+        "representative_id": 74,
+        "member_ids": [
+          74
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "aws-emulator <p><strong><a"
+      },
+      {
+        "representative_id": 75,
+        "member_ids": [
+          75
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "OpenAI’s quarterly revenue reportedly crosses"
+      },
+      {
+        "representative_id": 76,
+        "member_ids": [
+          76
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Databricks’ new AI agent tells CEO Ali Ghodsi"
+      },
+      {
+        "representative_id": 77,
+        "member_ids": [
+          77
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "I Saw the Future of Robotics in a Virtual"
+      },
+      {
+        "representative_id": 78,
+        "member_ids": [
+          78
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "Taiwan’s chipmaking giant TSMC to invest $1B"
+      },
+      {
+        "representative_id": 79,
+        "member_ids": [
+          79
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "Comfy-Org's repackaged MiniMax-H3-Image has"
+      },
+      {
+        "representative_id": 80,
+        "member_ids": [
+          80
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "I publish Jeb as a decision model. It returns"
+      },
+      {
+        "representative_id": 81,
+        "member_ids": [
+          81
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "李彦宏:AI变革不只是技术革命，企业需要围绕智能体重构组织11月12日"
+      },
+      {
+        "representative_id": 82,
+        "member_ids": [
+          82
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "马斯克 xAI 面临多起集体诉讼：Grok 被指卷入儿童色情图像风波AI技术迅猛发展带来生产力飞跃"
+      },
+      {
+        "representative_id": 83,
+        "member_ids": [
+          83
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "同一段 DNA，在不同细胞里命运不同：AlphaGenome 2"
+      },
+      {
+        "representative_id": 84,
+        "member_ids": [
+          84
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "Browse tools.simonwillison.net by tag"
+      },
+      {
+        "representative_id": 85,
+        "member_ids": [
+          85
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "Why the data center you dread might never"
+      },
+      {
+        "representative_id": 86,
+        "member_ids": [
+          86
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "How backlash and red tape continue to slow"
+      },
+      {
+        "representative_id": 87,
+        "member_ids": [
+          87
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "CoreWeave turns to customer prepayments"
+      },
+      {
+        "representative_id": 88,
+        "member_ids": [
+          88
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "With $720M round, Britain’s Fractile gets a"
+      },
+      {
+        "representative_id": 89,
+        "member_ids": [
+          89
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "Congress to call Jensen Huang in to answer"
+      },
+      {
+        "representative_id": 90,
+        "member_ids": [
+          90
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "A Startup Wants to Fight AI Bioweapons With"
+      },
+      {
+        "representative_id": 91,
+        "member_ids": [
+          91
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "Big Walk used AI to fix a bug. Now the indie"
+      },
+      {
+        "representative_id": 92,
+        "member_ids": [
+          92,
+          93
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "Try Tabletop: Customizable, collaborative"
+      },
+      {
+        "representative_id": 94,
+        "member_ids": [
+          94,
+          95
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "BananaMind SLM Digest – 2026-11-11 🚀"
+      },
+      {
+        "representative_id": 96,
+        "member_ids": [
+          96
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "AlphaGenome 2: Deciphering how cells read DNA"
+      },
+      {
+        "representative_id": 97,
+        "member_ids": [
+          97
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "China’s Nvidia Honeypot Isn’t Surprising."
+      },
+      {
+        "representative_id": 98,
+        "member_ids": [
+          98
+        ],
+        "pub_date": "2026-11-12",
+        "topic_seed": "低调追赶的文心，一口气打出了快、省 文心这轮追赶够不够硬？ 作者丨周蕾 林杰鑫 编辑丨岑峰今天"
+      },
+      {
+        "representative_id": 99,
+        "member_ids": [
+          99
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "Adobe’s AI experiments let you walk around in"
+      },
+      {
+        "representative_id": 100,
+        "member_ids": [
+          100
+        ],
+        "pub_date": "2026-11-11",
+        "topic_seed": "前TikTok核心成员做AI原生公司 AI Agent驱动的超级个体"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "candidate_id": 1,
+      "title": "Micius-Flash: Lightweight Agentic Intelligence for Engineering",
+      "snippet_len": 149,
+      "cluster_text_len": 149,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "huggingface.co",
+      "score": 31,
+      "link": "https://huggingface.co/papers/2611.10015"
+    },
+    {
+      "candidate_id": 2,
+      "title": "EngineAgent: Agentizing On-Device LLM Inference Engines with Inference Stack Hierarchy",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2611.14356"
+    },
+    {
+      "candidate_id": 3,
+      "title": "From Process Models to Composable Agentic Workflows: Combining BPMN, Agents and Enterprise",
+      "snippet_len": 103,
+      "cluster_text_len": 103,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2611.13196"
+    },
+    {
+      "candidate_id": 4,
+      "title": "Program-Aided Patchable Skill Evolution",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2611.14019"
+    },
+    {
+      "candidate_id": 5,
+      "title": "Toward Autonomous RTL and Synthesis Optimization",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2611.13713"
+    },
+    {
+      "candidate_id": 6,
+      "title": "BuySideFlow: A Point-in-Time Benchmark for LLM Agents in Investment Research",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.12966"
+    },
+    {
+      "candidate_id": 7,
+      "title": "CompressionBench: How can your coding agents compress LLMs?",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.06858"
+    },
+    {
+      "candidate_id": 8,
+      "title": "Controlled Knowledge Engineering for Taxonomy Induction with Tool-Grounded LLM Agents and",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.13966"
+    },
+    {
+      "candidate_id": 9,
+      "title": "Embodied Science Agents: Making Embodied Experimental Design Learnable",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.12958"
+    },
+    {
+      "candidate_id": 10,
+      "title": "Hx2Dx: From Anamnesis to Diagnosis - A Multimodal Arena for Conversational Clinical",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.14122"
+    },
+    {
+      "candidate_id": 11,
+      "title": "ICLayout-Bench: Benchmarking LLM Agents for Custom Circuit Layout Design",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.12982"
+    },
+    {
+      "candidate_id": 12,
+      "title": "Knowing When to Intervene",
+      "snippet_len": 123,
+      "cluster_text_len": 123,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.09792"
+    },
+    {
+      "candidate_id": 13,
+      "title": "On Private Knowledge Retrieval and Private Inference for secure multi-agent systems",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.13696"
+    },
+    {
+      "candidate_id": 14,
+      "title": "PegasusAI Studio: Legible Cyberinfrastructure and Accountable AI Agents for Scientific Workflows",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.13309"
+    },
+    {
+      "candidate_id": 15,
+      "title": "Personalized Memory Rubrics: Learning What to Remember per User via Rubric-Guided Credit",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.14017"
+    },
+    {
+      "candidate_id": 16,
+      "title": "ProofCoder: Continuous Reasoning for Automated Software Verification",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.14106"
+    },
+    {
+      "candidate_id": 17,
+      "title": "Repository-Context-Guided Image Understanding for Agentic Software Development",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.13026"
+    },
+    {
+      "candidate_id": 18,
+      "title": "ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.14492"
+    },
+    {
+      "candidate_id": 19,
+      "title": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
+      "snippet_len": 142,
+      "cluster_text_len": 142,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.13410"
+    },
+    {
+      "candidate_id": 20,
+      "title": "Stinging the Swarm: Extracting Attacker Intelligence from a Twin-Controller OT Honeypot",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.13406"
+    },
+    {
+      "candidate_id": 21,
+      "title": "Anthropic's IPO roadshow video",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "simonwillison.net",
+      "score": 20.75488750216347,
+      "link": "https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow/"
+    },
+    {
+      "candidate_id": 22,
+      "title": "Agent Architecture Cost-Success Trade-offs: A Controlled Evaluation across Enterprise-Style SOPs",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.12953"
+    },
+    {
+      "candidate_id": 23,
+      "title": "Agentic AI Meets Formal Verification in the Era of Agentic Hardware Development",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13705"
+    },
+    {
+      "candidate_id": 24,
+      "title": "Agentic discrete-event simulation for manufacturing system design: an open 3D simulator, a",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.10602"
+    },
+    {
+      "candidate_id": 25,
+      "title": "AgentScript-Eval: Benchmarking LLMs and Agents for Code Generation in an Enterprise DSL",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13183"
+    },
+    {
+      "candidate_id": 26,
+      "title": "Agreeing on the Answer but Not the Reason: Measurement Limits of LLM Reasoning Failure",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13140"
+    },
+    {
+      "candidate_id": 27,
+      "title": "Autonomous Optimization of Numerical Algorithms by an AI Agent: Application to Atomistic",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13143"
+    },
+    {
+      "candidate_id": 28,
+      "title": "Before Words, Beyond Speech: Evaluating Nonverbal Social Reasoning in Early Childhood",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13213"
+    },
+    {
+      "candidate_id": 29,
+      "title": "Bridging Graph and Pairwise Learning for Gene Regulatory Network Inference from scRNA-seq Data",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13801"
+    },
+    {
+      "candidate_id": 30,
+      "title": "Cognitive Mapping of Learning by Thinking Mechanisms in Large Language Models",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.14382"
+    },
+    {
+      "candidate_id": 31,
+      "title": "Deletion Sensitivity Is a Property of the Model: A Three-Condition Measurement across Seven",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13223"
+    },
+    {
+      "candidate_id": 32,
+      "title": "Evaluating LLM-Generated World Models for Neuro-Symbolic Reasoning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.14419"
+    },
+    {
+      "candidate_id": 33,
+      "title": "From Attack Surface to Defense Architecture",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13960"
+    },
+    {
+      "candidate_id": 34,
+      "title": "Graph Visualizations in Prompts for Knowledge Graph Question Answering",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.12938"
+    },
+    {
+      "candidate_id": 35,
+      "title": "LandslideFM: A Foundation Model Towards Unified Landslide Perception and Understanding",
+      "snippet_len": 117,
+      "cluster_text_len": 117,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.12936"
+    },
+    {
+      "candidate_id": 36,
+      "title": "Looking One Step Ahead: An Anticipation-guided Agent for Object State Readout in Videos",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.14113"
+    },
+    {
+      "candidate_id": 37,
+      "title": "MRFoundry: Knowledge-guided agent loops for end-to-end MRI research",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13289"
+    },
+    {
+      "candidate_id": 38,
+      "title": "Multimodal Road Closure Mapping via Cross-Modal Graph Attention",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13192"
+    },
+    {
+      "candidate_id": 39,
+      "title": "PhysMoE: Fast Spatial Grounding with Single-Token Coordinate Representation in Modality",
+      "snippet_len": 141,
+      "cluster_text_len": 141,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13000"
+    },
+    {
+      "candidate_id": 40,
+      "title": "Rethinking in Spikes: Mitigating Hallucinations in MDLMs with Step-Aware Decoding",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.12901"
+    },
+    {
+      "candidate_id": 41,
+      "title": "Softness is something you also need! Why compliance helps control: information metrics of a",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13779"
+    },
+    {
+      "candidate_id": 42,
+      "title": "SplatLab: Autonomous Scientific Discovery for 3DGS Research",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2610.30468"
+    },
+    {
+      "candidate_id": 43,
+      "title": "STAR: Semantic-Criticality Tiered Allocation of Radio Resources via Zero-Shot Learning",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13238"
+    },
+    {
+      "candidate_id": 44,
+      "title": "Synapse-Control: Making Agent Experience Actionable with Lightweight Runtime Control",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13615"
+    },
+    {
+      "candidate_id": 45,
+      "title": "TreeAgent: Structure-Aware Memory Agent for Processing Long Hierarchical Data",
+      "snippet_len": 148,
+      "cluster_text_len": 148,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13946"
+    },
+    {
+      "candidate_id": 46,
+      "title": "Verifiable Agentic Traffic Class: A Policed Quality-of-Service Mechanism for Agentic AI",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.14211"
+    },
+    {
+      "candidate_id": 47,
+      "title": "When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.14326"
+    },
+    {
+      "candidate_id": 48,
+      "title": "When Should Diffusion Language Models Reconsider Their Commitments?",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.11551"
+    },
+    {
+      "candidate_id": 49,
+      "title": "Which Successes Make Good References? Action-Sequence Alignment for Multi-Turn On-Policy",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.13135"
+    },
+    {
+      "candidate_id": 50,
+      "title": "FINCOSMOS: An Open-World Evaluation Paradigm for Agents in Finance",
+      "snippet_len": 107,
+      "cluster_text_len": 107,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "huggingface.co",
+      "score": 25,
+      "link": "https://huggingface.co/papers/2611.07464"
+    },
+    {
+      "candidate_id": 51,
+      "title": "llm 0.37.2",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "simonwillison.net",
+      "score": 24.643856189774723,
+      "link": "https://simonwillison.net/2026/Nov/11/llm/"
+    },
+    {
+      "candidate_id": 52,
+      "title": "Plurai wants to help AI agents work better using the same approach that helped get self",
+      "snippet_len": 103,
+      "cluster_text_len": 103,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "techcrunch.com",
+      "score": 24.643856189774723,
+      "link": "https://techcrunch.com/2026/11/11/plurai-wants-to-help-ai-agents-work-better-using-the-same-approach-that-helped-get-self-driving-cars-to-roads/"
+    },
+    {
+      "candidate_id": 53,
+      "title": "Anthropic是如何设计Agent记忆的",
+      "snippet_len": 130,
+      "cluster_text_len": 130,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "aitntnews.com",
+      "score": 23.60418569631167,
+      "link": "https://aitntnews.com/newDetail.html?newId=31178"
+    },
+    {
+      "candidate_id": 54,
+      "title": "Gemini Decisions API: Fast",
+      "snippet_len": 373,
+      "cluster_text_len": 373,
+      "source": "Google AI Blog",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "blog.google",
+      "score": 27.584962500721154,
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
+    },
+    {
+      "candidate_id": 55,
+      "title": "United won’t let your AI agent book your flight",
+      "snippet_len": 117,
+      "cluster_text_len": 117,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "theverge.com",
+      "score": 25.584962500721154,
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1031623/united-unauthorized-ai-agents"
+    },
+    {
+      "candidate_id": 56,
+      "title": "Google’s AlphaGenome 2 zooms in on the cellular roots of disease",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "theverge.com",
+      "score": 21.584962500721154,
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1031524/google-deepmind-alphagenome-2-genetic-ai-model"
+    },
+    {
+      "candidate_id": 57,
+      "title": "Introducing V-Agent: a local-first AI agent for Windows, built by a quantizer, for quants",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "huggingface.co",
+      "score": 27.584962500721154,
+      "link": "https://huggingface.co/posts/IsValorum/440713591214008"
+    },
+    {
+      "candidate_id": 58,
+      "title": "A computational framework for understanding embodied plans",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2611.13669"
+    },
+    {
+      "candidate_id": 59,
+      "title": "A Cross-Scenario Survey and Analysis of Self-Evolving Multimodal Agents",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2611.14256"
+    },
+    {
+      "candidate_id": 60,
+      "title": "Actionable Feedback: Improving Model Capabilities from User Edit Data on Clinical Documentation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2611.12904"
+    },
+    {
+      "candidate_id": 61,
+      "title": "ADIndex: Layer-Adaptive Sparse Attention Indexing via Group-Level Distillation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2611.12956"
+    },
+    {
+      "candidate_id": 62,
+      "title": "ALTO: African and Levantine Tech-Facilitated Gender-Based Violence Corpus",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2611.06706"
+    },
+    {
+      "candidate_id": 63,
+      "title": "Are Spiking Neural Networks Harder to Steal? The Role of Stochastic Encoding in Model Extraction",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2610.36298"
+    },
+    {
+      "candidate_id": 64,
+      "title": "ASPIRE: An Agentic System-Identification Platform for Iterative Reasoning and Exploration",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2611.13114"
+    },
+    {
+      "candidate_id": 65,
+      "title": "Auditable Human-Agent Teams for Autonomous X-ray Experimentation",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2611.12933"
+    },
+    {
+      "candidate_id": 66,
+      "title": "Beyond Proxy Metrics: MLLMs as Human Surrogates for Explainable AI Evaluation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2611.13926"
+    },
+    {
+      "candidate_id": 67,
+      "title": "Breakdown of Autoregressive Multi-Step Reasoning Under Concentrated vs. Diffuse Attention",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2611.14209"
+    },
+    {
+      "candidate_id": 68,
+      "title": "Bridging the Evidence-to-Execution Gap:A Reflective Agent for Multi-Objective Peptide Design",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "arxiv.org",
+      "score": 23,
+      "link": "https://arxiv.org/abs/2610.06190"
+    },
+    {
+      "candidate_id": 70,
+      "title": "估值飙升至 70 亿美元！英国 AI 芯片新星 Fractile 获 7.2 亿融资，Anthropic",
+      "snippet_len": 125,
+      "cluster_text_len": 125,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "news.aibase.com",
+      "score": 22.539030204684515,
+      "link": "https://news.aibase.com/zh/news/32259"
+    },
+    {
+      "candidate_id": 72,
+      "title": "苹果把谷歌 AI 请进了车机：CarPlay 接通 Gemini，开车能自然唠嗑谷歌11月11日宣布，苹果CarPlay将接入其Gemini，即日起面向全球iOS端Gemini用户分批推送",
+      "snippet_len": 125,
+      "cluster_text_len": 125,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "news.aibase.com",
+      "score": 22.539030204684515,
+      "link": "https://news.aibase.com/zh/news/32262"
+    },
+    {
+      "candidate_id": 73,
+      "title": "OpenAI第三季度营收突破100亿美元，环比增长近50%彭博社援引匿名消息人士报道，OpenAI第三季度营收首次突破100亿美元，较第二季度67亿美元增长近50%",
+      "snippet_len": 112,
+      "cluster_text_len": 112,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "news.aibase.com",
+      "score": 22.539030204684515,
+      "link": "https://news.aibase.com/zh/news/32258"
+    },
+    {
+      "candidate_id": 74,
+      "title": "aws-emulator",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "simonwillison.net",
+      "score": 22.523561956057012,
+      "link": "https://simonwillison.net/2026/Nov/11/aws-emulator/"
+    },
+    {
+      "candidate_id": 75,
+      "title": "OpenAI’s quarterly revenue reportedly crosses $10B for the first time",
+      "snippet_len": 302,
+      "cluster_text_len": 302,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "techcrunch.com",
+      "score": 26.523561956057012,
+      "link": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/"
+    },
+    {
+      "candidate_id": 76,
+      "title": "Databricks’ new AI agent tells CEO Ali Ghodsi the unvarnished truth",
+      "snippet_len": 146,
+      "cluster_text_len": 146,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "techcrunch.com",
+      "score": 22.523561956057012,
+      "link": "https://techcrunch.com/2026/11/11/databricks-new-ai-agent-tells-ceo-ali-ghodsi-the-unvarnished-truth/"
+    },
+    {
+      "candidate_id": 77,
+      "title": "I Saw the Future of Robotics in a Virtual Duck That Chases My Cat",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "WIRED AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "wired.com",
+      "score": 24.523561956057012,
+      "link": "https://www.wired.com/story/i-trained-a-microduck-to-be-my-cats-butler/"
+    },
+    {
+      "candidate_id": 79,
+      "title": "Comfy-Org's repackaged MiniMax-H3-Image has 351,803 downloads last month, more than the",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "huggingface.co",
+      "score": 25.459431618637296,
+      "link": "https://huggingface.co/posts/savoji/286700543319588"
+    },
+    {
+      "candidate_id": 80,
+      "title": "I publish Jeb as a decision model. It returns numbers your application can read. Your",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "huggingface.co",
+      "score": 25.459431618637296,
+      "link": "https://huggingface.co/posts/jbrashear/259242300304065"
+    },
+    {
+      "candidate_id": 81,
+      "title": "李彦宏:AI变革不只是技术革命，企业需要围绕智能体重构组织11月12日，李彦宏在2026百度世界大会上提出，AI不仅是技术革命，更是组织革命，未来十年智能组织将成AI时代“新厂房”",
+      "snippet_len": 118,
+      "cluster_text_len": 118,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "news.aibase.com",
+      "score": 20.08746284125034,
+      "link": "https://news.aibase.com/zh/news/32268"
+    },
+    {
+      "candidate_id": 82,
+      "title": "马斯克 xAI 面临多起集体诉讼：Grok 被指卷入儿童色情图像风波AI技术迅猛发展带来生产力飞跃，也将行业拖入法律与伦理泥潭。马斯克旗下xAI在美国多地遭多起集体诉讼",
+      "snippet_len": 93,
+      "cluster_text_len": 93,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "news.aibase.com",
+      "score": 20.08746284125034,
+      "link": "https://news.aibase.com/zh/news/32260"
+    },
+    {
+      "candidate_id": 83,
+      "title": "同一段 DNA，在不同细胞里命运不同：AlphaGenome 2 把预测拉到细胞级同一套DNA在不同细胞中基因开关迥异，同一突变在不同细胞后果不同，长期阻碍疾病基因定位。11月11日",
+      "snippet_len": 146,
+      "cluster_text_len": 146,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "news.aibase.com",
+      "score": 20.08746284125034,
+      "link": "https://news.aibase.com/zh/news/32261"
+    },
+    {
+      "candidate_id": 84,
+      "title": "Browse tools.simonwillison.net by tag",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "simonwillison.net",
+      "score": 20,
+      "link": "https://simonwillison.net/2026/Nov/11/tools-tags/"
+    },
+    {
+      "candidate_id": 85,
+      "title": "Why the data center you dread might never even be built",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/video/why-the-data-center-you-dread-might-never-even-be-built/"
+    },
+    {
+      "candidate_id": 86,
+      "title": "How backlash and red tape continue to slow data centers post-Blue Wave",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/podcast/how-backlash-and-red-tape-continue-to-slow-data-centers-post-blue-wave/"
+    },
+    {
+      "candidate_id": 87,
+      "title": "CoreWeave turns to customer prepayments",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/"
+    },
+    {
+      "candidate_id": 88,
+      "title": "With $720M round, Britain’s Fractile gets a leg up in the race for AI chips",
+      "snippet_len": 93,
+      "cluster_text_len": 93,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/2026/11/11/with-720m-round-britains-fractile-gets-a-leg-up-in-the-race-for-ai-chips/"
+    },
+    {
+      "candidate_id": 89,
+      "title": "Congress to call Jensen Huang in to answer for alleged Chinese spy affair",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "techcrunch.com",
+      "score": 20,
+      "link": "https://techcrunch.com/2026/11/11/congress-to-call-jensen-huang-in-to-answer-for-alleged-chinese-spy-affair/"
+    },
+    {
+      "candidate_id": 90,
+      "title": "A Startup Wants to Fight AI Bioweapons With AI",
+      "snippet_len": 132,
+      "cluster_text_len": 132,
+      "source": "WIRED AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "wired.com",
+      "score": 20,
+      "link": "https://www.wired.com/story/startup-fights-ai-bioweapons-with-ai/"
+    },
+    {
+      "candidate_id": 91,
+      "title": "Big Walk used AI to fix a bug. Now the indie gaming world is having a reckoning.",
+      "snippet_len": 95,
+      "cluster_text_len": 95,
+      "source": "Ars Technica AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "arstechnica.com",
+      "score": 24.39231742277876,
+      "link": "https://arstechnica.com/gaming/2026/11/big-walk-used-ai-to-fix-a-bug-now-the-indie-gaming-world-is-having-a-reckoning/"
+    },
+    {
+      "candidate_id": 92,
+      "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+      "snippet_len": 284,
+      "cluster_text_len": 284,
+      "source": "Google AI Blog",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-12",
+      "domain": "blog.google",
+      "score": 19,
+      "link": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/"
+    },
+    {
+      "candidate_id": 94,
+      "title": "BananaMind SLM Digest – 2026-11-11 🚀 BananaMind 3 Ultra (400M parameters) – Banaxi‑Tech",
+      "snippet_len": 273,
+      "cluster_text_len": 273,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/posts/BananaMindBot/508347342015845"
+    },
+    {
+      "candidate_id": 96,
+      "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+      "snippet_len": 95,
+      "cluster_text_len": 95,
+      "source": "Google DeepMind Blog",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "deepmind.google",
+      "score": 19,
+      "link": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/"
+    },
+    {
+      "candidate_id": 97,
+      "title": "China’s Nvidia Honeypot Isn’t Surprising. Jensen Huang Fell for It Anyway",
+      "snippet_len": 103,
+      "cluster_text_len": 103,
+      "source": "WIRED AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "wired.com",
+      "score": 18,
+      "link": "https://www.wired.com/story/chinas-nvidia-honeypot-isnt-surprising-jensen-huang-fell-for-it-anyway/"
+    },
+    {
+      "candidate_id": 98,
+      "title": "低调追赶的文心，一口气打出了快、省",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "雷锋网 AI",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-12",
+      "domain": "leiphone.com",
+      "score": 17.90689059560852,
+      "link": "https://www.leiphone.com/category/ai/b3ASOkGmqznTQWCH.html"
+    },
+    {
+      "candidate_id": 99,
+      "title": "Adobe’s AI experiments let you walk around in photos and interview your characters",
+      "snippet_len": 90,
+      "cluster_text_len": 90,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-11",
+      "domain": "theverge.com",
+      "score": 17,
+      "link": "https://www.theverge.com/tech/1031505/adobe-max-2026-sneaks-experiments-ai"
+    },
+    {
+      "candidate_id": 100,
+      "title": "前TikTok核心成员做AI原生公司",
+      "snippet_len": 108,
+      "cluster_text_len": 108,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-11",
+      "domain": "aitntnews.com",
+      "score": 16.807354922057606,
+      "link": "https://aitntnews.com/newDetail.html?newId=31174"
+    }
+  ]
+}
