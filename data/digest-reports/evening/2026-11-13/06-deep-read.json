@@ -1,0 +1,396 @@
+{
+  "run_date": "2026-11-13",
+  "selected_topic_ids": [
+    75,
+    66,
+    89,
+    73,
+    62,
+    77,
+    72,
+    81,
+    63,
+    82,
+    19,
+    27,
+    33,
+    10,
+    8,
+    20
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 16,
+    "base_members_added": 18,
+    "expanded_added": 2,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 25,
+    "final_targets": 20,
+    "global_cap": 30
+  },
+  "deep_read_links": 20,
+  "materials_total": 20,
+  "materials_windowed": 20,
+  "materials_usable": 19,
+  "materials_by_source": {
+    "TechCrunch AI": 2,
+    "WIRED AI": 1,
+    "arXiv cs.AI": 8,
+    "AIBase": 6,
+    "Hugging Face Posts": 1,
+    "AITNT 资讯": 1
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 75,
+      "topic_title": "月之暗面Kimi K3模型无需显卡运行",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        16
+      ],
+      "members": [
+        {
+          "ref_id": 16,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32314",
+          "title": "无需显卡也能跑！ 40 核老旧服务器硬刚 2.8 万亿参数大模型，傲腾内存成破局利器人工智能参数规模膨胀，数万亿参数大模型常依赖昂贵高端显卡集群。近日有玩家在社区分享极限测试：仅用一台未插显卡、搭载40核处理器的老旧服务器，成功运行月之暗面2.8万亿参数的Kimi K3。该模型为体量庞大的混合专家模型，此次挑战被视为硬件极限的极客尝试。 2 小时前 10.5K",
+          "pub_date": "2026-11-13",
+          "content": "在人工智能参数规模不断膨胀的今天，动辄数万亿参数的巨型大模型往往需要依靠昂贵的高端显卡集群才能驱动。然而，近日有玩家在社区分享了一次极具极客精神的极限测试:他仅凭一台没有插显卡、搭载40核处理器的老旧服务器，竟然成功让月之暗面的2.8万亿参数大模型 Kimi K3运行了起来。挑战硬件极限:巨型大模型遇上老旧服务器作为一款体量庞大的混合专家模型，Kimi K3的总参数量达到了2.8万亿，每个 token 仅激活约1040亿参数，官方标称的上下文更是高达104万 token。面对如此巨大的数据体量，哪怕将其压缩至极限的1bit 量化，也需要数百 GB 的内存才能装得下，这显然超出了普通家用主板的承载极限。为了突破这一硬件瓶颈，该玩家剑走偏锋，使用了一颗40核的第三代至强可扩展处理器，并搭配了英伟达已经停产的傲腾持久内存200系列，实现了单条最高512GB 的超大容量支持。巧妙软件调配:盘活停产傲腾内存作为主存在具体的软硬件协同方案上，该玩家借助 llama.cpp 软件，将傲腾持久内存设置为 App Direct 模式，让其直接作为内存供程序读写，而不是将其作为硬盘缓存由系统自行调度。"
+        }
+      ]
+    },
+    {
+      "topic_id": 66,
+      "topic_title": "DeepSeek-V4.1-Flash模型发布",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        15
+      ],
+      "members": [
+        {
+          "ref_id": 15,
+          "source": "Hugging Face Posts",
+          "link": "https://huggingface.co/posts/Baekpica/659377346078395",
+          "title": "<Why I Released the Same DeepSeek-V4.1-Flash Variant Model Three Times> DeepSeek-V4.1-Flash-1017 is a 763B-parameter model with a 510 GB checkpoint. I compressed it into a 113.6 GB GGUF for a single 128 GB DGX Spark, retaining MTP, vision, and Engram components. But fitting the model and preserving its behavior turned out to be two different problems. 1. VQ — Making it fit I compressed 40 routed-expert layers using 8-dimensional vector quantization with 12/13-bit indices (1.5–1.625 index bits/weight). It fit, but minimizing weight reconstruction error didn’t necessarily preserve model outputs. 2. iVQ — Accounting for activations Inspired by llama.cpp’s importance matrix, I used 3.65M calibration tokens to make VQ activation-aware. Reconstruction improved, but end-to-end quality barely changed. A tiny fraction of extreme activations dominated the importance statistics, leaving typical tokens largely unaffected. 3. hVQ — Accounting for correlations I introduced Hessian-informed reconstruction with GPTQ-style error feedback to account for correlations between input channels. Surprisingly, plain weight error increased, while actual model fidelity improved: * Routed-expert output error: −34.5% * Generated-position KL: −17% * Top-1 agreement: 82.2% → 84.4% * Improvements across all 40 layers These gains were also reproduced in the actual GGUF serving engine on DGX Spark. 4. Inference optimization Further optimizations in ds4-dfm-rs improved median prefill throughput by 74% (955.5 → 1,662.2 tok/s across 2K–64K workloads). Decode runs at 30–36 tok/s with automatic MTP. The takeaway: Minimizing weight error, minimizing activation-weighted error, and preserving model behavior are fundamentally different optimization problems. At extreme compression ratios, understanding that difference matters more than simply reducing bits. Runtime:",
+          "pub_date": "2026-11-13",
+          "content": "<Why I Released the Same DeepSeek-V4.1-Flash Variant Model Three Times>DeepSeek-V4.1-Flash-1017 is a 763B-parameter model with a 510 GB checkpoint. I compressed it into a 113.6 GB GGUF for a single 128 GB DGX Spark, retaining MTP, vision, and Engram components.But fitting the model and preserving its behavior turned out to be two different problems.1. VQ — Making it fitI compressed 40 routed-expert layers using 8-dimensional vector quantization with 12/13-bit indices (1.5–1.625 index bits/weight).It fit, but minimizing weight reconstruction error didn’t necessarily preserve model outputs.2."
+        }
+      ]
+    },
+    {
+      "topic_id": 73,
+      "topic_title": "科大讯飞SparkAudio 1.0语音基座上线",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 17,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32302",
+          "title": "科大讯飞星火语音基座大模型 SparkAudio 1.0 正式上线 API 服务科大讯飞近日宣布，旗舰级语音基座大模型SparkAudio1.0已在讯飞开放平台全面上线API服务，开发者和企业用户可直接接入调用。该模型主打原生语音大模型方案，告别传统“先语音识别转文字、再处理”的级联路径，旨在直接理解声音，推动人工智能语音技术取得新突破，为音频任务处理带来全新方式。 8 小时前 10.7K",
+          "pub_date": "2026-11-13",
+          "content": "人工智能在语音技术领域的探索迎来了全新突破。科大讯飞于近日正式宣布，其旗舰级语音基座大模型 SparkAudio1.0已在讯飞开放平台全面上线 API 服务，广大开发者和企业用户现在可以直接接入并调用该服务。告别传统级联方案:用原生语音大模型直接听懂地球声音在过去的很长一段时间里，业界处理音频任务普遍采用的是“级联方案”:即先通过语音识别将声音转换为文字，再将文字交由大模型进行理解。然而，这种传统的串联方式存在两个无法忽视的短板:信息丢失严重: 纯粹的文本只能记录“说了什么”，却会彻底遗漏声音中自带的语气、情绪波动、说话人特征以及背景环境音等关键维度的信息，导致模型对复杂场景的判断不够全面。链路割裂与延迟: 将语音转写、声纹识别、翻译等多个能力拆分为独立模块串联运行，不仅容易在各个环节中累积错误，也会在实际使用体验中带来明显的延迟与卡顿。针对这些痛点，SparkAudio1.0彻底打破了传统的处理边界。作为一款真正的语音基座大模型，它不再仅仅局限于“语音转文字”，而是具备了直接理解语音的能力。它可以一次性“听懂”人声、环境音、音乐等多种音频形态，并能同步洞察声音背后的深层语义、情绪变化与具体场景。"
+        }
+      ]
+    },
+    {
+      "topic_id": 62,
+      "topic_title": "腾讯混元发布Hy Realtime实时语音模型",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        14
+      ],
+      "members": [
+        {
+          "ref_id": 14,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32320",
+          "title": "腾讯混元甩出实时语音模型 Hy Realtime，会聊天、能唱歌、还会自己联网搜腾讯混元发布全新实时语音模型Hy Realtime，主打实时，在语音理解、指令遵循、拟人化表达等基础对话能力上表现优异，并新增Agentic工具调用和唱歌能力，从单纯应答升级为可执行任务，更接近真人交流。该模型已应用于元宝语音通话、腾讯客服等产品。 1 小时前 9.6K",
+          "pub_date": "2026-11-13",
+          "content": "腾讯混元今日发文宣布，全新实时语音模型 Hy Realtime 正式发布。作为一款主打实时的语音模型，它在语音理解、指令遵循与拟人化表达等基础对话能力上表现优异，更一口气补齐两项新本领：一是 Agentic 工具调用，二是唱歌。换言之，它不再是单纯应答的\"嘴\"，而开始长了能干活的手，离\"像人一样交流\"又近了一步。Hy Realtime 已经悄悄跑在元宝语音通话、腾讯客服等产品里，近期还会搬上腾讯云，以 API 形式对外开放。对内，它直接改善数亿用户的对话体验；对外，则是腾讯把自研语音能力从内部场景推向外部开发者的关键一步，同类能力此前多由第三方提供。"
+        }
+      ]
+    },
+    {
+      "topic_id": 77,
+      "topic_title": "百度智能体完成费马大定理形式化",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        19
+      ],
+      "members": [
+        {
+          "ref_id": 19,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31219",
+          "title": "百度押中AI下一幕！百万智能体组团上岗，AI科学家昼夜狂奔",
+          "pub_date": "2026-11-13",
+          "content": "这几天，AI科研的进度，快得让人有点坐不住！ Fable 5.2派出1000个智能体组队，只用30小时，就把费马大定理完整地形式化了一遍。 拔掉网线后，Claude在化学盲考中不到半小时，就为四个未公开分子各写出一条完整的合成路线。 另一边，OpenAI把考场搬进湿实验室，让GPT-6 Astra直接看懂凝胶图、培养皿照片和仪器原始数据。 大家突然发现，AI在实验室里扮演的角色彻底变了。它不再只是跑跑模拟，也不再像AlphaFold那样只算单个蛋白结构。 如今，AI科研迈入了「任务协同」的新阶段。从查文献、建模型到做实验，成群的智能体开始接手整套流程，科学家则把精力放回定方向、做判断上。 不过，要把成百上千个智能体融进日复一日的实验里，光靠几个聪明的大模型远远不够。 人与AI如何打配合、经验如何留存、算力和仪器又如何协同运转，每一步考验的都是一套全新的组织方式。 11月12日，在百度世界2026大会上，李彦宏一句话点破了这层关系： AI发展的下一幕，是智能组织！ 十年前，百度提出「互联网的下一幕，是人工智能」。十年后的今天，聚光灯从单点技术转向了承载它的组织方式。 智能组织才是AI时代的「新厂房」 可问题来了，为什么很多企业和实验室买回了最顶尖的大模型，核心产出却还是在原地打转？ 推开大多数实验室的大门，答案其实就在眼前。"
+        }
+      ]
+    },
+    {
+      "topic_id": 72,
+      "topic_title": "阿里ATH推出快乐虾米App",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        18
+      ],
+      "members": [
+        {
+          "ref_id": 18,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32305",
+          "title": "关停五年，\"虾米\"借 AI 还魂：阿里 30 元推出快乐虾米阿里ATH事业群推出的快乐虾米（HappyShrimp）已登陆iOS与安卓，App Store版本升至0.2.14。它是阿里“Happy系列”第三款模型产品，前有HappyHorse和HappyOyster。用户用大白话描述情绪、故事或曲风，AI即可端到端完成作词、作曲、编曲和人声演唱，主打整曲生成而非步骤拼接。 7 小时前 12.2K",
+          "pub_date": "2026-11-13",
+          "content": "阿里巴巴 ATH（TokenHub）事业群研发的快乐虾米（HappyShrimp）正式登陆 iOS 与安卓商店，App Store 已迭代到 0.2.14 版。它并非简单地把老产品搬回来，而是阿里\"Happy 系列\"的第三款模型产品——前两位是视频生成模型 HappyHorse 与三维交互视频模型 HappyOyster。用户用大白话讲出情绪、故事或曲风，AI 便一口气完成作词、作曲、编曲与人声演唱，主打端到端整曲生成而非步骤拼接，并提供\"智能歌词\"\"纯音乐\"两路输出，外加\"音乐配方\"\"做同款\"等复用玩法。面向普通人的定价很克制：国内标准会员约 30 元月费，可生成 150 首歌，摊下来每首约 0.2 元；海外起步价 14.90 美元 / 月，积分包 9.90 美元起。商店里还摆着从 89 元到 1149 元不等的积分与会员档位，给重度玩家留出升级空间。"
+        }
+      ]
+    },
+    {
+      "topic_id": 81,
+      "topic_title": "民主党调查英伟达与特朗普交易",
+      "topic_type": "news",
+      "cross_source_score": 71,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        1,
+        2
+      ],
+      "members": [
+        {
+          "ref_id": 1,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/",
+          "title": "Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump",
+          "pub_date": "Thu, 12 Nov 2026 22:42:51 +0000",
+          "content": "Democrats on Thursday opened an inquiry into how the Trump administration handled Nvidia’s chip sales to China. Earlier on Thursday, the company ousted its CEO Jensen Huang. He also agreed to testify to a different set of Republican-led Congressional committees. Huang was removed from the company he founded after he confessed to an extramarital affair with a woman accused of being a Chinese spy. (He has since been accused of having more affairs, with Nvidia employees.) The alleged Chinese spy, Alice Huang, was an executive of Nvidia customer Megaspeed, a Singapore-based company that U.S."
+        },
+        {
+          "ref_id": 2,
+          "source": "WIRED AI",
+          "link": "https://www.wired.com/story/silicon-valley-is-still-defending-jensen-huang/",
+          "title": "Silicon Valley Is Still Defending Jensen Huang",
+          "pub_date": "Thu, 12 Nov 2026 22:29:43 +0000",
+          "content": "News of Jensen Huang’s affair with an alleged asset of China’s Ministry of State Security was first met with a muted response in Silicon Valley—including inside Nvidia itself. Huang’s resignation, after news of two other alleged romantic relationships with Nvidia staffers, has left both the company and the broader AI industry stunned.As revelations about Huang’s initial affair came out earlier this week, rank-and-file Nvidia employees at first pursued business as usual, according to two current and three former employees at the chipmaker, speaking anonymously to protect relationships at the co。"
+        }
+      ]
+    },
+    {
+      "topic_id": 63,
+      "topic_title": "Anthropic IPO获六倍认购",
+      "topic_type": "news",
+      "cross_source_score": 59,
+      "mention_count": 2,
+      "source_count": 1,
+      "member_count": 2,
+      "refs": [
+        11,
+        12
+      ],
+      "members": [
+        {
+          "ref_id": 11,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32315",
+          "title": "Anthropic 募资 904 亿剑指史上最大 IPO，认购已超六倍Claude开发商Anthropic的IPO已获约六倍认购，投资者热情升温，有望成为史上最大股票发行。招股文件显示，公司及联合创始人拟通过IPO最多募资644亿美元，并叠加260亿美元非公开配售，为登陆公开市场备足资金。在AI投资热潮是否退潮的争论中，真金白银的认购给出直接投票。 2 小时前 9.5K",
+          "pub_date": "2026-11-13",
+          "content": "据知情人士透露，Claude 开发商 Anthropic 的 IPO 已吸引到可供认购股票约六倍的订单，投资者对这桩有望成为有史以来最大股票发行的热情持续升温。招股文件显示，公司连同联合创始人计划借 IPO 最多募得 644 亿美元，再叠加一笔 260 亿美元的非公开配售，双管齐下为登陆公开市场备足弹药。在 AI 投资热潮退潮与否的争论中，真金白银的认购给出了最直白的投票。两项相加，反超 SpaceX 登顶把 IPO 与私募配售合计，规模最高可达 904 亿美元，一举超过 SpaceX 的上市交易，坐上史上最大上市交易的宝座。这桩天价发行，也被视为 AI 公司走向资本市场的一座里程碑。不过知情人士提醒，包括需求量在内的发行细节仍可能变动，相关信息尚未公开、消息源要求匿名，Anthropic 方面也暂未置评。老股东先吃肉，新买家或挨刀分配上已现倾斜：银行家告知潜在投资者，Anthropic 将优先照顾现有支持者，部分新进买家最终拿到的股份可能少于预期。在六倍超额认购的挤压下，后来者想分一杯羹并不容易，资本盛宴的座位早被老朋友占了大半，新面孔只能捡漏。"
+        },
+        {
+          "ref_id": 12,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32307",
+          "title": "Anthropic 招股遭六倍哄抢，英伟达砸 100 亿抢座彭博社称，Anthropic即将IPO，认购订单已达可售股份约6倍，需求远超供给。承销银行表示将优先照顾现有股东，新投资者或遭砍单。招股文件显示，公司及联合创始人拟通过IPO最多募资644亿美元（约4305亿元人民币），并搭配260亿美元私募配售。 4 小时前 10.1K",
+          "pub_date": "2026-11-13",
+          "content": "彭博社今日报道，Anthropic 即将到来的 IPO 认购订单已蹿至可供股份数的约 6 倍。随着需求盖过供给，部分潜在投资者恐怕拿不到预期额度——承销银行已放话，现有股东将被优先照顾，新进场的人大概率要被砍单。644 亿加 260 亿的融资盘子招股文件勾勒出惊人的体量：公司连同联合创始人，拟借 IPO 最多募得 644 亿美元（约 4，305 亿元人民币），同时搭配一笔 260 亿美元的私募配售，两项叠加最高可吞下 904 亿美元。完全稀释后，目标估值约 1.4 万亿美元（约 9.36 万亿元），虽略低于部分投资者早前的想象，仍是个天文数字。英伟达百亿入局，CEO 直播造势最耐人寻味的角色是英伟达。它计划在 260 亿私募里认购约 100 亿美元（约 668.51 亿元），而它本身正是 Anthropic 的关键战略伙伴。与此同时，掌门人达里奥·阿莫代伊将与摩根大通 CEO 戴蒙在 11 月 13 日同框直播，为这桩上市再加温。支撑热度的还有运营数据：11 月 10 日披露截至 10 月 31 日的营收运行率达 810 亿美元，较 9 月底多出 100 亿，只是这按近期订阅与消费费用年化折算，并非真正落袋的全年收入。"
+        }
+      ]
+    },
+    {
+      "topic_id": 82,
+      "topic_title": "Meta Muse AI Agent可拨号联系商家",
+      "topic_type": "news",
+      "cross_source_score": 63,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        10
+      ],
+      "members": [
+        {
+          "ref_id": 10,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
+          "title": "Muse can now place calls to US businesses — if you pay",
+          "pub_date": "2026-11-13",
+          "content": "After initially testing the feature in September, Meta’s consumer AI agent Muse is now able to place calls to U.S. businesses on behalf of its users. However, only paid subscribers have access to the feature, the company says. Meta’s Muse, which now has over 10 million users, the company said last month, has been working to make consumer AI a mainstream product for everyday users. Placing calls is one of the ways it aims to get there, as it could handle another task on people’s to-do lists."
+        }
+      ]
+    },
+    {
+      "topic_id": 19,
+      "topic_title": "EvoX: Rethinking the Agent",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        5
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.15006",
+          "title": "EvoX: Rethinking the Agent Harness as a Runtime Policy",
+          "pub_date": "Fri, 13 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Large language model (LLM) agents increasingly interact with tools and environments, yet plausible model decisions do not always translate into successful execution due to tool-call mismatches, interrupted workflows, and unsupported completion claims. We present EvoX, a Rust-based, multi-model agent runtime guided by The Second Policy, which views the harness as an Operational Policy complementing the foundation model's Semantic Policy."
+        }
+      ]
+    },
+    {
+      "topic_id": 27,
+      "topic_title": "ReA-Bench: Benchmarking",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        6
+      ],
+      "members": [
+        {
+          "ref_id": 6,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.16493",
+          "title": "ReA-Bench: Benchmarking Responsible Agent Auditing",
+          "pub_date": "Fri, 13 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:As agents perform tasks autonomously in local and cloud environments, auditing their execution trajectories can help service providers identify risks and improve agent harnesses and foundation models. Our analysis of production and red-team trajectories shows that some risks are repeatedly missed across auditing configurations. Overall recall obscures which risks are missed and whether higher recall comes with more false positives on legitimate behavior. Existing benchmarks offer limited insight into these failures."
+        }
+      ]
+    },
+    {
+      "topic_id": 33,
+      "topic_title": "SynthCorp: A Platform for",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        7
+      ],
+      "members": [
+        {
+          "ref_id": 7,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.14765",
+          "title": "SynthCorp: A Platform for Creating Benchmarks for Data Agents",
+          "pub_date": "Fri, 13 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Current benchmarks for LLM-driven data agents saturate quickly and cannot target specific capabilities. We present SynthCorp, a platform that creates customizable data estates and benchmarks by simulating how business events produce and modify corporate data over time. Each data estate combines relational databases, a document store, and a data catalog, paired with evaluation tasks and executable gold programs."
+        }
+      ]
+    },
+    {
+      "topic_id": 10,
+      "topic_title": "Open Challenges and Opportunities",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        3
+      ],
+      "members": [
+        {
+          "ref_id": 3,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.14846",
+          "title": "Open Challenges and Opportunities in Human-Agent Systems",
+          "pub_date": "Fri, 13 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Agentic AI systems increasingly undertake extended tasks and act on people's behalf, making human-agent interaction central to their effectiveness. Successful interaction requires understanding human perspectives, coordinating complementary capabilities, and maintaining productive relationships within socio-technical environments. This paper examines how foundations developed by the Autonomous Agents and Multi-Agent Systems (AAMAS) community inform these demands."
+        }
+      ]
+    },
+    {
+      "topic_id": 8,
+      "topic_title": "Metal Sandbox: Isolated Execution",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        4
+      ],
+      "members": [
+        {
+          "ref_id": 4,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.17294",
+          "title": "Metal Sandbox: Isolated Execution and Command Scheduling for GPU Coding Agents on Apple Silicon",
+          "pub_date": "Fri, 13 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:On-device inference requires kernels that make effective use of local accelerators. Efficient training and evaluation of models that generate Apple Metal kernels benefit from native macOS tools and concurrent agent sessions. These sessions alternate between model requests, development commands, and GPU execution, leaving GPU capacity idle for much of a rollout. We present Metal Sandbox, infrastructure that combines restricted per-instance file access, native command execution, and command-level scheduling across interconnected Macs."
+        }
+      ]
+    },
+    {
+      "topic_id": 20,
+      "topic_title": "GuardianAgentFlow",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        8
+      ],
+      "members": [
+        {
+          "ref_id": 8,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.15097",
+          "title": "GuardianAgentFlow: Multi-Agent Coordination for Web Privacy Protection",
+          "pub_date": "Fri, 13 Nov 2026 00:00:00 -0500",
+          "content": "View PDF Abstract:Web agents need to use private context without unnecessarily disclosing it. Effective protection must distinguish between requests that may be sent after sanitization and those that must be withheld, while preserving the information needed for authorized tasks. We present GuardianAgentFlow, a multi-agent framework that mediates outgoing Web requests through an explicit release contract."
+        }
+      ]
+    }
+  ]
+}
