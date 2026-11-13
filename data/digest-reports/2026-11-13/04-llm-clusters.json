@@ -1,0 +1,2554 @@
+{
+  "run_date": "2026-11-13",
+  "cluster_chunks": [
+    {
+      "chunk_index": 1,
+      "chunk_size": 25,
+      "representative_assignments": 25,
+      "assignments": 26,
+      "fallback_assignments": 0,
+      "strategy": "llm_news",
+      "elapsed_ms": 918190
+    },
+    {
+      "chunk_index": 2,
+      "chunk_size": 18,
+      "representative_assignments": 18,
+      "assignments": 18,
+      "fallback_assignments": 0,
+      "strategy": "llm_news",
+      "elapsed_ms": 47235
+    },
+    {
+      "chunk_index": 3,
+      "chunk_size": 27,
+      "assignments": 27,
+      "fallback_assignments": 0,
+      "strategy": "deterministic_paper"
+    }
+  ],
+  "mode_breakdown": {
+    "news_input": 44,
+    "news_after_precluster": 43,
+    "paper_input": 27,
+    "paper_deterministic": 27,
+    "llm_chunk_count": 2
+  },
+  "assignments_count": 71,
+  "fallback_assignments": 0,
+  "singleton_recluster": {
+    "enabled": true,
+    "anchor_count": 4,
+    "singleton_candidates": 13,
+    "merged": 0,
+    "kept": 13,
+    "invalid_or_low_confidence": 0,
+    "min_confidence": 0.72,
+    "min_topic_score": 68,
+    "max_items": 24,
+    "decisions": [
+      {
+        "candidate_id": 1,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "OpenAI相关，但内容是Amplitude使用OpenAI，与英伟达黄仁勋丑闻无关，且未明确建议锚点。",
+        "applied": false
+      },
+      {
+        "candidate_id": 15,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "Nectar AI agent与英伟达黄仁勋丑闻无直接关联，仅为同公司背景。",
+        "applied": false
+      },
+      {
+        "candidate_id": 13,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "Nebius财报与英伟达黄仁勋丑闻无直接关联，仅为同公司背景。",
+        "applied": false
+      },
+      {
+        "candidate_id": 5,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "Google Gemini模型性能提升与Google推出Gemini 4 Hydrogen是不同事件。",
+        "applied": false
+      },
+      {
+        "candidate_id": 38,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "Google学校AI禁令与Google推出Gemini 4 Hydrogen是不同事件。",
+        "applied": false
+      },
+      {
+        "candidate_id": 37,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "Phota Labs AI修图与英伟达黄仁勋丑闻无直接关联。",
+        "applied": false
+      },
+      {
+        "candidate_id": 4,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "美联航AI订票与三星与Google智能眼镜是不同事件。",
+        "applied": false
+      },
+      {
+        "candidate_id": 6,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "AI发现玛雅遗址辟谣与英伟达黄仁勋丑闻无直接关联。",
+        "applied": false
+      },
+      {
+        "candidate_id": 42,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "游戏开发者使用生成式AI与三星与Google智能眼镜是不同事件。",
+        "applied": false
+      },
+      {
+        "candidate_id": 64,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "Google DeepMind员工工会化与英伟达黄仁勋丑闻无直接关联。",
+        "applied": false
+      },
+      {
+        "candidate_id": 36,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "软银AI天然气野心与英伟达黄仁勋丑闻无直接关联。",
+        "applied": false
+      },
+      {
+        "candidate_id": 40,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "Palantir政治立场与英伟达黄仁勋丑闻无直接关联。",
+        "applied": false
+      },
+      {
+        "candidate_id": 19,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.5,
+        "reason": "AI聊天机器人推荐假网站与英伟达黄仁勋丑闻无直接关联。",
+        "applied": false
+      }
+    ]
+  },
+  "topic_cards": [
+    {
+      "topic_id": 2,
+      "topic_key": "英伟达黄仁勋丑闻",
+      "topic_title": "英伟达黄仁勋丑闻",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        2,
+        16,
+        28,
+        29,
+        33,
+        35,
+        41,
+        43,
+        44,
+        65
+      ],
+      "mention_count": 10,
+      "source_diversity": 4,
+      "cross_source_score": 90,
+      "avg_candidate_score": 20.39273063290536,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "The Verge AI",
+        "TechCrunch AI",
+        "AIBase",
+        "WIRED AI"
+      ],
+      "top_source_groups": [
+        "foreign_media",
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "Jensen Huang is out. What did China want from him?",
+        "Jensen Huang’s exit puts Nvidia’s support for open source in question",
+        "一句\"糟透了\"刷屏领英：开源阵营为英伟达换帅黯然11月12日，英伟达宣布黄仁勋即刻卸任总裁、CEO与董事三职。Hugging Face CEO德朗格随即在领英发长文，两度称“糟透了”，直言难过",
+        "英伟达创始人黄仁勋卸任总裁与CEO人工智能行业权力格局突现震荡：英伟达公告宣布，创立33年、与品牌深度绑定的灵魂人物黄仁勋卸任总裁、CEO和董事，引发全球科技界高度关注与股价波动",
+        "The unfolding Jensen Huang scandal"
+      ],
+      "scorecard": {
+        "total": 266.1444154245152,
+        "cross_validation": 228,
+        "source_credibility": 14.27491144303375,
+        "recency": 7.869503981481482,
+        "entity_priority": 12,
+        "industry_value": 0,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": 0,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:NVIDIA"
+        ]
+      },
+      "topic_total_score": 266.1444154245152
+    },
+    {
+      "topic_id": 11,
+      "topic_key": "Google Gemini 4 Hydrogen",
+      "topic_title": "Google 推出 Gemini 4 Hydrogen",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        11,
+        20
+      ],
+      "mention_count": 2,
+      "source_diversity": 2,
+      "cross_source_score": 75,
+      "avg_candidate_score": 23.999230911660906,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AIBase",
+        "Google DeepMind Blog"
+      ],
+      "top_source_groups": [
+        "domestic_media",
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Google推出Gemini4Hydrogen，全球Search迎来最大模型升级Google推出Gemini4Hydrogen，并引入全球Google Search",
+        "Introducing Gemini 4 Hydrogen"
+      ],
+      "scorecard": {
+        "total": 204.1689655733478,
+        "cross_validation": 143.5,
+        "source_credibility": 16.799461638162633,
+        "recency": 7.869503935185185,
+        "entity_priority": 13,
+        "industry_value": 19,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": 0,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Google/DeepMind",
+          "value:model_release",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 204.1689655733478
+    },
+    {
+      "topic_id": 12,
+      "topic_key": "三星与 Google 智能眼镜",
+      "topic_title": "三星与 Google 推出 AI 智能眼镜",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        12,
+        39
+      ],
+      "mention_count": 2,
+      "source_diversity": 2,
+      "cross_source_score": 75,
+      "avg_candidate_score": 21.269515102342258,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AIBase",
+        "Ars Technica AI"
+      ],
+      "top_source_groups": [
+        "domestic_media",
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Samsung联合Google推出AI智能眼镜，12月10日正式开售三星电子推出与Google合作开发的智能眼镜系列，2026年12月10日开售，11月12日开启预订",
+        "Google pushes privacy angle as Gemini-powered smartglasses debut starting at $395"
+      ],
+      "scorecard": {
+        "total": 180.25816450682476,
+        "cross_validation": 143.5,
+        "source_credibility": 14.88866057163958,
+        "recency": 7.869503935185185,
+        "entity_priority": 13,
+        "industry_value": 7,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -8,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Google/DeepMind",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 180.25816450682476
+    },
+    {
+      "topic_id": 10,
+      "topic_key": "Anthropic Claude Meetings",
+      "topic_title": "Anthropic 推出 Claude Meetings",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        10,
+        30
+      ],
+      "mention_count": 2,
+      "source_diversity": 1,
+      "cross_source_score": 65,
+      "avg_candidate_score": 21.313246522967425,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "Anthropic推出Claude Meetings，可加入Google Meet参与会议Anthropic推出Claude Meetings，用户可将Claude作为可见参与者加入视频会议",
+        "Claude 正式推出全新会议功能：作为可见参会者直接加入视频通话，率先面向团队版与企业版开放测试Claude推出测试阶段会议功能Claude Meetings"
+      ],
+      "scorecard": {
+        "total": 174.28877651283648,
+        "cross_validation": 116.5,
+        "source_credibility": 14.919272566077197,
+        "recency": 7.869503946759259,
+        "entity_priority": 26,
+        "industry_value": 15,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -8,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Anthropic",
+          "entity:Google/DeepMind",
+          "value:benchmark_safety",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 174.28877651283648
+    },
+    {
+      "topic_id": 3,
+      "topic_key": "OpenAI 等公司被起诉",
+      "topic_title": "五家 AI 巨头遭起诉叫停",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        3
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 63,
+      "avg_candidate_score": 26.782595283088913,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "用你们自己的末日预言告你们：五家 AI 巨头遭起诉叫停11月12日，四家非营利机构向旧金山高等法院起诉 OpenAI、Anthropic、谷歌、Meta 与 SpaceXAI"
+      ],
+      "scorecard": {
+        "total": 154.61732065649556,
+        "cross_validation": 105,
+        "source_credibility": 18.74781669816224,
+        "recency": 7.8695039583333335,
+        "entity_priority": 38,
+        "industry_value": 9,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:OpenAI",
+          "entity:Anthropic",
+          "entity:Meta",
+          "value:policy_regulation_legal"
+        ]
+      },
+      "topic_total_score": 154.61732065649556
+    },
+    {
+      "topic_id": 1,
+      "topic_key": "Amplitude Wave 产品发布",
+      "topic_title": "Amplitude 利用 OpenAI 推出产品改进 Agent",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        1
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 71,
+      "avg_candidate_score": 30,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "OpenAI News"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "How Amplitude ships product improvements in 1–2 days with OpenAI"
+      ],
+      "scorecard": {
+        "total": 153.86950400462962,
+        "cross_validation": 117,
+        "source_credibility": 21,
+        "recency": 7.869504004629629,
+        "entity_priority": 14,
+        "industry_value": 18,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:OpenAI",
+          "value:api_platform_update",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 153.86950400462962
+    },
+    {
+      "topic_id": 14,
+      "topic_key": "Nectar AI 创作者营销代理",
+      "topic_title": "Nectar 推出 AI 创作者营销代理",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        15
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 26.523561956057012,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Nectar launches an AI agent to automate creator discovery and outreach for brands"
+      ],
+      "scorecard": {
+        "total": 145.9359973044251,
+        "cross_validation": 115.5,
+        "source_credibility": 18.566493369239907,
+        "recency": 7.869503935185185,
+        "entity_priority": 0,
+        "industry_value": 18,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 145.9359973044251
+    },
+    {
+      "topic_id": 24,
+      "topic_key": "Meta Muse 电话代办功能",
+      "topic_title": "Meta 开放 Muse 电话代办功能",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        32
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 20.08746284125034,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "Meta开放Muse AI电话代办功能，面向所有付费用户推出Meta宣布，消费级AI助手Muse的电话代办功能已向所有付费订阅用户开放。该功能可代表用户拨打美国企业电话，此前9月仅小范围测试"
+      ],
+      "scorecard": {
+        "total": 137.43072790091227,
+        "cross_validation": 103.5,
+        "source_credibility": 14.061223988875236,
+        "recency": 7.869503912037037,
+        "entity_priority": 11,
+        "industry_value": 25,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Meta",
+          "value:commercialization_revenue",
+          "value:benchmark_safety",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 137.43072790091227
+    },
+    {
+      "topic_id": 29,
+      "topic_key": "游戏开发者使用生成式 AI",
+      "topic_title": "更多游戏开发者开始使用生成式 AI",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        42
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "More game developers are starting to use generative AI"
+      ],
+      "scorecard": {
+        "total": 132.16950390046296,
+        "cross_validation": 114,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.869503900462963,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 132.16950390046296
+    },
+    {
+      "topic_id": 5,
+      "topic_key": "Google Gemini 理解能力提升",
+      "topic_title": "Google Gemini 模型提升复杂问题理解能力",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        5
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 27.584962500721154,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Google’s new Gemini model is better at understanding complicated questions"
+      ],
+      "scorecard": {
+        "total": 131.67897770883815,
+        "cross_validation": 115.5,
+        "source_credibility": 19.309473750504807,
+        "recency": 7.8695039583333335,
+        "entity_priority": 13,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Google/DeepMind"
+        ]
+      },
+      "topic_total_score": 131.67897770883815
+    },
+    {
+      "topic_id": 27,
+      "topic_key": "Google Gemini 学校禁令争议",
+      "topic_title": "Google Gemini 学校禁令争议",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        38
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 24.39231742277876,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Ars Technica AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Google faces calls for AI moratoriums in schools after Gemini pilot backlash"
+      ],
+      "scorecard": {
+        "total": 129.4441260964081,
+        "cross_validation": 115.5,
+        "source_credibility": 17.074622195945132,
+        "recency": 7.869503900462963,
+        "entity_priority": 13,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Google/DeepMind"
+        ]
+      },
+      "topic_total_score": 129.4441260964081
+    },
+    {
+      "topic_id": 4,
+      "topic_key": "联合航空限制 AI 代理订票",
+      "topic_title": "联合航空限制 AI 代理订票",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        4
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 28.643856189774723,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "United Airlines blocks AI agents from booking flights"
+      ],
+      "scorecard": {
+        "total": 129.42020329117562,
+        "cross_validation": 115.5,
+        "source_credibility": 20.050699332842306,
+        "recency": 7.8695039583333335,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 129.42020329117562
+    },
+    {
+      "topic_id": 6,
+      "topic_key": "AI 误报发现玛雅遗址",
+      "topic_title": "AI 代理误报发现玛雅遗址",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        6
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 27.584962500721154,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "No, AI agents did not discover a previously unknown Maya site"
+      ],
+      "scorecard": {
+        "total": 128.67897770883815,
+        "cross_validation": 115.5,
+        "source_credibility": 19.309473750504807,
+        "recency": 7.8695039583333335,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 128.67897770883815
+    },
+    {
+      "topic_id": 47,
+      "topic_key": "Google DeepMind 员工工会化",
+      "topic_title": "Google DeepMind 员工推动工会化",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        64
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 18,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "WIRED AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Google DeepMind Staff Tap the UK Government to Escalate Their Unionization Fight"
+      ],
+      "scorecard": {
+        "total": 123.46950384259259,
+        "cross_validation": 114,
+        "source_credibility": 12.6,
+        "recency": 7.869503842592593,
+        "entity_priority": 13,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Google/DeepMind"
+        ]
+      },
+      "topic_total_score": 123.46950384259259
+    },
+    {
+      "topic_id": 30,
+      "topic_key": "百度 AI 智能体研究进展",
+      "topic_title": "百度 AI 智能体在科研中的应用",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        45
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "百度押中AI下一幕！百万智能体组团上岗"
+      ],
+      "scorecard": {
+        "total": 123.16950388888887,
+        "cross_validation": 102,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.869503888888889,
+        "entity_priority": 10,
+        "industry_value": 0,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 0,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:百度/文心/千帆",
+          "domestic-ai-signal"
+        ]
+      },
+      "topic_total_score": 123.16950388888887
+    },
+    {
+      "topic_id": 7,
+      "topic_key": "paper:2610.40394",
+      "topic_title": "Scaling Mathematical Proof",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        7
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Scaling Mathematical Proof Supervision from Structured Textbooks"
+      ],
+      "scorecard": {
+        "total": 122.96950394675926,
+        "cross_validation": 102,
+        "source_credibility": 16.099999999999998,
+        "recency": 6.869503946759259,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 122.96950394675926
+    },
+    {
+      "topic_id": 34,
+      "topic_key": "Google DeepMind AlphaGenome 2",
+      "topic_title": "Google DeepMind 发布 AlphaGenome 2",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        49
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "AI能从DNA锁定致病细胞了！谷歌AlphaGenome 2帮助糖尿病癌症寻找新药靶点"
+      ],
+      "scorecard": {
+        "total": 120.66950386574075,
+        "cross_validation": 103.5,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.86950386574074,
+        "entity_priority": 13,
+        "industry_value": 7,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Google/DeepMind",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 120.66950386574075
+    },
+    {
+      "topic_id": 18,
+      "topic_key": "paper:2611.10193",
+      "topic_title": "Ensemble Routing for Prompt",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        23
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Ensemble Routing for Prompt-Adaptive Cost-Aware LLM Inference"
+      ],
+      "scorecard": {
+        "total": 120.06950392361111,
+        "cross_validation": 100.5,
+        "source_credibility": 14.7,
+        "recency": 6.869503923611111,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 120.06950392361111
+    },
+    {
+      "topic_id": 19,
+      "topic_key": "paper:2610.39671",
+      "topic_title": "Incentivizing Self-Learning in",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        24
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Incentivizing Self-Learning in Large Language Models via Reinforcement Learning"
+      ],
+      "scorecard": {
+        "total": 120.06950392361111,
+        "cross_validation": 100.5,
+        "source_credibility": 14.7,
+        "recency": 6.869503923611111,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 120.06950392361111
+    },
+    {
+      "topic_id": 20,
+      "topic_key": "paper:2611.14418",
+      "topic_title": "Precision on Demand",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        25
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model"
+      ],
+      "scorecard": {
+        "total": 120.06950391203704,
+        "cross_validation": 100.5,
+        "source_credibility": 14.7,
+        "recency": 6.869503912037037,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 120.06950391203704
+    },
+    {
+      "topic_id": 37,
+      "topic_key": "paper:2611.14413",
+      "topic_title": "Bits or permutations? Spending a",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        53
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Bits or permutations? Spending a fixed inference budget on weight precision or on option"
+      ],
+      "scorecard": {
+        "total": 118.66950386574074,
+        "cross_validation": 100.5,
+        "source_credibility": 13.299999999999999,
+        "recency": 6.869503865740741,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 118.66950386574074
+    },
+    {
+      "topic_id": 38,
+      "topic_key": "paper:2611.13758",
+      "topic_title": "Mixed Signals",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        54
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Mixed Signals: Weight-Space Programming for EEG and ECG"
+      ],
+      "scorecard": {
+        "total": 118.66950386574074,
+        "cross_validation": 100.5,
+        "source_credibility": 13.299999999999999,
+        "recency": 6.869503865740741,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 118.66950386574074
+    },
+    {
+      "topic_id": 39,
+      "topic_key": "paper:2603.27343",
+      "topic_title": "WMIP: A Working-Memory-Inspired",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        55
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "WMIP: A Working-Memory-Inspired Programmable Probe of Cumulative State Tracking in Large"
+      ],
+      "scorecard": {
+        "total": 118.66950385416666,
+        "cross_validation": 100.5,
+        "source_credibility": 13.299999999999999,
+        "recency": 6.869503854166666,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 118.66950385416666
+    },
+    {
+      "topic_id": 9,
+      "topic_key": "Anthropic Claude Opus 5.5",
+      "topic_title": "Anthropic 推荐 Claude Opus 5.5",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        9
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 63,
+      "avg_candidate_score": 22.539030204684515,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "Anthropic 正式推荐 Claude Opus 5.5：成为多套餐默认模型Anthropic宣布，Claude Opus5.5成为Pro、Max、Ultra和Team套餐默认模型"
+      ],
+      "scorecard": {
+        "total": 117.64682509003842,
+        "cross_validation": 105,
+        "source_credibility": 15.77732114327916,
+        "recency": 7.869503946759259,
+        "entity_priority": 13,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Anthropic"
+        ]
+      },
+      "topic_total_score": 117.64682509003842
+    },
+    {
+      "topic_id": 49,
+      "topic_key": "paper:2607.24999",
+      "topic_title": "CogBattery: Human-Referenced",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        67
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "CogBattery: Human-Referenced Evaluation of Cognitive Task Behavior and Structure in"
+      ],
+      "scorecard": {
+        "total": 117.26950383101853,
+        "cross_validation": 100.5,
+        "source_credibility": 11.899999999999999,
+        "recency": 6.869503831018519,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 117.26950383101853
+    },
+    {
+      "topic_id": 50,
+      "topic_key": "paper:2611.08379",
+      "topic_title": "Module-Aware Optimization for",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        68
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Module-Aware Optimization for Graph Neural Networks"
+      ],
+      "scorecard": {
+        "total": 117.26950383101853,
+        "cross_validation": 100.5,
+        "source_credibility": 11.899999999999999,
+        "recency": 6.869503831018519,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 117.26950383101853
+    },
+    {
+      "topic_id": 51,
+      "topic_key": "paper:2611.11531",
+      "topic_title": "Probing Transformer",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        69
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Probing Transformer Representations Layer by Layer"
+      ],
+      "scorecard": {
+        "total": 117.26950383101853,
+        "cross_validation": 100.5,
+        "source_credibility": 11.899999999999999,
+        "recency": 6.869503831018519,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 117.26950383101853
+    },
+    {
+      "topic_id": 52,
+      "topic_key": "paper:2611.08538",
+      "topic_title": "Subliminal Learning in Vision",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        70
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Subliminal Learning in Vision-Language Models"
+      ],
+      "scorecard": {
+        "total": 117.26950383101853,
+        "cross_validation": 100.5,
+        "source_credibility": 11.899999999999999,
+        "recency": 6.869503831018519,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 117.26950383101853
+    },
+    {
+      "topic_id": 53,
+      "topic_key": "paper:2611.12869",
+      "topic_title": "Where Does Alignment Emerge and",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        71
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Where Does Alignment Emerge and What Does It Mean? A Closer Look at the Platonic"
+      ],
+      "scorecard": {
+        "total": 117.26950383101853,
+        "cross_validation": 100.5,
+        "source_credibility": 11.899999999999999,
+        "recency": 6.869503831018519,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 117.26950383101853
+    },
+    {
+      "topic_id": 32,
+      "topic_key": "大模型人才薪资",
+      "topic_title": "大模型人才薪资与泡沫讨论",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        47
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "对话前字节、美团招聘负责人魏小康：大模型 1 亿年薪不贵"
+      ],
+      "scorecard": {
+        "total": 115.16950387731481,
+        "cross_validation": 102,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.8695038773148145,
+        "entity_priority": 12,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:字节/豆包/Seed",
+          "domestic-ai-signal"
+        ]
+      },
+      "topic_total_score": 115.16950387731481
+    },
+    {
+      "topic_id": 16,
+      "topic_key": "AI 聊天机器人推荐假网站",
+      "topic_title": "AI 聊天机器人推荐假零售网站",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        19
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 23.459431618637296,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "AI chatbots are recommending fake retail websites"
+      ],
+      "scorecard": {
+        "total": 114.29110605665724,
+        "cross_validation": 114,
+        "source_credibility": 16.421602133046107,
+        "recency": 7.869503923611111,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 114.29110605665724
+    },
+    {
+      "topic_id": 26,
+      "topic_key": "Phota Labs AI照片编辑",
+      "topic_title": "Phota Labs 利用 AI 将日常照片转化为专业级图像",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        37
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 20,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Phota Labs uses AI to turn everyday photos into professional-looking shots"
+      ],
+      "scorecard": {
+        "total": 113.36950390046297,
+        "cross_validation": 115.5,
+        "source_credibility": 14,
+        "recency": 7.869503900462963,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 113.36950390046297
+    },
+    {
+      "topic_id": 43,
+      "topic_key": "paper:2611.13001",
+      "topic_title": "One Table, Many Queries",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        59
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "One Table, Many Queries: Benchmarking Generalist Tabular Models Across Generation"
+      ],
+      "scorecard": {
+        "total": 112.16950385416666,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.869503854166666,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 112.16950385416666
+    },
+    {
+      "topic_id": 25,
+      "topic_key": "软银 AI 天然气投资亏损",
+      "topic_title": "软银 AI 天然气投资亏损",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        36
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 20,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "SoftBank’s billion-dollar loss may have put a cap on AI’s natural gas ambitions"
+      ],
+      "scorecard": {
+        "total": 111.86950390046297,
+        "cross_validation": 114,
+        "source_credibility": 14,
+        "recency": 7.869503900462963,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 111.86950390046297
+    },
+    {
+      "topic_id": 23,
+      "topic_key": "Fireworks AI 遭网络攻击",
+      "topic_title": "Fireworks AI 遭网络攻击",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        31
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 20.08746284125034,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "Fireworks AI遭网络攻击，Notion约1%用户聊天记录泄露Fireworks AI遭网络攻击，攻击者通过入侵其云服务提供商获取开发系统权限，窃取部分客户账单信息及数据集。同时"
+      ],
+      "scorecard": {
+        "total": 111.43072790091227,
+        "cross_validation": 103.5,
+        "source_credibility": 14.061223988875236,
+        "recency": 7.869503912037037,
+        "entity_priority": 0,
+        "industry_value": 10,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "value:commercialization_revenue"
+        ]
+      },
+      "topic_total_score": 111.43072790091227
+    },
+    {
+      "topic_id": 8,
+      "topic_key": "paper:2611.10486",
+      "topic_title": "Test-Time Scaling for Diffusion",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        8
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Test-Time Scaling for Diffusion Language Models with Frequency-Aware Remasking"
+      ],
+      "scorecard": {
+        "total": 108.46950394675926,
+        "cross_validation": 88.5,
+        "source_credibility": 16.099999999999998,
+        "recency": 5.869503946759259,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 108.46950394675926
+    },
+    {
+      "topic_id": 31,
+      "topic_key": "Manus 创业与监管",
+      "topic_title": "Manus 创始人肖弘创业与监管风波",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        46
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "不上学、去创业，AI时代的失控竞赛｜深氪"
+      ],
+      "scorecard": {
+        "total": 108.16950388888887,
+        "cross_validation": 102,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.869503888888889,
+        "entity_priority": 0,
+        "industry_value": 9,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "value:policy_regulation_legal"
+        ]
+      },
+      "topic_total_score": 108.16950388888887
+    },
+    {
+      "topic_id": 21,
+      "topic_key": "paper:2611.14320",
+      "topic_title": "Don't Just Trust Your Memory",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        26
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in"
+      ],
+      "scorecard": {
+        "total": 107.06950391203704,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.869503912037037,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.06950391203704
+    },
+    {
+      "topic_id": 22,
+      "topic_key": "paper:2610.40754",
+      "topic_title": "DyCraft: An Agentic System for",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        27
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "DyCraft: An Agentic System for Long-Horizon 4D Scene Generation"
+      ],
+      "scorecard": {
+        "total": 107.06950391203704,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.869503912037037,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.06950391203704
+    },
+    {
+      "topic_id": 46,
+      "topic_key": "Gondola 使用 Codex 提效",
+      "topic_title": "Gondola 使用 Codex 提升开发效率",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        62
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 59,
+      "avg_candidate_score": 18,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "OpenAI News"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Gondola doubles revenue as its team builds more with Codex"
+      ],
+      "scorecard": {
+        "total": 106.46950384259259,
+        "cross_validation": 99,
+        "source_credibility": 12.6,
+        "recency": 6.869503842592593,
+        "entity_priority": 14,
+        "industry_value": 10,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:OpenAI",
+          "value:commercialization_revenue"
+        ]
+      },
+      "topic_total_score": 106.46950384259259
+    },
+    {
+      "topic_id": 15,
+      "topic_key": "Mercor 获 7.5 亿美元融资",
+      "topic_title": "Mercor 获 7.5 亿美元 D 轮融资",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        18
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21.470531984613093,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "千亿AI Infra独角兽诞生！三个00后创办"
+      ],
+      "scorecard": {
+        "total": 106.39887631284029,
+        "cross_validation": 88.5,
+        "source_credibility": 15.029372389229163,
+        "recency": 6.869503923611111,
+        "entity_priority": 0,
+        "industry_value": 20,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "value:commercialization_revenue",
+          "value:chip_compute_infra"
+        ]
+      },
+      "topic_total_score": 106.39887631284029
+    },
+    {
+      "topic_id": 13,
+      "topic_key": "Nebius 40 亿美元支出计划",
+      "topic_title": "Nebius 宣布 2027 年 400 亿美元支出计划",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        13
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 24.523561956057012,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Nebius tests the neocloud playbook with $40 billion in planned spending"
+      ],
+      "scorecard": {
+        "total": 104.53599730442508,
+        "cross_validation": 115.5,
+        "source_credibility": 17.16649336923991,
+        "recency": 7.869503935185185,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.53599730442508
+    },
+    {
+      "topic_id": 40,
+      "topic_key": "paper:2611.12184",
+      "topic_title": "Blind Variation",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        56
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Blind Variation, Selective Retention: Improving Creative Idea Generation in AI Scientists"
+      ],
+      "scorecard": {
+        "total": 104.16950385416666,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.869503854166666,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.16950385416666
+    },
+    {
+      "topic_id": 41,
+      "topic_key": "paper:2611.01527",
+      "topic_title": "From Tool State to Scientific",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        57
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "From Tool State to Scientific Action: Auditing Decision Provenance in Biomedical Research Agents"
+      ],
+      "scorecard": {
+        "total": 104.16950385416666,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.869503854166666,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.16950385416666
+    },
+    {
+      "topic_id": 42,
+      "topic_key": "paper:2611.10649",
+      "topic_title": "MACaQ: Fast, Model Agnostic",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        58
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations"
+      ],
+      "scorecard": {
+        "total": 104.16950385416666,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.869503854166666,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.16950385416666
+    },
+    {
+      "topic_id": 44,
+      "topic_key": "paper:2611.13425",
+      "topic_title": "Prompt2Echo (P2Echo)",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        60
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Prompt2Echo (P2Echo): Text-Prompted Multi-View Echocardiography Segmentation with One Model"
+      ],
+      "scorecard": {
+        "total": 104.16950384259259,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.869503842592593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.16950384259259
+    },
+    {
+      "topic_id": 45,
+      "topic_key": "paper:2611.14083",
+      "topic_title": "Sable: A Small-Field Sumcheck",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        61
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Sable: A Small-Field Sumcheck Argument for Bit-Exact Inference of Large Language Models"
+      ],
+      "scorecard": {
+        "total": 104.16950384259259,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.869503842592593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.16950384259259
+    },
+    {
+      "topic_id": 54,
+      "topic_key": "paper:2611.13885",
+      "topic_title": "Are Causal Neuron Circuits Unique",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        72
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Are Causal Neuron Circuits Unique and Transferable?"
+      ],
+      "scorecard": {
+        "total": 102.76950381944445,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.869503819444445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.76950381944445
+    },
+    {
+      "topic_id": 55,
+      "topic_key": "paper:2611.13995",
+      "topic_title": "Lipschitz-Controlled Flow",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        73
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Lipschitz-Controlled Flow Matching for Robust Image Restoration"
+      ],
+      "scorecard": {
+        "total": 102.76950381944445,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.869503819444445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.76950381944445
+    },
+    {
+      "topic_id": 56,
+      "topic_key": "paper:2611.11912",
+      "topic_title": "LO-World: Unified BEV Latent",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        74
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "LO-World: Unified BEV Latent Modeling for Joint 4D Occupancy and LiDAR Forecasting"
+      ],
+      "scorecard": {
+        "total": 102.76950381944445,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.869503819444445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.76950381944445
+    },
+    {
+      "topic_id": 57,
+      "topic_key": "paper:2611.10866",
+      "topic_title": "The Surprising Effectiveness of",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        75
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The Surprising Effectiveness of Deleting Weights in LLM Post-Training"
+      ],
+      "scorecard": {
+        "total": 102.76950381944445,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.869503819444445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.76950381944445
+    },
+    {
+      "topic_id": 58,
+      "topic_key": "paper:2611.14516",
+      "topic_title": "TorchCurves: Differentiable",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        76
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "TorchCurves: Differentiable Parametric Curves"
+      ],
+      "scorecard": {
+        "total": 102.76950381944445,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.869503819444445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.76950381944445
+    },
+    {
+      "topic_id": 59,
+      "topic_key": "paper:2611.14116",
+      "topic_title": "Visual Similarity in Adult Word",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        77
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 15,
+      "newest_pub_date": "2026-11-11",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Visual Similarity in Adult Word Extension and Artificial Word Learning"
+      ],
+      "scorecard": {
+        "total": 101.36950380787037,
+        "cross_validation": 87,
+        "source_credibility": 10.5,
+        "recency": 5.8695038078703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 101.36950380787037
+    },
+    {
+      "topic_id": 28,
+      "topic_key": "Palantir 奇点",
+      "topic_title": "Palantir 被指变得‘进步’",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        40
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Oh, Palantir is ‘progressive’ now, is it?"
+      ],
+      "scorecard": {
+        "total": 99.16950390046296,
+        "cross_validation": 114,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.869503900462963,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 99.16950390046296
+    },
+    {
+      "topic_id": 33,
+      "topic_key": "企业 AI 落地实践",
+      "topic_title": "企业为老板做 AI 的实践",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        48
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "给老板做 AI 的第二年"
+      ],
+      "scorecard": {
+        "total": 99.16950387731481,
+        "cross_validation": 102,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.8695038773148145,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 99.16950387731481
+    },
+    {
+      "topic_id": 17,
+      "topic_key": "LLMON 标记语言发布",
+      "topic_title": "LLMON 标记语言发布",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        22
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 25.459431618637296,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "BananaMind SLM Digest - 2026-11-12 🚀 LLMON: An LLM-Native Markup Language, now in Granite"
+      ],
+      "scorecard": {
+        "total": 98.69110605665719,
+        "cross_validation": 102,
+        "source_credibility": 17.821602133046106,
+        "recency": 7.869503923611111,
+        "entity_priority": 0,
+        "industry_value": 7,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -38,
+        "pr_penalty": 0,
+        "signals": [
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 98.69110605665719
+    },
+    {
+      "topic_id": 48,
+      "topic_key": "Apple HomeView 智能家居",
+      "topic_title": "Apple HomeView 智能家居设备评测",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        66
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 59,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-12",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "I reviewed the Apple HomeView"
+      ],
+      "scorecard": {
+        "total": 89.7695038425926,
+        "cross_validation": 99,
+        "source_credibility": 11.899999999999999,
+        "recency": 6.869503842592593,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 89.7695038425926
+    },
+    {
+      "topic_id": 36,
+      "topic_key": "BETU-SLM 模型排行榜",
+      "topic_title": "BETU-SLM 模型排行榜发布",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        51
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "We've released the Its so simple to use, it ranks models, and by one command add your own"
+      ],
+      "scorecard": {
+        "total": 82.16950386574075,
+        "cross_validation": 102,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.86950386574074,
+        "entity_priority": 0,
+        "industry_value": 7,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -48,
+        "pr_penalty": 0,
+        "signals": [
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 82.16950386574075
+    },
+    {
+      "topic_id": 35,
+      "topic_key": "APEX 视频蒸馏技术优化",
+      "topic_title": "APEX 移除 DMD 分离假分网络优化视频蒸馏",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        50
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "APEX removes DMD's separate fake-score network for streaming video distillation: 4.4% less"
+      ],
+      "scorecard": {
+        "total": 75.16950386574074,
+        "cross_validation": 102,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.86950386574074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -48,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 75.16950386574074
+    }
+  ]
+}
