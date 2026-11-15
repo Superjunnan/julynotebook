@@ -1,0 +1,1555 @@
+{
+  "run_date": "2026-11-15",
+  "cluster_chunks": [
+    {
+      "chunk_index": 1,
+      "chunk_size": 12,
+      "representative_assignments": 12,
+      "assignments": 12,
+      "fallback_assignments": 0,
+      "strategy": "llm_news",
+      "elapsed_ms": 2809646
+    },
+    {
+      "chunk_index": 2,
+      "chunk_size": 28,
+      "assignments": 28,
+      "fallback_assignments": 0,
+      "strategy": "deterministic_paper"
+    }
+  ],
+  "mode_breakdown": {
+    "news_input": 12,
+    "news_after_precluster": 12,
+    "paper_input": 28,
+    "paper_deterministic": 28,
+    "llm_chunk_count": 1
+  },
+  "assignments_count": 40,
+  "fallback_assignments": 0,
+  "singleton_recluster": {
+    "enabled": true,
+    "anchor_count": 2,
+    "singleton_candidates": 1,
+    "merged": 0,
+    "kept": 1,
+    "invalid_or_low_confidence": 0,
+    "min_confidence": 0.72,
+    "min_topic_score": 68,
+    "max_items": 24,
+    "decisions": [
+      {
+        "candidate_id": 6,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.85,
+        "reason": "资讯讨论的是AI初创公司/项目的失败与破产（AI墓地），属于行业观察/趋势话题，与锚点事件（英伟达CEO人事变动）主体。",
+        "applied": false
+      }
+    ]
+  },
+  "topic_cards": [
+    {
+      "topic_id": 20,
+      "topic_key": "英伟达黄仁勋卸任传闻",
+      "topic_title": "英伟达CEO黄仁勋卸任传闻",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        20,
+        32
+      ],
+      "mention_count": 2,
+      "source_diversity": 2,
+      "cross_source_score": 78,
+      "avg_candidate_score": 21.781121212110534,
+      "newest_pub_date": "2026-11-15",
+      "top_sources": [
+        "TechCrunch AI",
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+        "Jensen Huang and the decline of the visionary showman founder CEO"
+      ],
+      "scorecard": {
+        "total": 177.10533078597737,
+        "cross_validation": 148,
+        "source_credibility": 15.246784848477374,
+        "recency": 7.8585459375,
+        "entity_priority": 12,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -8,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:NVIDIA"
+        ]
+      },
+      "topic_total_score": 177.10533078597737
+    },
+    {
+      "topic_id": 1,
+      "topic_key": "Banaxi-Tech KV1 1.2B 模型发布",
+      "topic_title": "Banaxi-Tech 发布 KV1 1.2B 模型",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        1,
+        30
+      ],
+      "mention_count": 2,
+      "source_diversity": 1,
+      "cross_source_score": 65,
+      "avg_candidate_score": 25.435182359791703,
+      "newest_pub_date": "2026-11-15",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "BananaMind SLM Digest – 2026-11-14 🚀 KV1 1.2B by Banaxi-Tech ( ) – a new 1.2B parameter",
+        "We're introducing KV1 1.2B. Its our first KV1 model using a 2 bit KV cache, based on LFM"
+      ],
+      "scorecard": {
+        "total": 131.16317367037271,
+        "cross_validation": 116.5,
+        "source_credibility": 17.80462765185419,
+        "recency": 7.858546018518519,
+        "entity_priority": 0,
+        "industry_value": 19,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -30,
+        "pr_penalty": 0,
+        "signals": [
+          "value:model_release",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 131.16317367037271
+    },
+    {
+      "topic_id": 6,
+      "topic_key": "Character.ai 破产",
+      "topic_title": "Character.ai 申请破产",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        6
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 24.523561956057012,
+      "newest_pub_date": "2026-11-15",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "The AI graveyard: a running list of projects and startups that didn’t make it"
+      ],
+      "scorecard": {
+        "total": 116.52503932988805,
+        "cross_validation": 115.5,
+        "source_credibility": 17.16649336923991,
+        "recency": 7.858545960648148,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 116.52503932988805
+    },
+    {
+      "topic_id": 15,
+      "topic_key": "paper:2611.15777",
+      "topic_title": "SO-Arena: Benchmarking the",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        15
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models"
+      ],
+      "scorecard": {
+        "total": 115.0585459375,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545937500001,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 115.0585459375
+    },
+    {
+      "topic_id": 23,
+      "topic_key": "paper:2611.17190",
+      "topic_title": "Consensus Capture in Reference",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        24
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Consensus Capture in Reference-Based UAV Video Stabilization: A Benchmark on Dynamic Urban"
+      ],
+      "scorecard": {
+        "total": 112.15854592592592,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.858545925925926,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 112.15854592592592
+    },
+    {
+      "topic_id": 28,
+      "topic_key": "paper:2611.09567",
+      "topic_title": "TurtLES: A Large-Scale Benchmark",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        29
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "TurtLES: A Large-Scale Benchmark for Turbulent 3D Neural PDE Surrogates"
+      ],
+      "scorecard": {
+        "total": 112.15854591435185,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.858545914351852,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 112.15854591435185
+    },
+    {
+      "topic_id": 2,
+      "topic_key": "paper:2611.12872",
+      "topic_title": "HiVe-Mem: Interleaving Horizontal",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        2
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "HiVe-Mem: Interleaving Horizontal Memory Expansion and Vertical Evidence Composition for"
+      ],
+      "scorecard": {
+        "total": 108.45854599537037,
+        "cross_validation": 88.5,
+        "source_credibility": 16.099999999999998,
+        "recency": 5.8585459953703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 108.45854599537037
+    },
+    {
+      "topic_id": 3,
+      "topic_key": "paper:2611.08318",
+      "topic_title": "Learning the Task or Learning the",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        3
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self"
+      ],
+      "scorecard": {
+        "total": 108.45854597222221,
+        "cross_validation": 88.5,
+        "source_credibility": 16.099999999999998,
+        "recency": 5.858545972222222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 108.45854597222221
+    },
+    {
+      "topic_id": 4,
+      "topic_key": "paper:2611.15844",
+      "topic_title": "Open Vision Banana",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        4
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Open Vision Banana: A Fully Open Recipe for Generative Visual Perception"
+      ],
+      "scorecard": {
+        "total": 108.45854597222221,
+        "cross_validation": 88.5,
+        "source_credibility": 16.099999999999998,
+        "recency": 5.858545972222222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 108.45854597222221
+    },
+    {
+      "topic_id": 5,
+      "topic_key": "paper:2611.16748",
+      "topic_title": "PhysLoop: Harnessing LLMs'",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        5
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "PhysLoop: Harnessing LLMs' Physics Awareness for Self-Improving Video Generation Models"
+      ],
+      "scorecard": {
+        "total": 108.45854597222221,
+        "cross_validation": 88.5,
+        "source_credibility": 16.099999999999998,
+        "recency": 5.858545972222222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 108.45854597222221
+    },
+    {
+      "topic_id": 8,
+      "topic_key": "paper:2611.14256",
+      "topic_title": "A Cross-Scenario Survey and",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        8
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "A Cross-Scenario Survey and Analysis of Self-Evolving Multimodal Agents"
+      ],
+      "scorecard": {
+        "total": 107.05854596064815,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545960648148,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.05854596064815
+    },
+    {
+      "topic_id": 9,
+      "topic_key": "paper:2611.17167",
+      "topic_title": "Actor, Judge, or Teacher?",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        9
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents"
+      ],
+      "scorecard": {
+        "total": 107.05854594907407,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545949074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.05854594907407
+    },
+    {
+      "topic_id": 10,
+      "topic_key": "paper:2607.13920",
+      "topic_title": "DeepStress: Stress-Testing Deep",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        10
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "DeepStress: Stress-Testing Deep Search Agents"
+      ],
+      "scorecard": {
+        "total": 107.05854594907407,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545949074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.05854594907407
+    },
+    {
+      "topic_id": 11,
+      "topic_key": "paper:2611.15131",
+      "topic_title": "Duo: A Reciprocal World Model for",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        11
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Duo: A Reciprocal World Model for Full-Duplex Interaction"
+      ],
+      "scorecard": {
+        "total": 107.05854594907407,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545949074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.05854594907407
+    },
+    {
+      "topic_id": 12,
+      "topic_key": "paper:2611.16728",
+      "topic_title": "EgoX: Egocentric Cross-Embodiment",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        12
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "EgoX: Egocentric Cross-Embodiment Manipulation with Embodiment Dreaming"
+      ],
+      "scorecard": {
+        "total": 107.05854594907407,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545949074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.05854594907407
+    },
+    {
+      "topic_id": 13,
+      "topic_key": "paper:2611.16409",
+      "topic_title": "Experience-Handoff Reinforcement",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        13
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Experience-Handoff Reinforcement Learning for Recursive Self-Improvement"
+      ],
+      "scorecard": {
+        "total": 107.05854594907407,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545949074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.05854594907407
+    },
+    {
+      "topic_id": 14,
+      "topic_key": "paper:2611.13004",
+      "topic_title": "G-STAR: Group-Scaled Token",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        14
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation"
+      ],
+      "scorecard": {
+        "total": 107.05854594907407,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545949074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.05854594907407
+    },
+    {
+      "topic_id": 16,
+      "topic_key": "paper:2611.16961",
+      "topic_title": "The Value of Thinking",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        16
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The Value of Thinking: Learning When to Reason in Hybrid Decision Models"
+      ],
+      "scorecard": {
+        "total": 107.0585459375,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545937500001,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.0585459375
+    },
+    {
+      "topic_id": 17,
+      "topic_key": "paper:2611.17331",
+      "topic_title": "TTB: Test-time Baking for",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        17
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models"
+      ],
+      "scorecard": {
+        "total": 107.0585459375,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545937500001,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.0585459375
+    },
+    {
+      "topic_id": 18,
+      "topic_key": "paper:2611.17334",
+      "topic_title": "Unbundling Multimodal Vision Encoding",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        18
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Unbundling Multimodal Vision Encoding"
+      ],
+      "scorecard": {
+        "total": 107.0585459375,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545937500001,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.0585459375
+    },
+    {
+      "topic_id": 19,
+      "topic_key": "paper:2611.10439",
+      "topic_title": "Who Remembers What? Multi",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        19
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Who Remembers What? Multi-Granularity Memory Extraction for Multi-User"
+      ],
+      "scorecard": {
+        "total": 107.0585459375,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.858545937500001,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.0585459375
+    },
+    {
+      "topic_id": 21,
+      "topic_key": "paper:2611.15094",
+      "topic_title": "A frontier machine intelligence",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        22
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "A frontier machine intelligence for human neuroimaging"
+      ],
+      "scorecard": {
+        "total": 104.15854592592592,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.858545925925926,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.15854592592592
+    },
+    {
+      "topic_id": 22,
+      "topic_key": "paper:2611.14815",
+      "topic_title": "BirdDreams: Joint Perspective and",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        23
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving"
+      ],
+      "scorecard": {
+        "total": 104.15854592592592,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.858545925925926,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.15854592592592
+    },
+    {
+      "topic_id": 24,
+      "topic_key": "paper:2611.16905",
+      "topic_title": "Factored One-sided Adam-Moment",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        25
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Factored One-sided Adam-Moment for Practical and Scalable SOAP"
+      ],
+      "scorecard": {
+        "total": 104.15854592592592,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.858545925925926,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.15854592592592
+    },
+    {
+      "topic_id": 25,
+      "topic_key": "paper:2611.16321",
+      "topic_title": "From Large Language Models to",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        26
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "From Large Language Models to Efficient System One Models via Adaptive Computation"
+      ],
+      "scorecard": {
+        "total": 104.15854592592592,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.858545925925926,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.15854592592592
+    },
+    {
+      "topic_id": 26,
+      "topic_key": "paper:2611.00359",
+      "topic_title": "Humanized but Still True?",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        27
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Humanized but Still True? Auditing Facts and Detection in AI-Text Humanizers"
+      ],
+      "scorecard": {
+        "total": 104.15854592592592,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.858545925925926,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.15854592592592
+    },
+    {
+      "topic_id": 27,
+      "topic_key": "paper:2611.12750",
+      "topic_title": "The Narrative Gap",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        28
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The Narrative Gap: Can LLMs Help Us Navigate Diverse Narratives Across Languages?"
+      ],
+      "scorecard": {
+        "total": 104.15854592592592,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.858545925925926,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.15854592592592
+    },
+    {
+      "topic_id": 30,
+      "topic_key": "paper:2611.17336",
+      "topic_title": "Back to Pixels",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        33
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Back to Pixels: Lifting Latent Video Diffusion into Pixel Space"
+      ],
+      "scorecard": {
+        "total": 102.75854591435186,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.858545914351852,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.75854591435186
+    },
+    {
+      "topic_id": 31,
+      "topic_key": "paper:2611.05984",
+      "topic_title": "On the Design of Hyper",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        34
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "On the Design of Hyper-Connections: Simplification, Stability"
+      ],
+      "scorecard": {
+        "total": 102.75854591435186,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.858545914351852,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.75854591435186
+    },
+    {
+      "topic_id": 32,
+      "topic_key": "paper:2611.14046",
+      "topic_title": "Structured Confidence",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        35
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Structured Confidence Perturbation via Fisher Geometry for Adversarial Training"
+      ],
+      "scorecard": {
+        "total": 102.75854591435186,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.858545914351852,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.75854591435186
+    },
+    {
+      "topic_id": 33,
+      "topic_key": "paper:2611.16517",
+      "topic_title": "UniSpark: Exploring Hybrid",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        36
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-13",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "UniSpark: Exploring Hybrid Attention for Multimodal Understanding and Generation"
+      ],
+      "scorecard": {
+        "total": 102.75854591435186,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.858545914351852,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.75854591435186
+    },
+    {
+      "topic_id": 29,
+      "topic_key": "tiny-voca 文本转语音模型",
+      "topic_title": "tiny-voca 文本转语音模型发布",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        31
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 21.169925001442312,
+      "newest_pub_date": "2026-11-15",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "I made a small English text-to-speech model called tiny-voca. It has 4.5M parameters, two"
+      ],
+      "scorecard": {
+        "total": 95.67749341536148,
+        "cross_validation": 102,
+        "source_credibility": 14.818947501009617,
+        "recency": 7.8585459143518515,
+        "entity_priority": 0,
+        "industry_value": 7,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -38,
+        "pr_penalty": 0,
+        "signals": [
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 95.67749341536148
+    },
+    {
+      "topic_id": 34,
+      "topic_key": "AI驱动的勒索软件激增",
+      "topic_title": "AI驱动的勒索软件激增",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        37
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 58,
+      "avg_candidate_score": 18.08746284125034,
+      "newest_pub_date": "2026-11-14",
+      "top_sources": [
+        "WIRED AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Beware the New AI-Fueled Ransomware Boom"
+      ],
+      "scorecard": {
+        "total": 93.01976989165301,
+        "cross_validation": 97.5,
+        "source_credibility": 12.661223988875237,
+        "recency": 6.858545902777777,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.01976989165301
+    },
+    {
+      "topic_id": 7,
+      "topic_key": "System One 模型评测",
+      "topic_title": "System One 模型评测结果",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        7
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 23.459431618637296,
+      "newest_pub_date": "2026-11-15",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "SO-Arena scored 21 System One models, and the most accurate one ranks only seventh on"
+      ],
+      "scorecard": {
+        "total": 87.78014809369427,
+        "cross_validation": 103.5,
+        "source_credibility": 16.421602133046107,
+        "recency": 7.858545960648148,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -48,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 87.78014809369427
+    },
+    {
+      "topic_id": 35,
+      "topic_key": "AI视频生成与网络迷因",
+      "topic_title": "AI视频生成与网络迷因",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        39
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 59,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-15",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "😂 **You Never Let Her Pay AI Video — The Viral Sponge Wallet Meme!** He insists on paying"
+      ],
+      "scorecard": {
+        "total": 84.15854590277777,
+        "cross_validation": 99,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.858545902777778,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -38,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 84.15854590277777
+    },
+    {
+      "topic_id": 36,
+      "topic_key": "国产大模型黑马",
+      "topic_title": "国产大模型黑马",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        40
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 50,
+      "avg_candidate_score": 14.962082778558457,
+      "newest_pub_date": "2026-11-14",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "国产大模型又杀出一匹黑马，引发硅谷关注！"
+      ],
+      "scorecard": {
+        "total": 78.83200384776869,
+        "cross_validation": 85.5,
+        "source_credibility": 10.473457944990919,
+        "recency": 6.858545902777777,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 78.83200384776869
+    },
+    {
+      "topic_id": 37,
+      "topic_key": "中国AI技术突破：老电影重现",
+      "topic_title": "中国AI技术突破",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        41
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 50,
+      "avg_candidate_score": 14.962082778558457,
+      "newest_pub_date": "2026-11-14",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "破局硅谷头号难题！中国AI「魂穿」老电影"
+      ],
+      "scorecard": {
+        "total": 78.83200384776869,
+        "cross_validation": 85.5,
+        "source_credibility": 10.473457944990919,
+        "recency": 6.858545902777777,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 78.83200384776869
+    },
+    {
+      "topic_id": 38,
+      "topic_key": "浙大彭思达：具身智能与三维视觉",
+      "topic_title": "浙大彭思达：具身智能与三维视觉",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        42
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 13.85393893783409,
+      "newest_pub_date": "2026-11-14",
+      "top_sources": [
+        "雷锋网 AI"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "浙大彭思达：从元宇宙到具身智能，一个三维视觉研究者的八年 | 世界模型50人"
+      ],
+      "scorecard": {
+        "total": 64.55630315926165,
+        "cross_validation": 84,
+        "source_credibility": 9.697757256483863,
+        "recency": 6.858545902777777,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 64.55630315926165
+    }
+  ]
+}
