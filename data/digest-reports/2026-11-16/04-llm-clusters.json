@@ -1,0 +1,636 @@
+{
+  "run_date": "2026-11-16",
+  "cluster_chunks": [
+    {
+      "chunk_index": 1,
+      "chunk_size": 19,
+      "representative_assignments": 19,
+      "assignments": 19,
+      "fallback_assignments": 0,
+      "strategy": "llm_news",
+      "elapsed_ms": 6475601
+    }
+  ],
+  "mode_breakdown": {
+    "news_input": 19,
+    "news_after_precluster": 19,
+    "paper_input": 0,
+    "paper_deterministic": 0,
+    "llm_chunk_count": 1
+  },
+  "assignments_count": 19,
+  "fallback_assignments": 0,
+  "singleton_recluster": {
+    "enabled": true,
+    "anchor_count": 4,
+    "singleton_candidates": 1,
+    "merged": 0,
+    "kept": 1,
+    "invalid_or_low_confidence": 0,
+    "min_confidence": 0.72,
+    "min_topic_score": 68,
+    "max_items": 24,
+    "decisions": [
+      {
+        "candidate_id": 3,
+        "action": "keep",
+        "target_topic_id": null,
+        "confidence": 0.92,
+        "reason": "OpenAI Science Blog 是关于科学研究的资讯，与英伟达CEO黄仁勋的争议事件（Topic 8）在主体和语。",
+        "applied": false
+      }
+    ]
+  },
+  "topic_cards": [
+    {
+      "topic_id": 8,
+      "topic_key": "英伟达CEO黄仁勋相关争议",
+      "topic_title": "Is bad news for Jensen Huang also",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        8,
+        12,
+        13
+      ],
+      "mention_count": 3,
+      "source_diversity": 2,
+      "cross_source_score": 78,
+      "avg_candidate_score": 22.29472350636948,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "TechCrunch AI",
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Is bad news for Jensen Huang also bad news for the AI industry?",
+        "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
+        "An overview of Jensen Huang’s messy days"
+      ],
+      "scorecard": {
+        "total": 185.8766596489031,
+        "cross_validation": 156.5,
+        "source_credibility": 15.606306454458634,
+        "recency": 7.770353194444445,
+        "entity_priority": 12,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -8,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:NVIDIA"
+        ]
+      },
+      "topic_total_score": 185.8766596489031
+    },
+    {
+      "topic_id": 11,
+      "topic_key": "AI音乐生成工具体验",
+      "topic_title": "AI音乐生成工具体验",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        14,
+        15
+      ],
+      "mention_count": 2,
+      "source_diversity": 2,
+      "cross_source_score": 62,
+      "avg_candidate_score": 17.620932086360746,
+      "newest_pub_date": "2026-11-15",
+      "top_sources": [
+        "AITNT 资讯",
+        "WIRED AI"
+      ],
+      "top_source_groups": [
+        "domestic_media",
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "办公Agent的 \"人头税\"",
+        "AI DJs Completely Kill My Groove"
+      ],
+      "scorecard": {
+        "total": 148.1050056433229,
+        "cross_validation": 124,
+        "source_credibility": 12.33465246045252,
+        "recency": 6.7703531828703705,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -8,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 148.1050056433229
+    },
+    {
+      "topic_id": 3,
+      "topic_key": "OpenAI发布科学博客",
+      "topic_title": "OpenAI发布科学博客",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        3
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 69,
+      "avg_candidate_score": 22,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "OpenAI News"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Our new blog for science"
+      ],
+      "scorecard": {
+        "total": 134.1703532175926,
+        "cross_validation": 114,
+        "source_credibility": 15.399999999999999,
+        "recency": 7.770353217592593,
+        "entity_priority": 14,
+        "industry_value": 7,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:OpenAI",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 134.1703532175926
+    },
+    {
+      "topic_id": 4,
+      "topic_key": "OpenAI智能体网络安全测试",
+      "topic_title": "OpenAI智能体网络安全测试",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        4
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 21.470531984613093,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "「别提越权」！OpenAI自曝：AI摸进黑客考场后台"
+      ],
+      "scorecard": {
+        "total": 132.79972560682177,
+        "cross_validation": 102,
+        "source_credibility": 15.029372389229163,
+        "recency": 7.770353217592593,
+        "entity_priority": 14,
+        "industry_value": 8,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:OpenAI",
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 132.79972560682177
+    },
+    {
+      "topic_id": 12,
+      "topic_key": "AI硬件与存储讨论",
+      "topic_title": "AI硬件与存储讨论",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        16,
+        17
+      ],
+      "mention_count": 2,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "I often forget that RAM is so inaccessible for everyone now. In February 2025 I grabbed",
+        "I can't directly create or save a PDF file for you here, but I can give you a few quick"
+      ],
+      "scorecard": {
+        "total": 125.07035318287038,
+        "cross_validation": 112,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.7703531828703705,
+        "entity_priority": 0,
+        "industry_value": 10,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -20,
+        "pr_penalty": 0,
+        "signals": [
+          "value:chip_compute_infra"
+        ]
+      },
+      "topic_total_score": 125.07035318287038
+    },
+    {
+      "topic_id": 1,
+      "topic_key": "腾讯WorkBuddy接入谷歌Gemini4Carbon",
+      "topic_title": "腾讯WorkBuddy接入谷歌Gemini4Carbon",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        1
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 22.539030204684515,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "谷歌 Gemini4Carbon 入驻 WorkBuddy，百万 Token 上下文向 Pro 用户开放腾讯WorkBuddy国际版11月15日宣布接入谷歌Gemini4Carbon大模型"
+      ],
+      "scorecard": {
+        "total": 125.04767440716805,
+        "cross_validation": 103.5,
+        "source_credibility": 15.77732114327916,
+        "recency": 7.770353263888889,
+        "entity_priority": 11,
+        "industry_value": 7,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:腾讯/混元",
+          "value:product_launch",
+          "domestic-ai-signal"
+        ]
+      },
+      "topic_total_score": 125.04767440716805
+    },
+    {
+      "topic_id": 2,
+      "topic_key": "谷歌Gemini接入Google Wallet",
+      "topic_title": "谷歌Gemini接入Google Wallet",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        2
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 22.539030204684515,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "谷歌Gemini接入Google Wallet，美国用户可使用AI分析个人财务谷歌宣布，美国 Gemini 用户现可通过 Personal Intelligence 连接"
+      ],
+      "scorecard": {
+        "total": 123.04767437244584,
+        "cross_validation": 103.5,
+        "source_credibility": 15.77732114327916,
+        "recency": 7.770353229166667,
+        "entity_priority": 13,
+        "industry_value": 7,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Google/DeepMind",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 123.04767437244584
+    },
+    {
+      "topic_id": 6,
+      "topic_key": "字节跳动豆包App上线找店功能",
+      "topic_title": "字节跳动豆包App上线找店功能",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        6
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "豆包 App 上线“找店”:商家批量标注地图，团购下单与一键导航在对话内闭环据《读佳》报道，字节跳动豆包App上线“找店”功能：商家批量标注在地图上，点门店图标可直达商家页看团购套餐并下单"
+      ],
+      "scorecard": {
+        "total": 112.54917274085372,
+        "cross_validation": 103.5,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.770353206018519,
+        "entity_priority": 12,
+        "industry_value": 7,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:字节/豆包/Seed",
+          "value:product_launch",
+          "domestic-ai-signal"
+        ]
+      },
+      "topic_total_score": 112.54917274085372
+    },
+    {
+      "topic_id": 7,
+      "topic_key": "苹果首款AI眼镜计划2027年发布",
+      "topic_title": "苹果首款AI眼镜计划2027年发布",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        7
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "苹果首款AI眼镜计划2027年WWDC亮相，年底前上市科技博主Mark Gurman披露，苹果计划于2027年6月WWDC发布首款AI智能眼镜，预计2027年底前上市，内部代号N50"
+      ],
+      "scorecard": {
+        "total": 108.54917274085372,
+        "cross_validation": 103.5,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.770353206018519,
+        "entity_priority": 0,
+        "industry_value": 7,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 108.54917274085372
+    },
+    {
+      "topic_id": 9,
+      "topic_key": "iPhone 18 Pro相机水印技术",
+      "topic_title": "iPhone 18 Pro相机水印技术",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        9
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 19.32192809488736,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "这台反 AI 相机，拍的每张照片都得开「收据」"
+      ],
+      "scorecard": {
+        "total": 99.29570286086559,
+        "cross_validation": 102,
+        "source_credibility": 13.525349666421153,
+        "recency": 7.770353194444445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 99.29570286086559
+    },
+    {
+      "topic_id": 13,
+      "topic_key": "AI模型训练与工程",
+      "topic_title": "AI模型训练与工程",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        18,
+        19
+      ],
+      "mention_count": 2,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 16,
+      "newest_pub_date": "2026-11-15",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "✅ Article highlight: *Internal Appeals, Protected Disclosure, and Organizational Reopen",
+        "Building a frontier model doesn't strictly require massive superclusters—it demands"
+      ],
+      "scorecard": {
+        "total": 96.97035318287037,
+        "cross_validation": 97,
+        "source_credibility": 11.2,
+        "recency": 6.7703531828703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -20,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 96.97035318287037
+    },
+    {
+      "topic_id": 14,
+      "topic_key": "科技产品发售与评测",
+      "topic_title": "科技产品发售与评测",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        20
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 58,
+      "avg_candidate_score": 14.584962500721156,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "爱范儿早报"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "苹果 HomeView 发售"
+      ],
+      "scorecard": {
+        "total": 87.47982693337518,
+        "cross_validation": 97.5,
+        "source_credibility": 10.20947375050481,
+        "recency": 7.7703531828703705,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 87.47982693337518
+    },
+    {
+      "topic_id": 5,
+      "topic_key": "Axiomic Labs发布X3Guard-150M",
+      "topic_title": "Axiomic Labs发布X3Guard-150M",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        5
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 25.459431618637296,
+      "newest_pub_date": "2026-11-16",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "🛡️ X3Guard-150M is the standout release today from Axiomic Labs. This 149M-parameter"
+      ],
+      "scorecard": {
+        "total": 86.59195533906461,
+        "cross_validation": 102,
+        "source_credibility": 17.821602133046106,
+        "recency": 7.770353206018519,
+        "entity_priority": 0,
+        "industry_value": 7,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -48,
+        "pr_penalty": 0,
+        "signals": [
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 86.59195533906461
+    },
+    {
+      "topic_id": 10,
+      "topic_key": "Character Open File 1.2.2发布",
+      "topic_title": "Character Open File 1.2.2发布",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        10
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 21.32192809488736,
+      "newest_pub_date": "2026-11-15",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "COF 1.2.2: open, edit, build, nothing else moves. A tooling release of Character Open File"
+      ],
+      "scorecard": {
+        "total": 67.6957028608656,
+        "cross_validation": 87,
+        "source_credibility": 14.925349666421152,
+        "recency": 6.770353194444445,
+        "entity_priority": 0,
+        "industry_value": 7,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -48,
+        "pr_penalty": 0,
+        "signals": [
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 67.6957028608656
+    }
+  ]
+}
