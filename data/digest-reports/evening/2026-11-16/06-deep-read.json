@@ -1,0 +1,365 @@
+{
+  "run_date": "2026-11-16",
+  "selected_topic_ids": [
+    91,
+    68,
+    49,
+    86,
+    70,
+    67,
+    66,
+    85,
+    65,
+    48,
+    19,
+    1,
+    14,
+    20,
+    23,
+    45
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 16,
+    "base_members_added": 17,
+    "expanded_added": 3,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 25,
+    "final_targets": 20,
+    "global_cap": 30
+  },
+  "deep_read_links": 20,
+  "materials_total": 20,
+  "materials_windowed": 20,
+  "materials_usable": 18,
+  "materials_by_source": {
+    "OpenAI News": 3,
+    "arXiv cs.AI": 6,
+    "Hugging Face Papers": 1,
+    "TechCrunch AI": 1,
+    "AIBase": 6,
+    "量子位": 1
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 68,
+      "topic_title": "阿里发布Qwen4-Max大模型",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        14
+      ],
+      "members": [
+        {
+          "ref_id": 14,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32332",
+          "title": "阿里千问发布 Qwen4-Max: 以架构升级压低 token 消耗，单任务费用降58%阿里千问11月16日发布Qwen4-Max，定位全天候AI协作伙伴。基于Qwen4新架构，总参数2.4T、每token激活71B，另有328B N-gram Embedding参数，具备原生视觉能力，支持百万token上下文。已上线千问AI平台提供API服务，缓存命中每百万Tokens低至0.5元，也可经阿里Token Plan调用或在千问办公、Qoder等应用体验。官方全面下调API定价，Qwen4系列中小尺寸模型将陆续开源。 10 小时前 14.2K",
+          "pub_date": "2026-11-16",
+          "content": "阿里千问大模型11月16日正式发布 Qwen4-Max，定位全天候 AI 协作伙伴。模型基于 Qwen4全新架构，总参数2.4T、每 token 激活71B，另有328B N-gram Embedding 参数，具备原生视觉能力并支持百万 token 上下文。现已上线千问 AI 平台提供 API 服务，缓存命中每百万 Tokens 低至0.5元，也可经阿里 Token Plan 调用或在千问办公、Qoder 等应用体验;官方全面下调 API 定价，Qwen4系列中小尺寸模型将陆续开源。架构上，Qwen4-Max 围绕注意力、残差与嵌入三方面升级稀疏 MoE:每四层中三层 Gated DeltaNet 压缩历史状态、一层 QSA 按块选取上下文，Gated Residual 扩展为四条并行分支，N-gram Embedding 以低开销扩展容量。2.4T 规模下预训练平稳、全程无损失尖峰;内部评测中其基座在知识、代码、问答与 STEM 四类的 BPB 均为五个参评模型最低，较同为2.4T 的上一代下降约5–13%，每 token 激活参数减少约25%。"
+        }
+      ]
+    },
+    {
+      "topic_id": 49,
+      "topic_title": "DeepSeek收紧使用限制",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        12
+      ],
+      "members": [
+        {
+          "ref_id": 12,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32337",
+          "title": "DeepSeek收紧使用限制:7天历史对话、4万字输入及每日额度调整DeepSeek近期对App及网页版实施长对话使用限制，涉及历史对话保留、单次输入长度和每日对话额度。用户反馈称，此举与平台算力资源承压有关。具体调整包括：不再支持超过7天未活跃的长对话历史，单次提问输入上限降至约4万字；新增每日对话额度，达上限后系统提示“因服务器繁忙”。 6 小时前 12.1K",
+          "pub_date": "2026-11-16",
+          "content": "DeepSeek近期对旗下App及网页版实施长对话使用限制，涉及历史对话保留、单次输入长度及每日对话额度等多个方面。据用户反馈，此次调整主要与平台当前算力资源承载压力有关。具体来看，DeepSeek目前不再支持超过7天未活跃的长对话历史，单次提问的文字输入上限也下调至约4万字。同时，平台新增每日对话额度限制，当用户使用量达到上限时，系统将弹出“因服务器繁忙，使用额度已达上限”的提示，暂时阻止继续使用。此次调整反映出大模型产品在用户规模和调用需求持续增长的背景下，面临算力供给与服务需求之间的平衡问题。随着AI应用日活和交互频次不断提升，长上下文对话、多轮交互等功能也会持续消耗计算资源。如何通过资源调度、推理效率优化及服务分级，在控制运营成本的同时保障用户体验，正成为AI平台需要解决的重要问题。"
+        }
+      ]
+    },
+    {
+      "topic_id": 86,
+      "topic_title": "印度AI传感器初创公司Bharat Semi获2400万美元融资",
+      "topic_type": "news",
+      "cross_source_score": 62,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        10
+      ],
+      "members": [
+        {
+          "ref_id": 10,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/11/15/indian-chip-startup-bharat-semi-lands-24m-seed-round-as-it-eyes-global-ai-sensor-market/",
+          "title": "Indian chip startup Bharat Semi lands $24M seed round as it eyes global AI sensor market",
+          "pub_date": "Sun, 15 Nov 2026 23:30:00 +0000",
+          "content": "Bharat Semi, an Indian semiconductor startup, has raised $24 million in seed funding to develop AI-enabled image sensors, as it seeks to win customers in the United States and elsewhere. The investment comes as the nearly five-year-old, pre-revenue startup says it has secured design wins with U.S. defense technology company General Atomics and India’s Kaynes Semicon. Its image sensors, however, remain under development, with the startup targeting its initial commercial production in 2027."
+        }
+      ]
+    },
+    {
+      "topic_id": 70,
+      "topic_title": "豆包工作台上线覆盖21个专业场景",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        16
+      ],
+      "members": [
+        {
+          "ref_id": 16,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32336",
+          "title": "豆包工作上线「工作台」:首批21款覆盖金融、医疗、教育等场景豆包11月16日上线「工作台」功能，首批覆盖金融、医疗、教育、创意设计等21个专业场景。该功能为专业工作提供专属AI空间，预置所需技能与工具，用户无需从头挑选即可开工，降低AI使用门槛。首页提供21款工作台，涵盖金融投研、医生、教师、写作、新媒体创作、数据分析、法律事务、出行规划等，并按场景定制。 7 小时前 12.4K",
+          "pub_date": "2026-11-16",
+          "content": "豆包11月16日在豆包工作中上线「工作台」功能，首批覆盖金融、医疗、教育、创意设计等21个专业场景。该功能为专业工作提供专属 AI 空间，预先配置所需技能与工具，无需从头挑选即可开工，以降低专业场景的 AI 使用门槛。首页提供21款工作台，涵盖金融投研、医生、教师、写作、新媒体创作、数据分析、法律事务、出行规划等方向。工作台按场景定制:金融投研提供公告解读、业绩分析、市场简报、公司研究等任务入口，并打通万得、同花顺、国泰海通等数据服务，在「插件」中连接授权即可调用;创意设计覆盖海报设计、社媒配图、品牌视觉等技能，任务开启后自动创建画布，可把一套创意延展为系列海报、品牌包装;医生工作台预置临床指南查找、医学文献解读、科普与患者沟通材料等入口，为专业判断提供循证参考，官方注明其仅用于医学科研辅助、不能替代执业医师临床判断;教师工作台可据课题与教材生成教案课件、把习题转为可调参数互动实验，并与学科网达成官方合作，通过连接器查找教学资源、题图找相似题。进入「工作台」页面选择方向后点击「使用」即可，涉及外部数据服务时按提示授权;也可点击右上角「创建」，填写名称、选定技能插件与偏好后保存分享。豆包提示，演示画面中的数据不作为实际使用成效引用。以预置技能把 AI 助手拆为垂直工作空间，延续了 AI 应用从通用问答转向行业交付的趋势。"
+        }
+      ]
+    },
+    {
+      "topic_id": 67,
+      "topic_title": "腾讯总办号召AI时代再创业",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 17,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32330",
+          "title": "8个月成为中国提供最多 token 的单一 AI 产品，腾讯总办却称 AI 应用开发才刚起步腾讯文化发文，总办号召AI时代再创业、“心态归零”，并以2026年LinkTime现场笔记复盘司庆讲话。28岁生日当天，总办把年度LinkTime做成播客，Pony与Martin称参与科技变革、站在前沿是荣幸。笔记将智能革命定为“生死存亡的问题”，不拥抱即被颠覆；本轮从被动降本转向主动增效，推进AI native业务、模型和产品。 11 小时前 12.6K",
+          "pub_date": "2026-11-16",
+          "content": "腾讯文化11月16日发布《总办号召 AI 时代再创业，“心态归零”》一文，以2026年总办 LinkTime 现场笔记形式复盘此前引发舆论热议的司庆讲话。公司28岁生日当天，总办将年度 LinkTime 做成播客，Pony 与 Martin 称参与这场科技变革并站在前沿是荣幸。笔记将智能革命定性为“生死存亡的问题”，不投入拥抱即被颠覆;与此前被动降本不同，本轮是主动增效，AI native 业务、模型和产品要逆流而上，所有业务面向 AI 时代再创业，当下国内竞争激烈、AI 变现尤其困难。总办解释，AI 仍处早期，基建与算力需自建，各方同时投入下价格飞涨，“如果现在不投，以后可能连参与的机会也没有”，但也强调务实评估投入产出比。腾讯同时提出做以人为本的 AI，坚持 AI 必须造福人类和社会、必须由人控制、必须让人的创造力得到赋能。腾讯称其“AI 金字塔”初见雏形:核心模型已进入国内第一梯队，将持续迭代推动智能成本指数级下降;小微定位个人私人 AI 助理、目标是“token 自由”，元宝面向决策与资讯参谋，WorkBuddy 在8个月内成为中国提供最多 token 的单一 AI 产品，是其 AI native 第一个跑出来的产品。"
+        }
+      ]
+    },
+    {
+      "topic_id": 66,
+      "topic_title": "OpenAI医疗应用与LVMH合作",
+      "topic_type": "news",
+      "cross_source_score": 65,
+      "mention_count": 2,
+      "source_count": 1,
+      "member_count": 2,
+      "refs": [
+        1,
+        2
+      ],
+      "members": [
+        {
+          "ref_id": 1,
+          "source": "OpenAI News",
+          "link": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+          "title": "More ways to move care forward with ChatGPT for Healthcare",
+          "pub_date": "Mon, 16 Nov 2026 06:00:00 GMT",
+          "content": "Introducing computer-use agents, improved clinical answers, and new healthcare plugins that work across healthcare software to get real work done."
+        },
+        {
+          "ref_id": 2,
+          "source": "OpenAI News",
+          "link": "https://openai.com/index/the-kings-trust-and-openai",
+          "title": "The King’s Trust and OpenAI launch £1m partnership",
+          "pub_date": "Mon, 16 Nov 2026 00:00:00 GMT",
+          "content": "The King’s Trust and OpenAI launch a £1m partnership to help up to 25,000 young people across the UK build practical AI skills for work."
+        }
+      ]
+    },
+    {
+      "topic_id": 85,
+      "topic_title": "OpenAI Agent在Holiday Extras应用",
+      "topic_type": "news",
+      "cross_source_score": 62,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        11
+      ],
+      "members": [
+        {
+          "ref_id": 11,
+          "source": "OpenAI News",
+          "link": "https://openai.com/business/customer-stories/holiday-extras-dots",
+          "title": "At Holiday Extras, dots get to work before anyone asks",
+          "pub_date": "Mon, 16 Nov 2026 00:00:00 GMT",
+          "content": "Dots deliver launch reports unprompted, flag issues people might miss, and talk through upcoming meetings on the commute to work."
+        }
+      ]
+    },
+    {
+      "topic_id": 48,
+      "topic_title": "Anthropic发布Claude Fable 5.2",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        13
+      ],
+      "members": [
+        {
+          "ref_id": 13,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32331",
+          "title": "不调用图像模型，Claude Fable5.2用70万次笔触画出一辆购物车Anthropic 11月9日发布 Claude Fable5.2 与 Mythos5.2。Fable5.2 无传统文生图模型，却能以代码在虚拟画布逐笔作画，还原笔刷纹理、颜料湿度与画布质感，并可修正错误。它不同于 Midjourney 等扩散模型从噪声生成图像，而是把绘画拆解为笔触指令执行，每幅画是一段约1000至2000行 Python 程序，不依赖图像模型或预渲染底图。员工 Jake Eaton 在 X 展示该能力。 10 小时前 13.6K",
+          "pub_date": "2026-11-16",
+          "content": "Anthropic 当地时间11月9日发布 Claude Fable5.2与 Mythos5.2。该公司无传统文生图模型，Fable5.2却能以代码在虚拟画布上模拟画笔逐笔作画，还原笔刷纹理、颜料湿度与画布质感并可修正错误。不同于 Midjourney 等扩散模型从噪声生成图像，它把绘画拆解为笔触指令自行执行，每幅画都是一段 Python 程序，通常1000至2000行，不依赖图像模型或预渲染底图。员工 Jake Eaton 在 X 展示，要求照片级真实作品后，模型画出停车场内购物车，用了约70万次笔触;针对 Opus5.5模仿既有风格的批评，他让模型自设虚构艺术家人格并以文字反馈调整画笔。工程师 Michael Graczyk 要求画日出时的鸟，每笔仅输出坐标指令且落笔不可撤销:21秒视频显示其以111笔完成，首笔为 #30346a 色号、90像素笔刷与5个晃动路径点，约7像素摆动系刻意设计。模型会观察画布自检，鸟背过细时以粗笔触覆盖;另一幅280笔的黄昏场景中，光照模糊颜料管与杯子后重绘。该规划与自修正能力被认为与机器人控制相关。官方称其面向复杂长时任务，可协调子智能体反复验证;内部测试曾解决两个黑洞物理学开放问题、与电路板制造商 Diode 合作设计三款可用电子设备，并协调超过1000个子智能体在8天内写出笔记本操作系统。"
+        }
+      ]
+    },
+    {
+      "topic_id": 19,
+      "topic_title": "Agent-written heuristics versus",
+      "topic_type": "paper",
+      "cross_source_score": 63,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        7
+      ],
+      "members": [
+        {
+          "ref_id": 7,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.17682",
+          "title": "Agent-written heuristics versus commercial solvers on unsolved job-shop benchmark instances",
+          "pub_date": "Mon, 16 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Commercial solvers are the standard tool for difficult scheduling problems. We study whether a frontier large language model, used as a coding agent with open-source tools only, can match them in quality and speed. We report every run, and independent checkers verify every schedule. On the 100,000-operation job shop tai_100_1000_1, an agent-written solver reached 525,515, below OptalCP, Hexaly, and CP Optimizer. Unchanged, it improved all ten instances of the family and closed two."
+        }
+      ]
+    },
+    {
+      "topic_id": 1,
+      "topic_title": "GDP.xlsx: Benchmarking Frontier",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        3
+      ],
+      "members": [
+        {
+          "ref_id": 3,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.17766",
+          "title": "GDP.xlsx: Benchmarking Frontier Models on Professional Workbooks",
+          "pub_date": "Mon, 16 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:We introduce GDP_xlsx, a benchmark of 70 realistic workplace requests written by professionals in 13 domains, each paired with an expert rubric of binary criteria and with the complete workbook or CSV file it refers to. Together the files hold 2.18 million populated cells, and the rubrics 791 criteria. Agents work in a container with spreadsheet tools, and an agentic judge that can open the file applies the rubric. Completeness and exclusivity criteria require set-valued answers to be found in full and with nothing extra."
+        }
+      ]
+    },
+    {
+      "topic_id": 14,
+      "topic_title": "When Cooperation Must Change",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        4
+      ],
+      "members": [
+        {
+          "ref_id": 4,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.17917",
+          "title": "When Cooperation Must Change: Semantic Strategy Unlearning in Multi-Agent Reinforcement Learning",
+          "pub_date": "Mon, 16 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Cooperative multi-agent reinforcement learning (MARL) supports coordinated decision-making in distributed Web services, multi-robot control, and collaborative games through learned coordination conventions. When deployment requirements change, a previously useful convention may become obsolete or unsafe. For example, revised cache-sharing permissions in Web content delivery may require caches to abandon a learned division of storage and serving roles while maintaining efficient delivery."
+        }
+      ]
+    },
+    {
+      "topic_id": 20,
+      "topic_title": "AutoRL: A Multi-Agent System",
+      "topic_type": "paper",
+      "cross_source_score": 63,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        5
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.17790",
+          "title": "AutoRL: A Multi-Agent System towards Autonomous Reinforcement Learning",
+          "pub_date": "Mon, 16 Nov 2026 00:00:00 -0500",
+          "content": "Authors:Simon Tang, Wenjie Shi, Yongjing Yin, Keheng Wang, Jialin Liu, Zheng Zhang, Linvo Lin, Xiangyuan Xue, Kan Ren, Jingang Wang, Xunliang Cai View PDF HTML (experimental) Abstract:Recursive self-improvement (RSI) is one of the most promising paths toward an AI singularity for superintelligence. Achieving this vision requires AI systems to undertake the full training pipeline for iterative improvement."
+        }
+      ]
+    },
+    {
+      "topic_id": 23,
+      "topic_title": "Can Mechanistic Interpretability",
+      "topic_type": "paper",
+      "cross_source_score": 63,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        6
+      ],
+      "members": [
+        {
+          "ref_id": 6,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.18514",
+          "title": "Can Mechanistic Interpretability Help Explain LLM Agent Failures? A Case Study on Web Element Hallucination",
+          "pub_date": "Mon, 16 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Mechanistic Interpretability (MI) has made significant progress in explaining the internal computations of Large Language Models (LLMs); however, these advances have yet to demonstrate comparable success in explaining the decision-making processes of LLM-based agents. This paper examines the challenges MI tools face when applied to realistic agentic failures. We focus on one such failure: web agents hallucinating actions that are not available on a website."
+        }
+      ]
+    },
+    {
+      "topic_id": 45,
+      "topic_title": "MIRIX-2.0: Multi-Agent Memory System",
+      "topic_type": "paper",
+      "cross_source_score": 63,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        8
+      ],
+      "members": [
+        {
+          "ref_id": 8,
+          "source": "Hugging Face Papers",
+          "link": "https://huggingface.co/papers/2611.12068",
+          "title": "MIRIX-2.0: Multi-Agent Memory System",
+          "pub_date": "2026-11-16T00:00:00.000Z",
+          "content": "Published on Nov 9 Authors: , , , Abstract MIRIX-2.0 is a multi-agent memory system for LLM agents that achieves high accuracy and efficiency across QA and procedural benchmarks without fine-tuning. Long-term memory lets LLM agents personalize, stay consistent, and reuse what worked before. Parametric memories need training, consolidation can lose details for good, and keeping every record leaves a growing store to search. We present MIRIX-2.0, a multi-agent memory system designed to be practical, accurate, and efficient at once."
+        }
+      ]
+    }
+  ]
+}
