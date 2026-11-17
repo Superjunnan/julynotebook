@@ -1,0 +1,406 @@
+{
+  "run_date": "2026-11-17",
+  "selected_topic_ids": [
+    67,
+    87,
+    76,
+    70,
+    62,
+    73,
+    82,
+    68,
+    79,
+    65,
+    5,
+    2,
+    4,
+    7,
+    9,
+    10
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 16,
+    "base_members_added": 19,
+    "expanded_added": 1,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 25,
+    "final_targets": 20,
+    "global_cap": 30
+  },
+  "deep_read_links": 20,
+  "materials_total": 20,
+  "materials_windowed": 20,
+  "materials_usable": 19,
+  "materials_by_source": {
+    "AIBase": 4,
+    "TechCrunch AI": 1,
+    "The Verge AI": 1,
+    "arXiv cs.AI": 7,
+    "AITNT 资讯": 3,
+    "OpenAI News": 2,
+    "爱范儿早报": 1
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 67,
+      "topic_title": "阿里发布 Qwen4-Max 模型",
+      "topic_type": "news",
+      "cross_source_score": 63,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        12,
+        14
+      ],
+      "members": [
+        {
+          "ref_id": 12,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31359",
+          "title": "用 Qwen4-Max 拆完一台 iPhone，我发现了阿里大模型进化的秘密武器",
+          "pub_date": "2026-11-17",
+          "content": "最近 AI 大模型的神仙打架，似乎和国模没太大关系。 Claude Fable 5.2 刚刚刷屏，Gemini 4 也一周发更新几款模型，GPT-6.2 Astra 也曝光了不少测试，相比之下，国产旗舰这边安静了不少。 今天上午，阿里正式交出了破局之作——新一代旗舰模型 Qwen4-Max。这也是刘大一恒执掌 Qwen 大语言模型后发布的首款旗舰。 APPSO 在发布前也已经体验了一段时间 Qwen4-Max，看看它能不能再次回到国模顶流行列。 在提前上手体验了一段时间后，我们发现它的发力点非常务实， 把长周期任务的成本打下来，并真正走进重型专业软件里「干活」。 Qwen4-Max 换了一套全新架构，总参数 2.4 万亿，处理每个 token 时只激活其中的 710 亿，比同样规模的上一代 Qwen3.8-Max 少了大约四分之一。它有原生的视觉能力，支持百万 token 的上下文。 这样改动架构的目的就三个：长上下文算得更省，模型装得更多，训练更稳。落到用户身上，最直接的感受是一个字——省！ 在编程评测 Terminal-Bench 4.0 上，它的 token 消耗比上一代少了将近一半，得分反而从 38.9 涨到了 48.5。 国内 API 每百万 token 的输入价格从 12 元降到 10 元，输出从 36 元降到 30 元，缓存命中最低只要 0.5 元。"
+        },
+        {
+          "ref_id": 14,
+          "source": "爱范儿早报",
+          "link": "https://www.ifanr.com/1689760#__brief-4",
+          "title": "阿里发布 Qwen4-Max，缓存命中价格低至每百万 Token 0.5 元",
+          "pub_date": "2026-11-17",
+          "content": "📱iPhone Duo 新增人脸解锁 🧠Sam Altman：没有黄仁勋，AI 行业仍能继续发展 🎬华为 Mate X8 定档 11 月 24 日发布 ✨阿里发布 Qwen4-Max，缓存命中价格低至每百万 Token 0.5 元 ⚡腾讯混元推出 Hy4 flash，WorkBuddy 限时开放免费使用 🏢蚂蚁灵波具身大模型挑战赛揭晓，TARS 战队拿下真机赛第一 🖥️算力吃紧，DeepSeek 限制 App 和网页端对话 🧠腾讯公开司庆讲话，要求核心业务团队面向 AI 再创业 📈东南亚第三季度手机出货量下滑 36%，头部厂商中只有苹果增长 💼百度第三季度营收降 1%，AI 云基础设施收入增长 94% 🚗小鹏汽车第三季度营收增长 19.1%，预计四季度交付至少 16.9 万辆 💵晶泰孵化的无界进化完成超 1 亿元 Pre-A 轮融资 💡博世中国区总裁：内存涨价，明年部分汽车成本最高增加 2.5 万元 🪄《GTA 6》预购超预期，Take-Two CEO 称会继续更新《GTA Online》 🔧豆包工作上线「工作台」，把投研、设计等工具放进专用空间 🧠苹果在美国启动健康 AI 研究，计划招募最多 20 万人 🎮国产独立游戏《艾希：续》众筹收官，筹得约 4281 万元 🚗宝马首款国产新世代 iX3 在沈阳投产，本月开启交付 🤝小马智行和丰田合作的无人驾。"
+        }
+      ]
+    },
+    {
+      "topic_id": 76,
+      "topic_title": "华为发布具身世界模型",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        19
+      ],
+      "members": [
+        {
+          "ref_id": 19,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31366",
+          "title": "刚刚，华为首个具身世界模型来了！国产算力训出，拿下双冠",
+          "pub_date": "2026-11-17",
+          "content": "本月开源。 智东西11月16日报道，今日，华为云推出其首款昇腾原生具身世界模型CloudRobo-WM1.2，并宣布于11月30日正式开放WM1.2模型权重、推理后训练代码及预训练最佳实践。 该模型采用共享世界模型骨干网络实现预测增强的世界表征，基于世界模型原生DualAct架构实现世界模型原生动作生成，在RoboTwin 2.0、LiberoPro 2.0评测中均位列第一。 现场，华为云展示了基于CloudRobo-WM1.2的机器人完成工业级搬运连续作业、轴承毛刺清洁等真实工业场景实验，以及在无人零售场景中完成了物品上架、礼物入柜等收纳任务。 会上，华为云透露：“华为昇腾云在具身智能市场格局中国第一，已有80%的中国具身智能企业选择昇腾云，重点高校基本实现全覆盖。”这里的“格局第一”应该是企业自身统计口径下的生态渗透率、客户覆盖度国内第一，不是第三方机构营收口径。 同时，华为云宣布与环卫装备龙头企业福龙马集团联合研制的智能清扫机器人已启动预售。 直面五大挑战 华为用五项技术给机器人“补脑” 华为云具身产品线总裁/具身智能Lab主任吴小东透露，其团队一直在行业大模型、商专车的自动驾驶、具身智能行业尝试落地，看到了很多挑战：比如传统视觉表征一遮挡就“半瞎”，一换视角就“懵”，一动起来就变“傻”，在复杂开放环境中的成功率会明显下降。"
+        }
+      ]
+    },
+    {
+      "topic_id": 70,
+      "topic_title": "李彦宏警告AI泡沫风险",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        18
+      ],
+      "members": [
+        {
+          "ref_id": 18,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32360",
+          "title": "李彦宏警告AI泡沫风险:算力投入巨大，应用落地仍不及预期11月17日，百度董事长兼CEO李彦宏在2026年APEC工商领导人峰会上称，AI算力与基础设施投入巨大，但上层应用落地成效未达预期；若应用层长期无突破，行业或现AI泡沫风险。他在“共建开放普惠的人工智能创新生态”研讨中指出，AI技术栈除芯片、云、模型和应用外，应用之上还需配套组织能力，并以电力革命为例说明。 2 小时前 9.8K",
+          "pub_date": "2026-11-17",
+          "content": "百度集团董事长兼CEO李彦宏11月17日在2026年APEC工商领导人峰会上表示，当前AI行业在算力和基础设施领域投入巨大，但上层应用的实际落地成效尚未达到预期。如果应用层长期无法取得突破，行业可能面临AI泡沫风险。在“共建开放普惠的人工智能创新生态”研讨环节，李彦宏指出，AI技术栈不仅包括芯片、云、模型和应用，应用之上还需要配套的组织能力。他以电力革命为例表示，仅有先进技术并不足以释放经济价值，还需要相应的组织变革，才能推动生产力提升。尽管提示行业存在泡沫风险，李彦宏仍看好AI长期发展，并表示百度AI业务收入占比未来将持续提升。此前，在11月12日举行的百度世界大会2026上，李彦宏曾提出“智能组织”概念，认为如果AI是新时代的电能，智能组织就是AI时代新的厂房，只有将AI能力与组织方式深度结合，才能真正释放生产力。李彦宏的观点将AI产业竞争的关注点从算力和模型能力进一步延伸至应用落地与组织变革，也凸显出AI商业价值兑现仍面临现实挑战。"
+        }
+      ]
+    },
+    {
+      "topic_id": 62,
+      "topic_title": "奥特曼回应黄仁勋离职",
+      "topic_type": "news",
+      "cross_source_score": 67,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        1,
+        4
+      ],
+      "members": [
+        {
+          "ref_id": 1,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32344",
+          "title": "奥特曼回应黄仁勋离职:英伟达与AI行业“不会有事”OpenAI CEO山姆·奥特曼在Semafor“硅谷与世界”活动上表示，尽管英伟达前CEO黄仁勋因个人丑闻离职，AI行业不会受实质影响。他认为AI市场需求旺盛、应用价值清晰，收入和需求强劲增长，行业前景向好。此次人事变动正值AI高速发展期，OpenAI与英伟达作为长期合作伙伴，过去十年关系紧密。 11 小时前 11.1K",
+          "pub_date": "2026-11-17",
+          "content": "OpenAI 首席执行官山姆·奥特曼在近日举办的[Semafor 的硅谷与世界]活动上公开表态，称尽管英伟达前首席执行官黄仁勋近期因个人丑闻离职，但整体人工智能行业不会受到实质性影响。奥特曼指出，当前 AI 市场需求依然旺盛，实际应用价值清晰且收入与需求正保持强劲增长，整体行业前景向好。此次人事变动正值 AI 产业高速发展期。作为长期合作伙伴，OpenAI与英伟达在过去十年间不仅维系了基础的软硬件供需关系，更深度交织于循环融资体系之中。近期英伟达才刚同意为 OpenAI 位于俄亥俄州的数据中心项目提供高达1050亿美元的担保。针对市场对黄仁勋离职可能引发财务收缩或连锁反应的担忧，奥特曼表示对英伟达庞大的体量及市场信心保持乐观，并不担心其资金链或保证能力。尽管如此，奥特曼对黄仁勋在推动行业早期爆发中的核心作用给予了高度评价，称其为具有“远大抱负”和塑造行业雄心壮志的英雄人物。当前，包括埃隆·马斯克在内的多位硅谷科技高管已联合签署公开信，呼吁英伟达重新聘用黄仁勋。随着黄仁勋离职后连锁反应的持续发酵，全球算力供应链的战略走向与资本布局仍面临新的调整期。"
+        },
+        {
+          "ref_id": 4,
+          "source": "The Verge AI",
+          "link": "https://www.theverge.com/tech/1035027/tech-leaders-nvidia-jensen-huang-theories",
+          "title": "Tech leaders are convinced that Jensen Huang’s exit was a plot against him",
+          "pub_date": "2026-11-16T23:17:34.000Z",
+          "content": "Jensen Huang’s stunning resignation from Nvidia after more than 33 years has sent shockwaves throughout the tech industry. Now prominent figures are calling for Huang’s reinstatement, and many are also hopping on board with a theory spreading throughout Silicon Valley: that the scandal is the result of a plot against the former CEO.At the center of this theory is the reporting from The New York Times that former Megaspeed executive Alice Huang, one of multiple women Huang is accused of having an affair with, is a Chinese spy."
+        }
+      ]
+    },
+    {
+      "topic_id": 73,
+      "topic_title": "Corma完成1.25亿美元A轮融资",
+      "topic_type": "news",
+      "cross_source_score": 67,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        2,
+        3
+      ],
+      "members": [
+        {
+          "ref_id": 2,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32345",
+          "title": "AI安全初创公司Corma完成1.25亿美元A轮融资:3个月估值达10亿美元网络安全AI初创公司Corma近日完成1.25亿美元A轮融资，由NEA领投，投后估值在产品推出3个月内飙升至10亿美元。公司累计融资1.85亿美元，早期投资方包括红杉资本、科斯拉创投和Coatue。Corma定位为专注安全防护的前沿AI研究实验室，提供网络安全防御的人工智能模型与智能体，今年8月正式亮相后产品迅速爆红。 11 小时前 9.3K",
+          "pub_date": "2026-11-17",
+          "content": "网络安全人工智能初创公司Corma于近日宣布完成1.25亿美元 A 轮融资，由NEA领投，公司估值在推出产品短短3个月内迅速飙升至10亿美元。截至目前，该公司已累计融资1.85亿美元，早期投资方包括红杉资本、科斯拉创投和Coatue。作为一家专注于安全防护的前沿人工智能研究实验室，Corma 主要提供用于网络安全防御的人工智能模型和智能体。该公司于今年8月正式亮相，其产品的爆红与10月21日集中爆发的一系列重大安全事件密切相关。当时，Web 编程语言PHP 严重漏洞、开源运行时环境Node.js 漏洞以及路由多LLM提供商的开源代理工具LiteLLM 安全事件集中披露，令各大首席信息安全官（CIS）应接不暇，充分凸显了当前人工智能在网络安全攻防中的关键冲击与应用紧迫性。在AI安全防御赛道上，Corma 并非唯一入局者，行业内还涌现出Kevin Mandia的新创公司Armadin以及Anthropic、OpenAI、微软等老牌巨头。资本的快速涌入与高额估值表明，在复杂漏洞频发的数字化背景下，基于前沿人工智能模型的安全防御基础设施正迎来新一轮高速发展与市场重构期。"
+        },
+        {
+          "ref_id": 3,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/11/16/cybersecurity-ai-startup-corma-reaches-1b-valuation-in-about-3-months/",
+          "title": "Cybersecurity AI startup Corma reaches $1B valuation in about 3 months",
+          "pub_date": "Mon, 16 Nov 2026 23:32:32 +0000",
+          "content": "In Brief Posted: 3:32 PM PST · November 16, 2026 Image Credits:TechCrunch (AI-generated) Three months after introducing its product, AI cybersecurity startup Corma has raised a $125 million Series A round at a $1 billion valuation led by NEA, the company said. Corma offers AI models and agents trained for cybersecurity defense. It has now raised a total of $185 million from backers, including Sequoia Capital, Khosla Ventures, and Coatue. The startup came out of stealth in August."
+        }
+      ]
+    },
+    {
+      "topic_id": 82,
+      "topic_title": "OpenAI Astra for Law发布",
+      "topic_type": "news",
+      "cross_source_score": 62,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        15
+      ],
+      "members": [
+        {
+          "ref_id": 15,
+          "source": "OpenAI News",
+          "link": "https://openai.com/index/astra-law-6-2",
+          "title": "Astra for Law leads in legal intelligence",
+          "pub_date": "Tue, 17 Nov 2026 00:00:00 GMT",
+          "content": "Astra for Law ranked first in a launch evaluation spanning 24 areas of law. Every ChatGPT Enterprise customer can now request access."
+        }
+      ]
+    },
+    {
+      "topic_id": 68,
+      "topic_title": "Gemini新模型命名争议",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 17,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31358",
+          "title": "Gemini新模型箭在弦上，网友：遍历元素周期表？",
+          "pub_date": "2026-11-17",
+          "content": "我真没想到，有天我竟会嫌Google模型发的太多了 最新消息，有开发者发现，Gemini网页应用代码中又出现了一个新模型标识：gemini-4-neon。 Neon，氖，是元素周期表第10号元素。 刚一曝光，大家又开始吐槽了，这也毫无顺序啊！怎么Hydrogen发完之后就直接跳到Neon了呢？ 说好的，氢氦锂铍硼，碳氮氧氟氖呢？ 说到元素周期表，有人直接搬出了给谷歌Gemini设计的新界面。 「我帮Google想了一个天才般的解决方案 Google免费拿去用。」 谁敢相信，多年后重温初中化学知识，竟然是在这儿 那个啥，发到钙就先别发了，再往下我就不会背了（bushi）。 Gemini 4 Neon又是什么杯？ 据模型追踪账号AI Tracker Bot显示，Gemini网页应用代码中新出现了gemini-4-neon，且与此前的gemini-4-argon、gemini-4-carbon等模型标识在一起。 除了新模型，代码里竟还有一个同名的NEON订阅层级。 这个订阅层级在代码中被标记为TIER_NEON，用量页面上显示的名称是“Gemini Ultra”，但内部又与普通Ultra作了区分。 还有网友扒出，这个Neon对应着upsell_MODE_CATEGORY_PRO，其中的Upsell是软件产品中常见的付费升级逻辑。"
+        }
+      ]
+    },
+    {
+      "topic_id": 79,
+      "topic_title": "OpenAI与智利政府合作",
+      "topic_type": "news",
+      "cross_source_score": 63,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        13
+      ],
+      "members": [
+        {
+          "ref_id": 13,
+          "source": "OpenAI News",
+          "link": "https://openai.com/index/introducing-openai-for-chile",
+          "title": "Introducing OpenAI for Chile",
+          "pub_date": "Tue, 17 Nov 2026 00:00:00 GMT",
+          "content": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications."
+        }
+      ]
+    },
+    {
+      "topic_id": 65,
+      "topic_title": "Gemini Notebook上线网站生成",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        16
+      ],
+      "members": [
+        {
+          "ref_id": 16,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32350",
+          "title": "Gemini Notebook上线网站生成功能，支持一句话创建互动网页Gemini Notebook上线网站生成功能，用户可通过自然语言指令，将现有资源快速转化为可互动、可分享的网站。据@Gemini_Notebook推文，只需在聊天框输入“帮我建个网站”并描述需求，如交互式仪表盘、项目跟踪器等，系统即可自动生成网页。生成后可在新标签页打开或分享给他人。该功能面向全球18岁以上用户。 9 小时前 11.1K",
+          "pub_date": "2026-11-17",
+          "content": "Gemini Notebook 上线网站生成功能，支持用户通过自然语言指令，将现有资源快速转化为可互动、可分享的网站。据用户@Gemini_Notebook 最新推文，用户只需在聊天框中输入“帮我建个网站”，并描述具体需求，例如交互式仪表盘、项目跟踪器等，系统即可自动生成相应网页。生成后，用户可以在新标签页中直接打开，也可以将网站分享给其他人使用。该功能面向全球所有18岁以上用户开放，通过网页即可访问，无需复杂的开发操作。官方同时邀请用户分享实际使用案例。此次更新进一步拓展了 Gemini Notebook 的内容应用能力，使其从信息整理与知识处理工具向轻量级网站生成场景延伸。通过自然语言交互降低网页开发门槛，也反映出AI产品正从内容生成向可交互、可交付的应用构建方向发展。"
+        }
+      ]
+    },
+    {
+      "topic_id": 5,
+      "topic_title": "Security of Deep Research Agents",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        6
+      ],
+      "members": [
+        {
+          "ref_id": 6,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.20045",
+          "title": "Security of Deep Research Agents: Attack Surface, Defenses, Benchmarks, and Agenda Seeding against Research Planning",
+          "pub_date": "Tue, 17 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Deep research and agentic search agents autonomously retrieve content from the open web and generate reports with citations, and their outputs are often taken directly as research conclusions. This paper systematizes security research in this area along four stages, namely retrieval, planning, evidence integration, and report generation."
+        }
+      ]
+    },
+    {
+      "topic_id": 2,
+      "topic_title": "Agent-Native by Design",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        7
+      ],
+      "members": [
+        {
+          "ref_id": 7,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.21298",
+          "title": "Agent-Native by Design: A Programming Language for Agentic Applications",
+          "pub_date": "Tue, 17 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Building agentic applications requires combining large language model (LLM) operations, workflow structure and application state, and model-guided routing. With SDKs and agent frameworks, developers connect these components through supporting code that prepares model inputs, propagates state, and dispatches model-selected steps. Workflow changes can require coordinated updates to this code, increasing development and testing effort."
+        }
+      ]
+    },
+    {
+      "topic_id": 4,
+      "topic_title": "Multi-LLM Agentic AI at the Edge",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        5
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.20915",
+          "title": "Multi-LLM Agentic AI at the Edge: Joint Agent Scheduling and Resource Allocation",
+          "pub_date": "Tue, 17 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:In this paper, an edge-enabled multi-large language model (LLM) agentic AI architecture is proposed, where one supervisor AI agent and multiple worker AI agents cooperatively execute users' requests at the edge. The supervisor AI agent decouples the user request into a series of sub-tasks and dynamically dispatches them to LLM-equipped worker AI agents via two agentic workflows, i.e., parallel and serial workflows, with a two-level retry mechanism to enhance execution reliability."
+        }
+      ]
+    },
+    {
+      "topic_id": 7,
+      "topic_title": "A Hierarchical Statistical",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        8
+      ],
+      "members": [
+        {
+          "ref_id": 8,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.19614",
+          "title": "A Hierarchical Statistical Framework for Evaluating Agent Reliability",
+          "pub_date": "Tue, 17 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Agents operating in complex scenarios often face uncertainty due to incomplete information about the environment they operate in, ambiguous user queries, complex business rules and the inherently stochastic dynamics of the governing policy. Several new benchmarks have been proposed to evaluate LLM-based agents on complex tasks in multi-tool environments, including settings with policy constraints and varying levels of intent ambiguity."
+        }
+      ]
+    },
+    {
+      "topic_id": 9,
+      "topic_title": "Agent-Guided Configuration Tuning",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        9
+      ],
+      "members": [
+        {
+          "ref_id": 9,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.20484",
+          "title": "Agent-Guided Configuration Tuning for SMT Solvers",
+          "pub_date": "Tue, 17 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:SMT solvers expose many configuration choices that determine how well their existing algorithms perform on a workload. We present, to our knowledge, the first workflow that uses general-purpose LLM agents to tune SMT solver configurations. Agents read solver documentation, source code, and persistent experiment records to propose option changes, and a deterministic harness measures each proposal, validates the returned models, and selects changes separately for each competition Division."
+        }
+      ]
+    },
+    {
+      "topic_id": 10,
+      "topic_title": "Agent-ZTA: A chain-Aware Zero",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        10
+      ],
+      "members": [
+        {
+          "ref_id": 10,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.18999",
+          "title": "Agent-ZTA: A chain-Aware Zero Trust Model for Bidirectional Security-State Propagation and Runtime Containment in Multi-Agent Delegation",
+          "pub_date": "Tue, 17 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Multi-agent systems increasingly delegate tasks and permissions across chains of autonomous agents that invoke protected tools. Although agent identities and delegated credentials may remain valid throughout a workflow, the security condition of any agent along the chain can deteriorate during runtime execution-either through upstream compromise or downstream ingestion of untrusted inputs. Authorization models based solely on the immediate caller and its static delegated scope fail to account for these mid-execution state changes."
+        }
+      ]
+    }
+  ]
+}
