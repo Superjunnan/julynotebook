@@ -1,0 +1,1983 @@
+{
+  "run_date": "2026-11-18",
+  "cluster_input_cap": 100,
+  "cluster_input_cap_news": 50,
+  "cluster_input_cap_papers": 60,
+  "cluster_batch_size": 25,
+  "cluster_text_mode": "title_lead",
+  "cluster_enrich_mode": "hybrid",
+  "cluster_text_max_chars": 380,
+  "cluster_enrich_force_top_news": 20,
+  "input_count": 92,
+  "input_news_count": 32,
+  "input_paper_count": 60,
+  "dropped_by_cap": 80,
+  "enrichment": {
+    "cluster_text_mode": "title_lead",
+    "enrich_mode": "hybrid",
+    "total_cards": 100,
+    "considered": 23,
+    "enriched": 22,
+    "cache_hits": 9,
+    "fetched": 13,
+    "skipped_with_long_snippet": 36,
+    "skipped_low_quality_source": 60
+  },
+  "precluster": {
+    "input_cards": 100,
+    "grouped_cards": 93,
+    "merged_away": 7,
+    "multi_member_groups": 3,
+    "groups": [
+      {
+        "representative_id": 1,
+        "member_ids": [
+          1
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Nemotron 3.5 Bolt E4B 4GB: An Open and"
+      },
+      {
+        "representative_id": 2,
+        "member_ids": [
+          2
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "K2-Horizon: A Frontier Fleet of Open Source"
+      },
+      {
+        "representative_id": 3,
+        "member_ids": [
+          3
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "What Moves a LoCoMo Score? Memory Context"
+      },
+      {
+        "representative_id": 4,
+        "member_ids": [
+          4
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Accelerate Bench: Evaluating Agents for"
+      },
+      {
+        "representative_id": 5,
+        "member_ids": [
+          5
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Autonomous Multi-modal Agents for ITOps"
+      },
+      {
+        "representative_id": 6,
+        "member_ids": [
+          6
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "BiVerify: Closing the Loop Between Backward"
+      },
+      {
+        "representative_id": 7,
+        "member_ids": [
+          7
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Can Agentic LLMs Write Task-Based Parallel"
+      },
+      {
+        "representative_id": 8,
+        "member_ids": [
+          8
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Context Matters: Improving LLM-Based Code"
+      },
+      {
+        "representative_id": 9,
+        "member_ids": [
+          9
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Continuation-Guided LLM Evolution of Program"
+      },
+      {
+        "representative_id": 10,
+        "member_ids": [
+          10
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "FinVerify: A Verification Framework for"
+      },
+      {
+        "representative_id": 11,
+        "member_ids": [
+          11
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Hivemind: A Federated Protocol for AI"
+      },
+      {
+        "representative_id": 12,
+        "member_ids": [
+          12
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "HospitalBench: Diagnosing Where and Why"
+      },
+      {
+        "representative_id": 13,
+        "member_ids": [
+          13
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "InclusionMed: Benchmarking AI for Inclusive"
+      },
+      {
+        "representative_id": 14,
+        "member_ids": [
+          14
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Inquest: Log-Guided Root-Cause Code"
+      },
+      {
+        "representative_id": 15,
+        "member_ids": [
+          15
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Interactive Structured Environment Scaling"
+      },
+      {
+        "representative_id": 16,
+        "member_ids": [
+          16
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "LLM Trading Agents Earn Beta, Not Alpha"
+      },
+      {
+        "representative_id": 17,
+        "member_ids": [
+          17
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "LUCA: A Synthetic World for Experimental"
+      },
+      {
+        "representative_id": 18,
+        "member_ids": [
+          18
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Personalized Memory Rubrics: Learning What to"
+      },
+      {
+        "representative_id": 19,
+        "member_ids": [
+          19
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "ProofCoder: Continuous Reasoning for"
+      },
+      {
+        "representative_id": 20,
+        "member_ids": [
+          20
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Re-Reading Is Not Free: Token Traces and"
+      },
+      {
+        "representative_id": 21,
+        "member_ids": [
+          21
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "ReAccess: Look Once, Stay Focused with"
+      },
+      {
+        "representative_id": 22,
+        "member_ids": [
+          22
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Sage S2.1 Flash Technical Report"
+      },
+      {
+        "representative_id": 23,
+        "member_ids": [
+          23
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Singularity-Bench: Can Agents Build Agents?"
+      },
+      {
+        "representative_id": 24,
+        "member_ids": [
+          24
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "SpecRelay: Amortize or Avoid the Round Trip"
+      },
+      {
+        "representative_id": 25,
+        "member_ids": [
+          25
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "SynthDCB: World Distillation for Scalable"
+      },
+      {
+        "representative_id": 26,
+        "member_ids": [
+          26
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Think2Listen: Evidence-Centric Learning For"
+      },
+      {
+        "representative_id": 27,
+        "member_ids": [
+          27
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "ViRA: Toward Ultra-High-Resolution Visual"
+      },
+      {
+        "representative_id": 28,
+        "member_ids": [
+          28
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "VIVID: A Visual Harness for Agentic Video"
+      },
+      {
+        "representative_id": 29,
+        "member_ids": [
+          29
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "We Have All the Cards: Securing Agent Cards"
+      },
+      {
+        "representative_id": 30,
+        "member_ids": [
+          30
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "WeVisForensics: Self-Evolving Agent for Omni"
+      },
+      {
+        "representative_id": 31,
+        "member_ids": [
+          31
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "When AI Agents Should Repair, Replan, or"
+      },
+      {
+        "representative_id": 32,
+        "member_ids": [
+          32
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "When Facts Change, Which Decisions Break?"
+      },
+      {
+        "representative_id": 33,
+        "member_ids": [
+          33
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "MedJev: A System One Vision-Language Decision"
+      },
+      {
+        "representative_id": 34,
+        "member_ids": [
+          34,
+          68,
+          76,
+          84
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Google’s Spark AI agent becomes ‘Tasks’ — and"
+      },
+      {
+        "representative_id": 35,
+        "member_ids": [
+          35
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "K2-Horizon releases six open LLMs, 0.9B to"
+      },
+      {
+        "representative_id": 36,
+        "member_ids": [
+          36
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Acting by Intent, Reacting by Sight: Visual"
+      },
+      {
+        "representative_id": 37,
+        "member_ids": [
+          37
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "AdMem: Expectation-Grounded Procedural Memory"
+      },
+      {
+        "representative_id": 38,
+        "member_ids": [
+          38
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Agent Authenticator: Passkey-Grade, Hardware"
+      },
+      {
+        "representative_id": 39,
+        "member_ids": [
+          39
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Agent-Guided Process Verification for"
+      },
+      {
+        "representative_id": 40,
+        "member_ids": [
+          40
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Agentic On-Policy Distillation Implicitly"
+      },
+      {
+        "representative_id": 41,
+        "member_ids": [
+          41
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Auditable Authorization for LLM Agents"
+      },
+      {
+        "representative_id": 42,
+        "member_ids": [
+          42
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Beyond Clumsy Agentic Tool Calling: How"
+      },
+      {
+        "representative_id": 43,
+        "member_ids": [
+          43
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Beyond Plain MCP: Do Decision Models and Code"
+      },
+      {
+        "representative_id": 44,
+        "member_ids": [
+          44
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Beyond Prompts: Runtime Contracts for Coding"
+      },
+      {
+        "representative_id": 45,
+        "member_ids": [
+          45
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "BOXBOX: Recursive Harness Self-Improvement"
+      },
+      {
+        "representative_id": 46,
+        "member_ids": [
+          46
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "CivilBench: Benchmarking Vision-Language"
+      },
+      {
+        "representative_id": 47,
+        "member_ids": [
+          47
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "CLEW: Log-Anchored Backward Tracing for Root"
+      },
+      {
+        "representative_id": 48,
+        "member_ids": [
+          48
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "CompoundingKernel: Self-Improving from Zero"
+      },
+      {
+        "representative_id": 49,
+        "member_ids": [
+          49
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "DetourBench: Trajectory-Level Evaluation of"
+      },
+      {
+        "representative_id": 50,
+        "member_ids": [
+          50
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Discovering formally verified quantum"
+      },
+      {
+        "representative_id": 51,
+        "member_ids": [
+          51
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Does the Voice Matter? Evaluating Frustration"
+      },
+      {
+        "representative_id": 52,
+        "member_ids": [
+          52
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Dual-Stage Channel-Posterior Integration for"
+      },
+      {
+        "representative_id": 53,
+        "member_ids": [
+          53
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Edit Recommendation: Can LLMs Anticipate Edit"
+      },
+      {
+        "representative_id": 54,
+        "member_ids": [
+          54
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Editable Video Context: Mid-Context KV-Cache"
+      },
+      {
+        "representative_id": 55,
+        "member_ids": [
+          55
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Eliciting Research Taste in LLMs through"
+      },
+      {
+        "representative_id": 56,
+        "member_ids": [
+          56
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Evaluating the Robustness of Fact-Checking"
+      },
+      {
+        "representative_id": 57,
+        "member_ids": [
+          57
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "EVIDENT: Evaluating Evidence Grounding in GUI"
+      },
+      {
+        "representative_id": 58,
+        "member_ids": [
+          58
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "From Data to Wisdom: Rethinking AI Through an"
+      },
+      {
+        "representative_id": 59,
+        "member_ids": [
+          59
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "From Recursion to Convolution: Parallel Self"
+      },
+      {
+        "representative_id": 60,
+        "member_ids": [
+          60
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Guiding AI Agents to Generate Conjectures by"
+      },
+      {
+        "representative_id": 61,
+        "member_ids": [
+          61
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "How to make a moral agent: sentimentalism and"
+      },
+      {
+        "representative_id": 62,
+        "member_ids": [
+          62
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Infrathon: Benchmarking Language Agents for"
+      },
+      {
+        "representative_id": 63,
+        "member_ids": [
+          63
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Not even Sam Altman is safe from AI deepfakes"
+      },
+      {
+        "representative_id": 64,
+        "member_ids": [
+          64
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "代码\"ANT\"锁定纳斯达克：Anthropic 拿到上市通行证"
+      },
+      {
+        "representative_id": 65,
+        "member_ids": [
+          65
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "资本盛宴持续加码：红杉资本与光速创投等巨头拟在 Anthropic IPO"
+      },
+      {
+        "representative_id": 66,
+        "member_ids": [
+          66
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Claude 仅用 3 天攻克 AMD 芯片底层适配"
+      },
+      {
+        "representative_id": 67,
+        "member_ids": [
+          67
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "OpenAI 官宣 GPT-6.2 Astra 与 Sol：API 成本暴降 60%"
+      },
+      {
+        "representative_id": 69,
+        "member_ids": [
+          69
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Google to keep Gemini chats for 2 months, up"
+      },
+      {
+        "representative_id": 70,
+        "member_ids": [
+          70
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Pedestal AI raises $4.7 million to agentify"
+      },
+      {
+        "representative_id": 71,
+        "member_ids": [
+          71
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "AI models can be tricked into identifying"
+      },
+      {
+        "representative_id": 72,
+        "member_ids": [
+          72
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Daydream’s new AI agent acts as your personal"
+      },
+      {
+        "representative_id": 73,
+        "member_ids": [
+          73,
+          82
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Proton’s Lumo, a privacy-focused alternative"
+      },
+      {
+        "representative_id": 74,
+        "member_ids": [
+          74
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "AI应用淘汰潮来了？13款明星产品折戟，关停 明星公司也扛不住了。 智东西11月17日消息"
+      },
+      {
+        "representative_id": 75,
+        "member_ids": [
+          75
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Nvidia’s Q3 earnings hit the mark, without"
+      },
+      {
+        "representative_id": 77,
+        "member_ids": [
+          77
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "爱尔兰监管重拳出击：马斯克旗下 X 遭勒令叫停，禁止利用 AI 智能体抓取数据训练"
+      },
+      {
+        "representative_id": 78,
+        "member_ids": [
+          78
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "微软 CEO 纳德拉：我已成为 AGI 信徒，但 AI 绝对没有意识在人工智能狂飙背景下"
+      },
+      {
+        "representative_id": 79,
+        "member_ids": [
+          79
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "微软给 AI 装上“决策脑”：Decision-1.1 跑赢 GPT-6 Luna"
+      },
+      {
+        "representative_id": 80,
+        "member_ids": [
+          80
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "微软掏出首款语音对语音模型 MAI Realtime 1：能被打断、会打电话干活"
+      },
+      {
+        "representative_id": 81,
+        "member_ids": [
+          81,
+          83,
+          86,
+          91
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Jensen Huang says he’s willing to return as"
+      },
+      {
+        "representative_id": 85,
+        "member_ids": [
+          85
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "The DOJ says it’s investigating Megaspeed The"
+      },
+      {
+        "representative_id": 87,
+        "member_ids": [
+          87
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "New precise math tool released that is meant"
+      },
+      {
+        "representative_id": 88,
+        "member_ids": [
+          88
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "对话 LiberAI 刘松铭：Astra 来袭 “有一件事我确实极致热爱，那就是创业本身。” “清华"
+      },
+      {
+        "representative_id": 89,
+        "member_ids": [
+          89
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "靠AI陪伴拿下千万下载后，又悄悄上线第一人称互动视频Loopcat 互动剧情玩起羁绊养成。 近期"
+      },
+      {
+        "representative_id": 90,
+        "member_ids": [
+          90
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "潜伏小红书48h：AI时代，顶尖技术人才都在聊什么？ 「校招生如果有自己的想法"
+      },
+      {
+        "representative_id": 92,
+        "member_ids": [
+          92
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "Grok Bot took unapproved actions, ignored"
+      },
+      {
+        "representative_id": 93,
+        "member_ids": [
+          93
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "A Man and His Muse AI Agent Sue Meta \"Meta"
+      },
+      {
+        "representative_id": 94,
+        "member_ids": [
+          94
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Your documents have headings. Does your RAG"
+      },
+      {
+        "representative_id": 95,
+        "member_ids": [
+          95
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "BananaMind SLM Digest – 2026-11-17 🚀 Pascal"
+      },
+      {
+        "representative_id": 96,
+        "member_ids": [
+          96
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Hey guys, just had a few ideas. Still, id"
+      },
+      {
+        "representative_id": 97,
+        "member_ids": [
+          97
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "I built with to answer a surprisingly"
+      },
+      {
+        "representative_id": 98,
+        "member_ids": [
+          98
+        ],
+        "pub_date": "2026-11-17",
+        "topic_seed": "软件的用户变成「人 + Agent」之后 10 月底"
+      },
+      {
+        "representative_id": 99,
+        "member_ids": [
+          99
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Ever wonder if you could weight your training"
+      },
+      {
+        "representative_id": 100,
+        "member_ids": [
+          100
+        ],
+        "pub_date": "2026-11-18",
+        "topic_seed": "Hugging Face buckets are absolutely AMAZING!"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "candidate_id": 1,
+      "title": "Nemotron 3.5 Bolt E4B 4GB: An Open and Efficient Small Language Model for Fast",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 33,
+      "link": "https://arxiv.org/abs/2611.20771"
+    },
+    {
+      "candidate_id": 2,
+      "title": "K2-Horizon: A Frontier Fleet of Open Source Language Models",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2611.21003"
+    },
+    {
+      "candidate_id": 3,
+      "title": "What Moves a LoCoMo Score? Memory Context",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 29,
+      "link": "https://arxiv.org/abs/2611.19199"
+    },
+    {
+      "candidate_id": 4,
+      "title": "Accelerate Bench: Evaluating Agents for Application-Level Program Optimization",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.20882"
+    },
+    {
+      "candidate_id": 5,
+      "title": "Autonomous Multi-modal Agents for ITOps Observability",
+      "snippet_len": 130,
+      "cluster_text_len": 130,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.19982"
+    },
+    {
+      "candidate_id": 6,
+      "title": "BiVerify: Closing the Loop Between Backward and Forward Verification for Mathematical Self",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.11368"
+    },
+    {
+      "candidate_id": 7,
+      "title": "Can Agentic LLMs Write Task-Based Parallel Code? A Study of OpenMP Tasking, HPX",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.19105"
+    },
+    {
+      "candidate_id": 8,
+      "title": "Context Matters: Improving LLM-Based Code Summarization with Hierarchical Information",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.18964"
+    },
+    {
+      "candidate_id": 9,
+      "title": "Continuation-Guided LLM Evolution of Program Policies and Goal Compilers in Craftax",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.19537"
+    },
+    {
+      "candidate_id": 10,
+      "title": "FinVerify: A Verification Framework for Financial Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.20423"
+    },
+    {
+      "candidate_id": 11,
+      "title": "Hivemind: A Federated Protocol for AI-Mediated Tacit Knowledge Sharing in Organisations",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.20988"
+    },
+    {
+      "candidate_id": 12,
+      "title": "HospitalBench: Diagnosing Where and Why Embodied Agents Fail on Long Hospital Task Chains",
+      "snippet_len": 124,
+      "cluster_text_len": 124,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.19274"
+    },
+    {
+      "candidate_id": 13,
+      "title": "InclusionMed: Benchmarking AI for Inclusive Healthcare",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.21218"
+    },
+    {
+      "candidate_id": 14,
+      "title": "Inquest: Log-Guided Root-Cause Code Localization with a Staged Agent",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.19554"
+    },
+    {
+      "candidate_id": 15,
+      "title": "Interactive Structured Environment Scaling for Large Language Model Agentic Reasoning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.19871"
+    },
+    {
+      "candidate_id": 16,
+      "title": "LLM Trading Agents Earn Beta, Not Alpha",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.19530"
+    },
+    {
+      "candidate_id": 17,
+      "title": "LUCA: A Synthetic World for Experimental Reasoning",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.03100"
+    },
+    {
+      "candidate_id": 18,
+      "title": "Personalized Memory Rubrics: Learning What to Remember per User via Rubric-Guided Credit",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.14017"
+    },
+    {
+      "candidate_id": 19,
+      "title": "ProofCoder: Continuous Reasoning for Automated Software Verification",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.14106"
+    },
+    {
+      "candidate_id": 20,
+      "title": "Re-Reading Is Not Free: Token Traces and Cache-Aware Energy Estimation for LLM Agents in",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.20873"
+    },
+    {
+      "candidate_id": 21,
+      "title": "ReAccess: Look Once, Stay Focused with Efficient Test Time Memory",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.20936"
+    },
+    {
+      "candidate_id": 22,
+      "title": "Sage S2.1 Flash Technical Report",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.21072"
+    },
+    {
+      "candidate_id": 23,
+      "title": "Singularity-Bench: Can Agents Build Agents?",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.16591"
+    },
+    {
+      "candidate_id": 24,
+      "title": "SpecRelay: Amortize or Avoid the Round Trip in Edge-Cloud Speculative Decoding",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.18963"
+    },
+    {
+      "candidate_id": 25,
+      "title": "SynthDCB: World Distillation for Scalable Device Control Benchmarking",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.18639"
+    },
+    {
+      "candidate_id": 26,
+      "title": "Think2Listen: Evidence-Centric Learning For Agentic Audio Understanding With LALMS",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.21083"
+    },
+    {
+      "candidate_id": 27,
+      "title": "ViRA: Toward Ultra-High-Resolution Visual Agents via Cross-Input Relative Policy Optimization",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.21605"
+    },
+    {
+      "candidate_id": 28,
+      "title": "VIVID: A Visual Harness for Agentic Video Editing",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.20688"
+    },
+    {
+      "candidate_id": 29,
+      "title": "We Have All the Cards: Securing Agent Cards at the Operational Trust Boundary of the",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.18887"
+    },
+    {
+      "candidate_id": 30,
+      "title": "WeVisForensics: Self-Evolving Agent for Omni AI-Generated Video Detection",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.21373"
+    },
+    {
+      "candidate_id": 31,
+      "title": "When AI Agents Should Repair, Replan, or Abandon",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.19663"
+    },
+    {
+      "candidate_id": 32,
+      "title": "When Facts Change, Which Decisions Break? Dependency-Aware Context Graphs for Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 27,
+      "link": "https://arxiv.org/abs/2611.19859"
+    },
+    {
+      "candidate_id": 33,
+      "title": "MedJev: A System One Vision-Language Decision Model for Fast and Effective Medical Image",
+      "snippet_len": 139,
+      "cluster_text_len": 139,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-18",
+      "domain": "huggingface.co",
+      "score": 27,
+      "link": "https://huggingface.co/papers/2611.20992"
+    },
+    {
+      "candidate_id": 34,
+      "title": "Google’s Spark AI agent becomes ‘Tasks’ — and now it’s free",
+      "snippet_len": 109,
+      "cluster_text_len": 109,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-18",
+      "domain": "theverge.com",
+      "score": 25.70043971814109,
+      "link": "https://www.theverge.com/tech/1035756/google-spark-ai-tasks-free"
+    },
+    {
+      "candidate_id": 35,
+      "title": "K2-Horizon releases six open LLMs, 0.9B to 375B-A23B, each with 36 to 70 checkpoint tags",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "huggingface.co",
+      "score": 27.70043971814109,
+      "link": "https://huggingface.co/posts/savoji/791728241018982"
+    },
+    {
+      "candidate_id": 36,
+      "title": "Acting by Intent, Reacting by Sight: Visual Conditioned Reflexes for Real-Time VLM Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.18723"
+    },
+    {
+      "candidate_id": 37,
+      "title": "AdMem: Expectation-Grounded Procedural Memory for Long-Horizon Task-Solving Agents",
+      "snippet_len": 130,
+      "cluster_text_len": 130,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.20605"
+    },
+    {
+      "candidate_id": 38,
+      "title": "Agent Authenticator: Passkey-Grade, Hardware-Bound Authentication for AI Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19536"
+    },
+    {
+      "candidate_id": 39,
+      "title": "Agent-Guided Process Verification for Mathematical Self-Correction",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19122"
+    },
+    {
+      "candidate_id": 40,
+      "title": "Agentic On-Policy Distillation Implicitly Reshapes LLMs' ReAct Patterns",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19244"
+    },
+    {
+      "candidate_id": 41,
+      "title": "Auditable Authorization for LLM Agents: Empirical Evidence Across Model, Harness, and",
+      "snippet_len": 148,
+      "cluster_text_len": 148,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19237"
+    },
+    {
+      "candidate_id": 42,
+      "title": "Beyond Clumsy Agentic Tool Calling: How Cueing and Spotting Make the Difference",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19275"
+    },
+    {
+      "candidate_id": 43,
+      "title": "Beyond Plain MCP: Do Decision Models and Code Mode Make Tool Use Cheaper and Faster?",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19123"
+    },
+    {
+      "candidate_id": 44,
+      "title": "Beyond Prompts: Runtime Contracts for Coding Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19549"
+    },
+    {
+      "candidate_id": 45,
+      "title": "BOXBOX: Recursive Harness Self-Improvement for Long-Running Performance Optimization",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.09218"
+    },
+    {
+      "candidate_id": 46,
+      "title": "CivilBench: Benchmarking Vision-Language Models for Multimodal Information Integration in",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.21105"
+    },
+    {
+      "candidate_id": 47,
+      "title": "CLEW: Log-Anchored Backward Tracing for Root-Cause Code Localization",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19448"
+    },
+    {
+      "candidate_id": 48,
+      "title": "CompoundingKernel: Self-Improving from Zero to First",
+      "snippet_len": 142,
+      "cluster_text_len": 142,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19230"
+    },
+    {
+      "candidate_id": 49,
+      "title": "DetourBench: Trajectory-Level Evaluation of Interactive Agents with Exact Minimum-Action Bounds",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.20844"
+    },
+    {
+      "candidate_id": 50,
+      "title": "Discovering formally verified quantum programs with AI",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.09822"
+    },
+    {
+      "candidate_id": 51,
+      "title": "Does the Voice Matter? Evaluating Frustration Detection on Deployed Clinical Voice-Agent Calls",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.21001"
+    },
+    {
+      "candidate_id": 52,
+      "title": "Dual-Stage Channel-Posterior Integration for MLM-Aided Token Communications",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.18958"
+    },
+    {
+      "candidate_id": 53,
+      "title": "Edit Recommendation: Can LLMs Anticipate Edit Requests from Users, and When?",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.21155"
+    },
+    {
+      "candidate_id": 54,
+      "title": "Editable Video Context: Mid-Context KV-Cache Reuse for Context-Managing Video LLMs",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.18718"
+    },
+    {
+      "candidate_id": 55,
+      "title": "Eliciting Research Taste in LLMs through Future Research Direction Choice",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19794"
+    },
+    {
+      "candidate_id": 56,
+      "title": "Evaluating the Robustness of Fact-Checking LLMs on Multilingual Evidence",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.18623"
+    },
+    {
+      "candidate_id": 57,
+      "title": "EVIDENT: Evaluating Evidence Grounding in GUI Agents",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.20488"
+    },
+    {
+      "candidate_id": 58,
+      "title": "From Data to Wisdom: Rethinking AI Through an Epistemic Lens",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.16726"
+    },
+    {
+      "candidate_id": 59,
+      "title": "From Recursion to Convolution: Parallel Self-Improvement for Multi-Agent Systems",
+      "snippet_len": 136,
+      "cluster_text_len": 136,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.20891"
+    },
+    {
+      "candidate_id": 60,
+      "title": "Guiding AI Agents to Generate Conjectures by Encoding How Theorems Build on One Another",
+      "snippet_len": 129,
+      "cluster_text_len": 129,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.19108"
+    },
+    {
+      "candidate_id": 61,
+      "title": "How to make a moral agent: sentimentalism and rationalism as lenses on AI",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.18714"
+    },
+    {
+      "candidate_id": 62,
+      "title": "Infrathon: Benchmarking Language Agents for Real-World",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "arXiv cs.AI",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arxiv.org",
+      "score": 25,
+      "link": "https://arxiv.org/abs/2611.11995"
+    },
+    {
+      "candidate_id": 63,
+      "title": "Not even Sam Altman is safe from AI deepfakes on Instagram",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-18",
+      "domain": "theverge.com",
+      "score": 23.584962500721154,
+      "link": "https://www.theverge.com/news/1035957/meta-alexandr-wang-sam-altman-instagram-ai-deepfake"
+    },
+    {
+      "candidate_id": 64,
+      "title": "代码\"ANT\"锁定纳斯达克：Anthropic 拿到上市通行证，发行价 70至78 美元11月17日SEC公示文件显示",
+      "snippet_len": 138,
+      "cluster_text_len": 138,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "news.aibase.com",
+      "score": 22.539030204684515,
+      "link": "https://news.aibase.com/zh/news/32362"
+    },
+    {
+      "candidate_id": 65,
+      "title": "资本盛宴持续加码：红杉资本与光速创投等巨头拟在 Anthropic IPO 中追加数十亿美元投资AI赛道资本热度攀升。知情人士称，AI初创公司Anthropic PBC发展势头强劲",
+      "snippet_len": 122,
+      "cluster_text_len": 122,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "news.aibase.com",
+      "score": 22.539030204684515,
+      "link": "https://news.aibase.com/zh/news/32365"
+    },
+    {
+      "candidate_id": 66,
+      "title": "Claude 仅用 3 天攻克 AMD 芯片底层适配：英伟达 CUDA 护城河迎来最强冲击AI硬件与底层软件生态竞争格局出现结构性松动。Anthropic旗下Claude Mythos仅用3天",
+      "snippet_len": 125,
+      "cluster_text_len": 125,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "news.aibase.com",
+      "score": 22.539030204684515,
+      "link": "https://news.aibase.com/zh/news/32366"
+    },
+    {
+      "candidate_id": 67,
+      "title": "OpenAI 官宣 GPT-6.2 Astra 与 Sol：API 成本暴降 60%，全面赋能专业研究与日常办公11月17日",
+      "snippet_len": 140,
+      "cluster_text_len": 140,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "news.aibase.com",
+      "score": 22.539030204684515,
+      "link": "https://news.aibase.com/zh/news/32367"
+    },
+    {
+      "candidate_id": 68,
+      "title": "Google expands access to Gemini Tasks, which can help with calls",
+      "snippet_len": 303,
+      "cluster_text_len": 303,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-18",
+      "domain": "techcrunch.com",
+      "score": 26.523561956057012,
+      "link": "https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/"
+    },
+    {
+      "candidate_id": 70,
+      "title": "Pedestal AI raises $4.7 million to agentify the supply chain",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-18",
+      "domain": "techcrunch.com",
+      "score": 28.523561956057012,
+      "link": "https://techcrunch.com/2026/11/17/pedestal-ai-raises-4-7-million-to-agentify-the-supply-chain/"
+    },
+    {
+      "candidate_id": 71,
+      "title": "AI models can be tricked into identifying civilians as military targets by telling them",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-18",
+      "domain": "techcrunch.com",
+      "score": 30.523561956057012,
+      "link": "https://techcrunch.com/2026/11/17/ai-models-can-be-tricked-into-identifying-civilians-as-military-targets-by-telling-them-its-a-game/"
+    },
+    {
+      "candidate_id": 72,
+      "title": "Daydream’s new AI agent acts as your personal stylist — and can shop for you",
+      "snippet_len": 141,
+      "cluster_text_len": 141,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-18",
+      "domain": "techcrunch.com",
+      "score": 26.523561956057012,
+      "link": "https://techcrunch.com/2026/11/17/daydreams-new-ai-agent-acts-as-your-personal-stylist-and-can-shop-for-you-too/"
+    },
+    {
+      "candidate_id": 73,
+      "title": "Introducing GPT-6.2 Astra and Sol",
+      "snippet_len": 302,
+      "cluster_text_len": 302,
+      "source": "OpenAI News",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-18",
+      "domain": "openai.com",
+      "score": 22,
+      "link": "https://openai.com/index/introducing-gpt-6-2-astra-sol"
+    },
+    {
+      "candidate_id": 74,
+      "title": "AI应用淘汰潮来了？13款明星产品折戟，关停",
+      "snippet_len": 136,
+      "cluster_text_len": 136,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "aitntnews.com",
+      "score": 21.470531984613093,
+      "link": "https://aitntnews.com/newDetail.html?newId=31377"
+    },
+    {
+      "candidate_id": 75,
+      "title": "Nvidia’s Q3 earnings hit the mark, without mentioning the whole Jensen Huang thing",
+      "snippet_len": 303,
+      "cluster_text_len": 303,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-18",
+      "domain": "theverge.com",
+      "score": 23.459431618637296,
+      "link": "https://www.theverge.com/tech/1036032/nvidia-q3-2027-jensen-huang"
+    },
+    {
+      "candidate_id": 77,
+      "title": "爱尔兰监管重拳出击：马斯克旗下 X 遭勒令叫停，禁止利用 AI 智能体抓取数据训练 Grok爱尔兰数据保护委员会（DPC）证实，已勒令X暂停将AI智能体采集的第三方数据用于训练Grok AI",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32363"
+    },
+    {
+      "candidate_id": 78,
+      "title": "微软 CEO 纳德拉：我已成为 AGI 信徒，但 AI 绝对没有意识在人工智能狂飙背景下，科技巨头高管判断备受瞩目。据The Verge报道",
+      "snippet_len": 97,
+      "cluster_text_len": 97,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32368"
+    },
+    {
+      "candidate_id": 79,
+      "title": "微软给 AI 装上“决策脑”：Decision-1.1 跑赢 GPT-6 Luna，拿不准还能弃权微软17日推出决策模型Microsoft-Decision-1.1",
+      "snippet_len": 123,
+      "cluster_text_len": 123,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32369"
+    },
+    {
+      "candidate_id": 80,
+      "title": "微软掏出首款语音对语音模型 MAI Realtime 1：能被打断、会打电话干活，价格只有对手三分之一微软在 Ignite 2026 发布首款语音对语音模型 MAI Realtime 1",
+      "snippet_len": 112,
+      "cluster_text_len": 112,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32374"
+    },
+    {
+      "candidate_id": 85,
+      "title": "The DOJ says it’s investigating Megaspeed",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-18",
+      "domain": "theverge.com",
+      "score": 19,
+      "link": "https://www.theverge.com/policy/1035410/doj-megaspeed-nvidia-investigation-update"
+    },
+    {
+      "candidate_id": 87,
+      "title": "New precise math tool released that is meant to be used to validate AI/ML code that",
+      "snippet_len": 136,
+      "cluster_text_len": 136,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/posts/krisbailey/884788322307737"
+    },
+    {
+      "candidate_id": 88,
+      "title": "对话 LiberAI 刘松铭：Astra 来袭",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "aitntnews.com",
+      "score": 19,
+      "link": "https://aitntnews.com/newDetail.html?newId=31379"
+    },
+    {
+      "candidate_id": 89,
+      "title": "靠AI陪伴拿下千万下载后，又悄悄上线第一人称互动视频Loopcat",
+      "snippet_len": 146,
+      "cluster_text_len": 146,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "aitntnews.com",
+      "score": 19,
+      "link": "https://aitntnews.com/newDetail.html?newId=31376"
+    },
+    {
+      "candidate_id": 90,
+      "title": "潜伏小红书48h：AI时代，顶尖技术人才都在聊什么？",
+      "snippet_len": 110,
+      "cluster_text_len": 110,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "aitntnews.com",
+      "score": 19,
+      "link": "https://aitntnews.com/newDetail.html?newId=31375"
+    },
+    {
+      "candidate_id": 92,
+      "title": "Grok Bot took unapproved actions, ignored orders to stop",
+      "snippet_len": 139,
+      "cluster_text_len": 139,
+      "source": "Ars Technica AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-17",
+      "domain": "arstechnica.com",
+      "score": 18.247927513443585,
+      "link": "https://arstechnica.com/security/2026/11/grok-bot-took-unapproved-actions-ignored-orders-to-stop-and-then-denied-it/"
+    },
+    {
+      "candidate_id": 93,
+      "title": "A Man and His Muse AI Agent Sue Meta",
+      "snippet_len": 129,
+      "cluster_text_len": 129,
+      "source": "404 Media AI",
+      "source_group": "foreign_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "404media.co",
+      "score": 18,
+      "link": "https://www.404media.co/a-man-and-his-muse-ai-agent-sue-meta/"
+    },
+    {
+      "candidate_id": 94,
+      "title": "Your documents have headings. Does your RAG chunker use them? 👀 I put together OutlineLM",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/posts/DiTy/839713833366358"
+    },
+    {
+      "candidate_id": 95,
+      "title": "BananaMind SLM Digest – 2026-11-17 🚀 Pascal-15M-v1.0 by AtomixLabs ( ) – a",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/posts/BananaMindBot/692526166526278"
+    },
+    {
+      "candidate_id": 96,
+      "title": "Hey guys, just had a few ideas. Still, id love model suggestions im thinking of making",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/posts/SolsticeAI/846383854937225"
+    },
+    {
+      "candidate_id": 97,
+      "title": "I built with to answer a surprisingly difficult question: Where does your accent come from?",
+      "snippet_len": 124,
+      "cluster_text_len": 124,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/posts/Smooke/761982033568261"
+    },
+    {
+      "candidate_id": 98,
+      "title": "软件的用户变成「人 + Agent」之后",
+      "snippet_len": 145,
+      "cluster_text_len": 145,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-17",
+      "domain": "aitntnews.com",
+      "score": 16.807354922057606,
+      "link": "https://aitntnews.com/newDetail.html?newId=31361"
+    },
+    {
+      "candidate_id": 99,
+      "title": "Ever wonder if you could weight your training samples from foundational embedding? It is",
+      "snippet_len": 122,
+      "cluster_text_len": 122,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "huggingface.co",
+      "score": 15,
+      "link": "https://huggingface.co/posts/Yann-CV/171120731005021"
+    },
+    {
+      "candidate_id": 100,
+      "title": "Hugging Face buckets are absolutely AMAZING!",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-18",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/posts/mithulaartigala/641031046358597"
+    }
+  ]
+}

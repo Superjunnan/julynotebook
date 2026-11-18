@@ -1,0 +1,62 @@
+{
+  "run_date": "2026-11-18",
+  "enabled": true,
+  "anchor_count": 3,
+  "singleton_candidates": 6,
+  "merged": 4,
+  "kept": 2,
+  "invalid_or_low_confidence": 0,
+  "min_confidence": 0.72,
+  "min_topic_score": 68,
+  "max_items": 24,
+  "decisions": [
+    {
+      "candidate_id": 71,
+      "action": "merge",
+      "target_topic_id": 34,
+      "confidence": 0.85,
+      "reason": "涉及 Anthropic 和 OpenAI 的 AI 模型被诱导识别军事目标，属于 Google Spark AI Ag。",
+      "applied": true
+    },
+    {
+      "candidate_id": 63,
+      "action": "keep",
+      "target_topic_id": null,
+      "confidence": 0.65,
+      "reason": "关于 Sam Altman 的 AI 深伪造像，与 Google Spark AI Agent 主题无关，属于独立的公众。",
+      "applied": false
+    },
+    {
+      "candidate_id": 72,
+      "action": "merge",
+      "target_topic_id": 34,
+      "confidence": 0.82,
+      "reason": "关于 Daydream 的 AI 代理作为个人造型师，属于 AI Agent 的具体应用场景，与 Google Spar。",
+      "applied": true
+    },
+    {
+      "candidate_id": 70,
+      "action": "merge",
+      "target_topic_id": 34,
+      "confidence": 0.8,
+      "reason": "Pedestal AI 旨在将供应链代理化，属于 AI Agent 的垂直应用，与 Google Spark AI Ag。",
+      "applied": true
+    },
+    {
+      "candidate_id": 85,
+      "action": "merge",
+      "target_topic_id": 34,
+      "confidence": 0.78,
+      "reason": "Megaspeed 数据中心公司涉及 DOJ 调查，属于 AI 基础设施与监管话题，与 Google Spark AI。",
+      "applied": true
+    },
+    {
+      "candidate_id": 75,
+      "action": "keep",
+      "target_topic_id": null,
+      "confidence": 0.6,
+      "reason": "Nvidia 财报属于公司财务事件，与 AI Agent 主题无关，必须 keep。",
+      "applied": false
+    }
+  ]
+}
