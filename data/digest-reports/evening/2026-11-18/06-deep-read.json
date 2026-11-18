@@ -1,0 +1,406 @@
+{
+  "run_date": "2026-11-18",
+  "selected_topic_ids": [
+    64,
+    69,
+    95,
+    66,
+    65,
+    94,
+    78,
+    71,
+    67,
+    63,
+    33,
+    5,
+    7,
+    40,
+    41,
+    44
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 16,
+    "base_members_added": 19,
+    "expanded_added": 1,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 25,
+    "final_targets": 20,
+    "global_cap": 30
+  },
+  "deep_read_links": 20,
+  "materials_total": 20,
+  "materials_windowed": 20,
+  "materials_usable": 19,
+  "materials_by_source": {
+    "WIRED AI": 1,
+    "404 Media AI": 1,
+    "arXiv cs.AI": 7,
+    "OpenAI News": 1,
+    "AITNT 资讯": 2,
+    "量子位": 1,
+    "AIBase": 6
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 64,
+      "topic_title": "DeepSeek长文本限流遭差评",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        15
+      ],
+      "members": [
+        {
+          "ref_id": 15,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32383",
+          "title": "免费开源招来“斗米仇”？DeepSeek 仅因长文本限流竟遭极端差评与投诉随着AI技术迅速普及，免费与开源成为行业繁荣核心引擎，但庞大用户基数与有限算力资源碰撞，摩擦显现。近日，国内AI领军者DeepSeek对部分超长上下文功能限流，引发应用商店差评潮甚至极端投诉；长对话与角色扮演等需求引爆争议，折射大模型免费模式背后的生态痛点。 3 小时前 11.6K",
+          "pub_date": "2026-11-18",
+          "content": "随着人工智能技术的飞速普及，免费与开源一度成为了推动行业繁荣的核心引擎。然而，当庞大的用户基数与有限的算力资源发生碰撞时，现实的摩擦也随之浮出水面。近日，国内人工智能领军者 DeepSeek 因对部分超长上下文功能实施限流，意外引发了一波应用商店的差评潮，甚至出现了极端投诉事件，折射出当前大模型免费模式背后不容忽视的生态痛点。长对话与角色扮演引爆算力:限流调整引发用户不满此前，DeepSeek 凭借出色的模型能力和长期免费的策略，吸引了海量用户的涌入。在实际使用中，许多用户将其广泛应用于长篇小说创作、深度角色扮演等高强度、超长上下文的互动场景中。由于此类高频且体量庞大的交互会频繁触发海量的 Token 消耗，给平台底层算力带来了巨大的承载压力。为了维持服务的整体稳定与可持续运转，平台近期开始对部分长期对话及超长上下文功能进行了必要的限流和使用额度限制。尽管官方强调日常普通查询和标准使用完全不受影响，但这一调整依然引发了部分高频依赖者的强烈反弹。极端情绪暴露生态短板:“免费”不应等同于“理所当然”在这波因限流而起的风波中，部分应用商店涌现出了大量差评，其中甚至夹杂着极端个例。有极端的负面声音向政府部门进行投诉，甚至扬言若不解决就采取极端行为，最终惊动了当地警方与急救人员介入处置。这一事件在社交平台上引发了广泛感慨与热烈讨论。"
+        }
+      ]
+    },
+    {
+      "topic_id": 69,
+      "topic_title": "MiniMax Code负责人谈Personal Agent价值",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        19
+      ],
+      "members": [
+        {
+          "ref_id": 19,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31386",
+          "title": "对谈 MiniMax Code 负责人：什么是有价值的 Personal Agent？",
+          "pub_date": "2026-11-18",
+          "content": "在 MiniMax Code 研发负责人 Ronny 的团队里，95% 以上的代码，甚至文档，都可能由 AI 完成初稿。写完之后，还会有多个 Agent 参与 review。 但 AI 写得越快，并不意味着人就能越轻松。 比如你的 Personal Agent，它的上下文需要有人长期维护：功能需求需要你管理，开发任务需要你判断，它的开发进度也要盯着：最终，AI 分担了生产工作，人却仍要为结果负责。 当越来越强大的 AI 已经能主动进化，下一步还应该帮人接过什么事情？ 一个真正有价值的 Personal Agent，又该具备什么能力？ 在 2026 第二届观猹大会现场，我们与 Ronny 进行了一场 AMA 对谈，主持人特别邀请了@刘聪NLP 老师，聊了聊这些问题。 AI 代码写得越快，人的审阅就越重要 特工宇宙：你们团队自己在用 MiniMax Code 吗？内部开发它的时候，AI 和人的代码比例大概是多少？ Ronny：在用。我认为要做一款 Agent，必须做到一件事： 让你的 Agent 自己去开发自己，完成软件意义上的自进化。这在团队内部是一个严格的标准。我们要求每个人在使用过程中，发现产品给日常工作带来的不顺滑之处，再把它改进掉，让自己成为第一批用户。 比例上，我们 95% 以上的代码、甚至文档，可能都是由 AI 编写的。"
+        }
+      ]
+    },
+    {
+      "topic_id": 66,
+      "topic_title": "腾讯WorkBuddy日活破千万",
+      "topic_type": "news",
+      "cross_source_score": 58,
+      "mention_count": 2,
+      "source_count": 1,
+      "member_count": 2,
+      "refs": [
+        13,
+        14
+      ],
+      "members": [
+        {
+          "ref_id": 13,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32385",
+          "title": "腾讯三季报:WorkBuddy日均Token用量国内第一，云收入同比增长35%11月18日，腾讯发布2026年三季度财报：AI业务多点突破，混元Hy4发布时居Agent Arena中国模型第一；WorkBuddy日活超1000万，日均Token消耗超100万亿，成国内日均大模型Token消耗最高AI产品；微信AI助手“小微”灰测扩大；AI需求带动云服务收入同比增35%。当季营收2073.4亿元，同比增8%。 2 小时前 10.6K",
+          "pub_date": "2026-11-18",
+          "content": "11月18日，腾讯控股（00700.HK）发布2026年第三季度财报，AI业务取得多项突破:最新一代混元大模型Hy4发布时位列Agent Arena中国模型第一;WorkBuddy日活超1000万，日均Token消耗量超100万亿，成为国内日均大语言模型Token消耗量最高的AI产品;微信AI助手“小微”灰测范围持续扩大;AI需求带动云服务收入同比增长35%。三季度，腾讯营收2073.4亿元，同比增长8%;营销服务、增值服务、金融科技及企业服务三大业务板块收入分别同比增长19%、3%、9%;若剔除新AI产品贡献，经营利润同比增长8%至833亿元。公司现金储备充裕，投资组合价值达数千亿元;若剔除算力采购的预付款项，自由现金流为169亿元。同期，腾讯资本开支付款651亿元、研发投入323.6亿元，分别同比增长226%和42%。腾讯董事会主席兼首席执行官马化腾表示，“我们在模型及应用层面取得了一系列的重要进展，加速了腾讯面向AI新时代的演进。”。"
+        },
+        {
+          "ref_id": 14,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32389",
+          "title": "日活破千万、日均消耗 100 万亿 Token：腾讯 WorkBuddy 交出周年成绩单腾讯2026年第三季度财报披露，AI助手WorkBuddy截至11月初日活突破1000万，日均Token调用量超100万亿，成为中国大语言模型日均Token用量最高的AI产品。自今年3月发布以来，它已完成100多个大版本更新，迭代迅速；C端火热同时，B端也在拓展，开放平台上线仅两个月，Buddy应用已取得进展。 1 小时前 9.9K",
+          "pub_date": "2026-11-18",
+          "content": "腾讯今日发布 2026 年第三季度财报，其中披露了 WorkBuddy 的最新数据：截至 11 月初，这款 AI 助手日活跃用户数已突破 1000 万，日均 Token 调用量超过 100 万亿，一举成为中国大语言模型日均 Token 用量最高的 AI 产品。自今年 3 月发布以来，它已完成 100 多个大版本更新，迭代速度肉眼可见。企业侧同样攻城略地C 端火热之外，B 端生意也没落下。开放平台上线仅两个月，Buddy 应用已覆盖 55 个专业场景、超 30 个垂直领域，金融、法律、医疗、教育、公益、设计、SaaS 等均有布局。企业版更落地 50 多个行业，在中国企业 500 强中拿下一半的渗透率——对一款上线不满一年的产品，这是相当少见的成绩。给 WorkBuddy 供弹药的新模型同样能打：Hy4 flash 上线首日 Token 调用量突破 50 万亿，创下混元系列首日调用量纪录，还登顶 OpenRouter LLM 日排行榜，跻身全球开发者高频调用的首选轻量模型；在 WorkBuddy 内部，其首日调用量也达到 Hy4 preview 上线首日的 10 倍。模型、产品、生态三线齐推，腾讯的 AI 牌面正越打越厚。"
+        }
+      ]
+    },
+    {
+      "topic_id": 65,
+      "topic_title": "腾讯开源Hy4flash大模型",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        16
+      ],
+      "members": [
+        {
+          "ref_id": 16,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32380",
+          "title": "腾讯把 Hy4 flash 开源了：224B 大模型放进 GitHub，人人可下载腾讯混元官宣开源Hy4flash系列，含标准版、FP8量化版及可从零训练的Base版，GitHub、Hugging Face、ModelScope、GitCode均可下载，并提供GGUF格式便于本地部署。官方预告更大Hy4模型也将开源。该模型走性价比路线，总参224B，含64B Engram参数。 3 小时前 12.2K",
+          "pub_date": "2026-11-18",
+          "content": "腾讯混元今日官宣开源 Hy4flash 系列，一口气放出三个版本:标准版 Hy4flash、量化后的 Hy4flash-FP8，以及供研究者从零训练的 Hy4flash Base。GitHub、Hugging Face、ModelScope、GitCode 四个平台均可下载，还额外提供了 GGUF 格式，方便本地部署的玩家跑起来。官方同时预告，更大的 Hy4模型也在开源路上。卖点不是最大，是划算这款模型走的是性价比路线:总参数量224B，其中含64B Engram 参数，每个 token 只激活12B，属稀疏架构，既省算力又保能力。它支持多模态输入，上下文长度拉到100万 token，API 价格较 Hy4大幅下调——官方给它的标签是迄今性价比最高的 Hy 模型。落地也铺得够广:腾讯云 TokenHub、元宝、企业微信、QQ、ima、Marvis 等产品已接入该模型。对开发者而言，权重可下、协议公开、价格更低，等于把大模型应用的成本门槛又踩低一截;对腾讯来说，开源既是刷存在感，也是借社区反哺自家生态的惯用打法。"
+        }
+      ]
+    },
+    {
+      "topic_id": 94,
+      "topic_title": "Z世代与AI伴侣关系调查",
+      "topic_type": "news",
+      "cross_source_score": 66,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        1,
+        2
+      ],
+      "members": [
+        {
+          "ref_id": 1,
+          "source": "WIRED AI",
+          "link": "https://www.wired.com/story/over-a-third-of-gen-z-rely-on-ai-for-friendship/",
+          "title": "Over a Third of Gen Z-ers Rely on AI for Friendship",
+          "pub_date": "Wed, 18 Nov 2026 05:01:00 +0000",
+          "content": "As generational cohorts go, Gen Z has been saddled with its share of labels. They scarcely have sex, are “quiet quitters” when it comes to office jobs, and, as they avoid traditional partnership, have learned to solomaxx.Whether these labels are deserved or completely off the mark, what continually connects this unique class of young people is a desire to reconstruct how they think about connection.In “Friendship in an Online-Offline World: Digital Life, Connection and Wellbeing” researchers from public polling firm Gallup and the Digital Wellness Lab at Boston Children’s Hospital found that m。"
+        },
+        {
+          "ref_id": 2,
+          "source": "404 Media AI",
+          "link": "https://www.404media.co/gallup-study-friendship-ai-companions/",
+          "title": "Massive New Study Shows How Young People Feel About AI Companions",
+          "pub_date": "Wed, 18 Nov 2026 05:01:00 GMT",
+          "content": "A new study from Gallup looked at how young people across the world are making friends, both digitally and in person. The good news is that around 93% of the young people surveyed reported having at least one strong in-person friendship. The weird news is that 33% said they had an AI companion.Gallup’s study is lengthy and nuanced."
+        }
+      ]
+    },
+    {
+      "topic_id": 78,
+      "topic_title": "AI时代顶尖技术人才讨论",
+      "topic_type": "news",
+      "cross_source_score": 63,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        11,
+        12
+      ],
+      "members": [
+        {
+          "ref_id": 11,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31375",
+          "title": "潜伏小红书48h：AI时代，顶尖技术人才都在聊什么？",
+          "pub_date": "2026-11-18",
+          "content": "「校招生如果有自己的想法，能申请人力和算力资源吗？」「AI越来越能写代码，我们进去以后主要做什么？」「新人提的想法，Leader真的会听吗？」「AI时代下，该如何发展自己？」 好家伙，现在的应届生，提问务实，又直击核心！ 11月14日、15日，量子位在小红书北京办公室深潜了两个下午，感受了一场画风不太一样的技术校招。 这次，「薯厂」把校招宣讲会直接搬进办公区，办成了REDpath校招技术沙龙。 没有太多台上的枯燥介绍，这场沙龙把更多时间留给台下的AMA（Ask Me Anything）环节。 校招生们和未来可能共事的技术Leader坐下来，从技术方向、团队氛围，一直聊到绩效、个人发展。 为了这场线下交流，有学生专程从上海、南京、香港等地赶来，还有正在新加坡读书的应届生，连夜飞到了北京。 量子位粗略算下，那两天里，有接近200名应聘者到场交流。 学生们的问题一个比一个实在，技术Leader们也不藏着掖着。一位从新加坡赶来的应聘者告诉量子位： 相比线上面试，这种面对面的交流，能提前感受到未来团队真实的工作氛围。挺棒的！ 活动现场，不光是学生在提问。 听到某位应届生在小红书开店盈利过万后，技术Leader眼睛都亮了，急问对方小红书的商家工作台「千帆」好不好用，还有哪些功能需要改进。 好么，原本是学生来了解未来团队的，聊着聊着，竟成用户访谈了。 有了AI，技术新人的第一份工作长什么样？"
+        },
+        {
+          "ref_id": 12,
+          "source": "量子位",
+          "link": "https://www.qbitai.com/2026/11/510737.html",
+          "title": "潜伏小红书48h：AI时代，顶尖技术人才都在聊什么？",
+          "pub_date": "Wed, 18 Nov 2026 02:49:23 +0000",
+          "content": "< img id=\"wx_img\" src=\"https://www.qbitai.com/wp-content/uploads/imgs/qbitai-logo-1.png\" width=\"400\" height=\"400\"> 2026-11-18 10:49:23 来源：量子位 小红书校招沙龙，一群技术高手认真对待年轻人的野心 田晏林 发自 凹非寺 量子位 | 公众号 QbitAI 「校招生如果有自己的想法，能申请人力和算力资源吗？」「AI越来越能写代码，我们进去以后主要做什么？」「新人提的想法，Leader真的会听吗？」「AI时代下，该如何发展自己？」 好家伙，现在的应届生，提问务实，又直击核心！ 11月14日、15日，量子位在小红书北京办公室深潜了两个下午，感受了一场画风不太一样的技术校招。 这次，「薯厂」把校招宣讲会直接搬进办公区，办成了REDpath校招技术沙龙。 没有太多台上的枯燥介绍，这场沙龙把更多时间留给台下的AMA（Ask Me Anything）环节。 校招生们和未来可能共事的技术Leader坐下来，从技术方向、团队氛围，一直聊到绩效、个人发展。 为了这场线下交流，有学生专程从上海、南京、香港等地赶来，还有正在新加坡读书的应届生，连夜飞到了北京。 量子位粗略算下，那两天里，有接近200名应聘者到场交流。"
+        }
+      ]
+    },
+    {
+      "topic_id": 71,
+      "topic_title": "OpenAI优化芯片设计",
+      "topic_type": "news",
+      "cross_source_score": 63,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        10
+      ],
+      "members": [
+        {
+          "ref_id": 10,
+          "source": "OpenAI News",
+          "link": "https://openai.com/index/advancing-chip-design-with-our-models",
+          "title": "Advancing chip design with OpenAI models",
+          "pub_date": "Wed, 18 Nov 2026 00:00:00 GMT",
+          "content": "OpenAI models optimized circuits used in Jalapeño silicon and improved RISC‑V core designs, showing progress in AI-assisted chip design with GPT‑6 Astra."
+        }
+      ]
+    },
+    {
+      "topic_id": 67,
+      "topic_title": "Anthropic推出关联账单功能",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 17,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32379",
+          "title": "Anthropic 在 Claude 平台推出测试版关联账单功能：打通生态闭环，为第三方应用开启 OAuth 计费测试据多家媒体报道，Anthropic近日在Claude平台推出测试版关联账单功能，并同步启动第三方应用关联计费OAuth测试，被视为其构建开放生态的关键一步。此举顺应大模型从对话工具向智能体、多应用平台演进的趋势，旨在打通第三方应用与底层平台的计费及互联，推动生态开放与协作。 3 小时前 10.3K",
+          "pub_date": "2026-11-18",
+          "content": "人工智能平台在构建开放生态的道路上正迈出关键一步。据华尔街见闻、财联社及同花顺财经等多家媒体报道，人工智能巨头 Anthropic 近日正式在 Claude 平台上推出了测试版的关联账单功能，并同步启动了第三方应用的关联计费 OAuth 测试。开启生态互联:OAuth 计费测试全面落地随着大模型从单一的对话工具逐步向具备复杂工作流的智能体与多应用平台演进，如何让第三方应用与底层大模型实现顺畅的商业化协同，成为了各大科技公司发力的核心方向。此次 Anthropic 推出的测试版关联账单功能，核心在于打通了平台与第三方服务之间的账户与计费链路。通过启动第三方应用的关联计费 OAuth 测试，开发者和生态合作伙伴能够将外部应用的调用与用户的 Claude 账户体系及账单进行安全、规范的关联。这一举措不仅简化了用户的付费与结算体验，也为后续更多第三方插件、工具以及 Agent 服务在 Claude 平台上的规模化接入和商业化变现奠定了坚实的底层基础设施。"
+        }
+      ]
+    },
+    {
+      "topic_id": 63,
+      "topic_title": "马斯克呛声OpenAI",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        18
+      ],
+      "members": [
+        {
+          "ref_id": 18,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32386",
+          "title": "马斯克公开呛声奥尔特曼，直言 SpaceX 绝不向 OpenAI 出售算力人工智能算力领域掀起高层口水战。SpaceX持续重金投入数据中心，正成为美国颇具潜力的算力租赁商。马斯克公开表态，SpaceX预计不会向竞争对手OpenAI出售任何算力，并预设未来对其销售额为零。双方还就需求虚高论与产品质疑展开隔空交锋，引发关注。 2 小时前 11.4K",
+          "pub_date": "2026-11-18",
+          "content": "人工智能行业的算力江湖近期迎来了一场高层口水战。据媒体报道，随着 SpaceX 在数据中心领域的持续重金投入，其正逐步成长为美国最具潜力的算力租赁商。然而，特斯拉与 SpaceX 首席执行官埃隆·马斯克近日在社交平台上公开表态，明确直言 SpaceX 预计不会向竞争对手 OpenAI 出售任何算力，并预设未来对 OpenAI 的销售额为零。隔空交锋:需求虚高论与产品质疑的碰撞这场口水战的导火索，源于 OpenAI 首席执行官萨姆·奥尔特曼此前公开的一番言论。奥尔特曼曾指出，当前的芯片制造商对 OpenAI 等大模型厂商的算力需求存在明显的高估，行业中普遍存在对订单的“重复计算”。他认为，随着市场上涌现出多家芯片供应商，外界常常向 OpenAI 询问需求量并以此推断最终市场规模，但实际上包括 OpenAI 在内的头部企业并不会买下所有芯片商的所有产品，整体需求存在一定的有限性和不确定性。Anthropic 的首席执行官阿莫代伊此前也曾表达过类似的观点，认为算力需求难以精确预测。面对奥尔特曼的“需求虚高论”，马斯克则毫不客气地予以反击。他在 X 平台上发帖直言，如果 OpenAI 的算力需求无法实现快速增长，那这恰恰意味着该公司的产品本身存在问题。马斯克坚信，当前人工智能应用端的整体需求依然十分强劲，丝毫不认同所谓的市场泡沫论。"
+        }
+      ]
+    },
+    {
+      "topic_id": 33,
+      "topic_title": "Agent Trust Infrastructure (ATI)",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        5
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.23202",
+          "title": "Agent Trust Infrastructure (ATI): A Federated Identity, Trust, Attestation, and Accountability Architecture for Cross-Organization Autonomous AI Agents",
+          "pub_date": "Wed, 18 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:AI agents increasingly collaborate across organizational boundaries, invoking tools and interacting with agents operated by independent entities. Although existing agent frameworks support planning and coordination, they lack a common mechanism for verifying cross-organizational agent identity, execution integrity, and authorization. We propose the Agent Trust Infrastructure (ATI), a framework-independent security architecture built on Public Key Infrastructure (PKI), Zero Trust Architecture (ZTA), and remote attestation."
+        }
+      ]
+    },
+    {
+      "topic_id": 5,
+      "topic_title": "SkillBuffBench",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        3
+      ],
+      "members": [
+        {
+          "ref_id": 3,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.22017",
+          "title": "SkillBuffBench: Measuring What Agent Skills Contribute across Harnesses, Models, Skill Access Modes and Memory",
+          "pub_date": "Wed, 18 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Agent Skills, file-based packages of procedural knowledge that a coding agent can discover and load on demand, are now shipped by every major agent harness, yet the evidence for how much they help comes almost entirely from settings in which the right Skill is hand-picked for the task and the agent starts from a blank slate. Neither holds in deployment, where an agent chooses from whatever library happens to be installed and frequently carries memory from earlier work."
+        }
+      ]
+    },
+    {
+      "topic_id": 7,
+      "topic_title": "ForecastGym: A Live",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        4
+      ],
+      "members": [
+        {
+          "ref_id": 4,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.23045",
+          "title": "ForecastGym: A Live, Controlled, and Replayable Benchmark for Forecasting Agents",
+          "pub_date": "Wed, 18 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Agents built on large language models (LLMs) increasingly forecast real-world events by searching the Web and reasoning over what they find. How well such an agent forecasts depends on both the retrieved evidence and the model, making control over that evidence essential for evaluation. Live evaluations can mix retrieval with reasoning when each system searches on its own, while retrospective search can leak later information through date filters or today's ranking of historical pages."
+        }
+      ]
+    },
+    {
+      "topic_id": 40,
+      "topic_title": "CrossEnv: Synthesizing Verifiable",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        6
+      ],
+      "members": [
+        {
+          "ref_id": 6,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.22777",
+          "title": "CrossEnv: Synthesizing Verifiable Cross-Environment Tasks for Long-Horizon Agent Training",
+          "pub_date": "Wed, 18 Nov 2026 00:00:00 -0500",
+          "content": "Authors:Zhengfeng Yu, Tian Lan, Zhijing Wu, Enbo Zhao, Xuannan Liu, Feihu Jiang, Qianghuai Jia, Longyue Wang, Zhao Xu, Weihua Luo, Xian-Ling Mao View PDF HTML (experimental) Abstract:Executable synthetic environments provide scalable training tasks and verifiable feedback for long-horizon agents. Existing environment synthesis methods primarily generate tasks within individual environments. However, these tasks do not adequately capture real-world interactions across services, where actions in one service depend on information obtained from another."
+        }
+      ]
+    },
+    {
+      "topic_id": 41,
+      "topic_title": "Does the Voice Matter? Evaluating",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        7
+      ],
+      "members": [
+        {
+          "ref_id": 7,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.21001",
+          "title": "Does the Voice Matter? Evaluating Frustration Detection on Deployed Clinical Voice-Agent Calls",
+          "pub_date": "Wed, 18 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Autonomous voice agents now conduct routine clinical follow-up calls, so some automated triage is unavoidable. A patient becoming frustrated is one thing that triage should catch. These systems typically read only the transcript the speech-to-text stage produces, not the voice, and whether that is enough is largely untested on real clinical speech."
+        }
+      ]
+    },
+    {
+      "topic_id": 44,
+      "topic_title": "EviDARL: Evidence-Centric Dual",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        8
+      ],
+      "members": [
+        {
+          "ref_id": 8,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.22310",
+          "title": "EviDARL: Evidence-Centric Dual-Agent Reasoning via Alternating Reinforcement Learning for Multi-Table Question Answering",
+          "pub_date": "Wed, 18 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Despite advances in LLM-based table reasoning, most studies focus on single-table settings. Multi-table QA requires multi-hop reasoning over complex table relationships and evidence dispersed across long contexts, often without verifiable intermediate traces. To address these challenges, we introduce EviDA, an evidence-centric dual-agent framework comprising an Evidence Construction Agent and a Reasoning and Answering Agent."
+        }
+      ]
+    }
+  ]
+}
