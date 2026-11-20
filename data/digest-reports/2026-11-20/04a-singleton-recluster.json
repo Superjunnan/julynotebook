@@ -1,0 +1,70 @@
+{
+  "run_date": "2026-11-20",
+  "enabled": true,
+  "anchor_count": 4,
+  "singleton_candidates": 7,
+  "merged": 3,
+  "kept": 3,
+  "invalid_or_low_confidence": 1,
+  "min_confidence": 0.72,
+  "min_topic_score": 68,
+  "max_items": 24,
+  "decisions": [
+    {
+      "candidate_id": 90,
+      "action": "keep",
+      "target_topic_id": null,
+      "confidence": 0.5,
+      "reason": "PostgreSQL 19 发布是数据库领域的独立事件，与 AI 话题无关。",
+      "applied": false
+    },
+    {
+      "candidate_id": 81,
+      "action": "keep",
+      "target_topic_id": null,
+      "confidence": 0.5,
+      "reason": "Nvidia 股价波动是金融/市场事件，与 AI 模型发布话题不同。",
+      "applied": false
+    },
+    {
+      "candidate_id": 88,
+      "action": "merge",
+      "target_topic_id": 25,
+      "confidence": 0.85,
+      "reason": "涉及 Jensen Huang（英伟达 CEO）的丑闻，属于 Google Gemini Mac 控制功能话题的延伸背景。",
+      "applied": true
+    },
+    {
+      "candidate_id": 76,
+      "action": "merge",
+      "target_topic_id": 25,
+      "confidence": 0.8,
+      "reason": "Meta AI 代理数据泄露问题属于 AI 安全与隐私范畴，与 Google Gemini Mac 控制功能话题相关。",
+      "applied": true
+    },
+    {
+      "candidate_id": 74,
+      "action": "merge",
+      "target_topic_id": 25,
+      "confidence": 0.75,
+      "reason": "科技系统故障属于 AI 应用落地中的常见问题，与 Google Gemini Mac 控制功能话题相关。",
+      "applied": true
+    },
+    {
+      "candidate_id": 100,
+      "action": "keep",
+      "target_topic_id": null,
+      "confidence": 0.5,
+      "reason": "AI 误报导致诉讼是独立事件，与 Google Gemini Mac 控制功能话题不同。",
+      "applied": false
+    },
+    {
+      "candidate_id": 91,
+      "action": "merge",
+      "target_topic_id": 25,
+      "confidence": 0.7,
+      "reason": "Walter Isaacson 讨论历史与创新与 AI 的关系，属于 Google Gemini Mac 控制功能话题的。",
+      "applied": false
+    }
+  ]
+}
