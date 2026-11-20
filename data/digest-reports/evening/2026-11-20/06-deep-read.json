@@ -1,0 +1,443 @@
+{
+  "run_date": "2026-11-20",
+  "selected_topic_ids": [
+    84,
+    64,
+    70,
+    89,
+    82,
+    6,
+    66,
+    65,
+    68,
+    62,
+    36,
+    2,
+    3,
+    17,
+    4,
+    22
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 16,
+    "base_members_added": 23,
+    "expanded_added": 0,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 25,
+    "final_targets": 23,
+    "global_cap": 30
+  },
+  "deep_read_links": 23,
+  "materials_total": 23,
+  "materials_windowed": 23,
+  "materials_usable": 22,
+  "materials_by_source": {
+    "AIBase": 7,
+    "AITNT 资讯": 3,
+    "TechCrunch AI": 2,
+    "爱范儿早报": 1,
+    "The Verge AI": 1,
+    "arXiv cs.AI": 6,
+    "雷锋网 AI": 1,
+    "量子位": 1
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 64,
+      "topic_title": "腾讯混元Hy4大模型开源",
+      "topic_type": "news",
+      "cross_source_score": 58,
+      "mention_count": 2,
+      "source_count": 1,
+      "member_count": 2,
+      "refs": [
+        14,
+        15
+      ],
+      "members": [
+        {
+          "ref_id": 14,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32446",
+          "title": "70B 权重开放前，腾讯先给 Hy4 做了次“安全体检”11月20日，腾讯混元将Hy4大模型权重开源至GitHub、Hugging Face、ModelScope和GitCode，开发者可下载部署。至此混元LLM系列全量开源，含Hy3 preview、Hy3、Hy4 preview、Hy4、Hy4 flash。Hy4正式版11月4日发布，采用MoE架构，总参数770B，每token激活49B，上下文窗口突破100万，兑现此前预告。 2 小时前 6.7K",
+          "pub_date": "2026-11-20",
+          "content": "11 月 20 日，腾讯混元团队把 Hy4 大模型的权重放上了 GitHub、Hugging Face、ModelScope 和 GitCode 四个平台，开发者可下载部署。至此，混元 LLM 系列完成全量开源——Hy3 preview、Hy3、Hy4 preview、Hy4、Hy4 flash 一个不缺，家族集齐。770B 旗舰，100 万上下文Hy4 正式版 11 月 4 日发布，此次开源兑现了此前的预告。模型采用 MoE 混合专家架构，总参数 770B、每 token 激活 49B，上下文窗口突破 100 万 Token。同批开放的还有主打性价比的 Hy4 flash：总参数 224B，其中含 64B Engram 参数，每 token 激活 12B，支持多模态输入与 100 万 token 上下文，API 价格较旗舰版大幅下调。Hy4 与 Hy4 preview 均采用 Apache 2.0 许可证，商业使用与修改都不设限。只喂“防守型”数据另一处值得注意的细节，是随模型一起公布的安全评估卡片（System Card）。官方说明，Hy4 的训练数据在网络安全维度只纳入 PoC 生成、漏洞修复等防守性内容，漏洞利用、逆向工程、渗透等攻击性数据一律剔除；腾讯玄武与科恩实验室的审计未发现明显进攻性能力风险。权重放开之后还能守住这条线，等于先递上一份“体检报告”，再请社区进门。"
+        },
+        {
+          "ref_id": 15,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32434",
+          "title": "腾讯混元大模型全量开源：Hy4 正式开放权重，支持百万上下文11月20日，腾讯混元宣布Hy4大模型开源，权重同步上线GitHub、Hugging Face、ModelScope和GitCode，开发者可下载部署。此次开源使混元LLM系列实现全量开放，全部版本完成开源，涵盖Hy3preview、Hy3、Hy4preview等，形成旗舰版与高性价比版双线并进格局。 5 小时前 12.5K",
+          "pub_date": "2026-11-20",
+          "content": "国产开源大模型阵营迎来又一重要进展。11月20日，腾讯混元团队正式宣布旗下 Hy4大模型开源，相关模型权重已在 GitHub、Hugging Face、ModelScope 和 GitCode 四个平台同步上线，开发者可自行下载部署。随着此次开源落地，混元 LLM 系列也正式实现全量开放。混元 LLM 全系集齐，旗舰版与高性价比版双线并进至此，腾讯混元 LLM 系列已完成全部版本的开源，涵盖 Hy3preview、Hy3、Hy4preview、Hy4以及 Hy4flash 等多个版本。其中，Hy4正式版最早于11月4日发布，本次开放的正是此前预告的模型权重。在架构与参数设计上，Hy4采用 MoE 混合专家架构，总参数量达到770B，激活参数为49B，上下文窗口突破100万 Token，能够承载更长文本与更复杂的任务上下文。与此同时，与旗舰版 Hy4一同开放的还有主打高性价比的 Hy4flash。该模型总参数量为224B（其中包含64B Engram 参数），每个 token 激活12B 参数，支持多模态输入与100万 token 上下文长度，且 API 价格相比 Hy4有大幅降低。采用 Apache2.0协议，同步公开安全评估细节在开放协议方面，Hy4及 Hy4preview 均采用 Apache2.0许可证，允许商业使用与修改，为企业落地和二次开发提供了较为宽松的授权基础。"
+        }
+      ]
+    },
+    {
+      "topic_id": 70,
+      "topic_title": "蚂蚁集团财报",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        20
+      ],
+      "members": [
+        {
+          "ref_id": 20,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32432",
+          "title": "半年净赚152亿!蚂蚁集团AI“三线并进”，打响支付、应用与机器人全面战役11月19日，阿里2026年三季度财报披露，上半年从蚂蚁集团获收益50.23亿元，据此推算蚂蚁上半年利润约152亿元，同比增约17%。增长主要得益于公允价值收益净增加，部分被科技及新增长举措投入抵消。CEO韩歆毅重申保持高强度AI投入，推动技术向多元场景渗透，今年以来蚂蚁围绕构建底座、打造应用等布局。 7 小时前 12.6K",
+          "pub_date": "2026-11-20",
+          "content": "11月19日，阿里巴巴发布的2026年三季度财报披露，上半年其从蚂蚁集团获得的收益为50.23亿元。据此推算，蚂蚁集团2026年上半年实现利润约152亿元，同比增长约17%。利润增长主要得益于公允价值收益净增加，部分增量被科技及新增长举措的持续投入所抵消。CEO韩歆毅重申，公司将保持高强度AI投入，推动技术向多元场景渗透。今年以来，蚂蚁集团围绕“构建底座、打造应用、布局未来”三条主线全面提速AI战略。技术底座层面，支付宝推出全栈AI支付体系，为智能体（Agent）商业生态提供底层支付与结算设施;OceanBase升级推出湖库一体AI数据平台，完成从分布式数据库向AI时代数据智能底座的演进。应用落地方面，健康管理AI应用“蚂蚁阿福”累计服务用户突破1.5亿，用户规模位居全球同类产品前列;蚂蚁数科则推出以Agentar平台为核心的“智能体超级工厂”方案，助力企业实现智能体的规模化生产与运营。在前沿探索与全球化维度，蚂蚁集团通过蚂蚁灵波科技切入具身智能赛道，其“具身原生”机器人通用大脑已在智慧药房、物流及工业场景落地。同时，依托蚂蚁国际覆盖超220个国家和地区、服务约20亿消费者的基本盘，其AI能力正加速实现跨区域复用。当前，随着AI商业化进入深水区，中信证券等机构已将AI业务与科技资产纳入蚂蚁估值框架，其AI医疗、AI版支付宝及支付基础设施正逐步确立为新的增长曲线。"
+        }
+      ]
+    },
+    {
+      "topic_id": 89,
+      "topic_title": "华为云CloudRobo具身机器人",
+      "topic_type": "news",
+      "cross_source_score": 53,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        22
+      ],
+      "members": [
+        {
+          "ref_id": 22,
+          "source": "量子位",
+          "link": "https://www.qbitai.com/2026/11/511426.html",
+          "title": "具身机器人进入真机时代，华为云CloudRobo开始组队发力了",
+          "pub_date": "Fri, 20 Nov 2026 01:07:38 +0000",
+          "content": "< img id=\"wx_img\" src=\"https://www.qbitai.com/wp-content/uploads/imgs/qbitai-logo-1.png\" width=\"400\" height=\"400\"> 2026-11-20 09:07:38 来源：量子位 一批卡可以轮流服务多家公司，一次适配也能让更多团队受益。算力不必家家从头买，工程上的坑也不用家家重新踩。 田晏林 发自 凹非寺 量子位 | 公众号 QbitAI 机器人在实验室里把活儿干成了，到了工厂，还能天天这么干吗？换台机器人，之前练出来的本事又能剩下多少？ 光把模型训得聪明还不够，背后的算力、仿真、真机适配，都得跟上。 11月16日，华为云发布了昇腾原生具身世界模型CloudRobo-WM1.2。 从仿真训练到适配不同机器人，这个模型背后，牵出的是一整套具身智能工程难题。 两天后，华为云在上海办了场「行业AI梦工厂·具身智能高层论坛」，把这些隐秘的幕后工程，搬到了台前。 从面向Agentic计算的算力基础设施，到一站式具身智能开发平台CloudRobo，再到机器人自适应智能、高空带电作业等产业实践，机器人从实验室走向真实现场，要过哪些关，这场论坛基本聊了个遍。 现场还签了份备忘录。华为云和福建小状智能准备把CloudRobo和昇腾算力用到高校实训里，让学生上手做机器人开发。"
+        }
+      ]
+    },
+    {
+      "topic_id": 82,
+      "topic_title": "商汤Scaling Law失效与资源投入",
+      "topic_type": "news",
+      "cross_source_score": 54,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        21
+      ],
+      "members": [
+        {
+          "ref_id": 21,
+          "source": "雷锋网 AI",
+          "link": "https://www.leiphone.com/category/ai/0u1BjHIMazUFuNZc.html",
+          "title": "商汤20%资源投入背后的逻辑：林达华谈拼手速与长期竞争力",
+          "pub_date": "2026-11-20",
+          "content": "Scaling Law在空间智能这里失效了？ 作者丨周蕾 编辑丨岑峰今年初字节的Seedance 2.0发布时，“电影级别”的出片质量让不少从业者倍感兴奋和震撼，新的创作蓝图正在他们面前徐徐展开——但对商汤的Seko团队来说，那是一段“迷茫”的日子。商汤联合创始人、首席科学家林达华在最近一次访谈中回忆，那段时间他去见投资人、参加行业会议，被问到的几乎总是同一个问题：你们的Seko和Seedance有什么区别？做得过它吗？团队里一度出现自我怀疑的声音：这件事还要不要做下去？后来故事并没有走向商汤Seko单枪匹马“对抗”Seedance的结局。Seedance把30秒的视频片段渲染到顶级水准；而Seko面向的创作者，最终交付的是100集的短剧——这中间隔着剧本、分镜、人物设定和跨剧集的形象一致性，是一整套创作流程。想清楚了这件事，Seko反而活得更好了：据林达华在访谈中透露，今年这款产品的用户增长了7到8倍，平台上产出了播放量过亿的短剧。对于商汤在大模型市场上的声量，林达华自己有个坦率的评价：“可能不是最大的”。这家公司的路线，也始终没有完全跟着行业最热的方向走。但商汤有一个坚持多年的习惯：直到今天，公司依然有20%的资源，投入给没有任何产品出口的预研工作。某种程度来说，这也是一种“播种”，种子下地时其实无需承诺收成。"
+        }
+      ]
+    },
+    {
+      "topic_id": 6,
+      "topic_title": "苹果研发通用型AI代理",
+      "topic_type": "news",
+      "cross_source_score": 76,
+      "mention_count": 3,
+      "source_count": 3,
+      "member_count": 3,
+      "refs": [
+        5,
+        6,
+        7
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32433",
+          "title": "苹果正研发通用型全功能AI代理，计划于2027年底发布彭博社11月19日援引苹果招聘信息报道，苹果正加速研发通用型全功能AI代理，拟与OpenAI、Anthropic及Meta等前沿实验室直接竞争，计划2027年底发布。相关职位如“主动式智能AI助手资深工程经理”显示，该代理能力将远超现有Siri和Apple Intelligence Suite，定位为能像熟练人类一样操作计算机的通用型应用。 5 小时前 10.1K",
+          "pub_date": "2026-11-20",
+          "content": "据彭博社于2026年11月19日（周四）援引苹果公司网站招聘信息报道，苹果正加速研发一款通用型全功能人工智能代理（AI Agent），旨在与OpenAI、Anthropic及Meta等前沿实验室的产品展开直接竞争，该产品计划于2027年底正式发布。根据“主动式智能AI助手资深工程经理”等职位描述，该代理远超现有Siri及Apple Intelligence Suite的能力边界，定位为能像熟练人类一样操作计算机的通用型应用代理。其核心技术规划涵盖跨应用操作、网页浏览、代码编写与调试、运行命令及API调用，并具备多步骤任务规划与协调专业子代理的能力。为保障系统安全，苹果明确要求构建强权限模型、沙箱机制与高透明度，延续其一贯的端侧隐私保护策略，由软件工程主管克雷格·费德里吉（Craig Federighi）主导推进。当前，AI代理赛道竞争白热化，Meta凭借Muse助手迅速崛起并长期占据苹果应用商店免费榜第二，与ChatGPT及Claude同处前五;谷歌亦于同日发布了可控制Mac设备的全新Gemini工具。在此背景下，苹果在加速自研的同时收紧了生态控制，例如在即将推出的macOS27.3测试版中增设权限警告，并将启用ChatGPT电脑控制工具的步骤从4步繁琐化至14步。受此消息影响，Meta与Anthropic尾盘股价分别下跌约2%和3%。"
+        },
+        {
+          "ref_id": 6,
+          "source": "The Verge AI",
+          "link": "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
+          "title": "Apple is hiring engineers to build its own AI agent",
+          "pub_date": "2026-11-20",
+          "content": "Apple is working on its own AI agent that can perform a range of tasks for you, including browsing the web, working across apps, writing code, and calling services. That’s according to a now-removed job listing spotted by Bloomberg, which said Apple is looking for an engineer to lead the creation of an agentic AI assistant.An AI agent from Apple would put the iPhone maker in the running to compete with the likes of Meta’s Muse, OpenAI’s Dots, Anthropic’s Duet, and Google’s Tasks."
+        },
+        {
+          "ref_id": 7,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
+          "title": "Apple may be developing its own AI agent that runs your Mac",
+          "pub_date": "2026-11-20",
+          "content": "Apple appears to be working on its own AI agent to conduct computer work on behalf of users — including using apps, accessing websites, and coding, among other things. The news was originally reported by Bloomberg, which spotted a job listing the iPhone maker recently posted for a senior engineering manager to oversee the creation of an “AI agent that can use a computer.” “Imagine an AI agent that can use a computer the way a capable person does,” the posting says."
+        }
+      ]
+    },
+    {
+      "topic_id": 66,
+      "topic_title": "Anthropic上市",
+      "topic_type": "news",
+      "cross_source_score": 79,
+      "mention_count": 4,
+      "source_count": 4,
+      "member_count": 4,
+      "refs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "members": [
+        {
+          "ref_id": 1,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32438",
+          "title": "敲钟前夜收到联名信：90 位大奖得主质疑 Anthropic 安全人设11月20日凌晨，Anthropic登陆纳斯达克，IPO募资813亿美元，超越SpaceX的750亿美元纪录，成史上最大规模股票发行；首日收涨17.07%，市值1.271万亿美元。但上市前夕，《MisAnthropic Statement》公开信流传，直指其“安全人设”，诺奖、图灵奖、菲尔兹奖罕见同框，近90人联署。 4 小时前 10.4K",
+          "pub_date": "2026-11-20",
+          "content": "北京时间 11 月 20 日凌晨，Anthropic 登陆纳斯达克，IPO 募资 813 亿美元，超越 SpaceX 的 750 亿美元纪录，成为史上最大规模股票发行，首日收涨 17.07%，市值 1.271 万亿美元。但比开盘钟声更早响起的，是一封联署公开信——上市前夕，一份名为《MisAnthropic Statement》的声明流传开来，矛头直指这家公司的“安全人设”。诺奖、图灵奖、菲尔兹奖罕见同框联署名单近 90 人，覆盖平时观点相左的多个阵营：诺贝尔奖、图灵奖、菲尔兹奖得主，AI 安全研究者，开源社区代表，甚至还有加速主义人士。对 Anthropic 的判断，这些分歧巨大的人第一次站到了同一边，分量自然不轻。安全口号下的三重指控声明抓住的是理念与实践的错位。其一，Anthropic 一边反复警示递归自我改进的 AI 可能失控，一边把相关技术当作核心竞争力持续推进；其二，公司靠安全形象吸引资本与人才，却被指正在降低安全标准，还通过游说争取对自身有利的监管规则；其三，联署者质疑它并非外界以为的安全型 AI 企业，反而可能借公共安全之名，把 AI 领域的技术权力越攥越紧。戏剧性的是，争议没有拦住资本的热情：钟声照敲，股价照涨。“安全”与“生意”之间的这道裂缝，如今被原样带进了公开市场，留给了每一位新股东。"
+        },
+        {
+          "ref_id": 2,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31453",
+          "title": "Anthropic 敲钟，怎么越看越像 AI",
+          "pub_date": "2026-11-20",
+          "content": "昨晚刷完 Anthropic 在纳斯达克上市敲钟的视频，我最大的感受是，台上那帮联创鼓掌大笑的样子，诡异得像 AI 。 不管台上的恐怖谷假笑有多让人脚趾抠地，台下跳动的可是真金白银。 伴随着 Anthropic 昨晚正式登陆纳斯达克并挂出代码「ANT」，这家 AI 公司直接摘下了人类商业史上最大 IPO 头衔。 「ANT」发行价 83 美元，开盘高开 34.3% 冲到 111.5 美元，盘中摸高 115 美元上方，最终以 97.17 美元收盘，首日狂涨 17.07%，总市值高达 1.27 万亿美元，约合 8.48 万亿元人民币。 最黑色幽默的对比发生在场外。 「ANT」场内锣鼓喧天，光给高盛和摩根士丹利等承销投行发的过路费就达 5.5 亿美元，刷新了今年 6 月 SpaceX 刚创下的纪录。 另一边的美股大盘却当场跳水，道指狂泻 1000 多点，标普 500 连跌六天创两年最长连跪纪录，英伟达、AMD、甲骨文和 CoreWeave 被砸得鼻青脸肿。 分析师拼命吹风降预期说不用慌，大盘暴跌纯粹是因为机构钱不够了，为腾仓位买 Anthropic 只能含泪割肉其他科技股。 一鲸落万物生大伙见多了，一蚁上桌直接把整个纳斯达克血槽吸干，还真是头一回见。 一场 IPO，敲出了最疯狂的造富运动 据《华尔街日报》报道，Anthropic 这次敲钟上市，也敲出了新一轮 AI 造富神话。"
+        },
+        {
+          "ref_id": 3,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/",
+          "title": "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
+          "pub_date": "Fri, 20 Nov 2026 00:43:50 +0000",
+          "content": "Anthropic became a public company on Thursday, raising a total of $81.3 billion, including $1.95 billion for its seven founders. As we previously reported, each of them ponied up about 3.4 million shares apiece to sell in the IPO. At the upgraded IPO price of $83 per share, that means they each pocketed about $280 million before underwriting fees and taxes. It looked like they had calculated the number of shares they planned to sell to give them each around $250 million if shares hit $74. That was the midpoint price from Anthropic’s original price range."
+        },
+        {
+          "ref_id": 4,
+          "source": "爱范儿早报",
+          "link": "https://www.ifanr.com/1690473#__brief-2",
+          "title": "Anthropic 上市首日收涨 17%，收盘价 97.17 美元",
+          "pub_date": "2026-11-20",
+          "content": "🤖曝苹果开发 AI 智能体，可写代码、上网、控制应用 🏢Anthropic 上市首日收涨 17%，收盘价 97.17 美元 📱曝 OpenAI 进军手机领域，富智康获整机组装订单 🧳旅行者 1 号距地球达一光日，信号单程需 24 小时 ✨网易 UU 远程将上线付费会员，基础远控继续免费 💼樊路远辞任阿里大麦娱乐 CEO，徐宏接任董事会主席 💬腾讯大幅削减元宝投入，微信小微日活达 3000 万 🪟微软 To Do 将于明年 6 月停用，现有任务不会自动迁移 🏢快手第三季度转亏，预计四季度收入和盈利继续承压 🧠DeepSeek 完成股权变更，腾讯、宁德时代等进入持股平台 📈阿里巴巴季度净利润增长 207%，营收达 2715.19 亿元 📉拼多多季度营收持平，广告增长与交易服务下滑相抵 🤝英特尔签下首个 18A-P 外部客户 🏢联想季度营收首超 300 亿美元，经调整净利润增长 166% 💡马斯克：英伟达让黄仁勋离开，如同公牛踢走乔丹 📱华为官宣 Mate 90 Air 与 WATCH Air，主打轻薄设计 ⏰苹果被曝考虑推迟或取消 OLED iMac，面板成本成阻力 🌐Meta Muse Charm 被曝定价 300 美元，附送最长一年 5G 服务 🪄方程豹钛 9 上市，顶配可将方向盘折叠收起 🔋全新零跑 Lafa5 开启预售，升级 800V 平台。"
+        }
+      ]
+    },
+    {
+      "topic_id": 65,
+      "topic_title": "ChatGPT移动端改版",
+      "topic_type": "news",
+      "cross_source_score": 58,
+      "mention_count": 2,
+      "source_count": 1,
+      "member_count": 2,
+      "refs": [
+        16,
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 16,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32436",
+          "title": "从单聊入口走向多模块协同，ChatGPT移动端改版加速AI主动服务落地2026年11月20日，OpenAI为ChatGPT移动应用推出全新界面，并将原仅限月费100美元Pro用户的Dots功能扩展至Business Standard用户及部分Plus用户。新版把Dots放在主屏底部专属标签页，支持将Codex、Projects、Images等常用模块固定到底部导航，缩短高频功能访问路径，并可在设置中手动启用。目前改版面向Dots可用地区年满18岁的Pro用户及小部分符合条件者。 4 小时前 10.3K",
+          "pub_date": "2026-11-20",
+          "content": "2026年11月20日，OpenAI开始为ChatGPT移动应用推出全新界面设计，并将此前仅限每月100美元ChatGPT Pro订阅用户的Dots功能扩展至ChatGPT Business Standard用户及部分ChatGPT Plus用户。改版将Dots置于主屏幕底部专属标签页，同时支持用户将Codex、Projects和Images等常用模块固定至底部导航，缩短高频功能访问路径，并允许在设置中手动启用。目前改版面向Dots可用地区年满18岁的Pro用户及小部分符合条件的Plus用户测试，明确不覆盖欧洲经济区（含欧盟）、英国、瑞士和韩国。在拓展可用范围的同时，OpenAI正深化ChatGPT Health跨平台能力与主动交互。继7月在美国向所有用户开放并接入Apple Health后，该体验现已支持连接Android Health Connect，提供睡眠与活动等深度分析;Dot可读取健康与医疗记录，在日程冲突时调整锻炼时段或提醒预防性护理，桌面端也支持基于健康数据构建自定义训练追踪网站，相关更新正逐步推送。在周活约达12亿的庞大基数下，此次调整体现出ChatGPT从单一对话窗口向多工具中枢与主动助理演进的思路，其功能分层与区域差异化落地也将进一步影响主流AI应用的交互形态与订阅层级设计。"
+        },
+        {
+          "ref_id": 17,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32443",
+          "title": "ChatGPT 移动端迎界面大改版，Dots 扩大测试并联动健康数据OpenAI于11月20日起向部分ChatGPT移动端用户推送新版界面，优先面向拥有Dots或符合创建条件的Pro用户，并纳入少量Plus用户体验。此次改版旨在让用户更快触达常用功能、降低发现新能力门槛。界面方面，Dots独立为底栏标签，常用工具支持自定义。ChatGPT目前约有12亿周活跃用户。 3 小时前 13.0K",
+          "pub_date": "2026-11-20",
+          "content": "拥有约12亿周活跃用户的 ChatGPT 正在移动端迎来一次颇具分量的交互调整。11月20日，OpenAI 开始向部分用户推送 ChatGPT 移动应用的新版界面，核心目的是帮助用户更快触达常用功能，并降低发现新能力的门槛。此次界面改版首先面向已拥有 Dots 或符合创建条件的 ChatGPT Pro 用户开放，同时也纳入了少量符合条件的 Plus 用户参与体验。界面改版:Dots 独立成底栏标签，常用工具可自定义固定在过去相当长一段时间里，ChatGPT 的整体布局保持着较高的稳定性:中央放置提示词输入框，左侧导航栏则承担着切换 Dots、Spaces、Images、Codex 等功能的入口。新版移动界面改变了这一路径:Dots 获得了主页底部独立的标签页，用户无需再专门翻找导航栏即可直接进入。同时，用户还能根据个人使用习惯，把 Codex、Projects 和 Images 等常用功能固定在底部标签栏中，进一步缩短高频工具的访问链路。从推送规则来看，新设计面向年满18岁、所在地区支持 Dots 的 ChatGPT Pro 用户以及部分符合条件的 Plus 用户开放;不过，欧洲经济区（含欧盟）、英国、瑞士和韩国暂不推出。用户可将应用更新至最新版本，若默认未显示新界面，也可在设置里手动开启。"
+        }
+      ]
+    },
+    {
+      "topic_id": 68,
+      "topic_title": "alphaXiv推出AI Agent服务器",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        19
+      ],
+      "members": [
+        {
+          "ref_id": 19,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31463",
+          "title": "刚刚，alphaXiv甩出AI Agent专属预印本服务器",
+          "pub_date": "2026-11-20",
+          "content": "有点不可思议，AI Agent 已经开始组团搞科研了。 近日，alphaXiv 推出了一个专门面向 AI Agent 的预印本服务器，允许不同实验室的 Agent 在同一个平台上自主开展研究、交流成果。 这些 Agent 会提出假设、设计实验、运行代码、分析数据，还会把研究成果写成论文，提交给其他 Agent 审查。 更有意思的是，它们甚至开始形成自己的学术圈子。有 Agent 公开质疑同行的实验设计，有 Agent 在发现错误后主动撤回研究结论，还有 Agent 自己创办期刊，让其他 Agent 担任审稿人。 地址：https://www.alphaxiv.org/abs/2611.society-ai-scientists 有全球 22 家机构的研究者参与其中，他们组织了一场为期 12 周的实验。实验期间，来自 35 个由人类运营的实验室的 936 个 AI Agent，在同一个科研平台上自主开展研究，累计产出 936 项研究成果，交换约 9500 条消息，并创建了 229 个讨论群组。 从论文、实验代码到原始数据，再到同行评审和研究讨论记录，这些过程都被完整保存下来。"
+        }
+      ]
+    },
+    {
+      "topic_id": 62,
+      "topic_title": "OpenAI内部Agent使用成本",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        18
+      ],
+      "members": [
+        {
+          "ref_id": 18,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31458",
+          "title": "AI比人贵了…OpenAI：内部Agent开销已达研究员薪酬两倍",
+          "pub_date": "2026-11-20",
+          "content": "OpenAI的研究员，现在用AI已经用到什么程度了？ 人均每天调用的Agent，按API标价折算，居然能值2400美元？！ 用得最猛的那10%研究员，单日使用量甚至能达到2.3万美元（约16万人民币）。 嘶 这帮研究员用起AI来，是真一点都不心疼Token啊。 OpenAI公开了最新内部Agent研究报告《Research acceleration: The jagged frontier》，把自家研究员使用AI的情况扒了个底朝天。 先给朋友们来个一句话总结： OpenAI内部的Agent，现在已经能独立搞定差不多一半（46%）原先需要人类花2-4小时的研究任务了。 今年3月，这个比例还只有23%；短短7个月，直接翻倍。 对于原本需要人类花4至8小时的研究工作，Agent自主完成率从13%升到了35%。 研究员们自己，已经离不开AI了。 OpenAI问了101名研究人员： 如果未来3个月不给你们用最前沿的Agent，你们愿意拿什么来换回使用权限？ 受访者普遍愿意拿出团队40%的人力编制，或者30%的计算资源来换。 AI一天能干人的5.7个工作日 先看几个数据，感受一下这帮研究员用得有多狠。 从9月到10月，一个月时间： 中位数研究员每天在Agent上的花费，从1500美元涨到了2400美元。头部10%的用户，更是从1.1万美元直接飙到2.3万美元。"
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_title": "CompAct-Bench",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        13
+      ],
+      "members": [
+        {
+          "ref_id": 13,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.25673",
+          "title": "CompAct-Bench: A Benchmark for Working-Context Compaction in Long-Horizon Agent Tasks",
+          "pub_date": "Fri, 20 Nov 2026 00:00:00 -0500",
+          "content": "Authors:Jiayi Chen, Lizhe Chen, Yujia Chen, Shihan Dou, Ming Zhang, Chendi Ge, Shiguang Ni, Tao Gui, Qi Zhang, Xuanjing Huang, Maxm Pan View PDF HTML (experimental) Abstract:As language-model agents are applied to increasingly extended tasks, their working context continuously accumulates interaction history, tool observations, intermediate decisions, and task progress. Context compaction offers a practical way to reduce this growing history while allowing execution to continue, yet the compaction ability of modern LLMs remains insufficiently understood."
+        }
+      ]
+    },
+    {
+      "topic_id": 2,
+      "topic_title": "Generalist Meets Specialists",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        9
+      ],
+      "members": [
+        {
+          "ref_id": 9,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.25868",
+          "title": "Generalist Meets Specialists: An Evolving Multimodal Agent with Persistent Tool Orchestration for Traffic Scenario Understanding",
+          "pub_date": "Fri, 20 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Traffic scenario understanding requires combining fine-grained visual evidence with spatial and temporal reasoning. Tool-augmented vision-language models (VLMs) can use specialized perception tools, but effective collaboration faces two challenges: terminal rewards provide limited guidance for intermediate decisions and error recovery, while repeated planning adds unnecessary cost across similar tasks."
+        }
+      ]
+    },
+    {
+      "topic_id": 3,
+      "topic_title": "How Much Should an Agent",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        8
+      ],
+      "members": [
+        {
+          "ref_id": 8,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.26361",
+          "title": "How Much Should an Agent Remember? Deployment Lessons from Self-Distilled Memory for LLM Agents",
+          "pub_date": "Fri, 20 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:LLM agents on long-horizon tasks fail in recurring, procedural ways. They mis-paginate an API, resolve the wrong entity, or answer when no answer was asked. We built a pipeline that lets an agent learn from its own history. It first mines short \\emph{lessons} from the agent's own trajectories, one to three per episode. It then consolidates those lessons into a smaller set of \\emph{guidelines}, where each guideline records how many lessons it merged. At inference the agent receives either all guidelines or a selected subset."
+        }
+      ]
+    },
+    {
+      "topic_id": 17,
+      "topic_title": "SailSearch: Agent-Assisted",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        11
+      ],
+      "members": [
+        {
+          "ref_id": 11,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.25087",
+          "title": "SailSearch: Agent-Assisted Discovery in Combinatorial Optimization",
+          "pub_date": "Fri, 20 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:We present SailSearch, a human-guided workflow for algorithmic research with two language-model agents, and report results on Market Split and maximum independent set (MIS). For Market Split, our randomized algorithm searches across multiple lattice bases, dividing computation between enumeration and continued basis reduction. Across ten random seeds per instance, it found the first reported CPU-only solutions to 18 of 33 previously open QOBLIB instances, solving 130 to 133 of the 156 benchmark instances per seed with a 24-hour cutoff on two CPU cores."
+        }
+      ]
+    },
+    {
+      "topic_id": 4,
+      "topic_title": "How to \"train\" a surgeon?",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        10
+      ],
+      "members": [
+        {
+          "ref_id": 10,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.11437",
+          "title": "How to \"train\" a surgeon? Benchmarking generalist agents in surgical scene understanding",
+          "pub_date": "Fri, 20 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Evaluating general-purpose multimodal large language models (MLLMs) for surgical scene understanding remains limited due to scarce surgical data and fragmented evaluation protocols. We address these challenges through a two-stage evaluation framework for surgical scene understanding. In Stage I, we introduce SurgKnowBench, a diagnostic benchmark that harmonizes public surgical datasets across procedures and tasks and evaluates proprietary and open-source MLLMs to map the boundary of pretrained surgical competence."
+        }
+      ]
+    },
+    {
+      "topic_id": 22,
+      "topic_title": "Tether: Verified Stateful Policy",
+      "topic_type": "paper",
+      "cross_source_score": 65,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        12
+      ],
+      "members": [
+        {
+          "ref_id": 12,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.25599",
+          "title": "Tether: Verified Stateful Policy Engine for System-Level Monitoring of Agents",
+          "pub_date": "Fri, 20 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Autonomous AI agents are increasingly deployed for long-running tasks that execute arbitrary shell commands or programs. However, these actions can result in unauthorized network requests or persistent, malicious changes to the user's file system, processes, or privileges. Existing defense mechanisms rely on either LLM-based monitors, which lack provable safety guarantees, or stateless policy enforcement layers, which miss multi-step data flows and execution side-effects unmodeled by the policy language (e.g., network calls initiated inside a Python script。"
+        }
+      ]
+    }
+  ]
+}
