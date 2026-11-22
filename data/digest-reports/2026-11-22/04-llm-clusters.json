@@ -1,0 +1,1904 @@
+{
+  "run_date": "2026-11-22",
+  "cluster_chunks": [
+    {
+      "chunk_index": 1,
+      "chunk_size": 17,
+      "representative_assignments": 17,
+      "assignments": 17,
+      "fallback_assignments": 0,
+      "strategy": "llm_news",
+      "elapsed_ms": 419640
+    },
+    {
+      "chunk_index": 2,
+      "chunk_size": 30,
+      "assignments": 30,
+      "fallback_assignments": 0,
+      "strategy": "deterministic_paper"
+    }
+  ],
+  "mode_breakdown": {
+    "news_input": 17,
+    "news_after_precluster": 17,
+    "paper_input": 30,
+    "paper_deterministic": 30,
+    "llm_chunk_count": 1
+  },
+  "assignments_count": 47,
+  "fallback_assignments": 0,
+  "singleton_recluster": {
+    "enabled": true,
+    "anchor_count": 0,
+    "singleton_candidates": 0,
+    "merged": 0,
+    "kept": 0,
+    "invalid_or_low_confidence": 0,
+    "min_confidence": 0.72,
+    "min_topic_score": 68,
+    "max_items": 24,
+    "decisions": [],
+    "note": "no_anchors"
+  },
+  "topic_cards": [
+    {
+      "topic_id": 2,
+      "topic_key": "AI Agents在短信中的应用",
+      "topic_title": "AI Agents在短信中的应用",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        2
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 28.643856189774723,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Here are the top AI agents that can live in your text messages"
+      ],
+      "scorecard": {
+        "total": 129.45527198330527,
+        "cross_validation": 115.5,
+        "source_credibility": 20.050699332842306,
+        "recency": 7.9045726504629625,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 129.45527198330527
+    },
+    {
+      "topic_id": 46,
+      "topic_key": "腾讯元宝发布基于群聊的Agent记忆基准",
+      "topic_title": "腾讯元宝发布基于群聊的Agent记忆基准",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        46
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 13.700439718141093,
+      "newest_pub_date": "2026-11-21",
+      "top_sources": [
+        "量子位"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "8万条群聊消息做成考卷：腾讯元宝×KCL发布首个基于群聊构建的Agent记忆基准"
+      ],
+      "scorecard": {
+        "total": 120.4948803258469,
+        "cross_validation": 87,
+        "source_credibility": 9.590307802698764,
+        "recency": 6.904572523148148,
+        "entity_priority": 11,
+        "industry_value": 26,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:腾讯/混元",
+          "value:api_platform_update",
+          "value:benchmark_safety",
+          "value:product_launch",
+          "domestic-ai-signal"
+        ]
+      },
+      "topic_total_score": 120.4948803258469
+    },
+    {
+      "topic_id": 14,
+      "topic_key": "Signal限制截图应对AI监控",
+      "topic_title": "Signal限制截图应对AI监控",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        14
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 24.39231742277876,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance"
+      ],
+      "scorecard": {
+        "total": 116.4791948001118,
+        "cross_validation": 115.5,
+        "source_credibility": 17.074622195945132,
+        "recency": 7.904572604166667,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 116.4791948001118
+    },
+    {
+      "topic_id": 15,
+      "topic_key": "英伟达财报分化",
+      "topic_title": "英伟达财报分化",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        15
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 24.39231742277876,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "A tale of two Nvidias"
+      ],
+      "scorecard": {
+        "total": 116.47919478853771,
+        "cross_validation": 115.5,
+        "source_credibility": 17.074622195945132,
+        "recency": 7.904572592592593,
+        "entity_priority": 12,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:NVIDIA"
+        ]
+      },
+      "topic_total_score": 116.47919478853771
+    },
+    {
+      "topic_id": 16,
+      "topic_key": "AI换脸微短剧",
+      "topic_title": "AI换脸微短剧",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        16
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 24.39231742277876,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Is selling an AI version of your face to this microdrama startup the future of Hollywood?"
+      ],
+      "scorecard": {
+        "total": 116.47919478853771,
+        "cross_validation": 115.5,
+        "source_credibility": 17.074622195945132,
+        "recency": 7.904572592592593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 116.47919478853771
+    },
+    {
+      "topic_id": 1,
+      "topic_key": "Anthropic IPO",
+      "topic_title": "Anthropic IPO",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        1
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 22.169925001442312,
+      "newest_pub_date": "2026-11-21",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Can Anthropic afford to put safety first?"
+      ],
+      "scorecard": {
+        "total": 114.92352017462073,
+        "cross_validation": 103.5,
+        "source_credibility": 15.518947501009617,
+        "recency": 6.904572673611111,
+        "entity_priority": 13,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Anthropic"
+        ]
+      },
+      "topic_total_score": 114.92352017462073
+    },
+    {
+      "topic_id": 6,
+      "topic_key": "Act-or-Ask模型发布",
+      "topic_title": "Act-or-Ask模型发布",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        6
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 25.459431618637296,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "I've just made Act-or-Ask public on Hugging Face. It's a small open model (3.8B) which sits"
+      ],
+      "scorecard": {
+        "total": 110.22617476036092,
+        "cross_validation": 103.5,
+        "source_credibility": 17.821602133046106,
+        "recency": 7.904572627314815,
+        "entity_priority": 0,
+        "industry_value": 7,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -30,
+        "pr_penalty": 0,
+        "signals": [
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 110.22617476036092
+    },
+    {
+      "topic_id": 4,
+      "topic_key": "paper:2611.23875",
+      "topic_title": "In Situ Training of Optical",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        4
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "In Situ Training of Optical Neural Networks by Coding Agents"
+      ],
+      "scorecard": {
+        "total": 108.50457262731481,
+        "cross_validation": 88.5,
+        "source_credibility": 16.099999999999998,
+        "recency": 5.904572627314815,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 108.50457262731481
+    },
+    {
+      "topic_id": 5,
+      "topic_key": "paper:2611.21885",
+      "topic_title": "Language Models Can Rewrite Their",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        5
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Language Models Can Rewrite Their Own Weights"
+      ],
+      "scorecard": {
+        "total": 108.50457262731481,
+        "cross_validation": 88.5,
+        "source_credibility": 16.099999999999998,
+        "recency": 5.904572627314815,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 108.50457262731481
+    },
+    {
+      "topic_id": 8,
+      "topic_key": "paper:2611.26540",
+      "topic_title": "AURA: AUdio-dRiven streaming Avatar",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        8
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "AURA: AUdio-dRiven streaming Avatar"
+      ],
+      "scorecard": {
+        "total": 107.10457261574075,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.90457261574074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.10457261574075
+    },
+    {
+      "topic_id": 9,
+      "topic_key": "paper:2611.25567",
+      "topic_title": "Online Mistake Detection in",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        9
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Online Mistake Detection in Instruction-Conditioned Procedural Video"
+      ],
+      "scorecard": {
+        "total": 107.10457261574075,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.90457261574074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.10457261574075
+    },
+    {
+      "topic_id": 10,
+      "topic_key": "paper:2611.26211",
+      "topic_title": "SpecWM: Turning Verification into",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        10
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "SpecWM: Turning Verification into Refinement for Streaming World Models"
+      ],
+      "scorecard": {
+        "total": 107.10457260416666,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.904572604166667,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.10457260416666
+    },
+    {
+      "topic_id": 11,
+      "topic_key": "paper:2611.21053",
+      "topic_title": "System 1 agents",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        11
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "System 1 agents: a method for local"
+      ],
+      "scorecard": {
+        "total": 107.10457260416666,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.904572604166667,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.10457260416666
+    },
+    {
+      "topic_id": 12,
+      "topic_key": "paper:2611.25935",
+      "topic_title": "TwinD: Generalizing Deepfake",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        12
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "TwinD: Generalizing Deepfake Detection from Blending to Entire Face Synthesis"
+      ],
+      "scorecard": {
+        "total": 107.10457260416666,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.904572604166667,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.10457260416666
+    },
+    {
+      "topic_id": 13,
+      "topic_key": "paper:2611.26414",
+      "topic_title": "ZeroVLN: Learning to Navigate",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        13
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "ZeroVLN: Learning to Navigate without Supervised Fine-Tuning of the VLM Brain"
+      ],
+      "scorecard": {
+        "total": 107.10457260416666,
+        "cross_validation": 88.5,
+        "source_credibility": 14.7,
+        "recency": 5.904572604166667,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 107.10457260416666
+    },
+    {
+      "topic_id": 18,
+      "topic_key": "paper:2611.26510",
+      "topic_title": "AutoMaster: Autonomous Post",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        18
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "AutoMaster: Autonomous Post-Training by Making the Same Model a Better Teacher"
+      ],
+      "scorecard": {
+        "total": 104.20457259259258,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.904572592592593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.20457259259258
+    },
+    {
+      "topic_id": 19,
+      "topic_key": "paper:2611.26603",
+      "topic_title": "Depth Pro 2: Sharp and Temporally",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        19
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth"
+      ],
+      "scorecard": {
+        "total": 104.20457259259258,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.904572592592593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.20457259259258
+    },
+    {
+      "topic_id": 20,
+      "topic_key": "paper:2611.26107",
+      "topic_title": "HiUni: Harmonizing Understanding",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        20
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "HiUni: Harmonizing Understanding and Generation in Shared Visual Space"
+      ],
+      "scorecard": {
+        "total": 104.20457258101851,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.904572581018519,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.20457258101851
+    },
+    {
+      "topic_id": 21,
+      "topic_key": "paper:2611.25179",
+      "topic_title": "Phantom Success",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        21
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Phantom Success, Silent Failure: Auditing the Success Checkers of Simulated Manipulation"
+      ],
+      "scorecard": {
+        "total": 104.20457258101851,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.904572581018519,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.20457258101851
+    },
+    {
+      "topic_id": 22,
+      "topic_key": "paper:2611.26590",
+      "topic_title": "Probing the \"Conscious\" Mind",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        22
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Probing the \"Conscious\" Mind: Selective Access and Global Workspace in Vision-Language Models"
+      ],
+      "scorecard": {
+        "total": 104.20457258101851,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.904572581018519,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.20457258101851
+    },
+    {
+      "topic_id": 23,
+      "topic_key": "paper:2611.00911",
+      "topic_title": "S1CogBench: What System One",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        23
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "S1CogBench: What System One Decision Models Can and Cannot Do on Cognitive Experiments"
+      ],
+      "scorecard": {
+        "total": 104.20457258101851,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.904572581018519,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.20457258101851
+    },
+    {
+      "topic_id": 24,
+      "topic_key": "paper:2611.25200",
+      "topic_title": "Squoosh Bench: Evaluating UX-1 on",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        24
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Squoosh Bench: Evaluating UX-1 on 318 Historical Website A/B Tests"
+      ],
+      "scorecard": {
+        "total": 104.20457258101851,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.904572581018519,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.20457258101851
+    },
+    {
+      "topic_id": 25,
+      "topic_key": "paper:2611.25776",
+      "topic_title": "Suppressing the Shortcut Hidden",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        25
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Suppressing the Shortcut Hidden Behind the Gains of VideoLLM Fine-Tuning"
+      ],
+      "scorecard": {
+        "total": 104.20457256944444,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.904572569444444,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.20457256944444
+    },
+    {
+      "topic_id": 26,
+      "topic_key": "paper:2611.26232",
+      "topic_title": "Time Series Structure Learning",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        26
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Time Series Structure Learning with Local Causal Parent Discovery"
+      ],
+      "scorecard": {
+        "total": 104.20457256944444,
+        "cross_validation": 87,
+        "source_credibility": 13.299999999999999,
+        "recency": 5.904572569444444,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 104.20457256944444
+    },
+    {
+      "topic_id": 7,
+      "topic_key": "AI Agent安全事件",
+      "topic_title": "AI Agent安全事件",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        7
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 21.459431618637296,
+      "newest_pub_date": "2026-11-21",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "An agent-security exam bank you can audit: 35 incidents, every verdict on the record Most"
+      ],
+      "scorecard": {
+        "total": 103.42617474878685,
+        "cross_validation": 88.5,
+        "source_credibility": 15.021602133046107,
+        "recency": 6.904572615740741,
+        "entity_priority": 0,
+        "industry_value": 19,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -30,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update",
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 103.42617474878685
+    },
+    {
+      "topic_id": 28,
+      "topic_key": "paper:2611.25279",
+      "topic_title": "Accord: Universal Online Metric",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        28
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Accord: Universal Online Metric Localization and Dense Mapping from one Camera and an IMU"
+      ],
+      "scorecard": {
+        "total": 102.80457256944445,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.904572569444444,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.80457256944445
+    },
+    {
+      "topic_id": 29,
+      "topic_key": "paper:2611.26073",
+      "topic_title": "AltRA-Test: An Alternative",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        29
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators"
+      ],
+      "scorecard": {
+        "total": 102.80457256944445,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.904572569444444,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.80457256944445
+    },
+    {
+      "topic_id": 30,
+      "topic_key": "paper:2611.26511",
+      "topic_title": "Direct3D-V3",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        30
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Direct3D-V3: Latent-Free Diffusion Transformers in the Native Voxel Domain"
+      ],
+      "scorecard": {
+        "total": 102.80457255787037,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.90457255787037,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.80457255787037
+    },
+    {
+      "topic_id": 31,
+      "topic_key": "paper:2611.19499",
+      "topic_title": "Do Probing and Steering Favor the",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        31
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Do Probing and Steering Favor the Same Directions Within and Across Language Models?"
+      ],
+      "scorecard": {
+        "total": 102.80457255787037,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.90457255787037,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.80457255787037
+    },
+    {
+      "topic_id": 32,
+      "topic_key": "paper:2611.15941",
+      "topic_title": "Lang-SVG: Hierarchical Image",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        32
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Lang-SVG: Hierarchical Image Vectorization with Language Priors"
+      ],
+      "scorecard": {
+        "total": 102.80457255787037,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.90457255787037,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.80457255787037
+    },
+    {
+      "topic_id": 33,
+      "topic_key": "paper:2611.25980",
+      "topic_title": "Learning What Actions Change",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        33
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models"
+      ],
+      "scorecard": {
+        "total": 102.80457255787037,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.90457255787037,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.80457255787037
+    },
+    {
+      "topic_id": 34,
+      "topic_key": "paper:2611.26617",
+      "topic_title": "One Prior, Two Dynamics",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        34
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "One Prior, Two Dynamics: Repurposing Video Diffusion Transformers for Self-Supervised"
+      ],
+      "scorecard": {
+        "total": 102.80457255787037,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.90457255787037,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.80457255787037
+    },
+    {
+      "topic_id": 35,
+      "topic_key": "paper:2611.26629",
+      "topic_title": "Posterior Matching Distillation",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        35
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Posterior Matching Distillation"
+      ],
+      "scorecard": {
+        "total": 102.8045725462963,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.904572546296296,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.8045725462963
+    },
+    {
+      "topic_id": 36,
+      "topic_key": "paper:2611.26627",
+      "topic_title": "RL Post-Training in Diffusion",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        36
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "RL Post-Training in Diffusion Transformers Is Activation Steering"
+      ],
+      "scorecard": {
+        "total": 102.8045725462963,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.904572546296296,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.8045725462963
+    },
+    {
+      "topic_id": 37,
+      "topic_key": "paper:2611.26239",
+      "topic_title": "Teaching Vision-Language-Action",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        37
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Teaching Vision-Language-Action Models to Stop Safely"
+      ],
+      "scorecard": {
+        "total": 102.8045725462963,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.904572546296296,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.8045725462963
+    },
+    {
+      "topic_id": 38,
+      "topic_key": "paper:2611.26286",
+      "topic_title": "Twice-Told Critiques",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        38
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Twice-Told Critiques: Claim-Level Homogenization of Peer Review in the LLM Era"
+      ],
+      "scorecard": {
+        "total": 102.8045725462963,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.904572546296296,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.8045725462963
+    },
+    {
+      "topic_id": 39,
+      "topic_key": "paper:2611.24193",
+      "topic_title": "WM^MLLM: Turning MLLMs into World",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        39
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "WM^MLLM: Turning MLLMs into World Models"
+      ],
+      "scorecard": {
+        "total": 102.8045725462963,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 5.904572546296296,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 102.8045725462963
+    },
+    {
+      "topic_id": 43,
+      "topic_key": "paper:2611.26268",
+      "topic_title": "Accelerating Mixture of Block",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        43
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 15,
+      "newest_pub_date": "2026-11-20",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Accelerating Mixture of Block Attention via Dynamic Routing, KV-Centric Execution and"
+      ],
+      "scorecard": {
+        "total": 101.40457253472222,
+        "cross_validation": 87,
+        "source_credibility": 10.5,
+        "recency": 5.904572534722222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 101.40457253472222
+    },
+    {
+      "topic_id": 27,
+      "topic_key": "Chess.com推出Gambit纸牌游戏平台",
+      "topic_title": "Chess.com推出Gambit纸牌游戏平台",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        27
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 59,
+      "avg_candidate_score": 19.169925001442312,
+      "newest_pub_date": "2026-11-21",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Chess.com’s next move is a new hub for classic games"
+      ],
+      "scorecard": {
+        "total": 101.32352007045404,
+        "cross_validation": 99,
+        "source_credibility": 13.418947501009617,
+        "recency": 6.904572569444444,
+        "entity_priority": 0,
+        "industry_value": 18,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 101.32352007045404
+    },
+    {
+      "topic_id": 40,
+      "topic_key": "WIRED发布《Kernel Panic》数字安全通讯",
+      "topic_title": "WIRED发布《Kernel Panic》数字安全通讯",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        40
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 59,
+      "avg_candidate_score": 18.08746284125034,
+      "newest_pub_date": "2026-11-21",
+      "top_sources": [
+        "WIRED AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "The Outages Are Just Getting Started"
+      ],
+      "scorecard": {
+        "total": 97.56579652359744,
+        "cross_validation": 99,
+        "source_credibility": 12.661223988875237,
+        "recency": 6.904572534722222,
+        "entity_priority": 0,
+        "industry_value": 15,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 97.56579652359744
+    },
+    {
+      "topic_id": 17,
+      "topic_key": "Thinking Machines Lab发布Inkling 2 Mini模型",
+      "topic_title": "Thinking Machines Lab发布Inkling 2 Mini模型",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        17
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 19.32192809488736,
+      "newest_pub_date": "2026-11-21",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "27B！穆拉蒂开源“循环脑”模型"
+      ],
+      "scorecard": {
+        "total": 91.92992225901374,
+        "cross_validation": 88.5,
+        "source_credibility": 13.525349666421153,
+        "recency": 6.904572592592593,
+        "entity_priority": 0,
+        "industry_value": 19,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "value:model_release",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 91.92992225901374
+    },
+    {
+      "topic_id": 47,
+      "topic_key": "Claude证明黎曼猜想",
+      "topic_title": "Claude证明黎曼猜想",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        47
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 50,
+      "avg_candidate_score": 10.321928094887362,
+      "newest_pub_date": "2026-11-21",
+      "top_sources": [
+        "爱范儿早报"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "曝 Claude 证明黎曼猜想"
+      ],
+      "scorecard": {
+        "total": 88.62992217799523,
+        "cross_validation": 85.5,
+        "source_credibility": 7.2253496664211525,
+        "recency": 6.904572511574074,
+        "entity_priority": 13,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Anthropic"
+        ]
+      },
+      "topic_total_score": 88.62992217799523
+    },
+    {
+      "topic_id": 41,
+      "topic_key": "Hugging Face社区成员获得AWS认证",
+      "topic_title": "Hugging Face社区成员获得AWS认证",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        41
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "I'm happy to share that I've officially earned my first AWS certification: AWS Certified"
+      ],
+      "scorecard": {
+        "total": 87.20457253472222,
+        "cross_validation": 102,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.904572534722222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -38,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 87.20457253472222
+    },
+    {
+      "topic_id": 3,
+      "topic_key": "Small Language Model (SLM) Digest",
+      "topic_title": "Small Language Model (SLM) Digest",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        3
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 27.584962500721154,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "🍌 BananaMind SLM Digest 📉 It was a quiet day in the small language model scene. No new"
+      ],
+      "scorecard": {
+        "total": 82.71404637781961,
+        "cross_validation": 103.5,
+        "source_credibility": 19.309473750504807,
+        "recency": 7.904572627314815,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -48,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 82.71404637781961
+    },
+    {
+      "topic_id": 45,
+      "topic_key": "AI给乐队现场搓MV",
+      "topic_title": "AI给乐队现场搓MV",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        45
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 11.700439718141093,
+      "newest_pub_date": "2026-11-21",
+      "top_sources": [
+        "量子位"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "AI给乐队现场搓MV"
+      ],
+      "scorecard": {
+        "total": 78.09488033742099,
+        "cross_validation": 87,
+        "source_credibility": 8.190307802698765,
+        "recency": 6.904572534722222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 78.09488033742099
+    },
+    {
+      "topic_id": 42,
+      "topic_key": "AtMem与GrepMem内存检索算法对比",
+      "topic_title": "AtMem与GrepMem内存检索算法对比",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        42
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-21",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "AtMem vs GrepMem : A 512-byte test of exact evidence retrieval"
+      ],
+      "scorecard": {
+        "total": 69.80457253472223,
+        "cross_validation": 87,
+        "source_credibility": 11.899999999999999,
+        "recency": 6.904572534722222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -38,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 69.80457253472223
+    },
+    {
+      "topic_id": 44,
+      "topic_key": "RCV Local: 给生僻词发声",
+      "topic_title": "RCV Local",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        44
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 51,
+      "avg_candidate_score": 14.807354922057604,
+      "newest_pub_date": "2026-11-21",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "🦓 RCV Local: give strange words a voice Try it out - Talk to our readme.md and hear your"
+      ],
+      "scorecard": {
+        "total": 56.269720980162546,
+        "cross_validation": 87,
+        "source_credibility": 10.365148445440322,
+        "recency": 6.904572534722222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -48,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 56.269720980162546
+    }
+  ]
+}
