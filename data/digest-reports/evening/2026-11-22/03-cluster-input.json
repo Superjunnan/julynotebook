@@ -1,0 +1,940 @@
+{
+  "run_date": "2026-11-22",
+  "cluster_input_cap": 150,
+  "cluster_input_cap_news": 70,
+  "cluster_input_cap_papers": 60,
+  "cluster_batch_size": 25,
+  "cluster_text_mode": "title_lead",
+  "cluster_enrich_mode": "hybrid",
+  "cluster_text_max_chars": 380,
+  "cluster_enrich_force_top_news": 20,
+  "input_count": 43,
+  "input_news_count": 18,
+  "input_paper_count": 25,
+  "dropped_by_cap": 1,
+  "enrichment": {
+    "cluster_text_mode": "title_lead",
+    "enrich_mode": "hybrid",
+    "total_cards": 44,
+    "considered": 19,
+    "enriched": 18,
+    "cache_hits": 10,
+    "fetched": 8,
+    "skipped_with_long_snippet": 18,
+    "skipped_low_quality_source": 25
+  },
+  "precluster": {
+    "input_cards": 44,
+    "grouped_cards": 43,
+    "merged_away": 1,
+    "multi_member_groups": 1,
+    "groups": [
+      {
+        "representative_id": 1,
+        "member_ids": [
+          1,
+          6
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "没有AI，12年潜心研究！人类数学家紧急公开广义黎曼猜想证明 有点魔幻，黎曼猜想突然迎来了两份证明"
+      },
+      {
+        "representative_id": 2,
+        "member_ids": [
+          2
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "普通人在 AI 时代，都能做出什么好玩的东西？ AI 现在能力这么强，写周报、做方案、拉数据"
+      },
+      {
+        "representative_id": 3,
+        "member_ids": [
+          3
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "前沿｜复旦校友创业，PuppyGraph获1000万美元融资 核心观点：2026年11月"
+      },
+      {
+        "representative_id": 4,
+        "member_ids": [
+          4
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "清华博士做了一款 AI 懒人办公神器 躺着上班，可能是 AI 时代最合理的办公姿势"
+      },
+      {
+        "representative_id": 5,
+        "member_ids": [
+          5
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Linq 获 a16z 领投 9000 万美元：AI Agent 正在绕开 App 过去几十年"
+      },
+      {
+        "representative_id": 7,
+        "member_ids": [
+          7
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Zenzap ：打造职场版 WhatsApp AI 融入工作聊天"
+      },
+      {
+        "representative_id": 8,
+        "member_ids": [
+          8
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "TwinD: Generalizing Deepfake Detection from"
+      },
+      {
+        "representative_id": 9,
+        "member_ids": [
+          9
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "ZeroVLN: Learning to Navigate without"
+      },
+      {
+        "representative_id": 10,
+        "member_ids": [
+          10
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "「镁伽科技」完成近2亿美元融资 累计融资近6亿美元。 36氪获悉，近日"
+      },
+      {
+        "representative_id": 11,
+        "member_ids": [
+          11
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "前腾讯联合创始人投了AI情绪硬件 核心概念是 emotional"
+      },
+      {
+        "representative_id": 12,
+        "member_ids": [
+          12
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "前TikTok直播软件技术负责人创业 游戏高光自动切片。 打游戏，最爽的就是短短几秒高光时刻"
+      },
+      {
+        "representative_id": 13,
+        "member_ids": [
+          13
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Banks Have Had It Up to Here With Your AI"
+      },
+      {
+        "representative_id": 14,
+        "member_ids": [
+          14
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Perplexity and Intelligence How perplexity"
+      },
+      {
+        "representative_id": 15,
+        "member_ids": [
+          15
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "AutoMaster: Autonomous Post-Training by"
+      },
+      {
+        "representative_id": 16,
+        "member_ids": [
+          16
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Depth Pro 2: Sharp and Temporally Consistent"
+      },
+      {
+        "representative_id": 17,
+        "member_ids": [
+          17
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "HiUni: Harmonizing Understanding and"
+      },
+      {
+        "representative_id": 18,
+        "member_ids": [
+          18
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Phantom Success, Silent Failure: Auditing the"
+      },
+      {
+        "representative_id": 19,
+        "member_ids": [
+          19
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Probing the \"Conscious\" Mind: Selective"
+      },
+      {
+        "representative_id": 20,
+        "member_ids": [
+          20
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "S1CogBench: What System One Decision Models"
+      },
+      {
+        "representative_id": 21,
+        "member_ids": [
+          21
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Squoosh Bench: Evaluating UX-1 on 318"
+      },
+      {
+        "representative_id": 22,
+        "member_ids": [
+          22
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Suppressing the Shortcut Hidden Behind the"
+      },
+      {
+        "representative_id": 23,
+        "member_ids": [
+          23
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Time Series Structure Learning with Local"
+      },
+      {
+        "representative_id": 24,
+        "member_ids": [
+          24
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Muru <p><strong><a href=\"https://github.com/mu等进展"
+      },
+      {
+        "representative_id": 25,
+        "member_ids": [
+          25
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "NandiBERT >> IndicBERTv2, ModernBERT and"
+      },
+      {
+        "representative_id": 26,
+        "member_ids": [
+          26
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Updates to Klein Ternary 1.7B: The current"
+      },
+      {
+        "representative_id": 27,
+        "member_ids": [
+          27
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "🚀 Introducing Tenet v2 (Qwen3 4B / 8B / 14B"
+      },
+      {
+        "representative_id": 28,
+        "member_ids": [
+          28
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "A CPU Inside an LLM: Zero-Gradient"
+      },
+      {
+        "representative_id": 29,
+        "member_ids": [
+          29
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Accord: Universal Online Metric Localization"
+      },
+      {
+        "representative_id": 30,
+        "member_ids": [
+          30
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "AltRA-Test: An Alternative Annotator Test for"
+      },
+      {
+        "representative_id": 31,
+        "member_ids": [
+          31
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Direct3D-V3: Latent-Free Diffusion"
+      },
+      {
+        "representative_id": 32,
+        "member_ids": [
+          32
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Do Probing and Steering Favor the Same"
+      },
+      {
+        "representative_id": 33,
+        "member_ids": [
+          33
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Lang-SVG: Hierarchical Image Vectorization"
+      },
+      {
+        "representative_id": 34,
+        "member_ids": [
+          34
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Learning What Actions Change: Action Effect"
+      },
+      {
+        "representative_id": 35,
+        "member_ids": [
+          35
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "One Prior, Two Dynamics: Repurposing Video"
+      },
+      {
+        "representative_id": 36,
+        "member_ids": [
+          36
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Posterior Matching Distillation Diffusion"
+      },
+      {
+        "representative_id": 37,
+        "member_ids": [
+          37
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "RL Post-Training in Diffusion Transformers Is"
+      },
+      {
+        "representative_id": 38,
+        "member_ids": [
+          38
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Teaching Vision-Language-Action Models to"
+      },
+      {
+        "representative_id": 39,
+        "member_ids": [
+          39
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Twice-Told Critiques: Claim-Level"
+      },
+      {
+        "representative_id": 40,
+        "member_ids": [
+          40
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "WM^MLLM: Turning MLLMs into World Models"
+      },
+      {
+        "representative_id": 41,
+        "member_ids": [
+          41
+        ],
+        "pub_date": "",
+        "topic_seed": "Kimi K2: Open Agentic Intelligence"
+      },
+      {
+        "representative_id": 42,
+        "member_ids": [
+          42
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "MNN-Pocket-0.3B-Dec on a Galaxy S26: your app"
+      },
+      {
+        "representative_id": 43,
+        "member_ids": [
+          43
+        ],
+        "pub_date": "2026-11-20",
+        "topic_seed": "Accelerating Mixture of Block Attention via"
+      },
+      {
+        "representative_id": 44,
+        "member_ids": [
+          44
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Hardware huggers! I've made an external GPU"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "candidate_id": 1,
+      "title": "没有AI，12年潜心研究！人类数学家紧急公开广义黎曼猜想证明",
+      "snippet_len": 270,
+      "cluster_text_len": 270,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 22.539030204684515,
+      "link": "https://aitntnews.com/newDetail.html?newId=31492"
+    },
+    {
+      "candidate_id": 2,
+      "title": "普通人在 AI 时代，都能做出什么好玩的东西？",
+      "snippet_len": 109,
+      "cluster_text_len": 109,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 22.539030204684515,
+      "link": "https://aitntnews.com/newDetail.html?newId=31506"
+    },
+    {
+      "candidate_id": 3,
+      "title": "前沿｜复旦校友创业，PuppyGraph获1000万美元融资",
+      "snippet_len": 98,
+      "cluster_text_len": 98,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 22.539030204684515,
+      "link": "https://aitntnews.com/newDetail.html?newId=31507"
+    },
+    {
+      "candidate_id": 4,
+      "title": "清华博士做了一款 AI 懒人办公神器",
+      "snippet_len": 144,
+      "cluster_text_len": 144,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 22.539030204684515,
+      "link": "https://aitntnews.com/newDetail.html?newId=31505"
+    },
+    {
+      "candidate_id": 5,
+      "title": "Linq 获 a16z 领投 9000 万美元：AI Agent 正在绕开 App",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 22.539030204684515,
+      "link": "https://aitntnews.com/newDetail.html?newId=31504"
+    },
+    {
+      "candidate_id": 7,
+      "title": "Zenzap ：打造职场版 WhatsApp",
+      "snippet_len": 106,
+      "cluster_text_len": 106,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 22.539030204684515,
+      "link": "https://aitntnews.com/newDetail.html?newId=31508"
+    },
+    {
+      "candidate_id": 8,
+      "title": "TwinD: Generalizing Deepfake Detection from Blending to Entire Face Synthesis",
+      "snippet_len": 121,
+      "cluster_text_len": 121,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 21,
+      "link": "https://huggingface.co/papers/2611.25935"
+    },
+    {
+      "candidate_id": 9,
+      "title": "ZeroVLN: Learning to Navigate without Supervised Fine-Tuning of the VLM Brain",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 21,
+      "link": "https://huggingface.co/papers/2611.26414"
+    },
+    {
+      "candidate_id": 10,
+      "title": "「镁伽科技」完成近2亿美元融资",
+      "snippet_len": 145,
+      "cluster_text_len": 145,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 20.398313621193157,
+      "link": "https://aitntnews.com/newDetail.html?newId=31502"
+    },
+    {
+      "candidate_id": 11,
+      "title": "前腾讯联合创始人投了AI情绪硬件",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 20.398313621193157,
+      "link": "https://aitntnews.com/newDetail.html?newId=31503"
+    },
+    {
+      "candidate_id": 12,
+      "title": "前TikTok直播软件技术负责人创业",
+      "snippet_len": 126,
+      "cluster_text_len": 126,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 20.398313621193157,
+      "link": "https://aitntnews.com/newDetail.html?newId=31510"
+    },
+    {
+      "candidate_id": 13,
+      "title": "Banks Have Had It Up to Here With Your AI Agent",
+      "snippet_len": 127,
+      "cluster_text_len": 127,
+      "source": "WIRED AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-22",
+      "domain": "wired.com",
+      "score": 24.39231742277876,
+      "link": "https://www.wired.com/story/banks-are-cracking-down-on-ai-agents/"
+    },
+    {
+      "candidate_id": 14,
+      "title": "Perplexity and Intelligence",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "OpenAI News",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-22",
+      "domain": "openai.com",
+      "score": 22.39231742277876,
+      "link": "https://openai.com/index/perplexity-and-intelligence"
+    },
+    {
+      "candidate_id": 15,
+      "title": "AutoMaster: Autonomous Post-Training by Making the Same Model a Better Teacher",
+      "snippet_len": 83,
+      "cluster_text_len": 83,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/papers/2611.26510"
+    },
+    {
+      "candidate_id": 16,
+      "title": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth",
+      "snippet_len": 109,
+      "cluster_text_len": 109,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/papers/2611.26603"
+    },
+    {
+      "candidate_id": 17,
+      "title": "HiUni: Harmonizing Understanding and Generation in Shared Visual Space",
+      "snippet_len": 103,
+      "cluster_text_len": 103,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/papers/2611.26107"
+    },
+    {
+      "candidate_id": 18,
+      "title": "Phantom Success, Silent Failure: Auditing the Success Checkers of Simulated Manipulation",
+      "snippet_len": 145,
+      "cluster_text_len": 145,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/papers/2611.25179"
+    },
+    {
+      "candidate_id": 19,
+      "title": "Probing the \"Conscious\" Mind: Selective Access and Global Workspace in Vision-Language Models",
+      "snippet_len": 137,
+      "cluster_text_len": 137,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/papers/2611.26590"
+    },
+    {
+      "candidate_id": 20,
+      "title": "S1CogBench: What System One Decision Models Can and Cannot Do on Cognitive Experiments",
+      "snippet_len": 132,
+      "cluster_text_len": 132,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/papers/2611.00911"
+    },
+    {
+      "candidate_id": 21,
+      "title": "Squoosh Bench: Evaluating UX-1 on 318 Historical Website A/B Tests",
+      "snippet_len": 91,
+      "cluster_text_len": 91,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/papers/2611.25200"
+    },
+    {
+      "candidate_id": 22,
+      "title": "Suppressing the Shortcut Hidden Behind the Gains of VideoLLM Fine-Tuning",
+      "snippet_len": 137,
+      "cluster_text_len": 137,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/papers/2611.25776"
+    },
+    {
+      "candidate_id": 23,
+      "title": "Time Series Structure Learning with Local Causal Parent Discovery",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/papers/2611.26232"
+    },
+    {
+      "candidate_id": 24,
+      "title": "Muru",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "Simon Willison's Weblog",
+      "source_group": "community",
+      "trust_tier": "high",
+      "pub_date": "2026-11-22",
+      "domain": "simonwillison.net",
+      "score": 20.247927513443585,
+      "link": "https://simonwillison.net/2026/Nov/21/muru/"
+    },
+    {
+      "candidate_id": 25,
+      "title": "NandiBERT >> IndicBERTv2, ModernBERT and Ettin Encoder NandiBERT - 𝐎𝐩𝐞𝐧 𝐒𝐎𝐓𝐀",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "huggingface.co",
+      "score": 19.169925001442312,
+      "link": "https://huggingface.co/posts/kalyan-ks/319012529960723"
+    },
+    {
+      "candidate_id": 26,
+      "title": "Updates to Klein Ternary 1.7B: The current checkpoints retains about 80% of FP16",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "huggingface.co",
+      "score": 19.169925001442312,
+      "link": "https://huggingface.co/posts/Banaxi-Tech/134992123330873"
+    },
+    {
+      "candidate_id": 27,
+      "title": "🚀 Introducing Tenet v2 (Qwen3 4B / 8B / 14B / 32B) — Thinking-Safe Tri-Anchor Unslop +",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "huggingface.co",
+      "score": 21.169925001442312,
+      "link": "https://huggingface.co/posts/mr-andrey-isachenko/966444829520609"
+    },
+    {
+      "candidate_id": 28,
+      "title": "A CPU Inside an LLM: Zero-Gradient Compilation of Exact Circuits into Pretrained Weights",
+      "snippet_len": 142,
+      "cluster_text_len": 142,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.26450"
+    },
+    {
+      "candidate_id": 29,
+      "title": "Accord: Universal Online Metric Localization and Dense Mapping from one Camera and an IMU",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.25279"
+    },
+    {
+      "candidate_id": 30,
+      "title": "AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.26073"
+    },
+    {
+      "candidate_id": 31,
+      "title": "Direct3D-V3: Latent-Free Diffusion Transformers in the Native Voxel Domain",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.26511"
+    },
+    {
+      "candidate_id": 32,
+      "title": "Do Probing and Steering Favor the Same Directions Within and Across Language Models?",
+      "snippet_len": 129,
+      "cluster_text_len": 129,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.19499"
+    },
+    {
+      "candidate_id": 33,
+      "title": "Lang-SVG: Hierarchical Image Vectorization with Language Priors",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.15941"
+    },
+    {
+      "candidate_id": 34,
+      "title": "Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.25980"
+    },
+    {
+      "candidate_id": 35,
+      "title": "One Prior, Two Dynamics: Repurposing Video Diffusion Transformers for Self-Supervised",
+      "snippet_len": 85,
+      "cluster_text_len": 85,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.26617"
+    },
+    {
+      "candidate_id": 36,
+      "title": "Posterior Matching Distillation",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.26629"
+    },
+    {
+      "candidate_id": 37,
+      "title": "RL Post-Training in Diffusion Transformers Is Activation Steering",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.26627"
+    },
+    {
+      "candidate_id": 38,
+      "title": "Teaching Vision-Language-Action Models to Stop Safely",
+      "snippet_len": 126,
+      "cluster_text_len": 126,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.26239"
+    },
+    {
+      "candidate_id": 39,
+      "title": "Twice-Told Critiques: Claim-Level Homogenization of Peer Review in the LLM Era",
+      "snippet_len": 128,
+      "cluster_text_len": 128,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.26286"
+    },
+    {
+      "candidate_id": 40,
+      "title": "WM^MLLM: Turning MLLMs into World Models",
+      "snippet_len": 140,
+      "cluster_text_len": 140,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 17,
+      "link": "https://huggingface.co/papers/2611.24193"
+    },
+    {
+      "candidate_id": 41,
+      "title": "Kimi K2: Open Agentic Intelligence",
+      "snippet_len": 35,
+      "cluster_text_len": 35,
+      "source": "Kimi",
+      "source_group": "company_view",
+      "trust_tier": "high",
+      "pub_date": "",
+      "domain": "platform.moonshot.cn",
+      "score": 15.700439718141093,
+      "link": "https://platform.moonshot.cn/blog/posts/k2-report"
+    },
+    {
+      "candidate_id": 42,
+      "title": "MNN-Pocket-0.3B-Dec on a Galaxy S26: your app can ask its own multiple-choice questions and",
+      "snippet_len": 139,
+      "cluster_text_len": 139,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "huggingface.co",
+      "score": 19,
+      "link": "https://huggingface.co/posts/mlboydaisuke/821979965620558"
+    },
+    {
+      "candidate_id": 43,
+      "title": "Accelerating Mixture of Block Attention via Dynamic Routing, KV-Centric Execution and",
+      "snippet_len": 117,
+      "cluster_text_len": 117,
+      "source": "Hugging Face Papers",
+      "source_group": "paper",
+      "trust_tier": "high",
+      "pub_date": "2026-11-20",
+      "domain": "huggingface.co",
+      "score": 15,
+      "link": "https://huggingface.co/papers/2611.26268"
+    },
+    {
+      "candidate_id": 44,
+      "title": "Hardware huggers! I've made an external GPU fan controller for the server grade cards where",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "huggingface.co",
+      "score": 16.807354922057606,
+      "link": "https://huggingface.co/posts/csabakecskemeti/915410384399036"
+    }
+  ]
+}
