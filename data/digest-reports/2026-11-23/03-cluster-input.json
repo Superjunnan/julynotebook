@@ -1,0 +1,541 @@
+{
+  "run_date": "2026-11-23",
+  "cluster_input_cap": 100,
+  "cluster_input_cap_news": 50,
+  "cluster_input_cap_papers": 60,
+  "cluster_batch_size": 25,
+  "cluster_text_mode": "title_lead",
+  "cluster_enrich_mode": "hybrid",
+  "cluster_text_max_chars": 380,
+  "cluster_enrich_force_top_news": 20,
+  "input_count": 24,
+  "input_news_count": 24,
+  "input_paper_count": 0,
+  "dropped_by_cap": 0,
+  "enrichment": {
+    "cluster_text_mode": "title_lead",
+    "enrich_mode": "hybrid",
+    "total_cards": 25,
+    "considered": 21,
+    "enriched": 21,
+    "cache_hits": 13,
+    "fetched": 8,
+    "skipped_with_long_snippet": 23,
+    "skipped_low_quality_source": 0
+  },
+  "precluster": {
+    "input_cards": 25,
+    "grouped_cards": 24,
+    "merged_away": 1,
+    "multi_member_groups": 1,
+    "groups": [
+      {
+        "representative_id": 1,
+        "member_ids": [
+          1
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "COF 1.2.3 is out: draft an AI character with"
+      },
+      {
+        "representative_id": 2,
+        "member_ids": [
+          2,
+          4
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "给 AI 发展划一条“困惑度”红线：OpenAI 首席科学家提议设行业门槛OpenAI首席科等进展"
+      },
+      {
+        "representative_id": 3,
+        "member_ids": [
+          3
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "微软 AI 掌门人罕见“交底”：公开 MAI-2 模型关键指标"
+      },
+      {
+        "representative_id": 5,
+        "member_ids": [
+          5
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "OpenAI’s chief scientist has thoughts on how"
+      },
+      {
+        "representative_id": 6,
+        "member_ids": [
+          6
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "The vibe-coding revolution is coming to all"
+      },
+      {
+        "representative_id": 7,
+        "member_ids": [
+          7
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "38 万参数的 Transformer 塞进一张软盘：三十年前的 486 老电脑"
+      },
+      {
+        "representative_id": 8,
+        "member_ids": [
+          8
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "沉寂百日后先上前菜：智谱下周发 GLM-5.4，3 万亿旗舰 12 月见国产大模型沉寂三个多月后"
+      },
+      {
+        "representative_id": 9,
+        "member_ids": [
+          9
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "靠 Kimi K2.5 起家的 Cursor 向国会表态"
+      },
+      {
+        "representative_id": 10,
+        "member_ids": [
+          10
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "腾讯混元团队 Reddit 答问 120 分钟：不刻意刷榜"
+      },
+      {
+        "representative_id": 11,
+        "member_ids": [
+          11
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "AI 与人各交一份千禧难题答卷：一边靠 Claude 写完 79 页证明"
+      },
+      {
+        "representative_id": 12,
+        "member_ids": [
+          12
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "AI 账号互相捧场刷屏评论区：B 站发问卷，给“大肥鱼”们立规矩B站评论区涌现大量AI智能体账号"
+      },
+      {
+        "representative_id": 13,
+        "member_ids": [
+          13
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "MiniMax 拿内部模型开刀密码学：把纸面攻击变成秒级实战"
+      },
+      {
+        "representative_id": 14,
+        "member_ids": [
+          14
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "🍌 BananaMind SLM Digest 🚀 The biggest"
+      },
+      {
+        "representative_id": 15,
+        "member_ids": [
+          15
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "Binding of Isaac developer removes AI music"
+      },
+      {
+        "representative_id": 16,
+        "member_ids": [
+          16
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "豆姐威武！豆包工作上新21个专业工作台 去不了字节打工，现在可以让字节的AI给你打工了"
+      },
+      {
+        "representative_id": 17,
+        "member_ids": [
+          17
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Over the last two weeks, we've seen the AI"
+      },
+      {
+        "representative_id": 18,
+        "member_ids": [
+          18
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Zero Intelligence Model is now available for"
+      },
+      {
+        "representative_id": 19,
+        "member_ids": [
+          19
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "TML开源新模型，循环Transformer架构 昨晚，黎曼猜想的一份 AI 证明声明"
+      },
+      {
+        "representative_id": 20,
+        "member_ids": [
+          20
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Zenzap ：打造职场版 WhatsApp AI 融入工作聊天"
+      },
+      {
+        "representative_id": 21,
+        "member_ids": [
+          21
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "「镁伽科技」完成近2亿美元融资 累计融资近6亿美元。 36氪获悉，近日"
+      },
+      {
+        "representative_id": 22,
+        "member_ids": [
+          22
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "前TikTok直播软件技术负责人创业 游戏高光自动切片。 打游戏，最爽的就是短短几秒高光时刻"
+      },
+      {
+        "representative_id": 23,
+        "member_ids": [
+          23
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "湾区最火的几家 AI 公司一线洞察：产品越来越像，最后到底该拼什么？ 你有没有想过"
+      },
+      {
+        "representative_id": 24,
+        "member_ids": [
+          24
+        ],
+        "pub_date": "2026-11-22",
+        "topic_seed": "Hugging face has a new feature for the our"
+      },
+      {
+        "representative_id": 25,
+        "member_ids": [
+          25
+        ],
+        "pub_date": "2026-11-23",
+        "topic_seed": "Claude 的黎曼猜想证明获 Lean 官方认证 11 月 20 日"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "candidate_id": 1,
+      "title": "COF 1.2.3 is out: draft an AI character with your own model, then talk with it. · The",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "huggingface.co",
+      "score": 25.70043971814109,
+      "link": "https://huggingface.co/posts/yannsouetre/767899689925865"
+    },
+    {
+      "candidate_id": 2,
+      "title": "给 AI 发展划一条“困惑度”红线：OpenAI 首席科学家提议设行业门槛OpenAI首席科学家帕霍茨基提议，全行业共建AI开发标准，设置硬性安全门槛，企业须承诺满足安全要求前不越线",
+      "snippet_len": 234,
+      "cluster_text_len": 234,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "news.aibase.com",
+      "score": 22.539030204684515,
+      "link": "https://news.aibase.com/zh/news/32455"
+    },
+    {
+      "candidate_id": 3,
+      "title": "微软 AI 掌门人罕见“交底”：公开 MAI-2 模型关键指标，响应 OpenAI 透明度倡议11月22日，AI巨头罕见相互“交底”",
+      "snippet_len": 121,
+      "cluster_text_len": 121,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "news.aibase.com",
+      "score": 22.539030204684515,
+      "link": "https://news.aibase.com/zh/news/32452"
+    },
+    {
+      "candidate_id": 5,
+      "title": "OpenAI’s chief scientist has thoughts on how to limit AI development",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "TechCrunch AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-23",
+      "domain": "techcrunch.com",
+      "score": 26.523561956057012,
+      "link": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/"
+    },
+    {
+      "candidate_id": 6,
+      "title": "The vibe-coding revolution is coming to all the gadgets",
+      "snippet_len": 96,
+      "cluster_text_len": 96,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-22",
+      "domain": "theverge.com",
+      "score": 21.459431618637296,
+      "link": "https://www.theverge.com/column/1039139/vibe-coding-gadgets-tv-camera"
+    },
+    {
+      "candidate_id": 7,
+      "title": "38 万参数的 Transformer 塞进一张软盘：三十年前的 486 老电脑，如今也能“跑 AI”开发者WollyMonjac打造复古项目Tiny2.1",
+      "snippet_len": 109,
+      "cluster_text_len": 109,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32459"
+    },
+    {
+      "candidate_id": 8,
+      "title": "沉寂百日后先上前菜：智谱下周发 GLM-5.4，3 万亿旗舰 12 月见国产大模型沉寂三个多月后，智谱被指下周发布GLM-5.4。据大摩研报，该模型为轻量级新一代，参数7000多亿",
+      "snippet_len": 92,
+      "cluster_text_len": 92,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32458"
+    },
+    {
+      "candidate_id": 9,
+      "title": "靠 Kimi K2.5 起家的 Cursor 向国会表态：有意逐步淘汰中国大模型Cursor开发商Anysphere向美国国会报告，有意研究逐步放弃中国公司的开源AI大模型",
+      "snippet_len": 142,
+      "cluster_text_len": 142,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32461"
+    },
+    {
+      "candidate_id": 10,
+      "title": "腾讯混元团队 Reddit 答问 120 分钟：不刻意刷榜，下一代模型规模将“显著扩大”腾讯11月推出Hy4与Hy4flash后，为回应“AI慢了”质疑",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32460"
+    },
+    {
+      "candidate_id": 11,
+      "title": "AI 与人各交一份千禧难题答卷：一边靠 Claude 写完 79 页证明，一边掏出 12 年手写的 940 页草稿数学界同一天摆出两份“答卷”",
+      "snippet_len": 119,
+      "cluster_text_len": 119,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32450"
+    },
+    {
+      "candidate_id": 12,
+      "title": "AI 账号互相捧场刷屏评论区：B 站发问卷，给“大肥鱼”们立规矩B站评论区涌现大量AI智能体账号，如“大肥鱼”“小飞鲸”，刷屏导致真人成少数。11月20日",
+      "snippet_len": 141,
+      "cluster_text_len": 141,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32462"
+    },
+    {
+      "candidate_id": 13,
+      "title": "MiniMax 拿内部模型开刀密码学：把纸面攻击变成秒级实战，NIST 竞赛算法首次被真攻破MiniMax研究团队用最新内部模型，对密码学前沿方案开展系统性自动化密码分析",
+      "snippet_len": 148,
+      "cluster_text_len": 148,
+      "source": "AIBase",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "news.aibase.com",
+      "score": 20.398313621193157,
+      "link": "https://news.aibase.com/zh/news/32456"
+    },
+    {
+      "candidate_id": 14,
+      "title": "🍌 BananaMind SLM Digest 🚀 The biggest release today is BananaMind-2.5-Pro, a 138,971,520",
+      "snippet_len": 133,
+      "cluster_text_len": 133,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "huggingface.co",
+      "score": 23.32192809488736,
+      "link": "https://huggingface.co/posts/BananaMindBot/122489832814799"
+    },
+    {
+      "candidate_id": 15,
+      "title": "Binding of Isaac developer removes AI music from Repentance Plus",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "The Verge AI",
+      "source_group": "foreign_media",
+      "trust_tier": "high",
+      "pub_date": "2026-11-23",
+      "domain": "theverge.com",
+      "score": 23.32192809488736,
+      "link": "https://www.theverge.com/games/1039770/binding-of-isaac-ai-music"
+    },
+    {
+      "candidate_id": 16,
+      "title": "豆姐威武！豆包工作上新21个专业工作台",
+      "snippet_len": 145,
+      "cluster_text_len": 145,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "aitntnews.com",
+      "score": 19.32192809488736,
+      "link": "https://aitntnews.com/newDetail.html?newId=31517"
+    },
+    {
+      "candidate_id": 17,
+      "title": "Over the last two weeks, we've seen the AI landscape shift dramatically. Data centers are",
+      "snippet_len": 129,
+      "cluster_text_len": 129,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "huggingface.co",
+      "score": 17.169925001442312,
+      "link": "https://huggingface.co/posts/John1604/418575142297672"
+    },
+    {
+      "candidate_id": 18,
+      "title": "Zero Intelligence Model is now available for free on Also get a lifetime plan for all the",
+      "snippet_len": 84,
+      "cluster_text_len": 84,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "huggingface.co",
+      "score": 17.169925001442312,
+      "link": "https://huggingface.co/posts/BibbyResearch/770229191414343"
+    },
+    {
+      "candidate_id": 19,
+      "title": "TML开源新模型，循环Transformer架构",
+      "snippet_len": 136,
+      "cluster_text_len": 136,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 17.154401331471153,
+      "link": "https://aitntnews.com/newDetail.html?newId=31498"
+    },
+    {
+      "candidate_id": 20,
+      "title": "Zenzap ：打造职场版 WhatsApp",
+      "snippet_len": 106,
+      "cluster_text_len": 106,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 17.154401331471153,
+      "link": "https://aitntnews.com/newDetail.html?newId=31508"
+    },
+    {
+      "candidate_id": 21,
+      "title": "「镁伽科技」完成近2亿美元融资",
+      "snippet_len": 145,
+      "cluster_text_len": 145,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 14.584962500721156,
+      "link": "https://aitntnews.com/newDetail.html?newId=31502"
+    },
+    {
+      "candidate_id": 22,
+      "title": "前TikTok直播软件技术负责人创业",
+      "snippet_len": 126,
+      "cluster_text_len": 126,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 14.584962500721156,
+      "link": "https://aitntnews.com/newDetail.html?newId=31510"
+    },
+    {
+      "candidate_id": 23,
+      "title": "湾区最火的几家 AI 公司一线洞察：产品越来越像，最后到底该拼什么？",
+      "snippet_len": 150,
+      "cluster_text_len": 150,
+      "source": "AITNT 资讯",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "aitntnews.com",
+      "score": 14.584962500721156,
+      "link": "https://aitntnews.com/newDetail.html?newId=31496"
+    },
+    {
+      "candidate_id": 24,
+      "title": "Hugging face has a new feature for the our homepage that’s cool. I’ll be back",
+      "snippet_len": 151,
+      "cluster_text_len": 151,
+      "source": "Hugging Face Posts",
+      "source_group": "community",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-22",
+      "domain": "huggingface.co",
+      "score": 14.807354922057604,
+      "link": "https://huggingface.co/posts/Simzy/789775641552564"
+    },
+    {
+      "candidate_id": 25,
+      "title": "Claude 的黎曼猜想证明获 Lean 官方认证",
+      "snippet_len": 124,
+      "cluster_text_len": 124,
+      "source": "爱范儿早报",
+      "source_group": "domestic_media",
+      "trust_tier": "medium",
+      "pub_date": "2026-11-23",
+      "domain": "ifanr.com",
+      "score": 13,
+      "link": "https://www.ifanr.com/1690857#__brief-2"
+    }
+  ]
+}

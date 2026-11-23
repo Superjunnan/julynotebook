@@ -1,0 +1,712 @@
+{
+  "run_date": "2026-11-23",
+  "cluster_chunks": [
+    {
+      "chunk_index": 1,
+      "chunk_size": 24,
+      "representative_assignments": 24,
+      "assignments": 24,
+      "fallback_assignments": 0,
+      "strategy": "llm_news",
+      "elapsed_ms": 2730319
+    }
+  ],
+  "mode_breakdown": {
+    "news_input": 24,
+    "news_after_precluster": 24,
+    "paper_input": 0,
+    "paper_deterministic": 0,
+    "llm_chunk_count": 1
+  },
+  "assignments_count": 24,
+  "fallback_assignments": 0,
+  "singleton_recluster": {
+    "enabled": true,
+    "anchor_count": 5,
+    "singleton_candidates": 0,
+    "merged": 0,
+    "kept": 0,
+    "invalid_or_low_confidence": 0,
+    "min_confidence": 0.72,
+    "min_topic_score": 68,
+    "max_items": 24,
+    "decisions": [],
+    "note": "no_singletons"
+  },
+  "topic_cards": [
+    {
+      "topic_id": 8,
+      "topic_key": "AI 与 Claude 协作证明黎曼猜想",
+      "topic_title": "AI 与 Claude 协作证明黎曼猜想",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        11,
+        19,
+        25
+      ],
+      "mention_count": 3,
+      "source_diversity": 3,
+      "cross_source_score": 76,
+      "avg_candidate_score": 16.850904984221437,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "AIBase",
+        "AITNT 资讯",
+        "爱范儿早报"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "AI 与人各交一份千禧难题答卷：一边靠 Claude 写完 79 页证明，一边掏出 12 年手写的 940 页草稿数学界同一天摆出两份“答卷”",
+        "TML开源新模型，循环Transformer架构",
+        "Claude 的黎曼猜想证明获 Lean 官方认证"
+      ],
+      "scorecard": {
+        "total": 204.02844681071426,
+        "cross_validation": 165.5,
+        "source_credibility": 11.795633488955005,
+        "recency": 7.732813321759259,
+        "entity_priority": 13,
+        "industry_value": 12,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -8,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Anthropic",
+          "value:model_release"
+        ]
+      },
+      "topic_total_score": 204.02844681071426
+    },
+    {
+      "topic_id": 2,
+      "topic_key": "OpenAI 首席科学家提议设 AI 开发红线",
+      "topic_title": "OpenAI 首席科学家提议设 AI 开发红线",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        2,
+        3,
+        5
+      ],
+      "mention_count": 3,
+      "source_diversity": 2,
+      "cross_source_score": 74,
+      "avg_candidate_score": 23.86720745514201,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "AIBase",
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "domestic_media",
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "给 AI 发展划一条“困惑度”红线：OpenAI 首席科学家提议设行业门槛OpenAI首席科学家帕霍茨基提议，全行业共建AI开发标准，设置硬性安全门槛，企业须承诺满足安全要求前不越线",
+        "微软 AI 掌门人罕见“交底”：公开 MAI-2 模型关键指标，响应 OpenAI 透明度倡议11月22日，AI巨头罕见相互“交底”",
+        "OpenAI’s chief scientist has thoughts on how to limit AI development"
+      ],
+      "scorecard": {
+        "total": 190.93985857508088,
+        "cross_validation": 150.5,
+        "source_credibility": 16.707045218599408,
+        "recency": 7.732813356481482,
+        "entity_priority": 14,
+        "industry_value": 8,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -8,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:OpenAI",
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 190.93985857508088
+    },
+    {
+      "topic_id": 3,
+      "topic_key": "Vibe-coding 革命：AI 赋能所有设备",
+      "topic_title": "Vibe-coding 革命",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        6,
+        15
+      ],
+      "mention_count": 2,
+      "source_diversity": 1,
+      "cross_source_score": 70,
+      "avg_candidate_score": 22.39067985676233,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "The vibe-coding revolution is coming to all the gadgets",
+        "Binding of Isaac developer removes AI music from Repentance Plus"
+      ],
+      "scorecard": {
+        "total": 141.40628924464104,
+        "cross_validation": 124,
+        "source_credibility": 15.67347589973363,
+        "recency": 7.732813344907408,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -8,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 141.40628924464104
+    },
+    {
+      "topic_id": 5,
+      "topic_key": "智谱GLM-5.4发布传闻",
+      "topic_title": "智谱GLM-5.4发布传闻",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        8
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 60,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "沉寂百日后先上前菜：智谱下周发 GLM-5.4，3 万亿旗舰 12 月见国产大模型沉寂三个多月后，智谱被指下周发布GLM-5.4。据大摩研报，该模型为轻量级新一代，参数7000多亿"
+      ],
+      "scorecard": {
+        "total": 136.51163286816853,
+        "cross_validation": 100.5,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.7328133333333335,
+        "entity_priority": 11,
+        "industry_value": 19,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 8,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:智谱/GLM",
+          "value:model_release",
+          "value:product_launch",
+          "domestic-ai-signal"
+        ]
+      },
+      "topic_total_score": 136.51163286816853
+    },
+    {
+      "topic_id": 6,
+      "topic_key": "Cursor拟弃用中国大模型",
+      "topic_title": "Cursor拟弃用中国大模型",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        9
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "靠 Kimi K2.5 起家的 Cursor 向国会表态：有意逐步淘汰中国大模型Cursor开发商Anysphere向美国国会报告，有意研究逐步放弃中国公司的开源AI大模型"
+      ],
+      "scorecard": {
+        "total": 129.01163286816853,
+        "cross_validation": 102,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.7328133333333335,
+        "entity_priority": 11,
+        "industry_value": 0,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 8,
+        "edition_bias": 0,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:月之暗面/Kimi",
+          "domestic-ai-signal"
+        ]
+      },
+      "topic_total_score": 129.01163286816853
+    },
+    {
+      "topic_id": 1,
+      "topic_key": "COF 1.2.3 发布：用自有模型创建 AI 角色",
+      "topic_title": "COF 1.2.3 发布",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        1,
+        14
+      ],
+      "mention_count": 2,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 24.511183906514226,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "COF 1.2.3 is out: draft an AI character with your own model, then talk with it. · The",
+        "🍌 BananaMind SLM Digest 🚀 The biggest release today is BananaMind-2.5-Pro, a 138,971,520"
+      ],
+      "scorecard": {
+        "total": 128.89064211418957,
+        "cross_validation": 115,
+        "source_credibility": 17.157828734559956,
+        "recency": 7.732813379629629,
+        "entity_priority": 0,
+        "industry_value": 7,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -20,
+        "pr_penalty": 0,
+        "signals": [
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 128.89064211418957
+    },
+    {
+      "topic_id": 7,
+      "topic_key": "腾讯混元团队Reddit AMA",
+      "topic_title": "腾讯混元团队Reddit AMA",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        10
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "腾讯混元团队 Reddit 答问 120 分钟：不刻意刷榜，下一代模型规模将“显著扩大”腾讯11月推出Hy4与Hy4flash后，为回应“AI慢了”质疑"
+      ],
+      "scorecard": {
+        "total": 122.01163285659447,
+        "cross_validation": 102,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.732813321759259,
+        "entity_priority": 11,
+        "industry_value": 7,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:腾讯/混元",
+          "value:product_launch",
+          "domestic-ai-signal"
+        ]
+      },
+      "topic_total_score": 122.01163285659447
+    },
+    {
+      "topic_id": 10,
+      "topic_key": "MiniMax攻破密码学算法",
+      "topic_title": "MiniMax攻破密码学算法",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        13
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "MiniMax 拿内部模型开刀密码学：把纸面攻击变成秒级实战，NIST 竞赛算法首次被真攻破MiniMax研究团队用最新内部模型，对密码学前沿方案开展系统性自动化密码分析"
+      ],
+      "scorecard": {
+        "total": 119.01163284502039,
+        "cross_validation": 102,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.732813310185185,
+        "entity_priority": 11,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 8,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:MiniMax",
+          "domestic-ai-signal"
+        ]
+      },
+      "topic_total_score": 119.01163284502039
+    },
+    {
+      "topic_id": 4,
+      "topic_key": "38 万参数 Transformer 跑在 486 电脑上",
+      "topic_title": "38 万参数 Transformer 跑在 486 电脑上",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        7
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "38 万参数的 Transformer 塞进一张软盘：三十年前的 486 老电脑，如今也能“跑 AI”开发者WollyMonjac打造复古项目Tiny2.1"
+      ],
+      "scorecard": {
+        "total": 111.01163286816853,
+        "cross_validation": 102,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.7328133333333335,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 111.01163286816853
+    },
+    {
+      "topic_id": 9,
+      "topic_key": "B站治理AI账号刷屏",
+      "topic_title": "B站治理AI账号刷屏",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        12
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "AI 账号互相捧场刷屏评论区：B 站发问卷，给“大肥鱼”们立规矩B站评论区涌现大量AI智能体账号，如“大肥鱼”“小飞鲸”，刷屏导致真人成少数。11月20日"
+      ],
+      "scorecard": {
+        "total": 110.01163285659447,
+        "cross_validation": 102,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.732813321759259,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 110.01163285659447
+    },
+    {
+      "topic_id": 11,
+      "topic_key": "豆包工作上新 21 个专业工作台",
+      "topic_title": "豆包工作上新 21 个专业工作台",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        16
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 61,
+      "avg_candidate_score": 19.32192809488736,
+      "newest_pub_date": "2026-11-23",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "豆姐威武！豆包工作上新21个专业工作台"
+      ],
+      "scorecard": {
+        "total": 103.25816297660634,
+        "cross_validation": 102,
+        "source_credibility": 13.525349666421153,
+        "recency": 7.732813310185185,
+        "entity_priority": 12,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:字节/豆包/Seed",
+          "domestic-ai-signal"
+        ]
+      },
+      "topic_total_score": 103.25816297660634
+    },
+    {
+      "topic_id": 12,
+      "topic_key": "Hugging Face 社区动态",
+      "topic_title": "Hugging Face 社区动态",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        17,
+        18,
+        24
+      ],
+      "mention_count": 3,
+      "source_diversity": 1,
+      "cross_source_score": 52,
+      "avg_candidate_score": 16.38240164164741,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "Over the last two weeks, we've seen the AI landscape shift dramatically. Data centers are",
+        "Zero Intelligence Model is now available for free on Also get a lifetime plan for all the",
+        "Hugging face has a new feature for the our homepage that’s cool. I’ll be back"
+      ],
+      "scorecard": {
+        "total": 97.70049445933836,
+        "cross_validation": 105.5,
+        "source_credibility": 11.467681149153185,
+        "recency": 6.732813310185185,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -28,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 97.70049445933836
+    },
+    {
+      "topic_id": 16,
+      "topic_key": "湾区AI公司洞察",
+      "topic_title": "湾区AI公司洞察",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        23
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 49,
+      "avg_candidate_score": 14.584962500721156,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "湾区最火的几家 AI 公司一线洞察：产品越来越像，最后到底该拼什么？"
+      ],
+      "scorecard": {
+        "total": 76.94228704911592,
+        "cross_validation": 84,
+        "source_credibility": 10.20947375050481,
+        "recency": 6.732813298611111,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 76.94228704911592
+    },
+    {
+      "topic_id": 14,
+      "topic_key": "镁伽科技完成近 2 亿美元融资",
+      "topic_title": "镁伽科技完成近 2 亿美元融资",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        21
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 50,
+      "avg_candidate_score": 14.584962500721156,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "「镁伽科技」完成近2亿美元融资"
+      ],
+      "scorecard": {
+        "total": 76.44228706068999,
+        "cross_validation": 85.5,
+        "source_credibility": 10.20947375050481,
+        "recency": 6.732813310185185,
+        "entity_priority": 0,
+        "industry_value": 10,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "value:commercialization_revenue"
+        ]
+      },
+      "topic_total_score": 76.44228706068999
+    },
+    {
+      "topic_id": 13,
+      "topic_key": "Zenzap打造职场版WhatsApp",
+      "topic_title": "Zenzap打造职场版WhatsApp",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        20
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 50,
+      "avg_candidate_score": 17.154401331471153,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "Zenzap ：打造职场版 WhatsApp"
+      ],
+      "scorecard": {
+        "total": 68.24089424221498,
+        "cross_validation": 85.5,
+        "source_credibility": 12.008080932029806,
+        "recency": 6.732813310185185,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 68.24089424221498
+    },
+    {
+      "topic_id": 15,
+      "topic_key": "前TikTok技术负责人创业",
+      "topic_title": "前TikTok技术负责人创业",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        22
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 50,
+      "avg_candidate_score": 14.584962500721156,
+      "newest_pub_date": "2026-11-22",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "前TikTok直播软件技术负责人创业"
+      ],
+      "scorecard": {
+        "total": 66.44228704911592,
+        "cross_validation": 85.5,
+        "source_credibility": 10.20947375050481,
+        "recency": 6.732813298611111,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": 0,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 66.44228704911592
+    }
+  ]
+}
