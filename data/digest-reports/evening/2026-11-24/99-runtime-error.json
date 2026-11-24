@@ -1,0 +1,42 @@
+{
+  "run_date": "2026-11-24",
+  "error": {
+    "name": "ReferenceError",
+    "message": "serializeError is not defined",
+    "stack": "ReferenceError: serializeError is not defined\n    at main (file:///home/runner/work/julynotebook/julynotebook/tools/digest.mjs:8687:16)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)",
+    "cause": null
+  },
+  "llm_stats": {
+    "cache_hits": 0,
+    "cache_misses": 3,
+    "live_calls": 3,
+    "retry_count": 0,
+    "rate_limit_errors": 0,
+    "transient_errors": 0,
+    "timeout_errors": 0
+  },
+  "runtime": {
+    "digest_tz": "Asia/Shanghai",
+    "runtime_tz": "Asia/Shanghai",
+    "digest_post_time": "19:40:00",
+    "zhipu_model": "glm-4.7-flash",
+    "llm_max_concurrency": 1,
+    "llm_min_interval_ms": 35000,
+    "llm_interval_jitter_ms": 600,
+    "llm_max_retries": 3,
+    "llm_rate_limit_retry_delays_ms": [
+      900000,
+      1800000
+    ],
+    "llm_cache_retention_days": 45,
+    "llm_retry_cooldown_max_ms": 120000,
+    "candidate_pool_cap": 250,
+    "candidate_pool_news_cap": 200,
+    "candidate_pool_papers_cap": 50,
+    "candidate_pool_news_per_source_cap": 8,
+    "cluster_adaptive_min_chunk_size": 5,
+    "cluster_adaptive_max_depth": 3,
+    "topic_merge_batch_size": 60,
+    "timeout_zhipu_ms": 240000
+  }
+}

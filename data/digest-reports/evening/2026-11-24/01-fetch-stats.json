@@ -156,7 +156,7 @@
       "source": "AITNT 资讯",
       "mode": "page_scrape/generic_links",
       "status": "ok",
-      "count": 15,
+      "count": 14,
       "count_type": "links"
     },
     {
@@ -184,7 +184,7 @@
       "source": "OpenAI News",
       "mode": "direct_feed/rss",
       "status": "ok",
-      "count": 1425,
+      "count": 1429,
       "count_type": "items"
     },
     {
@@ -204,10 +204,9 @@
     {
       "source": "Google DeepMind Blog",
       "mode": "direct_feed/rss",
-      "status": "failed",
-      "count": 0,
-      "count_type": "none",
-      "error": "Unable to parse XML."
+      "status": "ok",
+      "count": 100,
+      "count_type": "items"
     },
     {
       "source": "Meta AI Blog",
@@ -333,9 +332,10 @@
     {
       "source": "智谱",
       "mode": "page_scrape/generic_links",
-      "status": "ok",
-      "count": 15,
-      "count_type": "links"
+      "status": "failed",
+      "count": 0,
+      "count_type": "none",
+      "error": "fetch failed (UND_ERR_CONNECT_TIMEOUT)"
     },
     {
       "source": "DeepSeek",
@@ -383,14 +383,14 @@
       "source": "量子位",
       "mode": "direct_feed/rss",
       "status": "ok",
-      "count": 8,
+      "count": 5,
       "count_type": "items"
     },
     {
       "source": "爱范儿早报",
       "mode": "page_scrape/ifanr_morning_brief",
       "status": "ok",
-      "count": 12,
+      "count": 17,
       "count_type": "links"
     },
     {
@@ -418,7 +418,7 @@
       "source": "arXiv cs.AI",
       "mode": "direct_feed/rss",
       "status": "ok",
-      "count": 351,
+      "count": 773,
       "count_type": "items"
     },
     {
@@ -429,5 +429,5 @@
       "count_type": "links"
     }
   ],
-  "fetched_total_items": 2302
+  "fetched_total_items": 2814
 }
