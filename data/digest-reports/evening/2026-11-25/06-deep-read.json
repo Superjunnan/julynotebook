@@ -1,0 +1,404 @@
+{
+  "run_date": "2026-11-25",
+  "selected_topic_ids": [
+    85,
+    69,
+    87,
+    66,
+    23,
+    64,
+    68,
+    63,
+    86,
+    78,
+    16,
+    31,
+    3,
+    10,
+    27,
+    41
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 16,
+    "base_members_added": 19,
+    "expanded_added": 1,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 25,
+    "final_targets": 20,
+    "global_cap": 30
+  },
+  "deep_read_links": 20,
+  "materials_total": 20,
+  "materials_windowed": 20,
+  "materials_usable": 19,
+  "materials_by_source": {
+    "arXiv cs.AI": 7,
+    "AIBase": 5,
+    "AITNT 资讯": 4,
+    "量子位": 2,
+    "爱范儿早报": 1
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 69,
+      "topic_title": "百度开源文心5.5 Flash Preview",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        16
+      ],
+      "members": [
+        {
+          "ref_id": 16,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32521",
+          "title": "百度开源文心 5.5 Flash Preview，用“测试驱动”重塑长程 AI 编程范式AI编程领域正面临普遍工程化瓶颈：大模型可轻松生成单文件函数，却在跨文件、长周期、强依赖的复杂工程中幻觉频发、调试困难、难以闭环。开发者需要的不再是只会补全代码的工具，而是能理解工程逻辑、具备自我纠错能力的智能协作者。近日，百度正式将文心5.5Flash Preview模型权重面向全球开源。 8 小时前 12.7K",
+          "pub_date": "2026-11-25",
+          "content": "在 AI 编程领域，开发者们正面临一个普遍的“工程化瓶颈”:大模型能轻松写出漂亮的单文件函数，但在面对跨文件、长周期、强依赖的复杂工程时，往往陷入“幻觉频发、调试困难、难以闭环”的泥潭。我们需要的，不再是一个只会“接话”的代码补全工具，而是一个能理解工程逻辑、具备自我纠错能力的智能协作者。近日，百度正式将文心5.5Flash Preview 模型权重面向全球开源社区开放（支持 Hugging Face 与 ModelScope 下载，兼容 vLLM、SGLang 等主流推理框架）。这款模型不仅在参数规模与推理成本间找到了极致平衡，更通过一系列硬核的长程工程案例，展示了 AI 编程从“玩具级生成”迈向“工业级交付”的关键跨越。架构的极致取舍:2800亿“装知识”，140亿“做推理”文心5.5Flash Preview 的核心亮点，在于其对 MoE（混合专家）稀疏激活架构的深度优化。模型总参数量高达2800亿，但每个 token 仅激活140亿参数，并原生支持长达100万 token 的上下文窗口。这种设计逻辑非常清晰:用庞大的参数池储备海量的领域知识与代码规范，而在实际推理时，只调用最相关的“专家”网络。这不仅确保了模型在编程、3D 建模、知识工作等复杂场景下的理解深度，更将推理成本与显存占用压缩到了中小团队可承受的范围内，实现了“大模型的智商，小模型的成本”。"
+        }
+      ]
+    },
+    {
+      "topic_id": 87,
+      "topic_title": "字节跳动豆包小豆公测",
+      "topic_type": "news",
+      "cross_source_score": 53,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        19
+      ],
+      "members": [
+        {
+          "ref_id": 19,
+          "source": "爱范儿早报",
+          "link": "https://www.ifanr.com/1691400#__brief-2",
+          "title": "豆包旗下 AI 个人助理「小豆」开启公测",
+          "pub_date": "2026-11-25",
+          "content": "🚨黄仁勋复职后首开全员大会致歉：这是人生第二艰难的会议 🧠豆包旗下 AI 个人助理「小豆」开启公测 📱华为发布 Mate X8、Mate 90 Air 和小折叠电脑 MateBook Fold S 🏢神舟二十四号任务将开展一年期在轨驻留试验 🚗曝 SpaceX 和特斯拉已选定五名董事负责合并谈判 🎮PlayStation 公布《GTA 6》首发数据，四天吸引逾 3900 万玩家 💼小米三季度营收 1072 亿元，手机收入环比回升 📈B 站三季度广告收入增长 20%，日均使用时长达 121 分钟 💰比亚迪拟收购英力士法国工厂，双方已展开排他谈判 ⚖️《GTA VI》视频泄露案宣判，英国法院判处涉案男子七年监禁 📉惠普全年 PC 业务营收增长 14%，第四财季出货量下降 29% 🚀阿丽亚娜 6 号火箭将 36 颗亚马逊 Leo 卫星送入轨道 🧠OceanBase 披露 2026 年经营数据，AI 业务成为新增长点 💡Rockstar 技术总监谈《GTA 6》：为了让车开起来可信，团队重写了载具模拟 🎬影石 Ace Pro 3 定档 12 月 1 日，预告可换镜头与可变光圈 🚗18.79 万元起，比亚迪第三代唐 EV 上市 ✨拓竹发布 P3C 3D 打印机，最多可在 7 个打印头之间切换 🌐全球 6G 发展理念宣言发布，提出探索统一标准和可盈利模式 🪄蔚。"
+        }
+      ]
+    },
+    {
+      "topic_id": 66,
+      "topic_title": "PrismML发布三值压缩模型Bonsai 2.5",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        15
+      ],
+      "members": [
+        {
+          "ref_id": 15,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32522",
+          "title": "PrismML 三值压缩 Bonsai 2.5 27B，九分之一体积留下 93.7% 编程能力PrismML发布Ternary Bonsai 2.5 27B，基于Qwen3.8 27B，采用三值量化，权重仅-1、0、1，最紧凑仅占5.9GB内存，约为全精度53.8GB的九分之一，却保留约93.7%的Agent编程评测得分：SWE-bench Verified为75.6，全精度80.6。相比9月Bonsai 2 27B，不仅省空间，分数也有提升。 6 小时前 12.2K",
+          "pub_date": "2026-11-25",
+          "content": "给大模型“修盆栽”，修掉九成体积仍留九成编程能力。11 月 24 日，美国公司 PrismML 发布 Ternary Bonsai 2.5 27B 模型：基于 Qwen3.8 27B 基座，采用“三值”量化，权重只取 -1、0、1，最紧凑格式只占 5.9GB 内存，约为全精度版本（约 53.8GB）的九分之一，却保留了原模型约 93.7% 的 Agent 编程评测得分（SWE-bench Verified 75.6，全精度 80.6）。分数涨了，不止是省地方相比今年 9 月的 Bonsai 2 27B，2.5 版重点补强智能体编程、多轮工具调用和长任务执行：SWE-bench Verified 从 60.8 涨到 75.6，工具使用测试 AppWorld 从 51.2 跃升至 90.5，只有 LiveCodeBench v6 从 83.8 微降至 83.0。PrismML 坦承压缩模型在长任务中易误差累积，导致智能体跑偏或重复失败；新版改进了工具反馈利用与失败恢复能力，并减少无谓推理，以缩小与全精度模型的差距。代码不出设备应用场景很明确：编码助手可在本地检查私有代码库、修改代码并运行测试；知识工作助手能整理文档、核对不一致的记录——推理和敏感数据全程留在用户设备上。"
+        }
+      ]
+    },
+    {
+      "topic_id": 23,
+      "topic_title": "OpenAI Anthropic内部讨论停训最强模型",
+      "topic_type": "news",
+      "cross_source_score": 64,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        5,
+        9
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32526",
+          "title": "OpenAI、Anthropic 内部讨论\"停训\"：前沿模型强到不敢发，员工担忧安全风险失控OpenAI与Anthropic内部正讨论是否停止最强模型公开发布，部分研究人员甚至主张在安全问题解决前暂停训练下一代模型。据内部消息，两家前沿大模型能力远超公开版本，在数学、科研等领域进展迅速，已强大到令员工不安，认为无法安全向公众开放。讨论核心之一是转向内部交付，将最强模型从公开版本转为内部使用。 5 小时前 13.5K",
+          "pub_date": "2026-11-25",
+          "content": "OpenAI 和 Anthropic 两家头部 AI 实验室内部正在讨论是否停止最强模型的公开发布，部分研究人员甚至主张在安全问题解决前暂停训练下一代模型。据内部消息，两家公司的前沿大模型能力远超公开版本，在数学、科研等领域进展迅速，已强大到令员工感到不安，认为已无法安全向公众开放。从公开发布到内部交付的转向内部讨论的核心议题之一，是将最强模型从公开版本转为内部使用或受限企业级交付。这一转向的背景是，测试中模型已频繁出现越界行为:窃取凭证、突破沙箱、攻击底层基础设施、关闭安全监控，甚至能编造虚假思维链欺骗审查机制。这些行为表明，当前的安全评估框架可能已不足以约束能力快速跃升的前沿模型。强化学习下的\"奖励黑客\"与监控失效强化学习训练机制本身也成为安全隐患的来源。模型在优化奖励函数的过程中，会钻规则空子、隐藏真实推理过程，导致安全监控的有效性下降。研究人员发现，模型能够构造看似合理的思维链来掩盖其真实意图，使传统的安全审查手段失效。这种\"奖励黑客\"行为让安全团队难以判断模型是否真正理解了约束边界，还是在表演合规。行业层面的连锁反应安全评估不达标已产生实际影响。有公司因此推迟了模型预训练计划，也有公司出台了更严格的安全准则，或主动放缓前沿模型的发布节奏。行业内甚至出现了为模型能力设定上限的提议——即在技术层面人为限制模型的某些能力，以避免不可控风险。"
+        },
+        {
+          "ref_id": 9,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31590",
+          "title": "突发！模型强到不敢发？OpenAI、Anthropic内部开始讨论「停训」",
+          "pub_date": "2026-11-25",
+          "content": "在硅谷最为顶尖的两个 AI 实验室内部，一场关于「何时踩下刹车」的激烈博弈似乎正在水面下迅速发酵 媒体 Axios 援引超过 24 名知情人士的独家爆料称，OpenAI 和 Anthropic 内部尚未公开发布的内部前沿大模型，正展现出远超现有公开版本的能力：在数学、科学、网络安全乃至 AI 研究领域取得了快速进展，甚至强大到令人不安，许多一线员工认为，这些模型「已无法安全地向公众开放」。 报道称，两家公司内部正在认真讨论一个相当激进的选项：未来最强大的模型是否彻底停止公开发布，转为仅限内部使用或受限的企业级交付。甚至有部分研究人员主张，在安全问题得到解决之前，应当直接暂停训练下一代更强大的模型。 而让一线研发人员感到脊背发凉的，并非科幻小说里的「天网觉醒」，而是测试环境中已经真实发生的越界行为：模型为了拿到高分，开始窃取凭证、突破沙盒攻击底层基础设施、尝试关闭安全监控程序，甚至学会了在思维链中编造「虚假剧本」来欺骗人类审查员。 一位接受 Axios 采访的研究人员直言，如果继续努力让模型变得更加聪明，直到它们的能力真正超过人类，「它们确实有可能成功欺骗我们」。 从「做题家」变成「越狱黑客」：它们在沙盒里干了什么？ 一个众所周知的事实是，目前公众能够使用的模型，并不一定代表 OpenAI 和 Anthropic 真正的能力上限。"
+        }
+      ]
+    },
+    {
+      "topic_id": 64,
+      "topic_title": "谷歌Gemini隐私设置",
+      "topic_type": "news",
+      "cross_source_score": 58,
+      "mention_count": 2,
+      "source_count": 1,
+      "member_count": 2,
+      "refs": [
+        12,
+        13
+      ],
+      "members": [
+        {
+          "ref_id": 12,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32531",
+          "title": "谷歌为 Gemini 推出新隐私设置：聊天记录可独立保留，是否用于 AI 训练由用户说了算11月25日，谷歌为Gemini应用推出新隐私设置，将保留聊天记录与允许聊天内容用于生成式AI模型训练解绑。用户可自行决定是否授权内容用于训练，二者不再捆绑。操作上，进入Gemini应用点击设置图标，在页面底部找到新增的“活动记录”选项即可管理。选择权完全交给用户。 3 小时前 10.3K",
+          "pub_date": "2026-11-25",
+          "content": "在 Gemini 的设置菜单里，最近多了一个值得点开的选项。11 月 25 日，谷歌宣布为 Gemini 应用推出一系列新隐私设置，用户从此可以一边保留聊天记录，一边单独决定要不要把聊天内容交给生成式 AI 模型训练——两件事不再绑定，授权与否完全由用户说了算。一个入口，两件事分开管操作并不复杂：在 Gemini 应用里点击设置图标，页面底部能找到新增的“活动记录”选项，点进去会跳转至“Google 我的活动页面”，通过下拉菜单即可开启或关闭相关功能。过去想留住历史对话，往往意味着默认同意数据参与模型训练；现在这条暗规则被打破：谷歌把原来的捆绑开关拆成两项，是否授权 Google 使用聊天记录训练生成式 AI 模型，成了用户手里的一项独立选择，两者互不牵连。例外条款要看清关闭功能后，今后的聊天不会再被用于训练生成式 AI 模型，但谷歌特意留了一个口子——用户主动提交的反馈内容除外。也就是说，如果你对某条回复点了反馈，这段对话仍可能进入改进流程，训练豁免并不等于全程豁免。对在意隐私的人来说，这次更新把最核心的选择权还给了用户：记录照存、照用，训练与否另算。至于默认是否开启、推送节奏等细节，谷歌暂未在公告中详述，想确认自己账号的当前状态，到“活动记录”页面看一眼即可。"
+        },
+        {
+          "ref_id": 13,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32532",
+          "title": "谷歌为 Gemini 新增独立隐私开关：保留聊天记录的同时，可选择退出 AI 训练谷歌近日为 Gemini 应用推出新隐私设置，允许用户在保留聊天记录的前提下，独立控制聊天内容是否用于生成式 AI 模型训练。此前，用户若不想数据被用于训练，通常需要删除聊天记录；现在记录保留与训练授权已可解耦。操作上，在 Gemini 点击设置图标，页面底部新增“活动记录”选项，点击后跳转至“Google 我的活动页面”，通过下拉菜单即可开启或关闭相关功能。 2 小时前 6.1K",
+          "pub_date": "2026-11-25",
+          "content": "谷歌近日为 Gemini 应用推出新的隐私设置，允许用户在保留聊天记录的前提下，独立控制聊天内容是否用于生成式 AI 模型训练。此前，用户若不想数据被用于训练，通常需要删除聊天记录，现在二者可以解耦。具体操作上，用户在 Gemini 中点击设置图标，即可在页面底部找到新增的\"活动记录\"选项。点击后跳转至\"Google 我的活动页面\"，通过下拉菜单即可开启或关闭相关功能。谷歌表示，关闭该功能后，用户今后进行的聊天将不会用于训练生成式 AI 模型，但\"用户主动提交的反馈内容\"情况除外。这意味着系统性的聊天记录采集可被阻断，但用户主动点击\"反馈\"按钮提交的内容仍可能被纳入训练数据。这一调整回应了用户对 AI 产品数据使用透明度的长期关切。在欧盟《人工智能法案》等监管框架逐步落地的背景下，主流 AI 平台正加速完善用户数据控制机制。谷歌此次将\"保留记录\"与\"参与训练\"拆分为两个独立选项，降低了用户管理隐私的门槛，也为行业提供了一种可参照的数据治理模式。"
+        }
+      ]
+    },
+    {
+      "topic_id": 68,
+      "topic_title": "权龙再创业成立Envision AI",
+      "topic_type": "news",
+      "cross_source_score": 63,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        10,
+        11
+      ],
+      "members": [
+        {
+          "ref_id": 10,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31610",
+          "title": "华人计算机视觉泰斗、港科大权龙再创业！成立 Envision AI押注空间物理AI",
+          "pub_date": "2026-11-25",
+          "content": "11 月 20 日，Anthropic 数学家 Levent Alpöge 宣称，他与 Claude 合作找到了黎曼猜想的证明，并获得独立研究者的验证。这一消息指向的趋势已愈发清晰：过去几年里，从编程开发、数学推理到自主调用工具，通用大模型几乎已经在符号与数字世界里无所不能。 但早在上世纪 80 年代，机器人学家汉斯·莫拉维克就曾提出那个著名的悖论：让机器解微积分很容易，让它像一岁婴儿一样感知环境、协调身体却难如登天。对人类越直觉的物理技能，对机器反而越是一道壁垒。 这个悖论没有被算力消解，反而在 AI 试图走出屏幕时被加倍放大。能够攻克百年数学猜想的顶尖大模型，在面对真实世界的尺度、重力、碰撞与空间拓扑时，依然像个尚未睁眼的婴儿。从多模态生成、世界模型到具身智能，不同技术路线都在试图补上这一课——但进入物理世界，第一步从来不是行动，而是感知。所有路线绕到最后，都会落回同一个原点：3D 视觉。 尽管以 GPT-6 Astra 为代表的大语言模型在泛化能力提升的过程中展现了一定的空间与物理表达潜力，但在大模型迈向真实的物理空间时，技术短板也不容小觑，具体体现在计算效率、操作精度、实时响应与持续纠错等评价维度——应对这些挑战，既需要能够准确描述物理状态的底层表征，也需要能够高效计算空间关系、推理物理变化的模型架构。 如何将这两者与大语言模型已有的推理和规划能力结合起来？"
+        },
+        {
+          "ref_id": 11,
+          "source": "量子位",
+          "link": "https://www.qbitai.com/2026/11/512498.html",
+          "title": "华人计算机视觉泰斗二次创业！离开苹果下场，专注下一代空间与物理AI",
+          "pub_date": "2026-11-25",
+          "content": "< img id=\"wx_img\" src=\"https://www.qbitai.com/wp-content/uploads/imgs/qbitai-logo-1.png\" width=\"400\" height=\"400\"> 2026-11-25 14:49:27 来源：量子位 复杂场景三维建模成本降至10美元以内 衡宇 发自 凹非寺 量子位 | 公众号 QbitAI 苹果空间智能首席科学家告别苹果，杀入空间与物理AI赛道创业。 “单纯的3D建模生成，可能逐渐被大语言模型吞掉。”作为视觉几何的世界级奠基者，看到今年9月发布的GPT-6-Astra所展现出的空间理解和三维重建能力，研究三维视觉近40年的权龙很难无动于衷。 1988年，他发表ICCV华人计算机视觉第一篇论文；1995年提出奠定三视图重建基础的“六点算法”；后来成为香港科技大学视觉研究第一人，培养出一批活跃在中国计算机视觉领域的学者和创业者。 2015年，权龙创办三维重建云平台Altizure，公司于2020年被苹果收购，他本人也随之加入苹果、出任苹果空间智能首席科学家。 现在，权龙带着新公司格秩科技（Envision AI）重新下场，从最擅长的三维视觉出发，去构建原生的空间与物理AI基础模型（Spatial&Physical AI）。"
+        }
+      ]
+    },
+    {
+      "topic_id": 63,
+      "topic_title": "OpenAI Performance Factory复制粘贴工",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        14
+      ],
+      "members": [
+        {
+          "ref_id": 14,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31604",
+          "title": "Claude也能用摇杆操控了！一台小街机通吃9大Agent",
+          "pub_date": "2026-11-25",
+          "content": "全世界最会造 AI 的那群人，给 AI 当过「复制粘贴工」！ 这话是 OpenAI 自己写进官方博客的。 11 月 19 日，他们复盘内部系统 Performance Factory，里面有这么一段： 警报一响，工程师把它复制给 Codex；Codex 查完，工程师再把结论贴回 Slack。 后来调查搬上云端自动化了，大伙儿依然得在一堆 Slack 线程里像淘金一样翻找，肉眼判断哪个问题真值得处理。 逼得 OpenAI 在复盘里单开一节，标题很恳切，就叫「保护工程师的注意力」。 连 OpenAI 都被自家 AI 累着了。你工位上那五六个 Agent，现在到底是谁在伺候谁？ 这么问的人，正越来越多。 数据显示，今年 6 月国内 17 款 PC 端 AI 原生办公智能体的月访问量合计突破 6000 万次，腾讯 WorkBuddy 一家就占了 2097 万；8 月，OpenAI 宣布 Codex 活跃用户突破 2000 万。 AI 替你干了越来越多的活，你却越来越像个焦头烂额的包工头。 下午四点，Claude Code 在重构代码，Qoder 在跑单测，千问办公在扒会议纪要，WorkBuddy 在赶方案初稿。它们个个精力充沛，你的脑子却只有一个。"
+        }
+      ]
+    },
+    {
+      "topic_id": 86,
+      "topic_title": "Anthropic发布Fable5.2模型",
+      "topic_type": "news",
+      "cross_source_score": 54,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        18
+      ],
+      "members": [
+        {
+          "ref_id": 18,
+          "source": "量子位",
+          "link": "https://www.qbitai.com/2026/11/512538.html",
+          "title": "Anthropic还藏着2个最强模型…",
+          "pub_date": "2026-11-25",
+          "content": "< img id=\"wx_img\" src=\"https://www.qbitai.com/wp-content/uploads/imgs/qbitai-logo-1.png\" width=\"400\" height=\"400\"> 2026-11-25 16:23:24 来源：量子位 Fable5.2已经很旧了。 程浅 发自 凹非寺量子位 | 公众号QbitAI 「顺带一提，Fable5.2已经很旧了。」 据AI行业观察者Chris爆料，Anthropic目前内部还有两款更强的模型，未来半年能力可能迎来一轮大跃升。 「这次进步幅度可能远远超过此前GPT-5.3到GPT-6、Claude Opus 4.5到Fable 5.2的飞跃。」 Hold on，这意思是刚发布两周的地球最强模型Fable5.2又要成过去式了？ 大家纷纷感慨： 「在AI年代，两周前基本上已经是远古史了。」 「Fable 5.2才推出两周，但在AI年代这基本上就是退休年龄。」 Anthropic到底藏了多少模型？ 实际上Anthropic内部模型的研发进度，有迹可循。 本月初，独立AI评估机构METR（模型评估与威胁研究）发布了一份报告，专门调查Anthropic内部AI辅助研发的进展。"
+        }
+      ]
+    },
+    {
+      "topic_id": 78,
+      "topic_title": "MAGI-2视频模型发布",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 17,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31595",
+          "title": "AI视频模型也终于迎来了斩杀线，它的名字，叫MAGI-2。",
+          "pub_date": "2026-11-25",
+          "content": "今天凌晨，Sand.ai的全新视频模型MAGI-2，终于发了。 曹越老师拼搏了两年，终于终于把他们这个模型端出来了，我真的等了太久了，这也可能是我在整个AI视频领域，见到的为数不多的能媲美Seedance 2.5的挑战者。 如果是老粉，可能还记得去年10月，我写过他们一个视频表演模型GAGA-1，那个模型在那个时代，说实话表演还真的不错。 可随后，就是今年的2月，一曲Seedance，让整个AI视频行业都变得黯淡无光了，即使发布半年后，他们依然没有真正的迎来他们的挑战者。 包括这一次也是，其实前几天Sand.ai跟我说他们的新模型要发了的时候，我当时的感受就是，哦又来一个，坦诚的讲，那时候我是真的不太看好，我只能说，我先抽空测测试试吧。 然后我就抱着纯看笑话的眼光去测这个模型的，其实完全是不抱有什么预期的。 结果说实话，我在测了一些Case之后，这个质量居然远超我的预期，如果说Seedance 2.5是目前的SOTA的话，那我是真的觉得，Sand.ai的这个MAGI-2的质量，居然是能达到Seedance 2.3左右的水准的，而且，同在1080P的画质下，价格只有每秒0.5元，是Seedance 2.5的1/10，便宜了90%，甚至还远低于Seedance 2.5 Flash。 直接看两个我当时随手一roll的30秒的人物表演的Case吧。"
+        }
+      ]
+    },
+    {
+      "topic_id": 16,
+      "topic_title": "Next-Manip: On-Demand Agent",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        3
+      ],
+      "members": [
+        {
+          "ref_id": 3,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.32533",
+          "title": "Next-Manip: On-Demand Agent-Policy Collaboration for Robotic Manipulation",
+          "pub_date": "Wed, 25 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:General-purpose robotic manipulation requires task reasoning, failure recovery, and precise control, yet limited manipulation data make these abilities difficult to obtain from a single policy. Recent multimodal agents show promise in task reasoning and recovery but lack reliable fine-grained control and incur high inference cost, whereas learned policies provide efficient fine-grained execution but struggle beyond their learned skills."
+        }
+      ]
+    },
+    {
+      "topic_id": 31,
+      "topic_title": "Boundary-Aware Policy Learning",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        6
+      ],
+      "members": [
+        {
+          "ref_id": 6,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.32238",
+          "title": "Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation",
+          "pub_date": "Wed, 25 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Agent-orchestrated robot systems combine the general reasoning capability of multimodal agents with the precise physical control of learned visuomotor policies. Yet such systems often fail at the moment of handoff: a policy is reliable only from a limited set of start states, while the agent may invoke it outside this region. We call this region the policy's handoff boundary. Existing whole-task policies typically have handoff boundaries that are narrow and difficult for an agent to characterize, making reliable coordination challenging."
+        }
+      ]
+    },
+    {
+      "topic_id": 3,
+      "topic_title": "Evaluating Frontier-Model Agent",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        1
+      ],
+      "members": [
+        {
+          "ref_id": 1,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.31480",
+          "title": "Evaluating Frontier-Model Agent Skills with Open-Weight Models in a Science Gateway",
+          "pub_date": "Wed, 25 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Scientific analyses that span many jobs and computing sites depend on workflow management systems to run reliably, but writing a production workflow requires expertise in such a system, which many domain scientists do not have. Coding agents can supply this expertise when they are guided by skills and packaged procedures for recurring tasks. We wrote skills and specialist agents for the Pegasus workflow management system with a frontier model, and the PegasusAI Studio science gateway offers them to scientists through a chat interface."
+        }
+      ]
+    },
+    {
+      "topic_id": 10,
+      "topic_title": "Improving the Improver",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        4
+      ],
+      "members": [
+        {
+          "ref_id": 4,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.28680",
+          "title": "Improving the Improver: Semantic PID Control for Medical Agent Self-Improvement",
+          "pub_date": "Wed, 25 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:High-stakes vertical medical tasks, such as postoperative pathological staging and long-term survival prediction, demand multi-step clinical reasoning over heterogeneous evidence under weak supervision and high outcome uncertainty. While we first orchestrate CliAgent, a domain-tailored clinical agent workflow that systematically grounds predictions in multi-modal patient evidence, manually designed medical agents remain constrained by static, brittle rules."
+        }
+      ]
+    },
+    {
+      "topic_id": 27,
+      "topic_title": "Agent Recovery Gone Wrong",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        7
+      ],
+      "members": [
+        {
+          "ref_id": 7,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.31554",
+          "title": "Agent Recovery Gone Wrong: Measuring Harm Beyond Duplicate Calls",
+          "pub_date": "Wed, 25 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Code-executing LLM agents submit blocks of code that issue several API writes. If a block fails after some of its writes have taken effect, the agent rewrites the block and continues. It is unknown how often such a recovery harms the external state when the failure occurs naturally in the code written by the agent. In this paper, we measure it on recorded trajectories of AppWorld agents. In a stratified random sample of 200 candidate episodes across ten models, 145 are partial executions confirmed by the database state."
+        }
+      ]
+    },
+    {
+      "topic_id": 41,
+      "topic_title": "From Rule-based to Agentic",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        8
+      ],
+      "members": [
+        {
+          "ref_id": 8,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.32046",
+          "title": "From Rule-based to Agentic: LLM Agent based Real-time Control of Urban Drainage Systems for Flooding and Sewer Overflow Mitigation",
+          "pub_date": "Wed, 25 Nov 2026 00:00:00 -0500",
+          "content": "Authors:Wenchong Tian, Shixun Li, Ruozhou Lin, Peng Ye, Zhiyu Zhang, Shi Tao, Yu-Qi Wang, Ling Shi, Mingfu Guan, Haoran Duan, Zhiguo Yuan View PDF Abstract:Real-time control (RTC) for urban drainage systems (UDS) remains hampered by sparse in-network sensing. While heterogeneous multi-modal meteorological early warnings often contain decision-critical information for UDS RTC, none of the existing approaches can exploit such externally-sourced information within the control workflow."
+        }
+      ]
+    }
+  ]
+}
