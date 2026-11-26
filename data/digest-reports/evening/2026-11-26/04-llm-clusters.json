@@ -1,0 +1,3858 @@
+{
+  "run_date": "2026-11-26",
+  "cluster_chunks": [
+    {
+      "chunk_index": 1,
+      "chunk_size": 25,
+      "representative_assignments": 25,
+      "assignments": 25,
+      "fallback_assignments": 0,
+      "strategy": "llm_news",
+      "elapsed_ms": 17115
+    },
+    {
+      "chunk_index": 2,
+      "chunk_size": 10,
+      "representative_assignments": 10,
+      "assignments": 10,
+      "fallback_assignments": 0,
+      "strategy": "llm_news",
+      "elapsed_ms": 1054984
+    },
+    {
+      "chunk_index": 3,
+      "chunk_size": 60,
+      "assignments": 60,
+      "fallback_assignments": 0,
+      "strategy": "deterministic_paper"
+    }
+  ],
+  "mode_breakdown": {
+    "news_input": 35,
+    "news_after_precluster": 35,
+    "paper_input": 60,
+    "paper_deterministic": 60,
+    "llm_chunk_count": 2
+  },
+  "assignments_count": 95,
+  "fallback_assignments": 0,
+  "singleton_recluster": {
+    "enabled": true,
+    "anchor_count": 0,
+    "singleton_candidates": 0,
+    "merged": 0,
+    "kept": 0,
+    "invalid_or_low_confidence": 0,
+    "min_confidence": 0.72,
+    "min_topic_score": 68,
+    "max_items": 24,
+    "decisions": [],
+    "note": "no_anchors"
+  },
+  "topic_cards": [
+    {
+      "topic_id": 66,
+      "topic_key": "豆包推出 Personal Agent",
+      "topic_title": "豆包推出 Personal Agent 产品",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        67
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 22.539030204684515,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "豆包加入「个人助理」大战"
+      ],
+      "scorecard": {
+        "total": 173.9076427405014,
+        "cross_validation": 93,
+        "source_credibility": 15.77732114327916,
+        "recency": 7.130321597222222,
+        "entity_priority": 12,
+        "industry_value": 18,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 48,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:字节/豆包/Seed",
+          "value:api_platform_update",
+          "value:product_launch",
+          "domestic-ai-signal",
+          "edition:domestic-evening"
+        ]
+      },
+      "topic_total_score": 173.9076427405014
+    },
+    {
+      "topic_id": 88,
+      "topic_key": "Kimi K2 开放智能体",
+      "topic_title": "Kimi K2 开放智能体",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        89
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 57,
+      "avg_candidate_score": 15.700439718141093,
+      "newest_pub_date": "",
+      "top_sources": [
+        "Kimi"
+      ],
+      "top_source_groups": [
+        "company_view"
+      ],
+      "sample_titles": [
+        "Kimi K2: Open Agentic Intelligence"
+      ],
+      "scorecard": {
+        "total": 155.99030780269877,
+        "cross_validation": 96,
+        "source_credibility": 10.990307802698764,
+        "recency": 0,
+        "entity_priority": 11,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 8,
+        "edition_bias": 54,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:月之暗面/Kimi",
+          "domestic-ai-signal",
+          "edition:domestic-evening"
+        ]
+      },
+      "topic_total_score": 155.99030780269877
+    },
+    {
+      "topic_id": 69,
+      "topic_key": "浙江卫视 AI 综艺",
+      "topic_title": "浙江卫视引入 Seedance 2.5 制作 AI 综艺",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        70
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 21.470531984613093,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "10档AI综艺来了!浙江卫视引入Seedance2.5参与节目制作浙江卫视11月24日宣布与火山引擎合作，将制作首批10档AI综艺，正片已进入制作阶段。节目由浙江卫视与Z视介自制，题材涵盖喜剧"
+      ],
+      "scorecard": {
+        "total": 155.15969398645137,
+        "cross_validation": 93,
+        "source_credibility": 15.029372389229163,
+        "recency": 7.130321597222222,
+        "entity_priority": 12,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 48,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:字节/豆包/Seed",
+          "domestic-ai-signal",
+          "edition:domestic-evening"
+        ]
+      },
+      "topic_total_score": 155.15969398645137
+    },
+    {
+      "topic_id": 74,
+      "topic_key": "企业官网 GEO 升级",
+      "topic_title": "企业官网利用 AI 一键升级",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        75
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "从「普通网页」到「被豆包引用的网页」：企业老官网，怎么用 AI 一键升级？"
+      ],
+      "scorecard": {
+        "total": 154.4091411320574,
+        "cross_validation": 93,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.130321597222222,
+        "entity_priority": 12,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 48,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:字节/豆包/Seed",
+          "domestic-ai-signal",
+          "edition:domestic-evening"
+        ]
+      },
+      "topic_total_score": 154.4091411320574
+    },
+    {
+      "topic_id": 89,
+      "topic_key": "DeepSeek V5 华为昇腾训练",
+      "topic_title": "DeepSeek V5 华为昇腾训练",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        90
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 54,
+      "avg_candidate_score": 15,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "I bet DeepSeek V5 will be trained over Huawei Ascend. Key ingredients are ready. Ascend"
+      ],
+      "scorecard": {
+        "total": 154.13032157407406,
+        "cross_validation": 91.5,
+        "source_credibility": 10.5,
+        "recency": 7.130321574074074,
+        "entity_priority": 21,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 12,
+        "edition_bias": 60,
+        "penalties": -48,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:DeepSeek",
+          "entity:华为/盘古",
+          "domestic-ai-signal",
+          "edition:domestic-evening"
+        ]
+      },
+      "topic_total_score": 154.13032157407406
+    },
+    {
+      "topic_id": 60,
+      "topic_key": "知乎投资 DeepSeek",
+      "topic_title": "知乎 CEO 周源回应投资 DeepSeek",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        60
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 23.60418569631167,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "知乎 CEO 周源回应间接投资 DeepSeek：这是充分研究的长期战略决策知乎间接投资DeepSeek引发股东质疑：亏损之际为何还要投？11月25日CEO周源回应称，这是经充分研究"
+      ],
+      "scorecard": {
+        "total": 153.65325159621446,
+        "cross_validation": 93,
+        "source_credibility": 16.52292998741817,
+        "recency": 7.130321608796296,
+        "entity_priority": 11,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 8,
+        "edition_bias": 54,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:DeepSeek",
+          "domestic-ai-signal",
+          "edition:domestic-evening"
+        ]
+      },
+      "topic_total_score": 153.65325159621446
+    },
+    {
+      "topic_id": 70,
+      "topic_key": "腾讯混元开源 DFly2",
+      "topic_title": "腾讯混元开源草稿模型 DFly2",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        71
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 21.470531984613093,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "不换模型也能吐字快 4.2 倍：腾讯混元开源草稿模型 DFly2，专给 Hy4 flash 提速腾讯混元11月26日开源新一代草稿模型DFly2，作为外挂“加速器”不替换Hy4 flash"
+      ],
+      "scorecard": {
+        "total": 142.15969398645137,
+        "cross_validation": 93,
+        "source_credibility": 15.029372389229163,
+        "recency": 7.130321597222222,
+        "entity_priority": 11,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 4,
+        "edition_bias": 48,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:腾讯/混元",
+          "domestic-ai-signal",
+          "edition:domestic-evening"
+        ]
+      },
+      "topic_total_score": 142.15969398645137
+    },
+    {
+      "topic_id": 8,
+      "topic_key": "paper:2611.33242",
+      "topic_title": "CypherMAS: Benchmarking Routing",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        8
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "CypherMAS: Benchmarking Routing Reliability in LLM-Based Multi-Agent Systems"
+      ],
+      "scorecard": {
+        "total": 113.53032167824074,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.13032167824074,
+        "entity_priority": 0,
+        "industry_value": 19,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update",
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 113.53032167824074
+    },
+    {
+      "topic_id": 14,
+      "topic_key": "paper:2611.33822",
+      "topic_title": "MetaDecomp: Adaptive Task",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        14
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "MetaDecomp: Adaptive Task Decomposition via Meta-Learned Procedural Memory"
+      ],
+      "scorecard": {
+        "total": 105.53032167824074,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.13032167824074,
+        "entity_priority": 11,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Meta"
+        ]
+      },
+      "topic_total_score": 105.53032167824074
+    },
+    {
+      "topic_id": 18,
+      "topic_key": "paper:2611.33605",
+      "topic_title": "The Detour Is the Danger",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        18
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "The Detour Is the Danger: Preserving Security During LLM Agent Recovery"
+      ],
+      "scorecard": {
+        "total": 105.53032166666668,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.130321666666667,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 105.53032166666668
+    },
+    {
+      "topic_id": 21,
+      "topic_key": "paper:2611.34849",
+      "topic_title": "Real2SimLab: A Unified Platform",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        21
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Real2SimLab: A Unified Platform for Real-to-Simulation Transfer"
+      ],
+      "scorecard": {
+        "total": 105.53032166666668,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.130321666666667,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 105.53032166666668
+    },
+    {
+      "topic_id": 4,
+      "topic_key": "paper:2611.34675",
+      "topic_title": "RoboEvo$^2$: Recursive Robot Self",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        4
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 29,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "RoboEvo$^2$: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution"
+      ],
+      "scorecard": {
+        "total": 104.9303216898148,
+        "cross_validation": 106.5,
+        "source_credibility": 20.299999999999997,
+        "recency": 7.1303216898148145,
+        "entity_priority": 0,
+        "industry_value": 9,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:policy_regulation_legal"
+        ]
+      },
+      "topic_total_score": 104.9303216898148
+    },
+    {
+      "topic_id": 33,
+      "topic_key": "paper:2611.33706",
+      "topic_title": "EVA: Evidence-seeking Visual",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        33
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "EVA: Evidence-seeking Visual Agent for Hallucination-Resistant Multimodal Reasoning"
+      ],
+      "scorecard": {
+        "total": 104.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 104.13032163194444
+    },
+    {
+      "topic_id": 35,
+      "topic_key": "paper:2611.33741",
+      "topic_title": "FlashProve-Next",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        35
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "FlashProve-Next: Verifiable Inference for Production LLM APIs"
+      ],
+      "scorecard": {
+        "total": 104.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 104.13032163194444
+    },
+    {
+      "topic_id": 39,
+      "topic_key": "paper:2611.34278",
+      "topic_title": "Latent-in-the-Middle",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        39
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Latent-in-the-Middle: On the Security of Cross-Model Latent Communication in Multi-Agent Systems"
+      ],
+      "scorecard": {
+        "total": 104.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 104.13032163194444
+    },
+    {
+      "topic_id": 41,
+      "topic_key": "paper:2611.34327",
+      "topic_title": "MeterRouter: Budget-Aware Dynamic",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        41
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "MeterRouter: Budget-Aware Dynamic Routing for Multi-Agent Systems"
+      ],
+      "scorecard": {
+        "total": 104.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 104.13032163194444
+    },
+    {
+      "topic_id": 42,
+      "topic_key": "paper:2611.34112",
+      "topic_title": "Not Every Input Needs Everything",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        42
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Not Every Input Needs Everything: Unifying Expert Gating, Model Cascades, and Agent"
+      ],
+      "scorecard": {
+        "total": 104.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 104.13032163194444
+    },
+    {
+      "topic_id": 48,
+      "topic_key": "paper:2611.33184",
+      "topic_title": "Semantic Density Does Not Predict",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        48
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Semantic Density Does Not Predict Agent-Memory Collapse"
+      ],
+      "scorecard": {
+        "total": 104.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 104.13032162037038
+    },
+    {
+      "topic_id": 49,
+      "topic_key": "paper:2611.34290",
+      "topic_title": "StateWeaver",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        49
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video"
+      ],
+      "scorecard": {
+        "total": 104.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 104.13032162037038
+    },
+    {
+      "topic_id": 10,
+      "topic_key": "paper:2611.34400",
+      "topic_title": "EvoLink-Bench",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        10
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "EvoLink-Bench: A Benchmark for Evaluating Self-Evolving Agents in Long-Horizon"
+      ],
+      "scorecard": {
+        "total": 102.53032167824074,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.13032167824074,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 102.53032167824074
+    },
+    {
+      "topic_id": 16,
+      "topic_key": "paper:2611.14949",
+      "topic_title": "RSI-PDEbench: A Benchmark for",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        16
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "RSI-PDEbench: A Benchmark for Self-Improving Agents in PDE Solving"
+      ],
+      "scorecard": {
+        "total": 102.53032167824074,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.13032167824074,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 102.53032167824074
+    },
+    {
+      "topic_id": 23,
+      "topic_key": "paper:2611.34934",
+      "topic_title": "Attack Policy Selection can",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        23
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Attack Policy Selection can Mislead Monitor Evaluators"
+      ],
+      "scorecard": {
+        "total": 102.13032165509259,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321655092593,
+        "entity_priority": 0,
+        "industry_value": 9,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:policy_regulation_legal"
+        ]
+      },
+      "topic_total_score": 102.13032165509259
+    },
+    {
+      "topic_id": 46,
+      "topic_key": "paper:2611.24059",
+      "topic_title": "Replay, Don't Resample",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        46
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Replay, Don't Resample: Off-Policy Consolidation of Long-Horizon RL Experts"
+      ],
+      "scorecard": {
+        "total": 102.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 9,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:policy_regulation_legal"
+        ]
+      },
+      "topic_total_score": 102.13032162037038
+    },
+    {
+      "topic_id": 22,
+      "topic_key": "paper:2611.34920",
+      "topic_title": "$\\mu$-Bench: Benchmarking Multi",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        22
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "$\\mu$-Bench: Benchmarking Multi-User Task Completion in Shared Interaction Voice Agents"
+      ],
+      "scorecard": {
+        "total": 101.13032165509259,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321655092593,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 101.13032165509259
+    },
+    {
+      "topic_id": 26,
+      "topic_key": "paper:2611.33165",
+      "topic_title": "AutoformBench",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        26
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "AutoformBench: A Lean Formalization Benchmark for Advanced Mathematics"
+      ],
+      "scorecard": {
+        "total": 101.13032165509259,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321655092593,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 101.13032165509259
+    },
+    {
+      "topic_id": 31,
+      "topic_key": "paper:2611.34466",
+      "topic_title": "EgoUseBench",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        31
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "EgoUseBench: Benchmarking Computer-Use Agents under Evolving First-Person Contexts"
+      ],
+      "scorecard": {
+        "total": 101.13032164351853,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321643518519,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 101.13032164351853
+    },
+    {
+      "topic_id": 54,
+      "topic_key": "paper:2611.34347",
+      "topic_title": "AIRIS: Benchmarking Social",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        54
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "AIRIS: Benchmarking Social Embodied Intelligence in Egocentric Streaming Videos"
+      ],
+      "scorecard": {
+        "total": 101.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": [
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 101.13032162037038
+    },
+    {
+      "topic_id": 1,
+      "topic_key": "paper:2611.33909",
+      "topic_title": "EGSE: Evidence-Grounded Skill",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        1
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 65,
+      "avg_candidate_score": 33,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "EGSE: Evidence-Grounded Skill Evolution for Medical Reasoning Agents"
+      ],
+      "scorecard": {
+        "total": 100.23032171296296,
+        "cross_validation": 108,
+        "source_credibility": 23.099999999999998,
+        "recency": 7.130321712962963,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 100.23032171296296
+    },
+    {
+      "topic_id": 62,
+      "topic_key": "SpaceX 算力降价",
+      "topic_title": "SpaceX 算力降价出租",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        63
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 23.60418569631167,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "SpaceX 算力降价两至三成出租：大客户 Anthropic 的 5 万卡合同续约存变数SemiAnalysis 11月25日报告称，SpaceX正下调AI算力租赁价格"
+      ],
+      "scorecard": {
+        "total": 99.65325159621446,
+        "cross_validation": 93,
+        "source_credibility": 16.52292998741817,
+        "recency": 7.130321608796296,
+        "entity_priority": 13,
+        "industry_value": 20,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Anthropic",
+          "value:commercialization_revenue",
+          "value:chip_compute_infra"
+        ]
+      },
+      "topic_total_score": 99.65325159621446
+    },
+    {
+      "topic_id": 2,
+      "topic_key": "paper:2611.34656",
+      "topic_title": "Do We Still Need Reinforcement",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        2
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 31,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Do We Still Need Reinforcement Learning When We Can Read the World Model?"
+      ],
+      "scorecard": {
+        "total": 97.33032170138887,
+        "cross_validation": 106.5,
+        "source_credibility": 21.7,
+        "recency": 7.130321701388889,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 97.33032170138887
+    },
+    {
+      "topic_id": 72,
+      "topic_key": "谷歌 AI 社交推理研究",
+      "topic_title": "谷歌发布 AI 社交推理研究",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        73
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 21.470531984613093,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "谷歌 12 款模型测出一个盲区：AI 听你一面之词，会越聊越像你Google Research 11月26日发布大语言模型社交推理研究，开源多智能体模拟评估框架及超2万条样本数据集"
+      ],
+      "scorecard": {
+        "total": 97.15969398645137,
+        "cross_validation": 93,
+        "source_credibility": 15.029372389229163,
+        "recency": 7.130321597222222,
+        "entity_priority": 13,
+        "industry_value": 19,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Google/DeepMind",
+          "value:model_release",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 97.15969398645137
+    },
+    {
+      "topic_id": 3,
+      "topic_key": "paper:2611.27741",
+      "topic_title": "Can Vision-Language Models",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        3
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 29,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Can Vision-Language Models Synthesize Executable Game-Playing Programs?"
+      ],
+      "scorecard": {
+        "total": 95.9303216898148,
+        "cross_validation": 106.5,
+        "source_credibility": 20.299999999999997,
+        "recency": 7.1303216898148145,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 95.9303216898148
+    },
+    {
+      "topic_id": 5,
+      "topic_key": "paper:2611.34603",
+      "topic_title": "VisualMontage",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        5
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 29,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "VisualMontage: Manipulating the Beliefs of Vision-Language Agents with Authentic Image Sequences"
+      ],
+      "scorecard": {
+        "total": 95.9303216898148,
+        "cross_validation": 106.5,
+        "source_credibility": 20.299999999999997,
+        "recency": 7.1303216898148145,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 95.9303216898148
+    },
+    {
+      "topic_id": 6,
+      "topic_key": "paper:2611.34181",
+      "topic_title": "Agentic-Level Adversarial",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        6
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Agentic-Level Adversarial Purification: Revisiting Diffusion Purifiers on Native-Resolution"
+      ],
+      "scorecard": {
+        "total": 94.53032168981483,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.1303216898148145,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 94.53032168981483
+    },
+    {
+      "topic_id": 7,
+      "topic_key": "paper:2611.33926",
+      "topic_title": "Connecting AI Agents to Live",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        7
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Connecting AI Agents to Live Discrete Element Simulations via the Model Context Protocol"
+      ],
+      "scorecard": {
+        "total": 94.53032167824074,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.13032167824074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 94.53032167824074
+    },
+    {
+      "topic_id": 9,
+      "topic_key": "paper:2611.33470",
+      "topic_title": "Dynamic Reasoning in Next-Gen",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        9
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Dynamic Reasoning in Next-Gen Detection and Response: An Empirical Study of LLM Triage"
+      ],
+      "scorecard": {
+        "total": 94.53032167824074,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.13032167824074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 94.53032167824074
+    },
+    {
+      "topic_id": 11,
+      "topic_key": "paper:2611.29162",
+      "topic_title": "Fixed or Deleted? External",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        11
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Fixed or Deleted? External Feedback Lets Cheaper AI Coding Agents Repair Rule Violations"
+      ],
+      "scorecard": {
+        "total": 94.53032167824074,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.13032167824074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 94.53032167824074
+    },
+    {
+      "topic_id": 12,
+      "topic_key": "paper:2611.34875",
+      "topic_title": "How Much Do Coding Agents Over",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        12
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "How Much Do Coding Agents Over-Edit, and Why? An Empirical Study of Unneeded Edits in"
+      ],
+      "scorecard": {
+        "total": 94.53032167824074,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.13032167824074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 94.53032167824074
+    },
+    {
+      "topic_id": 13,
+      "topic_key": "paper:2611.33735",
+      "topic_title": "JOVE ICE: Intent Guided Cloud",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        13
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "JOVE ICE: Intent Guided Cloud Edge Device Collaboration for AI Glasses"
+      ],
+      "scorecard": {
+        "total": 94.53032167824074,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.13032167824074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 94.53032167824074
+    },
+    {
+      "topic_id": 15,
+      "topic_key": "paper:2611.33712",
+      "topic_title": "PowerFix: Physics-Guided",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        15
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "PowerFix: Physics-Guided Iterative Repair for LLM-Assisted Power Converter Design"
+      ],
+      "scorecard": {
+        "total": 94.53032167824074,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.13032167824074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 94.53032167824074
+    },
+    {
+      "topic_id": 17,
+      "topic_key": "paper:2611.34414",
+      "topic_title": "SemProxy: Semantic 3D Proxies for",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        17
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "SemProxy: Semantic 3D Proxies for Controllable Agentic 3D Modeling"
+      ],
+      "scorecard": {
+        "total": 94.53032166666668,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.130321666666667,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 94.53032166666668
+    },
+    {
+      "topic_id": 19,
+      "topic_key": "paper:2611.33263",
+      "topic_title": "What, Who, and When",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        19
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "What, Who, and When: Structured Harm Assessment for Mental Health Safety via Short Reasoning"
+      ],
+      "scorecard": {
+        "total": 94.53032166666668,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.130321666666667,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 94.53032166666668
+    },
+    {
+      "topic_id": 20,
+      "topic_key": "paper:2611.33457",
+      "topic_title": "Playfulness as Feedback for",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        20
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 27,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Playfulness as Feedback for Agentic Game Development"
+      ],
+      "scorecard": {
+        "total": 94.53032166666668,
+        "cross_validation": 106.5,
+        "source_credibility": 18.9,
+        "recency": 7.130321666666667,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 94.53032166666668
+    },
+    {
+      "topic_id": 24,
+      "topic_key": "paper:2611.33162",
+      "topic_title": "Attributing Agentic Failure in",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        24
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Attributing Agentic Failure in Reasoning Vision-Language Models with Interactive 2D Environments"
+      ],
+      "scorecard": {
+        "total": 93.13032165509259,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321655092593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032165509259
+    },
+    {
+      "topic_id": 25,
+      "topic_key": "paper:2611.22374",
+      "topic_title": "AutoE2E: Don't speak - Language",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        25
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "AutoE2E: Don't speak - Language free end-to-end autonomy for L2++ ADAS and L4 Robotaxis"
+      ],
+      "scorecard": {
+        "total": 93.13032165509259,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321655092593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032165509259
+    },
+    {
+      "topic_id": 27,
+      "topic_key": "paper:2611.34068",
+      "topic_title": "Budget, Readout or Reasoning?",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        27
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Budget, Readout or Reasoning? Where Small Reasoning Models Lose Value in Auction Bidding"
+      ],
+      "scorecard": {
+        "total": 93.13032165509259,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321655092593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032165509259
+    },
+    {
+      "topic_id": 28,
+      "topic_key": "paper:2611.33411",
+      "topic_title": "Collaborative Language Models for",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        28
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Collaborative Language Models for Semantic IoT Data Processing: Validation through Zero"
+      ],
+      "scorecard": {
+        "total": 93.13032165509259,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321655092593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032165509259
+    },
+    {
+      "topic_id": 29,
+      "topic_key": "paper:2611.34254",
+      "topic_title": "Crucible: Evaluating LLM Agents",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        29
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Crucible: Evaluating LLM Agents in Executable Chemistry Research Environments"
+      ],
+      "scorecard": {
+        "total": 93.13032165509259,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321655092593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032165509259
+    },
+    {
+      "topic_id": 30,
+      "topic_key": "paper:2611.34671",
+      "topic_title": "DemoFoundry: Toward Scalable",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        30
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "DemoFoundry: Toward Scalable Photorealistic Robot Data with Coding Agents and Generative"
+      ],
+      "scorecard": {
+        "total": 93.13032165509259,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321655092593,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032165509259
+    },
+    {
+      "topic_id": 32,
+      "topic_key": "paper:2611.28356",
+      "topic_title": "Engram: Multi-Stage Memory for",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        32
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Engram: Multi-Stage Memory for Agentic Tuning of Heterogeneous Models"
+      ],
+      "scorecard": {
+        "total": 93.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032163194444
+    },
+    {
+      "topic_id": 34,
+      "topic_key": "paper:2611.33197",
+      "topic_title": "Extraneous Cognitive Load in",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        34
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Extraneous Cognitive Load in Large Language Models"
+      ],
+      "scorecard": {
+        "total": 93.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032163194444
+    },
+    {
+      "topic_id": 36,
+      "topic_key": "paper:2611.34624",
+      "topic_title": "HoMe: Toward Practical Harness",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        36
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "HoMe: Toward Practical Harness Optimization of Memory Systems for AI Assistants"
+      ],
+      "scorecard": {
+        "total": 93.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032163194444
+    },
+    {
+      "topic_id": 37,
+      "topic_key": "paper:2611.23702",
+      "topic_title": "KnowMe Paper Radar",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        37
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "KnowMe Paper Radar: Lightweight Discovery of Promising Papers in the Age of Autoresearch"
+      ],
+      "scorecard": {
+        "total": 93.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032163194444
+    },
+    {
+      "topic_id": 38,
+      "topic_key": "paper:2611.33973",
+      "topic_title": "Kolpona: An Agentic Framework",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        38
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Kolpona: An Agentic Framework with Gradient-Free Neuron Programming for RTL Generation"
+      ],
+      "scorecard": {
+        "total": 93.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032163194444
+    },
+    {
+      "topic_id": 40,
+      "topic_key": "paper:2611.34250",
+      "topic_title": "MedSkill-E$^{2}$",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        40
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "MedSkill-E$^{2}$: Evaluating and Evolving Skills for Medical Agents"
+      ],
+      "scorecard": {
+        "total": 93.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032163194444
+    },
+    {
+      "topic_id": 43,
+      "topic_key": "paper:2611.33402",
+      "topic_title": "Partial Routing",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        43
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Partial Routing: Trace-Tuned Delegation for Resource-Efficient Agentic Workflows"
+      ],
+      "scorecard": {
+        "total": 93.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032163194444
+    },
+    {
+      "topic_id": 44,
+      "topic_key": "paper:2611.33966",
+      "topic_title": "PatternMiner",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        44
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "PatternMiner: Automated Mathematical Discovery Through LLM-Guided Training and"
+      ],
+      "scorecard": {
+        "total": 93.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032163194444
+    },
+    {
+      "topic_id": 45,
+      "topic_key": "paper:2611.33555",
+      "topic_title": "PeerReveal",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        45
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "PeerReveal: Learning to Generalize in AI Peer Review Detection"
+      ],
+      "scorecard": {
+        "total": 93.13032163194444,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.130321631944445,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032163194444
+    },
+    {
+      "topic_id": 47,
+      "topic_key": "paper:2611.34575",
+      "topic_title": "Sage-Med: Scaling Medical",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        47
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Sage-Med: Scaling Medical Multimodal Intelligence"
+      ],
+      "scorecard": {
+        "total": 93.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032162037038
+    },
+    {
+      "topic_id": 50,
+      "topic_key": "paper:2611.34440",
+      "topic_title": "vSFT: Learning to Verbally Tune",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        50
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "vSFT: Learning to Verbally Tune Agents at Test Time"
+      ],
+      "scorecard": {
+        "total": 93.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032162037038
+    },
+    {
+      "topic_id": 51,
+      "topic_key": "paper:2611.34292",
+      "topic_title": "WebVibe: Multimodal Interactive",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        51
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "WebVibe: Multimodal Interactive Website Generation via Reverse Synthesis and Visual Self"
+      ],
+      "scorecard": {
+        "total": 93.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032162037038
+    },
+    {
+      "topic_id": 52,
+      "topic_key": "paper:2611.33943",
+      "topic_title": "What Does Skill Lift Actually",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        52
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "What Does Skill Lift Actually Measure? A Source-Code-Level Audit and Noise-Aware Reanalysis"
+      ],
+      "scorecard": {
+        "total": 93.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032162037038
+    },
+    {
+      "topic_id": 53,
+      "topic_key": "paper:2611.34635",
+      "topic_title": "ZeroHero: Training Small Language",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        53
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "ZeroHero: Training Small Language Agents from Scratch"
+      ],
+      "scorecard": {
+        "total": 93.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032162037038
+    },
+    {
+      "topic_id": 55,
+      "topic_key": "paper:2611.21155",
+      "topic_title": "Edit Recommendation",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        55
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Edit Recommendation: Can LLMs Anticipate Edit Requests from Users, and When?"
+      ],
+      "scorecard": {
+        "total": 93.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032162037038
+    },
+    {
+      "topic_id": 56,
+      "topic_key": "paper:2611.21056",
+      "topic_title": "Evaluation-Free Recursive Self",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        56
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Evaluation-Free Recursive Self-Improvement for Coding Agents"
+      ],
+      "scorecard": {
+        "total": 93.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032162037038
+    },
+    {
+      "topic_id": 57,
+      "topic_key": "paper:2611.34912",
+      "topic_title": "LiveVAE: Causal Window Attention",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        57
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 64,
+      "avg_candidate_score": 25,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Hugging Face Papers"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "LiveVAE: Causal Window Attention Makes Efficient Streaming Video VAE"
+      ],
+      "scorecard": {
+        "total": 93.13032162037038,
+        "cross_validation": 106.5,
+        "source_credibility": 17.5,
+        "recency": 7.1303216203703705,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 93.13032162037038
+    },
+    {
+      "topic_id": 63,
+      "topic_key": "paper:2611.04241",
+      "topic_title": "AceAction-5M: Hierarchical Goals",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        64
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 63,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "AceAction-5M: Hierarchical Goals for Generalist Action Learning Across 3D Game Worlds"
+      ],
+      "scorecard": {
+        "total": 90.23032160879629,
+        "cross_validation": 105,
+        "source_credibility": 16.099999999999998,
+        "recency": 7.130321608796296,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 90.23032160879629
+    },
+    {
+      "topic_id": 64,
+      "topic_key": "paper:2611.33993",
+      "topic_title": "Aegis-VLA: Reliability-Gated",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        65
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 63,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Aegis-VLA: Reliability-Gated Action Refinement via a Trajectory World Model for Dynamic"
+      ],
+      "scorecard": {
+        "total": 90.23032159722223,
+        "cross_validation": 105,
+        "source_credibility": 16.099999999999998,
+        "recency": 7.130321597222222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 90.23032159722223
+    },
+    {
+      "topic_id": 65,
+      "topic_key": "paper:2611.34407",
+      "topic_title": "Agentic Waterfall",
+      "topic_type": "paper",
+      "is_pr": false,
+      "member_candidate_ids": [
+        66
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 63,
+      "avg_candidate_score": 23,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "arXiv cs.AI"
+      ],
+      "top_source_groups": [
+        "paper"
+      ],
+      "sample_titles": [
+        "Agentic Waterfall: An Intent-Driven Information Discovery Framework for Reclaiming User"
+      ],
+      "scorecard": {
+        "total": 90.23032159722223,
+        "cross_validation": 105,
+        "source_credibility": 16.099999999999998,
+        "recency": 7.130321597222222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -2,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 90.23032159722223
+    },
+    {
+      "topic_id": 61,
+      "topic_key": "Anthropic CEO 否认让渡自由意志",
+      "topic_title": "Anthropic CEO 否认将人类自由意志让渡予 AI",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        61
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 23.60418569631167,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "Anthropic CEO 否认将人类自由意志让渡予 AI，并警示模型递归自我改进风险11月25日，Anthropic CEO达里奥·阿莫迪在11月19日公司IPO后发布逾千字长文"
+      ],
+      "scorecard": {
+        "total": 84.65325159621446,
+        "cross_validation": 93,
+        "source_credibility": 16.52292998741817,
+        "recency": 7.130321608796296,
+        "entity_priority": 13,
+        "industry_value": 15,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Anthropic",
+          "value:benchmark_safety",
+          "value:product_launch"
+        ]
+      },
+      "topic_total_score": 84.65325159621446
+    },
+    {
+      "topic_id": 59,
+      "topic_key": "蚂蚁百灵开源 Ling-3.2-air",
+      "topic_title": "蚂蚁百灵开源 Ling-3.2-air 模型",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        59
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 23.60418569631167,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "蚂蚁百灵开源 Ling-3.2-air，用 55 亿激活参数击穿复杂工作流落地瓶颈AI编程与智能体落地进入深水区，模型在简单代码补全上表现亮眼，但面对真实复杂代码仓库或多步骤自动化工作流时"
+      ],
+      "scorecard": {
+        "total": 77.65325159621446,
+        "cross_validation": 93,
+        "source_credibility": 16.52292998741817,
+        "recency": 7.130321608796296,
+        "entity_priority": 0,
+        "industry_value": 11,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": [
+          "value:api_platform_update"
+        ]
+      },
+      "topic_total_score": 77.65325159621446
+    },
+    {
+      "topic_id": 83,
+      "topic_key": "标普下调英伟达评级",
+      "topic_title": "标普考虑下调英伟达信用评级",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        84
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 18,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "TechCrunch AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "S&P considers Nvidia credit downgrade over governance and ‘key man’ risks"
+      ],
+      "scorecard": {
+        "total": 75.23032158564814,
+        "cross_validation": 103.5,
+        "source_credibility": 12.6,
+        "recency": 7.130321585648148,
+        "entity_priority": 12,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:NVIDIA"
+        ]
+      },
+      "topic_total_score": 75.23032158564814
+    },
+    {
+      "topic_id": 76,
+      "topic_key": "AI 光通信产业链",
+      "topic_title": "黄仁勋详解 AI 算力背后的光通信产业链",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        77
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "黄仁勋的“光”：详解AI算力背后的光通信产业链"
+      ],
+      "scorecard": {
+        "total": 74.40914113205741,
+        "cross_validation": 93,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.130321597222222,
+        "entity_priority": 0,
+        "industry_value": 10,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": [
+          "value:chip_compute_infra"
+        ]
+      },
+      "topic_total_score": 74.40914113205741
+    },
+    {
+      "topic_id": 81,
+      "topic_key": "亚马逊收购 Decart",
+      "topic_title": "亚马逊拟收购 AI 算力优化公司 Decart",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        82
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 20.08746284125034,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "速递｜亚马逊拟斥资75亿美元收购AI算力优化公司Decart核心资产"
+      ],
+      "scorecard": {
+        "total": 74.19154557452339,
+        "cross_validation": 93,
+        "source_credibility": 14.061223988875236,
+        "recency": 7.130321585648148,
+        "entity_priority": 0,
+        "industry_value": 10,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": [
+          "value:chip_compute_infra"
+        ]
+      },
+      "topic_total_score": 74.19154557452339
+    },
+    {
+      "topic_id": 68,
+      "topic_key": "Meta 拒绝共享 Muse",
+      "topic_title": "Meta 拒绝共享 Muse 模型测试",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        69
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 63,
+      "avg_candidate_score": 20.523561956057012,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "WIRED AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "Meta Refused to Share Muse for Testing"
+      ],
+      "scorecard": {
+        "total": 73.49681496646213,
+        "cross_validation": 105,
+        "source_credibility": 14.366493369239908,
+        "recency": 7.130321597222222,
+        "entity_priority": 11,
+        "industry_value": 8,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:Meta",
+          "value:benchmark_safety"
+        ]
+      },
+      "topic_total_score": 73.49681496646213
+    },
+    {
+      "topic_id": 58,
+      "topic_key": "OpenAI 订阅服务诉讼",
+      "topic_title": "德国消保机构起诉 OpenAI 订阅服务",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        58
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 23.60418569631167,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "点几下就能订，退订却得绕回原路：德国消保机构把 OpenAI 告上法庭德国勃兰登堡消费者保护中心已起诉 OpenAI，指 ChatGPT 订阅“开通容易、取消难”"
+      ],
+      "scorecard": {
+        "total": 70.65325159621446,
+        "cross_validation": 93,
+        "source_credibility": 16.52292998741817,
+        "recency": 7.130321608796296,
+        "entity_priority": 14,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "entity:OpenAI"
+        ]
+      },
+      "topic_total_score": 70.65325159621446
+    },
+    {
+      "topic_id": 73,
+      "topic_key": "Character.AI 被起诉",
+      "topic_title": "42 州总检察长起诉 Character.AI",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        74
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 21.459431618637296,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "The Verge AI"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "42 state AGs are trying to stop Character.AI from selling users’ chats"
+      ],
+      "scorecard": {
+        "total": 65.65192373026832,
+        "cross_validation": 103.5,
+        "source_credibility": 15.021602133046107,
+        "recency": 7.130321597222222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 65.65192373026832
+    },
+    {
+      "topic_id": 71,
+      "topic_key": "猎聘 Lily 升级",
+      "topic_title": "猎聘 Lily 升级为独立 AI 产品",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        72
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 21.470531984613093,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AIBase"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "从招聘到组织管理，猎聘Lily正式升级为独立AI产品清华大学近日举办“非凡2026”智能经济论坛，主题为“AI驱动的组织飞跃”，由清华经管学院人工智能与管理研究中心"
+      ],
+      "scorecard": {
+        "total": 65.15969398645139,
+        "cross_validation": 93,
+        "source_credibility": 15.029372389229163,
+        "recency": 7.130321597222222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 4,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -18,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 65.15969398645139
+    },
+    {
+      "topic_id": 80,
+      "topic_key": "华源智因融资",
+      "topic_title": "AI 虚拟细胞公司华源智因完成融资",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        81
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 20.08746284125034,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "首发｜AI4S最年轻的创业者，AI虚拟细胞公司华源智因完成超亿元融资"
+      ],
+      "scorecard": {
+        "total": 64.19154557452339,
+        "cross_validation": 93,
+        "source_credibility": 14.061223988875236,
+        "recency": 7.130321585648148,
+        "entity_priority": 0,
+        "industry_value": 10,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": [
+          "value:commercialization_revenue"
+        ]
+      },
+      "topic_total_score": 64.19154557452339
+    },
+    {
+      "topic_id": 67,
+      "topic_key": "智源 REAL 开放日",
+      "topic_title": "智源 REAL 开放日",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        68
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 22.539030204684515,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "智源REAL开放日：物理AI从跑分表演到真实世界的一场大考"
+      ],
+      "scorecard": {
+        "total": 55.90764274050137,
+        "cross_validation": 93,
+        "source_credibility": 15.77732114327916,
+        "recency": 7.130321597222222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 55.90764274050137
+    },
+    {
+      "topic_id": 75,
+      "topic_key": "思特威孵出物理 AI 公司",
+      "topic_title": "国产传感龙头孵出物理 AI 公司",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        76
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "国产传感龙头孵出物理AI公司，做AI训推硬件"
+      ],
+      "scorecard": {
+        "total": 54.40914113205743,
+        "cross_validation": 93,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.130321597222222,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 54.40914113205743
+    },
+    {
+      "topic_id": 77,
+      "topic_key": "迷信 AI 的当事人",
+      "topic_title": "迷信 AI 的当事人引发律师猝死讨论",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        78
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "迷信AI的当事人"
+      ],
+      "scorecard": {
+        "total": 54.409141120483355,
+        "cross_validation": 93,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.130321585648148,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 54.409141120483355
+    },
+    {
+      "topic_id": 78,
+      "topic_key": "曲曲大女人征服 AI",
+      "topic_title": "曲曲大女人征服 AI",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        79
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "曲曲大女人征服AI"
+      ],
+      "scorecard": {
+        "total": 54.409141120483355,
+        "cross_validation": 93,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.130321585648148,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 54.409141120483355
+    },
+    {
+      "topic_id": 82,
+      "topic_key": "King: AI is exponential",
+      "topic_title": "King: AI is exponential and we are",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        83
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 19,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "SiliconValley.com"
+      ],
+      "top_source_groups": [
+        "foreign_media"
+      ],
+      "sample_titles": [
+        "King: AI is exponential and we are linear thinkers"
+      ],
+      "scorecard": {
+        "total": 53.430321585648144,
+        "cross_validation": 93,
+        "source_credibility": 13.299999999999999,
+        "recency": 7.130321585648148,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 53.430321585648144
+    },
+    {
+      "topic_id": 84,
+      "topic_key": "The Revolution vs The Renaissance",
+      "topic_title": "The Revolution vs The Renaissance",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        85
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 18,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Latent Space"
+      ],
+      "top_source_groups": [
+        "newsletter"
+      ],
+      "sample_titles": [
+        "The Revolution vs The Renaissance — Thariq Shihipar"
+      ],
+      "scorecard": {
+        "total": 51.23032158564814,
+        "cross_validation": 103.5,
+        "source_credibility": 12.6,
+        "recency": 7.130321585648148,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 51.23032158564814
+    },
+    {
+      "topic_id": 85,
+      "topic_key": "纽约时报警告 PS AI 更新",
+      "topic_title": "纽约时报警告不要更新 Photoshop",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        86
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 18,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Simon Willison's Weblog"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "The New York Times warns photographers not to update Photoshop over AI features"
+      ],
+      "scorecard": {
+        "total": 51.23032157407407,
+        "cross_validation": 103.5,
+        "source_credibility": 12.6,
+        "recency": 7.130321574074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -38,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 51.23032157407407
+    },
+    {
+      "topic_id": 90,
+      "topic_key": "量子位 AI 浪潮报道",
+      "topic_title": "量子位 AI 浪潮报道",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        91
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 53,
+      "avg_candidate_score": 16.807354922057606,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "量子位"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "报名最后2天｜AI浪潮之中"
+      ],
+      "scorecard": {
+        "total": 48.89547001951439,
+        "cross_validation": 90,
+        "source_credibility": 11.765148445440323,
+        "recency": 7.130321574074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 48.89547001951439
+    },
+    {
+      "topic_id": 91,
+      "topic_key": "量子位 AI 视频技术报道",
+      "topic_title": "量子位 AI 视频技术报道",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        92
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 53,
+      "avg_candidate_score": 16.807354922057606,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "量子位"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "顶尖商用级AI视频每秒只要5毛！中国开源新势力拿下全球第一"
+      ],
+      "scorecard": {
+        "total": 48.89547001951439,
+        "cross_validation": 90,
+        "source_credibility": 11.765148445440323,
+        "recency": 7.130321574074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 48.89547001951439
+    },
+    {
+      "topic_id": 93,
+      "topic_key": "沈向洋 AI 非共识观点",
+      "topic_title": "沈向洋 AI 非共识观点",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        94
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 53,
+      "avg_candidate_score": 13,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "量子位"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "沈向洋刚讲了好多AI非共识啊"
+      ],
+      "scorecard": {
+        "total": 46.23032157407407,
+        "cross_validation": 90,
+        "source_credibility": 9.1,
+        "recency": 7.130321574074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 46.23032157407407
+    },
+    {
+      "topic_id": 94,
+      "topic_key": "北京 AI 影视产业崛起",
+      "topic_title": "北京 AI 影视产业崛起",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        95
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 53,
+      "avg_candidate_score": 13,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "量子位"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "AI影视高地正在北影海淀一带崛起"
+      ],
+      "scorecard": {
+        "total": 46.23032157407407,
+        "cross_validation": 90,
+        "source_credibility": 9.1,
+        "recency": 7.130321574074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 2,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -26,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 46.23032157407407
+    },
+    {
+      "topic_id": 79,
+      "topic_key": "匿名模型 HungerG",
+      "topic_title": "匿名模型 HungerG 深夜空降",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        80
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 55,
+      "avg_candidate_score": 20.398313621193157,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "AITNT 资讯"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "深夜空降、匿名免费、拒绝雷霆大思考"
+      ],
+      "scorecard": {
+        "total": 42.409141120483355,
+        "cross_validation": 93,
+        "source_credibility": 14.27881953483521,
+        "recency": 7.130321585648148,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 42.409141120483355
+    },
+    {
+      "topic_id": 87,
+      "topic_key": "Scott Aaronson 复杂性理论观点",
+      "topic_title": "Scott Aaronson 复杂性理论观点",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        88
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 62,
+      "avg_candidate_score": 16,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Simon Willison's Weblog"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "Quoting Scott Aaronson"
+      ],
+      "scorecard": {
+        "total": 37.83032157407408,
+        "cross_validation": 103.5,
+        "source_credibility": 11.2,
+        "recency": 7.130321574074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -48,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 37.83032157407408
+    },
+    {
+      "topic_id": 92,
+      "topic_key": "蔚来 NIO World Model 3.0",
+      "topic_title": "蔚来 NIO World Model 3.0",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        93
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 53,
+      "avg_candidate_score": 16.807354922057606,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "量子位"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "任少卿带着世界模型3.0来了！蔚来智驾训练提效5倍"
+      ],
+      "scorecard": {
+        "total": 36.89547001951439,
+        "cross_validation": 90,
+        "source_credibility": 11.765148445440323,
+        "recency": 7.130321574074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 36.89547001951439
+    },
+    {
+      "topic_id": 95,
+      "topic_key": "2027 全球智能手机出货量预测",
+      "topic_title": "2027 全球智能手机出货量预测",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        96
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 53,
+      "avg_candidate_score": 12,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "爱范儿早报"
+      ],
+      "top_source_groups": [
+        "domestic_media"
+      ],
+      "sample_titles": [
+        "Counterpoint：2027 年全球智能手机出货量预计再降 6%"
+      ],
+      "scorecard": {
+        "total": 33.530321562500006,
+        "cross_validation": 90,
+        "source_credibility": 8.399999999999999,
+        "recency": 7.1303215625,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -36,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 33.530321562500006
+    },
+    {
+      "topic_id": 86,
+      "topic_key": "Acore 预测认知核心训练",
+      "topic_title": "Acore 预测认知核心训练",
+      "topic_type": "news",
+      "is_pr": false,
+      "member_candidate_ids": [
+        87
+      ],
+      "mention_count": 1,
+      "source_diversity": 1,
+      "cross_source_score": 54,
+      "avg_candidate_score": 17,
+      "newest_pub_date": "2026-11-26",
+      "top_sources": [
+        "Hugging Face Posts"
+      ],
+      "top_source_groups": [
+        "community"
+      ],
+      "sample_titles": [
+        "Zero priors. Opaque integer grids. Randomized motor commands. I'm 16 and trained Acore (a"
+      ],
+      "scorecard": {
+        "total": 26.53032157407408,
+        "cross_validation": 91.5,
+        "source_credibility": 11.899999999999999,
+        "recency": 7.130321574074074,
+        "entity_priority": 0,
+        "industry_value": 0,
+        "ai_relevance": 0,
+        "domestic_signal_bonus": 0,
+        "edition_bias": -36,
+        "penalties": -48,
+        "pr_penalty": 0,
+        "signals": []
+      },
+      "topic_total_score": 26.53032157407408
+    }
+  ]
+}
