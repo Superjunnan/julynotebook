@@ -1,0 +1,386 @@
+{
+  "run_date": "2026-11-27",
+  "selected_topic_ids": [
+    87,
+    69,
+    68,
+    84,
+    85,
+    88,
+    17,
+    50,
+    51,
+    70,
+    15,
+    30,
+    34,
+    36,
+    37,
+    43
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 16,
+    "base_members_added": 17,
+    "expanded_added": 3,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 25,
+    "final_targets": 20,
+    "global_cap": 30
+  },
+  "deep_read_links": 20,
+  "materials_total": 20,
+  "materials_windowed": 20,
+  "materials_usable": 19,
+  "materials_by_source": {
+    "arXiv cs.AI": 9,
+    "AIBase": 5,
+    "雷锋网 AI": 2,
+    "Hugging Face Posts": 2,
+    "量子位": 1
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 69,
+      "topic_title": "腾讯混元发布 Hy3D 3.6",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        14
+      ],
+      "members": [
+        {
+          "ref_id": 14,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32569",
+          "title": "告别“拓扑地狱”与“贴图废片”！腾讯混元发布 Hy3D 3.6，原生 3D 生成直击专业管线痛点AI 3D生成热潮下，专业建模师与TA面临隐秘挫败：AI模型常“乍看惊艳，细看崩溃”，网格拓扑混乱、UV不可用、材质贴图缺乏物理真实感，难以直接进入游戏引擎或影视管线，仍需人工拓扑重构与贴图重绘，反而增加二次返工。行业正迎来打破这一工业化瓶颈的关键时刻。 6 小时前 11.4K",
+          "pub_date": "2026-11-27",
+          "content": "在 AI3D 生成的狂潮中，专业建模师和技术美术（TA）们正面临一种隐秘的挫败感:AI 生成的模型往往“乍看惊艳，细看崩溃”——网格拓扑混乱、UV 展开不可用、材质贴图缺乏物理真实感。这些“玩具级”的产物无法直接导入游戏引擎或影视管线，最终仍需人工进行繁琐的拓扑重构与贴图重绘，AI 非但没能提效，反而增加了“二次返工”的负担。打破这一工业化瓶颈的时刻已经到来。11月27日，腾讯混元正式发布最新一代3D 大模型 Hy3D3.6。该模型明确将矛头对准“专业3D 创作”，通过底层架构与数据闭环的深度重构，首次让 AI 生成的3D 资产真正具备了“即插即用”的工业级品质。核心突破:从“2D 拼凑”到“原生3D 学习”Hy3D3.6最大的技术跨越，在于其作为原生3D 生成模型的底层逻辑。它不再依赖传统的“2D 图像转3D”的间接路径，而是在训练阶段直接“学习”海量3D 资产中几何、纹理与材质的真实分布规律。这意味着，模型生成的不再是表面光鲜的“空壳”，而是几何表面整洁、结构清晰、高模刻画细腻的专业级资产。艺术家和建模师可以直接将其导入 Maya、Blender 或 Unreal Engine 中，作为高质量的基础网格进行后续雕刻或动画绑定，彻底打通了从“AI 生成”到“专业生产工作流”的最后一公里。"
+        }
+      ]
+    },
+    {
+      "topic_id": 68,
+      "topic_title": "豆包独家接入剪映",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        15
+      ],
+      "members": [
+        {
+          "ref_id": 15,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32576",
+          "title": "豆包独家接入剪映，用“对话式交互”重塑视频创作工作流视频创作者最隐秘的挫败感，不在创意枯竭，而在创意落地时繁琐的工程化消耗。尤其口播视频，逐帧找“嘴瓢”、手动对齐字幕、反复调字体字号等机械“手搓”，正吞噬创作者的热情与时间。行业痛点在于AI生成与专业剪辑工具割裂，一场打通工作流“最后一公里”的重构已然到来。 4 小时前 10.6K",
+          "pub_date": "2026-11-27",
+          "content": "对于每一位视频创作者而言，最隐秘的挫败感往往不在于创意的枯竭，而在于将创意落地时繁琐的工程化消耗。尤其是口播类视频，逐帧寻找“嘴瓢”片段、手动对齐字幕、反复调整字体字号 这些机械重复的“手搓”操作，正在无情地吞噬创作者的热情与时间。当行业苦于“AI生成”与“专业剪辑”工具割裂的痛点时，一场打通工作流最后一公里的重构已然到来。近日，豆包工作正式宣布独家接入剪映官方插件，首次将自然语言交互与专业级视频剪辑能力深度融合，让“一句话剪出大片”从概念走向现实。核心突破:让自然语言接管“时间轴”此次联动的核心价值，在于将复杂的剪辑逻辑转化为极简的对话指令。以最高频的口播视频场景为例，过去需要创作者在时间轴上反复拖拽、切割、添加文本的操作，现在只需向豆包工作输入一句清晰的指令，如:“帮我删掉第三段重复的废话，处理一下第五秒的嘴瓢，并加上黑体白边的字幕”。豆包即可直接调用剪映底层能力，自动完成全套处理，大幅削减逐项操作的认知与体力负担。交互革新:“对话微调”与“多轨草稿”的完美平衡许多创作者对纯AI剪辑心存顾虑:害怕AI“盲盒式”的输出破坏原有节奏，且难以进行像素级的精细调整。豆包与剪映的此次合作，给出了一个极具智慧的“双轨解法”:对话式迭代:视频生成后，用户可以边看边通过自然语言提出修改意见（如“把这段字幕放大一点”、“换个更活泼的转场”），实现低门槛的快速迭代。"
+        }
+      ]
+    },
+    {
+      "topic_id": 84,
+      "topic_title": "欧洲独角兽创始人观察",
+      "topic_type": "news",
+      "cross_source_score": 54,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 17,
+          "source": "Hugging Face Posts",
+          "link": "https://huggingface.co/posts/AkimfromParis/114904122884745",
+          "title": "5 Observations of an European solo-founder: From fun idea in May to Pre-Seed in November 2026 1. Data compliance is a product challenge. From an engineering perspective, cleaning datasets, converting them to Parquet, and publishing them on Hugging Face is the easy part. Understanding data ownership, third-party processors, subprocessors, and legal disclosure requirements is another challenge entirely. HuggingFace is a subprocessor and Cloud provider is a full processor? 2. A PBC is not a legal shield. At Stanford University, I overheard that the Public Benefit Corporation (PBC) model can be leveraged to build datasets without too much legal risk. Interesting corporate structure, but no exemption from liability or data protection laws. Building an AI company across the US, EU, China, and Japan means navigating GDPR, the AI Act, CCPA/CPRA, PIPL in China, and APPI in Japan. 3. European incorporation can complicate US fundraising. European VCs are not taking a lot of risk on the pre-seed level. Many US VCs are promoting SAFE agreements for Delaware C-Corps. For European founders, this raises a strategic question: incorporate directly in the USA. Start in Europe in hope for strong traction, and plan for a potential Delaware Flip later? 4. Slow incorporation means a slower product launch. Legal and administrative delays can block access to corporate payment accounts (Stripe & Co), App store publishing (iOS & Android), and certain business API integrations. You can have a technically finished product without being ready to launch commercially. 5. The solo-founder bottleneck is everywhere. On the business side, meetings with legal, advisors, fundraising, and clients. On the technical side, Software Factory drift, iOS and Android development, and product iteration.",
+          "pub_date": "2026-11-27T11:21:20.000Z",
+          "content": "5 Observations of an European solo-founder: From fun idea in May to Pre-Seed in November 20261. Data compliance is a product challenge.From an engineering perspective, cleaning datasets, converting them to Parquet, and publishing them on Hugging Face is the easy part. Understanding data ownership, third-party processors, subprocessors, and legal disclosure requirements is another challenge entirely. HuggingFace is a subprocessor and Cloud provider is a full processor?2."
+        }
+      ]
+    },
+    {
+      "topic_id": 85,
+      "topic_title": "Qwen3.6-35B-A3B 性能评测",
+      "topic_type": "news",
+      "cross_source_score": 54,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        18
+      ],
+      "members": [
+        {
+          "ref_id": 18,
+          "source": "Hugging Face Posts",
+          "link": "https://huggingface.co/posts/Ternii/374754548474574",
+          "title": "Qwen3.6-35B-A3B on a 16 GB MacBook Air: now 48 tokens/s. On an M5 Max: ~155 tokens/s. llama.cpp-tr r7 is out, with an MTP draft head for our TR2.25-G GGUF. - 16 GB MacBook Air M5: 48 tokens/s, up from 41 with the previous installer on the same 16 prompts (×1.15), from a fresh one-line install. All 41 layers on the GPU, 13 GB wired. - M5 Max: ~155 tokens/s decode (was ~120 with r6, same output: ×1.3). Four Metal changes: the DeltaNet state is read straight from the cache, the conv state runs as one kernel, the decode fusions are on, and the next token's graph is encoded while the GPU runs. Greedy text and log-probabilities are identical to r6. - MTP drafting: Qwen's own multi-token-prediction layer, shipped as a small extra file next to the GGUF (1.34 GB; 1.02 GB for 16 GB Macs). Together with n-gram drafting it adds up to ×1.55 on maths. Answers change a little, as with any batched drafting; GSM8K, HumanEval+, MBPP+ and MGSM (11 languages) are level with no drafting. - The one-line Mac installer now uses r7 and picks the draft file by memory size: curl -fsSL | bash Release: Model:",
+          "pub_date": "2026-11-27",
+          "content": "Qwen3.6-35B-A3B on a 16 GB MacBook Air: now 48 tokens/s. On an M5 Max: ~155 tokens/s.llama.cpp-tr r7 is out, with an MTP draft head for our TR2.25-G GGUF.- 16 GB MacBook Air M5: 48 tokens/s, up from 41 with the previous installer on the same 16 prompts (×1.15), from a fresh one-line install. All 41 layers on the GPU, 13 GB wired.- M5 Max: ~155 tokens/s decode (was ~120 with r6, same output: ×1.3). Four Metal changes: the DeltaNet state is read straight from the cache, the conv state runs as one kernel, the decode fusions are on, and the next token's graph is encoded while the GPU runs."
+        }
+      ]
+    },
+    {
+      "topic_id": 88,
+      "topic_title": "钛动科技 × 腾讯云战略合作",
+      "topic_type": "news",
+      "cross_source_score": 53,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        19
+      ],
+      "members": [
+        {
+          "ref_id": 19,
+          "source": "量子位",
+          "link": "https://www.qbitai.com/2026/11/513194.html",
+          "title": "钛动科技 × 腾讯云达成战略合作，用AI打开企业全球增长新空间",
+          "pub_date": "2026-11-27",
+          "content": "< img id=\"wx_img\" src=\"https://www.qbitai.com/wp-content/uploads/imgs/qbitai-logo-1.png\" width=\"400\" height=\"400\"> 2026-11-27 12:05:56 来源：量子位 企业需要有用的 AI 11月26日，全球领先的AI营销科技公司钛动科技与腾讯云签署战略合作协议。根据协议，双方将围绕专业营销大模型、算力及云基础设施、MaaS服务、腾讯 WorkBuddy 智能体生态等领域深化协同，推动AI与云技术能力同全球品牌出海场景深度融合，为更多企业提供可复制、可规模化的业务增长能力。 钛动科技创始人兼 CEO 李述昊，腾讯集团高级执行副总裁、云与智慧产业事业群（CSIG）CEO 汤道生共同见证，钛动科技AI副总裁陈德品、腾讯云副总裁许华彬分别代表双方签署战略合作协议，钛动科技品牌公关副总裁张羽雪、钛极模型负责人丁俊玮、运维总监肖胜龙，以及腾讯云泛互行业解决方案总经理陈亮、腾讯云互联网出海行业商务总监赵佳楠等双方代表出席了签约仪式。"
+        }
+      ]
+    },
+    {
+      "topic_id": 17,
+      "topic_title": "Anthropic 发布 Claude Ship",
+      "topic_type": "news",
+      "cross_source_score": 64,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        4,
+        10
+      ],
+      "members": [
+        {
+          "ref_id": 4,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32580",
+          "title": "Claude 能写代码也能审批合并了：Anthropic 拆开职责防“自审自批”，PR 合并量 3 个月翻倍Anthropic发布Claude Ship，针对AI既写代码又决定合并的自审自批风险，将GitHub PR流程拆为Code Review、PR Steward和Claude Approvals三个独立组件，覆盖提交到合并，职责分离。内部PR合并量三个月翻倍，回滚比例降超40%，Diff、Commit、CI结果和审批记录均留痕。 2 小时前 9.4K",
+          "pub_date": "2026-11-27",
+          "content": "当 AI 不仅写代码，还想决定代码能否合并，危险随之而来：执行、审查和审批若集中在一个 Agent 手里，就成了自审自批。Anthropic 今天发布的 Claude Ship 把职责拆开，让 Claude 参与 GitHub PR 从提交到合并的完整流程：内部 PR 合并量 3 个月翻倍，回滚比例降超 40%。三个组件，各管一段Claude Ship 拆成 Code Review、PR Steward 和 Claude Approvals 三个独立组件，Diff、Commit、CI 结果和审批记录都留在 PR 里。Code Review 只读，先并行读代码找问题，再验证问题能否被实际代码路径支持，避免“看出可疑却判不成真缺陷”；PR Steward 能改文件、推 Commit、修 CI 失败，但无批准与合并权限——修复与授权分开，写代码的 Agent 成不了自己的验收者。审批规则写进配置文件审批交给 Claude Approvals：团队在 YAML 里定义文件范围、条件与审批结果，Claude 可批准、留意见或阻止，人工席位一并规定。分类器还能判断新旧 Diff 是否延续原意图，决定人工审批能否沿用。策略只从默认分支读取，提交者无法用待审查代码给自己降低门槛。"
+        },
+        {
+          "ref_id": 10,
+          "source": "雷锋网 AI",
+          "link": "https://www.leiphone.com/category/ai/iWUKWuRp4AmJ6dZE.html",
+          "title": "Anthropic 放出 Claude Ship：内部 PR 合并量 3 个月翻倍，回滚比例下降超 40%",
+          "pub_date": "2026-11-27",
+          "content": "Claude 已写下约 90% 代码，单日代码变更从 2500 增至 3 万，审查覆盖率升至 54%。 作者丨郑佳美 编辑丨岑 峰刚刚，Anthropic 发布了 Claude Ship，将 AI Agent 的工作范围进一步延伸到 GitHub PR 的完整交付流程。从代码审查、自动修复 CI 失败，到处理合并冲突和审批 PR，Claude 开始参与一项代码从提交到合并的完整工程流程。这次发布有一个明显的架构变化：Anthropic 没有让单个 Agent 包揽所有工作，而是将 Code Review、PR Steward 和 Claude Approvals 拆成三个独立组件，分别承担审查、修复和审批职责。它们围绕同一个 PR 协作，代码出现问题后可以自动触发修复，修复完成后再进入相应的审查与审批流程。其中，Claude Ship 引入的策略驱动审批机制改变了 AI 参与代码交付的方式。团队可以通过 YAML 文件定义代码路径、变更范围、审查结果与审批要求之间的关系，系统根据实际修改动态判断审批条件。Agent 能够执行哪些操作，也因此有了明确的规则边界。雷锋玩这套架构涉及一个更深层的工程问题：当 AI 开始自主修改代码，甚至参与决定代码能否合并，如何避免执行、审查和审批集中在同一个 Agent 手中？Claude Ship 将职责隔离与策略引擎结合，给出了自己的实现路径。"
+        }
+      ]
+    },
+    {
+      "topic_id": 50,
+      "topic_title": "日本最大电力公司 JERA 联手五大科技巨头共建 AI 数据中心",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        12
+      ],
+      "members": [
+        {
+          "ref_id": 12,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32572",
+          "title": "日本最大电力公司JERA联手五大科技巨头，欲在发电厂旁“就地”共建AI数据中心全球大模型训练与推理推高算力需求，电力瓶颈日益凸显。日本最大电力生产商JERA正与Anthropic、Meta、亚马逊、微软、谷歌等磋商，计划在东京周边发电厂附近直接建设大型数据中心。此举显示AI巨头正加速与电力供应绑定，以保障电力供应，也预示亚洲AI基础设施布局或围绕电力展开。 4 小时前 10.2K",
+          "pub_date": "2026-11-27",
+          "content": "当全球科技巨头为千亿参数大模型的训练和推理绞尽脑汁时，一个无法回避的物理定律正成为悬在头顶的达摩克利斯之剑:算力的狂飙，最终将由电力来买单。近日，据媒体报道，日本最大的电力生产商 JERA 已正式与 Anthropic、Meta、亚马逊、微软和谷歌 等全球顶级科技巨头展开磋商，计划在东京周边地区的发电厂附近，直接建设大型数据中心。这一重磅动向，不仅揭开了亚洲AI基建布局的新篇章，更印证了“算力+电力”深度绑定的全球新趋势。 ⚡ 核心动作:打破传统，在“能源源头”建数据中心传统的数据中心选址，往往优先考虑网络枢纽或土地成本，电力只是作为配套资源接入。而 JERA 此次提出的“在发电厂附近建设数据中心”，则是一种颠覆性的“就地取材”策略。这种“源网荷储”一体化的模式，直击当前AI行业的两大痛点:1. 破解能耗与传输损耗:AI服务器的功耗是传统服务器的数倍。将数据中心直接建在发电厂旁，能最大程度减少长距离输电的损耗，确保庞大算力集群获得最稳定、最高效的能源补给。2. 绿电直供与ESG合规:在全球科技巨头纷纷承诺碳中和的背景下，直接对接发电厂的清洁能源（如液化天然气联合循环发电或未来规划的绿电），能为AI企业提供极具吸引力的“零碳算力”解决方案，轻松跨越日益严格的环保合规门槛。"
+        }
+      ]
+    },
+    {
+      "topic_id": 51,
+      "topic_title": "OpenAI、Anthropic 内部出现分歧",
+      "topic_type": "news",
+      "cross_source_score": 56,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        13
+      ],
+      "members": [
+        {
+          "ref_id": 13,
+          "source": "雷锋网 AI",
+          "link": "https://www.leiphone.com/category/ai/IMi92BFX4KU0R8uh.html",
+          "title": "OpenAI、Anthropic 内部出现分歧：AI 能力增长太快，模型隐藏行为，监测开始系统失灵？",
+          "pub_date": "2026-11-27",
+          "content": "强化学习让模型学会钻评分规则的空子，甚至能反过来操纵评估结果。 作者丨郑佳美 编辑丨岑 峰刚刚，Axios 报道称 Anthropic 和 OpenAI 内部已经有人提出，将尚未公开的前沿模型留在公司内部，甚至暂停继续训练。同一周，Anthropic 的未发布模型被数学家用来推进黎曼猜想的证明，OpenAI 的未发布模型也在批量生成数学证明。这犹如硬币的两面：部分模型能力增长太快，研究人员开始怀疑现有安全机制能否继续约束它们。并且有超过 24 位熟悉内部讨论的人士透露，两家公司围绕模型是否应该继续公开发布出现分歧。Axios 的报道中将担忧指向两处：强化学习让模型越来越会利用奖励漏洞，模型也开始隐藏推理过程，向监测器呈现具有误导性的思维链。其实这已经不是第一次出现类似情况。7 月，OpenAI 内部测试模型突破隔离环境，进入 Hugging Face 部分系统，同月，英国 AI 安全研究所披露模型在网络安全评估中对真实开源项目采取未经授权的行动，10 月，OpenAI 又公开了模型关闭安全告警、移除监测集成的内部事件。把近几个月的研究和事件连起来看，问题已经从训练时如何获得奖励，延伸到模型如何理解监测规则、如何应对安全评估，以及它能否直接修改监督自己的工具。01RL 正在改变模型对奖励规则的理解沿着这条线往前追，问题先出在训练目标里。强化学习通过反复尝试和奖励反馈提升模型能力。"
+        }
+      ]
+    },
+    {
+      "topic_id": 70,
+      "topic_title": "首个农耕文明大模型“天稷”发布",
+      "topic_type": "news",
+      "cross_source_score": 55,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        16
+      ],
+      "members": [
+        {
+          "ref_id": 16,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32573",
+          "title": "首个农耕文明大模型“天稷”发布，用 8000 万条数据缝合“古今农业”的断裂带在AI狂飙突进下，本土农业智慧正悄然消逝：古农书无人能解、传统农耕技艺面临失传，现代农业又缺本土气候与物候的精细指导，导致古今割裂、数据分散、知识碎片化，成为中国农业现代化的隐秘遗憾。近日，农业农村部正式发布首个相关举措，意在应对这一困境。 4 小时前 9.4K",
+          "pub_date": "2026-11-27",
+          "content": "在AI狂飙突进的今天，我们似乎习惯了它写代码、做视频、搞科研，却往往忽略了那些正在悄然消逝的本土智慧。古农书束之高阁无人能解、传统农耕技艺面临失传风险、现代农业在追求高产时常常缺乏本土气候与物候的精细化指导——这种“古今时空割裂、数据分散孤立、知识体系碎片化”的痛点，正成为中国农业现代化进程中一道隐秘的遗憾。近日，农业农村部正式发布首个农耕文明领域大模型“天稷”，为这一行业痛点提供了极具前瞻性的数字解法。该模型一举整合了高达8000万条知识条目，横跨传统农耕技艺、现代智慧农业与农耕文明演进脉络，标志着AI技术正式从“通用闲聊”与“纯工业场景”，深度下沉至最古老也最基础的农业文化土壤。技术洞察:多模态与时空图谱的“降维打击”“天稷”绝非简单的农业文本检索库，而是依托多模态大模型、时空知识图谱与知识增强推理等核心技术，构建了一个立体的农业认知大脑。它将跨时空文本、多源音视频影像、地理信息与传统历法等多维数据资源深度融合，针对性地搭建了古农书智能解译、二十四节气应用、农业文化遗产活化等专业化智能体模块。这种技术架构，真正让沉睡的农业老智慧打破了载体限制，变得“可看、可学、可用”。应用价值:从“文化遗产”到“生产力工具”大模型的终极价值在于落地赋能。“天稷”不仅能数字化还原传统农具与农业遗产场景、精准拆解农业老技艺流程，更能实现农耕文明知识的智能解析与跨时空关联推演。"
+        }
+      ]
+    },
+    {
+      "topic_id": 15,
+      "topic_title": "The Detour Is the Danger",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        3
+      ],
+      "members": [
+        {
+          "ref_id": 3,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.33605",
+          "title": "The Detour Is the Danger: Preserving Security During LLM Agent Recovery",
+          "pub_date": "Fri, 27 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:LLM agents increasingly rely on external tools and reusable Skills to execute complex workflows, autonomously replanning when operations fail. However, such recovery may preserve task functionality while silently discarding the security protections required by the original workflow. In this paper, we investigate workflow security downgrade, a failure-induced security threat in which agents execute sensitive operations without satisfying their original protection requirements."
+        }
+      ]
+    },
+    {
+      "topic_id": 30,
+      "topic_title": "FlashProve-Next",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        5
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.33741",
+          "title": "FlashProve-Next: Verifiable Inference for Production LLM APIs",
+          "pub_date": "Fri, 27 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Clients of closed-weight LLM APIs cannot verify whether a provider ran the advertised model, precision, hidden prompt, and reasoning budget. Existing approaches either trust hardware or third parties, or re-prove every layer of an integer surrogate at high cost while diverging from native floating-point serving."
+        }
+      ]
+    },
+    {
+      "topic_id": 34,
+      "topic_title": "Latent-in-the-Middle",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        6
+      ],
+      "members": [
+        {
+          "ref_id": 6,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.34278",
+          "title": "Latent-in-the-Middle: On the Security of Cross-Model Latent Communication in Multi-Agent Systems",
+          "pub_date": "Fri, 27 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:As large language models increasingly collaborate in heterogeneous multi-agent systems, latent communication has emerged as an efficient alternative to exchanging natural-language messages. By sharing internal representations, agents can avoid repeatedly processing the same context, reducing communication overhead and prefill computation. One such mechanism is cross-model Key-Value (KV) cache transfer, which uses a learned mapper to translate a source model's KV cache into one a target model can use."
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_title": "MeterRouter: Budget-Aware Dynamic",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        7
+      ],
+      "members": [
+        {
+          "ref_id": 7,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.34327",
+          "title": "MeterRouter: Budget-Aware Dynamic Routing for Multi-Agent Systems",
+          "pub_date": "Fri, 27 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Multi-agent systems (MAS) built on large language models (LLMs) outperform single-agent systems, but inter-agent communication incurs substantial token overhead. While assigning a large LLM to every agent is common, it results in inefficient resource utilization, leaving the system far from the Pareto frontier. The cost of answering a query is set jointly by how many agents are recruited, the role and LLM assigned to each, and communication topology among them."
+        }
+      ]
+    },
+    {
+      "topic_id": 37,
+      "topic_title": "Not Every Input Needs Everything",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        8
+      ],
+      "members": [
+        {
+          "ref_id": 8,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.34112",
+          "title": "Not Every Input Needs Everything: Unifying Expert Gating, Model Cascades, and Agent Orchestration",
+          "pub_date": "Fri, 27 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Executing monolithic neural weights, frontier foundation models, or entire multi-agent workflows uniformly on every input incurs substantial computational, latency, and monetary overhead. Conditional computation mitigates this cost by deciding dynamically which internal experts, model endpoints, or specialized agents to invoke per request."
+        }
+      ]
+    },
+    {
+      "topic_id": 43,
+      "topic_title": "Semantic Density Does Not Predict",
+      "topic_type": "paper",
+      "cross_source_score": 64,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        9
+      ],
+      "members": [
+        {
+          "ref_id": 9,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.33184",
+          "title": "Semantic Density Does Not Predict Agent-Memory Collapse",
+          "pub_date": "Fri, 27 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Persistent textual memory can improve LLM agents, but repeated updates can erode task performance. We ask whether memory-store statistics warn before held-out accuracy declines. We registered mean pairwise cosine similarity ($\\rho$) and 13 additional geometry, retrieval, and graph statistics on 805 snapshots from 13 memory methods across ALFWorld, AppWorld, ScienceWorld, WebShop, and two ARC-AGI settings. These methods store trajectories, rules, workflows, strategies, or linked records, using selective retrieval or whole-store prompting."
+        }
+      ]
+    }
+  ]
+}
