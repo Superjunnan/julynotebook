@@ -1,0 +1,419 @@
+{
+  "run_date": "2026-11-27",
+  "selected_topic_ids": [
+    68,
+    76,
+    66,
+    74,
+    73,
+    56,
+    70,
+    69,
+    64,
+    65,
+    21,
+    2,
+    22,
+    52,
+    11,
+    45
+  ],
+  "deep_read_plan_stats": {
+    "selected_topic_count": 16,
+    "base_members_added": 18,
+    "expanded_added": 2,
+    "dropped_by_time": 0,
+    "dropped_by_domain_cap": 0,
+    "dropped_by_missing_date": 0,
+    "dropped_by_stale_arxiv": 0,
+    "soft_min_target": 20,
+    "soft_max_target": 20,
+    "final_targets": 20,
+    "global_cap": 20
+  },
+  "deep_read_links": 20,
+  "materials_total": 20,
+  "materials_windowed": 20,
+  "materials_usable": 20,
+  "materials_by_source": {
+    "Hugging Face Papers": 4,
+    "AIBase": 7,
+    "AITNT 资讯": 3,
+    "TechCrunch AI": 1,
+    "Hugging Face Posts": 2,
+    "雷锋网 AI": 1,
+    "arXiv cs.AI": 2
+  },
+  "topic_dossiers": [
+    {
+      "topic_id": 68,
+      "topic_title": "OpenAI 修复 GPT-6.2 计费错误",
+      "topic_type": "news",
+      "cross_source_score": 69,
+      "mention_count": 2,
+      "source_count": 2,
+      "member_count": 2,
+      "refs": [
+        5,
+        7
+      ],
+      "members": [
+        {
+          "ref_id": 5,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32559",
+          "title": "​OpenAI 承认 GPT-6.2 计费算错，Astra 消耗快 40%、Sol 快 25%11月27日，OpenAI紧急修复GPT-6.2计费错误。此前多数用户使用Astra和Sol时，套餐额度按折扣价计算，等于被悄悄打折，额度“不经用”并非错觉。修复后，相同工作量将消耗更多额度。负责人Thibault Sottiaux称，Astra用户触及上限速度比上周快40%。GPT-6.2仍是效率更高的一代。 刚刚 9.9K",
+          "pub_date": "2026-11-27",
+          "content": "觉得 GPT-6.2 额度突然“不经用”？这不是错觉，问题出在 OpenAI 身上。11 月 27 日消息，OpenAI 紧急修复 GPT-6.2 上线初期的一项计费错误：此前大多数用户用 GPT-6.2 Astra 和 Sol 时，套餐额度按折扣价计算，等于被悄悄打了折。用得更快了，仍是效率更高的一代OpenAI Codex 与 ChatGPT 负责人 Thibault Sottiaux 表示，修复后完成相同工作量要花更多额度：与上周相比，Astra 用户触及上限加快 40%，Sol 加快 25%。他也宽慰道：与上一代相比，这两款模型的额度使用效率仍更高。错误未波及其他模型，OpenAI 也不追溯少计的差额。补偿：一次额度重置，外加免费快跑作为补偿，Go、Plus、Pro 和 Business 套餐用户各获一次额度重置机会，重置额度可留存，不必到手即用。Business 用户另有安排：12 月 31 日前免费使用 Fast Mode 快速模式。Sottiaux 还确认，OpenAI 已向一小部分 Pro 用户测试 Chat 与 Work 模式的合并体验，为扩大推送做准备。合并旨在减少普通对话与智能体工作模式间的切换——Work 模式能处理执行操作、处理文件等多步骤任务，但执行更复杂，资源消耗也可能更高。"
+        },
+        {
+          "ref_id": 7,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31655",
+          "title": "Loop大爆发！中国团队打响AI架构翻身仗",
+          "pub_date": "2026-11-27",
+          "content": "全球大模型的技术风向，正在急剧变化！ 这一次，战火烧到了 AI 最底层的架构。 9 月，OpenAI 祭出 GPT-6 Astra，循环深度（Recurrent Depth）技术引爆 AI 圈。 11 月 23 日，智谱重磅发布 GLM-5.4，将 Loop Transformer 直接搬上旗舰模型。 仅凭 7500 亿参数，就能达到 2 万亿至 3 万亿参数级模型的智能水平！ 两家头部 AI 公司，相继押注了同一个技术方向。 而就在这几天，一份名为《General Looped Model》的技术报告短暂出现在公开渠道，随后又被临时收回。 报告来自一家中国 AI 初创公司——脸谱心智（FaceMind）。 下架的具体原因，官方尚未给出详细解释。 但从已经披露的内容来看，这家团队的野心，远远超出了语言模型。 世界模型、扩散模型，甚至三维重建，都进入了他们的研究范围。 其中一组实验尤其惊人：主模型参数量仅有 9400 万，却在 7 项视频生成指标上，击败了主模型参数量高达 50 亿的开源模型。二者参数相差整整 53 倍！ 早在 OpenAI Astra 的架构被公开报道前三个月，这家中国团队就已经发表了关于循环世界模型的研究论文。 当巨头们纷纷向 Loop 投下重注，一群坐了数年冷板凳的研究者，终于等来了自己的翻身机会。"
+        }
+      ]
+    },
+    {
+      "topic_id": 76,
+      "topic_title": "TontaubeV1.1 Flash 开源模型发布",
+      "topic_type": "news",
+      "cross_source_score": 62,
+      "mention_count": 2,
+      "source_count": 1,
+      "member_count": 2,
+      "refs": [
+        9,
+        10
+      ],
+      "members": [
+        {
+          "ref_id": 9,
+          "source": "Hugging Face Posts",
+          "link": "https://huggingface.co/posts/fritzcremer/652587012399619",
+          "title": "We just released TontaubeV1.1 Flash, an open-source TTS model that runs realtime in your browser on CPU! ⚡ ~10ms TTFA streaming on consumer GPUs, a ~700 MB download, Apache 2.0. One English voice, distilled from our bigger V1.1 model, speaking through our own single-voice codec. Try it in your browser: Model: GitHub repo:",
+          "pub_date": "2026-11-27",
+          "content": "We just released TontaubeV1.1 Flash, an open-source TTS model that runs realtime in your browser on CPU! ⚡~10ms TTFA streaming on consumer GPUs, a ~700 MB download, Apache 2.0. One English voice, distilled from our bigger V1.1 model, speaking through our own single-voice codec.Try it in your browser: TontaubeAI/TontaubeV1.1-FlashModel: TontaubeAI/TontaubeV1.1-FlashGitHub repo: https://github.com/craitech/tontaube。"
+        },
+        {
+          "ref_id": 10,
+          "source": "Hugging Face Posts",
+          "link": "https://huggingface.co/posts/ManniX-ITA/167599582068572",
+          "title": "🚀 omk-model-optimizer — our fork of NVIDIA Model-Optimizer, retargeted at GGUF: everything it trains or rounds ships as a file for stock llama.cpp and ollama. K-FAC rounding with up to -41% KL / top-1 🧠 One trainer, three modes: • QAD: every quantized weight trains as an fp16 latent, served fake-quantized in the exact GGUF type and block order llama.cpp reads (IQ1–IQ4, K-quants, Q8_0), distilled on the teacher's top-K. Qwen3.5-4B IQ2_XXS: HumanEval 38.4 vs 10.4 stock. • Ternary recovery to PrismML PQ2_0 / PTQ1_0: plain ternary Qwen3.5-4B starts at KL 8.0, QAD brings it to 0.46. • BF16 recovery: trains the model's own weights against a teacher (our Gemma-4 agentic SFTs). 📐 K-FAC rounding: llama-quantize weighs rounding error by the imatrix, a diagonal input-only view. We collect each expert's curvature H ≈ G ⊗ A and re-round the MLP tensors with GPTQ-style error feedback through the real llama.cpp encoders. Same layout, types, size and metadata: only MLP payload bytes change. ⚙️ CUDA encoders ported from ggml-quants.c, IQ2/IQ3/IQ4 + Q8_0 and now Q2_K–Q6_K + Q4_0/Q4_1/Q5_0/Q5_1, byte-identical to libggml. 🔁 Pipeline: stock llama-quantize tier + imatrix (20B: AtomicChat corpus; 26B: its training corpus; both combined: −4% KL at IQ3_XXS) → K-FAC re-rounds it → at IQ2_XXS the K-FAC rounding seeds the QAD instead of round-to-nearest. 📊 Gemma-4-26B-A4B-agentic, top-256 KL / top-1, same file size, stock → K-FAC: Q6_K 0.00280/98.81% → 0.00259/98.87% (−7.5%) Q4_K_M 0.00798/97.96% → 0.00660/98.15% (−17%) IQ4_XS 0.0153/97.15% → 0.0116/97.51% (−24%) Q3_K_M 0.0366/95.64% → 0.0217/96.64% (−41%) IQ2_XXS 0.0675/93.92% RTN → 0.0485/94.96% seeded QAD (−28%); unseeded QAD stalls at 0.062 20B v9-agentic: −6% (Q6_K) to −37% (Q3_K_M). 🔗 K-FAC write-up, both ladders: 🔗 🔗",
+          "pub_date": "2026-11-27",
+          "content": "🚀 omk-model-optimizer — our fork of NVIDIA Model-Optimizer, retargeted at GGUF: everything it trains or rounds ships as a file for stock llama.cpp and ollama. K-FAC rounding with up to -41% KL / top-1🧠 One trainer, three modes:• QAD: every quantized weight trains as an fp16 latent, served fake-quantized in the exact GGUF type and block order llama.cpp reads (IQ1–IQ4, K-quants, Q8_0), distilled on the teacher's top-K."
+        }
+      ]
+    },
+    {
+      "topic_id": 66,
+      "topic_title": "大模型高质量数据与专业场景",
+      "topic_type": "news",
+      "cross_source_score": 61,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        12
+      ],
+      "members": [
+        {
+          "ref_id": 12,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32566",
+          "title": "月之暗面赋能科研、DeepSeek牵手知乎，中国AI大模型正式打响“高质量数据与专业场景”保卫战大模型参数规模竞赛逐渐触及物理与成本天花板，通用语料日益枯竭，模型面对复杂逻辑与专业问题时易陷“幻觉”，泛化能力边际效益递减。AI下半场必须向“深水区”要答案。近日国内头部AI企业动态显示，突围新路径是从“泛化闲聊”全面转向“深耕专业场”，以专业能力破解行业痛点，推动AI从广度扩张转向深度落地。 刚刚 8.8K",
+          "pub_date": "2026-11-27",
+          "content": "当大模型的参数规模竞赛逐渐触及物理与成本的天花板，行业正面临一个无法回避的痛点:通用语料日益枯竭，模型在面对复杂逻辑、专业领域问题时，往往陷入“一本正经胡说八道”的幻觉困境。泛化能力的边际效益正在递减，AI的下半场，必须向“深水区”要答案。近日，国内头部AI企业的两则动态，清晰地勾勒出了大模型突围的新路径:从“泛化闲聊”全面转向“深耕专业场景”与“构建高质量数据闭环”。月之暗面正式宣布开放“Kimi科研支持计划”，首期精准锁定自然科学、工程学及相关交叉学科的科研人员。入选者不仅将获得专属的Kimi API额度，更能得到Kimi团队的直接技术支持。这一举措直击科研工作者的核心痛点:面对海量文献梳理、复杂代码调试与跨学科知识融合，传统工具已显疲态。Kimi的入局，旨在将大模型从边缘的“辅助检索工具”，升级为深度嵌入实验室工作流的“核心科研协作者”，用算力与算法为前沿科学探索加速。与此同时，DeepSeek与知乎正式达成重磅内容合作。知乎将通过数据开放平台，向DeepSeek全面开放其沉淀多年的社区问答、深度文章、热榜与话题讨论等高质量内容检索能力。更值得关注的是其合作机制的克制与共赢:当知乎内容被DeepSeek检索并用于生成回答时，系统将明确展示知乎来源标识、内容摘要及创作者信息，并提供一键跳转阅读原文的链接。这绝非一次简单的“数据采买”，而是中国AI生态走向成熟的标志性事件。"
+        }
+      ]
+    },
+    {
+      "topic_id": 74,
+      "topic_title": "英伟达暂停向东南亚出口芯片",
+      "topic_type": "news",
+      "cross_source_score": 68,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        8
+      ],
+      "members": [
+        {
+          "ref_id": 8,
+          "source": "TechCrunch AI",
+          "link": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+          "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+          "pub_date": "2026-11-27",
+          "content": "Nvidia is under pressure to do things differently, and a new WSJ report shows how far that’s going. According to the Journal, Nvidia has told manufacturing partners, including Dell and Super Micro, to hit pause on server shipments to Malaysia, Singapore, Thailand, and Indonesia for an unspecified period as it assesses whether its regional partners are meeting U.S. export requirements. As for why those countries, Chinese companies have been tapping Nvidia chips remotely from data centers there, a loophole the US Commerce Department closed — reportedly grudgingly — earlier this month."
+        }
+      ]
+    },
+    {
+      "topic_id": 73,
+      "topic_title": "路透社母公司推出 Thomson 1.1 模型",
+      "topic_type": "news",
+      "cross_source_score": 60,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        19
+      ],
+      "members": [
+        {
+          "ref_id": 19,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32563",
+          "title": "路透社母公司年底推出 Thomson 1.1：基座选智谱 GLM 和 Google Gemma，看中计算机操作能力汤森路透计划年底推出新模型Thomson 1.1，基座采用可自行部署的开源模型——智谱AI的GLM和Google的Gemma，旨在降低AI成本并更好掌控知识产权。其上一代自研模型Thomson的基座来自中国，此次引入Google Gemma被视为转变。消息来自《商业内幕》。 刚刚 8.1K",
+          "pub_date": "2026-11-27",
+          "content": "汤森路透的 AI 成本账，打算继续用开源来压。据《商业内幕》报道，这家路透社母公司将在今年年底推出新模型 Thomson 1.1，基座是人人都可下载、自行部署的开源模型——中国智谱 AI 的 GLM 与 Google 的 Gemma。该公司希望借此降低 AI 成本，同时更好地掌控自己的知识产权。连续两代自研，基座都来自中国对汤森路透而言，用上 Google 模型算是一次转变：开发上一代自有模型 Thomson 1.0 时，它并未采用美国的 AI 模型，而是基于中国科技巨头阿里巴巴的千问打造了自己的聊天机器人。换句话说，连续两代自研模型，基座都来自中国的开源阵营。GLM 管操作，Gemma 管效率CTO 乔尔·赫伦解释了选型逻辑：公司至今仍在使用智谱的 GLM，因为它在计算机操作方面表现出色——这正是 AI 智能体的一项关键功能；选择 Gemma 则是看中它体积小、效率高。定位上，这款模型瞄准的是中等难度的客户工作，例如税务咨询；至于最复杂的任务，公司仍计划交给 OpenAI 和 Anthropic 的模型处理。开源打底、闭源兜底，成本与能力各占一头。"
+        }
+      ]
+    },
+    {
+      "topic_id": 56,
+      "topic_title": "Agent 记忆与榜单分析",
+      "topic_type": "news",
+      "cross_source_score": 61,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        11
+      ],
+      "members": [
+        {
+          "ref_id": 11,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31652",
+          "title": "阿里、OPPO 都下场了，Agent 记忆究竟哪家强？万字长文拆解 AML 第二期榜单",
+          "pub_date": "2026-11-27",
+          "content": "近期，随着 Google Gemini Carbon、Claude Fable 5.2 等新一代前沿模型的接连发布，大模型的基础推理与单次任务上限再次被刷新。但只要真正把 AI 投入到真实、长线的业务与生活场景中，一个难以回避的核心痛点就会浮现：当任务跨越多个会话、信息处于动态变化之中时，AI 还能不能记住过去，并在下一次做得更好？ 这正是 Agent Memory Leaderboard「记忆之巅」榜单（AML）试图回答的问题。作为由中国图象图形学学会（CSIG）主办，并联合全球 20 多所高校与研究机构共同发起的权威评测，最近，AML 迎来了第二期正式放榜。 三个月前，我们团队深度跟进了第一期的评测。当时那批开源极客和商业团队的混战，让很多人第一次意识到：让 AI 拥有长期记忆，是一项极其复杂的系统工程。但谁能想到，短短几个月后的第二期，这场原本还属于技术圈的探索，已经吸引了更多产业玩家入场。参赛队伍从第一期的 136 支，翻了一倍多，飙到了超 300 个队伍参评提交。 最终在文本、多模态、代码三个赛道公布了 289 条有效成绩。从数据库厂商、云服务团队，到终端企业和独立开发者，Agent Memory 正在吸引越来越多不同背景的参与者。 我们团队仔细看了这次的参评阵容，一个很直观的感受是：相比第一期，本期有更多产业界团队加入了这场关于 Agent Memory 的技术评测。"
+        }
+      ]
+    },
+    {
+      "topic_id": 70,
+      "topic_title": "阿里内测专业创作 AI Agent“行云”",
+      "topic_type": "news",
+      "cross_source_score": 60,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        18
+      ],
+      "members": [
+        {
+          "ref_id": 18,
+          "source": "AITNT 资讯",
+          "link": "https://aitntnews.com/newDetail.html?newId=31660",
+          "title": "独家 | 阿里内测专业创作AI Agent“行云”，多智能体落地内容流水线",
+          "pub_date": "2026-11-27",
+          "content": "《读佳》获知，阿里正在内测一个专业创作AI Agent“行云”，定位是一个面向编剧与内容创作者的AI剧本工作台。 行云可创作的内容包含长剧、短剧、电影、动漫、少儿、游戏、广告、音乐等品类，通过专业Skill串联灵感、大纲、分场、对白与审稿，功能包括创意收集、策划构思、大纲编织、剧本写作到专业评估，而创作判断与成稿审核由创作者完成，可为创作者提供全链路的创作支持。 什么是行云AI 《读佳》实测发现，行云目前提供MacOS和Windows两款桌面端版本。行云首页是简洁对话页面，标语为“行云流水，妙笔天成”。 与普通对话产品最大的差异，在于平台内置名为“桌面虾” 的全局智能体调度系统。在伙伴面板中，桌面虾承担全局任务管理角色，可以同时维护多条会话、并行启动多个AI任务。用户可下达指令查看全部正在运行或已完成的任务，指定智能体承接历史任务，也支持跨会话传递消息、文档，实现不同AI角色分工作业。 每一只“虾”对应独立智能实例，可被分配编剧、审稿、评估等不同职能，多个任务同时运行，互不干扰。 平台核心业务模块集中在短剧工作台板块，页面提供剧本仿写、小说改编、短剧评估三大功能入口，支持上传剧本原稿，选定赛道、受众参数后，由 AI 完成改写、网文分集改编、剧本质量诊断。"
+        }
+      ]
+    },
+    {
+      "topic_id": 69,
+      "topic_title": "OpenAI 证明矩阵乘法指数 ω=9/4",
+      "topic_type": "news",
+      "cross_source_score": 61,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        13
+      ],
+      "members": [
+        {
+          "ref_id": 13,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32564",
+          "title": "OpenAI 宣称证明矩阵乘法“最快极限”：最优算法指数恰为 9/4OpenAI 11月24日发布预印本，宣称已证明矩阵乘法指数ω恰为9/4：10月先证ω≤9/4，此次再证ω≥9/4，上下界合拢。ω描述当n足够大时，两个n×n矩阵相乘的最优算法所需算术运算次数随n增长的渐进幂指数，也是所有可达复杂度指数的下确界。 刚刚 5.1K",
+          "pub_date": "2026-11-27",
+          "content": "上个月证完一半，这个月把另一半拼上。OpenAI 11 月 24 日发布预印本，宣称已证明矩阵乘法指数 ω 恰好等于 9/4——今年 10 月它先证得 ω≤9/4，此次再证 ω≥9/4，上下界合拢，得出等号。ω 刻画的是理论最优矩阵乘法指数 ω 描述的是：当 n 足够大时，两个 n×n 矩阵相乘的最优算法所需算术运算次数随 n 增长的渐进幂指数；更严格地说，ω 是所有可达复杂度指数的下确界。这个量之所以重要，在于矩阵乘法应用广泛，机器学习、图像处理等领域都离不开它；ω 不仅刻画理论算法在渐进意义下的最优指数，还与一系列重要复杂度问题相关。证明成立，9/4 这条线上得去也下不来若 OpenAI 的证明无误，结论是双向的：对任意 X＞9/4，存在一种矩阵乘法算法及常数 CX＞0，使得对所有充分大的 n，其算术运算次数不超过 CX·n^X；对任意 Y＜9/4，则不存在一种算法及常数 CY＞0，能把运算次数压到 CY·n^Y 以内。同时留了余地：ω 是一个渐进量，对应矩阵规模趋于无穷大时的结果，实际应用还受常数因子、内存访问、并行计算、硬件结构等因素影响。预印本已挂上 OpenAI 的 GitHub math 仓库。"
+        }
+      ]
+    },
+    {
+      "topic_id": 64,
+      "topic_title": "DeepSeek 显示消耗额度",
+      "topic_type": "news",
+      "cross_source_score": 61,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        14
+      ],
+      "members": [
+        {
+          "ref_id": 14,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32557",
+          "title": "跟 AI 聊一句花多少钱？DeepSeek 灰度测试“消耗额度”，把账单摊在你面前DeepSeek自11月26日起在网页端和App灰度测试“显示本轮消耗额度”：完成对话后弹出详情，展示本轮Token数及估算金额，价格与API持平。个人聊天仍免费，但单次计算成本变得可见；额度按空闲时段价格估算，有截图显示一毛钱的账被拆成三笔计费。 刚刚 9.4K",
+          "pub_date": "2026-11-27",
+          "content": "免费的 AI 聊天，背后每句话都在烧钱——DeepSeek 决定把这本账摊开。11 月 26 日起，部分用户反馈其网页端和 App 正在灰度测试“显示本轮消耗额度”功能：完成一轮对话后，界面弹出详情页，展示本次交互消耗的 Token 数与估算金额，价格与 API 持平。个人对话依然免费，但单次对话的计算成本从此可见。一毛钱的账，拆成三笔从用户截图看，额度按“空闲时段”价格估算，计费拆成三个维度：输入缓存命中部分单价 0.02 元 / 百万 tokens，本轮用量约 18.5 万，折合 0.0037 元；缓存未命中部分单价 1 元 / 百万 tokens，用量约 1.2 万，折合 0.012 元；输出部分单价 4 元 / 百万 tokens，用量 1470，折合 0.0058 元。三者合计不过两分钱，差距藏在结构里——所谓缓存命中，即模型直接复用先前算过的上下文 K-V 缓存避免重复计算，单价只有未命中的五十分之一。多轮对话时系统缓存历史上下文，后续输入只对“新增”部分全价计费，长对话累积成本因此大幅压低。顺手提醒：上下文快用完了详情页底部还加了一行进度提示：“截止到本轮，上下文已占用 ”。占用比例接近 100% 时，系统通常会提示或自动截断早期对话，以防超出模型最大上下文窗口。先把限额做了，再把账单亮出来，DeepSeek 这套组合拳，让“免费”的成本第一次变得可感知。"
+        }
+      ]
+    },
+    {
+      "topic_id": 65,
+      "topic_title": "物理 AI 与具身智能",
+      "topic_type": "news",
+      "cross_source_score": 61,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        15
+      ],
+      "members": [
+        {
+          "ref_id": 15,
+          "source": "AIBase",
+          "link": "https://news.aibase.com/zh/news/32568",
+          "title": "通用大模型能“击穿”物理AI？何小鹏给出清醒答案：物理世界的约束，不是靠参数能填平的科技圈正热炒“物理AI”：OpenAI工程师用大模型操控机械臂绘画，行业大佬预言通用AI一两年内击穿具身智能壁垒，机器人将走出实验室、接管工厂与家庭。但小鹏科技日上，何小鹏泼冷水，指出相较数字世界，AI在物理世界的应用面临更大挑战，物理AI落地并非仅靠大模型参数就能一蹴而就。 刚刚 4.2K",
+          "pub_date": "2026-11-27",
+          "content": "当OpenAI的工程师用大模型操控机械臂完成绘画，当行业大佬预言通用AI将在一两年内“击穿”具身智能的壁垒，整个科技圈正陷入对“物理AI”的狂热预期中。仿佛只要模型参数足够大，机器人就能立刻走出实验室，接管工厂与家庭。然而，在近日的小鹏科技日上，小鹏集团董事长、CEO何小鹏却给这场狂欢泼下了一盆冷水。他明确指出:**相较于数字世界，AI在物理世界的应用面临着更为严苛的约束，仅依靠通用大模型，根本无法解决物理AI的所有难题。**这番表态并非保守，而是基于一线造车与机器人研发经验得出的深刻洞察。通用大模型在数字世界里是“神”，但一旦落地到物理世界，就必须面对三道难以逾越的“现实之门”:**第一道门:容错率的天壤之别**在数字世界，大模型产生“幻觉”，顶多是生成了一段错误的代码或一句荒谬的文本，用户刷新即可重来。但在物理世界，一次微小的感知误差或决策幻觉，可能导致机械臂撞毁昂贵设备，甚至对人身安全造成不可逆的伤害。物理AI对“确定性”和“安全性”的要求是指数级放大的，而概率性输出的通用大模型，天生带有难以根除的不确定性。**第二道门:长尾场景与成本的“无底洞”**物理世界的Corner Cases（长尾极端场景）是无穷无尽的。光线变化、地面湿滑、未知障碍物 如果仅依赖通用大模型通过“暴力穷举”来学习这些场景，所需的算力、数据采集成本以及硬件冗余将呈指数级爆炸。"
+        }
+      ]
+    },
+    {
+      "topic_id": 21,
+      "topic_title": "Boundary-Aware Policy Learning",
+      "topic_type": "paper",
+      "cross_source_score": 70,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        2
+      ],
+      "members": [
+        {
+          "ref_id": 2,
+          "source": "Hugging Face Papers",
+          "link": "https://huggingface.co/papers/2611.32238",
+          "title": "Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation",
+          "pub_date": "2026-11-27T00:00:00.000Z",
+          "content": "Published on Nov 24 Authors: , , , , Abstract A method that explicitly shapes and expands the handoff boundary of visuomotor policies improves coordination between multimodal agents and robot policies, yielding higher success and lower cost. Agent-orchestrated robot systems combine the general reasoning capability of multimodal agents with the precise physical control of learned visuomotor policies. Yet such systems often fail at the moment of handoff: a policy is reliable only from a limited set of start states, while the agent may invoke it outside this region."
+        }
+      ]
+    },
+    {
+      "topic_id": 2,
+      "topic_title": "OS-Omni: Benchmarking Generalist",
+      "topic_type": "paper",
+      "cross_source_score": 70,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        1
+      ],
+      "members": [
+        {
+          "ref_id": 1,
+          "source": "Hugging Face Papers",
+          "link": "https://huggingface.co/papers/2611.34232",
+          "title": "OS-Omni: Benchmarking Generalist Computer-Using Agents on Long-Horizon Workflows Across Platforms",
+          "pub_date": "2026-11-27T00:00:00.000Z",
+          "content": "Published on Nov 25 #1 Paper of the day Authors: , , , , , , , , , , , , , , , , , , , , Abstract A live cross-platform benchmark evaluates computer-using agents on long-horizon workflows across Windows, Ubuntu, macOS, iOS, Android, and Web, showing that current agents remain far from platform-robust computer use and trail humans on iOS and macOS. Computer-using agents are increasingly expected to complete realistic user goals rather than isolated GUI actions."
+        }
+      ]
+    },
+    {
+      "topic_id": 22,
+      "topic_title": "StateWeaver",
+      "topic_type": "paper",
+      "cross_source_score": 70,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        3
+      ],
+      "members": [
+        {
+          "ref_id": 3,
+          "source": "Hugging Face Papers",
+          "link": "https://huggingface.co/papers/2611.34290",
+          "title": "StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation",
+          "pub_date": "2026-11-27T00:00:00.000Z",
+          "content": "Published on Nov 25 Authors: , , , , , , , Abstract StateWeaver improves long-video generation by preserving cross-shot consistency and updating visual references through active state tracking and hierarchical collaboration. Modern video foundation models generate high-quality short clips, but preserving long-video consistency and correctly depicting event-driven state changes remain challenging. Existing agentic workflows face these challenges because continual planning and repair accumulate context, while reference updates remain limited."
+        }
+      ]
+    },
+    {
+      "topic_id": 52,
+      "topic_title": "DRBench Pro: A Knowledge-Centric",
+      "topic_type": "paper",
+      "cross_source_score": 69,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        4
+      ],
+      "members": [
+        {
+          "ref_id": 4,
+          "source": "Hugging Face Papers",
+          "link": "https://huggingface.co/papers/2611.34852",
+          "title": "DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents",
+          "pub_date": "2026-11-27T00:00:00.000Z",
+          "content": "How much of the relevant knowledge does a deep research agent actually cover? We built DRBench Pro to answer this question. For each case, we derive a research query and evidence-grounded rubrics from the same Wikipedia-derived knowledge tree. This structure lets us measure breadth across major research directions and depth along related chains of knowledge. DRBench Pro includes 144 research cases across 24 domains and 44,102 rubrics. In our evaluation of 16 agent configurations, we found that similar overall coverage scores can mask distinct strengths in breadth and depth."
+        }
+      ]
+    },
+    {
+      "topic_id": 11,
+      "topic_title": "CypherMAS: Benchmarking Routing",
+      "topic_type": "paper",
+      "cross_source_score": 60,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        17
+      ],
+      "members": [
+        {
+          "ref_id": 17,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.33242",
+          "title": "CypherMAS: Benchmarking Routing Reliability in LLM-Based Multi-Agent Systems",
+          "pub_date": "Thu, 26 Nov 2026 00:00:00 -0500",
+          "content": "View PDF HTML (experimental) Abstract:Multi-agent systems (MAS) built on large language models (LLMs) distribute reasoning across specialized agents that must exchange messages and invoke tools reliably. Existing evaluations typically couple communication with open domain tasks, making it difficult to determine whether a failure arises from reasoning, malformed tool use, lost messages, or forgotten requests. Prior benchmarks do not isolate communication execution or measure routing redundancy against a known optimal path."
+        }
+      ]
+    },
+    {
+      "topic_id": 45,
+      "topic_title": "RoboTeam: Benchmarking Vision",
+      "topic_type": "paper",
+      "cross_source_score": 59,
+      "mention_count": 1,
+      "source_count": 1,
+      "member_count": 1,
+      "refs": [
+        20
+      ],
+      "members": [
+        {
+          "ref_id": 20,
+          "source": "arXiv cs.AI",
+          "link": "https://arxiv.org/abs/2611.22138",
+          "title": "RoboTeam: Benchmarking Vision-Based Multi-Agent Control of Many Robot Arms in Real Time",
+          "pub_date": "Thu, 26 Nov 2026 00:00:00 -0500",
+          "content": "Authors:Changxuan Fan, Zhongwei Xie, Boyi Zhang, Shaoli Hu, Chang Xu, Xiyu Ren, Yufei Li, Qiao Xiao, Huihao Jing, Kawai Chung, Wenbin Hu, Hongyu Luo, Lingyun Xie, Yisen Gao, Chunyang Li, Haoyu Huang, Wuganjing Song, Yuxuan Liu, Chiu Yeung Tang, Fangneng Zhan, Xi Yang View PDF HTML (experimental) Abstract:Multimodal agents can now control robot arms by calling tools and writing code. Existing benchmarks fall short in three ways: most test one or two arms on short tasks, many pause the world while the agent thinks, and many give it ground-truth object positions."
+        }
+      ]
+    }
+  ]
+}
